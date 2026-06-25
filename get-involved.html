@@ -1,0 +1,720 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Get Involved — The Q Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  :root {
+    --navy: #1B3A6B; --navy-deep: #122848; --navy-mid: #243f72;
+    --gold: #B8962E; --gold-light: #D4AF50; --gold-pale: #F5EDD4;
+    --white: #FFFFFF; --off-white: #F9F6F0; --off-white2: #F2EFE8;
+    --text: #1a1a1a; --text-light: #4a4a4a; --text-muted: #5a5a5a; --border: #E0D5BE;
+  }
+  body { background: var(--off-white); font-family: 'DM Sans', sans-serif; color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; margin: 0; }
+
+  .top-stripe { height: 5px; background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%); }
+
+  /* TOP BAR */
+  .topbar { position: sticky; top: 0; z-index: 50; background: rgba(18,40,72,0.97); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(184,150,46,0.25); }
+  .topbar-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; gap: 16px; }
+  .brand { display: flex; align-items: baseline; gap: 10px; }
+  .brand-q { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 26px; color: var(--gold-light); line-height: 1; }
+  .brand-name { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--white); }
+  .topnav { display: flex; align-items: center; gap: 26px; }
+  .topnav a { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+  .topnav a:hover { color: var(--gold-light); }
+  .topnav .nav-cta { background: var(--gold); color: var(--navy-deep); padding: 9px 16px; border-radius: 4px; font-weight: 500; }
+  .topnav .nav-cta:hover { background: var(--gold-light); color: var(--navy-deep); }
+
+  /* HERO */
+  .hero { background: var(--navy-deep); position: relative; overflow: hidden; padding: 92px 32px 84px; }
+  .hero-wm { position: absolute; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 640px; line-height: 1; color: rgba(255,255,255,0.06); top: -120px; right: -60px; pointer-events: none; user-select: none; z-index: 0; }
+  .hero-wm2 { position: absolute; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 240px; line-height: 1; color: rgba(184,150,46,0.08); bottom: -50px; left: -10px; pointer-events: none; user-select: none; z-index: 0; }
+  .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-light); opacity: 0.9; margin-bottom: 22px; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 6.5vw, 82px); font-weight: 900; color: var(--white); line-height: 1.0; margin-bottom: 26px; max-width: 16ch; }
+  .hero h1 span { color: var(--gold-light); }
+  .hero-sub { font-size: clamp(16px, 2vw, 20px); color: rgba(255,255,255,0.72); max-width: 620px; line-height: 1.75; margin-bottom: 18px; }
+  .hero-org { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 1px; color: rgba(255,255,255,0.5); margin-bottom: 38px; }
+  .hero-org strong { color: var(--gold-light); font-weight: 500; }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-gold { display: inline-block; background: var(--gold); color: var(--navy-deep); font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 16px 34px; text-decoration: none; transition: background 0.2s, transform 0.15s; cursor: pointer; border: none; border-radius: 4px; }
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline { display: inline-block; border: 1px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.85); font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; padding: 16px 34px; text-decoration: none; transition: border-color 0.2s, color 0.2s; cursor: pointer; border-radius: 4px; background: transparent; }
+  .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
+
+  /* COMING SOON STRIP */
+  .soon { background: var(--gold); color: var(--navy-deep); text-align: center; padding: 14px 24px; font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
+
+  /* STATS */
+  .stats { background: var(--navy); padding: 0; }
+  .stats-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat { padding: 38px 24px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1); }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: clamp(34px, 4vw, 46px); font-weight: 900; color: var(--gold-light); line-height: 1; margin-bottom: 8px; }
+  .stat-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.7); line-height: 1.5; }
+
+  /* SECTION SHELL */
+  .section { padding: 84px 32px; position: relative; overflow: hidden; }
+  .section-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(30px, 4.5vw, 50px); font-weight: 700; color: var(--navy-deep); line-height: 1.12; margin-bottom: 18px; }
+  .section-divider { width: 52px; height: 3px; background: var(--gold); margin-bottom: 34px; }
+  .section-lead { font-size: 17px; color: var(--text-light); line-height: 1.85; max-width: 720px; }
+  .section-lead strong { color: var(--text); font-weight: 600; }
+
+  .mission { background: var(--off-white); }
+  .mission-wm { position: absolute; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 480px; color: rgba(27,58,107,0.04); top: -60px; right: -40px; pointer-events: none; user-select: none; }
+  .standard { margin-top: 34px; background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--gold); padding: 28px 32px; max-width: 760px; }
+  .standard p { font-family: 'Playfair Display', serif; font-size: 19px; font-style: italic; color: var(--navy-deep); line-height: 1.55; }
+
+  /* WORK GRID */
+  .work { background: var(--white); border-top: 1px solid var(--border); }
+  .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--border); margin-top: 40px; }
+  .work-card { background: var(--off-white); padding: 34px 32px; }
+  .work-card .wtag { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .work-card h3 { font-family: 'Playfair Display', serif; font-size: 23px; font-weight: 700; color: var(--navy-deep); line-height: 1.2; margin-bottom: 10px; }
+  .work-card p { font-size: 14.5px; color: var(--text-light); line-height: 1.7; }
+  .work-card .wmeta { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-muted); margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+
+  /* PILLARS */
+  .pillars { background: var(--navy-deep); }
+  .pillars-wm { position: absolute; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 520px; color: rgba(184,150,46,0.07); top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; user-select: none; }
+  .pillars .section-label { color: var(--gold-light); opacity: 0.9; }
+  .pillars .section-title { color: var(--white); }
+  .pillars-sub { font-size: 16px; color: rgba(255,255,255,0.66); max-width: 640px; margin-bottom: 40px; }
+  .pillar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; }
+  .pillar { background: rgba(255,255,255,0.04); border-top: 3px solid var(--gold); padding: 22px 14px; text-align: center; min-height: 150px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+  .pillar-num { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 900; color: var(--gold-light); line-height: 1; margin-bottom: 12px; }
+  .pillar-name { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; color: var(--white); line-height: 1.35; }
+
+  /* COMPARE */
+  .compare { background: var(--off-white2); }
+  .compare-sub { font-size: 17px; color: var(--text-light); line-height: 1.85; max-width: 760px; margin-bottom: 14px; }
+  .compare-note { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-muted); margin-bottom: 36px; max-width: 760px; line-height: 1.6; }
+  .ctable { background: var(--white); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: 0 10px 30px rgba(18,40,72,0.06); }
+  .crow { display: grid; grid-template-columns: 1.1fr 1.3fr 1.3fr; }
+  .crow > div { padding: 18px 20px; border-bottom: 1px solid var(--border); font-size: 14px; line-height: 1.55; }
+  .crow:last-child > div { border-bottom: none; }
+  .crow .clabel { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.5px; text-transform: uppercase; color: var(--navy); background: var(--off-white); font-weight: 500; display: flex; align-items: center; }
+  .crow .c-i43 { color: var(--text-muted); border-left: 1px solid var(--border); }
+  .crow .c-fw { color: var(--text); border-left: 3px solid var(--gold); background: #FCFAF3; }
+  .crow.chead > div { background: var(--navy-deep); color: var(--white); border-bottom: none; padding: 20px; }
+  .crow.chead .clabel { background: var(--navy-deep); color: rgba(255,255,255,0.55); }
+  .crow.chead .c-i43 { color: rgba(255,255,255,0.8); border-left: 1px solid rgba(255,255,255,0.12); }
+  .crow.chead .c-fw { color: var(--gold-light); border-left: 3px solid var(--gold); background: var(--navy-deep); font-weight: 700; }
+  .chead .ctitle { font-family: 'Playfair Display', serif; font-size: 18px; line-height: 1.25; }
+  .chead .csub { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; opacity: 0.7; margin-top: 4px; }
+  .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
+  .why-card { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--gold); padding: 26px 24px; }
+  .why-card h4 { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--navy-deep); margin-bottom: 8px; }
+  .why-card p { font-size: 14px; color: var(--text-light); line-height: 1.65; }
+
+  /* REPS */
+  .reps { background: var(--white); border-top: 1px solid var(--border); }
+  .reps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 36px; align-items: start; }
+  .reps-card { background: var(--off-white); border: 1px solid var(--border); padding: 30px 32px; }
+  .reps-card h3 { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--navy-deep); margin-bottom: 8px; }
+  .reps-card p { font-size: 14px; color: var(--text-light); line-height: 1.65; margin-bottom: 18px; }
+  .reps-select { width: 100%; font-family: 'DM Sans', sans-serif; font-size: 15px; padding: 14px 16px; border: 1px solid var(--border); background: var(--white); color: var(--text); border-radius: 6px; cursor: pointer; }
+  .reps-select:focus { outline: none; border-color: var(--gold); }
+  .reps-fed { list-style: none; padding: 0; margin: 16px 0 0; }
+  .reps-fed li { padding: 0; }
+  .reps-fed a { display: flex; align-items: center; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--navy); text-decoration: none; transition: color 0.2s; }
+  .reps-fed li:last-child a { border-bottom: none; }
+  .reps-fed a:hover { color: var(--gold); }
+  .reps-fed .ext { margin-left: auto; color: var(--gold); font-size: 12px; }
+
+  /* CONTACT */
+  .contact { background: var(--navy-deep); position: relative; overflow: hidden; text-align: center; }
+  .contact-wm { position: absolute; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 520px; color: rgba(255,255,255,0.04); top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; user-select: none; }
+  .contact-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+  .contact .section-label { color: var(--gold-light); opacity: 0.9; }
+  .contact h2 { font-family: 'Playfair Display', serif; font-size: clamp(30px, 4.5vw, 48px); font-weight: 700; color: var(--white); line-height: 1.12; margin-bottom: 16px; }
+  .contact h2 span { color: var(--gold-light); }
+  .contact-lead { font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 38px; }
+  .contact-methods { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .cmethod { background: rgba(255,255,255,0.05); border: 1px solid rgba(184,150,46,0.3); border-radius: 8px; padding: 24px 32px; min-width: 240px; text-decoration: none; transition: border-color 0.2s, background 0.2s; }
+  .cmethod:hover { border-color: var(--gold-light); background: rgba(255,255,255,0.08); }
+  .cmethod-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px; }
+  .cmethod-value { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); }
+  .cmethod-note { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 6px; }
+
+  /* FOOTER */
+  .lp-footer { background: #0d1f3a; padding: 36px 32px; text-align: center; }
+  .lp-footer .brand { justify-content: center; margin-bottom: 14px; }
+  .lp-footer p { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.8; }
+  .lp-footer a { color: var(--gold-light); text-decoration: none; }
+
+  .bottom-stripe { height: 5px; background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%); }
+
+  @media (max-width: 900px) {
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(2) { border-right: none; }
+    .pillar-grid { grid-template-columns: repeat(3, 1fr); }
+    .work-grid { grid-template-columns: 1fr; }
+    .why { grid-template-columns: 1fr; }
+    .reps-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 680px) {
+    .topnav { display: none; }
+    .hero { padding: 64px 22px 60px; }
+    .section { padding: 60px 22px; }
+    .pillar-grid { grid-template-columns: repeat(2, 1fr); }
+    .crow { grid-template-columns: 1fr; }
+    .crow > div { border-bottom: 1px solid var(--border); }
+    .crow .clabel { background: var(--navy-deep); color: var(--gold-light); }
+    .crow .c-i43::before { content: 'Initiative 43 — '; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--text-muted); display:block; margin-bottom:4px; }
+    .crow .c-fw::before { content: 'Fair Work Act — '; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
+    .crow.chead { display: none; }
+    .hero-wm, .hero-wm2, .mission-wm, .pillars-wm, .contact-wm { display: none; }
+  }
+  section[id] { scroll-margin-top: 76px; }
+  .work-card .card-link { display:inline-block; margin-top:14px; font-family:'DM Mono',monospace; font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); text-decoration:none; border-bottom:1px solid transparent; transition:border-color 0.2s; }
+  .work-card .card-link:hover { border-bottom-color:var(--gold); }
+  /* NEWSLETTER SIGNUP */
+  .signup { background: var(--gold); padding: 66px 32px; text-align: center; }
+  .signup-inner { max-width: 640px; margin: 0 auto; }
+  .signup-eyebrow { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--navy-deep); opacity:0.7; margin-bottom:12px; }
+  .signup-title { font-family:'Playfair Display',serif; font-size:clamp(28px,4vw,44px); font-weight:700; color:var(--navy-deep); line-height:1.1; margin-bottom:14px; }
+  .signup-sub { font-size:16px; color:#3a2e0a; line-height:1.7; margin-bottom:28px; }
+  .signup-form { display:flex; gap:10px; max-width:480px; margin:0 auto; flex-wrap:wrap; justify-content:center; }
+  .signup-input { flex:1; min-width:220px; font-family:'DM Sans',sans-serif; font-size:15px; padding:15px 18px; border:none; border-radius:6px; background:#fff; color:var(--text); }
+  .signup-input:focus { outline:2px solid var(--navy-deep); }
+  .signup-btn { font-family:'DM Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; font-weight:500; padding:15px 28px; border:none; border-radius:6px; background:var(--navy-deep); color:var(--gold-light); cursor:pointer; transition:background 0.2s; }
+  .signup-btn:hover { background:var(--navy); }
+  .signup-btn:disabled { opacity:0.6; cursor:default; }
+  .signup-msg { margin-top:16px; font-size:14px; color:var(--navy-deep); font-weight:500; }
+  .signup-success { margin-top:6px; font-family:'Playfair Display',serif; font-size:19px; font-style:italic; color:var(--navy-deep); }
+  @media (max-width:680px){ .signup { padding:48px 22px; } }
+
+/* ===== your footer styles ===== */
+  .footer {
+    background: #0f2347;
+    border-top: 1px solid rgba(184,150,46,0.2);
+    padding: 40px 40px 24px;
+  }
+
+  /* -- BALANCE STATEMENT BAND -- */
+  .footer-balance {
+    max-width: 760px;
+    margin: 0 auto 36px;
+    padding: 0 0 30px;
+    border-bottom: 1px solid rgba(184,150,46,0.18);
+    text-align: center;
+  }
+  .footer-balance-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #B8962E;
+    display: block;
+    margin-bottom: 14px;
+  }
+  .footer-balance p {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.8);
+  }
+  .footer-balance em { color: #D4AF50; font-style: italic; }
+
+  .footer-top {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+
+  .footer-brand {
+    flex: 0 0 auto;
+    max-width: 240px;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #D4AF50;
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+
+  .footer-logo span { color: rgba(255,255,255,0.5); font-size: 11px; font-family: 'DM Mono', monospace; font-weight: 400; display: block; margin-top: 6px; letter-spacing: 1.5px; }
+
+  .footer-tagline {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+
+  .footer-social {
+    display: inline-block;
+    margin-top: 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    border: 1px solid rgba(184,150,46,0.3);
+    padding: 6px 12px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .footer-social:hover { color: #D4AF50; border-color: #D4AF50; }
+
+  .footer-nav {
+    flex: 1;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .footer-col { flex: 1; min-width: 150px; }
+
+  .footer-col-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #B8962E;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(184,150,46,0.2);
+  }
+
+  /* -- STATE FINDER DROPDOWN -- */
+  .footer-state-finder { margin-bottom: 16px; }
+  .footer-state-finder label {
+    display: block;
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .footer-state-select {
+    width: 100%;
+    background: #0a1c3a;
+    color: #D4AF50;
+    border: 1px solid rgba(184,150,46,0.4);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    padding: 9px 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #B8962E 50%), linear-gradient(135deg, #B8962E 50%, transparent 50%);
+    background-position: calc(100% - 16px) center, calc(100% - 11px) center;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+  }
+  .footer-state-select:focus { outline: none; border-color: #D4AF50; }
+  .footer-state-select option { background: #0f2347; color: #fff; }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .footer-link {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px 0;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .footer-link:last-child { border-bottom: none; }
+  .footer-link:hover { color: #D4AF50; }
+
+  .footer-link .dot {
+    width: 5px; height: 5px;
+    background: rgba(184,150,46,0.4);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .footer-link .ext {
+    font-size: 9px;
+    color: rgba(255,255,255,0.2);
+    font-family: 'DM Mono', monospace;
+    margin-left: auto;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .footer-bottom-left {
+    font-size: 11px;
+    color: rgba(255,255,255,0.25);
+    font-family: 'DM Mono', monospace;
+    line-height: 1.6;
+  }
+
+  .footer-bottom-left a { color: #B8962E; text-decoration: none; }
+
+  .footer-bottom-right {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-bottom-link {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    transition: color 0.2s;
+  }
+  .footer-bottom-link:hover { color: #D4AF50; }
+
+  .footer-sep {
+    color: rgba(255,255,255,0.1);
+    font-size: 11px;
+  }
+
+  @media (max-width: 768px) {
+    .footer { padding: 32px 20px 20px; }
+    .footer-balance p { font-size: 14px; }
+    .footer-top { gap: 28px; }
+    .footer-brand { max-width: 100%; }
+    .footer-nav { gap: 20px; }
+    .footer-col { min-width: 100%; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+  }
+
+/* ===== interior-page helpers (uses your brand variables) ===== */
+.pagehead{background:var(--navy-deep);color:#fff;text-align:center;padding:72px 24px 56px;position:relative;overflow:hidden}
+.pagehead .ph-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-light)}
+.pagehead h1{font-family:'Playfair Display',serif;font-size:44px;color:#fff;margin:12px 0 0;line-height:1.15}
+.pagehead p{max-width:64ch;margin:14px auto 0;color:rgba(255,255,255,.82);font-size:18px;line-height:1.7}
+.pagewrap{max-width:1080px;margin:0 auto;padding:60px 32px}
+.narrow{max-width:780px}
+.center{text-align:center}
+.prose h2{font-family:'Playfair Display',serif;color:var(--navy-deep);font-size:30px;margin:36px 0 12px}
+.prose .plabel{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-top:30px}
+.prose p{font-size:18px;color:var(--text);line-height:1.8;margin-bottom:16px}
+.prose strong{color:var(--navy-deep)}
+.q-quote{border-left:3px solid var(--gold);padding:8px 0 8px 22px;margin:26px 0;font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:var(--navy-deep);line-height:1.6}
+.factbox{background:var(--off-white);border:1px solid var(--border);border-radius:8px;padding:22px 26px;margin:22px 0}
+.factbox p{margin:8px 0;font-size:16px;color:var(--text)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px}
+.step{background:var(--off-white);border:1px solid var(--border);border-top:3px solid var(--gold);padding:24px}
+.step .snum{font-family:'Playfair Display',serif;font-size:34px;color:var(--gold);font-weight:700;line-height:1}
+.step h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy-deep);margin:8px 0}
+.step p{font-size:14.5px;color:var(--text-light);line-height:1.65;margin:0}
+.form{max-width:640px;background:var(--off-white);border:1px solid var(--border);border-radius:10px;padding:30px}
+.form .frow{display:flex;gap:16px}.form .frow>*{flex:1}
+.field{margin-bottom:16px}
+.field label{display:block;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--navy-deep);margin-bottom:6px}
+.field input,.field textarea{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:16px;background:var(--white);color:var(--text)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+.field textarea{min-height:140px;resize:vertical}
+.formmsg{margin-top:14px;font-weight:600;font-family:'DM Sans',sans-serif}
+.formnote{font-size:13.5px;color:var(--text-muted);margin-top:8px}
+.topnav a.active{color:var(--gold-light)}
+.qcard-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);border:1px solid var(--border);margin-top:26px}
+@media(max-width:760px){.steps,.qcard-grid{grid-template-columns:1fr}.form .frow{display:block}}
+
+
+/* ===== menu button + full-screen nav overlay (all screen sizes; scales as pages are added) ===== */
+.menu-btn{display:inline-flex;align-items:center;gap:9px;background:transparent;border:1px solid rgba(255,255,255,.30);color:#fff;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:9px 15px;border-radius:5px;cursor:pointer;transition:border-color .2s,background .2s}
+.menu-btn:hover{border-color:var(--gold);background:rgba(184,150,46,.14)}
+.menu-btn .bars{display:inline-flex;flex-direction:column;gap:3px}
+.menu-btn .bars span{width:17px;height:2px;background:var(--gold-light);display:block}
+.nav-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,35,71,.985);z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s ease}
+.nav-overlay.open{opacity:1;visibility:visible}
+.nav-overlay .nav-close{position:absolute;top:20px;right:28px;background:none;border:none;color:#fff;font-size:42px;line-height:1;cursor:pointer;transition:color .2s}
+.nav-overlay .nav-close:hover{color:var(--gold-light)}
+.nav-overlay .ov-brand{position:absolute;top:24px;left:32px;font-family:'Playfair Display',serif;color:#fff;font-size:20px}
+.nav-overlay .ov-brand b{color:var(--gold-light)}
+.ov-links{-webkit-column-count:2;column-count:2;-webkit-column-gap:54px;column-gap:54px;max-width:520px;width:100%;margin:0 auto}
+.ov-links a{display:block;-webkit-column-break-inside:avoid;break-inside:avoid;font-family:'Playfair Display',serif;font-size:25px;font-weight:700;color:#fff;text-decoration:none;padding:7px 4px;transition:color .2s;text-align:center}
+.ov-links a:hover{color:var(--gold-light)}
+.ov-foot{position:absolute;bottom:26px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5)}
+
+/* ===== responsive ===== */
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr !important}}
+@media(max-width:680px){
+.pagehead h1{font-size:32px}.pagehead{padding:52px 20px 40px}
+.pagewrap{padding:44px 20px}.section-title{font-size:28px}
+.steps{grid-template-columns:1fr}.qcard-grid{grid-template-columns:1fr}
+.footer-top{flex-direction:column;gap:24px}.form{padding:22px}
+.ov-links{-webkit-column-count:1;column-count:1;max-width:300px}.ov-links a{font-size:21px}
+}
+
+
+/* ===== phase-1 components ===== */
+.field select{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:16px;background:var(--white);color:var(--text)}
+.field select:focus{outline:none;border-color:var(--gold)}
+.tracks{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:28px 0}
+.track{background:var(--off-white);border:1px solid var(--border);border-left:3px solid var(--gold);padding:22px 24px}
+.track h3{font-family:'Playfair Display',serif;color:var(--navy-deep);font-size:20px;margin:0 0 6px}
+.track p{font-size:15px;color:var(--text-light);line-height:1.6;margin:0}
+.callout{background:var(--navy-deep);color:#fff;text-align:center;padding:56px 24px;position:relative}
+.callout h2{font-family:'Playfair Display',serif;color:#fff;font-size:30px;margin:0 0 10px}
+.callout p{max-width:620px;margin:0 auto 22px;color:rgba(255,255,255,.82);font-size:17px;line-height:1.7}
+.lookup-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.lookup-row input{flex:1;min-width:220px;padding:12px 14px;border:1px solid var(--border);border-radius:6px;font-size:16px;font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text)}
+.off-results{margin-top:22px;display:grid;gap:12px}
+.off-card{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);padding:15px 18px}
+.off-card .role{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
+.off-card .nm{font-family:'Playfair Display',serif;font-size:19px;color:var(--navy-deep);margin:3px 0}
+.off-card a{color:var(--navy-deep);font-size:14px;margin-right:14px}
+.privacy-note{font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:14px;border-top:1px solid var(--border);padding-top:12px}
+@media(max-width:680px){.tracks{grid-template-columns:1fr}.callout h2{font-size:25px}}
+
+</style>
+</head><body>
+<div class="top-stripe"></div>
+<div class="topbar"><div class="topbar-inner">
+<a class="brand" href="index.html"><span class="brand-q">Q</span><span class="brand-name">The Q Collective</span></a>
+<button class="menu-btn" aria-label="Open menu" onclick="document.getElementById('navov').classList.add('open')"><span class="bars"><span></span><span></span><span></span></span>Menu</button>
+</div></div>
+<div class="nav-overlay" id="navov">
+<div class="ov-brand"><b>Q</b> The Q Collective</div>
+<button class="nav-close" aria-label="Close menu" onclick="document.getElementById('navov').classList.remove('open')">&times;</button>
+<nav class="ov-links">
+<a href="index.html">Home</a>
+<a href="the-work.html">The Work</a>
+<a href="about.html">About</a>
+<a href="get-involved.html">Get Involved</a>
+<a href="work-with-us.html">Work With Us</a>
+<a href="find-officials.html">Find Your Officials</a>
+<a href="request-advocacy.html">Request Advocacy</a>
+<a href="support-a-bill.html">Support a Bill</a>
+<a href="hub.html">Hub</a>
+<a href="how-q-scores-work.html">How Q Scores Work</a>
+<a href="contact.html">Contact</a>
+</nav>
+<div class="ov-foot">The Q Collective LLC &middot; Doctrine Policy Group</div>
+</div>
+<script>document.addEventListener('keydown',function(e){if(e.key==='Escape'){var o=document.getElementById('navov');if(o)o.classList.remove('open');}});</script>
+
+<section class="pagehead"><p class="ph-eyebrow">Join Us</p><h1>Get Involved</h1>
+<p>This work only matters if people show up for it. Here&rsquo;s how to lend your voice.</p></section>
+
+<div class="pagewrap">
+<p class="section-label">Citizen Advocate</p>
+<h2 class="section-title" style="margin-bottom:6px">Become a volunteer lobbyist.</h2>
+<div class="section-divider"></div>
+<p class="section-lead" style="max-width:760px">In Colorado, any resident can register as a volunteer lobbyist and speak directly to the legislature on the bills they care about. It&rsquo;s free, quick, and one of the most direct ways to be heard.</p>
+<div class="steps">
+<div class="step"><div class="snum">1</div><h4>Register</h4><p>Sign up as a volunteer lobbyist through the Colorado Senate &mdash; it takes just a few minutes.</p></div>
+<div class="step"><div class="snum">2</div><h4>Name your group</h4><p>When asked which organization you represent, list it exactly as <strong>The Q Collective / Doctrine Policy Group</strong>.</p></div>
+<div class="step"><div class="snum">3</div><h4>Speak up</h4><p>Weigh in on the bills that matter to you. New to it? Tell us &mdash; we&rsquo;ll help you find your footing.</p></div>
+</div>
+<p style="margin-top:26px"><a class="btn-gold" href="https://content.leg.colorado.gov/agencies/senate/volunteer-lobbyist" target="_blank" rel="noopener">Register with the Colorado Senate &rarr;</a></p>
+
+<p class="section-label" style="margin-top:46px">More Ways In</p>
+<h2 class="section-title" style="margin-bottom:6px">Make your voice count.</h2><div class="section-divider"></div>
+<div class="tracks">
+<div class="track"><h3>Find Your Officials</h3><p>See exactly who represents you &mdash; from your U.S. Senators to your Governor and Attorney General.</p><a class="card-link" href="find-officials.html">Look them up &rarr;</a></div>
+<div class="track"><h3>Contact Your Reps</h3><p>Tell your representatives how you feel about the issues that matter most. We&rsquo;ll help you reach them.</p><a class="card-link" href="find-officials.html">Find your reps &rarr;</a></div>
+<div class="track"><h3>Ask Us Anything</h3><p>Questions about a bill or an issue? Want advice on getting involved? Reach out &mdash; we&rsquo;re here for it.</p><a class="card-link" href="work-with-us.html">Get in touch &rarr;</a></div>
+<div class="track"><h3>Support a Bill</h3><p>Add your name behind the legislation you believe in, so lawmakers see real support.</p><a class="card-link" href="support-a-bill.html">Add your support &rarr;</a></div>
+</div>
+<div style="height:1px;background:var(--border);margin:48px 0"></div>
+
+<p class="section-label">Stay in the Loop</p>
+<h2 class="section-title" style="margin-bottom:6px">Tell us you&rsquo;re in.</h2>
+<div class="section-divider"></div>
+<p class="section-lead" style="max-width:640px">Updates on the bills, the Accountability Hub, and ways to help. No spam &mdash; just the work.</p>
+<form class="form" id="qform">
+<input type="hidden" name="access_key" value="da0f4760-ac24-433c-b27f-52058241488e">
+<input type="hidden" name="subject" value="New Get-Involved signup from theqcollective.org">
+<input type="hidden" name="from_name" value="The Q Collective Website">
+<div class="frow">
+<div class="field"><label for="g-name">Name</label><input id="g-name" type="text" name="name" required></div>
+<div class="field"><label for="g-email">Email</label><input id="g-email" type="email" name="email" required></div>
+</div>
+<div class="field"><label for="g-msg">Anything you&rsquo;d like us to know? (optional)</label><textarea id="g-msg" name="message" style="min-height:90px"></textarea></div>
+<button class="btn-gold" type="submit" style="border:none;cursor:pointer">Count Me In</button>
+<p class="formmsg" id="qmsg"></p>
+</form>
+</div>
+<div class="footer">
+
+  <!-- BALANCE STATEMENT -->
+  <div class="footer-balance">
+    <span class="footer-balance-label">Our Standard</span>
+    <p>We don't pick sides &mdash; we pick balance. Every bill we build or back has to work for everyone it touches: the worker <em>and</em> the business, the farmer <em>and</em> the grocer, the family <em>and</em> the future. Evidence over ideology. People over party. If it only wins by making someone lose, it isn't ready.</p>
+  </div>
+
+  <div class="footer-top">
+
+    <div class="footer-brand">
+      <div class="footer-logo">
+        The Q Collective
+        <span>DOCTRINE POLICY GROUP</span>
+      </div>
+      <div class="footer-tagline">
+        Policy built for people.<br>
+        Legislation that doesn't wait.<br>
+        Transformation, not tweaks.
+      </div>
+      <a href="https://www.youtube.com/@mavqinden" class="footer-social">&#9654;&nbsp; YouTube &mdash; @mavqinden</a>
+    </div>
+
+    <div class="footer-nav">
+
+      <div class="footer-col">
+        <div class="footer-col-title">Our Pages</div>
+        <div class="footer-links">
+          <a href="index.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>Home</a>
+          <a href="about.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>About Us</a>
+          <a href="the-work.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>The Work</a>
+<a href="get-involved.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>Get Involved</a>
+<a href="work-with-us.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>Work With Us</a>
+<a href="find-officials.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>Find Your Officials</a>
+<a href="support-a-bill.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>Support a Bill</a>
+          <a href="contact.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>Contact Us</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Our Legislation</div>
+        <div class="footer-links">
+          <a href="cesa-v15.pdf" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>CESA &mdash; Colorado Economic Security Act</a>
+          <a href="fwmra-v6.pdf" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>FWMRA &mdash; Fair Work &amp; Mutual Responsibility</a>
+          <a href="us-rapa.pdf" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>US-RAPA &mdash; Federal Democracy Act</a>
+          <a href="hub.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>Legislative Accountability Hub</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Find Your Reps</div>
+        <div class="footer-state-finder">
+          <label>Any state &mdash; jump to your legislature</label>
+          <select class="footer-state-select" aria-label="Find your state legislature" onchange="if(this.value){window.open(this.value,'_blank','noopener');this.selectedIndex=0;}">
+            <option value="">Choose your state&hellip;</option>
+            <option value="https://openstates.org/">Find by address (works for any state)</option>
+            <option value="https://www.legislature.state.al.us">Alabama</option>
+            <option value="https://www.akleg.gov">Alaska</option>
+            <option value="https://www.azleg.gov">Arizona</option>
+            <option value="https://arkleg.state.ar.us">Arkansas</option>
+            <option value="https://www.legislature.ca.gov">California</option>
+            <option value="https://leg.colorado.gov">Colorado</option>
+            <option value="https://www.cga.ct.gov">Connecticut</option>
+            <option value="https://legis.delaware.gov">Delaware</option>
+            <option value="https://www.leg.state.fl.us">Florida</option>
+            <option value="https://www.legis.ga.gov">Georgia</option>
+            <option value="https://www.capitol.hawaii.gov">Hawaii</option>
+            <option value="https://legislature.idaho.gov">Idaho</option>
+            <option value="https://www.ilga.gov">Illinois</option>
+            <option value="https://iga.in.gov">Indiana</option>
+            <option value="https://www.legis.iowa.gov">Iowa</option>
+            <option value="https://www.kslegislature.gov">Kansas</option>
+            <option value="https://legislature.ky.gov">Kentucky</option>
+            <option value="https://www.legis.la.gov">Louisiana</option>
+            <option value="https://legislature.maine.gov">Maine</option>
+            <option value="https://mgaleg.maryland.gov">Maryland</option>
+            <option value="https://malegislature.gov">Massachusetts</option>
+            <option value="https://www.legislature.mi.gov">Michigan</option>
+            <option value="https://www.leg.mn.gov">Minnesota</option>
+            <option value="https://www.legislature.ms.gov">Mississippi</option>
+            <option value="https://www.house.mo.gov">Missouri</option>
+            <option value="https://www.leg.mt.gov">Montana</option>
+            <option value="https://nebraskalegislature.gov">Nebraska</option>
+            <option value="https://www.leg.state.nv.us">Nevada</option>
+            <option value="https://gencourt.state.nh.us">New Hampshire</option>
+            <option value="https://www.njleg.gov">New Jersey</option>
+            <option value="https://www.nmlegis.gov">New Mexico</option>
+            <option value="https://www.nysenate.gov">New York</option>
+            <option value="https://www.ncleg.gov">North Carolina</option>
+            <option value="https://www.ndlegis.gov">North Dakota</option>
+            <option value="https://www.legislature.ohio.gov">Ohio</option>
+            <option value="https://www.oklegislature.gov">Oklahoma</option>
+            <option value="https://www.oregonlegislature.gov">Oregon</option>
+            <option value="https://www.legis.state.pa.us">Pennsylvania</option>
+            <option value="https://www.rilegislature.gov">Rhode Island</option>
+            <option value="https://www.scstatehouse.gov">South Carolina</option>
+            <option value="https://sdlegislature.gov">South Dakota</option>
+            <option value="https://www.capitol.tn.gov">Tennessee</option>
+            <option value="https://capitol.texas.gov">Texas</option>
+            <option value="https://le.utah.gov">Utah</option>
+            <option value="https://legislature.vermont.gov">Vermont</option>
+            <option value="https://virginiageneralassembly.gov">Virginia</option>
+            <option value="https://leg.wa.gov">Washington</option>
+            <option value="https://www.wvlegislature.gov">West Virginia</option>
+            <option value="https://legis.wisconsin.gov">Wisconsin</option>
+            <option value="https://www.wyoleg.gov">Wyoming</option>
+            <option value="https://dccouncil.gov">District of Columbia</option>
+          </select>
+        </div>
+        <div class="footer-links">
+          <a href="https://leg.colorado.gov/find-my-legislator" class="footer-link"><span class="dot"></span>Find Your CO Legislator <span class="ext">&#8599;</span></a>
+          <a href="https://www.house.gov/representatives/find-your-representative" class="footer-link"><span class="dot"></span>Find Your US Rep <span class="ext">&#8599;</span></a>
+          <a href="https://www.senate.gov/senators/" class="footer-link"><span class="dot"></span>US Senators <span class="ext">&#8599;</span></a>
+          <a href="contact.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>Contact Your Reps (Q Collective Guide)</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Colorado Officials</div>
+        <div class="footer-links">
+          <a href="https://governorsoffice.colorado.gov/governor/contact-us" class="footer-link"><span class="dot"></span>Governor's Office <span class="ext">&#8599;</span></a>
+          <a href="https://coag.gov/about-us/contact-colorado-office-attorney-general/" class="footer-link"><span class="dot"></span>Attorney General <span class="ext">&#8599;</span></a>
+          <a href="https://treasury.colorado.gov/contact-us" class="footer-link"><span class="dot"></span>State Treasurer <span class="ext">&#8599;</span></a>
+          <a href="https://coloradosos.gov/pubs/info_center/contact.html" class="footer-link"><span class="dot"></span>Secretary of State <span class="ext">&#8599;</span></a>
+          <a href="https://leg.colorado.gov" class="footer-link"><span class="dot"></span>Colorado General Assembly <span class="ext">&#8599;</span></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Resources</div>
+        <div class="footer-links">
+          <a href="https://legiscan.com" class="footer-link"><span class="dot"></span>LegiScan &mdash; Bill Data <span class="ext">&#8599;</span></a>
+          <a href="https://leg.colorado.gov/schedule" class="footer-link"><span class="dot"></span>CO Legislative Schedule <span class="ext">&#8599;</span></a>
+          <a href="https://leg.colorado.gov/watch-and-listen" class="footer-link"><span class="dot"></span>Watch CO Hearings Live <span class="ext">&#8599;</span></a>
+          <a href="https://www.congress.gov" class="footer-link"><span class="dot"></span>Congress.gov &mdash; Federal Bills <span class="ext">&#8599;</span></a>
+          <a href="https://www.usa.gov/elected-officials" class="footer-link"><span class="dot"></span>Find Any US Elected Official <span class="ext">&#8599;</span></a>
+          <a href="https://votesmart.org" class="footer-link"><span class="dot"></span>VoteSmart &mdash; Official Profiles <span class="ext">&#8599;</span></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      Published by The Q Collective LLC / Doctrine Policy Group &nbsp;&middot;&nbsp;
+      <a href="mailto:team@theQcollective.org">team&#64;theQcollective.org</a> &nbsp;&middot;&nbsp;
+      Legislative data: <a href="https://legiscan.com">LegiScan</a> CC BY 4.0
+    </div>
+    <div class="footer-bottom-right">
+<a href="about.html" class="footer-bottom-link" onclick="return goTo(event, this.href)">About</a>
+<span class="footer-sep">&middot;</span>
+<a href="contact.html" class="footer-bottom-link" onclick="return goTo(event, this.href)">Contact</a>
+</div>
+  </div>
+</div>
+<script>
+function goTo(e, url){ try{ if(window.top && window.top!==window.self){ window.top.location.href=url; } else { window.location.href=url; } if(e && e.preventDefault) e.preventDefault(); return false; }catch(err){ return true; } }
+</script><script>
+
+(function(){var f=document.getElementById('qform'),m=document.getElementById('qmsg');if(!f)return;
+f.addEventListener('submit',function(e){e.preventDefault();m.textContent='Sending...';m.style.color='#8a8a8a';
+fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)}).then(function(r){return r.json();})
+.then(function(d){if(d.success){f.reset();m.textContent='Thank you \u2014 you\u2019re on the list.';m.style.color='#2e7d32';}
+else{m.textContent='Something went wrong. Please email team@theQcollective.org.';m.style.color='#c0392b';}})
+.catch(function(){m.textContent='Something went wrong. Please email team@theQcollective.org.';m.style.color='#c0392b';});});})();
+</script>
+</body></html>
