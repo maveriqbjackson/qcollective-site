@@ -1,0 +1,34 @@
+name: Q Score Engine
+
+on:
+  workflow_dispatch:            # run it by hand from the Actions tab
+  schedule:
+    - cron: "0 9 * * *"         # every day at 09:00 UTC
+
+permissions:
+  contents: write
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run the Q Score engine
+        env:
+          LEGISCAN_KEY: ${{ secrets.LEGISCAN_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          STATES: "CO"          # confirm on Colorado first, then change to "ALL" to score every state
+          # LIMIT: "5"          # uncomment to score only 5 legislators per state (cheap test)
+          # MODEL: "claude-sonnet-4-6"   # higher-quality scoring, higher cost (default is cheaper Haiku)
+        run: python score.py
+      - name: Commit updated scores
+        run: |
+          git config user.name  "q-score-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data
+          git diff --staged --quiet || git commit -m "Update Q Scores ($(date -u +%Y-%m-%d))"
+          git push
