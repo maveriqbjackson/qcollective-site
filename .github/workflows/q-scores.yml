@@ -27,7 +27,7 @@ jobs:
         env:
           LEGISCAN_KEY: ${{ secrets.LEGISCAN_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          STATES: "CO,US"        # <-- testing Congress alongside Colorado. Change to "ALL" for every state.
+          STATES: "CO"        # <-- testing Congress alongside Colorado. Change to "ALL" for every state.
           MODEL: "claude-sonnet-4-6"
         run: python score.py
 
