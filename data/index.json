@@ -1,4 +1,10 @@
 {
- "updated": "June 26, 2026 at 7:35 PM MDT",
- "states": []
+ "updated": "June 26, 2026 at 7:59 PM MDT",
+ "states": [
+  {
+   "code": "CO",
+   "name": "Colorado",
+   "count": 101
+  }
+ ]
 }
