@@ -1,0 +1,96 @@
+{
+  "_note": "You own this file. Edit it to correct officeholders or add photo URLs. The 'score' fields stay null until the executive & judicial scoring engines launch (Step 4). VERIFY current officeholders before relying on this \u2014 drafted from records current as of early 2026.",
+  "updated": "Verify officeholders",
+  "executive": [
+    {
+      "id": "potus",
+      "office": "President of the United States",
+      "name": "Donald J. Trump",
+      "photo": "",
+      "score": null,
+      "rubric": "Executive"
+    },
+    {
+      "id": "vpotus",
+      "office": "Vice President of the United States",
+      "name": "JD Vance",
+      "photo": "",
+      "score": null,
+      "rubric": "Executive"
+    }
+  ],
+  "judicial": [
+    {
+      "id": "roberts",
+      "office": "Chief Justice of the United States",
+      "name": "John G. Roberts Jr.",
+      "photo": "",
+      "score": null,
+      "rubric": "Judicial"
+    },
+    {
+      "id": "thomas",
+      "office": "Associate Justice",
+      "name": "Clarence Thomas",
+      "photo": "",
+      "score": null,
+      "rubric": "Judicial"
+    },
+    {
+      "id": "alito",
+      "office": "Associate Justice",
+      "name": "Samuel A. Alito Jr.",
+      "photo": "",
+      "score": null,
+      "rubric": "Judicial"
+    },
+    {
+      "id": "sotomayor",
+      "office": "Associate Justice",
+      "name": "Sonia Sotomayor",
+      "photo": "",
+      "score": null,
+      "rubric": "Judicial"
+    },
+    {
+      "id": "kagan",
+      "office": "Associate Justice",
+      "name": "Elena Kagan",
+      "photo": "",
+      "score": null,
+      "rubric": "Judicial"
+    },
+    {
+      "id": "gorsuch",
+      "office": "Associate Justice",
+      "name": "Neil M. Gorsuch",
+      "photo": "",
+      "score": null,
+      "rubric": "Judicial"
+    },
+    {
+      "id": "kavanaugh",
+      "office": "Associate Justice",
+      "name": "Brett M. Kavanaugh",
+      "photo": "",
+      "score": null,
+      "rubric": "Judicial"
+    },
+    {
+      "id": "barrett",
+      "office": "Associate Justice",
+      "name": "Amy Coney Barrett",
+      "photo": "",
+      "score": null,
+      "rubric": "Judicial"
+    },
+    {
+      "id": "jackson",
+      "office": "Associate Justice",
+      "name": "Ketanji Brown Jackson",
+      "photo": "",
+      "score": null,
+      "rubric": "Judicial"
+    }
+  ]
+}
