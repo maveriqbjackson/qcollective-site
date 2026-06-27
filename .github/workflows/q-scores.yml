@@ -21,7 +21,7 @@ jobs:
         env:
           LEGISCAN_KEY: ${{ secrets.LEGISCAN_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          STATES: "US"          # confirm on Colorado first, then change to "ALL" to score every state
+          STATES: "CO,US"          # confirm on Colorado first, then change to "ALL" to score every state
           # LIMIT: "5"          # uncomment to score only 5 legislators per state (cheap test)
           # MODEL: "claude-sonnet-4-6"   # higher-quality scoring, higher cost (default is cheaper Haiku)
         run: python score.py
