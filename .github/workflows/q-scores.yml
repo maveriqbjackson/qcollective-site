@@ -1,34 +1,46 @@
 name: Q Score Engine
 
 on:
-  workflow_dispatch:            # run it by hand from the Actions tab
+  workflow_dispatch:
   schedule:
-    - cron: "0 9 * * *"         # every day at 09:00 UTC
+    - cron: "0 9 * * *"        # daily at 09:00 UTC
 
 permissions:
   contents: write
 
+# never let two engine runs save at the same time
+concurrency:
+  group: q-score-engine
+  cancel-in-progress: false
+
 jobs:
   score:
     runs-on: ubuntu-latest
-    timeout-minutes: 330
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
       - name: Run the Q Score engine
         env:
           LEGISCAN_KEY: ${{ secrets.LEGISCAN_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          STATES: "CO,US"          # confirm on Colorado first, then change to "ALL" to score every state
-          # LIMIT: "5"          # uncomment to score only 5 legislators per state (cheap test)
-          # MODEL: "claude-sonnet-4-6"   # higher-quality scoring, higher cost (default is cheaper Haiku)
+          STATES: "CO,US"        # <-- testing Congress alongside Colorado. Change to "ALL" for every state.
+          MODEL: "claude-sonnet-4-6"
         run: python score.py
+
       - name: Commit updated scores
         run: |
-          git config user.name  "q-score-bot"
-          git config user.email "actions@users.noreply.github.com"
+          git config user.name "q-score-bot"
+          git config user.email "q-score-bot@users.noreply.github.com"
           git add data
-          git diff --staged --quiet || git commit -m "Update Q Scores ($(date -u +%Y-%m-%d))"
+          if git diff --cached --quiet; then
+            echo "No score changes to commit."
+            exit 0
+          fi
+          git commit -m "Update Q Scores ($(date -u +%Y-%m-%d))"
+          # pull anything that landed on main while we were scoring, then save
+          git pull --rebase --autostash origin main
           git push
