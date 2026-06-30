@@ -1,0 +1,810 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Legislative Accountability Hub — The Q Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  :root {
+    --navy: #1B3A6B; --navy-deep: #122848; --navy-mid: #243f72;
+    --gold: #B8962E; --gold-light: #D4AF50; --gold-pale: #F5EDD4;
+    --white: #FFFFFF; --off-white: #F9F6F0; --off-white2: #F2EFE8;
+    --text: #1a1a1a; --text-light: #4a4a4a; --text-muted: #5a5a5a; --border: #E0D5BE;
+  }
+  body { background: var(--off-white); font-family: 'DM Sans', sans-serif; color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; margin: 0; }
+
+  .top-stripe { height: 5px; background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%); }
+
+  /* TOP BAR */
+  .topbar { position: sticky; top: 0; z-index: 50; background: rgba(18,40,72,0.97); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(184,150,46,0.25); }
+  .topbar-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; gap: 16px; }
+  .brand { display: flex; align-items: baseline; gap: 10px; }
+  .brand-q { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 26px; color: var(--gold-light); line-height: 1; }
+  .brand-name { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--white); }
+  .topnav { display: flex; align-items: center; gap: 26px; }
+  .topnav a { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+  .topnav a:hover { color: var(--gold-light); }
+  .topnav .nav-cta { background: var(--gold); color: var(--navy-deep); padding: 9px 16px; border-radius: 4px; font-weight: 500; }
+  .topnav .nav-cta:hover { background: var(--gold-light); color: var(--navy-deep); }
+
+  /* HERO */
+  .hero { background: var(--navy-deep); position: relative; overflow: hidden; padding: 92px 32px 84px; }
+  .hero-wm { position: absolute; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 640px; line-height: 1; color: rgba(255,255,255,0.06); top: -120px; right: -60px; pointer-events: none; user-select: none; z-index: 0; }
+  .hero-wm2 { position: absolute; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 240px; line-height: 1; color: rgba(184,150,46,0.08); bottom: -50px; left: -10px; pointer-events: none; user-select: none; z-index: 0; }
+  .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-light); opacity: 0.9; margin-bottom: 22px; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 6.5vw, 82px); font-weight: 900; color: var(--white); line-height: 1.0; margin-bottom: 26px; max-width: 16ch; }
+  .hero h1 span { color: var(--gold-light); }
+  .hero-sub { font-size: clamp(16px, 2vw, 20px); color: rgba(255,255,255,0.72); max-width: 620px; line-height: 1.75; margin-bottom: 18px; }
+  .hero-org { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 1px; color: rgba(255,255,255,0.5); margin-bottom: 38px; }
+  .hero-org strong { color: var(--gold-light); font-weight: 500; }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-gold { display: inline-block; background: var(--gold); color: var(--navy-deep); font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 16px 34px; text-decoration: none; transition: background 0.2s, transform 0.15s; cursor: pointer; border: none; border-radius: 4px; }
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline { display: inline-block; border: 1px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.85); font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; padding: 16px 34px; text-decoration: none; transition: border-color 0.2s, color 0.2s; cursor: pointer; border-radius: 4px; background: transparent; }
+  .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
+
+  /* COMING SOON STRIP */
+  .soon { background: var(--gold); color: var(--navy-deep); text-align: center; padding: 14px 24px; font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
+
+  /* STATS */
+  .stats { background: var(--navy); padding: 0; }
+  .stats-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat { padding: 38px 24px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1); }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: clamp(34px, 4vw, 46px); font-weight: 900; color: var(--gold-light); line-height: 1; margin-bottom: 8px; }
+  .stat-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.7); line-height: 1.5; }
+
+  /* SECTION SHELL */
+  .section { padding: 84px 32px; position: relative; overflow: hidden; }
+  .section-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(30px, 4.5vw, 50px); font-weight: 700; color: var(--navy-deep); line-height: 1.12; margin-bottom: 18px; }
+  .section-divider { width: 52px; height: 3px; background: var(--gold); margin-bottom: 34px; }
+  .section-lead { font-size: 17px; color: var(--text-light); line-height: 1.85; max-width: 720px; }
+  .section-lead strong { color: var(--text); font-weight: 600; }
+
+  .mission { background: var(--off-white); }
+  .mission-wm { position: absolute; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 480px; color: rgba(27,58,107,0.04); top: -60px; right: -40px; pointer-events: none; user-select: none; }
+  .standard { margin-top: 34px; background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--gold); padding: 28px 32px; max-width: 760px; }
+  .standard p { font-family: 'Playfair Display', serif; font-size: 19px; font-style: italic; color: var(--navy-deep); line-height: 1.55; }
+
+  /* WORK GRID */
+  .work { background: var(--white); border-top: 1px solid var(--border); }
+  .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--border); margin-top: 40px; }
+  .work-card { background: var(--off-white); padding: 34px 32px; }
+  .work-card .wtag { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .work-card h3 { font-family: 'Playfair Display', serif; font-size: 23px; font-weight: 700; color: var(--navy-deep); line-height: 1.2; margin-bottom: 10px; }
+  .work-card p { font-size: 14.5px; color: var(--text-light); line-height: 1.7; }
+  .work-card .wmeta { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-muted); margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+
+  /* PILLARS */
+  .pillars { background: var(--navy-deep); }
+  .pillars-wm { position: absolute; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 520px; color: rgba(184,150,46,0.07); top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; user-select: none; }
+  .pillars .section-label { color: var(--gold-light); opacity: 0.9; }
+  .pillars .section-title { color: var(--white); }
+  .pillars-sub { font-size: 16px; color: rgba(255,255,255,0.66); max-width: 640px; margin-bottom: 40px; }
+  .pillar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; }
+  .pillar { background: rgba(255,255,255,0.04); border-top: 3px solid var(--gold); padding: 22px 14px; text-align: center; min-height: 150px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+  .pillar-num { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 900; color: var(--gold-light); line-height: 1; margin-bottom: 12px; }
+  .pillar-name { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; color: var(--white); line-height: 1.35; }
+
+  /* COMPARE */
+  .compare { background: var(--off-white2); }
+  .compare-sub { font-size: 17px; color: var(--text-light); line-height: 1.85; max-width: 760px; margin-bottom: 14px; }
+  .compare-note { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-muted); margin-bottom: 36px; max-width: 760px; line-height: 1.6; }
+  .ctable { background: var(--white); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: 0 10px 30px rgba(18,40,72,0.06); }
+  .crow { display: grid; grid-template-columns: 1.1fr 1.3fr 1.3fr; }
+  .crow > div { padding: 18px 20px; border-bottom: 1px solid var(--border); font-size: 14px; line-height: 1.55; }
+  .crow:last-child > div { border-bottom: none; }
+  .crow .clabel { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.5px; text-transform: uppercase; color: var(--navy); background: var(--off-white); font-weight: 500; display: flex; align-items: center; }
+  .crow .c-fw { color: var(--text); border-left: 3px solid var(--gold); background: #FCFAF3; }
+  .crow.chead > div { background: var(--navy-deep); color: var(--white); border-bottom: none; padding: 20px; }
+  .crow.chead .clabel { background: var(--navy-deep); color: rgba(255,255,255,0.55); }
+  .crow.chead .c-fw { color: var(--gold-light); border-left: 3px solid var(--gold); background: var(--navy-deep); font-weight: 700; }
+  .chead .ctitle { font-family: 'Playfair Display', serif; font-size: 18px; line-height: 1.25; }
+  .chead .csub { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; opacity: 0.7; margin-top: 4px; }
+  .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
+  .why-card { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--gold); padding: 26px 24px; }
+  .why-card h4 { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--navy-deep); margin-bottom: 8px; }
+  .why-card p { font-size: 14px; color: var(--text-light); line-height: 1.65; }
+
+  /* REPS */
+  .reps { background: var(--white); border-top: 1px solid var(--border); }
+  .reps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 36px; align-items: start; }
+  .reps-card { background: var(--off-white); border: 1px solid var(--border); padding: 30px 32px; }
+  .reps-card h3 { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--navy-deep); margin-bottom: 8px; }
+  .reps-card p { font-size: 14px; color: var(--text-light); line-height: 1.65; margin-bottom: 18px; }
+  .reps-select { width: 100%; font-family: 'DM Sans', sans-serif; font-size: 15px; padding: 14px 16px; border: 1px solid var(--border); background: var(--white); color: var(--text); border-radius: 6px; cursor: pointer; }
+  .reps-select:focus { outline: none; border-color: var(--gold); }
+  .reps-fed { list-style: none; padding: 0; margin: 16px 0 0; }
+  .reps-fed li { padding: 0; }
+  .reps-fed a { display: flex; align-items: center; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--navy); text-decoration: none; transition: color 0.2s; }
+  .reps-fed li:last-child a { border-bottom: none; }
+  .reps-fed a:hover { color: var(--gold); }
+  .reps-fed .ext { margin-left: auto; color: var(--gold); font-size: 12px; }
+
+  /* CONTACT */
+  .contact { background: var(--navy-deep); position: relative; overflow: hidden; text-align: center; }
+  .contact-wm { position: absolute; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 520px; color: rgba(255,255,255,0.04); top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; user-select: none; }
+  .contact-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+  .contact .section-label { color: var(--gold-light); opacity: 0.9; }
+  .contact h2 { font-family: 'Playfair Display', serif; font-size: clamp(30px, 4.5vw, 48px); font-weight: 700; color: var(--white); line-height: 1.12; margin-bottom: 16px; }
+  .contact h2 span { color: var(--gold-light); }
+  .contact-lead { font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 38px; }
+  .contact-methods { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .cmethod { background: rgba(255,255,255,0.05); border: 1px solid rgba(184,150,46,0.3); border-radius: 8px; padding: 24px 32px; min-width: 240px; text-decoration: none; transition: border-color 0.2s, background 0.2s; }
+  .cmethod:hover { border-color: var(--gold-light); background: rgba(255,255,255,0.08); }
+  .cmethod-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px; }
+  .cmethod-value { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); }
+  .cmethod-note { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 6px; }
+
+  /* FOOTER */
+  .lp-footer { background: #0d1f3a; padding: 36px 32px; text-align: center; }
+  .lp-footer .brand { justify-content: center; margin-bottom: 14px; }
+  .lp-footer p { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.8; }
+  .lp-footer a { color: var(--gold-light); text-decoration: none; }
+
+  .bottom-stripe { height: 5px; background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%); }
+
+  @media (max-width: 900px) {
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(2) { border-right: none; }
+    .pillar-grid { grid-template-columns: repeat(3, 1fr); }
+    .work-grid { grid-template-columns: 1fr; }
+    .why { grid-template-columns: 1fr; }
+    .reps-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 680px) {
+    .topnav { display: none; }
+    .hero { padding: 64px 22px 60px; }
+    .section { padding: 60px 22px; }
+    .pillar-grid { grid-template-columns: repeat(2, 1fr); }
+    .crow { grid-template-columns: 1fr; }
+    .crow > div { border-bottom: 1px solid var(--border); }
+    .crow .clabel { background: var(--navy-deep); color: var(--gold-light); }
+    .crow .c-fw::before { content: 'Fair Work Act — '; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
+    .crow.chead { display: none; }
+    .hero-wm, .hero-wm2, .mission-wm, .pillars-wm, .contact-wm { display: none; }
+  }
+  section[id] { scroll-margin-top: 76px; }
+  .work-card .card-link { display:inline-block; margin-top:14px; font-family:'DM Mono',monospace; font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); text-decoration:none; border-bottom:1px solid transparent; transition:border-color 0.2s; }
+  .work-card .card-link:hover { border-bottom-color:var(--gold); }
+  /* NEWSLETTER SIGNUP */
+  .signup { background: var(--gold); padding: 66px 32px; text-align: center; }
+  .signup-inner { max-width: 640px; margin: 0 auto; }
+  .signup-eyebrow { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--navy-deep); opacity:0.7; margin-bottom:12px; }
+  .signup-title { font-family:'Playfair Display',serif; font-size:clamp(28px,4vw,44px); font-weight:700; color:var(--navy-deep); line-height:1.1; margin-bottom:14px; }
+  .signup-sub { font-size:16px; color:#3a2e0a; line-height:1.7; margin-bottom:28px; }
+  .signup-form { display:flex; gap:10px; max-width:480px; margin:0 auto; flex-wrap:wrap; justify-content:center; }
+  .signup-input { flex:1; min-width:220px; font-family:'DM Sans',sans-serif; font-size:15px; padding:15px 18px; border:none; border-radius:6px; background:#fff; color:var(--text); }
+  .signup-input:focus { outline:2px solid var(--navy-deep); }
+  .signup-btn { font-family:'DM Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; font-weight:500; padding:15px 28px; border:none; border-radius:6px; background:var(--navy-deep); color:var(--gold-light); cursor:pointer; transition:background 0.2s; }
+  .signup-btn:hover { background:var(--navy); }
+  .signup-btn:disabled { opacity:0.6; cursor:default; }
+  .signup-msg { margin-top:16px; font-size:14px; color:var(--navy-deep); font-weight:500; }
+  .signup-success { margin-top:6px; font-family:'Playfair Display',serif; font-size:19px; font-style:italic; color:var(--navy-deep); }
+  @media (max-width:680px){ .signup { padding:48px 22px; } }
+
+/* ===== your footer styles ===== */
+  .footer {
+    background: #0f2347;
+    border-top: 1px solid rgba(184,150,46,0.2);
+    padding: 40px 40px 24px;
+  }
+
+  /* -- BALANCE STATEMENT BAND -- */
+  .footer-balance {
+    max-width: 760px;
+    margin: 0 auto 36px;
+    padding: 0 0 30px;
+    border-bottom: 1px solid rgba(184,150,46,0.18);
+    text-align: center;
+  }
+  .footer-balance-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #B8962E;
+    display: block;
+    margin-bottom: 14px;
+  }
+  .footer-balance p {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.8);
+  }
+  .footer-balance em { color: #D4AF50; font-style: italic; }
+
+  .footer-top {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+
+  .footer-brand {
+    flex: 0 0 auto;
+    max-width: 240px;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #D4AF50;
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+
+  .footer-logo span { color: rgba(255,255,255,0.5); font-size: 11px; font-family: 'DM Mono', monospace; font-weight: 400; display: block; margin-top: 6px; letter-spacing: 1.5px; }
+
+  .footer-tagline {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+
+  .footer-social {
+    display: inline-block;
+    margin-top: 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    border: 1px solid rgba(184,150,46,0.3);
+    padding: 6px 12px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .footer-social:hover { color: #D4AF50; border-color: #D4AF50; }
+
+  .footer-nav {
+    flex: 1;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .footer-col { flex: 1; min-width: 150px; }
+
+  .footer-col-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #B8962E;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(184,150,46,0.2);
+  }
+
+  /* -- STATE FINDER DROPDOWN -- */
+  .footer-state-finder { margin-bottom: 16px; }
+  .footer-state-finder label {
+    display: block;
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .footer-state-select {
+    width: 100%;
+    background: #0a1c3a;
+    color: #D4AF50;
+    border: 1px solid rgba(184,150,46,0.4);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    padding: 9px 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #B8962E 50%), linear-gradient(135deg, #B8962E 50%, transparent 50%);
+    background-position: calc(100% - 16px) center, calc(100% - 11px) center;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+  }
+  .footer-state-select:focus { outline: none; border-color: #D4AF50; }
+  .footer-state-select option { background: #0f2347; color: #fff; }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .footer-link {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px 0;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .footer-link:last-child { border-bottom: none; }
+  .footer-link:hover { color: #D4AF50; }
+
+  .footer-link .dot {
+    width: 5px; height: 5px;
+    background: rgba(184,150,46,0.4);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .footer-link .ext {
+    font-size: 9px;
+    color: rgba(255,255,255,0.2);
+    font-family: 'DM Mono', monospace;
+    margin-left: auto;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .footer-bottom-left {
+    font-size: 11px;
+    color: rgba(255,255,255,0.25);
+    font-family: 'DM Mono', monospace;
+    line-height: 1.6;
+  }
+
+  .footer-bottom-left a { color: #B8962E; text-decoration: none; }
+
+  .footer-bottom-right {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-bottom-link {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    transition: color 0.2s;
+  }
+  .footer-bottom-link:hover { color: #D4AF50; }
+
+  .footer-sep {
+    color: rgba(255,255,255,0.1);
+    font-size: 11px;
+  }
+
+  @media (max-width: 768px) {
+    .footer { padding: 32px 20px 20px; }
+    .footer-balance p { font-size: 14px; }
+    .footer-top { gap: 28px; }
+    .footer-brand { max-width: 100%; }
+    .footer-nav { gap: 20px; }
+    .footer-col { min-width: 100%; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+  }
+
+/* ===== interior-page helpers (uses your brand variables) ===== */
+.pagehead{background:var(--navy-deep);color:#fff;text-align:center;padding:40px 24px 32px;position:relative;overflow:hidden}
+.pagehead .ph-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-light)}
+.pagehead h1{font-family:'Playfair Display',serif;font-size:34px;color:#fff;margin:10px 0 0;line-height:1.15}
+.pagehead p{max-width:64ch;margin:9px auto 0;color:rgba(255,255,255,.82);font-size:16px;line-height:1.6}
+.pagewrap{max-width:1080px;margin:0 auto;padding:60px 32px}
+.narrow{max-width:780px}
+.center{text-align:center}
+.prose h2{font-family:'Playfair Display',serif;color:var(--navy-deep);font-size:30px;margin:36px 0 12px}
+.prose .plabel{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-top:30px}
+.prose p{font-size:18px;color:var(--text);line-height:1.8;margin-bottom:16px}
+.prose strong{color:var(--navy-deep)}
+.q-quote{border-left:3px solid var(--gold);padding:8px 0 8px 22px;margin:26px 0;font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:var(--navy-deep);line-height:1.6}
+.factbox{background:var(--off-white);border:1px solid var(--border);border-radius:8px;padding:22px 26px;margin:22px 0}
+.factbox p{margin:8px 0;font-size:16px;color:var(--text)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px}
+.step{background:var(--off-white);border:1px solid var(--border);border-top:3px solid var(--gold);padding:24px}
+.step .snum{font-family:'Playfair Display',serif;font-size:34px;color:var(--gold);font-weight:700;line-height:1}
+.step h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy-deep);margin:8px 0}
+.step p{font-size:14.5px;color:var(--text-light);line-height:1.65;margin:0}
+.form{max-width:640px;background:var(--off-white);border:1px solid var(--border);border-radius:10px;padding:30px}
+.form .frow{display:flex;gap:16px}.form .frow>*{flex:1}
+.field{margin-bottom:16px}
+.field label{display:block;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--navy-deep);margin-bottom:6px}
+.field input,.field textarea{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:16px;background:var(--white);color:var(--text)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+.field textarea{min-height:140px;resize:vertical}
+.formmsg{margin-top:14px;font-weight:600;font-family:'DM Sans',sans-serif}
+.formnote{font-size:13.5px;color:var(--text-muted);margin-top:8px}
+.topnav a.active{color:var(--gold-light)}
+.qcard-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);border:1px solid var(--border);margin-top:26px}
+@media(max-width:760px){.steps,.qcard-grid{grid-template-columns:1fr}.form .frow{display:block}}
+
+
+/* ===== menu button + full-screen nav overlay (all screen sizes; scales as pages are added) ===== */
+.menu-btn{display:inline-flex;align-items:center;gap:9px;background:transparent;border:1px solid rgba(255,255,255,.30);color:#fff;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:9px 15px;border-radius:5px;cursor:pointer;transition:border-color .2s,background .2s}
+.menu-btn:hover{border-color:var(--gold);background:rgba(184,150,46,.14)}
+.menu-btn .bars{display:inline-flex;flex-direction:column;gap:3px}
+.menu-btn .bars span{width:17px;height:2px;background:var(--gold-light);display:block}
+.nav-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,35,71,.985);z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s ease}
+.nav-overlay.open{opacity:1;visibility:visible}
+.nav-overlay .nav-close{position:absolute;top:20px;right:28px;background:none;border:none;color:#fff;font-size:42px;line-height:1;cursor:pointer;transition:color .2s}
+.nav-overlay .nav-close:hover{color:var(--gold-light)}
+.nav-overlay .ov-brand{position:absolute;top:24px;left:32px;font-family:'Playfair Display',serif;color:#fff;font-size:20px}
+.nav-overlay .ov-brand b{color:var(--gold-light)}
+.ov-links{-webkit-column-count:2;column-count:2;-webkit-column-gap:54px;column-gap:54px;max-width:520px;width:100%;margin:0 auto}
+.ov-links a{display:block;-webkit-column-break-inside:avoid;break-inside:avoid;font-family:'Playfair Display',serif;font-size:25px;font-weight:700;color:#fff;text-decoration:none;padding:7px 4px;transition:color .2s;text-align:center}
+.ov-links a:hover{color:var(--gold-light)}
+.ov-foot{position:absolute;bottom:26px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5)}.ov-featured{display:block;margin:34px auto 0;max-width:520px;width:calc(100% - 64px);text-align:center;background:var(--gold);color:var(--navy-deep);font-family:'Playfair Display',serif;font-weight:700;font-size:19px;text-decoration:none;padding:17px 22px;border-radius:7px;border:1px solid var(--gold-light);transition:background .2s,transform .15s}.ov-featured .ovf-slash{color:var(--navy-mid);font-style:italic;margin:0 2px}.ov-featured .ovf-sub{display:block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;font-weight:500;color:var(--navy-mid);margin-top:7px}.ov-featured:hover{background:var(--gold-light);transform:translateY(-1px)}
+
+/* ===== responsive ===== */
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr !important}}
+@media(max-width:680px){
+.pagehead h1{font-size:27px}.pagehead{padding:30px 18px 26px}
+.pagewrap{padding:44px 20px}.section-title{font-size:28px}
+.steps{grid-template-columns:1fr}.qcard-grid{grid-template-columns:1fr}
+.footer-top{flex-direction:column;gap:24px}.form{padding:22px}
+.ov-links{-webkit-column-count:1;column-count:1;max-width:300px}.ov-links a{font-size:21px}.ov-featured{max-width:300px;font-size:16px}
+}
+
+
+/* ===== phase-1 components ===== */
+.field select{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:16px;background:var(--white);color:var(--text)}
+.field select:focus{outline:none;border-color:var(--gold)}
+.tracks{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:28px 0}
+.track{background:var(--off-white);border:1px solid var(--border);border-left:3px solid var(--gold);padding:22px 24px}
+.track h3{font-family:'Playfair Display',serif;color:var(--navy-deep);font-size:20px;margin:0 0 6px}
+.track p{font-size:15px;color:var(--text-light);line-height:1.6;margin:0}
+.callout{background:var(--navy-deep);color:#fff;text-align:center;padding:56px 24px;position:relative}
+.callout h2{font-family:'Playfair Display',serif;color:#fff;font-size:30px;margin:0 0 10px}
+.callout p{max-width:620px;margin:0 auto 22px;color:rgba(255,255,255,.82);font-size:17px;line-height:1.7}
+.lookup-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.lookup-row input{flex:1;min-width:220px;padding:12px 14px;border:1px solid var(--border);border-radius:6px;font-size:16px;font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text)}
+.off-results{margin-top:22px;display:grid;gap:12px}
+.off-card{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);padding:15px 18px}
+.off-card .role{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
+.off-card .nm{font-family:'Playfair Display',serif;font-size:19px;color:var(--navy-deep);margin:3px 0}
+.off-card a{color:var(--navy-deep);font-size:14px;margin-right:14px}
+.privacy-note{font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:14px;border-top:1px solid var(--border);padding-top:12px}
+@media(max-width:680px){.tracks{grid-template-columns:1fr}.callout h2{font-size:25px}}
+
+
+.hub-status{background:var(--off-white);border:1px solid var(--border);border-radius:8px;padding:18px 20px;color:var(--text-light);font-size:15px}
+.hub-updated{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.5px;color:var(--text-muted);margin:0 0 14px}
+.hub-search{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:8px;font-size:15px;font-family:'DM Sans',sans-serif;margin-bottom:18px}
+.hub-list{display:flex;flex-direction:column;gap:10px}
+
+  /* National officials strip */
+  .natstrip{background:var(--off-white);border-bottom:1px solid var(--border);padding:30px 0}
+  .natwrap{max-width:1120px;margin:0 auto;padding:0 32px}
+  .nat-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+  .nat-title{font-family:'Playfair Display',serif;font-size:25px;font-weight:700;color:var(--navy-deep);line-height:1.15;margin-bottom:6px}
+  .nat-note{font-size:13px;color:var(--text-light);line-height:1.6;margin-bottom:18px;max-width:680px}
+  .nat-note a{color:var(--gold);text-decoration:none;white-space:nowrap}
+  .nat-glabel{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);opacity:.55;margin:0 0 9px}
+  .nat-glabel.j{margin-top:18px}
+  .nat-cards{display:flex;flex-wrap:wrap;gap:9px}
+  .nat-card{display:flex;align-items:center;gap:9px;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:7px 11px 7px 7px;text-decoration:none;cursor:pointer;transition:border-color .15s,transform .12s,box-shadow .15s}
+  .nat-card:hover{border-color:var(--gold);transform:translateY(-1px);box-shadow:0 3px 10px rgba(18,40,72,.08)}
+  .nat-av{width:40px;height:40px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;background:var(--navy-deep);color:var(--gold-light);font-family:'Playfair Display',serif;font-weight:700;font-size:14px;overflow:hidden}
+  .nat-av img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+  .nat-info{min-width:0}
+  .nat-name{font-family:'Playfair Display',serif;font-size:13.5px;font-weight:700;color:var(--navy-deep);line-height:1.2;white-space:nowrap}
+  .nat-office{font-size:10.5px;color:var(--text-light);line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:155px}
+  .nat-soon{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--navy);background:var(--gold-pale);padding:3px 7px;border-radius:3px;flex:none}
+  .nat-score{font-family:'Playfair Display',serif;font-size:18px;font-weight:900;color:var(--gold);flex:none;padding-left:4px}
+  @media(max-width:640px){.natwrap{padding:0 18px}.nat-office{max-width:120px}}
+
+.hrow{display:grid;grid-template-columns:1fr auto;grid-template-areas:"main sc" "break break" "why why";gap:6px 14px;background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:8px;padding:14px 16px}
+.hmain{grid-area:main}.hname{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy-deep)}
+.hmeta{font-size:13px;color:var(--text-muted);margin-top:2px}
+.hsc{grid-area:sc;text-align:right}
+.hscore{font-family:'Playfair Display',serif;font-weight:700;font-size:26px;color:#fff;background:#7a7a7a;border-radius:8px;padding:2px 12px;display:inline-block;min-width:54px;text-align:center}
+.hscore.champ{background:#1a7d4a}.hscore.good{background:var(--navy-deep)}.hscore.mid{background:#B8962E}.hscore.low{background:#9a3b2e}
+.hlabel{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.5px;color:#1a7d4a;margin-top:4px}
+.hbreak{grid-area:break;display:flex;flex-wrap:wrap;gap:8px 16px;font-family:'DM Mono',monospace;font-size:11.5px;color:var(--text-light);border-top:1px solid var(--border);padding-top:8px}
+.hwhy{grid-area:why;font-size:14px;color:var(--text-light);font-style:italic}
+.hub-bills{display:flex;flex-direction:column;gap:8px}
+.brow{display:flex;gap:14px;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 14px}
+.bnum{font-family:'DM Mono',monospace;font-size:12px;color:#B8962E;white-space:nowrap;min-width:74px}
+.btitle{font-size:15px;color:var(--text)}.bstatus{font-size:12px;color:var(--text-muted);margin-top:3px}
+
+.hub-controls{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.hub-select{padding:11px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text)}
+.hub-controls .hub-search{margin:0;flex:1;min-width:200px}
+a.hrow{text-decoration:none;color:inherit;transition:border-color .15s,box-shadow .15s}
+a.hrow:hover{border-left-color:var(--navy-deep);box-shadow:0 3px 12px rgba(0,0,0,.07)}
+.hview{color:var(--navy-deep);font-weight:600}
+.q-champ{display:inline-flex;align-items:center;gap:5px;font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;font-weight:500;color:var(--navy-deep);background:linear-gradient(135deg,var(--gold-light),var(--gold));padding:4px 9px;border-radius:20px;animation:qglow 2.2s ease-in-out infinite;vertical-align:middle}.q-champ .star{font-size:11px;line-height:1}@keyframes qglow{0%,100%{box-shadow:0 0 6px 1px rgba(212,175,80,.5)}50%{box-shadow:0 0 15px 4px rgba(212,175,80,.85)}}@media(prefers-reduced-motion:reduce){.q-champ{animation:none;box-shadow:0 0 8px 2px rgba(212,175,80,.6)}}.why-q-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:16px 0 0}.view-toggle{display:inline-flex;border:1px solid var(--border);border-radius:8px;overflow:hidden}.vt-btn{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:11px 16px;border:0;background:var(--white);color:var(--text-muted);cursor:pointer}.vt-btn+.vt-btn{border-left:1px solid var(--border)}.vt-btn.active{background:var(--navy-deep);color:#fff}.tag-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:18px}.tag-chip{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.5px;text-transform:uppercase;padding:7px 13px;border:1px solid var(--border);border-radius:999px;background:var(--white);color:var(--text);cursor:pointer;transition:all .12s}.tag-chip:hover{border-color:var(--gold)}.tag-chip.active{background:var(--gold);border-color:var(--gold);color:var(--navy-deep);font-weight:600}.tag-clear{color:var(--text-muted);border-style:dashed}.tag-sep{width:1px;height:20px;background:var(--border);margin:0 4px}.hub-bills{display:grid;grid-template-columns:1fr 1fr;gap:10px}.bcard{display:flex;flex-direction:column;gap:6px;text-decoration:none;background:var(--white);border:1px solid var(--border);border-radius:9px;padding:14px 16px;transition:border-color .12s,transform .12s}.bcard:hover{border-color:var(--gold);transform:translateY(-1px)}.bc-top{display:flex;justify-content:space-between;align-items:center;gap:10px}.bc-num{font-family:'DM Mono',monospace;font-size:12px;color:#B8962E;font-weight:600}.bc-st{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;padding:3px 8px;border-radius:5px;white-space:nowrap}.bc-st.st-pass{background:#1a764d;color:#fff}.bc-st.st-fail{background:#822111;color:#fff}.bc-st.st-prog{background:var(--gold-pale);color:var(--navy-deep)}.bc-title{font-size:14.5px;color:var(--text);line-height:1.45}.bc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}.btag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.4px;text-transform:uppercase;color:var(--gold);background:var(--gold-pale);padding:2px 7px;border-radius:4px}.bill-count{font-family:'DM Mono',monospace;font-size:11px;color:var(--text-muted);margin:14px 0}.more-btn{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;background:var(--navy-deep);color:#fff;border:0;border-radius:8px;padding:12px 28px;cursor:pointer;margin-top:10px}.more-btn:hover{background:var(--navy-mid)}@media(max-width:640px){.hub-bills{grid-template-columns:1fr}}#hubBills{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}@media(max-width:640px){#hubBills{grid-template-columns:1fr}}</style>
+</head><body>
+<div class="top-stripe"></div>
+<div class="topbar"><div class="topbar-inner">
+<a class="brand" href="index.html"><span class="brand-q">Q</span><span class="brand-name">The Q Collective</span></a>
+<button class="menu-btn" aria-label="Open menu" onclick="document.getElementById('navov').classList.add('open')"><span class="bars"><span></span><span></span><span></span></span>Menu</button>
+</div></div>
+<div class="nav-overlay" id="navov">
+<div class="ov-brand"><b>Q</b> The Q Collective</div>
+<button class="nav-close" aria-label="Close menu" onclick="document.getElementById('navov').classList.remove('open')">&times;</button>
+<nav class="ov-links">
+<a href="index.html">Home</a>
+<a href="the-work.html">The Work</a>
+<a href="about.html">About</a>
+<a href="get-involved.html">Get Involved</a>
+<a href="work-with-us.html">Work With Us</a>
+<a href="find-officials.html">Find Your Officials</a>
+<a href="request-advocacy.html">Request Advocacy</a>
+<a href="support-a-bill.html">Support a Bill</a>
+<a href="hub.html">Accountability Hub</a>
+<a href="how-q-scores-work.html">How Q Scores Work</a>
+<a href="contact.html">Contact</a>
+</nav>
+<a class="ov-featured" href="anatomy.html">Anatomy of a Bill <span class="ovf-slash">/</span> From Thought to Law<span class="ovf-sub">See how a bill is built &mdash; and how you can start one</span></a>
+<div class="ov-foot">The Q Collective LLC &middot; Doctrine Policy Group</div>
+</div>
+<script>document.addEventListener('keydown',function(e){if(e.key==='Escape'){var o=document.getElementById('navov');if(o)o.classList.remove('open');}});</script>
+
+<section class="pagehead"><p class="ph-eyebrow">Accountability Tool</p><h1>Legislative Accountability Hub</h1>
+<p>Real bills. Real votes. One transparent score &mdash; so you can see exactly how your representatives serve the stability of everyday people.</p></section>
+
+<section class="natstrip">
+<div class="natwrap">
+<p class="nat-eyebrow">Every Branch, One Standard</p>
+<h2 class="nat-title">The Executive &amp; the Court</h2>
+<p class="nat-note">Accountability doesn&rsquo;t stop at the statehouse. Q Scores for these offices launch with our executive &amp; judicial scoring. <a href="how-q-scores-work.html">See how the scoring works &rarr;</a></p>
+<p class="nat-glabel">Executive Branch</p>
+<div class="nat-cards" id="natExec"></div>
+<p class="nat-glabel j">United States Supreme Court</p>
+<div class="nat-cards" id="natJud"></div>
+</div>
+</section>
+<script>
+(function(){
+  function ini(n){return (n||'').split(/\s+/).filter(Boolean).slice(0,2).map(function(w){return w.charAt(0);}).join('').toUpperCase();}
+  function card(p){
+    var av=p.photo?'<span class="nat-av"><img src="'+p.photo+'" alt=""></span>':'<span class="nat-av">'+ini(p.name)+'</span>';
+    var sc=(p.score===null||p.score===undefined||p.score==='')?'<span class="nat-soon">Score soon</span>':'<span class="nat-score">'+p.score+'</span>';
+    return '<a class="nat-card" href="national-profile.html?id='+encodeURIComponent(p.id||'')+'">'+av+'<div class="nat-info"><div class="nat-name">'+(p.name||'')+'</div><div class="nat-office">'+(p.office||'')+'</div></div>'+sc+'</a>';
+  }
+  function hide(){var s=document.querySelector('.natstrip');if(s)s.style.display='none';}
+  fetch('national.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(d){
+    if(!d||(!d.executive&&!d.judicial)){hide();return;}
+    var e=document.getElementById('natExec'),j=document.getElementById('natJud');
+    if(e&&d.executive)e.innerHTML=d.executive.map(card).join('');
+    if(j&&d.judicial)j.innerHTML=d.judicial.map(card).join('');
+  }).catch(hide);
+})();
+</script>
+
+
+<div class="pagewrap">
+<p class="section-label">What It Does</p>
+<h2 class="section-title" style="margin-bottom:6px">Politics you can actually check.</h2>
+<div class="section-divider"></div>
+<p class="section-lead" style="max-width:760px">The Hub scores how each lawmaker&rsquo;s record measures up against the seven pillars of life stability &mdash; the same principles at the heart of our work. We&rsquo;re live in Colorado now, with more states on the way.</p>
+<div id="hubStatus" class="hub-status">Connecting to the live tracker&hellip;</div>
+<div id="hubWrap" style="display:none">
+<div class="hub-controls">
+<select id="hubState" class="hub-select" onchange="loadState()"></select>
+<div class="view-toggle" id="viewToggle"><button type="button" data-mode="leg" class="vt-btn active" onclick="setMode('leg')">Legislators</button><button type="button" data-mode="bills" class="vt-btn" onclick="setMode('bills')">Bills</button><button type="button" data-mode="all" class="vt-btn" onclick="setMode('all')">All</button></div>
+<select id="hubParty" class="hub-select" onchange="renderAll()"><option value="">All parties</option><option>Democrat</option><option>Republican</option><option>Independent</option></select>
+<input id="hubSearch" class="hub-search" type="text" placeholder="Search by name or district&hellip;" oninput="renderAll()">
+</div>
+<div class="tag-bar" id="tagBar"></div>
+<p class="hub-updated" id="hubUpdated"></p>
+<div id="legSection"><p class="section-label" id="legHdr" style="display:none;margin-top:8px">Lawmakers</p><div id="hubList" class="hub-list"></div></div>
+<div id="billSection"><p class="section-label" style="margin-top:48px" id="billHdr">Every Bill</p>
+<h2 class="section-title" style="margin-bottom:6px">Bills we&rsquo;re tracking.</h2><div class="section-divider"></div>
+<div id="hubBills" class="hub-bills"></div>
+<div class="bill-count" id="billCount"></div>
+<div style="text-align:center"><button type="button" id="moreBtn" class="more-btn" style="display:none" onclick="showMore()">Show more bills</button></div></div>
+</div>
+<p style="margin-top:16px"><a href="how-q-scores-work.html">How every Q Score is calculated &rarr;</a></p>
+
+<p class="section-label" style="margin-top:44px">The Q Score</p>
+<h2 class="section-title" style="margin-bottom:6px">How the score works.</h2>
+<div class="section-divider"></div>
+<p class="section-lead" style="max-width:740px">Every score is built from four parts, openly. AI assists by reading each bill and its voting record; the formula stays fixed and public.</p>
+<div class="qcard-grid">
+<div class="work-card"><div class="wtag">40%</div><h3>Pillar Alignment</h3><p>How closely the bill and the lawmaker&rsquo;s position advance the seven pillars of life stability.</p></div>
+<div class="work-card"><div class="wtag">25%</div><h3>Attendance</h3><p>Whether the lawmaker shows up and votes on the bills that matter.</p></div>
+<div class="work-card"><div class="wtag">25%</div><h3>Citizen Impact</h3><p>The real, measurable effect of the legislation on everyday people&rsquo;s lives.</p></div>
+<div class="work-card"><div class="wtag">10%</div><h3>Sponsorship</h3><p>Whether the lawmaker leads &mdash; sponsoring and co-sponsoring legislation that helps.</p></div>
+</div>
+<div class="factbox" style="margin-top:24px"><p><strong>A score of 80 or higher</strong> earns the designation of <strong>Accountability Champion</strong> &mdash; a lawmaker whose record consistently serves the stability of the people they represent.</p></div>
+</div>
+<div class="footer">
+
+  <!-- BALANCE STATEMENT -->
+  <div class="footer-balance">
+    <span class="footer-balance-label">Our Standard</span>
+    <p>We don't pick sides &mdash; we pick balance. Every bill we build or back has to work for everyone it touches: the worker <em>and</em> the business, the farmer <em>and</em> the grocer, the family <em>and</em> the future. Evidence over ideology. People over party. If it only wins by making someone lose, it isn't ready.</p>
+  </div>
+
+  <div class="footer-top">
+
+    <div class="footer-brand">
+      <div class="footer-logo">
+        The Q Collective
+        <span>DOCTRINE POLICY GROUP</span>
+      </div>
+      <div class="footer-tagline">
+        Policy built for people.<br>
+        Legislation that doesn't wait.<br>
+        Transformation, not tweaks.
+      </div>
+      <a href="https://www.youtube.com/@mavqinden" class="footer-social">&#9654;&nbsp; YouTube &mdash; @mavqinden</a>
+    </div>
+
+    <div class="footer-nav">
+
+      <div class="footer-col">
+        <div class="footer-col-title">Our Pages</div>
+        <div class="footer-links">
+          <a href="index.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>Home</a>
+          <a href="about.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>About Us</a>
+          <a href="the-work.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>The Work</a>
+<a href="get-involved.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>Get Involved</a>
+<a href="work-with-us.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>Work With Us</a>
+<a href="find-officials.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>Find Your Officials</a>
+<a href="support-a-bill.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>Support a Bill</a>
+          <a href="contact.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>Contact Us</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Our Legislation</div>
+        <div class="footer-links">
+          <a href="cesa-v15.pdf" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>CESA &mdash; Colorado Economic Security Act</a>
+          <a href="fwmra-v6.pdf" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>FWMRA &mdash; Fair Work &amp; Mutual Responsibility</a>
+          <a href="us-rapa.pdf" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>US-RAPA &mdash; Federal Democracy Act</a>
+          <a href="hub.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>Legislative Accountability Hub</a>
+          <a href="anatomy.html" class="footer-link" onclick="return goTo(event, this.href)"><span class="dot"></span>Anatomy of a Bill / From Thought to Law</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Find Your Reps</div>
+        <div class="footer-state-finder">
+          <label>Any state &mdash; jump to your legislature</label>
+          <select class="footer-state-select" aria-label="Find your state legislature" onchange="if(this.value){window.open(this.value,'_blank','noopener');this.selectedIndex=0;}">
+            <option value="">Choose your state&hellip;</option>
+            <option value="https://openstates.org/">Find by address (works for any state)</option>
+            <option value="https://www.legislature.state.al.us">Alabama</option>
+            <option value="https://www.akleg.gov">Alaska</option>
+            <option value="https://www.azleg.gov">Arizona</option>
+            <option value="https://arkleg.state.ar.us">Arkansas</option>
+            <option value="https://www.legislature.ca.gov">California</option>
+            <option value="https://leg.colorado.gov">Colorado</option>
+            <option value="https://www.cga.ct.gov">Connecticut</option>
+            <option value="https://legis.delaware.gov">Delaware</option>
+            <option value="https://www.leg.state.fl.us">Florida</option>
+            <option value="https://www.legis.ga.gov">Georgia</option>
+            <option value="https://www.capitol.hawaii.gov">Hawaii</option>
+            <option value="https://legislature.idaho.gov">Idaho</option>
+            <option value="https://www.ilga.gov">Illinois</option>
+            <option value="https://iga.in.gov">Indiana</option>
+            <option value="https://www.legis.iowa.gov">Iowa</option>
+            <option value="https://www.kslegislature.gov">Kansas</option>
+            <option value="https://legislature.ky.gov">Kentucky</option>
+            <option value="https://www.legis.la.gov">Louisiana</option>
+            <option value="https://legislature.maine.gov">Maine</option>
+            <option value="https://mgaleg.maryland.gov">Maryland</option>
+            <option value="https://malegislature.gov">Massachusetts</option>
+            <option value="https://www.legislature.mi.gov">Michigan</option>
+            <option value="https://www.leg.mn.gov">Minnesota</option>
+            <option value="https://www.legislature.ms.gov">Mississippi</option>
+            <option value="https://www.house.mo.gov">Missouri</option>
+            <option value="https://www.leg.mt.gov">Montana</option>
+            <option value="https://nebraskalegislature.gov">Nebraska</option>
+            <option value="https://www.leg.state.nv.us">Nevada</option>
+            <option value="https://gencourt.state.nh.us">New Hampshire</option>
+            <option value="https://www.njleg.gov">New Jersey</option>
+            <option value="https://www.nmlegis.gov">New Mexico</option>
+            <option value="https://www.nysenate.gov">New York</option>
+            <option value="https://www.ncleg.gov">North Carolina</option>
+            <option value="https://www.ndlegis.gov">North Dakota</option>
+            <option value="https://www.legislature.ohio.gov">Ohio</option>
+            <option value="https://www.oklegislature.gov">Oklahoma</option>
+            <option value="https://www.oregonlegislature.gov">Oregon</option>
+            <option value="https://www.legis.state.pa.us">Pennsylvania</option>
+            <option value="https://www.rilegislature.gov">Rhode Island</option>
+            <option value="https://www.scstatehouse.gov">South Carolina</option>
+            <option value="https://sdlegislature.gov">South Dakota</option>
+            <option value="https://www.capitol.tn.gov">Tennessee</option>
+            <option value="https://capitol.texas.gov">Texas</option>
+            <option value="https://le.utah.gov">Utah</option>
+            <option value="https://legislature.vermont.gov">Vermont</option>
+            <option value="https://virginiageneralassembly.gov">Virginia</option>
+            <option value="https://leg.wa.gov">Washington</option>
+            <option value="https://www.wvlegislature.gov">West Virginia</option>
+            <option value="https://legis.wisconsin.gov">Wisconsin</option>
+            <option value="https://www.wyoleg.gov">Wyoming</option>
+            <option value="https://dccouncil.gov">District of Columbia</option>
+          </select>
+        </div>
+        <div class="footer-links">
+          <a href="https://leg.colorado.gov/find-my-legislator" class="footer-link"><span class="dot"></span>Find Your CO Legislator <span class="ext">&#8599;</span></a>
+          <a href="https://www.house.gov/representatives/find-your-representative" class="footer-link"><span class="dot"></span>Find Your US Rep <span class="ext">&#8599;</span></a>
+          <a href="https://www.senate.gov/senators/" class="footer-link"><span class="dot"></span>US Senators <span class="ext">&#8599;</span></a>
+          <a href="contact.html" class="footer-link" target="_blank" onclick="return goTo(event, this.href)"><span class="dot"></span>Contact Your Reps (Q Collective Guide)</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Colorado Officials</div>
+        <div class="footer-links">
+          <a href="https://governorsoffice.colorado.gov/governor/contact-us" class="footer-link"><span class="dot"></span>Governor's Office <span class="ext">&#8599;</span></a>
+          <a href="https://coag.gov/about-us/contact-colorado-office-attorney-general/" class="footer-link"><span class="dot"></span>Attorney General <span class="ext">&#8599;</span></a>
+          <a href="https://treasury.colorado.gov/contact-us" class="footer-link"><span class="dot"></span>State Treasurer <span class="ext">&#8599;</span></a>
+          <a href="https://coloradosos.gov/pubs/info_center/contact.html" class="footer-link"><span class="dot"></span>Secretary of State <span class="ext">&#8599;</span></a>
+          <a href="https://leg.colorado.gov" class="footer-link"><span class="dot"></span>Colorado General Assembly <span class="ext">&#8599;</span></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Resources</div>
+        <div class="footer-links">
+          <a href="https://legiscan.com" class="footer-link"><span class="dot"></span>LegiScan &mdash; Bill Data <span class="ext">&#8599;</span></a>
+          <a href="https://leg.colorado.gov/schedule" class="footer-link"><span class="dot"></span>CO Legislative Schedule <span class="ext">&#8599;</span></a>
+          <a href="https://leg.colorado.gov/watch-and-listen" class="footer-link"><span class="dot"></span>Watch CO Hearings Live <span class="ext">&#8599;</span></a>
+          <a href="https://www.congress.gov" class="footer-link"><span class="dot"></span>Congress.gov &mdash; Federal Bills <span class="ext">&#8599;</span></a>
+          <a href="https://www.usa.gov/elected-officials" class="footer-link"><span class="dot"></span>Find Any US Elected Official <span class="ext">&#8599;</span></a>
+          <a href="https://votesmart.org" class="footer-link"><span class="dot"></span>VoteSmart &mdash; Official Profiles <span class="ext">&#8599;</span></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      Published by The Q Collective LLC / Doctrine Policy Group &nbsp;&middot;&nbsp;
+      <a href="mailto:team@theQcollective.org">team&#64;theQcollective.org</a> &nbsp;&middot;&nbsp;
+      Legislative data: <a href="https://legiscan.com">LegiScan</a> CC BY 4.0
+    </div>
+    <div class="footer-bottom-right">
+<a href="about.html" class="footer-bottom-link" onclick="return goTo(event, this.href)">About</a>
+<span class="footer-sep">&middot;</span>
+<a href="contact.html" class="footer-bottom-link" onclick="return goTo(event, this.href)">Contact</a>
+</div>
+  </div>
+</div>
+<script>
+function goTo(e, url){ try{ if(window.top && window.top!==window.self){ window.top.location.href=url; } else { window.location.href=url; } if(e && e.preventDefault) e.preventDefault(); return false; }catch(err){ return true; } }
+</script><script></script>
+
+<script>
+var IDX=null,CUR=null;var BILLSOBJ=null,BILLLIST=[],MODE='leg',TAG='',SHOWN=50;
+function pf(p){p=(p||'').toUpperCase();return p==='D'?'Democrat':p==='R'?'Republican':p==='I'?'Independent':(p||'');}
+function pill(s){var c=s>=80?'champ':(s>=60?'good':(s>=40?'mid':'low'));return '<span class="hscore '+c+'">'+s+'</span>';}
+var TAGS=['Health','Income','Family','Housing','Food','Economic Opportunity','Protection','Education','Democracy','Environment','Government & Budget','Transportation','Veterans'];
+var SUBJ2TAG={'Health Care & Health Insurance':'Health','Public Health':'Health','Labor & Employment':'Income','Human Services':'Income','Children & Domestic Matters':'Family','Housing':'Housing','Agriculture':'Food','Business & Economic Development':'Economic Opportunity','Professions & Occupations':'Economic Opportunity','Financial Services & Commerce':'Economic Opportunity','Telecommunications & Information Technology':'Economic Opportunity','Gaming, Lottery, & Racing':'Economic Opportunity','Crimes, Corrections, & Enforcement':'Protection','Courts & Judicial':'Protection','Civil Law':'Protection','Probate, Trusts, & Fiduciaries':'Protection','Insurance':'Protection','Liquor, Tobacco, & Marijuana':'Protection','Immigration':'Protection','Education & School Finance (Pre & K-12)':'Education','Higher Education':'Education','Elections & Redistricting':'Democracy','Energy':'Environment','Natural Resources & Environment':'Environment','Water':'Environment','State Government':'Government & Budget','General Assembly':'Government & Budget','Fiscal Policy & Taxes':'Government & Budget','State Revenue & Budget':'Government & Budget','Local Government':'Government & Budget','Capital Construction':'Government & Budget','Transportation & Motor Vehicles':'Transportation','Military & Veterans':'Veterans'};
+function esc(s){return (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function billTags(b){var seen={},out=[];(b.subjects||[]).forEach(function(s){var t=SUBJ2TAG[s];if(t&&!seen[t]){seen[t]=1;out.push(t);}});return out;}
+function buildTags(){BILLLIST=[];if(BILLSOBJ&&BILLSOBJ.bills){for(var k in BILLSOBJ.bills){var b=BILLSOBJ.bills[k];b._tags=billTags(b);BILLLIST.push(b);}BILLLIST.sort(function(a,c){return (a.number||'').localeCompare((c.number||''),undefined,{numeric:true});});}if(CUR&&CUR.legislators){CUR.legislators.forEach(function(l){var seen={},out=[];(l.bills||[]).forEach(function(bl){var rec=(BILLSOBJ&&BILLSOBJ.bills)?BILLSOBJ.bills[bl.number]:null;if(rec){(rec._tags||billTags(rec)).forEach(function(tg){if(!seen[tg]){seen[tg]=1;out.push(tg);}});}});l._tags=out;});}}
+function renderTagBar(){var bar=document.getElementById('tagBar');if(!bar)return;var html=TAGS.map(function(t,i){var sep=(i===7?'<span class="tag-sep"></span>':'');var safe=t.replace(/'/g,"\\'");return sep+'<button type="button" class="tag-chip'+(TAG===t?' active':'')+'" onclick="setTag(\''+safe+'\')">'+t+'</button>';}).join('');if(TAG)html+='<button type="button" class="tag-chip tag-clear" onclick="setTag(\''+TAG.replace(/'/g,"\\'")+'\')">Clear &times;</button>';bar.innerHTML=html;}
+function setMode(m){MODE=m;SHOWN=50;var b=document.querySelectorAll('.vt-btn');for(var i=0;i<b.length;i++){b[i].className='vt-btn'+(b[i].getAttribute('data-mode')===m?' active':'');}renderAll();}
+function setTag(t){TAG=(TAG===t?'':t);SHOWN=50;renderTagBar();renderAll();}
+function showMore(){SHOWN+=50;renderBillsView();}
+function billRow(b){var st=(b.status||'');var cls=/pass|enact/i.test(st)?'st-pass':(/veto|fail|dead/i.test(st)?'st-fail':'st-prog');var tags=(b._tags||[]).map(function(t){return '<span class="btag">'+esc(t)+'</span>';}).join('');return '<a class="bcard" href="bill.html?state='+encodeURIComponent(CUR.state||'CO')+'&number='+encodeURIComponent(b.number||'')+'"><div class="bc-top"><span class="bc-num">'+esc(b.number||'')+'</span><span class="bc-st '+cls+'">'+esc(st)+'</span></div><div class="bc-title">'+esc(b.title||'')+'</div>'+(tags?'<div class="bc-tags">'+tags+'</div>':'')+'</a>';}
+function filterBills(){var q=(document.getElementById('hubSearch').value||'').toLowerCase();return BILLLIST.filter(function(b){if(TAG&&(b._tags||[]).indexOf(TAG)<0)return false;if(q&&((b.number||'')+' '+(b.title||'')).toLowerCase().indexOf(q)<0)return false;return true;});}
+function renderBillsView(){var el=document.getElementById('hubBills');if(!el)return;var all=filterBills();var shown=all.slice(0,SHOWN);el.innerHTML=shown.length?shown.map(billRow).join(''):'<p>No bills match those filters.</p>';document.getElementById('billCount').textContent=all.length?('Showing '+shown.length+' of '+all.length+' bills'):'';document.getElementById('moreBtn').style.display=all.length>SHOWN?'inline-block':'none';}
+function renderAll(){renderList();renderBillsView();document.getElementById('legSection').style.display=(MODE==='bills')?'none':'block';document.getElementById('billSection').style.display=(MODE==='leg')?'none':'block';document.getElementById('legHdr').style.display=(MODE==='all')?'block':'none';document.getElementById('hubParty').style.display=(MODE==='bills')?'none':'inline-block';var s=document.getElementById('hubSearch');s.placeholder=(MODE==='bills')?'Search bills by number or title\u2026':(MODE==='all'?'Search names or bills\u2026':'Search by name or district\u2026');}
+function loadBillsThenRender(code){fetch('data/'+code+'_bills.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(bd){BILLSOBJ=bd||{bills:{}};buildTags();renderTagBar();setMode('leg');}).catch(function(){BILLSOBJ={bills:{}};buildTags();renderTagBar();setMode('leg');});}
+function row(l){var href='legislator.html?state='+encodeURIComponent(CUR.state)+'&id='+encodeURIComponent(l.id);return '<a class="hrow" href="'+href+'"><div class="hmain"><div class="hname">'+l.name+'</div><div class="hmeta">'+(l.chamber||l.role)+(l.district?' &middot; District '+l.district:'')+(l.party?' &middot; '+pf(l.party):'')+'</div></div><div class="hsc">'+pill(l.score)+(l.score>=80?'<div class="hlabel"><span class="q-champ"><span class="star">&#9733;</span>Champion</span></div>':(l.label?'<div class="hlabel">'+l.label+'</div>':''))+'</div><div class="hbreak"><span>Pillar '+l.pillar+'</span><span>Attend '+l.attendance+'</span><span>Impact '+l.impact+'</span><span>Spons '+l.sponsorship+'</span><span class="hview">View profile &amp; bills &rarr;</span></div></a>';}
+function renderList(){if(!CUR)return;var q=(document.getElementById('hubSearch').value||'').toLowerCase();var party=document.getElementById('hubParty').value;var list=CUR.legislators.filter(function(l){if(party&&pf(l.party)!==party)return false;if(TAG&&(l._tags||[]).indexOf(TAG)<0)return false;if(q&&(l.name+' '+l.district).toLowerCase().indexOf(q)<0)return false;return true;});document.getElementById('hubList').innerHTML=list.length?list.map(row).join(''):'<p>No legislators match those filters.</p>';}
+function renderBills(){var b=(CUR.recent_bills||[]);document.getElementById('hubBills').innerHTML=b.length?b.map(function(x){return '<div class="brow"><div class="bnum">'+(x.number||'')+'</div><div class="btitle">'+'<a href="bill.html?state='+(CUR.state||'CO')+'&number='+encodeURIComponent(x.number||'')+'">'+(x.title||'')+'</a>'+'<div class="bstatus">'+(x.status||'')+(x.date?' &middot; '+x.date:'')+'</div></div></div>';}).join(''):'<p>No recent bills to show yet.</p>';}
+function loadState(){var code=document.getElementById('hubState').value;document.getElementById('hubList').innerHTML='Loading '+code+'\u2026';fetch('data/'+code+'.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(d){if(!d){document.getElementById('hubList').innerHTML='<p>That state isn\u2019t scored yet.</p>';return;}CUR=d;document.getElementById('hubUpdated').innerHTML='Showing '+d.count+' '+(d.state_name||code)+' legislators &middot; last updated '+d.updated;loadBillsThenRender(code);}).catch(function(){document.getElementById('hubList').innerHTML='<p>Could not load that state.</p>';});}
+(function(){fetch('data/index.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(idx){var st=document.getElementById('hubStatus');if(!idx||!idx.states||!idx.states.length){st.textContent='The live tracker is warming up \u2014 scores appear here right after the first run.';return;}IDX=idx;st.style.display='none';document.getElementById('hubWrap').style.display='block';var sel=document.getElementById('hubState');sel.innerHTML=idx.states.map(function(s){return '<option value="'+s.code+'">'+s.name+' ('+s.count+')</option>';}).join('');var hasCO=idx.states.filter(function(s){return s.code==='CO';}).length;sel.value=hasCO?'CO':idx.states[0].code;loadState();}).catch(function(){document.getElementById('hubStatus').textContent='The live tracker is warming up \u2014 check back shortly.';});})();
+</script>
+</body></html>
