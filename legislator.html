@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>How Q Scores Work — The Q Collective</title>
+<title>Legislator Profile — The Q Collective</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -508,7 +508,12 @@
 .consent{font-size:14px;color:var(--text-light)}
 .rubric .plabel{margin-top:0}
 
-</style>
+.hub-bills{display:flex;flex-direction:column;gap:8px}
+.brow{display:flex;gap:14px;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 14px}
+.bnum{font-family:'DM Mono',monospace;font-size:12px;color:#B8962E;white-space:nowrap;min-width:96px}
+.btitle{font-size:15px;color:var(--text)}.bstatus{font-size:12px;color:var(--text-muted);margin-top:3px}
+
+.q-champ{display:inline-flex;align-items:center;gap:5px;font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;font-weight:500;color:var(--navy-deep);background:linear-gradient(135deg,var(--gold-light),var(--gold));padding:4px 9px;border-radius:20px;animation:qglow 2.2s ease-in-out infinite;vertical-align:middle}.q-champ .star{font-size:11px;line-height:1}@keyframes qglow{0%,100%{box-shadow:0 0 6px 1px rgba(212,175,80,.5)}50%{box-shadow:0 0 15px 4px rgba(212,175,80,.85)}}@media(prefers-reduced-motion:reduce){.q-champ{animation:none;box-shadow:0 0 8px 2px rgba(212,175,80,.6)}}.why-q-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:16px 0 0}</style>
 </head><body>
 <div class="top-stripe"></div>
 <div class="topbar"><div class="topbar-inner">
@@ -535,44 +540,11 @@
 <div class="ov-foot">The Q Collective LLC &middot; Doctrine Policy Group</div>
 </div>
 <script>document.addEventListener('keydown',function(e){if(e.key==='Escape'){var o=document.getElementById('navov');if(o)o.classList.remove('open');}});</script>
-
-<section class="pagehead"><p class="ph-eyebrow">Transparency</p><h1>How Q Scores Work</h1>
-<p>A Q Score is a single, honest number for how well an official&rsquo;s record serves the people they answer to &mdash; measured against the seven pillars of life stability, not against any party.</p></section>
-<div class="pagewrap narrow">
-
-<div class="prose">
-<p>Endorsements tell you who likes a politician. A Q Score tells you what they actually <em>do</em>. We read the public record &mdash; the bills, the votes, the actions, the rulings &mdash; and hold every level of government to the same standard, from the U.S. Senate to your statehouse, from the governor&rsquo;s office to the Supreme Court.</p>
-<p>The score is non-partisan by design. We are not measuring whether someone is a Democrat or a Republican. We are measuring one thing: <strong>does their record move the seven pillars of life stability forward, for everyone it touches?</strong></p>
+<section class="pagehead"><p class="ph-eyebrow" id="l-office">Legislator Profile</p><h1 id="l-name">Loading&hellip;</h1><p id="l-sub"></p></section>
+<div class="pagewrap">
+<div id="l-body">Loading&hellip;</div>
+<p style="margin-top:26px"><a href="hub.html">&larr; Back to the Hub</a></p>
 </div>
-
-<p class="section-label" style="margin-top:40px">The Scale</p>
-<h2 class="section-title" style="margin-bottom:6px">0 to 100</h2><div class="section-divider"></div>
-<div class="prose">
-<p>Every Q Score runs from <strong>0 to 100</strong>. The higher the number, the stronger and more consistent the alignment with the pillars. A score of <strong>80 or above earns the title &ldquo;Accountability Champion&rdquo;</strong> &mdash; reserved for officials whose record clearly and repeatedly serves life stability. Lower scores reflect weaker, more mixed, or contrary records. The number is always backed by the underlying record, so you can check our work.</p>
-</div>
-
-<p class="section-label" style="margin-top:40px">The Frameworks</p>
-<h2 class="section-title" style="margin-bottom:6px">Each branch is scored on its own job</h2><div class="section-divider"></div>
-<div class="prose"><p>A legislator&rsquo;s job is different from a governor&rsquo;s, which is different from a judge&rsquo;s &mdash; so each branch is scored on the work it&rsquo;s actually responsible for. Within a branch, the rubric is identical at every level: a state senator is judged the same way as a U.S. Senator, a governor the same way as the President.</p></div>
-<div class="factbox rubric"><p class="plabel">Legislative &mdash; U.S. Congress &amp; State Legislatures</p><div class="score-row"><span>Pillar Alignment &mdash; do their bills and votes advance the seven pillars?</span><span class="v">40%</span></div><div class="score-row"><span>Attendance &mdash; do they show up and cast their votes?</span><span class="v">25%</span></div><div class="score-row"><span>Citizen Impact &mdash; who actually benefits from what they pass?</span><span class="v">25%</span></div><div class="score-row"><span>Sponsorship &mdash; do they lead on pillar-aligned bills, or just follow?</span><span class="v">10%</span></div></div><div class="factbox rubric"><p class="plabel">Executive &mdash; Governors, the President &amp; Elected Executives</p><div class="score-row"><span>Pillar Alignment of Actions &mdash; do their orders, budgets, and signatures serve the pillars?</span><span class="v">40%</span></div><div class="score-row"><span>Citizen Impact &mdash; who is better off because of their decisions?</span><span class="v">30%</span></div><div class="score-row"><span>Implementation &amp; Delivery &mdash; do they actually deliver, not just announce?</span><span class="v">20%</span></div><div class="score-row"><span>Transparency &amp; Accountability &mdash; are they open about what they do?</span><span class="v">10%</span></div></div><div class="prose"><p style="font-size:15px;color:var(--text-light)">For executives, a veto of a clearly pillar-aligned bill counts against the score.</p></div><div class="factbox rubric"><p class="plabel">Judicial &mdash; the U.S. Supreme Court &amp; the Courts</p><div class="score-row"><span>Ruling Alignment &mdash; do their decisions protect the pillars and the people?</span><span class="v">50%</span></div><div class="score-row"><span>Citizen Impact &mdash; who is helped or harmed by the rulings?</span><span class="v">25%</span></div><div class="score-row"><span>Consistency &amp; Principle &mdash; do they apply the law evenly, not selectively?</span><span class="v">15%</span></div><div class="score-row"><span>Institutional Integrity &mdash; do they respect the role and limits of the court?</span><span class="v">10%</span></div></div>
-<p class="section-label" style="margin-top:40px">The Seven Pillars</p>
-<h2 class="section-title" style="margin-bottom:6px">What we measure alignment against</h2><div class="section-divider"></div>
-<div class="prose"><p>Every score is anchored to the seven pillars of life stability &mdash; the things a person needs to stand on solid ground:</p>
-<p><strong>Health &middot; Income &middot; Family &middot; Housing &middot; Food &middot; Economic Opportunity &middot; Protection from Disruption.</strong></p>
-</div>
-
-<p class="section-label" style="margin-top:40px">The Data</p>
-<h2 class="section-title" style="margin-bottom:6px">Where the numbers come from</h2><div class="section-divider"></div>
-<div class="prose">
-<p>Legislative scores are built from official bill text and roll-call votes sourced through LegiScan, refreshed on a regular cycle. We&rsquo;re live in Colorado now, with more states on the way. Executive and judicial scoring use the rubrics below and are launching soon. In every case we work from primary sources and link back to them, so a score is never a black box &mdash; it&rsquo;s a starting point you can verify.</p>
-<p>The system rolls out in phases: the legislative engine comes online first, with the executive and judicial branches following. AI assists the analysis, but every result references the public record, and the methodology will be refined and published openly over time.</p>
-</div>
-
-<div class="callout" style="margin-top:40px">
-<p>See a score you want to understand or challenge? Good &mdash; that&rsquo;s the point. <a href="contact.html">Tell us</a> and we&rsquo;ll walk you through the record behind it.</p>
-</div>
-</div>
-
 <div class="footer">
 
   <!-- BALANCE STATEMENT -->
@@ -732,5 +704,22 @@
 </div>
 <script>
 function goTo(e, url){ try{ if(window.top && window.top!==window.self){ window.top.location.href=url; } else { window.location.href=url; } if(e && e.preventDefault) e.preventDefault(); return false; }catch(err){ return true; } }
+</script>
+<script>
+function qs(k){var m=new RegExp('[?&]'+k+'=([^&]*)').exec(location.search);return m?decodeURIComponent(m[1]):null;}
+function pf(p){p=(p||'').toUpperCase();return p==='D'?'Democrat':p==='R'?'Republican':p==='I'?'Independent':(p||'');}
+(function(){var state=qs('state'),id=qs('id');var body=document.getElementById('l-body');
+if(!state||!id){document.getElementById('l-name').textContent='No legislator selected';body.innerHTML='<p>Head to the <a href="hub.html">Hub</a> to choose someone.</p>';return;}
+fetch('data/'+state+'.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(d){
+if(!d){document.getElementById('l-name').textContent='Not available';body.innerHTML='<p>That state isn\u2019t scored yet. <a href="hub.html">Back to the Hub</a>.</p>';return;}
+var l=d.legislators.filter(function(x){return String(x.id)===String(id);})[0];
+if(!l){document.getElementById('l-name').textContent='Legislator not found';body.innerHTML='<p><a href="hub.html">Back to the Hub</a>.</p>';return;}
+document.getElementById('l-office').textContent=(l.chamber||l.role||'Legislator')+' \u00b7 '+(l.body||d.state_name||state);
+document.getElementById('l-name').textContent=l.name;document.title=l.name+' \u2014 The Q Collective';
+document.getElementById('l-sub').textContent=pf(l.party)+(l.district?' \u00b7 District '+l.district:'');
+var sc='<div class="factbox"><div class="score-big">'+l.score+'</div><div class="score-label">'+(l.label||'Q Score')+'</div>'+(l.score>=80?'<div style="margin-top:8px"><span class="q-champ"><span class="star">&#9733;</span>Accountability Champion</span></div>':'')+'<div style="margin-top:14px"><div class="score-row"><span>Pillar Alignment</span><span class="v">'+l.pillar+'</span></div><div class="score-row"><span>Attendance</span><span class="v">'+l.attendance+'</span></div><div class="score-row"><span>Citizen Impact</span><span class="v">'+l.impact+'</span></div><div class="score-row"><span>Sponsorship</span><span class="v">'+l.sponsorship+'</span></div></div>'+(l.why?'<p class="why-q-label">Why this score</p><p style="margin:4px 0 0;font-style:italic;color:var(--text-light)">\u201c'+l.why+'\u201d</p>':'')+'<p style="margin:10px 0 0;font-size:13px"><a href="how-q-scores-work.html">How is this calculated? &rarr;</a></p></div>';
+var bills=l.bills||[];var bh=bills.length?bills.map(function(b){return '<div class="brow"><div class="bnum">'+(b.number||'')+(b.primary?' &middot; Primary':'')+'</div><div class="btitle">'+(b.url?'<a target="_blank" rel="noopener" href="'+b.url+'">'+(b.title||'')+'</a>':(b.title||''))+'<div class="bstatus">'+(b.status||'')+'</div></div></div>';}).join(''):'<p>No sponsored bills recorded this session.</p>';
+body.innerHTML='<p class="section-label">Accountability</p><h2 class="section-title" style="margin-bottom:6px">Q Score</h2><div class="section-divider"></div>'+sc+'<p class="section-label" style="margin-top:44px">Their Record</p><h2 class="section-title" style="margin-bottom:6px">Bills they sponsored ('+bills.length+')</h2><div class="section-divider"></div><div class="hub-bills">'+bh+'</div>';
+}).catch(function(){document.getElementById('l-name').textContent='Could not load';body.innerHTML='<p><a href="hub.html">Back to the Hub</a>.</p>';});})();
 </script>
 </body></html>

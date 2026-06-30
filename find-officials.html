@@ -1,7 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>How Q Scores Work — The Q Collective</title>
+<title>Find Your Officials — The Q Collective</title>
+<meta name="description" content="Look up your elected officials — U.S. Senators, your Representative, Governor, Secretary of State, and Attorney General.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -479,7 +480,7 @@
 .privacy-note{font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:14px;border-top:1px solid var(--border);padding-top:12px}
 @media(max-width:680px){.tracks{grid-template-columns:1fr}.callout h2{font-size:25px}}
 
-/* find-officials autocomplete */
+
 .ac-wrap{flex:1;position:relative;min-width:220px}
 .ac-box{position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--white);border:1px solid var(--border);border-radius:6px;box-shadow:0 10px 28px rgba(18,40,72,.14);z-index:40;max-height:300px;overflow-y:auto;display:none;text-align:left}
 .ac-box.show{display:block}
@@ -487,7 +488,6 @@
 .ac-item:last-child{border-bottom:none}
 .ac-item:hover{background:var(--off-white)}
 
-/* Q score + profile */
 .qbadge{display:inline-block;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.5px;background:var(--navy-deep);color:var(--gold-light);padding:5px 10px;border-radius:4px}
 .qbadge.pending{background:var(--off-white);color:var(--text-muted);border:1px solid var(--border)}
 .profile-link{display:inline-block;margin-left:14px;font-size:13px;color:var(--navy-deep)}
@@ -496,7 +496,6 @@
 .score-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);font-size:15px}
 .score-row:last-child{border-bottom:none}.score-row .v{font-family:'DM Mono',monospace;color:var(--navy-deep)}
 
-/* q-help, branch groups, advocacy form */
 .qhelp{font-size:11px;color:var(--text-muted);margin-left:8px;white-space:nowrap}
 .off-group{font-family:'Playfair Display',serif;font-size:22px;color:var(--navy-deep);margin:30px 0 10px;padding-top:18px;border-top:1px solid var(--border)}
 .off-group:first-of-type{border-top:none;padding-top:0;margin-top:18px}
@@ -507,8 +506,7 @@
 .checks input,.consent input{margin-top:3px}
 .consent{font-size:14px;color:var(--text-light)}
 .rubric .plabel{margin-top:0}
-
-</style>
+.q-champ{display:inline-flex;align-items:center;gap:5px;font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;font-weight:500;color:var(--navy-deep);background:linear-gradient(135deg,var(--gold-light),var(--gold));padding:4px 9px;border-radius:20px;animation:qglow 2.2s ease-in-out infinite;vertical-align:middle}.q-champ .star{font-size:11px;line-height:1}@keyframes qglow{0%,100%{box-shadow:0 0 6px 1px rgba(212,175,80,.5)}50%{box-shadow:0 0 15px 4px rgba(212,175,80,.85)}}@media(prefers-reduced-motion:reduce){.q-champ{animation:none;box-shadow:0 0 8px 2px rgba(212,175,80,.6)}}.why-q-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:16px 0 0}</style>
 </head><body>
 <div class="top-stripe"></div>
 <div class="topbar"><div class="topbar-inner">
@@ -535,44 +533,20 @@
 <div class="ov-foot">The Q Collective LLC &middot; Doctrine Policy Group</div>
 </div>
 <script>document.addEventListener('keydown',function(e){if(e.key==='Escape'){var o=document.getElementById('navov');if(o)o.classList.remove('open');}});</script>
-
-<section class="pagehead"><p class="ph-eyebrow">Transparency</p><h1>How Q Scores Work</h1>
-<p>A Q Score is a single, honest number for how well an official&rsquo;s record serves the people they answer to &mdash; measured against the seven pillars of life stability, not against any party.</p></section>
-<div class="pagewrap narrow">
-
-<div class="prose">
-<p>Endorsements tell you who likes a politician. A Q Score tells you what they actually <em>do</em>. We read the public record &mdash; the bills, the votes, the actions, the rulings &mdash; and hold every level of government to the same standard, from the U.S. Senate to your statehouse, from the governor&rsquo;s office to the Supreme Court.</p>
-<p>The score is non-partisan by design. We are not measuring whether someone is a Democrat or a Republican. We are measuring one thing: <strong>does their record move the seven pillars of life stability forward, for everyone it touches?</strong></p>
+<section class="pagehead"><p class="ph-eyebrow">Know Who Represents You</p><h1>Find Your Officials</h1>
+<p>Enter your address to see who represents you &mdash; from your U.S. Senators and Representative to your Governor, Secretary of State, and Attorney General.</p></section>
+<div class="pagewrap">
+<p class="section-label">Look It Up</p>
+<h2 class="section-title" style="margin-bottom:6px">Who represents you?</h2><div class="section-divider"></div>
+<div class="lookup-row">
+<div class="ac-wrap"><input id="addr" type="text" autocomplete="off" placeholder="Start typing your address…" style="width:100%"><div class="ac-box" id="ac"></div></div>
 </div>
-
-<p class="section-label" style="margin-top:40px">The Scale</p>
-<h2 class="section-title" style="margin-bottom:6px">0 to 100</h2><div class="section-divider"></div>
-<div class="prose">
-<p>Every Q Score runs from <strong>0 to 100</strong>. The higher the number, the stronger and more consistent the alignment with the pillars. A score of <strong>80 or above earns the title &ldquo;Accountability Champion&rdquo;</strong> &mdash; reserved for officials whose record clearly and repeatedly serves life stability. Lower scores reflect weaker, more mixed, or contrary records. The number is always backed by the underlying record, so you can check our work.</p>
+<div class="lookup-row" style="align-items:center">
+<button class="btn-gold" type="button" onclick="lookup()" style="border:none;cursor:pointer">Find My Officials</button>
 </div>
-
-<p class="section-label" style="margin-top:40px">The Frameworks</p>
-<h2 class="section-title" style="margin-bottom:6px">Each branch is scored on its own job</h2><div class="section-divider"></div>
-<div class="prose"><p>A legislator&rsquo;s job is different from a governor&rsquo;s, which is different from a judge&rsquo;s &mdash; so each branch is scored on the work it&rsquo;s actually responsible for. Within a branch, the rubric is identical at every level: a state senator is judged the same way as a U.S. Senator, a governor the same way as the President.</p></div>
-<div class="factbox rubric"><p class="plabel">Legislative &mdash; U.S. Congress &amp; State Legislatures</p><div class="score-row"><span>Pillar Alignment &mdash; do their bills and votes advance the seven pillars?</span><span class="v">40%</span></div><div class="score-row"><span>Attendance &mdash; do they show up and cast their votes?</span><span class="v">25%</span></div><div class="score-row"><span>Citizen Impact &mdash; who actually benefits from what they pass?</span><span class="v">25%</span></div><div class="score-row"><span>Sponsorship &mdash; do they lead on pillar-aligned bills, or just follow?</span><span class="v">10%</span></div></div><div class="factbox rubric"><p class="plabel">Executive &mdash; Governors, the President &amp; Elected Executives</p><div class="score-row"><span>Pillar Alignment of Actions &mdash; do their orders, budgets, and signatures serve the pillars?</span><span class="v">40%</span></div><div class="score-row"><span>Citizen Impact &mdash; who is better off because of their decisions?</span><span class="v">30%</span></div><div class="score-row"><span>Implementation &amp; Delivery &mdash; do they actually deliver, not just announce?</span><span class="v">20%</span></div><div class="score-row"><span>Transparency &amp; Accountability &mdash; are they open about what they do?</span><span class="v">10%</span></div></div><div class="prose"><p style="font-size:15px;color:var(--text-light)">For executives, a veto of a clearly pillar-aligned bill counts against the score.</p></div><div class="factbox rubric"><p class="plabel">Judicial &mdash; the U.S. Supreme Court &amp; the Courts</p><div class="score-row"><span>Ruling Alignment &mdash; do their decisions protect the pillars and the people?</span><span class="v">50%</span></div><div class="score-row"><span>Citizen Impact &mdash; who is helped or harmed by the rulings?</span><span class="v">25%</span></div><div class="score-row"><span>Consistency &amp; Principle &mdash; do they apply the law evenly, not selectively?</span><span class="v">15%</span></div><div class="score-row"><span>Institutional Integrity &mdash; do they respect the role and limits of the court?</span><span class="v">10%</span></div></div>
-<p class="section-label" style="margin-top:40px">The Seven Pillars</p>
-<h2 class="section-title" style="margin-bottom:6px">What we measure alignment against</h2><div class="section-divider"></div>
-<div class="prose"><p>Every score is anchored to the seven pillars of life stability &mdash; the things a person needs to stand on solid ground:</p>
-<p><strong>Health &middot; Income &middot; Family &middot; Housing &middot; Food &middot; Economic Opportunity &middot; Protection from Disruption.</strong></p>
+<div class="off-results" id="offres"></div>
+<p class="privacy-note">Your address is used only in your browser to look up your districts &mdash; we don&rsquo;t store it. Your U.S. Senators and Representative show by name now; your state officials and the executive and judicial branches show their official directories today, with names and Q Scores populating as the Accountability Hub comes online.</p><div class="off-actions"><a class="oa-link" href="how-q-scores-work.html">How Q Scores are calculated &rarr;</a><a class="oa-link" href="request-advocacy.html">Ask us to contact an official for you &rarr;</a></div>
 </div>
-
-<p class="section-label" style="margin-top:40px">The Data</p>
-<h2 class="section-title" style="margin-bottom:6px">Where the numbers come from</h2><div class="section-divider"></div>
-<div class="prose">
-<p>Legislative scores are built from official bill text and roll-call votes sourced through LegiScan, refreshed on a regular cycle. We&rsquo;re live in Colorado now, with more states on the way. Executive and judicial scoring use the rubrics below and are launching soon. In every case we work from primary sources and link back to them, so a score is never a black box &mdash; it&rsquo;s a starting point you can verify.</p>
-<p>The system rolls out in phases: the legislative engine comes online first, with the executive and judicial branches following. AI assists the analysis, but every result references the public record, and the methodology will be refined and published openly over time.</p>
-</div>
-
-<div class="callout" style="margin-top:40px">
-<p>See a score you want to understand or challenge? Good &mdash; that&rsquo;s the point. <a href="contact.html">Tell us</a> and we&rsquo;ll walk you through the record behind it.</p>
-</div>
-</div>
-
 <div class="footer">
 
   <!-- BALANCE STATEMENT -->
@@ -732,5 +706,23 @@
 </div>
 <script>
 function goTo(e, url){ try{ if(window.top && window.top!==window.self){ window.top.location.href=url; } else { window.location.href=url; } if(e && e.preventDefault) e.preventDefault(); return false; }catch(err){ return true; } }
+</script><script>
+var STATES={AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",DC:"District of Columbia",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming"};
+var CONGRESS="https://unitedstates.github.io/congress-legislators/legislators-current.json";
+var LEG=null,SCORES={},scoresDone=false,CO=null;
+function lastTerm(p){return p.terms[p.terms.length-1];}
+function getLeg(){if(LEG)return Promise.resolve(LEG);return fetch(CONGRESS).then(function(r){return r.json();}).then(function(j){LEG=j;return j;}).catch(function(){return null;});}
+function getScores(){if(scoresDone)return Promise.resolve(SCORES);return fetch("scores.json").then(function(r){return r.ok?r.json():{};}).then(function(j){SCORES=j||{};scoresDone=true;return SCORES;}).catch(function(){scoresDone=true;return {};});}
+function getCO(){if(CO)return Promise.resolve(CO);return fetch("data/CO.json?v="+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(j){CO=(j&&j.legislators)?j.legislators:(Array.isArray(j)?j:[]);return CO;}).catch(function(){return [];});}
+function coCard(roleLabel,rec){var sc=(rec.score!==undefined&&rec.score!==null&&rec.score!=="")?'<span class="qbadge">Q Score: '+rec.score+(rec.label?' &middot; '+rec.label:'')+'</span>'+(rec.score>=80?' <span class="q-champ"><span class="star">&#9733;</span>Champion</span>':''):'<span class="qbadge pending">Q Score: launching with the Hub</span>';var prof=rec.id?'<a class="profile-link" href="legislator.html?state=CO&id='+encodeURIComponent(rec.id)+'">View full profile &rarr;</a>':'';return '<div class="off-card"><div class="role">'+roleLabel+'</div><div class="nm">'+rec.name+'</div><div style="font-size:13px;color:#5a5a5a">'+(rec.party||'')+' &middot; District '+rec.district+'</div><div style="margin-top:9px">'+sc+' <a class="qhelp" href="'+QHELP+'">How is this scored?</a>'+prof+'</div></div>';}
+function coLegBlock(sldu,sldl,co){var sen=sldu?co.filter(function(r){return /Senate/i.test(r.chamber||'')&&String(r.district)===String(sldu);})[0]:null;var rep=sldl?co.filter(function(r){return /House|Representatives/i.test(r.chamber||'')&&String(r.district)===String(sldl);})[0]:null;var h='<h3 class="off-group">Your Colorado Legislators</h3>';h+=sen?coCard("State Senator &mdash; District "+sldu,sen):'<div class="off-card"><div class="role">State Senator</div><div style="font-size:14px;color:#5a5a5a;margin-top:4px">Add your full street address above to pin your Senate district, or <a target="_blank" rel="noopener" href="https://openstates.org/find_your_legislator/">look it up &rarr;</a></div></div>';h+=rep?coCard("State Representative &mdash; District "+sldl,rep):'<div class="off-card"><div class="role">State Representative</div><div style="font-size:14px;color:#5a5a5a;margin-top:4px">Add your full street address above to pin your House district, or <a target="_blank" rel="noopener" href="https://openstates.org/find_your_legislator/">look it up &rarr;</a></div></div>';return h;}
+function stateLegLink(){return pcard("State Senate &amp; House","Your state legislators &mdash; names and Q Scores populate as the Hub comes online.",'<a target="_blank" rel="noopener" href="https://openstates.org/find_your_legislator/">Look up your state legislators &rarr;</a>');}
+var QHELP="how-q-scores-work.html";function badge(bio){var sc=SCORES[bio];var b=sc?'<span class="qbadge">Q Score: '+sc.score+' &middot; '+(sc.label||"")+'</span>':'<span class="qbadge pending">Q Score: launching with the Hub</span>';return b+' <a class="qhelp" href="'+QHELP+'">How is this scored?</a>';}
+function card(role,nm,sub,links,bio){var prof=bio?'<a class="profile-link" href="official.html?id='+bio+'">View full profile &rarr;</a>':"";return '<div class="off-card"><div class="role">'+role+'</div><div class="nm">'+nm+'</div>'+(sub?'<div style="font-size:13px;color:#5a5a5a">'+sub+'</div>':"")+(links?'<div style="margin-top:6px">'+links+'</div>':"")+'<div style="margin-top:9px">'+badge(bio)+prof+'</div></div>';}
+function pcard(role,status,link){return '<div class="off-card"><div class="role">'+role+'</div><div style="font-size:14px;color:#5a5a5a;margin-top:4px">'+status+'</div>'+(link?'<div style="margin-top:6px">'+link+'</div>':"")+'<div style="margin-top:9px"><span class="qbadge pending">Q Score: launching with the Hub</span> <a class="qhelp" href="'+QHELP+'">How is this scored?</a></div></div>';}function stateSection(st){var name=STATES[st]||"your state";return '<h3 class="off-group">Your State Officials &mdash; '+name+'</h3>'+pcard("Governor","Profile and Q Score populate as the Accountability Hub comes online.",'<a target="_blank" rel="noopener" href="https://www.nga.org/governors/">Look up your Governor &rarr;</a>')+pcard("Attorney General","Profile and Q Score populate as the Hub comes online.",'<a target="_blank" rel="noopener" href="https://www.naag.org/find-my-ag/">Look up your Attorney General &rarr;</a>')+pcard("Secretary of State","Profile and Q Score populate as the Hub comes online.",'<a target="_blank" rel="noopener" href="https://www.nass.org/membership/secretaries-of-state">Look up your Secretary of State &rarr;</a>');}function nationalSection(){return '<h3 class="off-group">Federal Executive &amp; Judicial</h3>'+pcard("President &amp; Vice President","The federal executive &mdash; scored on the executive-branch rubric. Populating with the Hub.",'<a target="_blank" rel="noopener" href="https://www.whitehouse.gov/administration/">The White House &rarr;</a>')+pcard("U.S. Supreme Court","The nine justices &mdash; scored on the judicial rubric. Populating with the Hub.",'<a target="_blank" rel="noopener" href="https://www.supremecourt.gov/about/justices.aspx">The Supreme Court &rarr;</a>');}
+function show(st,district,sldu,sldl){var box=document.getElementById("offres");box.innerHTML="Loading your officials\u2026";Promise.all([getLeg(),getScores(),st==="CO"?getCO():Promise.resolve(null)]).then(function(res){var leg=res[0];var co=res[2];var html="";if(leg){var sens=leg.filter(function(p){var t=lastTerm(p);return t.type==="sen"&&t.state===st;});sens.forEach(function(s){var t=lastTerm(s);html+=card("U.S. Senator",s.name.official_full||(s.name.first+" "+s.name.last),(t.party||"")+" &middot; "+(STATES[st]||st),(t.phone?"\u260e "+t.phone+"   ":"")+(t.url?'<a target="_blank" rel="noopener" href="'+t.url+'">Website</a>':""),s.id&&s.id.bioguide);});if(district){var rep=leg.filter(function(p){var t=lastTerm(p);return t.type==="rep"&&t.state===st&&String(t.district)===String(district);})[0];if(rep){var rt=lastTerm(rep);html+=card("U.S. Representative \u2014 District "+district,rep.name.official_full||(rep.name.first+" "+rep.name.last),(rt.party||""),(rt.phone?"\u260e "+rt.phone+"   ":"")+(rt.url?'<a target="_blank" rel="noopener" href="'+rt.url+'">Website</a>':""),rep.id&&rep.id.bioguide);}}else{html+='<div class="off-card"><div class="role">U.S. Representative</div><div style="font-size:14px;margin-top:4px">Add your full street address above to pin your House district, or <a target="_blank" rel="noopener" href="https://www.house.gov/representatives/find-your-representative">look it up on House.gov</a>.</div></div>';}}else{html+='<div class="off-card"><div class="role">U.S. Senators &amp; Representative</div><div style="font-size:14px;margin-top:4px"><a target="_blank" rel="noopener" href="https://www.senate.gov/senators/">Your U.S. Senators</a> &middot; <a target="_blank" rel="noopener" href="https://www.house.gov/representatives/find-your-representative">Your U.S. Representative</a></div></div>';}html+=stateSection(st);if(st==="CO"&&co&&co.length){html+=coLegBlock(sldu,sldl,co);}else{html+=stateLegLink();}html+=nationalSection();box.innerHTML=html;});}
+function geocode(addr){return new Promise(function(res){var done=false;var s=document.createElement("script");window.__cb=function(d){done=true;try{document.body.removeChild(s);}catch(e){}res(d);try{delete window.__cb;}catch(e){}};s.onerror=function(){if(!done)res(null);};s.src="https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address="+encodeURIComponent(addr)+"&benchmark=Public_AR_Current&vintage=Current_Current&layers=all&format=jsonp&callback=__cb";document.body.appendChild(s);setTimeout(function(){if(!done)res(null);},9000);});}
+function lookup(){var addr=document.getElementById("addr").value.trim();var box=document.getElementById("offres");if(!addr){box.innerHTML='<div class="off-card">Enter your address above to find your officials.</div>';return;}box.innerHTML="Looking up your address\u2026";geocode(addr).then(function(d){try{if(d&&d.result&&d.result.addressMatches&&d.result.addressMatches.length){var g=d.result.addressMatches[0].geographies||{};var st=null,cd=null,k;for(k in g){if(/States/i.test(k)&&g[k][0]){st=g[k][0].STUSAB||null;}}for(k in g){if(/Congressional Distric/i.test(k)&&g[k][0]){cd=g[k][0].CD119||g[k][0].CD118||g[k][0].CD116||g[k][0].BASENAME||null;}}var sldu=null,sldl=null;for(k in g){if(/Legislative.*Upper/i.test(k)&&g[k][0]){sldu=g[k][0].SLDU||g[k][0].SLDUST||g[k][0].BASENAME||null;}if(/Legislative.*Lower/i.test(k)&&g[k][0]){sldl=g[k][0].SLDL||g[k][0].SLDLST||g[k][0].BASENAME||null;}}if(st){show(st,cd?String(parseInt(cd,10)):null,sldu?String(parseInt(sldu,10)):null,sldl?String(parseInt(sldl,10)):null);return;}}}catch(e){}box.innerHTML='<div class="off-card">We couldn\'t pin that address. Double-check it and try again, or use the official <a target="_blank" rel="noopener" href="https://www.house.gov/representatives/find-your-representative">House.gov</a> and <a target="_blank" rel="noopener" href="https://www.senate.gov/senators/">Senate.gov</a> lookups.</div>';});}
+(function(){var acBox=document.getElementById('ac'),addrInput=document.getElementById('addr'),acTimer=null;if(!acBox||!addrInput)return;function hideAc(){acBox.classList.remove('show');acBox.innerHTML='';}function fmt(p){var parts=[];var l1=[p.housenumber,p.street].filter(Boolean).join(' ');if(!l1&&p.name)l1=p.name;if(l1)parts.push(l1);if(p.city)parts.push(p.city);var st=[p.state,p.postcode].filter(Boolean).join(' ');if(st)parts.push(st);return parts.join(', ');}function acSearch(q){fetch('https://photon.komoot.io/api/?q='+encodeURIComponent(q)+'&limit=6&lang=en').then(function(r){return r.json();}).then(function(d){var feats=(d.features||[]).filter(function(f){return f.properties&&f.properties.countrycode==='US';});if(!feats.length){hideAc();return;}acBox.innerHTML='';feats.forEach(function(f){var label=fmt(f.properties);if(!label)return;var div=document.createElement('div');div.className='ac-item';div.textContent=label;div.addEventListener('click',function(){addrInput.value=label;hideAc();lookup();});acBox.appendChild(div);});if(acBox.children.length)acBox.classList.add('show');else hideAc();}).catch(function(){hideAc();});}addrInput.addEventListener('input',function(){var q=addrInput.value.trim();clearTimeout(acTimer);if(q.length<4){hideAc();return;}acTimer=setTimeout(function(){acSearch(q);},300);});addrInput.addEventListener('keydown',function(e){if(e.key==='Escape')hideAc();});document.addEventListener('click',function(e){if(e.target!==addrInput&&!acBox.contains(e.target))hideAc();});})();
 </script>
 </body></html>

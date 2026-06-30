@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>How Q Scores Work — The Q Collective</title>
+<title>Anatomy of a Bill / From Thought to Law — The Q Collective</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -446,7 +446,11 @@
 .ov-links{-webkit-column-count:2;column-count:2;-webkit-column-gap:54px;column-gap:54px;max-width:520px;width:100%;margin:0 auto}
 .ov-links a{display:block;-webkit-column-break-inside:avoid;break-inside:avoid;font-family:'Playfair Display',serif;font-size:25px;font-weight:700;color:#fff;text-decoration:none;padding:7px 4px;transition:color .2s;text-align:center}
 .ov-links a:hover{color:var(--gold-light)}
-.ov-foot{position:absolute;bottom:26px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5)}.ov-featured{display:block;margin:34px auto 0;max-width:520px;width:calc(100% - 64px);text-align:center;background:var(--gold);color:var(--navy-deep);font-family:'Playfair Display',serif;font-weight:700;font-size:19px;text-decoration:none;padding:17px 22px;border-radius:7px;border:1px solid var(--gold-light);transition:background .2s,transform .15s}.ov-featured .ovf-slash{color:var(--navy-mid);font-style:italic;margin:0 2px}.ov-featured .ovf-sub{display:block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;font-weight:500;color:var(--navy-mid);margin-top:7px}.ov-featured:hover{background:var(--gold-light);transform:translateY(-1px)}
+.ov-foot{position:absolute;bottom:26px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.ov-featured{display:block;margin:34px auto 0;max-width:520px;width:calc(100% - 64px);text-align:center;background:var(--gold);color:var(--navy-deep);font-family:'Playfair Display',serif;font-weight:700;font-size:19px;text-decoration:none;padding:17px 22px;border-radius:7px;border:1px solid var(--gold-light);transition:background .2s,transform .15s}
+.ov-featured .ovf-slash{color:var(--navy-mid);font-style:italic;margin:0 2px}
+.ov-featured .ovf-sub{display:block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;font-weight:500;color:var(--navy-mid);margin-top:7px}
+.ov-featured:hover{background:var(--gold-light);transform:translateY(-1px)}
 
 /* ===== responsive ===== */
 @media(max-width:900px){.contact-grid{grid-template-columns:1fr !important}}
@@ -508,6 +512,73 @@
 .consent{font-size:14px;color:var(--text-light)}
 .rubric .plabel{margin-top:0}
 
+
+/* ===== TABBED BILL VIEWS ===== */
+.tabwrap{max-width:1080px;margin:0 auto;padding:0 32px}
+.tabbar{display:flex;gap:6px;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.tab-btn{appearance:none;background:transparent;border:none;border-bottom:3px solid transparent;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);padding:18px 22px;cursor:pointer;transition:color .2s,border-color .2s;margin-bottom:-1px;text-align:left}
+.tab-btn .tb-sub{display:block;font-family:'DM Sans',sans-serif;font-size:11.5px;letter-spacing:.2px;text-transform:none;color:var(--text-light);margin-top:5px;font-weight:400}
+.tab-btn:hover{color:var(--navy-deep)}
+.tab-btn[aria-selected="true"]{color:var(--navy-deep);border-bottom-color:var(--gold)}
+.tab-btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
+.tab-pane{display:none}
+.tab-pane.active{display:block;animation:fadeUp .35s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ===== THOUGHT-TO-LAW JOURNEY ===== */
+.journey{margin-top:34px}
+.jstep{display:grid;grid-template-columns:auto 1fr;gap:24px;padding:26px 0;border-top:1px solid var(--border)}
+.jstep:first-child{border-top:none;padding-top:6px}
+.jrail{display:flex;flex-direction:column;align-items:center}
+.jnum{width:46px;height:46px;border-radius:50%;background:var(--navy-deep);color:var(--gold-light);font-family:'Playfair Display',serif;font-weight:700;font-size:20px;display:flex;align-items:center;justify-content:center;flex:none}
+.jline{width:2px;flex:1;background:var(--border);margin-top:10px;min-height:18px}
+.jstep:last-child .jline{display:none}
+.jbody h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--navy-deep);margin:4px 0 4px;line-height:1.2}
+.jbody .jrole{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:9px}
+.jbody p{font-size:15.5px;color:var(--text);line-height:1.75;margin:0}
+.jbody .jcivics{font-size:13.5px;color:var(--text-muted);line-height:1.65;margin-top:10px;border-left:2px solid var(--border);padding-left:14px}
+.jbody .jcivics b{color:var(--navy);font-weight:600}
+
+/* ===== BRIDGE BAND (shared) ===== */
+.bridge{background:var(--navy-deep);color:#fff;position:relative;overflow:hidden;padding:74px 32px;text-align:center}
+.bridge-wm{position:absolute;font-family:'Playfair Display',serif;font-weight:900;font-size:420px;line-height:1;color:rgba(184,150,46,.07);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;user-select:none}
+.bridge-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+.bridge .ph-eyebrow{color:var(--gold-light)}
+.bridge h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,42px);color:#fff;line-height:1.18;margin:12px 0 16px}
+.bridge h2 em{color:var(--gold-light);font-style:italic}
+.bridge p{font-size:16.5px;color:rgba(255,255,255,.78);line-height:1.8;margin:0 auto 26px;max-width:650px}
+.planks{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:0 0 30px}
+.plank{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,.6);border:1px solid rgba(184,150,46,.32);border-radius:30px;padding:8px 16px}
+.plank.here{color:var(--navy-deep);background:var(--gold);border-color:var(--gold);font-weight:600}
+
+/* ===== BUILT FOR EVERYONE (shared) ===== */
+.everyone{background:var(--off-white2);padding:82px 32px;position:relative;overflow:hidden}
+.everyone-wm{position:absolute;font-family:'Playfair Display',serif;font-weight:900;font-size:460px;line-height:1;color:rgba(27,58,107,.04);top:-50px;right:-40px;pointer-events:none;user-select:none}
+.everyone-inner{max-width:1080px;margin:0 auto;position:relative;z-index:1}
+.everyone .section-title em{font-style:italic;color:var(--gold)}
+.pairs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:38px}
+.pair{background:var(--white);border:1px solid var(--border);border-top:3px solid var(--gold);padding:24px 26px}
+.pair-top{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.pair-side{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy-deep);font-weight:700}
+.pair-amp{font-family:'DM Mono',monospace;font-size:13px;color:var(--gold);letter-spacing:1px}
+.pair p{font-size:14.5px;color:var(--text-light);line-height:1.7;margin:0}
+.cov-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:16px;margin-top:38px}
+.cov-card{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);padding:22px 24px}
+.cov-tag{display:block;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:8px}
+.cov-card h3{font-family:'Playfair Display',serif;font-size:18.5px;color:var(--navy-deep);font-weight:700;margin:0 0 9px}
+.cov-card p{font-size:14px;color:var(--text-light);line-height:1.7;margin:0}
+.everyone-sub{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-align:center;margin:66px 0 0}
+.everyone-sub-h{font-family:'Playfair Display',serif;font-size:26px;color:var(--navy-deep);text-align:center;font-weight:700;margin:12px auto 0;max-width:620px;line-height:1.3}
+.everyone-sub-h em{font-style:italic;color:var(--gold)}
+.everyone-close{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:var(--navy-deep);text-align:center;margin-top:40px;line-height:1.6}
+
+@media(max-width:760px){
+  .pairs{grid-template-columns:1fr}
+  .tab-btn{flex:1;padding:15px 14px;font-size:11px}
+  .tab-btn .tb-sub{font-size:10.5px}
+  .everyone-wm,.bridge-wm{display:none}
+}
+
 </style>
 </head><body>
 <div class="top-stripe"></div>
@@ -531,47 +602,101 @@
 <a href="how-q-scores-work.html">How Q Scores Work</a>
 <a href="contact.html">Contact</a>
 </nav>
-<a class="ov-featured" href="anatomy.html">Anatomy of a Bill <span class="ovf-slash">/</span> From Thought to Law<span class="ovf-sub">See how a bill is built &mdash; and how you can start one</span></a>
+<a class="ov-featured" href="anatomy.html" aria-current="page">Anatomy of a Bill <span class="ovf-slash">/</span> From Thought to Law<span class="ovf-sub">See how a bill is built &mdash; and how you can start one</span></a>
 <div class="ov-foot">The Q Collective LLC &middot; Doctrine Policy Group</div>
 </div>
 <script>document.addEventListener('keydown',function(e){if(e.key==='Escape'){var o=document.getElementById('navov');if(o)o.classList.remove('open');}});</script>
 
-<section class="pagehead"><p class="ph-eyebrow">Transparency</p><h1>How Q Scores Work</h1>
-<p>A Q Score is a single, honest number for how well an official&rsquo;s record serves the people they answer to &mdash; measured against the seven pillars of life stability, not against any party.</p></section>
-<div class="pagewrap narrow">
+<section class="pagehead"><p class="ph-eyebrow">Anatomy of a Bill</p><h1>From Thought to Law</h1><p style="font-size:17px;color:rgba(255,255,255,.82);max-width:660px;margin:14px auto 0;line-height:1.6">Two ways to see the work. Take a finished bill apart, section by section &mdash; or follow how a single idea becomes real, ready-to-move law. Pick your view.</p></section>
 
-<div class="prose">
-<p>Endorsements tell you who likes a politician. A Q Score tells you what they actually <em>do</em>. We read the public record &mdash; the bills, the votes, the actions, the rulings &mdash; and hold every level of government to the same standard, from the U.S. Senate to your statehouse, from the governor&rsquo;s office to the Supreme Court.</p>
-<p>The score is non-partisan by design. We are not measuring whether someone is a Democrat or a Republican. We are measuring one thing: <strong>does their record move the seven pillars of life stability forward, for everyone it touches?</strong></p>
+<div class="tabwrap"><div class="tabbar" role="tablist" aria-label="Bill views">
+<button class="tab-btn" id="tab-cesa" role="tab" aria-controls="pane-cesa" aria-selected="true" onclick="showTab('cesa')">CESA Anatomy<span class="tb-sub">A finished bill, taken apart</span></button>
+<button class="tab-btn" id="tab-process" role="tab" aria-controls="pane-process" aria-selected="false" onclick="showTab('process')">Thought to Law<span class="tb-sub">How an idea becomes law</span></button>
+</div></div>
+
+<div class="pagewrap">
+
+<section class="tab-pane active" id="pane-cesa" role="tabpanel" aria-labelledby="tab-cesa">
+
+
+
+<p class="section-label">Why It Exists</p><h2 class="section-title">Security is falling out from under working families.</h2><div class="section-divider"></div><p class="section-lead">A medical bill can erase a lifetime of savings. AI is rewriting which jobs still exist. Rent outruns wages, and a single emergency can end in homelessness. CESA&rsquo;s answer is not one program but a system &mdash; seven kinds of security, built to work together, paid for without new taxes, and switched on only as each piece is proven affordable.</p><div style="display:flex;flex-wrap:wrap;gap:14px;margin:30px 0 4px"><div style="flex:1;min-width:120px;border:1px solid var(--border);border-radius:10px;padding:18px 20px"><div style="font-family:'Playfair Display',serif;font-size:30px;color:var(--navy-deep);font-weight:700">428</div><div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);margin-top:2px">Pages</div></div><div style="flex:1;min-width:120px;border:1px solid var(--border);border-radius:10px;padding:18px 20px"><div style="font-family:'Playfair Display',serif;font-size:30px;color:var(--navy-deep);font-weight:700">70</div><div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);margin-top:2px">Sections</div></div><div style="flex:1;min-width:120px;border:1px solid var(--border);border-radius:10px;padding:18px 20px"><div style="font-family:'Playfair Display',serif;font-size:30px;color:var(--navy-deep);font-weight:700">7</div><div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);margin-top:2px">Pillars</div></div><div style="flex:1;min-width:120px;border:1px solid var(--border);border-radius:10px;padding:18px 20px"><div style="font-family:'Playfair Display',serif;font-size:30px;color:var(--gold);font-weight:700">$0</div><div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);margin-top:2px">New Taxes</div></div></div>
+
+<p class="section-label" style="margin-top:60px">The Architecture</p><h2 class="section-title">Seven pillars of life stability.</h2><div class="section-divider"></div><p class="section-lead">Everything in CESA rests on seven pillars. Each is a kind of security every family needs; each is delivered by real programs already written into the bill.</p><div style="margin-top:22px;border-bottom:1px solid var(--border)"><div style="display:flex;gap:20px;padding:24px 0;border-top:1px solid var(--border)"><div style="font-family:'DM Mono',monospace;font-size:13px;color:var(--gold);font-weight:500;flex:none;width:32px;padding-top:6px">01</div><div><h3 style="font-family:'Playfair Display',serif;font-size:21px;color:var(--navy-deep);margin:0 0 3px;font-weight:700">Health Security</h3><p style="font-size:13.5px;color:var(--text-light);margin:0 0 11px;font-style:italic">Care without fear, for body and mind.</p><p style="font-size:15px;color:var(--text);line-height:1.75;margin:0"><strong style="color:var(--navy)">Care Without Fear</strong> universal healthcare with no prior authorization &middot; comprehensive mental health services with parity enforcement &middot; the <strong style="color:var(--navy)">Full Human Autonomy Act</strong> &mdash; reproductive, gender-affirming, and end-of-life rights.</p></div></div><div style="display:flex;gap:20px;padding:24px 0;border-top:1px solid var(--border)"><div style="font-family:'DM Mono',monospace;font-size:13px;color:var(--gold);font-weight:500;flex:none;width:32px;padding-top:6px">02</div><div><h3 style="font-family:'Playfair Display',serif;font-size:21px;color:var(--navy-deep);margin:0 0 3px;font-weight:700">Income Security</h3><p style="font-size:13.5px;color:var(--text-light);margin:0 0 11px;font-style:italic">A floor under your income when work changes.</p><p style="font-size:15px;color:var(--text);line-height:1.75;margin:0"><strong style="color:var(--navy)">AI Workforce Protection</strong> &middot; the <strong style="color:var(--navy)">Life Security Program</strong> (state-run life insurance) &middot; worker classification standards &middot; <strong style="color:var(--navy)">Veterans Economic Security</strong> with combat-trauma income protection.</p></div></div><div style="display:flex;gap:20px;padding:24px 0;border-top:1px solid var(--border)"><div style="font-family:'DM Mono',monospace;font-size:13px;color:var(--gold);font-weight:500;flex:none;width:32px;padding-top:6px">03</div><div><h3 style="font-family:'Playfair Display',serif;font-size:21px;color:var(--navy-deep);margin:0 0 3px;font-weight:700">Family Security</h3><p style="font-size:13.5px;color:var(--text-light);margin:0 0 11px;font-style:italic">Care for the people who depend on you.</p><p style="font-size:15px;color:var(--text);line-height:1.75;margin:0"><strong style="color:var(--navy)">Childcare For All</strong> &middot; the <strong style="color:var(--navy)">Youth &amp; Student Protection Act</strong> &mdash; benefits to age 26 for former foster youth, more school counselors, free college for former foster youth &middot; the <strong style="color:var(--navy)">Coloradans with Disabilities Act</strong>.</p></div></div><div style="display:flex;gap:20px;padding:24px 0;border-top:1px solid var(--border)"><div style="font-family:'DM Mono',monospace;font-size:13px;color:var(--gold);font-weight:500;flex:none;width:32px;padding-top:6px">04</div><div><h3 style="font-family:'Playfair Display',serif;font-size:21px;color:var(--navy-deep);margin:0 0 3px;font-weight:700">Housing Security</h3><p style="font-size:13.5px;color:var(--text-light);margin:0 0 11px;font-style:italic">A stable roof, and a path to keep it.</p><p style="font-size:15px;color:var(--text);line-height:1.75;margin:0"><strong style="color:var(--navy)">Zero Homeless Colorado</strong> &middot; the <strong style="color:var(--navy)">Housing Justice &amp; Anti-Displacement Act</strong> &mdash; Tenant Opportunity to Purchase, rent stabilization, and a 48-hour eviction-prevention fund.</p></div></div><div style="display:flex;gap:20px;padding:24px 0;border-top:1px solid var(--border)"><div style="font-family:'DM Mono',monospace;font-size:13px;color:var(--gold);font-weight:500;flex:none;width:32px;padding-top:6px">05</div><div><h3 style="font-family:'Playfair Display',serif;font-size:21px;color:var(--navy-deep);margin:0 0 3px;font-weight:700">Food Security</h3><p style="font-size:13.5px;color:var(--text-light);margin:0 0 11px;font-style:italic">Healthy food within reach of every community.</p><p style="font-size:15px;color:var(--text);line-height:1.75;margin:0"><strong style="color:var(--navy)">Healthy Colorado Food Policy</strong> &middot; the Food Quality &amp; Access Initiative &middot; the <strong style="color:var(--navy)">Food Transparency Act</strong> &middot; the Culinary &amp; Dining Initiative.</p></div></div><div style="display:flex;gap:20px;padding:24px 0;border-top:1px solid var(--border)"><div style="font-family:'DM Mono',monospace;font-size:13px;color:var(--gold);font-weight:500;flex:none;width:32px;padding-top:6px">06</div><div><h3 style="font-family:'Playfair Display',serif;font-size:21px;color:var(--navy-deep);margin:0 0 3px;font-weight:700">Economic Opportunity</h3><p style="font-size:13.5px;color:var(--text-light);margin:0 0 11px;font-style:italic">Room to build, start, and get ahead.</p><p style="font-size:15px;color:var(--text);line-height:1.75;margin:0">the <strong style="color:var(--navy)">Economic Independence Framework</strong> &middot; the Business Success Team &middot; a <strong style="color:var(--navy)">Colorado State Bank</strong> &middot; Innovation Districts &middot; the <strong style="color:var(--navy)">Financial Justice Act</strong> (36% APR cap, medical debt off credit reports) &middot; <strong style="color:var(--navy)">Digital Equity</strong> &mdash; broadband as an essential utility.</p></div></div><div style="display:flex;gap:20px;padding:24px 0;border-top:1px solid var(--border)"><div style="font-family:'DM Mono',monospace;font-size:13px;color:var(--gold);font-weight:500;flex:none;width:32px;padding-top:6px">07</div><div><h3 style="font-family:'Playfair Display',serif;font-size:21px;color:var(--navy-deep);margin:0 0 3px;font-weight:700">Protection from Disruption</h3><p style="font-size:13.5px;color:var(--text-light);margin:0 0 11px;font-style:italic">Shielding Coloradans from shocks beyond their control.</p><p style="font-size:15px;color:var(--text);line-height:1.75;margin:0"><strong style="color:var(--navy)">Colorado Shield</strong> (state defense force) &middot; Democracy Protection &middot; Data Sovereignty &amp; Digital Likeness Protection &middot; the Climate Resilience Act &middot; <strong style="color:var(--navy)">GOARN</strong> &mdash; the Western States Economic Security Compact.</p></div></div></div>
+
+<p class="section-label" style="margin-top:60px">How It&rsquo;s Paid For</p><h2 class="section-title">Enterprise funds, not new taxes.</h2><div class="section-divider"></div><p class="section-lead">CESA runs on enterprise funds &mdash; self-sustaining accounts where you pay for a service and receive that service, the same way unemployment insurance works. They sit outside the state General Fund and are exempt from TABOR.</p><div style="margin-top:22px;display:grid;gap:14px"><div style="border-left:2px solid var(--gold);padding:3px 0 3px 16px"><p style="margin:0;font-size:15px;color:var(--text);line-height:1.7"><strong style="color:var(--navy-deep)">Contributions are payments for services, not taxes.</strong> You pay into an enterprise fund and receive the service it provides &mdash; exempt from TABOR, like other Colorado enterprise funds.</p></div><div style="border-left:2px solid var(--gold);padding:3px 0 3px 16px"><p style="margin:0;font-size:15px;color:var(--text);line-height:1.7"><strong style="color:var(--navy-deep)">Employer assessments work like unemployment insurance.</strong> They are employer obligations, not a tax on employees&rsquo; paychecks.</p></div><div style="border-left:2px solid var(--gold);padding:3px 0 3px 16px"><p style="margin:0;font-size:15px;color:var(--text);line-height:1.7"><strong style="color:var(--navy-deep)">Visitors and health-harming products help carry the load.</strong> Tourism fees are visitor fees, not resident taxes; health-impact fees are regulatory fees on products that drive up healthcare costs.</p></div><div style="border-left:2px solid var(--gold);padding:3px 0 3px 16px"><p style="margin:0;font-size:15px;color:var(--text);line-height:1.7"><strong style="color:var(--navy-deep)">If a tax is ever used, it is treated as a tax.</strong> Any income-tax adjustment follows every TABOR rule, including voter approval.</p></div><div style="border-left:2px solid var(--gold);padding:3px 0 3px 16px"><p style="margin:0;font-size:15px;color:var(--text);line-height:1.7"><strong style="color:var(--navy-deep)">No one pays twice.</strong> The bill prohibits charging an individual or employer twice for the same benefit.</p></div><div style="border-left:2px solid var(--gold);padding:3px 0 3px 16px"><p style="margin:0;font-size:15px;color:var(--text);line-height:1.7"><strong style="color:var(--navy-deep)">Pay-as-proven, not a blank check.</strong> Nothing activates automatically &mdash; each program turns on in phases, and only after an independent actuary certifies it can fund itself.</p></div></div>
+
+<p class="section-label" style="margin-top:60px">Why It Holds Up</p><h2 class="section-title">Built to survive a courtroom &mdash; and a change of power.</h2><div class="section-divider"></div><p class="section-lead">A 428-page bill invites two attacks: that it breaks the rules, and that a future legislature will gut it. CESA is built against both.</p><div style="margin-top:22px;display:grid;gap:14px"><div style="border-left:2px solid var(--gold);padding:3px 0 3px 16px"><p style="margin:0;font-size:15px;color:var(--text);line-height:1.7"><strong style="color:var(--navy-deep)">One subject: life stability.</strong> Every one of the 70 sections serves a single purpose &mdash; life stability for all Colorado residents &mdash; which is how a bill this large stays within Colorado&rsquo;s single-subject rule.</p></div><div style="border-left:2px solid var(--gold);padding:3px 0 3px 16px"><p style="margin:0;font-size:15px;color:var(--text);line-height:1.7"><strong style="color:var(--navy-deep)">TABOR-compliant by design.</strong> The programs are structured as enterprise funds, properly exempt under the framework Colorado voters approved in 1992, with Proposition 117 addressed directly.</p></div><div style="border-left:2px solid var(--gold);padding:3px 0 3px 16px"><p style="margin:0;font-size:15px;color:var(--text);line-height:1.7"><strong style="color:var(--navy-deep)">Independent guardrails.</strong> Phased activation, independent actuarial certification, due-process and safe-harbor protections, an Implementation Oversight Board, and a permanent, nonpartisan Stewardship &amp; Review Council &mdash; eleven members, staggered six-year terms, no single appointing authority.</p></div><div style="border-left:2px solid var(--gold);padding:3px 0 3px 16px"><p style="margin:0;font-size:15px;color:var(--text);line-height:1.7"><strong style="color:var(--navy-deep)">A protected core.</strong> The most essential rights are elevated to require a supermajority referendum to weaken, so they can&rsquo;t be quietly rolled back when power changes hands.</p></div></div>
+
+<div class="callout" style="margin-top:64px"><p class="ph-eyebrow">Read It Yourself</p><h2>Don&rsquo;t take our word for it.</h2><p>The entire 428-page bill is public &mdash; every program, every dollar, every safeguard. Read it in full, then judge for yourself.</p><a href="cesa-v15.pdf" class="btn-gold" target="_blank" rel="noopener">Open the full bill (PDF) &rarr;</a><p style="font-size:13px;color:rgba(255,255,255,.6);margin-top:18px">This is the format &mdash; every bill in the Doctrine gets the same plain-language anatomy.</p></div>
+
+</section>
+
+<section class="tab-pane" id="pane-process" role="tabpanel" aria-labelledby="tab-process">
+
+<p class="section-label">How the Work Becomes Real</p><h2 class="section-title">Most bills start as a press release. Ours start as a problem.</h2><div class="section-divider"></div><p class="section-lead">We don&rsquo;t write talking points &mdash; we write bills. Here is the honest path a Q Collective bill walks: from a problem a real family feels, to language a legislator can carry to the floor, to a law you can hold the state to. Same standard every time. The gold note under each step is the civics &mdash; how it actually works in Colorado.</p>
+
+<div class="journey">
+
+<div class="jstep"><div class="jrail"><div class="jnum">1</div><div class="jline"></div></div><div class="jbody"><div class="jrole">It starts with people</div><h3>The Problem</h3><p>We start where it hurts: a medical bill that erases a lifetime of savings, a job AI just made disappear, rent that outran a paycheck. No real problem, no bill. We don&rsquo;t reverse-engineer a problem to fit a slogan.</p><p class="jcivics">In Colorado, <b>anyone</b> can bring an idea to a legislator. Almost none of them ever get written down. We write ours down first &mdash; in full.</p></div></div>
+
+<div class="jstep"><div class="jrail"><div class="jnum">2</div><div class="jline"></div></div><div class="jbody"><div class="jrole">Research over ideology</div><h3>The Evidence</h3><p>Before a single line of law, the homework: what&rsquo;s already proven, what it costs, who it touches, and where it&rsquo;s been done before. Evidence over endorsements &mdash; if the data doesn&rsquo;t hold, the idea doesn&rsquo;t move.</p><p class="jcivics">Fiscal notes, actuarial review, and hard numbers are what survive a committee hearing. We build them in from the start instead of scrambling later.</p></div></div>
+
+<div class="jstep"><div class="jrail"><div class="jnum">3</div><div class="jline"></div></div><div class="jbody"><div class="jrole">Actual bill language</div><h3>The Draft</h3><p>Then we write the bill itself &mdash; sections, definitions, funding mechanics, effective dates &mdash; not a wish list. Finished, defensible legislation, ready to file on day one.</p><p class="jcivics">Real bills are drafted into statutory form with the Office of Legislative Legal Services. We draft to that standard so a sponsor can move fast and isn&rsquo;t starting from a blank page.</p></div></div>
+
+<div class="jstep"><div class="jrail"><div class="jnum">4</div><div class="jline"></div></div><div class="jbody"><div class="jrole">Built to survive a courtroom</div><h3>The Pressure Test</h3><p>Next we attack our own bill: the single-subject rule, TABOR, due process &mdash; and the balance test. Does it work for everyone it touches? If it only wins by making someone lose, it goes back to the desk.</p><p class="jcivics">Colorado&rsquo;s <b>single-subject rule</b> and <b>TABOR</b> have killed ambitious bills before. We test against them before anyone in a hearing room gets the chance.</p></div></div>
+
+<div class="jstep"><div class="jrail"><div class="jnum">5</div><div class="jline"></div></div><div class="jbody"><div class="jrole">A legislator carries it</div><h3>The Champion</h3><p>A bill needs a sponsor. We bring finished legislation to legislators willing to carry it &mdash; and the receipts to defend it under questioning. We make the &ldquo;yes&rdquo; easy and the defense airtight.</p><p class="jcivics">Every bill needs a <b>prime sponsor</b> in the House or Senate to be introduced and read across the desk. No sponsor, no bill.</p></div></div>
+
+<div class="jstep"><div class="jrail"><div class="jnum">6</div><div class="jline"></div></div><div class="jbody"><div class="jrole">Committee, votes, amendments</div><h3>The Floor</h3><p>Public testimony. Committee of reference. Second and third reading in both chambers. Amendments. This is where the public&rsquo;s voice &mdash; and yours &mdash; actually moves the math.</p><p class="jcivics">A bill must clear committee, then <b>two readings in each chamber</b>, before it reaches the Governor. Your testimony, your calls, and your emails count most right here.</p></div></div>
+
+<div class="jstep"><div class="jrail"><div class="jnum">7</div><div class="jline"></div></div><div class="jbody"><div class="jrole">Signed &mdash; and watched</div><h3>The Law</h3><p>The Governor signs, and it becomes law. But the job isn&rsquo;t finished at the signature. Our Legislative Accountability Hub tracks who voted how &mdash; and whether the promise actually gets kept.</p><p class="jcivics">Most Colorado laws take effect <b>90 days after the session ends</b>, unless a safety clause makes them immediate &mdash; a tradeoff we weigh in the open, because it trades away your right to a citizen referendum.</p></div></div>
+
 </div>
 
-<p class="section-label" style="margin-top:40px">The Scale</p>
-<h2 class="section-title" style="margin-bottom:6px">0 to 100</h2><div class="section-divider"></div>
-<div class="prose">
-<p>Every Q Score runs from <strong>0 to 100</strong>. The higher the number, the stronger and more consistent the alignment with the pillars. A score of <strong>80 or above earns the title &ldquo;Accountability Champion&rdquo;</strong> &mdash; reserved for officials whose record clearly and repeatedly serves life stability. Lower scores reflect weaker, more mixed, or contrary records. The number is always backed by the underlying record, so you can check our work.</p>
+<div class="callout" style="margin-top:60px"><p class="ph-eyebrow">See It In Practice</p><h2>This is the method. CESA is the proof.</h2><p>Every step above is exactly how the Colorado Economic Security Act was built &mdash; problem, evidence, draft, pressure test, and all. Switch to the CESA Anatomy tab to see a finished bill taken apart.</p><a href="#cesa" class="btn-gold" onclick="showTab('cesa');window.scrollTo({top:0,behavior:'smooth'});return false;">Open the CESA Anatomy &rarr;</a></div>
+
+</section>
+
 </div>
 
-<p class="section-label" style="margin-top:40px">The Frameworks</p>
-<h2 class="section-title" style="margin-bottom:6px">Each branch is scored on its own job</h2><div class="section-divider"></div>
-<div class="prose"><p>A legislator&rsquo;s job is different from a governor&rsquo;s, which is different from a judge&rsquo;s &mdash; so each branch is scored on the work it&rsquo;s actually responsible for. Within a branch, the rubric is identical at every level: a state senator is judged the same way as a U.S. Senator, a governor the same way as the President.</p></div>
-<div class="factbox rubric"><p class="plabel">Legislative &mdash; U.S. Congress &amp; State Legislatures</p><div class="score-row"><span>Pillar Alignment &mdash; do their bills and votes advance the seven pillars?</span><span class="v">40%</span></div><div class="score-row"><span>Attendance &mdash; do they show up and cast their votes?</span><span class="v">25%</span></div><div class="score-row"><span>Citizen Impact &mdash; who actually benefits from what they pass?</span><span class="v">25%</span></div><div class="score-row"><span>Sponsorship &mdash; do they lead on pillar-aligned bills, or just follow?</span><span class="v">10%</span></div></div><div class="factbox rubric"><p class="plabel">Executive &mdash; Governors, the President &amp; Elected Executives</p><div class="score-row"><span>Pillar Alignment of Actions &mdash; do their orders, budgets, and signatures serve the pillars?</span><span class="v">40%</span></div><div class="score-row"><span>Citizen Impact &mdash; who is better off because of their decisions?</span><span class="v">30%</span></div><div class="score-row"><span>Implementation &amp; Delivery &mdash; do they actually deliver, not just announce?</span><span class="v">20%</span></div><div class="score-row"><span>Transparency &amp; Accountability &mdash; are they open about what they do?</span><span class="v">10%</span></div></div><div class="prose"><p style="font-size:15px;color:var(--text-light)">For executives, a veto of a clearly pillar-aligned bill counts against the score.</p></div><div class="factbox rubric"><p class="plabel">Judicial &mdash; the U.S. Supreme Court &amp; the Courts</p><div class="score-row"><span>Ruling Alignment &mdash; do their decisions protect the pillars and the people?</span><span class="v">50%</span></div><div class="score-row"><span>Citizen Impact &mdash; who is helped or harmed by the rulings?</span><span class="v">25%</span></div><div class="score-row"><span>Consistency &amp; Principle &mdash; do they apply the law evenly, not selectively?</span><span class="v">15%</span></div><div class="score-row"><span>Institutional Integrity &mdash; do they respect the role and limits of the court?</span><span class="v">10%</span></div></div>
-<p class="section-label" style="margin-top:40px">The Seven Pillars</p>
-<h2 class="section-title" style="margin-bottom:6px">What we measure alignment against</h2><div class="section-divider"></div>
-<div class="prose"><p>Every score is anchored to the seven pillars of life stability &mdash; the things a person needs to stand on solid ground:</p>
-<p><strong>Health &middot; Income &middot; Family &middot; Housing &middot; Food &middot; Economic Opportunity &middot; Protection from Disruption.</strong></p>
+<section class="bridge"><div class="bridge-wm">Q</div><div class="bridge-inner"><p class="ph-eyebrow">The Bigger Picture</p><h2>One bill is a plank.<br>The <em>bridge</em> is the whole crossing.</h2><p>CESA is built to prove one thing: that comprehensive security can work at scale, paid for honestly, and survive a change of power. It is the first plank in a longer span &mdash; from a state law, to a federal safeguard, to a regional compact, to a new American covenant. Each one tested the same way. Each one built for everyone.</p><div class="planks"><span class="plank here">CESA &middot; State</span><span class="plank">US-RAPA &middot; Federal</span><span class="plank">GOARN &middot; Regional</span><span class="plank">The Covenant &middot; The Bridge Protocol</span></div><a href="the-work.html" class="btn-gold" target="_blank" onclick="return goTo(event, this.href)">See the whole bridge &mdash; The Work &rarr;</a></div></section>
+
+<section class="everyone"><div class="everyone-wm">Q</div><div class="everyone-inner"><p class="section-label">Built for Everyone</p><h2 class="section-title">It reaches the people most often <em>left out</em> &mdash; on purpose, by name.</h2><div class="section-divider"></div><p class="section-lead">Universal isn&rsquo;t a slogan here. CESA writes specific communities into the bill, so the people a safety net usually misses are covered deliberately &mdash; not by accident, and not as an afterthought.</p>
+<div class="cov-grid">
+<div class="cov-card"><span class="cov-tag">Section 14</span><h3>Tribal Nations</h3><p>The Colorado Tribal Partnership gives enrolled members of the Ute Mountain Ute and Southern Ute tribes automatic eligibility &mdash; on or off the reservation &mdash; and treats sovereign tribal nations as valued partners, not afterthoughts.</p></div>
+<div class="cov-card"><span class="cov-tag">Section 54</span><h3>Seasonal &amp; Visa Workers</h3><p>Seasonal residents, dual-home owners, J-1 visa holders, and temporary workers all qualify. No one who lives, works, and contributes here is shut out over a visa category.</p></div>
+<div class="cov-card"><span class="cov-tag">Section 1.8.7</span><h3>Status-Neutral Eligibility</h3><p>Eligibility runs on presence and contribution, not federal immigration status. The bill is explicit that this is administrative &mdash; not a statement on immigration: the state cannot verify federal status, so it won&rsquo;t condition care on it or share applicant data with federal immigration authorities except as the law requires.</p></div>
+<div class="cov-card"><span class="cov-tag">Section 36</span><h3>Coloradans with Disabilities</h3><p>A dedicated Coloradans with Disabilities Act guarantees full access to every part of life CESA touches &mdash; written into the law, not bolted on after.</p></div>
+<div class="cov-card"><span class="cov-tag">Section 35</span><h3>Rural &amp; Frontier Communities</h3><p>Mobile CESA offices, cultural-competency standards, and hard travel-distance limits mean a family hours from a city is never hours from their rights.</p></div>
+</div>
+<p class="everyone-sub">And balanced for every side</p>
+<h2 class="everyone-sub-h">If it only wins by making someone <em>lose</em>, it isn&rsquo;t ready.</h2>
+<p class="section-lead" style="text-align:center;margin:18px auto 0;max-width:680px">We don&rsquo;t pick sides &mdash; we pick balance. Every bill we build or back has to work for everyone it touches: not a compromise that leaves both halves unhappy, but a design where each side comes out ahead.</p>
+
+<div class="pairs">
+<div class="pair"><div class="pair-top"><span class="pair-side">The Worker</span><span class="pair-amp">&amp;</span><span class="pair-side">The Business</span></div><p>The worker gets care that can&rsquo;t be taken away with a job. The business sheds the cost and paperwork of administering health insurance, and competes on a level field.</p></div>
+<div class="pair"><div class="pair-top"><span class="pair-side">The Farmer</span><span class="pair-amp">&amp;</span><span class="pair-side">The Grocer</span></div><p>Coverage reaches seasonal and farm workers without an employer mandate &mdash; while healthy-food policy builds steady local demand for what Colorado grows and sells.</p></div>
+<div class="pair"><div class="pair-top"><span class="pair-side">The Family</span><span class="pair-amp">&amp;</span><span class="pair-side">The Future</span></div><p>A family gets a floor under income, housing, and care today &mdash; funded through enterprise funds that don&rsquo;t mortgage the next generation to pay for this one.</p></div>
+<div class="pair"><div class="pair-top"><span class="pair-side">The Patient</span><span class="pair-amp">&amp;</span><span class="pair-side">The Provider</span></div><p>Care arrives without prior-authorization roadblocks for the patient &mdash; and without an insurance middleman second-guessing the provider&rsquo;s call.</p></div>
+<div class="pair"><div class="pair-top"><span class="pair-side">The Borrower</span><span class="pair-amp">&amp;</span><span class="pair-side">The Honest Lender</span></div><p>A 36% APR cap and medical debt off credit reports protect the borrower &mdash; while honest lenders compete without being undercut by predatory ones.</p></div>
+<div class="pair"><div class="pair-top"><span class="pair-side">The Taxpayer</span><span class="pair-amp">&amp;</span><span class="pair-side">The Neighbor in Need</span></div><p>No new taxes and no blank checks for the taxpayer; a real safety net for the neighbor in crisis. Each program switches on only after it proves it can pay for itself.</p></div>
 </div>
 
-<p class="section-label" style="margin-top:40px">The Data</p>
-<h2 class="section-title" style="margin-bottom:6px">Where the numbers come from</h2><div class="section-divider"></div>
-<div class="prose">
-<p>Legislative scores are built from official bill text and roll-call votes sourced through LegiScan, refreshed on a regular cycle. We&rsquo;re live in Colorado now, with more states on the way. Executive and judicial scoring use the rubrics below and are launching soon. In every case we work from primary sources and link back to them, so a score is never a black box &mdash; it&rsquo;s a starting point you can verify.</p>
-<p>The system rolls out in phases: the legislative engine comes online first, with the executive and judicial branches following. AI assists the analysis, but every result references the public record, and the methodology will be refined and published openly over time.</p>
-</div>
+<p class="everyone-close">Evidence over ideology. People over party.</p>
+</div></section>
 
-<div class="callout" style="margin-top:40px">
-<p>See a score you want to understand or challenge? Good &mdash; that&rsquo;s the point. <a href="contact.html">Tell us</a> and we&rsquo;ll walk you through the record behind it.</p>
-</div>
-</div>
+<script>
+function showTab(id){
+  document.querySelectorAll('.tab-pane').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.setAttribute('aria-selected','false');});
+  var pane=document.getElementById('pane-'+id), btn=document.getElementById('tab-'+id);
+  if(pane){pane.classList.add('active');}
+  if(btn){btn.setAttribute('aria-selected','true');}
+  if(history.replaceState){history.replaceState(null,'',location.pathname+location.search+'#'+id);}
+}
+(function(){var h=(location.hash||'').replace('#','');if(h==='process'||h==='cesa'){showTab(h);}})();
+</script>
 
 <div class="footer">
 
