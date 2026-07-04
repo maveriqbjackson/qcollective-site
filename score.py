@@ -2,6 +2,12 @@
 # ============================================================
 # The Q Score Engine  -  The Q Collective / Doctrine Policy Group
 # version history (newest first):
+#   v6.4 LegiScan compliance (pipeline only; scoring UNCHANGED, no re-score triggered):
+#        per LegiScan API team request (July 2026) - store each state's dataset_hash from
+#        getDatasetList in data/dataset_state.json and SKIP the getDataset download entirely
+#        when the hash matches the last pull (datasets regenerate weekly, Sun 4-5 AM ET).
+#        Pairs with the workflow moving to Sundays 18:23 UTC. Skipped states still return
+#        their index entry (site dropdown unaffected) and health.json still heartbeats.
 #   v6.3 Phase 3.5a (additive; scoring UNCHANGED): writes data/<ST>_bills.json (rich per-bill
 #        record - full action history, progress, sponsors with people_id for on-site linking,
 #        and text/PDF references) to power the on-site bill detail page; data/<ST>_snapshots.json
@@ -134,7 +140,8 @@ def latest_datasets(states):
         key = (d.get("year_end", 0), 0 if d.get("special") else 1, d.get("session_id", 0))
         if abbr not in best or key > best[abbr][0]:
             best[abbr] = (key, {"session_id": d.get("session_id"), "access_key": d.get("access_key"),
-                                "session_name": d.get("session_name", "")})
+                                "session_name": d.get("session_name", ""),
+                                "dataset_hash": d.get("dataset_hash", ""), "dataset_date": d.get("dataset_date", "")})
     return {a: v[1] for a, v in best.items()}
 
 def fetch_dataset(session_id, access_key):
@@ -284,11 +291,35 @@ def load_cache(path):
     try: return {str(l["id"]): l for l in json.load(open(path)).get("legislators", [])}
     except Exception: return {}
 
+# --- v6.4: remember each state's dataset_hash so unchanged weeks skip the download entirely ---
+def _load_dstate():
+    try: return json.load(open(os.path.join(OUTDIR, "dataset_state.json")))
+    except Exception: return {}
+
+def _save_dstate(d):
+    try:
+        with open(os.path.join(OUTDIR, "dataset_state.json"), "w") as f:
+            json.dump(d, f, indent=1, sort_keys=True)
+    except Exception as e:
+        log("  could not write dataset_state.json:", e)
+
 # ---------------------------------------------------------------- per state
 def do_state(abbr, ds):
     name = STATE_ID[ABBR_TO_ID[abbr]][1]
     body = name if abbr == "US" else name + " " + LEG_BODY.get(abbr, "Legislature")
     log("\n=== %s (%s) session %s ===" % (name, abbr, ds["session_id"]))
+    # v6.4 LegiScan best practice: getDatasetList's dataset_hash tells us whether the weekly
+    # archive changed. If it matches what we pulled last time AND our output exists, skip the
+    # heavy getDataset call completely — nothing new to score.
+    dstate = _load_dstate()
+    state_file = os.path.join(OUTDIR, abbr + ".json")
+    if (ds.get("dataset_hash") and dstate.get(abbr, {}).get("dataset_hash") == ds["dataset_hash"]
+            and os.path.exists(state_file)):
+        try: prior_count = len(json.load(open(state_file)).get("legislators", []))
+        except Exception: prior_count = 0
+        if prior_count:
+            log("  dataset unchanged since last pull (hash %s...) - skipping download per LegiScan best practices." % ds["dataset_hash"][:10])
+            return {"code": abbr, "name": name, "count": prior_count}
     people, bills, votes = parse_dataset(fetch_dataset(ds["session_id"], ds["access_key"]))
     log("  parsed people=%d bills=%d roll_calls=%d" % (len(people), len(bills), len(votes)))
     if not people:
@@ -367,6 +398,10 @@ def do_state(abbr, ds):
             json.dump({"state": abbr, "snapshots": snaps}, f, indent=1, sort_keys=True)
     log("  %s: %d legislators (%d scored, %d cached) | %d champions (80+) | top score %d | %d had no prime-sponsored bills" %
         (abbr, len(out), scored, reused, champs, top, no_primary))
+    # v6.4: record what we just pulled so next run can skip if LegiScan hasn't regenerated
+    dstate[abbr] = {"dataset_hash": ds.get("dataset_hash", ""), "dataset_date": ds.get("dataset_date", ""),
+                    "session_id": ds["session_id"], "pulled": stamp_now()}
+    _save_dstate(dstate)
     return {"code": abbr, "name": name, "count": len(out)}
 
 def _write_health(ok, states_ok, errors):
