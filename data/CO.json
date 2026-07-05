@@ -4,7 +4,7 @@
  "body": "Colorado General Assembly",
  "session": 2243,
  "session_name": "2026 Regular Session",
- "updated": "July 4, 2026 at 6:48 AM MDT",
+ "updated": "July 5, 2026 at 3:45 PM MDT",
  "count": 100,
  "legislators": [
   {
@@ -2690,7 +2690,7 @@
    "sponsorship": 80,
    "ai_spons": 71,
    "enacted": 10,
-   "why": "Benavidez prime-sponsored 10 enacted bills covering meaningful pillars\u2014Black maternal health equity, prescription drug cost relief, tenant data protections, ID document seizure protections, and transit access\u2014demonstrating consistent leadership across Health, Housing, and Protection from Disruption, though several bills are narrow or procedural (ballot title language, background check info, hair product transparency) and the overall depth of transformative impact falls short of a top-tier standout.",
+   "why": "Benavidez prime-sponsored and enacted 10 bills touching Health (Black maternal health, prescription drug costs), Housing (tenant data, adjoining property repair), Protection from Disruption (ID document seizures, background checks), and transit access, demonstrating consistent pillar-aligned leadership across multiple domains, though several bills (chemical transparency, ballot language, Latino advocacy day) are narrow or procedural rather than broadly transformative.",
    "bills": [
     {
      "number": "HB1001",
@@ -3113,7 +3113,7 @@
      "primary": false
     }
    ],
-   "_h": "2b05b838cc16171a20ce4fe07c63f88e"
+   "_h": "ee264e9afbac8f86bee8deb7863161c3"
   },
   {
    "id": "20136",
@@ -3558,6 +3558,450 @@
     }
    ],
    "_h": "51c1e526edf14583949bec8e988809d3"
+  },
+  {
+   "id": "26072",
+   "name": "Scott Bright",
+   "role": "Senator",
+   "chamber": "State Senate",
+   "body": "Colorado General Assembly",
+   "home": "CO",
+   "party": "R",
+   "district": "13",
+   "photo": "",
+   "score": 79,
+   "label": "",
+   "pillar": 72,
+   "attendance": 100,
+   "attendance_raw": 100,
+   "impact": 68,
+   "sponsorship": 80,
+   "ai_spons": 71,
+   "enacted": 21,
+   "why": "Bright prime-sponsored and enacted a notably productive cluster of child-care bills (HB1004, HB1260, SB019, SB020, SB050) plus out-of-network health insurance dispute resolution (SB017) and ABA services (HB1425), giving him genuine multi-pillar breadth in Health, Family, and Economic Opportunity, though several bills are regulatory/niche (barre exemptions, liquor rooms, motorcycle permits) and key efforts like the prescription drug affordability exemption and parenting-time order failed.",
+   "bills": [
+    {
+     "number": "HB1004",
+     "title": "Continuation of Child Care Contribution Tax Credit",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1004/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1019",
+     "title": "Kidney Screening Mandatory Preventive Coverage",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1019/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1020",
+     "title": "Colorimetric Field Drug Tests in Drug Possessions",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1020/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1025",
+     "title": "Exempt Auctioneers Charitable Solicitation Requirements",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1025/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1031",
+     "title": "Protections for Agricultural Products Grown in Colorado",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1031/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1033",
+     "title": "Expanding the Colorado Cottage Foods Act",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1033/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1041",
+     "title": "Electronic Vehicle Records",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1041/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1052",
+     "title": "Rights for Victims of Certain Crimes",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1052/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1053",
+     "title": "Motor Vehicle Regulation Administration",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1053/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1067",
+     "title": "Diseased Livestock Indemnity Fund",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1067/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1069",
+     "title": "Availability of Emergency Medical Services",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1069/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1075",
+     "title": "Child Welfare Prevention Services Funding",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1075/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1078",
+     "title": "Off-Campus Courses & Concurrent Enrollment Programs",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1078/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1079",
+     "title": "Drive Motorcycle Written Permission",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1079/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1115",
+     "title": "Prepaid Wireless Telecom Services Modifications",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1115/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1138",
+     "title": "Retail Theft Prevention Program",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1138/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1142",
+     "title": "Child Advocacy Centers",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1142/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1152",
+     "title": "Department of Early Childhood Supplemental",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1152/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1181",
+     "title": "Sunset Barber & Cosmetologist Act",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1181/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1185",
+     "title": "Sunset Cold Case Task Force",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1185/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1200",
+     "title": "Armed Services Member Motor Vehicle Taxes & Fees",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1200/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1225",
+     "title": "Distributed Energy Resources Requirements",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1225/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1230",
+     "title": "Extend Conservation Easement Tax Credit",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1230/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1250",
+     "title": "Procedures Related to Civil Asset Forfeiture",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1250/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1253",
+     "title": "Disconnection from Statutory Municipality",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1253/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1259",
+     "title": "Department of Early Childhood Clean-Up",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1259/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1260",
+     "title": "Updates to Child Care Assistance Programs",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1260/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1290",
+     "title": "Criminal Offense of Assault",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1290/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1307",
+     "title": "Sunset Colorado Medical Board",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1307/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1311",
+     "title": "Retainage Surety Bond Construction Contracts",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1311/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1328",
+     "title": "Medicaid Nonemergency Medical Transportation",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1328/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1330",
+     "title": "Alcohol Beverages Entertainment Districts",
+     "status": "Introduced",
+     "url": "https://legiscan.com/CO/bill/HB1330/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1336",
+     "title": "Increase Access to Pharmacy Services",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1336/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1339",
+     "title": "Change Cesar Chavez Day to Farm Workers Day",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1339/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1425",
+     "title": "Applied Behavior Analysis Services",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1425/2026",
+     "primary": true
+    },
+    {
+     "number": "SB006",
+     "title": "Parity for Non-Opioid Pain Management Drugs",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB006/2026",
+     "primary": false
+    },
+    {
+     "number": "SB010",
+     "title": "Agricultural Property Tax Definitions",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB010/2026",
+     "primary": false
+    },
+    {
+     "number": "SB015",
+     "title": "Commercial Sexual Activity with a Child Offenses",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB015/2026",
+     "primary": false
+    },
+    {
+     "number": "SB017",
+     "title": "Out-of-Network Health Insurance Dispute Resolution",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB017/2026",
+     "primary": true
+    },
+    {
+     "number": "SB019",
+     "title": "Early Childhood Local System Consolidation",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB019/2026",
+     "primary": true
+    },
+    {
+     "number": "SB020",
+     "title": "Child Care Provider Licensing & Quality",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB020/2026",
+     "primary": true
+    },
+    {
+     "number": "SB023",
+     "title": "School Finance Act",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB023/2026",
+     "primary": false
+    },
+    {
+     "number": "SB026",
+     "title": "Weight for Vehicles with Child Restraint System",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB026/2026",
+     "primary": false
+    },
+    {
+     "number": "SB037",
+     "title": "Modification of Bond Hearing Officer Process",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB037/2026",
+     "primary": false
+    },
+    {
+     "number": "SB045",
+     "title": "Nuclear Workforce Development & Education Program",
+     "status": "Failed",
+     "url": "https://legiscan.com/CO/bill/SB045/2026",
+     "primary": true
+    },
+    {
+     "number": "SB050",
+     "title": "Child Care Center Required Policy Disclosures",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB050/2026",
+     "primary": true
+    },
+    {
+     "number": "SB060",
+     "title": "Mental Health Training in Concussion Education",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB060/2026",
+     "primary": false
+    },
+    {
+     "number": "SB073",
+     "title": "Order of Additional Parenting Time",
+     "status": "Failed",
+     "url": "https://legiscan.com/CO/bill/SB073/2026",
+     "primary": true
+    },
+    {
+     "number": "SB076",
+     "title": "Certification & Practice of Certified Public Accountants",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB076/2026",
+     "primary": false
+    },
+    {
+     "number": "SB077",
+     "title": "Epilepsy-Related Mortality Awareness",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB077/2026",
+     "primary": false
+    },
+    {
+     "number": "SB085",
+     "title": "Military Protection Orders",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB085/2026",
+     "primary": false
+    },
+    {
+     "number": "SB088",
+     "title": "Funding for Memorials on State Capitol Grounds",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB088/2026",
+     "primary": false
+    },
+    {
+     "number": "SB092",
+     "title": "Modification of County Elected Officer Salary Categories",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB092/2026",
+     "primary": false
+    },
+    {
+     "number": "SB110",
+     "title": "Revised Public Assistance Final Disposition Expense Terms",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB110/2026",
+     "primary": true
+    },
+    {
+     "number": "SB114",
+     "title": "Spirituous Liquor Manufacturer Sales Rooms & Other Alcohol",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB114/2026",
+     "primary": true
+    },
+    {
+     "number": "SB120",
+     "title": "Missing Person Training & Higher Education Reporting",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB120/2026",
+     "primary": false
+    },
+    {
+     "number": "SB121",
+     "title": "Overtime Threshold for Agricultural Employees",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB121/2026",
+     "primary": false
+    },
+    {
+     "number": "SB126",
+     "title": "Licensure for Experienced Out-of-State Teachers",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB126/2026",
+     "primary": false
+    },
+    {
+     "number": "SB128",
+     "title": "Sales & Use Tax Destination Management Company",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB128/2026",
+     "primary": false
+    },
+    {
+     "number": "SB132",
+     "title": "Voluntary Alcohol Breath Test",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/SB132/2026",
+     "primary": false
+    }
+   ],
+   "_h": "f0ee1b8149a9852a26bd4d9a4968969b"
   },
   {
    "id": "20739",
@@ -8444,450 +8888,6 @@
    "_h": "1997ccbc405abda4125db03348079c2f"
   },
   {
-   "id": "26072",
-   "name": "Scott Bright",
-   "role": "Senator",
-   "chamber": "State Senate",
-   "body": "Colorado General Assembly",
-   "home": "CO",
-   "party": "R",
-   "district": "13",
-   "photo": "",
-   "score": 76,
-   "label": "",
-   "pillar": 68,
-   "attendance": 100,
-   "attendance_raw": 100,
-   "impact": 65,
-   "sponsorship": 77,
-   "ai_spons": 67,
-   "enacted": 21,
-   "why": "Bright prime-sponsored and enacted a notable cluster of child-care bills (HB1004, HB1260, SB019, SB020, SB050) plus out-of-network health insurance dispute resolution (SB017) and applied behavior analysis services (HB1425), representing genuine leadership across Health, Family, and Income pillars, but several enacted bills are narrow or low-impact (motorcycle permissions, liquor rooms, barre exemptions) and key failures (SB073, SB140, SB045) reduce overall pillar depth.",
-   "bills": [
-    {
-     "number": "HB1004",
-     "title": "Continuation of Child Care Contribution Tax Credit",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1004/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1019",
-     "title": "Kidney Screening Mandatory Preventive Coverage",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1019/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1020",
-     "title": "Colorimetric Field Drug Tests in Drug Possessions",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1020/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1025",
-     "title": "Exempt Auctioneers Charitable Solicitation Requirements",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1025/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1031",
-     "title": "Protections for Agricultural Products Grown in Colorado",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1031/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1033",
-     "title": "Expanding the Colorado Cottage Foods Act",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1033/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1041",
-     "title": "Electronic Vehicle Records",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1041/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1052",
-     "title": "Rights for Victims of Certain Crimes",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1052/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1053",
-     "title": "Motor Vehicle Regulation Administration",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1053/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1067",
-     "title": "Diseased Livestock Indemnity Fund",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1067/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1069",
-     "title": "Availability of Emergency Medical Services",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1069/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1075",
-     "title": "Child Welfare Prevention Services Funding",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1075/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1078",
-     "title": "Off-Campus Courses & Concurrent Enrollment Programs",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1078/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1079",
-     "title": "Drive Motorcycle Written Permission",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1079/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1115",
-     "title": "Prepaid Wireless Telecom Services Modifications",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1115/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1138",
-     "title": "Retail Theft Prevention Program",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1138/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1142",
-     "title": "Child Advocacy Centers",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1142/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1152",
-     "title": "Department of Early Childhood Supplemental",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1152/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1181",
-     "title": "Sunset Barber & Cosmetologist Act",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1181/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1185",
-     "title": "Sunset Cold Case Task Force",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1185/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1200",
-     "title": "Armed Services Member Motor Vehicle Taxes & Fees",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1200/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1225",
-     "title": "Distributed Energy Resources Requirements",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1225/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1230",
-     "title": "Extend Conservation Easement Tax Credit",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1230/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1250",
-     "title": "Procedures Related to Civil Asset Forfeiture",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1250/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1253",
-     "title": "Disconnection from Statutory Municipality",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1253/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1259",
-     "title": "Department of Early Childhood Clean-Up",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1259/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1260",
-     "title": "Updates to Child Care Assistance Programs",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1260/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1290",
-     "title": "Criminal Offense of Assault",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1290/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1307",
-     "title": "Sunset Colorado Medical Board",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1307/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1311",
-     "title": "Retainage Surety Bond Construction Contracts",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1311/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1328",
-     "title": "Medicaid Nonemergency Medical Transportation",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1328/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1330",
-     "title": "Alcohol Beverages Entertainment Districts",
-     "status": "Introduced",
-     "url": "https://legiscan.com/CO/bill/HB1330/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1336",
-     "title": "Increase Access to Pharmacy Services",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1336/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1339",
-     "title": "Change Cesar Chavez Day to Farm Workers Day",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1339/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1425",
-     "title": "Applied Behavior Analysis Services",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1425/2026",
-     "primary": true
-    },
-    {
-     "number": "SB006",
-     "title": "Parity for Non-Opioid Pain Management Drugs",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB006/2026",
-     "primary": false
-    },
-    {
-     "number": "SB010",
-     "title": "Agricultural Property Tax Definitions",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB010/2026",
-     "primary": false
-    },
-    {
-     "number": "SB015",
-     "title": "Commercial Sexual Activity with a Child Offenses",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB015/2026",
-     "primary": false
-    },
-    {
-     "number": "SB017",
-     "title": "Out-of-Network Health Insurance Dispute Resolution",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB017/2026",
-     "primary": true
-    },
-    {
-     "number": "SB019",
-     "title": "Early Childhood Local System Consolidation",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB019/2026",
-     "primary": true
-    },
-    {
-     "number": "SB020",
-     "title": "Child Care Provider Licensing & Quality",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB020/2026",
-     "primary": true
-    },
-    {
-     "number": "SB023",
-     "title": "School Finance Act",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB023/2026",
-     "primary": false
-    },
-    {
-     "number": "SB026",
-     "title": "Weight for Vehicles with Child Restraint System",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB026/2026",
-     "primary": false
-    },
-    {
-     "number": "SB037",
-     "title": "Modification of Bond Hearing Officer Process",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB037/2026",
-     "primary": false
-    },
-    {
-     "number": "SB045",
-     "title": "Nuclear Workforce Development & Education Program",
-     "status": "Failed",
-     "url": "https://legiscan.com/CO/bill/SB045/2026",
-     "primary": true
-    },
-    {
-     "number": "SB050",
-     "title": "Child Care Center Required Policy Disclosures",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB050/2026",
-     "primary": true
-    },
-    {
-     "number": "SB060",
-     "title": "Mental Health Training in Concussion Education",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB060/2026",
-     "primary": false
-    },
-    {
-     "number": "SB073",
-     "title": "Order of Additional Parenting Time",
-     "status": "Failed",
-     "url": "https://legiscan.com/CO/bill/SB073/2026",
-     "primary": true
-    },
-    {
-     "number": "SB076",
-     "title": "Certification & Practice of Certified Public Accountants",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB076/2026",
-     "primary": false
-    },
-    {
-     "number": "SB077",
-     "title": "Epilepsy-Related Mortality Awareness",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB077/2026",
-     "primary": false
-    },
-    {
-     "number": "SB085",
-     "title": "Military Protection Orders",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB085/2026",
-     "primary": false
-    },
-    {
-     "number": "SB088",
-     "title": "Funding for Memorials on State Capitol Grounds",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB088/2026",
-     "primary": false
-    },
-    {
-     "number": "SB092",
-     "title": "Modification of County Elected Officer Salary Categories",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB092/2026",
-     "primary": false
-    },
-    {
-     "number": "SB110",
-     "title": "Revised Public Assistance Final Disposition Expense Terms",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB110/2026",
-     "primary": true
-    },
-    {
-     "number": "SB114",
-     "title": "Spirituous Liquor Manufacturer Sales Rooms & Other Alcohol",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB114/2026",
-     "primary": true
-    },
-    {
-     "number": "SB120",
-     "title": "Missing Person Training & Higher Education Reporting",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB120/2026",
-     "primary": false
-    },
-    {
-     "number": "SB121",
-     "title": "Overtime Threshold for Agricultural Employees",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB121/2026",
-     "primary": false
-    },
-    {
-     "number": "SB126",
-     "title": "Licensure for Experienced Out-of-State Teachers",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB126/2026",
-     "primary": false
-    },
-    {
-     "number": "SB128",
-     "title": "Sales & Use Tax Destination Management Company",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB128/2026",
-     "primary": false
-    },
-    {
-     "number": "SB132",
-     "title": "Voluntary Alcohol Breath Test",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/SB132/2026",
-     "primary": false
-    }
-   ],
-   "_h": "cda2d0502d64977fee45327b2628ef67"
-  },
-  {
    "id": "23967",
    "name": "Sheila Lieder",
    "role": "Representative",
@@ -11996,6 +11996,450 @@
    "_h": "b4590fe8b45bbfac7bc12d776e03a0cf"
   },
   {
+   "id": "23956",
+   "name": "Junie Joseph",
+   "role": "Representative",
+   "chamber": "State House",
+   "body": "Colorado General Assembly",
+   "home": "CO",
+   "party": "D",
+   "district": "10",
+   "photo": "",
+   "score": 74,
+   "label": "",
+   "pillar": 68,
+   "attendance": 90,
+   "attendance_raw": 98,
+   "impact": 65,
+   "sponsorship": 77,
+   "ai_spons": 67,
+   "enacted": 24,
+   "why": "Joseph prime-sponsored and enacted a meaningful cluster of pillar-aligned bills\u2014notably Black maternal health equity, AI in healthcare, nursing home penalty fund, tenant data protections, transit access, and ID seizure protections\u2014demonstrating genuine legislative leadership across Health, Housing, and Protection from Disruption, though several high-impact bills (medical debt limits, tenant protections, LGBTQ workplace rights) failed to pass, and several enacted bills are procedural or narrow in scope.",
+   "bills": [
+    {
+     "number": "HB1001",
+     "title": "Housing Developments on Qualifying Properties",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1001/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1005",
+     "title": "Worker Protection Collective Bargaining",
+     "status": "Vetoed",
+     "url": "https://legiscan.com/CO/bill/HB1005/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1008",
+     "title": "Colorado Outdoor Opportunities Act",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1008/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1010",
+     "title": "Older Adult Support & Representation in Workforce",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1010/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1011",
+     "title": "Transfers of Certain Pet Animals",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1011/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1014",
+     "title": "Extend Colorado Job Growth Incentive Tax Credit",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1014/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1018",
+     "title": "Long-term Care Services for Nursing Home Residents",
+     "status": "Introduced",
+     "url": "https://legiscan.com/CO/bill/HB1018/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1019",
+     "title": "Kidney Screening Mandatory Preventive Coverage",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1019/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1020",
+     "title": "Colorimetric Field Drug Tests in Drug Possessions",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1020/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1026",
+     "title": "Expanding Plan Options for PERA",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1026/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1028",
+     "title": "Second Language Educational Program for High School Students",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1028/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1031",
+     "title": "Protections for Agricultural Products Grown in Colorado",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1031/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1035",
+     "title": "Enactment of Colorado Revised Statutes 2025",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1035/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1038",
+     "title": "County Commissioner Redistricting",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1038/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1040",
+     "title": "Sterilization Rights of Person with Disabilities",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1040/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1041",
+     "title": "Electronic Vehicle Records",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1041/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1044",
+     "title": "Measures to Improve Black Maternal Health Equity",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1044/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1045",
+     "title": "Disabilities Housing Protections",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1045/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1047",
+     "title": "Protections for Residential Tenants",
+     "status": "Failed",
+     "url": "https://legiscan.com/CO/bill/HB1047/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1051",
+     "title": "Continue Microgrid Community Resilience Grant Program",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1051/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1054",
+     "title": "Protections for Worker Safety",
+     "status": "Engrossed",
+     "url": "https://legiscan.com/CO/bill/HB1054/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1058",
+     "title": "Protections for Minors Featured in Digital Content",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1058/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1068",
+     "title": "Remote Participation Policies for Joint Committees",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1068/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1069",
+     "title": "Availability of Emergency Medical Services",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1069/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1075",
+     "title": "Child Welfare Prevention Services Funding",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1075/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1078",
+     "title": "Off-Campus Courses & Concurrent Enrollment Programs",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1078/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1079",
+     "title": "Drive Motorcycle Written Permission",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1079/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1081",
+     "title": "Optimize Colorado Electric Transmission System",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1081/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1090",
+     "title": "Teacher Licensing Requirements",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1090/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1092",
+     "title": "Licensed Midwife Public Health Facility Privileges",
+     "status": "Failed",
+     "url": "https://legiscan.com/CO/bill/HB1092/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1099",
+     "title": "Protect Financial Condition of Homeowners Associations",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1099/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1103",
+     "title": "Report Child Sexual Assault & Courtroom Testimony",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1103/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1109",
+     "title": "Sign Language Consumer Protection Study",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1109/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1110",
+     "title": "Vulnerable Adult Financial Exploitation Banking",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1110/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1111",
+     "title": "Pesticide Product Disposal & Container Recycling",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1111/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1112",
+     "title": "Regulation of Underground Injection Control Wells",
+     "status": "Failed",
+     "url": "https://legiscan.com/CO/bill/HB1112/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1113",
+     "title": "Modifications to Elections",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1113/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1115",
+     "title": "Prepaid Wireless Telecom Services Modifications",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1115/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1116",
+     "title": "Process for People with Behavioral Health Disorder",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1116/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1120",
+     "title": "Mobile Home Property Taxation",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1120/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1123",
+     "title": "Preventing Sexual Abuse in Jails",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1123/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1126",
+     "title": "Requirements for Firearms Dealers",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1126/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1127",
+     "title": "Reporting After Fatal Car Crash",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1127/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1130",
+     "title": "Public Restroom Baby Diaper Changing Station",
+     "status": "Failed",
+     "url": "https://legiscan.com/CO/bill/HB1130/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1132",
+     "title": "Practices to Support Pollinators",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1132/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1134",
+     "title": "Fairness & Transparency in Municipal Court",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1134/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1135",
+     "title": "Transparency of Chemicals Used in Hair Products",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1135/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1137",
+     "title": "Requirements for Campaign Consultants",
+     "status": "Introduced",
+     "url": "https://legiscan.com/CO/bill/HB1137/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1138",
+     "title": "Retail Theft Prevention Program",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1138/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1139",
+     "title": "Use of Artificial Intelligence in Health Care",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1139/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1143",
+     "title": "Non-Employment Educational Opportunities Background Check Information",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1143/2026",
+     "primary": true
+    },
+    {
+     "number": "HB1144",
+     "title": "Prohibit Three-Dimensional Printing Firearms & Components",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1144/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1145",
+     "title": "Mobile Home Park Water Quality",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1145/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1150",
+     "title": "Department of Agriculture Supplemental",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1150/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1152",
+     "title": "Department of Early Childhood Supplemental",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1152/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1160",
+     "title": "Department of Law Supplemental",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1160/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1162",
+     "title": "Department of Military Affairs Supplemental",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1162/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1163",
+     "title": "Department of Natural Resources Supplemental",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1163/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1165",
+     "title": "Department of Public Health & Environment Supplemental",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1165/2026",
+     "primary": false
+    },
+    {
+     "number": "HB1166",
+     "title": "Department of Public Safety Supplemental",
+     "status": "Passed/Enacted",
+     "url": "https://legiscan.com/CO/bill/HB1166/2026",
+     "primary": false
+    }
+   ],
+   "_h": "f9947aadf1b8129cd81f03f9d1133399"
+  },
+  {
    "id": "24385",
    "name": "Lorena Garcia",
    "role": "Representative",
@@ -12458,7 +12902,7 @@
    "sponsorship": 80,
    "ai_spons": 71,
    "enacted": 15,
-   "why": "Gonzalez prime-sponsored and enacted a notably broad portfolio including SB019/SB020 (early childhood/child care), SB017 (health insurance dispute resolution), HB1009 (domestic violence lethality assessment), SB053 (housing for first responders), SB156 (workforce development), and HB1116 (behavioral health), touching Health, Family, Housing, Income, and Economic Opportunity pillars with genuine enacted substance, though several high-profile bills failed or were vetoed and some enacted bills (cottage foods, marijuana rate, conservation tax credit, road designation) are narrow or tangentially pillar-relevant.",
+   "why": "Gonzalez prime-sponsored and enacted a notably broad portfolio\u2014SB019/SB020 on early childhood/child care (Family/Health), SB017 on out-of-network insurance disputes (Health), SB053 on first-responder mortgage access (Housing), SB156 on workforce development (Economic Opportunity/Income), HB1116 on behavioral health (Health), HB1257 on massage facility regulation (Protection), and HB1033 expanding cottage foods (Income/Food)\u2014across five of the seven pillars, though several enacted bills are narrow or administrative (HB1180, HB1339, HJR1030) and two notable bills were vetoed or failed, keeping this a strong but not standout record.",
    "bills": [
     {
      "number": "HB1004",
@@ -12881,7 +13325,7 @@
      "primary": false
     }
    ],
-   "_h": "1a69bee517015169969a70d81213adef"
+   "_h": "a5a04b7db610e89ea9ac4e75a0be2057"
   },
   {
    "id": "26391",
@@ -19855,450 +20299,6 @@
    "_h": "66bc0f68e53dd1ebacb6a85b572f70f2"
   },
   {
-   "id": "23956",
-   "name": "Junie Joseph",
-   "role": "Representative",
-   "chamber": "State House",
-   "body": "Colorado General Assembly",
-   "home": "CO",
-   "party": "D",
-   "district": "10",
-   "photo": "",
-   "score": 69,
-   "label": "",
-   "pillar": 62,
-   "attendance": 90,
-   "attendance_raw": 98,
-   "impact": 58,
-   "sponsorship": 73,
-   "ai_spons": 61,
-   "enacted": 24,
-   "why": "Joseph prime-sponsored and enacted a meaningful cluster of pillar-relevant bills\u2014Black maternal health equity, AI in healthcare, nursing home penalty fund, tenant data protections, transit access, and ID seizure protections\u2014but several of her most impactful pillar bills (medical debt limits, tenant protections, LGBTQ workplace rights) failed, and several enacted bills are procedural or narrow in scope, placing her solidly in the Strong tier but short of the top-tier leaders who converted weightier legislation at higher rates.",
-   "bills": [
-    {
-     "number": "HB1001",
-     "title": "Housing Developments on Qualifying Properties",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1001/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1005",
-     "title": "Worker Protection Collective Bargaining",
-     "status": "Vetoed",
-     "url": "https://legiscan.com/CO/bill/HB1005/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1008",
-     "title": "Colorado Outdoor Opportunities Act",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1008/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1010",
-     "title": "Older Adult Support & Representation in Workforce",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1010/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1011",
-     "title": "Transfers of Certain Pet Animals",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1011/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1014",
-     "title": "Extend Colorado Job Growth Incentive Tax Credit",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1014/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1018",
-     "title": "Long-term Care Services for Nursing Home Residents",
-     "status": "Introduced",
-     "url": "https://legiscan.com/CO/bill/HB1018/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1019",
-     "title": "Kidney Screening Mandatory Preventive Coverage",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1019/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1020",
-     "title": "Colorimetric Field Drug Tests in Drug Possessions",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1020/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1026",
-     "title": "Expanding Plan Options for PERA",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1026/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1028",
-     "title": "Second Language Educational Program for High School Students",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1028/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1031",
-     "title": "Protections for Agricultural Products Grown in Colorado",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1031/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1035",
-     "title": "Enactment of Colorado Revised Statutes 2025",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1035/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1038",
-     "title": "County Commissioner Redistricting",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1038/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1040",
-     "title": "Sterilization Rights of Person with Disabilities",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1040/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1041",
-     "title": "Electronic Vehicle Records",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1041/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1044",
-     "title": "Measures to Improve Black Maternal Health Equity",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1044/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1045",
-     "title": "Disabilities Housing Protections",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1045/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1047",
-     "title": "Protections for Residential Tenants",
-     "status": "Failed",
-     "url": "https://legiscan.com/CO/bill/HB1047/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1051",
-     "title": "Continue Microgrid Community Resilience Grant Program",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1051/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1054",
-     "title": "Protections for Worker Safety",
-     "status": "Engrossed",
-     "url": "https://legiscan.com/CO/bill/HB1054/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1058",
-     "title": "Protections for Minors Featured in Digital Content",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1058/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1068",
-     "title": "Remote Participation Policies for Joint Committees",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1068/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1069",
-     "title": "Availability of Emergency Medical Services",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1069/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1075",
-     "title": "Child Welfare Prevention Services Funding",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1075/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1078",
-     "title": "Off-Campus Courses & Concurrent Enrollment Programs",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1078/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1079",
-     "title": "Drive Motorcycle Written Permission",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1079/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1081",
-     "title": "Optimize Colorado Electric Transmission System",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1081/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1090",
-     "title": "Teacher Licensing Requirements",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1090/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1092",
-     "title": "Licensed Midwife Public Health Facility Privileges",
-     "status": "Failed",
-     "url": "https://legiscan.com/CO/bill/HB1092/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1099",
-     "title": "Protect Financial Condition of Homeowners Associations",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1099/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1103",
-     "title": "Report Child Sexual Assault & Courtroom Testimony",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1103/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1109",
-     "title": "Sign Language Consumer Protection Study",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1109/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1110",
-     "title": "Vulnerable Adult Financial Exploitation Banking",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1110/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1111",
-     "title": "Pesticide Product Disposal & Container Recycling",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1111/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1112",
-     "title": "Regulation of Underground Injection Control Wells",
-     "status": "Failed",
-     "url": "https://legiscan.com/CO/bill/HB1112/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1113",
-     "title": "Modifications to Elections",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1113/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1115",
-     "title": "Prepaid Wireless Telecom Services Modifications",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1115/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1116",
-     "title": "Process for People with Behavioral Health Disorder",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1116/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1120",
-     "title": "Mobile Home Property Taxation",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1120/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1123",
-     "title": "Preventing Sexual Abuse in Jails",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1123/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1126",
-     "title": "Requirements for Firearms Dealers",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1126/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1127",
-     "title": "Reporting After Fatal Car Crash",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1127/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1130",
-     "title": "Public Restroom Baby Diaper Changing Station",
-     "status": "Failed",
-     "url": "https://legiscan.com/CO/bill/HB1130/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1132",
-     "title": "Practices to Support Pollinators",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1132/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1134",
-     "title": "Fairness & Transparency in Municipal Court",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1134/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1135",
-     "title": "Transparency of Chemicals Used in Hair Products",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1135/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1137",
-     "title": "Requirements for Campaign Consultants",
-     "status": "Introduced",
-     "url": "https://legiscan.com/CO/bill/HB1137/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1138",
-     "title": "Retail Theft Prevention Program",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1138/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1139",
-     "title": "Use of Artificial Intelligence in Health Care",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1139/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1143",
-     "title": "Non-Employment Educational Opportunities Background Check Information",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1143/2026",
-     "primary": true
-    },
-    {
-     "number": "HB1144",
-     "title": "Prohibit Three-Dimensional Printing Firearms & Components",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1144/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1145",
-     "title": "Mobile Home Park Water Quality",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1145/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1150",
-     "title": "Department of Agriculture Supplemental",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1150/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1152",
-     "title": "Department of Early Childhood Supplemental",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1152/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1160",
-     "title": "Department of Law Supplemental",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1160/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1162",
-     "title": "Department of Military Affairs Supplemental",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1162/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1163",
-     "title": "Department of Natural Resources Supplemental",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1163/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1165",
-     "title": "Department of Public Health & Environment Supplemental",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1165/2026",
-     "primary": false
-    },
-    {
-     "number": "HB1166",
-     "title": "Department of Public Safety Supplemental",
-     "status": "Passed/Enacted",
-     "url": "https://legiscan.com/CO/bill/HB1166/2026",
-     "primary": false
-    }
-   ],
-   "_h": "d77117165ae394f868bcc3da601a265d"
-  },
-  {
    "id": "24873",
    "name": "Kyle Brown",
    "role": "Representative",
@@ -20761,7 +20761,7 @@
    "sponsorship": 73,
    "ai_spons": 61,
    "enacted": 25,
-   "why": "Zokaie prime-sponsored a solid volume of enacted bills touching housing protections (HB1045, HB1065), child care tax credit continuation (HB1004), immigrant safety (HB1276), and consumer/worker protections, but several of her most ambitious pillar-advancing bills (worker collective bargaining, surveillance pricing, arbitration reform, large-employer health care) were vetoed or failed, limiting real-world impact to a mid-tier rather than standout record.",
+   "why": "Zokaie prime-sponsored a solid 25 enacted bills including meaningful wins on child care tax credits, disabilities housing protections, transit/housing zones, immigrant safety, and consumer protections, but several of her weightiest pillar-aligned bills (worker protections, surveillance pricing, immigration rights remedy) were vetoed, limiting her realized impact on the seven pillars.",
    "bills": [
     {
      "number": "HB1001",
@@ -21184,7 +21184,7 @@
      "primary": false
     }
    ],
-   "_h": "e4c7e38af694bb46898a68cb5031ea84"
+   "_h": "1366b473615f00f6676e0a6042ecac3a"
   },
   {
    "id": "26067",
@@ -26089,7 +26089,7 @@
    "sponsorship": 66,
    "ai_spons": 51,
    "enacted": 26,
-   "why": "Lindstedt prime-sponsored 26 enacted bills but most are administrative clean-ups, sunset reviews, and narrow regulatory tweaks (transportation statutory clean-up, podiatry board sunset, digital legal notice) with only a handful\u2014EMS essential services designation, TNC consumer protection, renewable energy on disturbed lands, pathways to public service\u2014offering modest pillar-relevant benefit, while the two most substantive worker/consumer bills (collective bargaining, surveillance pricing) were vetoed, leaving a record of breadth without much enacted weight on the core pillars.",
+   "why": "Lindstedt led a high volume of prime-sponsored bills with 26 enacted, but the bulk are administrative clean-ups, sunset reviews, and narrow regulatory tweaks (transportation statutory clean-up, podiatry board sunset, digital legal notices) rather than substantive pillar-advancing measures; the two most impactful bills\u2014worker collective bargaining and surveillance pricing prohibition\u2014were vetoed, leaving enacted work modest in life-stability impact despite strong legislative activity.",
    "bills": [
     {
      "number": "HB1001",
@@ -26512,7 +26512,7 @@
      "primary": false
     }
    ],
-   "_h": "dcc61814c5b3a1754abaae99654db1c6"
+   "_h": "6a35453d9e3bdf43f0e63f48d0e3199a"
   },
   {
    "id": "20031",
