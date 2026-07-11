@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Q Console — Scoring Workbench</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B3A6B; --navy-deep:#122848; --navy-mid:#243f72;
+    --gold:#B8962E; --gold-light:#D4AF50; --gold-pale:#F5EDD4;
+    --white:#fff; --off-white:#F9F6F0; --off-white2:#F2EFE8;
+    --text:#1a1a1a; --text-light:#4a4a4a; --text-muted:#5a5a5a; --border:#E0D5BE;
+    --good:#2f7d4f; --bad:#a23b2e;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--off-white);font-family:'DM Sans',sans-serif;color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .top-stripe{height:5px;background:linear-gradient(90deg,var(--gold) 0%,var(--gold-light) 50%,var(--gold) 100%)}
+  header{background:var(--navy-deep);padding:18px 28px;display:flex;align-items:center;gap:16px;position:relative;overflow:hidden}
+  .wm{position:absolute;font-family:'Playfair Display',serif;font-weight:900;font-size:200px;line-height:1;color:rgba(255,255,255,.05);top:-60px;right:20px;pointer-events:none}
+  .brand-q{font-family:'Playfair Display',serif;font-weight:900;font-size:30px;color:var(--gold-light);line-height:1;z-index:1}
+  .brand-q sub{font-size:13px;color:var(--white);font-weight:700;vertical-align:baseline}
+  .brand-txt{z-index:1}
+  .brand-txt .t{font-family:'DM Mono',monospace;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--white)}
+  .brand-txt .s{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:rgba(255,255,255,.55);text-transform:uppercase}
+  .tabs{background:var(--navy);display:flex;gap:2px;padding:0 20px}
+  .tab{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.6);padding:14px 22px;cursor:pointer;border:none;background:none;border-bottom:3px solid transparent}
+  .tab:hover{color:var(--gold-light)}
+  .tab.active{color:var(--gold-light);border-bottom-color:var(--gold)}
+  .wrap{max-width:1080px;margin:0 auto;padding:28px 24px 80px}
+  .view{display:none}
+  .view.active{display:block}
+  h2{font-family:'Playfair Display',serif;font-weight:900;font-size:26px;margin:0 0 4px}
+  .sub{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+  .card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:16px}
+  .card h3{margin:0 0 2px;font-family:'Playfair Display',serif;font-size:20px}
+  .muted{color:var(--text-muted);font-size:13px}
+  .pill{display:inline-block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-left:8px}
+  .pill.scored{background:var(--gold-pale);color:var(--navy)}
+  .pill.dev{background:#eee;color:#777}
+  .pill.slot{background:#f4f4f4;color:#999}
+  .pill.flag{background:#fbe6c8;color:#8a5a12}
+  /* dashboard grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+  .dcard{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:16px;cursor:pointer;transition:transform .12s,box-shadow .12s}
+  .dcard:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(18,40,72,.1)}
+  .dcard .nm{font-weight:700;font-size:15px}
+  .dcard .of{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px}
+  .dcard .sc{font-family:'Playfair Display',serif;font-weight:900;font-size:34px;line-height:1}
+  .dcard .sc small{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--text-muted);font-weight:400}
+  .branchtag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--navy);opacity:.6}
+  /* meter */
+  .meter{position:relative;height:12px;background:var(--off-white2);border-radius:6px;margin:10px 0 6px;border:1px solid var(--border)}
+  .meter .fill{position:absolute;left:0;top:0;bottom:0;border-radius:6px;background:var(--navy-mid)}
+  .meter .fill.champ{background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+  .meter .std{position:absolute;top:-4px;bottom:-4px;left:80%;width:2px;background:var(--navy-deep)}
+  .stdlbl{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.5px;color:var(--text-muted);text-align:right;position:relative}
+  .stdlbl span{position:absolute;left:80%;transform:translateX(-50%);white-space:nowrap}
+  .badge{display:inline-block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:var(--gold);color:var(--navy-deep);padding:4px 10px;border-radius:4px;font-weight:500;margin-top:6px}
+  .below{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.5px;color:var(--text-muted);margin-top:6px}
+  /* editor */
+  .selrow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .selrow button{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.5px;padding:8px 12px;border:1px solid var(--border);background:var(--white);border-radius:6px;cursor:pointer}
+  .selrow button.active{background:var(--navy);color:var(--white);border-color:var(--navy)}
+  .selrow button.dev{opacity:.55}
+  .comp{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .comp label{flex:1;font-size:14px}
+  .comp label b{display:block;font-size:12px;color:var(--text-muted);font-weight:400}
+  .comp .w{font-family:'DM Mono',monospace;font-size:11px;color:var(--gold);width:44px;text-align:right}
+  .comp input[type=range]{flex:1.4;accent-color:var(--navy)}
+  .comp input[type=number]{width:64px;padding:6px;border:1px solid var(--border);border-radius:5px;font-family:'DM Mono',monospace;text-align:center}
+  .total{background:var(--navy-deep);color:var(--white);border-radius:8px;padding:18px 20px;margin:6px 0 18px;position:relative;overflow:hidden}
+  .total .big{font-family:'Playfair Display',serif;font-weight:900;font-size:46px;line-height:1}
+  .total .lbl{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.6)}
+  .total .meter{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2)}
+  .total .std{background:var(--gold-light)}
+  .total .stdlbl span{color:rgba(255,255,255,.7)}
+  input,select,textarea{font-family:'DM Sans',sans-serif;font-size:13px}
+  textarea{width:100%;padding:10px;border:1px solid var(--border);border-radius:6px;resize:vertical}
+  .field{margin-bottom:12px}
+  .field>label{display:block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-bottom:5px}
+  .field input[type=text],.field select{width:100%;padding:9px;border:1px solid var(--border);border-radius:6px}
+  /* evidence table */
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{text-align:left;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);padding:8px 6px;border-bottom:2px solid var(--border)}
+  td{padding:8px 6px;border-bottom:1px solid var(--off-white2);vertical-align:top}
+  td select,td input{width:100%;padding:5px;border:1px solid var(--border);border-radius:4px;font-size:12px}
+  .tag{font-family:'DM Mono',monospace;font-size:10px;padding:2px 7px;border-radius:12px;background:var(--gold-pale);color:var(--navy)}
+  .tag.none{background:#eee;color:#888}
+  .adv{color:var(--good);font-weight:500}.blk{color:var(--bad);font-weight:500}
+  .del{background:none;border:none;color:var(--bad);cursor:pointer;font-size:16px;line-height:1}
+  .btn{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:11px 20px;border-radius:5px;border:none;cursor:pointer}
+  .btn-gold{background:var(--gold);color:var(--navy-deep);font-weight:500}
+  .btn-gold:hover{background:var(--gold-light)}
+  .btn-out{background:var(--white);border:1px solid var(--border);color:var(--navy)}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .note{background:var(--gold-pale);border-left:3px solid var(--gold);padding:12px 14px;border-radius:0 6px 6px 0;font-size:13px;margin-bottom:18px}
+  .src{font-size:11px;color:var(--navy-mid);word-break:break-all}
+  /* modal */
+  .modal{display:none;position:fixed;inset:0;background:rgba(18,40,72,.55);z-index:50;align-items:center;justify-content:center;padding:20px}
+  .modal.open{display:flex}
+  .modal .box{background:var(--white);border-radius:10px;max-width:760px;width:100%;max-height:86vh;overflow:auto;padding:24px}
+  .modal h3{margin-top:0;font-family:'Playfair Display',serif}
+  .modal textarea{height:320px;font-family:'DM Mono',monospace;font-size:12px}
+  .x{float:right;cursor:pointer;font-size:22px;color:var(--text-muted);border:none;background:none}
+  .foot{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--text-muted);text-align:center;padding:24px}
+</style>
+</head>
+<body>
+<style id="qc-gate-css">
+#qc-gate{position:fixed;inset:0;z-index:99999;background:#0a2540;display:flex;align-items:center;justify-content:center;font-family:Cambria,Georgia,serif}
+#qc-gate .gatebox{background:#0e2c4a;border:1px solid #1c3c5e;border-top:4px solid #c9a23a;border-radius:14px;padding:30px 32px;max-width:340px;width:90%;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+#qc-gate .gq{width:46px;height:46px;border-radius:9px;background:#c9a23a;color:#0a2540;font-weight:700;font-size:24px;display:grid;place-items:center;margin:0 auto 14px}
+#qc-gate .gq sub{font-size:11px;color:#0a2540}
+#qc-gate h1{color:#fff;font-size:20px;margin:0 0 4px}
+#qc-gate p{color:#9db4d0;font-size:13px;margin:0 0 16px}
+#qc-gate input{width:100%;padding:10px 12px;border-radius:8px;border:1px solid #2a4c6e;background:#0a2540;color:#fff;font-size:15px;font-family:inherit;margin-bottom:10px}
+#qc-gate button{width:100%;padding:10px;border-radius:8px;border:none;background:#c9a23a;color:#0a2540;font-weight:700;font-size:14px;cursor:pointer}
+#qc-gate .err{color:#e8a0a0;font-size:12px;min-height:16px;margin:8px 0 0}
+</style>
+<div id="qc-gate">
+  <div class="gatebox">
+    <div class="gq">Q<sub>m</sub></div>
+    <h1>Q Console</h1>
+    <p>Enter your access code.</p>
+    <input id="qc-code" type="password" autocomplete="off" autofocus onkeydown="if(event.key==='Enter')qcUnlock()">
+    <button onclick="qcUnlock()">Unlock</button>
+    <div class="err" id="qc-err"></div>
+  </div>
+</div>
+<script>
+/* ===== ACCESS GATE (soft) ============================================
+   Casual-discovery gate only. The check runs in the page, so this is a
+   light lock, NOT real security. Do NOT reuse a password you use for
+   anything important (email, banking, etc.).
+
+   TO CHANGE YOUR CODE (browser only, no plaintext left in your repo):
+     1) set NEWPASS below to your new code, in quotes
+     2) load this page once -> it pops up the new hash
+     3) paste that number into PASS_HASH, then set NEWPASS back to ""
+   ==================================================================== */
+var PASS_HASH = 639090475676760;
+var NEWPASS = "";
+var cyrb53=function(str,seed){seed=seed||0;var h1=0xdeadbeef^seed,h2=0x41c6ce57^seed;for(var i=0,c;i<str.length;i++){c=str.charCodeAt(i);h1=Math.imul(h1^c,2654435761);h2=Math.imul(h2^c,1597334677);}h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);return 4294967296*(2097151&h2)+(h1>>>0);};
+if(NEWPASS){setTimeout(function(){alert("Hash for your new code:\n\n"+cyrb53(NEWPASS)+"\n\nPaste it into PASS_HASH, then set NEWPASS back to \"\".");},300);}
+try{if(sessionStorage.getItem("qc_unlocked")==="1"){document.getElementById("qc-gate").style.display="none";}}catch(e){}
+function qcUnlock(){var v=document.getElementById("qc-code").value;if(cyrb53(v)===PASS_HASH||(NEWPASS&&v===NEWPASS)){try{sessionStorage.setItem("qc_unlocked","1");}catch(e){}document.getElementById("qc-gate").style.display="none";}else{document.getElementById("qc-err").textContent="Incorrect code.";document.getElementById("qc-code").value="";}}
+</script>
+<div class="top-stripe"></div>
+<header>
+  <div class="wm">Q</div>
+  <div class="brand-q">Q<sub>m</sub></div>
+  <div class="brand-txt"><div class="t">Q Console</div><div class="s">Scoring Workbench · Internal · Not Published</div></div>
+</header>
+<div class="tabs">
+  <button class="tab active" data-v="dash" onclick="show('dash')">Dashboard</button>
+  <button class="tab" data-v="exec" onclick="show('exec')">Executive</button>
+  <button class="tab" data-v="jud" onclick="show('jud')">Judicial</button>
+  <button class="tab" data-v="io" onclick="show('io')">Export / Import</button>
+</div>
+
+<div class="wrap">
+
+  <!-- DASHBOARD -->
+  <section id="dash" class="view active">
+    <h2>Colorado — All Offices</h2>
+    <div class="sub">Live preview · score.py writes the official numbers on the Sunday run</div>
+    <div class="note">This tool <b>captures your scoring and previews it</b> using the same weights the engine uses. The engine (<code>score.py</code>) stays the one source of the official score, so your tool and your site can never disagree. Nothing here is public until you export the file and commit it.</div>
+    <p class="sub" style="color:var(--navy)">Executive</p>
+    <div class="grid" id="dashExec"></div>
+    <p class="sub" style="color:var(--navy);margin-top:24px">Judicial — Colorado Supreme Court</p>
+    <div class="grid" id="dashJud"></div>
+  </section>
+
+  <!-- EXECUTIVE -->
+  <section id="exec" class="view">
+    <h2>Executive</h2>
+    <div class="sub">Score the office · log the evidence</div>
+    <div class="selrow" id="execSel"></div>
+    <div id="execBody"></div>
+  </section>
+
+  <!-- JUDICIAL -->
+  <section id="jud" class="view">
+    <h2>Judicial — Colorado Supreme Court</h2>
+    <div class="sub">Translate the OJPE evaluation into the four buckets</div>
+    <div class="selrow" id="judSel"></div>
+    <div id="judBody"></div>
+  </section>
+
+  <!-- IO -->
+  <section id="io" class="view">
+    <h2>Export / Import</h2>
+    <div class="sub">Copy the JSON, commit it to GitHub</div>
+    <div class="note">Export produces a valid file matching the build-spec schema. Paste it into <code>data/executive.json</code> or <code>data/judicial.json</code> in the GitHub web editor and commit. To continue a past session, paste your saved file into Import.</div>
+    <div class="card">
+      <h3>Executive</h3>
+      <div class="row"><button class="btn btn-gold" onclick="openExport('exec')">Export executive.json</button><button class="btn btn-out" onclick="openImport('exec')">Import</button></div>
+    </div>
+    <div class="card">
+      <h3>Judicial</h3>
+      <div class="row"><button class="btn btn-gold" onclick="openExport('jud')">Export judicial.json</button><button class="btn btn-out" onclick="openImport('jud')">Import</button></div>
+    </div>
+  </section>
+
+</div>
+
+<div class="modal" id="modal"><div class="box">
+  <button class="x" onclick="closeModal()">&times;</button>
+  <h3 id="modalTitle"></h3>
+  <textarea id="modalTA"></textarea>
+  <div class="row" style="margin-top:12px" id="modalBtns"></div>
+</div></div>
+
+<div class="foot">The Q Collective LLC / Doctrine Policy Group · team&#64;theQcollective.org · mav QBJ</div>
+
+<script>
+// ---------- weights (must match score.py) ----------
+const EXEC_W = {pillar_alignment:.40, citizen_impact:.30, implementation_delivery:.20, transparency:.10};
+const EXEC_LABELS = {pillar_alignment:["Pillar Alignment of Actions","do orders, budgets & signatures serve the pillars?"],
+  citizen_impact:["Citizen Impact","who is better off because of their decisions?"],
+  implementation_delivery:["Implementation & Delivery","do they deliver, not just announce?"],
+  transparency:["Transparency & Accountability","are they open about what they do?"]};
+const JUD_W = {integrity_impartiality:.30, access_citizen_impact:.25, competence_consistency:.25, transparency_accountability:.20};
+const JUD_LABELS = {integrity_impartiality:["Integrity & Impartiality","fair, no conflict or favor?"],
+  access_citizen_impact:["Access & Citizen Impact","can real people use this court?"],
+  competence_consistency:["Competence & Consistency","sound reasoning, applied evenly?"],
+  transparency_accountability:["Transparency & Accountability","open opinions, clear recusals?"]};
+const PILLARS = ["Health","Income","Family","Housing","Food","Economic Opportunity","Protection from Disruption","none"];
+const STD = 80;
+
+// ---------- pre-filled data (research seeded — verify:false) ----------
+let EXEC = {
+  "Governor": {holder:"Jared Polis", status:"scored",
+    components:{pillar_alignment:0,citizen_impact:0,implementation_delivery:0,transparency:0},
+    why:"",
+    entries:[
+      {date:"2024",type:"executive_order",title:"Apprenticeships and Work-Based Learning for the State Workforce",pillar:"Economic Opportunity",direction:"advances",component:"pillar_alignment",note:"Expands state apprenticeship & work-based learning pathways.",source:"https://governorsoffice.colorado.gov/governor/executive-orders",verified:false},
+      {date:"2024",type:"executive_order",title:"Office of Sustainability / electrification of state lawn & garden equipment",pillar:"none",direction:"n/a",component:"unscored",note:"Environmental/operations — no clean map to the seven pillars. Logged as NOT scored (honest example).",source:"https://governorsoffice.colorado.gov/governor/executive-orders",verified:false},
+      {date:"2024",type:"executive_order",title:"Disaster emergency declaration — extreme cold, National Guard deployment",pillar:"Protection from Disruption",direction:"advances",component:"pillar_alignment",note:"Emergency response protecting residents during a hazard event.",source:"https://governorsoffice.colorado.gov/governor/executive-orders",verified:false},
+      {date:"2025",type:"delivery",title:"SMART Act annual performance — [agency] vs. targets",pillar:"none",direction:"n/a",component:"implementation_delivery",note:"Delivery signal from Governor's Dashboard / SMART Act report.",source:"https://operations.colorado.gov/performance-management",verified:false},
+      {date:"2025",type:"budget",title:"Nov. 1 budget request vs. enacted Long Bill — [priority]",pillar:"none",direction:"n/a",component:"implementation_delivery",note:"Did a requested pillar priority survive into the enacted budget?",source:"https://www.colorado.gov/governor/office-state-planning-budgeting",verified:false}
+    ]},
+  "Attorney General":  {holder:"Phil Weiser", status:"in_development", components:blank(EXEC_W), why:"", entries:[]},
+  "Secretary of State":{holder:"Jena Griswold", status:"in_development", components:blank(EXEC_W), why:"", entries:[]},
+  "Treasurer":         {holder:"Dave Young", status:"in_development", components:blank(EXEC_W), why:"", entries:[]},
+  "Lt. Governor":      {holder:"Dianne Primavera", status:"slot", components:blank(EXEC_W), why:"Elected on the Governor's joint ticket; no independent scoreable record. Shown for completeness, unscored.", entries:[]}
+};
+let JUD = {"Colorado Supreme Court":[
+  j("Maria Berkenkotter","2024","2034","Retained 2024 (66.8%). Appointed by Polis, 2021."),
+  j("Susan Blanco","2026","2028","Appointed by Polis, Feb 2026 — provisional term; first retention 2028."),
+  j("Brian Boatright","2024","2034","Retained 2024 (62.8%). On the court since 2011."),
+  j("Richard Gabriel","2018","2028","Retained 2018 (74.3%). On the court since 2015."),
+  j("William W. Hood III","2016","2026","Retained 2016 (71.0%). UP FOR RETENTION Nov 2026.",true),
+  j("Monica Márquez (Chief Justice)","2024","2034","Retained 2024 (64.1%). Chief Justice; on the court since 2010."),
+  j("Carlos Armando Samour Jr.","2020","2030","Retained 2020 (73.4%). On the court since 2018.")
+]};
+function blank(w){let o={};for(let k in w)o[k]=0;return o;}
+function j(name,evalYr,nextRet,note,flag){return {name,evaluation_year:evalYr,next_retention:nextRet,
+  ojpe_recommendation:"",components:blank(JUD_W),narrative_note:note,flag:!!flag,
+  source:"https://judicialperformance.colorado.gov/ (KnowYourJudge)",
+  opinions_source:"https://research.coloradojudicial.gov/",verified:false};}
+
+// ---------- scoring ----------
+function total(comp,w){let t=0;for(let k in w)t+=(+comp[k]||0)*w[k];return Math.round(t);}
+function badgeFor(kind,score){if(score<STD)return null;return kind==='exec'?"Delivers for the People":"Fair-Bench Distinction";}
+
+// ---------- render: meter ----------
+function meterHTML(score,dark){
+  const champ=score>=STD;
+  return `<div class="meter${dark?' d':''}"><div class="fill ${champ?'champ':''}" style="width:${Math.max(0,Math.min(100,score))}%"></div><div class="std"></div></div>
+  <div class="stdlbl"><span>&#9650; Stability Standard (${STD})</span></div>
+  ${champ?`<span class="badge">${badgeFor(dark==='exec'||curExecKey?'exec':'jud',score)}</span>`:`<div class="below">${score} — ${STD-score} under the stability standard</div>`}`;
+}
+
+// ---------- DASHBOARD ----------
+function renderDash(){
+  let he="";
+  for(const k in EXEC){const o=EXEC[k];
+    if(o.status==="scored"){const s=total(o.components,EXEC_W);const champ=s>=STD;
+      he+=`<div class="dcard" onclick="show('exec');selectExec('${k}')"><div class="nm">${o.holder||k}</div><div class="of">${k} · Executive</div>
+      <div class="sc">${s}<small> /100</small></div>
+      <div class="meter"><div class="fill ${champ?'champ':''}" style="width:${s}%"></div><div class="std"></div></div>
+      ${champ?`<span class="badge">Delivers for the People</span>`:`<div class="below">below standard</div>`}</div>`;
+    } else {
+      he+=`<div class="dcard" onclick="show('exec');selectExec('${k}')"><div class="nm">${o.holder||k}</div><div class="of">${k} · Executive</div>
+      <div class="sc" style="color:#bbb">—</div><span class="pill ${o.status==='slot'?'slot':'dev'}">${o.status==='slot'?'unscored slot':'in development'}</span></div>`;
+    }}
+  document.getElementById('dashExec').innerHTML=he;
+  let hj="";
+  JUD["Colorado Supreme Court"].forEach((jx,i)=>{const s=total(jx.components,JUD_W);const scored=Object.values(jx.components).some(v=>+v>0);const champ=s>=STD;
+    hj+=`<div class="dcard" onclick="show('jud');selectJud(${i})"><div class="nm">${jx.name}</div><div class="of">CO Supreme Court · Judicial ${jx.flag?'<span class="pill flag">retention 2026</span>':''}</div>
+    ${scored?`<div class="sc">${s}<small> /100</small></div><div class="meter"><div class="fill ${champ?'champ':''}" style="width:${s}%"></div><div class="std"></div></div>${champ?`<span class="badge">Fair-Bench Distinction</span>`:`<div class="below">below standard</div>`}`
+    :`<div class="sc" style="color:#bbb">—</div><span class="pill dev">awaiting review</span><div class="below">eval ${jx.evaluation_year} · next ${jx.next_retention}</div>`}</div>`;});
+  document.getElementById('dashJud').innerHTML=hj;
+}
+
+// ---------- EXECUTIVE editor ----------
+let curExecKey="Governor";
+function renderExecSel(){let h="";for(const k in EXEC){const o=EXEC[k];
+  h+=`<button class="${k===curExecKey?'active':''} ${o.status!=='scored'?'dev':''}" onclick="selectExec('${k}')">${k}${o.status!=='scored'?' •':''}</button>`;}
+  document.getElementById('execSel').innerHTML=h;}
+function selectExec(k){curExecKey=k;renderExecSel();renderExecBody();}
+function renderExecBody(){
+  const o=EXEC[curExecKey];
+  if(o.status!=="scored"){
+    document.getElementById('execBody').innerHTML=`<div class="card"><h3>${curExecKey} <span class="pill ${o.status==='slot'?'slot':'dev'}">${o.status==='slot'?'unscored slot':'in development'}</span></h3>
+    <p class="muted">${o.why||'Added in the same wave as the Governor. Enter the officeholder and log actions to activate scoring — role-tailored definitions of "pillar-aligned action" apply for this office.'}</p>
+    ${o.status!=='slot'?`<div class="field"><label>Officeholder</label><input type="text" value="${o.holder}" oninput="EXEC['${curExecKey}'].holder=this.value"></div>
+    <button class="btn btn-out" onclick="EXEC['${curExecKey}'].status='scored';selectExec('${curExecKey}');renderDash()">Activate scoring for ${curExecKey}</button>`:''}</div>`;
+    return;}
+  const s=total(o.components,EXEC_W);const champ=s>=STD;
+  let comps="";for(const key in EXEC_W){const [t,d]=EXEC_LABELS[key];
+    comps+=`<div class="comp"><label>${t}<b>${d}</b></label><span class="w">${EXEC_W[key]*100}%</span>
+    <input type="range" min="0" max="100" value="${o.components[key]}" oninput="EXEC['${curExecKey}'].components['${key}']=+this.value;syncNum('e_${key}',this.value);renderExecTotal()">
+    <input type="number" id="e_${key}" min="0" max="100" value="${o.components[key]}" oninput="EXEC['${curExecKey}'].components['${key}']=+this.value;syncRange(this);renderExecTotal()"></div>`;}
+  let rows="";o.entries.forEach((e,i)=>{
+    rows+=`<tr>
+      <td style="width:22%">${e.title}<div class="src">${e.source}</div></td>
+      <td style="width:12%">${e.type}</td>
+      <td style="width:15%"><select onchange="EXEC['${curExecKey}'].entries[${i}].pillar=this.value">${PILLARS.map(p=>`<option ${p===e.pillar?'selected':''}>${p}</option>`).join('')}</select></td>
+      <td style="width:11%"><select onchange="EXEC['${curExecKey}'].entries[${i}].direction=this.value">${['advances','blocks','mixed','n/a'].map(d=>`<option ${d===e.direction?'selected':''}>${d}</option>`).join('')}</select></td>
+      <td style="width:16%"><select onchange="EXEC['${curExecKey}'].entries[${i}].component=this.value">${['pillar_alignment','citizen_impact','implementation_delivery','transparency','unscored'].map(c=>`<option ${c===e.component?'selected':''}>${c}</option>`).join('')}</select></td>
+      <td style="width:10%;text-align:center"><input type="checkbox" ${e.verified?'checked':''} onchange="EXEC['${curExecKey}'].entries[${i}].verified=this.checked" title="verified"></td>
+      <td style="width:4%"><button class="del" onclick="EXEC['${curExecKey}'].entries.splice(${i},1);renderExecBody()">&times;</button></td>
+    </tr>`;});
+  document.getElementById('execBody').innerHTML=`
+   <div class="card"><h3>${o.holder} — ${curExecKey}</h3>
+     <div class="total" id="execTotal"></div>
+     ${comps}
+   </div>
+   <div class="card"><h3>Action Evidence Log</h3>
+     <p class="muted">This is where you do the pillar alignment: tag each action to a pillar, mark advances / blocks, keep the source. score.py reads these on the Sunday run; the checkbox is your verify gate.</p>
+     <table><thead><tr><th>Action / source</th><th>Type</th><th>Pillar</th><th>Direction</th><th>Counts toward</th><th>Verified</th><th></th></tr></thead><tbody>${rows}</tbody></table>
+     <div style="margin-top:12px"><button class="btn btn-out" onclick="addEntry()">+ Add action</button></div>
+   </div>
+   <div class="card"><h3>Narrative</h3>
+     <textarea placeholder="Why this score — the plain-language justification shown on the report card." oninput="EXEC['${curExecKey}'].why=this.value">${o.why}</textarea>
+   </div>`;
+  renderExecTotal();
+}
+function renderExecTotal(){const o=EXEC[curExecKey];const s=total(o.components,EXEC_W);const champ=s>=STD;
+  const el=document.getElementById('execTotal');if(!el)return;
+  el.innerHTML=`<div class="lbl">Q Score · Executive</div><div class="big">${s}<span style="font-size:18px"> /100</span></div>
+  <div class="meter"><div class="fill ${champ?'champ':''}" style="width:${s}%"></div><div class="std"></div></div>
+  <div class="stdlbl"><span>&#9650; Stability Standard (${STD})</span></div>
+  ${champ?`<span class="badge">Delivers for the People</span>`:`<div class="below" style="color:rgba(255,255,255,.7)">${STD-s} under the stability standard</div>`}`;
+}
+function addEntry(){EXEC[curExecKey].entries.push({date:"",type:"executive_order",title:"New action",pillar:"none",direction:"advances",component:"pillar_alignment",note:"",source:"",verified:false});renderExecBody();}
+
+// ---------- JUDICIAL editor ----------
+let curJud=0;
+function renderJudSel(){let h="";JUD["Colorado Supreme Court"].forEach((jx,i)=>{
+  h+=`<button class="${i===curJud?'active':''}" onclick="selectJud(${i})">${jx.name.split(' ')[0]} ${jx.name.split(' ')[1]||''}${jx.flag?' ★':''}</button>`;});
+  document.getElementById('judSel').innerHTML=h;}
+function selectJud(i){curJud=i;renderJudSel();renderJudBody();}
+function renderJudBody(){
+  const jx=JUD["Colorado Supreme Court"][curJud];
+  let comps="";for(const key in JUD_W){const [t,d]=JUD_LABELS[key];
+    comps+=`<div class="comp"><label>${t}<b>${d}</b></label><span class="w">${JUD_W[key]*100}%</span>
+    <input type="range" min="0" max="100" value="${jx.components[key]}" oninput="JUD['Colorado Supreme Court'][${curJud}].components['${key}']=+this.value;syncNum('j_${key}',this.value);renderJudTotal()">
+    <input type="number" id="j_${key}" min="0" max="100" value="${jx.components[key]}" oninput="JUD['Colorado Supreme Court'][${curJud}].components['${key}']=+this.value;syncRange(this);renderJudTotal()"></div>`;}
+  document.getElementById('judBody').innerHTML=`
+   <div class="card"><h3>${jx.name} ${jx.flag?'<span class="pill flag">retention Nov 2026</span>':''}</h3>
+     <p class="muted">${jx.narrative_note}</p>
+     <div class="total" id="judTotal"></div>
+     ${comps}
+     <div class="row" style="margin-top:8px">
+       <div class="field" style="flex:1"><label>Most recent OJPE eval (year)</label><input type="text" value="${jx.evaluation_year}" oninput="JUD['Colorado Supreme Court'][${curJud}].evaluation_year=this.value"></div>
+       <div class="field" style="flex:1"><label>Next retention</label><input type="text" value="${jx.next_retention}" oninput="JUD['Colorado Supreme Court'][${curJud}].next_retention=this.value"></div>
+       <div class="field" style="flex:1.4"><label>OJPE recommendation</label><select onchange="JUD['Colorado Supreme Court'][${curJud}].ojpe_recommendation=this.value">
+         <option value="">—</option><option ${jx.ojpe_recommendation==='Meets Performance Standard'?'selected':''}>Meets Performance Standard</option><option ${jx.ojpe_recommendation==='Does Not Meet Performance Standard'?'selected':''}>Does Not Meet Performance Standard</option></select></div>
+     </div>
+     <div class="field"><label>OJPE evaluation</label><div class="src"><a href="${jx.source}" target="_blank">${jx.source}</a></div></div>
+     <div class="field"><label>Opinions (competence &amp; consistency)</label><div class="src"><a href="${jx.opinions_source}" target="_blank">${jx.opinions_source}</a></div></div>
+     <label style="font-size:14px"><input type="checkbox" ${jx.verified?'checked':''} onchange="JUD['Colorado Supreme Court'][${curJud}].verified=this.checked"> Verified — I've read the OJPE eval and stand behind these numbers</label>
+   </div>
+   <div class="card"><h3>Narrative note</h3>
+     <textarea oninput="JUD['Colorado Supreme Court'][${curJud}].narrative_note=this.value">${jx.narrative_note}</textarea></div>`;
+  renderJudTotal();
+}
+function renderJudTotal(){const jx=JUD["Colorado Supreme Court"][curJud];const s=total(jx.components,JUD_W);const champ=s>=STD;
+  const el=document.getElementById('judTotal');if(!el)return;
+  el.innerHTML=`<div class="lbl">Q Score · Judicial</div><div class="big">${s}<span style="font-size:18px"> /100</span></div>
+  <div class="meter"><div class="fill ${champ?'champ':''}" style="width:${s}%"></div><div class="std"></div></div>
+  <div class="stdlbl"><span>&#9650; Stability Standard (${STD})</span></div>
+  ${champ?`<span class="badge">Fair-Bench Distinction</span>`:`<div class="below" style="color:rgba(255,255,255,.7)">${STD-s} under the stability standard</div>`}`;
+}
+
+// ---------- helpers ----------
+function syncNum(id,v){const el=document.getElementById(id);if(el)el.value=v;}
+function syncRange(inp){const r=inp.previousElementSibling;if(r)r.value=inp.value;}
+function show(v){document.querySelectorAll('.view').forEach(s=>s.classList.remove('active'));document.getElementById(v).classList.add('active');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.v===v));
+  if(v==='dash')renderDash();if(v==='exec'){renderExecSel();renderExecBody();}if(v==='jud'){renderJudSel();renderJudBody();}}
+
+// ---------- export / import ----------
+let ioKind='exec';
+function buildExec(){
+  const out={};for(const k in EXEC){const o=EXEC[k];out[k]={holder:o.holder,status:o.status,score:o.status==='scored'?total(o.components,EXEC_W):null,
+    badge:o.status==='scored'&&total(o.components,EXEC_W)>=STD?"Delivers for the People":null,components:o.components,why:o.why,entries:o.entries};}
+  return {branch:"executive",state:"CO",score_version:"7.0",offices:out};
+}
+function buildJud(){
+  const arr=JUD["Colorado Supreme Court"].map(jx=>{const s=total(jx.components,JUD_W);const scored=Object.values(jx.components).some(v=>+v>0);
+    return {name:jx.name,status:scored?'scored':'awaiting_review',score:scored?s:null,badge:scored&&s>=STD?"Fair-Bench Distinction":null,
+      components:jx.components,evaluation_year:jx.evaluation_year,next_retention:jx.next_retention,ojpe_recommendation:jx.ojpe_recommendation,
+      narrative_note:jx.narrative_note,source:jx.source,opinions_source:jx.opinions_source,verified:jx.verified};});
+  return {branch:"judicial",state:"CO",score_version:"7.0","Colorado Supreme Court":arr};
+}
+function openExport(kind){ioKind=kind;const data=kind==='exec'?buildExec():buildJud();
+  document.getElementById('modalTitle').textContent=(kind==='exec'?'executive.json':'judicial.json')+' — copy & commit';
+  document.getElementById('modalTA').value=JSON.stringify(data,null,2);
+  document.getElementById('modalBtns').innerHTML=`<button class="btn btn-gold" onclick="copyTA()">Copy to clipboard</button><button class="btn btn-out" onclick="downloadTA('${kind==='exec'?'executive.json':'judicial.json'}')">Download file</button>`;
+  document.getElementById('modal').classList.add('open');}
+function openImport(kind){ioKind=kind;
+  document.getElementById('modalTitle').textContent='Import '+(kind==='exec'?'executive.json':'judicial.json');
+  document.getElementById('modalTA').value='';document.getElementById('modalTA').placeholder='Paste your saved JSON here…';
+  document.getElementById('modalBtns').innerHTML=`<button class="btn btn-gold" onclick="doImport()">Load into Console</button>`;
+  document.getElementById('modal').classList.add('open');}
+function doImport(){try{const d=JSON.parse(document.getElementById('modalTA').value);
+  if(ioKind==='exec'&&d.offices){for(const k in d.offices){if(EXEC[k]){const o=d.offices[k];EXEC[k].holder=o.holder||'';EXEC[k].status=o.status||EXEC[k].status;if(o.components)EXEC[k].components=o.components;EXEC[k].why=o.why||'';if(o.entries)EXEC[k].entries=o.entries;}}selectExec(curExecKey);}
+  if(ioKind==='jud'&&d["Colorado Supreme Court"]){d["Colorado Supreme Court"].forEach((o,i)=>{if(JUD["Colorado Supreme Court"][i]){Object.assign(JUD["Colorado Supreme Court"][i],{components:o.components||JUD["Colorado Supreme Court"][i].components,evaluation_year:o.evaluation_year,next_retention:o.next_retention,ojpe_recommendation:o.ojpe_recommendation,narrative_note:o.narrative_note,verified:o.verified});}});selectJud(curJud);}
+  closeModal();renderDash();alert('Loaded.');}catch(e){alert('Could not parse that JSON: '+e.message);}}
+function copyTA(){const ta=document.getElementById('modalTA');ta.select();document.execCommand('copy');alert('Copied.');}
+function downloadTA(fn){const blob=new Blob([document.getElementById('modalTA').value],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=fn;a.click();}
+function closeModal(){document.getElementById('modal').classList.remove('open');}
+
+// ---------- auto-save (per device; published site unaffected) ----------
+const QC_SAVE_KEY="qc_console_save_v1";
+function qcPersist(){try{localStorage.setItem(QC_SAVE_KEY,JSON.stringify({EXEC:EXEC,JUD:JUD,t:Date.now()}));var el=document.getElementById("qc-saved");if(el)el.textContent="Saved "+new Date().toLocaleTimeString();}catch(e){}}
+function qcRestore(){try{var raw=localStorage.getItem(QC_SAVE_KEY);if(raw){var d=JSON.parse(raw);if(d.EXEC)EXEC=d.EXEC;if(d.JUD)JUD=d.JUD;}}catch(e){}}
+function qcClearLocal(){if(confirm("Clear this device's saved work? Your published site is NOT affected.")){try{localStorage.removeItem(QC_SAVE_KEY);}catch(e){}location.reload();}}
+qcRestore();
+// init
+renderDash();renderExecSel();renderExecBody();renderJudSel();renderJudBody();
+setInterval(qcPersist,2500);window.addEventListener("beforeunload",qcPersist);document.addEventListener("visibilitychange",function(){if(document.hidden)qcPersist();});
+</script>
+<div id="qc-savebar" style="position:fixed;left:10px;bottom:8px;z-index:50;font-size:11px;color:#6a7688;background:#fff;border:1px solid #dfe4ec;border-radius:8px;padding:3px 9px"><span id="qc-saved">Auto-save on</span> &middot; <a href="#" onclick="qcClearLocal();return false" style="color:#b23b3b;text-decoration:none">clear this device</a></div>
+</body>
+</html>

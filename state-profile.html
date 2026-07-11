@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Official Profile — The Q Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --navy:#1B3A6B;--navy-deep:#122848;--navy-mid:#243f72;
+    --gold:#B8962E;--gold-light:#D4AF50;--gold-pale:#F5EDD4;
+    --white:#fff;--off-white:#F9F6F0;--off-white2:#F2EFE8;
+    --text:#1a1a1a;--text-light:#4a4a4a;--text-muted:#5a5a5a;--border:#E0D5BE;
+    --good:#1f7a44;--bad:#b23b3b;
+  }
+  body{background:var(--off-white);font-family:'DM Sans',sans-serif;color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:var(--navy)}
+  .top-stripe{height:5px;background:linear-gradient(90deg,var(--gold),var(--gold-light) 50%,var(--gold))}
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(18,40,72,.97);backdrop-filter:blur(6px);border-bottom:1px solid rgba(184,150,46,.25)}
+  .topbar-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 32px;gap:16px}
+  .brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+  .brand-q{font-family:'Playfair Display',serif;font-weight:900;font-size:26px;color:var(--gold-light);line-height:1}
+  .brand-name{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--white)}
+  .topnav{display:flex;gap:22px}
+  .topnav a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.72);text-decoration:none}
+  .topnav a:hover{color:var(--gold-light)}
+  @media(max-width:640px){.topnav a:not(.keep){display:none}}
+
+  /* hero */
+  .hero{background:var(--navy-deep);position:relative;overflow:hidden;padding:54px 32px 40px}
+  .hero-wm{position:absolute;font-family:'Playfair Display',serif;font-weight:900;font-size:440px;line-height:1;color:rgba(255,255,255,.05);top:-110px;right:-40px;pointer-events:none;user-select:none}
+  .hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+  .back{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-light);text-decoration:none}
+  .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);margin:22px 0 10px}
+  .hero h1{font-family:'Playfair Display',serif;font-size:clamp(30px,5vw,52px);font-weight:900;color:var(--white);line-height:1.05}
+  .hero .sub{font-family:'DM Mono',monospace;font-size:13px;color:rgba(255,255,255,.62);margin-top:10px;letter-spacing:.5px}
+
+  /* body */
+  .wrap{max-width:1100px;margin:0 auto;padding:34px 32px 60px}
+  .grid{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:start}
+  @media(max-width:820px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:26px 28px;margin-bottom:22px}
+  .section-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+  .section-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--navy-deep);margin-bottom:4px}
+  .divider{height:2px;width:44px;background:var(--gold);margin:8px 0 18px}
+
+  /* score + meter */
+  .scorebig{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+  .scorebig .n{font-family:'Playfair Display',serif;font-size:64px;font-weight:900;color:var(--navy-deep);line-height:1}
+  .scorebig .tag{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted)}
+  .badge{display:inline-block;background:var(--gold-pale);border:1px solid var(--gold);color:#7a5c12;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.5px;padding:5px 12px;border-radius:20px;margin-top:4px}
+  .pending{font-family:'DM Mono',monospace;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted)}
+  .meter{position:relative;height:26px;background:#eee7d6;border-radius:14px;overflow:hidden;border:1px solid var(--border);margin:16px 0 6px}
+  .meter .fill{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,var(--navy-mid),var(--navy-deep));border-radius:14px 0 0 14px}
+  .meter .fill.champ{background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+  .meter .std{position:absolute;top:-3px;bottom:-3px;left:80%;width:2px;background:var(--bad)}
+  .stdlbl{font-family:'DM Mono',monospace;font-size:10px;color:var(--bad);text-align:left;margin-left:calc(80% - 60px)}
+
+  /* components */
+  .comp{margin:14px 0}
+  .comp .top{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;margin-bottom:5px}
+  .comp .cname{font-weight:600;color:var(--navy-deep)}
+  .comp .cw{font-family:'DM Mono',monospace;font-size:11px;color:var(--text-muted)}
+  .comp .q{font-size:12.5px;color:var(--text-muted);margin-bottom:6px}
+  .bar{height:9px;background:#ece5d3;border-radius:6px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:var(--navy-mid);border-radius:6px}
+
+  .why{font-size:15.5px;color:var(--text-light);line-height:1.8}
+  .why.empty{color:var(--text-muted);font-style:italic}
+
+  /* evidence */
+  .ev{border-bottom:1px solid var(--border);padding:13px 0}
+  .ev:last-child{border-bottom:none}
+  .ev .t{font-weight:600;color:var(--navy-deep);font-size:14.5px}
+  .ev .m{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0;align-items:center}
+  .chip{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.5px;text-transform:uppercase;padding:2px 8px;border-radius:12px;background:#eef1f6;color:var(--navy)}
+  .chip.adv{background:#e4f1e8;color:var(--good)}
+  .chip.block{background:#f6e4e4;color:var(--bad)}
+  .chip.na{background:#efece3;color:var(--text-muted)}
+  .ev .note{font-size:13px;color:var(--text-muted)}
+  .ev a.src{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);text-decoration:none}
+  .ev a.src:hover{text-decoration:underline}
+
+  .kv{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px}
+  .kv:last-child{border-bottom:none}
+  .kv .k{color:var(--text-muted)}
+  .kv .v{font-family:'DM Mono',monospace;color:var(--navy-deep);text-align:right}
+  .retbox{background:var(--navy-deep);color:#fff;border-radius:10px;padding:20px 22px;margin-bottom:22px}
+  .retbox .rl{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light)}
+  .retbox .ry{font-family:'Playfair Display',serif;font-size:34px;font-weight:900;margin:4px 0}
+  .retbox .rn{font-size:13px;color:rgba(255,255,255,.7)}
+  .howlink{font-size:13px;margin-top:14px}
+  .footer{background:#0d1f3a;padding:34px 32px;text-align:center;color:rgba(255,255,255,.5);font-family:'DM Mono',monospace;font-size:11px;line-height:1.9}
+  .footer a{color:var(--gold-light);text-decoration:none}
+  .miss{max-width:700px;margin:60px auto;text-align:center;padding:0 24px}
+</style></head><body>
+<div class="top-stripe"></div>
+<div class="topbar"><div class="topbar-inner">
+  <a class="brand" href="index.html"><span class="brand-q">Q</span><span class="brand-name">The Q Collective</span></a>
+  <div class="topnav">
+    <a href="hub.html" class="keep">Accountability Hub</a>
+    <a href="how-q-scores-work.html">How Q Scores Work</a>
+    <a href="find-officials.html">Find Officials</a>
+  </div>
+</div></div>
+
+<div class="hero"><div class="hero-wm">Q</div><div class="hero-inner">
+  <a class="back" href="hub.html">&larr; Back to the Hub</a>
+  <div class="eyebrow" id="eyebrow">Profile</div>
+  <h1 id="pname">Loading…</h1>
+  <div class="sub" id="psub"></div>
+</div></div>
+
+<div class="wrap" id="wrap"><p style="text-align:center;color:var(--text-muted);padding:40px">Loading profile…</p></div>
+
+<div class="footer">
+  <div><span style="font-family:'Playfair Display',serif;color:var(--gold-light);font-weight:900;font-size:20px">Q</span></div>
+  Published by The Q Collective LLC / Doctrine Policy Group<br>
+  <a href="how-q-scores-work.html">How Q Scores work</a> &middot; <a href="hub.html">Accountability Hub</a>
+</div>
+
+<script>
+var EXEC_W=[["pillar_alignment","Pillar Alignment of Actions","40%","Do the office's orders, budgets, and signatures serve the seven pillars?"],
+  ["citizen_impact","Citizen Impact","30%","Who is helped or harmed by what this office does?"],
+  ["implementation_delivery","Implementation & Delivery","20%","Does the office actually deliver — not just announce?"],
+  ["transparency","Transparency & Accountability","10%","Is the office open about what it does and why?"]];
+var JUD_W=[["integrity_impartiality","Integrity & Impartiality","30%","Does the justice judge fairly, without conflict or favor?"],
+  ["access_citizen_impact","Access & Citizen Impact","25%","Can real people use this court — timely rulings, plain language, fairness to the unrepresented?"],
+  ["competence_consistency","Competence & Consistency","25%","Sound legal reasoning, applied evenly?"],
+  ["transparency_accountability","Transparency & Accountability","20%","Open opinions, clear recusals, cooperation with review?"]];
+var PILLARS7=["Health","Income","Family","Housing","Food","Economic Opportunity","Protection from Disruption"];
+
+function qs(k){var m=new RegExp('[?&]'+k+'=([^&]*)').exec(location.search);return m?decodeURIComponent(m[1]):null;}
+function esc(s){return (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function meter(score,champ){return '<div class="meter"><div class="fill'+(champ?' champ':'')+'" style="width:'+Math.max(0,Math.min(100,score))+'%"></div><div class="std"></div></div><div class="stdlbl">&#9650; Stability Standard (80)</div>';}
+function comps(c,defs){return defs.map(function(d){var v=(c&&c[d[0]]!=null)?c[d[0]]:0;return '<div class="comp"><div class="top"><span class="cname">'+d[1]+'</span><span class="cw">'+d[2]+' &middot; '+v+'</span></div><div class="q">'+d[3]+'</div><div class="bar"><span style="width:'+v+'%"></span></div></div>';}).join('');}
+function dirChip(dir){var d=(dir||'').toLowerCase();if(d==='advances')return '<span class="chip adv">advances</span>';if(d==='blocks')return '<span class="chip block">blocks</span>';if(d==='mixed')return '<span class="chip">mixed</span>';return '<span class="chip na">not scored</span>';}
+function pending(c){if(!c)return true;var t=0;for(var k in c)t+=(+c[k]||0);return t===0;}
+
+function setHead(eyebrow,name,sub){document.getElementById('eyebrow').textContent=eyebrow;document.getElementById('pname').textContent=name;document.getElementById('psub').innerHTML=sub;document.title=name+' \u2014 The Q Collective';}
+function miss(msg){document.getElementById('wrap').innerHTML='<div class="miss"><h2 class="section-title">'+esc(msg)+'</h2><p><a href="hub.html">&larr; Back to the Accountability Hub</a></p></div>';}
+
+function renderExec(o){
+  setHead('Executive Branch', o.office, esc(o.holder||'')+' &middot; Colorado');
+  var scored=o.status==='scored'&&!pending(o.components);
+  var champ=scored&&o.score>=80;
+  var scoreHTML = scored
+    ? '<div class="scorebig"><span class="n">'+o.score+'</span><span class="tag">/ 100 &middot; Executive</span></div>'+(champ?'<span class="badge">&#9733; '+esc(o.label||'Delivers for the People')+'</span>':'')+meter(o.score,champ)
+    : '<div class="pending">'+(o.status==='slot'?'Unscored &mdash; shown for completeness':'In development &mdash; awaiting review')+'</div>'+(o.note?'<p class="why" style="margin-top:10px">'+esc(o.note)+'</p>':'');
+  var ev=(o.entries||[]).map(function(e){
+    return '<div class="ev"><div class="t">'+esc(e.title)+'</div><div class="m">'+(e.pillar&&e.pillar!=='none'?'<span class="chip">'+esc(e.pillar)+'</span>':'')+dirChip(e.direction)+(e.date?'<span class="chip na">'+esc(e.date)+'</span>':'')+'</div>'+(e.note?'<div class="note">'+esc(e.note)+'</div>':'')+(e.source?'<div style="margin-top:5px"><a class="src" href="'+esc(e.source)+'" target="_blank" rel="noopener">View the source &rarr;</a></div>':'')+'</div>';
+  }).join('') || '<p class="why empty">No actions logged yet.</p>';
+  document.getElementById('wrap').innerHTML=
+    '<div class="grid"><div>'+
+      '<div class="card"><p class="section-label">Accountability</p><h2 class="section-title">Q Score</h2><div class="divider"></div>'+scoreHTML+
+        (scored?'<div style="margin-top:22px">'+comps(o.components,EXEC_W)+'</div>':'')+
+        '<p class="howlink"><a href="how-q-scores-work.html">How is this Q Score calculated? &rarr;</a></p></div>'+
+      (scored?'<div class="card"><p class="section-label">In plain language</p><h2 class="section-title">Why this score</h2><div class="divider"></div><p class="why'+(o.why?'':' empty')+'">'+(o.why?esc(o.why):'No plain-language summary has been added yet.')+'</p></div>':'')+
+    '</div><div>'+
+      '<div class="card"><p class="section-label">The receipts</p><h2 class="section-title">What we scored</h2><div class="divider"></div>'+ev+
+        '<p class="note" style="margin-top:12px;color:var(--text-muted)">Every action is scored against the executive rubric &mdash; not compared to a legislator\'s score.</p></div>'+
+    '</div></div>';
+}
+
+function renderJud(j,court){
+  setHead('Judicial Branch', j.name, (j.role?esc(j.role)+' &middot; ':'')+esc(court||'Colorado Supreme Court'));
+  var scored=!pending(j.components);
+  var champ=scored&&j.score>=80;
+  var scoreHTML = scored
+    ? '<div class="scorebig"><span class="n">'+j.score+'</span><span class="tag">/ 100 &middot; Judicial</span></div>'+(champ?'<span class="badge">&#9733; '+esc(j.label||'Fair-Bench Distinction')+'</span>':'')+meter(j.score,champ)
+    : '<div class="pending">Awaiting review</div><p class="why" style="margin-top:10px">This justice has not yet been scored. Scoring is based on Colorado\'s official judicial performance evaluation, which is published in a justice\'s retention year.</p>';
+  var ret = j.next_retention
+    ? '<div class="retbox"><div class="rl">Next retention election</div><div class="ry">'+esc(j.next_retention)+'</div><div class="rn">This is when Colorado voters decide whether to keep this justice on the bench.</div></div>'
+    : '';
+  var ojpe='<div class="card"><p class="section-label">The anchor</p><h2 class="section-title">Official evaluation</h2><div class="divider"></div>'+
+    '<div class="kv"><span class="k">State recommendation</span><span class="v">'+esc(j.ojpe_recommendation||'—')+'</span></div>'+
+    '<div class="kv"><span class="k">Evaluation year</span><span class="v">'+esc(j.evaluation_year||'—')+'</span></div>'+
+    '<div class="kv"><span class="k">Next retention</span><span class="v">'+esc(j.next_retention||'—')+'</span></div>'+
+    (j.source?'<p style="margin-top:12px"><a class="src" style="font-family:\'DM Mono\',monospace;font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);text-decoration:none" href="'+esc(j.source.split(' ')[0])+'" target="_blank" rel="noopener">Read the state\'s evaluation &rarr;</a></p>':'')+
+    '<p class="note" style="margin-top:10px;color:var(--text-muted)">This score measures how the justice does the job &mdash; integrity, access, competence, transparency &mdash; not the direction of their rulings. It is built on Colorado\'s own Office of Judicial Performance Evaluation data.</p></div>';
+  document.getElementById('wrap').innerHTML=
+    '<div class="grid"><div>'+
+      '<div class="card"><p class="section-label">Accountability</p><h2 class="section-title">Q Score</h2><div class="divider"></div>'+scoreHTML+
+        (scored?'<div style="margin-top:22px">'+comps(j.components,JUD_W)+'</div>':'')+
+        '<p class="howlink"><a href="how-q-scores-work.html">How is this Q Score calculated? &rarr;</a></p></div>'+
+      (scored&&j.narrative_note?'<div class="card"><p class="section-label">In plain language</p><h2 class="section-title">Why this score</h2><div class="divider"></div><p class="why">'+esc(j.narrative_note)+'</p></div>':'')+
+    '</div><div>'+ret+ojpe+'</div></div>';
+}
+
+(function(){
+  var branch=(qs('branch')||'').toLowerCase();
+  fetch('data/CO.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(d){
+    if(!d){miss('Couldn\u2019t load Colorado data right now.');return;}
+    if(branch==='executive'){
+      var office=qs('office');var o=(d.executive||[]).filter(function(x){return x.office===office;})[0];
+      if(!o){miss('That office isn\u2019t on the board yet.');return;}
+      renderExec(o);
+    } else if(branch==='judicial'){
+      var name=qs('name');var found=null,courtName='';
+      (d.judicial||[]).forEach(function(c){(c.justices||[]).forEach(function(x){if(x.name===name){found=x;courtName=c.court;}});});
+      if(!found){miss('That justice isn\u2019t on the board yet.');return;}
+      renderJud(found,courtName);
+    } else {
+      miss('No official selected. Head back to the Hub and pick one.');
+    }
+  }).catch(function(){miss('Couldn\u2019t load the profile.');});
+})();
+</script>
+</body></html>
