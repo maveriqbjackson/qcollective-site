@@ -1,0 +1,25 @@
+{
+ "state": "CO",
+ "updated": "",
+ "offices": [
+  {"office": "Governor", "holder": "Jared Polis", "status": "scored",
+   "components": {"pillar_alignment": 0, "citizen_impact": 0, "implementation_delivery": 0, "transparency": 0},
+   "evidence": [
+    {"date":"2024","type":"executive_order","title":"Apprenticeships & Work-Based Learning for the State Workforce","pillar":"Economic Opportunity","direction":"advances","source":"https://governorsoffice.colorado.gov/governor/executive-orders","verified":false},
+    {"date":"2024","type":"executive_order","title":"Disaster emergency - extreme cold / CO National Guard deployment","pillar":"Protection from Disruption","direction":"advances","source":"https://governorsoffice.colorado.gov/governor/executive-orders","verified":false},
+    {"date":"2024","type":"executive_order","title":"Office of Sustainability / electrification of state lawn & garden equipment","pillar":"none (does not map)","direction":"n/a","source":"https://governorsoffice.colorado.gov/governor/executive-orders","verified":false}
+   ], "note": ""},
+  {"office": "Attorney General", "holder": "", "status": "in_development",
+   "components": {"pillar_alignment": 0, "citizen_impact": 0, "implementation_delivery": 0, "transparency": 0},
+   "evidence": [], "note": "Role-tailored: litigation, positions, enforcement. Source: coag.gov"},
+  {"office": "Secretary of State", "holder": "", "status": "in_development",
+   "components": {"pillar_alignment": 0, "citizen_impact": 0, "implementation_delivery": 0, "transparency": 0},
+   "evidence": [], "note": "Role-tailored: election administration. Source: sos.state.co.us"},
+  {"office": "Treasurer", "holder": "", "status": "in_development",
+   "components": {"pillar_alignment": 0, "citizen_impact": 0, "implementation_delivery": 0, "transparency": 0},
+   "evidence": [], "note": "Role-tailored: fund stewardship. Source: treasurer.colorado.gov"},
+  {"office": "Lieutenant Governor", "holder": "", "status": "slot",
+   "components": {"pillar_alignment": 0, "citizen_impact": 0, "implementation_delivery": 0, "transparency": 0},
+   "evidence": [], "note": "Joint ticket with the Governor - no independent scoreable record. Visible, unscored."}
+ ]
+}

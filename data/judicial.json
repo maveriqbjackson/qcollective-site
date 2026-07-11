@@ -1,0 +1,134 @@
+{
+ "state": "CO",
+ "updated": "",
+ "courts": [
+  {
+   "court": "Colorado Supreme Court",
+   "justices": [
+    {
+     "name": "Monica M. Márquez",
+     "role": "Chief Justice",
+     "assumed": "2010",
+     "evaluation_year": "",
+     "next_retention": "2034",
+     "ojpe_recommendation": "",
+     "components": {
+      "integrity_impartiality": 0,
+      "access_citizen_impact": 0,
+      "competence_consistency": 0,
+      "transparency_accountability": 0
+     },
+     "note": "",
+     "source": "https://judicialperformance.colorado.gov/",
+     "verified": false
+    },
+    {
+     "name": "Brian D. Boatright",
+     "role": "Associate Justice",
+     "assumed": "2011",
+     "evaluation_year": "",
+     "next_retention": "2034",
+     "ojpe_recommendation": "",
+     "components": {
+      "integrity_impartiality": 0,
+      "access_citizen_impact": 0,
+      "competence_consistency": 0,
+      "transparency_accountability": 0
+     },
+     "note": "",
+     "source": "https://judicialperformance.colorado.gov/",
+     "verified": false
+    },
+    {
+     "name": "William W. Hood III",
+     "role": "Associate Justice",
+     "assumed": "2014",
+     "evaluation_year": "",
+     "next_retention": "2026",
+     "ojpe_recommendation": "",
+     "components": {
+      "integrity_impartiality": 0,
+      "access_citizen_impact": 0,
+      "competence_consistency": 0,
+      "transparency_accountability": 0
+     },
+     "note": "Up for retention 2026 - confirm.",
+     "source": "https://judicialperformance.colorado.gov/",
+     "verified": false
+    },
+    {
+     "name": "Richard L. Gabriel",
+     "role": "Associate Justice",
+     "assumed": "2015",
+     "evaluation_year": "",
+     "next_retention": "2028",
+     "ojpe_recommendation": "",
+     "components": {
+      "integrity_impartiality": 0,
+      "access_citizen_impact": 0,
+      "competence_consistency": 0,
+      "transparency_accountability": 0
+     },
+     "note": "",
+     "source": "https://judicialperformance.colorado.gov/",
+     "verified": false
+    },
+    {
+     "name": "Carlos A. Samour Jr.",
+     "role": "Associate Justice",
+     "assumed": "2018",
+     "evaluation_year": "",
+     "next_retention": "2030",
+     "ojpe_recommendation": "",
+     "components": {
+      "integrity_impartiality": 0,
+      "access_citizen_impact": 0,
+      "competence_consistency": 0,
+      "transparency_accountability": 0
+     },
+     "note": "",
+     "source": "https://judicialperformance.colorado.gov/",
+     "verified": false
+    },
+    {
+     "name": "Maria E. Berkenkotter",
+     "role": "Associate Justice",
+     "assumed": "2021",
+     "evaluation_year": "",
+     "next_retention": "2034",
+     "ojpe_recommendation": "",
+     "components": {
+      "integrity_impartiality": 0,
+      "access_citizen_impact": 0,
+      "competence_consistency": 0,
+      "transparency_accountability": 0
+     },
+     "note": "",
+     "source": "https://judicialperformance.colorado.gov/",
+     "verified": false
+    },
+    {
+     "name": "Susan L. Blanco",
+     "role": "Associate Justice",
+     "assumed": "2026",
+     "evaluation_year": "",
+     "next_retention": "2028",
+     "ojpe_recommendation": "",
+     "components": {
+      "integrity_impartiality": 0,
+      "access_citizen_impact": 0,
+      "competence_consistency": 0,
+      "transparency_accountability": 0
+     },
+     "note": "Provisional term - first retention ~2028. Confirm.",
+     "source": "https://judicialperformance.colorado.gov/",
+     "verified": false
+    }
+   ]
+  },
+  {
+   "court": "Colorado Court of Appeals",
+   "justices": []
+  }
+ ]
+}
