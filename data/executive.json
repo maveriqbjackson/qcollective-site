@@ -1,25 +1,133 @@
 {
- "state": "CO",
- "updated": "",
- "offices": [
-  {"office": "Governor", "holder": "Jared Polis", "status": "scored",
-   "components": {"pillar_alignment": 0, "citizen_impact": 0, "implementation_delivery": 0, "transparency": 0},
-   "evidence": [
-    {"date":"2024","type":"executive_order","title":"Apprenticeships & Work-Based Learning for the State Workforce","pillar":"Economic Opportunity","direction":"advances","source":"https://governorsoffice.colorado.gov/governor/executive-orders","verified":false},
-    {"date":"2024","type":"executive_order","title":"Disaster emergency - extreme cold / CO National Guard deployment","pillar":"Protection from Disruption","direction":"advances","source":"https://governorsoffice.colorado.gov/governor/executive-orders","verified":false},
-    {"date":"2024","type":"executive_order","title":"Office of Sustainability / electrification of state lawn & garden equipment","pillar":"none (does not map)","direction":"n/a","source":"https://governorsoffice.colorado.gov/governor/executive-orders","verified":false}
-   ], "note": ""},
-  {"office": "Attorney General", "holder": "Phil Weiser", "status": "in_development",
-   "components": {"pillar_alignment": 0, "citizen_impact": 0, "implementation_delivery": 0, "transparency": 0},
-   "evidence": [], "note": "Role-tailored: litigation, positions, enforcement. Source: coag.gov"},
-  {"office": "Secretary of State", "holder": "Jena Griswold", "status": "in_development",
-   "components": {"pillar_alignment": 0, "citizen_impact": 0, "implementation_delivery": 0, "transparency": 0},
-   "evidence": [], "note": "Role-tailored: election administration. Source: sos.state.co.us"},
-  {"office": "Treasurer", "holder": "Dave Young", "status": "in_development",
-   "components": {"pillar_alignment": 0, "citizen_impact": 0, "implementation_delivery": 0, "transparency": 0},
-   "evidence": [], "note": "Role-tailored: fund stewardship. Source: treasurer.colorado.gov"},
-  {"office": "Lieutenant Governor", "holder": "Dianne Primavera", "status": "slot",
-   "components": {"pillar_alignment": 0, "citizen_impact": 0, "implementation_delivery": 0, "transparency": 0},
-   "evidence": [], "note": "Joint ticket with the Governor - no independent scoreable record. Visible, unscored."}
- ]
+  "branch": "executive",
+  "state": "CO",
+  "score_version": "7.0",
+  "offices": {
+    "Governor": {
+      "holder": "Jared Polis",
+      "status": "scored",
+      "score": 81,
+      "badge": "Delivers for the People",
+      "components": {
+        "pillar_alignment": 82,
+        "citizen_impact": 76,
+        "implementation_delivery": 84,
+        "transparency": 82
+      },
+      "why": "Governor Polis earns a strong mark for turning the pillars into action, not announcements - a 2025 order tying over $100M in state grants to whether localities actually follow Colorado's housing laws, and $768M+ delivered into roughly 20,000 homes. Where he loses ground is results: homelessness rose about 90% from 2020 to 2024, so the effort is real but the outcomes are mixed. Scored on whether this office uses its orders, budgets, and signatures to serve the pillars, he delivers, with room to close the gap between action and outcome.",
+      "entries": [
+        {
+          "date": "2025",
+          "type": "executive_order",
+          "title": "Strategic Growth Through Compliance With State Laws (ties $100M+ in grants to local housing-law compliance)",
+          "pillar": "Housing",
+          "direction": "advances",
+          "component": "pillar_alignment",
+          "note": "Conditions discretionary state grants on compliance with 2024-25 housing laws.",
+          "source": "https://www.colorado.gov/governor/news/governor-polis-takes-action-increase-housing-supply-break-down-barriers-more-housing",
+          "verified": true
+        },
+        {
+          "date": "2024",
+          "type": "executive_order",
+          "title": "Apprenticeships and Work-Based Learning for the State Workforce",
+          "pillar": "Economic Opportunity",
+          "direction": "advances",
+          "component": "pillar_alignment",
+          "note": "Expands state apprenticeship pathways.",
+          "source": "https://governorsoffice.colorado.gov/governor/executive-orders",
+          "verified": true
+        },
+        {
+          "date": "2024",
+          "type": "executive_order",
+          "title": "Disaster emergency declaration - extreme cold / CO National Guard deployment",
+          "pillar": "Protection from Disruption",
+          "direction": "advances",
+          "component": "pillar_alignment",
+          "note": "Emergency response protecting residents.",
+          "source": "https://governorsoffice.colorado.gov/governor/executive-orders",
+          "verified": true
+        },
+        {
+          "date": "2020-2025",
+          "type": "delivery",
+          "title": "Division of Housing: $768M+ awarded since FY2020-21, ~20,000 units; ~65,000 households in rental assistance",
+          "pillar": "Housing",
+          "direction": "advances",
+          "component": "implementation_delivery",
+          "note": "Countable delivery; firm up with SMART Act reports.",
+          "source": "https://www.colorado.gov/governor/news/governor-polis-takes-action-increase-housing-supply-break-down-barriers-more-housing",
+          "verified": true
+        },
+        {
+          "date": "2024",
+          "type": "executive_order",
+          "title": "Office of Sustainability / electrification of state lawn & garden equipment",
+          "pillar": "none",
+          "direction": "n/a",
+          "component": "unscored",
+          "note": "Environmental/operations - no clean map to the seven pillars.",
+          "source": "https://governorsoffice.colorado.gov/governor/executive-orders",
+          "verified": true
+        }
+      ]
+    },
+    "Attorney General": {
+      "holder": "Phil Weiser",
+      "status": "in_development",
+      "score": null,
+      "badge": null,
+      "components": {
+        "pillar_alignment": 0,
+        "citizen_impact": 0,
+        "implementation_delivery": 0,
+        "transparency": 0
+      },
+      "why": "",
+      "entries": []
+    },
+    "Secretary of State": {
+      "holder": "Jena Griswold",
+      "status": "in_development",
+      "score": null,
+      "badge": null,
+      "components": {
+        "pillar_alignment": 0,
+        "citizen_impact": 0,
+        "implementation_delivery": 0,
+        "transparency": 0
+      },
+      "why": "",
+      "entries": []
+    },
+    "Treasurer": {
+      "holder": "Dave Young",
+      "status": "in_development",
+      "score": null,
+      "badge": null,
+      "components": {
+        "pillar_alignment": 0,
+        "citizen_impact": 0,
+        "implementation_delivery": 0,
+        "transparency": 0
+      },
+      "why": "",
+      "entries": []
+    },
+    "Lt. Governor": {
+      "holder": "Dianne Primavera",
+      "status": "slot",
+      "score": null,
+      "badge": null,
+      "components": {
+        "pillar_alignment": 0,
+        "citizen_impact": 0,
+        "implementation_delivery": 0,
+        "transparency": 0
+      },
+      "why": "Elected on the Governor's joint ticket; no independent scoreable record. Shown for completeness, unscored.",
+      "entries": []
+    }
+  }
 }
