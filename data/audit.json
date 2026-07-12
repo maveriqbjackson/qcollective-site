@@ -1,6 +1,6 @@
 {
  "engine": "v7.0",
- "updated": "2026-07-11",
+ "updated": "July 12, 2026 at 3:17 PM MDT",
  "runs": [
   {
    "ts": "2026-07-11",
@@ -11,6 +11,747 @@
    "run_url": "",
    "note": "Public audit log activated. From here on, every scoring run - scheduled or manual - and every change to the data is recorded here automatically, with the exact scores that moved.",
    "states": {}
+  },
+  {
+   "ts": "July 12, 2026 at 3:17 PM MDT",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "34c0894",
+   "run_id": "29209104508",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/29209104508",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "updated",
+      "dataset_hash": "dc8cc0fa31e988e2738cc073ecc60d4d",
+      "dataset_date": "2026-07-12"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 0
+     },
+     "changes": {
+      "legislators": [
+       {
+        "name": "Andrew Boesenecker",
+        "old": 82,
+        "new": 87,
+        "components": {
+         "pillar": [
+          78,
+          84
+         ],
+         "impact": [
+          76,
+          82
+         ],
+         "sponsorship": [
+          84,
+          90
+         ]
+        }
+       },
+       {
+        "name": "Lindsay Gilchrist",
+        "old": 80,
+        "new": 81,
+        "components": {
+         "impact": [
+          71,
+          72
+         ]
+        }
+       },
+       {
+        "name": "Rebekah Stewart",
+        "old": 77,
+        "new": 80,
+        "components": {
+         "pillar": [
+          74,
+          78
+         ],
+         "impact": [
+          72,
+          76
+         ],
+         "sponsorship": [
+          81,
+          84
+         ]
+        }
+       },
+       {
+        "name": "Jenny Willford",
+        "old": 77,
+        "new": 80,
+        "components": {
+         "pillar": [
+          74,
+          78
+         ],
+         "impact": [
+          72,
+          76
+         ],
+         "sponsorship": [
+          81,
+          84
+         ]
+        }
+       },
+       {
+        "name": "Michael Weissman",
+        "old": 78,
+        "new": 79,
+        "components": {
+         "pillar": [
+          71,
+          72
+         ],
+         "sponsorship": [
+          79,
+          80
+         ]
+        }
+       },
+       {
+        "name": "Kyle Mullica",
+        "old": 79,
+        "new": 78,
+        "components": {
+         "pillar": [
+          74,
+          72
+         ],
+         "impact": [
+          71,
+          68
+         ],
+         "sponsorship": [
+          81,
+          80
+         ]
+        }
+       },
+       {
+        "name": "Javier Mabrey",
+        "old": 76,
+        "new": 77,
+        "components": {
+         "pillar": [
+          71,
+          72
+         ],
+         "impact": [
+          68,
+          70
+         ],
+         "sponsorship": [
+          81,
+          80
+         ]
+        }
+       },
+       {
+        "name": "Lisa Frizell",
+        "old": 72,
+        "new": 77,
+        "components": {
+         "pillar": [
+          63,
+          71
+         ],
+         "impact": [
+          61,
+          68
+         ],
+         "sponsorship": [
+          73,
+          79
+         ]
+        }
+       },
+       {
+        "name": "Junie Joseph",
+        "old": 74,
+        "new": 76,
+        "components": {
+         "pillar": [
+          68,
+          72
+         ],
+         "impact": [
+          65,
+          68
+         ],
+         "sponsorship": [
+          77,
+          80
+         ]
+        }
+       },
+       {
+        "name": "Lisa Cutter",
+        "old": 75,
+        "new": 76,
+        "components": {
+         "impact": [
+          68,
+          70
+         ]
+        }
+       },
+       {
+        "name": "Iman Jodeh",
+        "old": 77,
+        "new": 76,
+        "components": {
+         "impact": [
+          70,
+          68
+         ]
+        }
+       },
+       {
+        "name": "Scott Bright",
+        "old": 79,
+        "new": 76,
+        "components": {
+         "pillar": [
+          72,
+          68
+         ],
+         "impact": [
+          68,
+          65
+         ],
+         "sponsorship": [
+          80,
+          77
+         ]
+        }
+       },
+       {
+        "name": "Katie Wallace",
+        "old": 78,
+        "new": 76,
+        "components": {
+         "pillar": [
+          71,
+          68
+         ],
+         "impact": [
+          68,
+          65
+         ],
+         "sponsorship": [
+          79,
+          77
+         ]
+        }
+       },
+       {
+        "name": "Tisha Mauro",
+        "old": 72,
+        "new": 75,
+        "components": {
+         "pillar": [
+          63,
+          68
+         ],
+         "impact": [
+          61,
+          65
+         ],
+         "sponsorship": [
+          76,
+          77
+         ]
+        }
+       },
+       {
+        "name": "Sean Camacho",
+        "old": 76,
+        "new": 74,
+        "components": {
+         "pillar": [
+          71,
+          68
+         ],
+         "impact": [
+          68,
+          65
+         ],
+         "sponsorship": [
+          79,
+          77
+         ]
+        }
+       },
+       {
+        "name": "Amy Paschal",
+        "old": 72,
+        "new": 71,
+        "components": {
+         "pillar": [
+          62,
+          61
+         ],
+         "sponsorship": [
+          73,
+          74
+         ]
+        }
+       },
+       {
+        "name": "Ryan Gonzalez",
+        "old": 74,
+        "new": 71,
+        "components": {
+         "pillar": [
+          72,
+          68
+         ],
+         "impact": [
+          68,
+          65
+         ],
+         "sponsorship": [
+          80,
+          77
+         ]
+        }
+       },
+       {
+        "name": "Lindsey Daugherty",
+        "old": 68,
+        "new": 71,
+        "components": {
+         "pillar": [
+          74,
+          78
+         ],
+         "impact": [
+          72,
+          76
+         ],
+         "sponsorship": [
+          81,
+          84
+         ]
+        }
+       },
+       {
+        "name": "Rod Pelton",
+        "old": 66,
+        "new": 69,
+        "components": {
+         "pillar": [
+          58,
+          62
+         ],
+         "impact": [
+          55,
+          58
+         ],
+         "sponsorship": [
+          70,
+          73
+         ]
+        }
+       },
+       {
+        "name": "Steven Woodrow",
+        "old": 65,
+        "new": 68,
+        "components": {
+         "pillar": [
+          58,
+          62
+         ],
+         "impact": [
+          55,
+          58
+         ],
+         "sponsorship": [
+          70,
+          73
+         ]
+        }
+       },
+       {
+        "name": "Manny Rutinel",
+        "old": 65,
+        "new": 68,
+        "components": {
+         "pillar": [
+          58,
+          62
+         ],
+         "impact": [
+          52,
+          58
+         ],
+         "sponsorship": [
+          59,
+          64
+         ]
+        }
+       },
+       {
+        "name": "Janice Marchman",
+        "old": 68,
+        "new": 67,
+        "components": {
+         "pillar": [
+          62,
+          61
+         ],
+         "sponsorship": [
+          73,
+          72
+         ]
+        }
+       },
+       {
+        "name": "Jennifer Bacon",
+        "old": 73,
+        "new": 65,
+        "components": {
+         "pillar": [
+          72,
+          62
+         ],
+         "impact": [
+          68,
+          58
+         ],
+         "sponsorship": [
+          80,
+          73
+         ]
+        }
+       },
+       {
+        "name": "Monica Duran",
+        "old": 65,
+        "new": 64,
+        "components": {
+         "impact": [
+          49,
+          48
+         ],
+         "sponsorship": [
+          66,
+          62
+         ]
+        }
+       },
+       {
+        "name": "Tom Sullivan",
+        "old": 65,
+        "new": 62,
+        "components": {
+         "pillar": [
+          58,
+          54
+         ],
+         "impact": [
+          55,
+          51
+         ],
+         "sponsorship": [
+          55,
+          51
+         ]
+        }
+       },
+       {
+        "name": "Marc Catlin",
+        "old": 59,
+        "new": 61,
+        "components": {
+         "pillar": [
+          52,
+          54
+         ],
+         "impact": [
+          48,
+          51
+         ]
+        }
+       },
+       {
+        "name": "John Carson",
+        "old": 63,
+        "new": 60,
+        "components": {
+         "pillar": [
+          52,
+          48
+         ],
+         "impact": [
+          48,
+          44
+         ],
+         "sponsorship": [
+          66,
+          62
+         ]
+        }
+       },
+       {
+        "name": "Mary Bradfield",
+        "old": 56,
+        "new": 59,
+        "components": {
+         "pillar": [
+          48,
+          52
+         ],
+         "impact": [
+          44,
+          48
+         ]
+        }
+       },
+       {
+        "name": "Brandi Bradley",
+        "old": 50,
+        "new": 59,
+        "components": {
+         "pillar": [
+          38,
+          52
+         ],
+         "impact": [
+          32,
+          44
+         ],
+         "sponsorship": [
+          54,
+          63
+         ]
+        }
+       },
+       {
+        "name": "Cecelia Espenoza",
+        "old": 64,
+        "new": 59,
+        "components": {
+         "pillar": [
+          52,
+          44
+         ],
+         "impact": [
+          48,
+          41
+         ],
+         "sponsorship": [
+          62,
+          60
+         ]
+        }
+       },
+       {
+        "name": "Michael Carter",
+        "old": 55,
+        "new": 52,
+        "components": {
+         "pillar": [
+          42,
+          38
+         ],
+         "impact": [
+          38,
+          34
+         ],
+         "sponsorship": [
+          58,
+          55
+         ]
+        }
+       },
+       {
+        "name": "Matt Soper",
+        "old": 50,
+        "new": 51,
+        "components": {
+         "pillar": [
+          52,
+          54
+         ],
+         "impact": [
+          49,
+          51
+         ],
+         "sponsorship": [
+          66,
+          67
+         ]
+        }
+       },
+       {
+        "name": "Barbara Kirkmeyer",
+        "old": 52,
+        "new": 51,
+        "components": {
+         "impact": [
+          35,
+          32
+         ],
+         "sponsorship": [
+          52,
+          50
+         ]
+        }
+       },
+       {
+        "name": "Carlos Barron",
+        "old": 53,
+        "new": 50,
+        "components": {
+         "pillar": [
+          38,
+          34
+         ],
+         "impact": [
+          35,
+          31
+         ],
+         "sponsorship": [
+          53,
+          47
+         ]
+        }
+       },
+       {
+        "name": "Mark Baisley",
+        "old": 52,
+        "new": 50,
+        "components": {
+         "pillar": [
+          38,
+          34
+         ],
+         "impact": [
+          32,
+          31
+         ],
+         "sponsorship": [
+          52,
+          49
+         ]
+        }
+       },
+       {
+        "name": "Tammy Story",
+        "old": 48,
+        "new": 49,
+        "components": {
+         "impact": [
+          32,
+          34
+         ],
+         "sponsorship": [
+          51,
+          52
+         ]
+        }
+       },
+       {
+        "name": "Jeff Bridges",
+        "old": 42,
+        "new": 46,
+        "components": {
+         "pillar": [
+          28,
+          32
+         ],
+         "impact": [
+          22,
+          28
+         ],
+         "sponsorship": [
+          43,
+          45
+         ]
+        }
+       },
+       {
+        "name": "Anthony Hartsook",
+        "old": 42,
+        "new": 43,
+        "components": {
+         "sponsorship": [
+          40,
+          44
+         ]
+        }
+       },
+       {
+        "name": "Scott Slaugh",
+        "old": 45,
+        "new": 42,
+        "components": {
+         "pillar": [
+          32,
+          28
+         ],
+         "impact": [
+          28,
+          24
+         ],
+         "sponsorship": [
+          42,
+          39
+         ]
+        }
+       },
+       {
+        "name": "Bob Marshall",
+        "old": 37,
+        "new": 36,
+        "components": {
+         "sponsorship": [
+          32,
+          29
+         ]
+        }
+       },
+       {
+        "name": "Lynda Zamora Wilson",
+        "old": 34,
+        "new": 35,
+        "components": {
+         "pillar": [
+          12,
+          14
+         ],
+         "impact": [
+          10,
+          11
+         ]
+        }
+       }
+      ],
+      "executive": [
+       {
+        "office": "Governor",
+        "old": null,
+        "new": 0
+       }
+      ],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "41 legislator score changes; 1 executive change."
+    }
+   }
   }
  ]
 }
