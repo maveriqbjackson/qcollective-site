@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Q HQ — Command Center</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--navy:#1B3A6B;--navy-deep:#122848;--navy-mid:#243f72;--gold:#B8962E;--gold-light:#D4AF50;--gold-pale:#F5EDD4;
+    --off:#F9F6F0;--card:#fff;--text:#1a1a1a;--muted:#5a5a5a;--border:#E0D5BE;--good:#1f7a44;--bad:#b23b3b;}
+  body{background:var(--off);font-family:'DM Sans',sans-serif;color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--navy)}
+  .top-stripe{height:5px;background:linear-gradient(90deg,var(--gold),var(--gold-light) 50%,var(--gold))}
+  .bar{background:var(--navy-deep);padding:16px 28px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:40}
+  .bar .q{font-family:'Playfair Display',serif;font-weight:900;font-size:26px;color:var(--gold-light);line-height:1}
+  .bar .t{color:#fff;font-family:'DM Mono',monospace;letter-spacing:2px;font-size:12px;text-transform:uppercase}
+  .bar .t b{color:var(--gold-light)}
+  .bar .status{margin-left:auto;font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.7);text-align:right;line-height:1.5}
+  .bar .status b{color:var(--gold-light)}
+  .wrap{max-width:1080px;margin:0 auto;padding:26px 28px 70px}
+  h2{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:26px 0 12px;border-bottom:1px solid var(--border);padding-bottom:6px}
+  .grid{display:grid;gap:12px}
+  .g4{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+  .g3{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+  .tool{display:block;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px;text-decoration:none;color:inherit;transition:border-color .15s,box-shadow .15s,transform .1s}
+  .tool:hover{border-color:var(--gold);box-shadow:0 5px 16px rgba(18,40,72,.08);transform:translateY(-1px)}
+  .tool .ic{font-size:22px;margin-bottom:8px;display:block}
+  .tool .nm{font-weight:700;color:var(--navy-deep);font-size:15px}
+  .tool .ds{font-size:12.5px;color:var(--muted);margin-top:3px}
+  .tool.big{padding:20px}
+  .links{display:flex;flex-wrap:wrap;gap:8px}
+  .links a{background:var(--card);border:1px solid var(--border);border-radius:7px;padding:8px 13px;font-size:13px;text-decoration:none;color:var(--navy-deep)}
+  .links a:hover{border-color:var(--gold);color:var(--navy)}
+  .links a.ext::after{content:" \2197";color:var(--muted);font-size:11px}
+  .panel{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px 20px}
+  .panel h3{font-size:15px;color:var(--navy-deep);margin-bottom:4px}
+  .panel .sub{font-size:12px;color:var(--muted);margin-bottom:10px}
+  textarea{width:100%;min-height:220px;border:1px solid var(--border);border-radius:8px;padding:12px;font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.6;resize:vertical;color:var(--text)}
+  .saved{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);margin-top:6px}
+  .two{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
+  @media(max-width:820px){.two{grid-template-columns:1fr}}
+  .todo{list-style:none}
+  .todo li{display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:1px solid #efeadd;font-size:14px}
+  .todo li:last-child{border-bottom:none}
+  .todo input[type=checkbox]{width:16px;height:16px;accent-color:var(--gold)}
+  .todo .txt{flex:1}
+  .todo .done{text-decoration:line-through;color:var(--muted)}
+  .todo .x{background:none;border:none;color:var(--bad);cursor:pointer;font-size:15px;opacity:.6}
+  .todo .x:hover{opacity:1}
+  .addrow{display:flex;gap:8px;margin-top:10px}
+  .addrow input{flex:1;border:1px solid var(--border);border-radius:7px;padding:8px 10px;font-family:inherit;font-size:13.5px}
+  .btn{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 14px;border-radius:7px;border:1px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer}
+  .btn.out{background:#fff;color:var(--navy)}
+  .priv{background:#fbf8f1;border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:8px;padding:10px 14px;font-size:12.5px;color:#5b4a1c;margin-bottom:14px}
+  /* gate */
+  #gate{position:fixed;inset:0;z-index:9999;background:var(--navy-deep);display:flex;align-items:center;justify-content:center}
+  #gate .box{background:#0e2c4a;border:1px solid #1c3c5e;border-top:4px solid var(--gold);border-radius:14px;padding:30px 32px;max-width:340px;width:90%;text-align:center}
+  #gate .q{width:46px;height:46px;border-radius:9px;background:var(--gold);color:var(--navy-deep);font-weight:700;font-size:24px;display:grid;place-items:center;margin:0 auto 14px}
+  #gate h1{color:#fff;font-size:20px;margin-bottom:4px}
+  #gate p{color:#9db4d0;font-size:13px;margin-bottom:16px}
+  #gate input{width:100%;padding:10px 12px;border-radius:8px;border:1px solid #2a4c6e;background:var(--navy-deep);color:#fff;font-size:15px;margin-bottom:10px}
+  #gate button{width:100%;padding:10px;border-radius:8px;border:none;background:var(--gold);color:var(--navy-deep);font-weight:700;cursor:pointer}
+  #gate .err{color:#e8a0a0;font-size:12px;min-height:16px;margin-top:8px}
+</style></head><body>
+
+<div id="gate"><div class="box">
+  <div class="q">Q</div><h1>Command Center</h1><p>Enter your access code.</p>
+  <input id="code" type="password" autocomplete="off" autofocus onkeydown="if(event.key==='Enter')unlock()">
+  <button onclick="unlock()">Unlock</button><div class="err" id="err"></div>
+</div></div>
+<script>
+var PASS_HASH=639090475676760;
+var cyrb53=function(str,seed){seed=seed||0;var h1=0xdeadbeef^seed,h2=0x41c6ce57^seed;for(var i=0,c;i<str.length;i++){c=str.charCodeAt(i);h1=Math.imul(h1^c,2654435761);h2=Math.imul(h2^c,1597334677);}h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);return 4294967296*(2097151&h2)+(h1>>>0);};
+try{if(sessionStorage.getItem("hq_unlocked")==="1")document.getElementById("gate").style.display="none";}catch(e){}
+function unlock(){var v=document.getElementById("code").value;if(cyrb53(v)===PASS_HASH){try{sessionStorage.setItem("hq_unlocked","1");}catch(e){}document.getElementById("gate").style.display="none";}else{document.getElementById("err").textContent="Incorrect code.";document.getElementById("code").value="";}}
+</script>
+
+<div class="top-stripe"></div>
+<div class="bar">
+  <span class="q">Q</span>
+  <span class="t"><b>HQ</b> &middot; Command Center</span>
+  <span class="status" id="hqstatus">checking system&hellip;</span>
+</div>
+
+<div class="wrap">
+
+  <h2>Tools</h2>
+  <div class="grid g4">
+    <a class="tool big" href="q-console.html"><span class="ic">&#9881;</span><span class="nm">Q Console</span><span class="ds">Score executives &amp; judges, export the data files</span></a>
+    <a class="tool big" href="audit.html"><span class="ic">&#128220;</span><span class="nm">Audit Log</span><span class="ds">Public record of every change</span></a>
+    <a class="tool big" href="hub.html"><span class="ic">&#127963;</span><span class="nm">Accountability Hub</span><span class="ds">The live public scoreboard</span></a>
+    <a class="tool big ext" target="_blank" rel="noopener" href="https://github.com/maveriqbjackson/qcollective-site/actions"><span class="ic">&#9654;</span><span class="nm">Run the Workflow</span><span class="ds">GitHub Actions &rarr; Run workflow</span></a>
+    <a class="tool big ext" target="_blank" rel="noopener" href="https://github.com/maveriqbjackson/qcollective-site"><span class="ic">&#128193;</span><span class="nm">GitHub Repo</span><span class="ds">Edit files, commit changes</span></a>
+    <a class="tool big ext" target="_blank" rel="noopener" href="https://github.com/maveriqbjackson/qcollective-site/commits/main"><span class="ic">&#128260;</span><span class="nm">Change History</span><span class="ds">Every commit, timestamped</span></a>
+  </div>
+
+  <h2>Data &amp; Ops <span style="text-transform:none;letter-spacing:0;color:var(--muted);font-weight:400">(opens GitHub web editor)</span></h2>
+  <div class="links">
+    <a class="ext" target="_blank" rel="noopener" href="https://github.com/maveriqbjackson/qcollective-site/edit/main/data/executive.json">edit executive.json</a>
+    <a class="ext" target="_blank" rel="noopener" href="https://github.com/maveriqbjackson/qcollective-site/edit/main/data/judicial.json">edit judicial.json</a>
+    <a class="ext" target="_blank" rel="noopener" href="https://github.com/maveriqbjackson/qcollective-site/blob/main/data/CO.json">view CO.json</a>
+    <a class="ext" target="_blank" rel="noopener" href="https://github.com/maveriqbjackson/qcollective-site/edit/main/national.json">edit national.json</a>
+    <a class="ext" target="_blank" rel="noopener" href="https://github.com/maveriqbjackson/qcollective-site/blob/main/data/audit.json">view audit.json</a>
+    <a class="ext" target="_blank" rel="noopener" href="https://github.com/maveriqbjackson/qcollective-site/edit/main/score.py">edit score.py</a>
+  </div>
+
+  <h2>Every Page</h2>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="hub.html">Hub</a>
+    <a href="how-q-scores-work.html">How Q Scores Work</a>
+    <a href="anatomy.html">Anatomy of a Bill</a>
+    <a href="the-work.html">The Work</a>
+    <a href="about.html">About</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="work-with-us.html">Work With Us</a>
+    <a href="find-officials.html">Find Officials</a>
+    <a href="request-advocacy.html">Request Advocacy</a>
+    <a href="support-a-bill.html">Support a Bill</a>
+    <a href="contact.html">Contact</a>
+    <a href="audit.html">Audit Log</a>
+    <a href="state-profile.html?branch=executive&office=Governor">Governor profile</a>
+  </div>
+
+  <h2>My Workspace <span style="text-transform:none;letter-spacing:0;color:var(--muted);font-weight:400">(private &mdash; saved on this device only)</span></h2>
+  <div class="priv">These notes and to-dos live in <b>your browser only</b> &mdash; they are never uploaded to GitHub and never public. Use <b>Export</b> to back them up or move them to another device.</div>
+  <div class="two">
+    <div class="panel">
+      <h3>Notes</h3>
+      <div class="sub">Scratchpad, strategy, reminders &mdash; auto-saves as you type.</div>
+      <textarea id="notes" placeholder="Type anything here&hellip;" oninput="saveNotes()"></textarea>
+      <div class="saved" id="nsaved">Auto-save on</div>
+      <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn out" onclick="exportWS()">Export workspace</button>
+        <label class="btn out" style="cursor:pointer">Import<input type="file" accept=".json" onchange="importWS(event)" style="display:none"></label>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>To-do</h3>
+      <div class="sub">Quick checklist.</div>
+      <ul class="todo" id="todo"></ul>
+      <div class="addrow">
+        <input id="newtodo" placeholder="Add a task&hellip;" onkeydown="if(event.key==='Enter')addTodo()">
+        <button class="btn" onclick="addTodo()">Add</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+/* ---- live system status ---- */
+Promise.all([
+  fetch('data/index.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;}),
+  fetch('data/audit.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;})
+]).then(function(res){
+  var idx=res[0], aud=res[1], parts=[];
+  if(idx&&idx.states){parts.push('<b>'+idx.states.length+'</b> state'+(idx.states.length!==1?'s':'')+' scored');}
+  if(idx&&idx.updated){parts.push('data updated '+idx.updated);}
+  if(aud&&aud.runs&&aud.runs.length){var last=aud.runs[aud.runs.length-1];parts.push('last run: '+(last.ts||'')+' ('+(last.run_type||'')+')');}
+  document.getElementById('hqstatus').innerHTML=parts.length?parts.join('<br>'):'system idle';
+}).catch(function(){document.getElementById('hqstatus').textContent='status unavailable';});
+
+/* ---- private workspace (localStorage; never committed) ---- */
+var NK='hq_notes_v1', TK='hq_todos_v1';
+function saveNotes(){try{localStorage.setItem(NK,document.getElementById('notes').value);document.getElementById('nsaved').textContent='Saved '+new Date().toLocaleTimeString();}catch(e){}}
+function loadNotes(){try{var v=localStorage.getItem(NK);if(v!=null)document.getElementById('notes').value=v;else document.getElementById('notes').value=DEFAULT_NOTES;}catch(e){document.getElementById('notes').value=DEFAULT_NOTES;}}
+var DEFAULT_NOTES="Commit order after a Console pass:\n1) Export executive.json + judicial.json\n2) Commit both to /data/\n3) Actions -> Run workflow\n4) Check the Hub + Audit Log\n\n— your private notes save here automatically —";
+var TODOS=[];
+function loadTodos(){try{TODOS=JSON.parse(localStorage.getItem(TK)||'null')||DEFAULT_TODOS.slice();}catch(e){TODOS=DEFAULT_TODOS.slice();}drawTodos();}
+var DEFAULT_TODOS=[{t:"Decide donation platform (Stripe or Ko-fi) + merch (Bonfire or Spring)",d:false},{t:"Run the workflow to publish exec/judicial scores",d:false},{t:"Add Audit Log link to Hub + footer",d:false}];
+function saveTodos(){try{localStorage.setItem(TK,JSON.stringify(TODOS));}catch(e){}}
+function drawTodos(){var ul=document.getElementById('todo');ul.innerHTML=TODOS.map(function(x,i){return '<li><input type="checkbox" '+(x.d?'checked':'')+' onchange="toggleTodo('+i+')"><span class="txt '+(x.d?'done':'')+'">'+esc(x.t)+'</span><button class="x" onclick="delTodo('+i+')">&times;</button></li>';}).join('')||'<li style="color:var(--muted)">Nothing yet.</li>';}
+function addTodo(){var el=document.getElementById('newtodo');var v=el.value.trim();if(!v)return;TODOS.push({t:v,d:false});el.value='';saveTodos();drawTodos();}
+function toggleTodo(i){TODOS[i].d=!TODOS[i].d;saveTodos();drawTodos();}
+function delTodo(i){TODOS.splice(i,1);saveTodos();drawTodos();}
+function esc(s){return (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function exportWS(){var blob=new Blob([JSON.stringify({notes:document.getElementById('notes').value,todos:TODOS,exported:new Date().toISOString()},null,1)],{type:'application/json'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='qhq-workspace.json';a.click();}
+function importWS(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(){try{var d=JSON.parse(r.result);if(d.notes!=null){document.getElementById('notes').value=d.notes;saveNotes();}if(Array.isArray(d.todos)){TODOS=d.todos;saveTodos();drawTodos();}}catch(err){alert('Could not read that file.');}};r.readAsText(f);e.target.value='';}
+loadNotes();loadTodos();
+</script>
+</body></html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Audit Log — The Q Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--navy:#1B3A6B;--navy-deep:#122848;--navy-mid:#243f72;--gold:#B8962E;--gold-light:#D4AF50;--gold-pale:#F5EDD4;
+    --off-white:#F9F6F0;--text:#1a1a1a;--text-light:#4a4a4a;--text-muted:#5a5a5a;--border:#E0D5BE;--good:#1f7a44;--bad:#b23b3b;}
+  body{background:var(--off-white);font-family:'DM Sans',sans-serif;color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:var(--navy)}
+  .top-stripe{height:5px;background:linear-gradient(90deg,var(--gold),var(--gold-light) 50%,var(--gold))}
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(18,40,72,.97);backdrop-filter:blur(6px);border-bottom:1px solid rgba(184,150,46,.25)}
+  .topbar-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 32px;gap:16px}
+  .brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+  .brand-q{font-family:'Playfair Display',serif;font-weight:900;font-size:26px;color:var(--gold-light)}
+  .brand-name{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#fff}
+  .topnav a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.72);text-decoration:none;margin-left:22px}
+  .topnav a:hover{color:var(--gold-light)}
+  .hero{background:var(--navy-deep);position:relative;overflow:hidden;padding:56px 32px 44px}
+  .hero-wm{position:absolute;font-family:'Playfair Display',serif;font-weight:900;font-size:420px;color:rgba(255,255,255,.05);top:-100px;right:-30px;pointer-events:none;user-select:none}
+  .hero-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+  .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px}
+  .hero h1{font-family:'Playfair Display',serif;font-size:clamp(34px,5.5vw,58px);font-weight:900;color:#fff;line-height:1.05}
+  .hero p{font-size:clamp(15px,2vw,19px);color:rgba(255,255,255,.72);max-width:640px;margin-top:14px}
+  .wrap{max-width:1000px;margin:0 auto;padding:32px 32px 70px}
+  .card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:22px 24px;margin-bottom:20px}
+  .explain{background:#fff;border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:10px;padding:22px 24px;margin-bottom:24px}
+  .explain h2{font-family:'Playfair Display',serif;font-size:21px;color:var(--navy-deep);margin-bottom:8px}
+  .explain p{color:var(--text-light);font-size:15px;margin-bottom:10px}
+  .btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+  .btn{display:inline-block;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:11px 18px;border-radius:5px;text-decoration:none}
+  .btn.gold{background:var(--gold);color:var(--navy-deep)}
+  .btn.gold:hover{background:var(--gold-light)}
+  .btn.out{border:1px solid var(--navy);color:var(--navy)}
+  .btn.out:hover{background:var(--navy);color:#fff}
+  .controls{display:flex;align-items:center;gap:10px;margin:6px 0 18px;font-size:13.5px;color:var(--text-muted)}
+  .run{background:#fff;border:1px solid var(--border);border-radius:10px;margin-bottom:16px;overflow:hidden}
+  .run-head{display:flex;align-items:center;gap:12px;padding:15px 20px;background:#fbf8f1;border-bottom:1px solid var(--border);flex-wrap:wrap}
+  .run-ts{font-family:'DM Mono',monospace;font-size:13.5px;color:var(--navy-deep);font-weight:500}
+  .rtype{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:12px;background:#eef1f6;color:var(--navy)}
+  .rtype.scheduled{background:#e7eefb}.rtype.manual{background:#fdf3d4;color:#7a5c12}.rtype.genesis{background:#e4f1e8;color:var(--good)}
+  .run-meta{margin-left:auto;font-family:'DM Mono',monospace;font-size:11px;color:var(--text-muted);display:flex;gap:12px;flex-wrap:wrap}
+  .run-meta a{color:var(--gold);text-decoration:none}
+  .run-body{padding:16px 20px}
+  .st-name{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  .summary{font-size:15px;color:var(--navy-deep);font-weight:500;margin-bottom:10px}
+  .pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+  .pill{font-family:'DM Mono',monospace;font-size:11px;padding:3px 10px;border-radius:12px;background:#f2efe8;color:var(--text-muted)}
+  .pill.upd{background:#fdf3d4;color:#7a5c12}.pill.unch{background:#eef4ee;color:var(--good)}
+  .chg{border-top:1px solid #efeadd;padding:9px 0;font-size:14px}
+  .chg:first-child{border-top:none}
+  .chg .nm{font-weight:600;color:var(--navy-deep)}
+  .arrow{font-family:'DM Mono',monospace;color:var(--text-muted)}
+  .old{color:var(--bad)}.new{color:var(--good);font-weight:600}
+  .newpub{color:var(--gold);font-family:'DM Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+  .deltas{font-family:'DM Mono',monospace;font-size:11.5px;color:var(--text-muted);margin-top:2px}
+  .grp-h{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin:14px 0 4px}
+  .nochange{color:var(--good);font-size:14px;font-style:italic}
+  .note{color:var(--text-light);font-size:14.5px}
+  .footer{background:#0d1f3a;padding:32px;text-align:center;color:rgba(255,255,255,.5);font-family:'DM Mono',monospace;font-size:11px;line-height:1.9;margin-top:20px}
+  .footer a{color:var(--gold-light);text-decoration:none}
+  @media(max-width:640px){.run-meta{margin-left:0;width:100%}}
+</style></head><body>
+<div class="top-stripe"></div>
+<div class="topbar"><div class="topbar-inner">
+  <a class="brand" href="index.html"><span class="brand-q">Q</span><span class="brand-name">The Q Collective</span></a>
+  <div class="topnav"><a href="hub.html">Hub</a><a href="how-q-scores-work.html">How Scores Work</a></div>
+</div></div>
+
+<div class="hero"><div class="hero-wm">Q</div><div class="hero-inner">
+  <div class="eyebrow">Public Record</div>
+  <h1>The Audit Log</h1>
+  <p>Every change to every score, on the record. A score is never a black box &mdash; and neither is how it moves.</p>
+</div></div>
+
+<div class="wrap">
+  <div class="explain">
+    <h2>How to trust this page</h2>
+    <p>Everything on this site lives in a public code repository, and every change &mdash; whether you or an automated run made it &mdash; is recorded as a timestamped commit that shows exactly what moved, from what value to what value. Because that history is a cryptographic chain, an old entry can't be quietly altered without breaking every record after it. Nothing changes here without a permanent, public, tamper-evident trail.</p>
+    <p>This page reads the log our scoring engine writes on every run. For the raw, byte-level proof underneath it, follow the links below.</p>
+    <div class="btnrow" id="btnrow">
+      <a class="btn gold" id="lnk-history" href="#" target="_blank" rel="noopener">Full change history &rarr;</a>
+      <a class="btn out" id="lnk-actions" href="#" target="_blank" rel="noopener">Every run log &rarr;</a>
+      <a class="btn out" id="lnk-data" href="#" target="_blank" rel="noopener">Score data history &rarr;</a>
+    </div>
+  </div>
+
+  <div class="controls">
+    <label><input type="checkbox" id="onlychg"> Show only runs that changed something</label>
+    <span id="count" style="margin-left:auto"></span>
+  </div>
+
+  <div id="runs"><p style="color:var(--text-muted)">Loading the log&hellip;</p></div>
+</div>
+
+<div class="footer">
+  <span style="font-family:'Playfair Display',serif;color:var(--gold-light);font-weight:900;font-size:20px">Q</span><br>
+  Published by The Q Collective LLC / Doctrine Policy Group<br>
+  <a href="how-q-scores-work.html">How Q Scores work</a> &middot; <a href="hub.html">Accountability Hub</a>
+</div>
+
+<script>
+var REPO="maveriqbjackson/qcollective-site";
+document.getElementById('lnk-history').href="https://github.com/"+REPO+"/commits/main";
+document.getElementById('lnk-actions').href="https://github.com/"+REPO+"/actions";
+document.getElementById('lnk-data').href="https://github.com/"+REPO+"/commits/main/data/CO.json";
+var ALL=[];
+function esc(s){return (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function fmtTs(t){ if(!t)return ''; var d=new Date(t); if(!isNaN(d)) return d.toUTCString().replace('GMT','UTC'); return esc(t); }
+function scoreChip(old,nu){
+  if(old==null||old===undefined) return '<span class="newpub">&#9733; published: '+esc(nu)+'</span>';
+  return '<span class="old">'+esc(old)+'</span> <span class="arrow">&rarr;</span> <span class="new">'+esc(nu)+'</span>';
+}
+function runHasChange(r){
+  var st=r.states||{}; for(var k in st){var c=st[k].changes||{};
+    if((c.legislators||[]).length||(c.executive||[]).length||(c.judicial||[]).length||(c.added||[]).length||(c.removed||[]).length) return true;}
+  return r.run_type==='genesis';
+}
+function renderChanges(c){
+  var h='';
+  if((c.legislators||[]).length){ h+='<div class="grp-h">Legislator scores</div>';
+    c.legislators.forEach(function(x){
+      var dl=''; if(x.components){var ks=Object.keys(x.components); if(ks.length){dl='<div class="deltas">'+ks.map(function(k){return k+': '+x.components[k][0]+'&rarr;'+x.components[k][1];}).join(' &middot; ')+'</div>';}}
+      h+='<div class="chg"><span class="nm">'+esc(x.name)+'</span> &nbsp;'+scoreChip(x.old,x.new)+dl+'</div>';
+    });
+  }
+  if((c.executive||[]).length){ h+='<div class="grp-h">Executive</div>';
+    c.executive.forEach(function(x){h+='<div class="chg"><span class="nm">'+esc(x.office)+'</span> &nbsp;'+scoreChip(x.old,x.new)+'</div>';});
+  }
+  if((c.judicial||[]).length){ h+='<div class="grp-h">Judicial</div>';
+    c.judicial.forEach(function(x){h+='<div class="chg"><span class="nm">'+esc(x.name)+'</span> &nbsp;'+scoreChip(x.old,x.new)+'</div>';});
+  }
+  if((c.added||[]).length){ h+='<div class="grp-h">Added</div>';
+    c.added.forEach(function(x){h+='<div class="chg"><span class="nm">'+esc(x.name)+'</span> &nbsp;<span class="newpub">new &middot; '+esc(x.score)+'</span></div>';});
+  }
+  if((c.removed||[]).length){ h+='<div class="grp-h">Removed</div>';
+    c.removed.forEach(function(x){h+='<div class="chg"><span class="nm">'+esc(x.name)+'</span> &nbsp;<span class="old">removed (was '+esc(x.score)+')</span></div>';});
+  }
+  return h;
+}
+function renderRun(r){
+  var sha=r.git_sha? '<a href="https://github.com/'+REPO+'/commit/'+esc(r.git_sha)+'" target="_blank" rel="noopener">'+esc(r.git_sha)+'</a>' : '';
+  var runlnk=r.run_url? '<a href="'+esc(r.run_url)+'" target="_blank" rel="noopener">run log</a>' : '';
+  var meta=[]; if(r.engine_version)meta.push('engine '+esc(r.engine_version)); if(sha)meta.push('commit '+sha); if(runlnk)meta.push(runlnk);
+  var body='';
+  if(r.run_type==='genesis'){ body='<p class="note">'+esc(r.note||'Audit log activated.')+'</p>'; }
+  else {
+    var st=r.states||{}; var keys=Object.keys(st);
+    if(!keys.length){ body='<p class="nochange">Run completed; no state data recorded.</p>'; }
+    keys.forEach(function(k){
+      var s=st[k]; var c=s.changes||{};
+      var any=(c.legislators||[]).length||(c.executive||[]).length||(c.judicial||[]).length||(c.added||[]).length||(c.removed||[]).length;
+      var ls=(s.legiscan||{}).status;
+      body+='<div style="margin-bottom:6px">'+
+        '<div class="st-name">'+esc(k)+'</div>'+
+        '<div class="summary">'+esc(s.summary||'')+'</div>'+
+        '<div class="pills">'+
+          '<span class="pill '+(ls==='updated'?'upd':'unch')+'">LegiScan: '+esc(ls||'n/a')+'</span>'+
+          (s.counts?'<span class="pill">'+s.counts.legislators+' legislators</span><span class="pill">'+s.counts.champions+' champions</span><span class="pill">'+s.counts.executive_scored+' exec &middot; '+s.counts.judicial_scored+' judicial</span>':'')+
+        '</div>'+
+        (any? renderChanges(c) : '<p class="nochange">No scores changed &mdash; the system ran and confirmed everything is stable.</p>')+
+      '</div>';
+    });
+  }
+  return '<div class="run"><div class="run-head">'+
+    '<span class="run-ts">'+fmtTs(r.ts)+'</span>'+
+    '<span class="rtype '+esc(r.run_type||'')+'">'+esc((r.run_type||'run').replace('_',' '))+'</span>'+
+    '<span class="run-meta">'+meta.join('<span>&middot;</span>')+'</span>'+
+    '</div><div class="run-body">'+body+'</div></div>';
+}
+function draw(){
+  var only=document.getElementById('onlychg').checked;
+  var list=ALL.slice().reverse().filter(function(r){return only? runHasChange(r): true;});
+  document.getElementById('count').textContent=list.length+' of '+ALL.length+' runs';
+  document.getElementById('runs').innerHTML = list.length? list.map(renderRun).join('') : '<p style="color:var(--text-muted)">No runs match.</p>';
+}
+document.getElementById('onlychg').addEventListener('change',draw);
+fetch('data/audit.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(d){
+  if(!d||!d.runs){document.getElementById('runs').innerHTML='<p style="color:var(--text-muted)">No runs logged yet. The first entry will appear here after the next scoring run.</p>';return;}
+  ALL=d.runs; draw();
+}).catch(function(){document.getElementById('runs').innerHTML='<p style="color:var(--text-muted)">Could not load the audit log right now.</p>';});
+</script>
+</body></html>

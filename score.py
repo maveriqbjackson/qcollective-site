@@ -2,6 +2,12 @@
 # ============================================================
 # The Q Score Engine  -  The Q Collective / Doctrine Policy Group
 # version history (newest first):
+#   v7.0+audit PUBLIC AUDIT LOG: writes data/audit.json on every run - a plain-language,
+#        version-controlled record of each run (scheduled/manual), whether LegiScan had new
+#        data, and EXACTLY which scores moved (old -> new, with component deltas), plus
+#        executive/judicial changes and added/removed officials. Audit logging cannot change
+#        any score and is fully wrapped in try/except so it can never break a run. SCORE_VERSION
+#        intentionally NOT bumped (no scoring change; avoids forcing a full LegiScan re-download).
 #   v7.0 EXECUTIVE + JUDICIAL (Colorado-first; legislative scoring UNCHANGED): reads two
 #        curated, human-verified files - data/executive.json and data/judicial.json -
 #        and merges weighted scores into data/<ST>.json under "executive"/"judicial".
@@ -504,6 +510,94 @@ def merge_curated(abbr):
             json.dump(data, f, indent=1)
         log("  merged curated executive/judicial into %s.json" % abbr)
 
+
+# ---- public audit log (v7.0+audit) -----------------------------------------
+def _audit_snapshot(states):
+    """Read each state's CURRENT data/<ST>.json (the 'before') so we can diff after."""
+    snap = {}
+    for abbr in states:
+        try:
+            d = json.load(open(os.path.join(OUTDIR, abbr + ".json")))
+            legs = {}
+            for L in d.get("legislators", []):
+                lid = str(L.get("id") or L.get("name"))
+                legs[lid] = {k: L.get(k) for k in ("name","score","label","pillar","attendance","impact","sponsorship")}
+            ex = {o.get("office"): {"score": o.get("score")} for o in d.get("executive", [])}
+            ju = {}
+            for c in d.get("judicial", []):
+                for j in c.get("justices", []):
+                    ju[j.get("name")] = {"score": j.get("score")}
+            snap[abbr] = {"legislators": legs, "executive": ex, "judicial": ju}
+        except Exception:
+            snap[abbr] = None
+    return snap
+
+def _audit_log(before):
+    """Diff the new data against the 'before' snapshot and append a run entry to data/audit.json.
+    Fully defensive: any failure here logs a note and never affects scoring output."""
+    try:
+        env = os.environ
+        run_type = {"schedule":"scheduled","workflow_dispatch":"manual","push":"push"}.get(env.get("GITHUB_EVENT_NAME",""), "local")
+        repo = env.get("GITHUB_REPOSITORY","")
+        run_id = env.get("GITHUB_RUN_ID","")
+        sha = env.get("GITHUB_SHA","")
+        entry = {"ts": stamp_now(), "run_type": run_type, "engine_version": SCORE_VERSION,
+                 "git_sha": sha[:7], "run_id": run_id,
+                 "run_url": ("https://github.com/%s/actions/runs/%s" % (repo, run_id)) if (repo and run_id) else "",
+                 "states": {}}
+        try: dstate = json.load(open(os.path.join(OUTDIR, "dataset_state.json")))
+        except Exception: dstate = {}
+        for abbr, snap in before.items():
+            try: d = json.load(open(os.path.join(OUTDIR, abbr + ".json")))
+            except Exception: continue
+            ch = {"legislators": [], "executive": [], "judicial": [], "added": [], "removed": []}
+            after_legs = {str(L.get("id") or L.get("name")): L for L in d.get("legislators", [])}
+            b_legs = (snap or {}).get("legislators", {})
+            for lid, L in after_legs.items():
+                old = b_legs.get(lid)
+                if old is None:
+                    ch["added"].append({"name": L.get("name"), "score": L.get("score")})
+                elif old.get("score") != L.get("score"):
+                    deltas = {k: [old.get(k), L.get(k)] for k in ("pillar","attendance","impact","sponsorship") if old.get(k) != L.get(k)}
+                    ch["legislators"].append({"name": L.get("name"), "old": old.get("score"), "new": L.get("score"), "components": deltas})
+            for lid, old in b_legs.items():
+                if lid not in after_legs: ch["removed"].append({"name": old.get("name"), "score": old.get("score")})
+            b_ex = (snap or {}).get("executive", {})
+            for o in d.get("executive", []):
+                old = b_ex.get(o.get("office"))
+                if (old is None and o.get("score") is not None) or (old and old.get("score") != o.get("score")):
+                    ch["executive"].append({"office": o.get("office"), "old": (old or {}).get("score"), "new": o.get("score")})
+            b_ju = (snap or {}).get("judicial", {})
+            for c in d.get("judicial", []):
+                for j in c.get("justices", []):
+                    old = b_ju.get(j.get("name"))
+                    if (old is None and j.get("score")) or (old and old.get("score") != j.get("score")):
+                        ch["judicial"].append({"name": j.get("name"), "old": (old or {}).get("score"), "new": j.get("score")})
+            legchg = len(ch["legislators"]) + len(ch["added"]) + len(ch["removed"])
+            ds = dstate.get(abbr, {}) if isinstance(dstate.get(abbr, {}), dict) else {}
+            parts = ["%d legislator score change%s" % (legchg, "" if legchg == 1 else "s")] if legchg else ["legislator scores unchanged"]
+            if ch["executive"]: parts.append("%d executive change%s" % (len(ch["executive"]), "" if len(ch["executive"])==1 else "s"))
+            if ch["judicial"]: parts.append("%d judicial change%s" % (len(ch["judicial"]), "" if len(ch["judicial"])==1 else "s"))
+            entry["states"][abbr] = {
+                "legiscan": {"status": ("updated" if legchg else "unchanged"),
+                             "dataset_hash": ds.get("dataset_hash",""), "dataset_date": ds.get("dataset_date","")},
+                "counts": {"legislators": len(d.get("legislators", [])),
+                           "champions": sum(1 for L in d.get("legislators", []) if (L.get("score") or 0) >= 80),
+                           "executive_scored": sum(1 for o in d.get("executive", []) if o.get("score") is not None),
+                           "judicial_scored": sum(1 for c in d.get("judicial", []) for j in c.get("justices", []) if (j.get("score") or 0) > 0)},
+                "changes": ch,
+                "summary": "; ".join(parts) + "."}
+        path = os.path.join(OUTDIR, "audit.json")
+        try: doc = json.load(open(path))
+        except Exception: doc = {"engine": SCORE_VERSION, "runs": []}
+        doc.setdefault("runs", []).append(entry)
+        doc["runs"] = doc["runs"][-1000:]
+        doc["engine"] = SCORE_VERSION; doc["updated"] = stamp_now()
+        with open(path, "w") as f: json.dump(doc, f, indent=1)
+        log("  audit: logged %s run to data/audit.json" % run_type)
+    except Exception as e:
+        log("  audit logging error (non-fatal): %s" % e)
+
 def main():
     if not LEGISCAN_KEY or not ANTHROPIC_KEY:
         raise SystemExit("Missing LEGISCAN_KEY or ANTHROPIC_API_KEY.")
@@ -514,6 +608,7 @@ def main():
     chosen = latest_datasets(states)
     missing = states - set(chosen.keys())
     if missing: log("  no current dataset found for:", ", ".join(sorted(missing)))
+    _audit_before = _audit_snapshot(list(chosen.keys()))
     index = []; errors = []
     for abbr in sorted(chosen.keys()):
         try:
@@ -525,6 +620,8 @@ def main():
     for abbr in sorted(chosen.keys()):
         try: merge_curated(abbr)
         except Exception as e: log("  curated merge error on %s: %s" % (abbr, e))
+    try: _audit_log(_audit_before)
+    except Exception as e: log("  audit error (non-fatal):", e)
     index.sort(key=lambda x: x["name"])
     with open(os.path.join(OUTDIR, "index.json"), "w") as f:
         json.dump({"updated": stamp_now(), "states": index}, f, indent=1)
