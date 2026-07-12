@@ -1,6 +1,6 @@
 {
  "engine": "v7.0",
- "updated": "July 12, 2026 at 3:17 PM MDT",
+ "updated": "July 12, 2026 at 4:23 PM MDT",
  "runs": [
   {
    "ts": "2026-07-11",
@@ -750,6 +750,74 @@
       "removed": []
      },
      "summary": "41 legislator score changes; 1 executive change."
+    }
+   }
+  },
+  {
+   "ts": "July 12, 2026 at 4:23 PM MDT",
+   "run_type": "manual",
+   "engine_version": "v7.0",
+   "git_sha": "6d9bb95",
+   "run_id": "29211409438",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/29211409438",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "dc8cc0fa31e988e2738cc073ecc60d4d",
+      "dataset_date": "2026-07-12"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [
+       {
+        "office": "Governor",
+        "old": 0,
+        "new": 81
+       }
+      ],
+      "judicial": [
+       {
+        "name": "Maria Berkenkotter",
+        "old": null,
+        "new": 90
+       },
+       {
+        "name": "Brian Boatright",
+        "old": null,
+        "new": 87
+       },
+       {
+        "name": "Richard Gabriel",
+        "old": null,
+        "new": 90
+       },
+       {
+        "name": "William W. Hood III",
+        "old": 0,
+        "new": 89
+       },
+       {
+        "name": "Monica M\u00e1rquez (Chief Justice)",
+        "old": null,
+        "new": 89
+       },
+       {
+        "name": "Carlos Armando Samour Jr.",
+        "old": null,
+        "new": 86
+       }
+      ],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged; 1 executive change; 6 judicial changes."
     }
    }
   }

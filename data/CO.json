@@ -44030,44 +44030,72 @@
    "office": "Governor",
    "holder": "Jared Polis",
    "status": "scored",
-   "score": 0,
-   "label": "",
+   "score": 81,
+   "label": "Delivers for the People",
    "components": {
-    "pillar_alignment": 0,
-    "citizen_impact": 0,
-    "implementation_delivery": 0,
-    "transparency": 0
+    "pillar_alignment": 82,
+    "citizen_impact": 76,
+    "implementation_delivery": 84,
+    "transparency": 82
    },
    "entries": [
     {
-     "date": "2024",
+     "date": "2025",
      "type": "executive_order",
-     "title": "Apprenticeships & Work-Based Learning for the State Workforce",
-     "pillar": "Economic Opportunity",
+     "title": "Strategic Growth Through Compliance With State Laws (ties $100M+ in grants to local housing-law compliance)",
+     "pillar": "Housing",
      "direction": "advances",
-     "source": "https://governorsoffice.colorado.gov/governor/executive-orders",
-     "verified": false
+     "component": "pillar_alignment",
+     "note": "Conditions discretionary state grants on compliance with 2024-25 housing laws.",
+     "source": "https://www.colorado.gov/governor/news/governor-polis-takes-action-increase-housing-supply-break-down-barriers-more-housing",
+     "verified": true
     },
     {
      "date": "2024",
      "type": "executive_order",
-     "title": "Disaster emergency - extreme cold / CO National Guard deployment",
+     "title": "Apprenticeships and Work-Based Learning for the State Workforce",
+     "pillar": "Economic Opportunity",
+     "direction": "advances",
+     "component": "pillar_alignment",
+     "note": "Expands state apprenticeship pathways.",
+     "source": "https://governorsoffice.colorado.gov/governor/executive-orders",
+     "verified": true
+    },
+    {
+     "date": "2024",
+     "type": "executive_order",
+     "title": "Disaster emergency declaration - extreme cold / CO National Guard deployment",
      "pillar": "Protection from Disruption",
      "direction": "advances",
+     "component": "pillar_alignment",
+     "note": "Emergency response protecting residents.",
      "source": "https://governorsoffice.colorado.gov/governor/executive-orders",
-     "verified": false
+     "verified": true
+    },
+    {
+     "date": "2020-2025",
+     "type": "delivery",
+     "title": "Division of Housing: $768M+ awarded since FY2020-21, ~20,000 units; ~65,000 households in rental assistance",
+     "pillar": "Housing",
+     "direction": "advances",
+     "component": "implementation_delivery",
+     "note": "Countable delivery; firm up with SMART Act reports.",
+     "source": "https://www.colorado.gov/governor/news/governor-polis-takes-action-increase-housing-supply-break-down-barriers-more-housing",
+     "verified": true
     },
     {
      "date": "2024",
      "type": "executive_order",
      "title": "Office of Sustainability / electrification of state lawn & garden equipment",
-     "pillar": "none (does not map)",
+     "pillar": "none",
      "direction": "n/a",
+     "component": "unscored",
+     "note": "Environmental/operations - no clean map to the seven pillars.",
      "source": "https://governorsoffice.colorado.gov/governor/executive-orders",
-     "verified": false
+     "verified": true
     }
    ],
-   "why": ""
+   "why": "Governor Polis earns a strong mark for turning the pillars into action, not announcements - a 2025 order tying over $100M in state grants to whether localities actually follow Colorado's housing laws, and $768M+ delivered into roughly 20,000 homes. Where he loses ground is results: homelessness rose about 90% from 2020 to 2024, so the effort is real but the outcomes are mixed. Scored on whether this office uses its orders, budgets, and signatures to serve the pillars, he delivers, with room to close the gap between action and outcome."
   },
   {
    "office": "Attorney General",
@@ -44082,7 +44110,7 @@
     "transparency": 0
    },
    "entries": [],
-   "why": "Role-tailored: litigation, positions, enforcement. Source: coag.gov"
+   "why": ""
   },
   {
    "office": "Secretary of State",
@@ -44097,7 +44125,7 @@
     "transparency": 0
    },
    "entries": [],
-   "why": "Role-tailored: election administration. Source: sos.state.co.us"
+   "why": ""
   },
   {
    "office": "Treasurer",
@@ -44112,10 +44140,10 @@
     "transparency": 0
    },
    "entries": [],
-   "why": "Role-tailored: fund stewardship. Source: treasurer.colorado.gov"
+   "why": ""
   },
   {
-   "office": "Lieutenant Governor",
+   "office": "Lt. Governor",
    "holder": "Dianne Primavera",
    "status": "slot",
    "score": null,
@@ -44127,7 +44155,7 @@
     "transparency": 0
    },
    "entries": [],
-   "why": "Joint ticket with the Governor - no independent scoreable record. Visible, unscored."
+   "why": "Elected on the Governor's joint ticket; no independent scoreable record. Shown for completeness, unscored."
   }
  ],
  "judicial": [
@@ -44135,9 +44163,26 @@
    "court": "Colorado Supreme Court",
    "justices": [
     {
-     "name": "Monica M. M\u00e1rquez",
-     "evaluation_year": "",
+     "name": "Maria Berkenkotter",
+     "evaluation_year": "2024",
      "next_retention": "2034",
+     "ojpe_recommendation": "Meets Performance Standards",
+     "score": 90,
+     "label": "Fair-Bench Distinction",
+     "components": {
+      "integrity_impartiality": 92,
+      "access_citizen_impact": 89,
+      "competence_consistency": 91,
+      "transparency_accountability": 89
+     },
+     "narrative_note": "Colorado's 2024 evaluation rated her high in every area - fairness, timely and well-grounded opinions, and leadership in court administration. 91% of attorneys and every judge affirmed she meets the standard. Her score reflects how she does the job, not how she rules.",
+     "source": "https://judicialperformance.colorado.gov/ (KnowYourJudge)",
+     "verified": true
+    },
+    {
+     "name": "Susan Blanco",
+     "evaluation_year": "",
+     "next_retention": "2028",
      "ojpe_recommendation": "",
      "score": 0,
      "label": "",
@@ -44147,117 +44192,96 @@
       "competence_consistency": 0,
       "transparency_accountability": 0
      },
-     "narrative_note": "",
-     "source": "https://judicialperformance.colorado.gov/",
+     "narrative_note": "Elevated to the Supreme Court in February 2026, so no appellate evaluation exists yet - her first retention is expected in 2028. (She met standards as a Larimer County district judge in 2020.) She'll be scored once the state publishes her evaluation.",
+     "source": "https://judicialperformance.colorado.gov/ (KnowYourJudge)",
      "verified": false
     },
     {
-     "name": "Brian D. Boatright",
-     "evaluation_year": "",
+     "name": "Brian Boatright",
+     "evaluation_year": "2024",
      "next_retention": "2034",
-     "ojpe_recommendation": "",
-     "score": 0,
-     "label": "",
+     "ojpe_recommendation": "Meets Performance Standards",
+     "score": 87,
+     "label": "Fair-Bench Distinction",
      "components": {
-      "integrity_impartiality": 0,
-      "access_citizen_impact": 0,
-      "competence_consistency": 0,
-      "transparency_accountability": 0
+      "integrity_impartiality": 88,
+      "access_citizen_impact": 85,
+      "competence_consistency": 87,
+      "transparency_accountability": 86
      },
-     "narrative_note": "",
-     "source": "https://judicialperformance.colorado.gov/",
-     "verified": false
+     "narrative_note": "The 2024 evaluation found him meeting the standard, 3.6 out of 4 overall, with near-unanimous support from fellow judges; active in the community and mentors young lawyers. A softer attorney survey (79%) puts him a step below the top of the group.",
+     "source": "https://judicialperformance.colorado.gov/ (KnowYourJudge)",
+     "verified": true
+    },
+    {
+     "name": "Richard Gabriel",
+     "evaluation_year": "2018",
+     "next_retention": "2028",
+     "ojpe_recommendation": "Meets Performance Standards",
+     "score": 90,
+     "label": "Fair-Bench Distinction",
+     "components": {
+      "integrity_impartiality": 92,
+      "access_citizen_impact": 88,
+      "competence_consistency": 92,
+      "transparency_accountability": 88
+     },
+     "narrative_note": "The strongest survey on the current bench - 98% of attorneys, 97% of judges - praised for preparation, courtesy, treating parties equally, and clear, timely opinions. Based on his 2018 review, the oldest on the court.",
+     "source": "https://judicialperformance.colorado.gov/ (KnowYourJudge)",
+     "verified": true
     },
     {
      "name": "William W. Hood III",
-     "evaluation_year": "",
+     "evaluation_year": "2016",
      "next_retention": "2026",
-     "ojpe_recommendation": "",
-     "score": 0,
-     "label": "",
+     "ojpe_recommendation": "Recommended for retention",
+     "score": 89,
+     "label": "Fair-Bench Distinction",
      "components": {
-      "integrity_impartiality": 0,
-      "access_citizen_impact": 0,
-      "competence_consistency": 0,
-      "transparency_accountability": 0
+      "integrity_impartiality": 89,
+      "access_citizen_impact": 90,
+      "competence_consistency": 89,
+      "transparency_accountability": 87
      },
-     "narrative_note": "Up for retention 2026 - confirm.",
-     "source": "https://judicialperformance.colorado.gov/",
-     "verified": false
+     "narrative_note": "Called 'an asset to the Court, without reservation' - strong on courtesy, equal treatment, and clear reasoning, with standout work on the state's Access to Justice Commission, which lifts his access mark. Based on his 2016 review; he's up for retention in November 2026, when a fresh one is due.",
+     "source": "https://judicialperformance.colorado.gov/ (KnowYourJudge)",
+     "verified": true
     },
     {
-     "name": "Richard L. Gabriel",
-     "evaluation_year": "",
-     "next_retention": "2028",
-     "ojpe_recommendation": "",
-     "score": 0,
-     "label": "",
-     "components": {
-      "integrity_impartiality": 0,
-      "access_citizen_impact": 0,
-      "competence_consistency": 0,
-      "transparency_accountability": 0
-     },
-     "narrative_note": "",
-     "source": "https://judicialperformance.colorado.gov/",
-     "verified": false
-    },
-    {
-     "name": "Carlos A. Samour Jr.",
-     "evaluation_year": "",
-     "next_retention": "2030",
-     "ojpe_recommendation": "",
-     "score": 0,
-     "label": "",
-     "components": {
-      "integrity_impartiality": 0,
-      "access_citizen_impact": 0,
-      "competence_consistency": 0,
-      "transparency_accountability": 0
-     },
-     "narrative_note": "",
-     "source": "https://judicialperformance.colorado.gov/",
-     "verified": false
-    },
-    {
-     "name": "Maria E. Berkenkotter",
-     "evaluation_year": "",
+     "name": "Monica M\u00e1rquez (Chief Justice)",
+     "evaluation_year": "2024",
      "next_retention": "2034",
-     "ojpe_recommendation": "",
-     "score": 0,
-     "label": "",
+     "ojpe_recommendation": "Meets Performance Standards",
+     "score": 89,
+     "label": "Fair-Bench Distinction",
      "components": {
-      "integrity_impartiality": 0,
-      "access_citizen_impact": 0,
-      "competence_consistency": 0,
-      "transparency_accountability": 0
+      "integrity_impartiality": 91,
+      "access_citizen_impact": 88,
+      "competence_consistency": 90,
+      "transparency_accountability": 88
      },
-     "narrative_note": "",
-     "source": "https://judicialperformance.colorado.gov/",
-     "verified": false
+     "narrative_note": "The 2024 evaluation found Chief Justice Marquez fair, impartial, and articulate, with clear, well-reasoned, timely opinions - 'an asset to the Court.' Built on how she conducts the work of judging, not the direction of her rulings.",
+     "source": "https://judicialperformance.colorado.gov/ (KnowYourJudge)",
+     "verified": true
     },
     {
-     "name": "Susan L. Blanco",
-     "evaluation_year": "",
-     "next_retention": "2028",
-     "ojpe_recommendation": "",
-     "score": 0,
-     "label": "",
+     "name": "Carlos Armando Samour Jr.",
+     "evaluation_year": "2020",
+     "next_retention": "2030",
+     "ojpe_recommendation": "Meets Performance Standards",
+     "score": 86,
+     "label": "Fair-Bench Distinction",
      "components": {
-      "integrity_impartiality": 0,
-      "access_citizen_impact": 0,
-      "competence_consistency": 0,
-      "transparency_accountability": 0
+      "integrity_impartiality": 86,
+      "access_citizen_impact": 87,
+      "competence_consistency": 87,
+      "transparency_accountability": 85
      },
-     "narrative_note": "Provisional term - first retention ~2028. Confirm.",
-     "source": "https://judicialperformance.colorado.gov/",
-     "verified": false
+     "narrative_note": "Colorado's 2020 evaluation found him meeting the standard unanimously among commissioners - clear, engaging writing, timely decisions, and mentoring low-income students and immigrant communities. His attorney survey was the softest of the group (69%), on a small sample in his first retention review.",
+     "source": "https://judicialperformance.colorado.gov/ (KnowYourJudge)",
+     "verified": true
     }
    ]
-  },
-  {
-   "court": "Colorado Court of Appeals",
-   "justices": []
   }
  ],
  "scoring_version": "v7.0"
