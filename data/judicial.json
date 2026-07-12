@@ -1,134 +1,140 @@
 {
- "state": "CO",
- "updated": "",
- "courts": [
-  {
-   "court": "Colorado Supreme Court",
-   "justices": [
+  "branch": "judicial",
+  "state": "CO",
+  "score_version": "7.0",
+  "Colorado Supreme Court": [
     {
-     "name": "Monica M. Márquez",
-     "role": "Chief Justice",
-     "assumed": "2010",
-     "evaluation_year": "",
-     "next_retention": "2034",
-     "ojpe_recommendation": "",
-     "components": {
-      "integrity_impartiality": 0,
-      "access_citizen_impact": 0,
-      "competence_consistency": 0,
-      "transparency_accountability": 0
-     },
-     "note": "",
-     "source": "https://judicialperformance.colorado.gov/",
-     "verified": false
+      "name": "Maria Berkenkotter",
+      "status": "scored",
+      "score": 90,
+      "badge": "Fair-Bench Distinction",
+      "components": {
+        "integrity_impartiality": 92,
+        "access_citizen_impact": 89,
+        "competence_consistency": 91,
+        "transparency_accountability": 89
+      },
+      "evaluation_year": "2024",
+      "next_retention": "2034",
+      "ojpe_recommendation": "Meets Performance Standards",
+      "narrative_note": "Colorado's 2024 evaluation rated her high in every area - fairness, timely and well-grounded opinions, and leadership in court administration. 91% of attorneys and every judge affirmed she meets the standard. Her score reflects how she does the job, not how she rules.",
+      "source": "https://judicialperformance.colorado.gov/ (KnowYourJudge)",
+      "opinions_source": "https://research.coloradojudicial.gov/",
+      "verified": true
     },
     {
-     "name": "Brian D. Boatright",
-     "role": "Associate Justice",
-     "assumed": "2011",
-     "evaluation_year": "",
-     "next_retention": "2034",
-     "ojpe_recommendation": "",
-     "components": {
-      "integrity_impartiality": 0,
-      "access_citizen_impact": 0,
-      "competence_consistency": 0,
-      "transparency_accountability": 0
-     },
-     "note": "",
-     "source": "https://judicialperformance.colorado.gov/",
-     "verified": false
+      "name": "Susan Blanco",
+      "status": "awaiting_review",
+      "score": null,
+      "badge": null,
+      "components": {
+        "integrity_impartiality": 0,
+        "access_citizen_impact": 0,
+        "competence_consistency": 0,
+        "transparency_accountability": 0
+      },
+      "evaluation_year": "",
+      "next_retention": "2028",
+      "ojpe_recommendation": "",
+      "narrative_note": "Elevated to the Supreme Court in February 2026, so no appellate evaluation exists yet - her first retention is expected in 2028. (She met standards as a Larimer County district judge in 2020.) She'll be scored once the state publishes her evaluation.",
+      "source": "https://judicialperformance.colorado.gov/ (KnowYourJudge)",
+      "opinions_source": "https://research.coloradojudicial.gov/",
+      "verified": false
     },
     {
-     "name": "William W. Hood III",
-     "role": "Associate Justice",
-     "assumed": "2014",
-     "evaluation_year": "",
-     "next_retention": "2026",
-     "ojpe_recommendation": "",
-     "components": {
-      "integrity_impartiality": 0,
-      "access_citizen_impact": 0,
-      "competence_consistency": 0,
-      "transparency_accountability": 0
-     },
-     "note": "Up for retention 2026 - confirm.",
-     "source": "https://judicialperformance.colorado.gov/",
-     "verified": false
+      "name": "Brian Boatright",
+      "status": "scored",
+      "score": 87,
+      "badge": "Fair-Bench Distinction",
+      "components": {
+        "integrity_impartiality": 88,
+        "access_citizen_impact": 85,
+        "competence_consistency": 87,
+        "transparency_accountability": 86
+      },
+      "evaluation_year": "2024",
+      "next_retention": "2034",
+      "ojpe_recommendation": "Meets Performance Standards",
+      "narrative_note": "The 2024 evaluation found him meeting the standard, 3.6 out of 4 overall, with near-unanimous support from fellow judges; active in the community and mentors young lawyers. A softer attorney survey (79%) puts him a step below the top of the group.",
+      "source": "https://judicialperformance.colorado.gov/ (KnowYourJudge)",
+      "opinions_source": "https://research.coloradojudicial.gov/",
+      "verified": true
     },
     {
-     "name": "Richard L. Gabriel",
-     "role": "Associate Justice",
-     "assumed": "2015",
-     "evaluation_year": "",
-     "next_retention": "2028",
-     "ojpe_recommendation": "",
-     "components": {
-      "integrity_impartiality": 0,
-      "access_citizen_impact": 0,
-      "competence_consistency": 0,
-      "transparency_accountability": 0
-     },
-     "note": "",
-     "source": "https://judicialperformance.colorado.gov/",
-     "verified": false
+      "name": "Richard Gabriel",
+      "status": "scored",
+      "score": 90,
+      "badge": "Fair-Bench Distinction",
+      "components": {
+        "integrity_impartiality": 92,
+        "access_citizen_impact": 88,
+        "competence_consistency": 92,
+        "transparency_accountability": 88
+      },
+      "evaluation_year": "2018",
+      "next_retention": "2028",
+      "ojpe_recommendation": "Meets Performance Standards",
+      "narrative_note": "The strongest survey on the current bench - 98% of attorneys, 97% of judges - praised for preparation, courtesy, treating parties equally, and clear, timely opinions. Based on his 2018 review, the oldest on the court.",
+      "source": "https://judicialperformance.colorado.gov/ (KnowYourJudge)",
+      "opinions_source": "https://research.coloradojudicial.gov/",
+      "verified": true
     },
     {
-     "name": "Carlos A. Samour Jr.",
-     "role": "Associate Justice",
-     "assumed": "2018",
-     "evaluation_year": "",
-     "next_retention": "2030",
-     "ojpe_recommendation": "",
-     "components": {
-      "integrity_impartiality": 0,
-      "access_citizen_impact": 0,
-      "competence_consistency": 0,
-      "transparency_accountability": 0
-     },
-     "note": "",
-     "source": "https://judicialperformance.colorado.gov/",
-     "verified": false
+      "name": "William W. Hood III",
+      "status": "scored",
+      "score": 89,
+      "badge": "Fair-Bench Distinction",
+      "components": {
+        "integrity_impartiality": 89,
+        "access_citizen_impact": 90,
+        "competence_consistency": 89,
+        "transparency_accountability": 87
+      },
+      "evaluation_year": "2016",
+      "next_retention": "2026",
+      "ojpe_recommendation": "Recommended for retention",
+      "narrative_note": "Called 'an asset to the Court, without reservation' - strong on courtesy, equal treatment, and clear reasoning, with standout work on the state's Access to Justice Commission, which lifts his access mark. Based on his 2016 review; he's up for retention in November 2026, when a fresh one is due.",
+      "source": "https://judicialperformance.colorado.gov/ (KnowYourJudge)",
+      "opinions_source": "https://research.coloradojudicial.gov/",
+      "verified": true
     },
     {
-     "name": "Maria E. Berkenkotter",
-     "role": "Associate Justice",
-     "assumed": "2021",
-     "evaluation_year": "",
-     "next_retention": "2034",
-     "ojpe_recommendation": "",
-     "components": {
-      "integrity_impartiality": 0,
-      "access_citizen_impact": 0,
-      "competence_consistency": 0,
-      "transparency_accountability": 0
-     },
-     "note": "",
-     "source": "https://judicialperformance.colorado.gov/",
-     "verified": false
+      "name": "Monica Márquez (Chief Justice)",
+      "status": "scored",
+      "score": 89,
+      "badge": "Fair-Bench Distinction",
+      "components": {
+        "integrity_impartiality": 91,
+        "access_citizen_impact": 88,
+        "competence_consistency": 90,
+        "transparency_accountability": 88
+      },
+      "evaluation_year": "2024",
+      "next_retention": "2034",
+      "ojpe_recommendation": "Meets Performance Standards",
+      "narrative_note": "The 2024 evaluation found Chief Justice Marquez fair, impartial, and articulate, with clear, well-reasoned, timely opinions - 'an asset to the Court.' Built on how she conducts the work of judging, not the direction of her rulings.",
+      "source": "https://judicialperformance.colorado.gov/ (KnowYourJudge)",
+      "opinions_source": "https://research.coloradojudicial.gov/",
+      "verified": true
     },
     {
-     "name": "Susan L. Blanco",
-     "role": "Associate Justice",
-     "assumed": "2026",
-     "evaluation_year": "",
-     "next_retention": "2028",
-     "ojpe_recommendation": "",
-     "components": {
-      "integrity_impartiality": 0,
-      "access_citizen_impact": 0,
-      "competence_consistency": 0,
-      "transparency_accountability": 0
-     },
-     "note": "Provisional term - first retention ~2028. Confirm.",
-     "source": "https://judicialperformance.colorado.gov/",
-     "verified": false
+      "name": "Carlos Armando Samour Jr.",
+      "status": "scored",
+      "score": 86,
+      "badge": "Fair-Bench Distinction",
+      "components": {
+        "integrity_impartiality": 86,
+        "access_citizen_impact": 87,
+        "competence_consistency": 87,
+        "transparency_accountability": 85
+      },
+      "evaluation_year": "2020",
+      "next_retention": "2030",
+      "ojpe_recommendation": "Meets Performance Standards",
+      "narrative_note": "Colorado's 2020 evaluation found him meeting the standard unanimously among commissioners - clear, engaging writing, timely decisions, and mentoring low-income students and immigrant communities. His attorney survey was the softest of the group (69%), on a small sample in his first retention review.",
+      "source": "https://judicialperformance.colorado.gov/ (KnowYourJudge)",
+      "opinions_source": "https://research.coloradojudicial.gov/",
+      "verified": true
     }
-   ]
-  },
-  {
-   "court": "Colorado Court of Appeals",
-   "justices": []
-  }
- ]
+  ]
 }
