@@ -1,0 +1,16 @@
+{
+ "engine": "v7.0",
+ "updated": "2026-07-11",
+ "runs": [
+  {
+   "ts": "2026-07-11",
+   "run_type": "genesis",
+   "engine_version": "v7.0",
+   "git_sha": "",
+   "run_id": "",
+   "run_url": "",
+   "note": "Public audit log activated. From here on, every scoring run - scheduled or manual - and every change to the data is recorded here automatically, with the exact scores that moved.",
+   "states": {}
+  }
+ ]
+}
