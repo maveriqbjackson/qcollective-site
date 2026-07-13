@@ -1,7 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Legislator Profile — The Q Collective</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Our Constitution &mdash; The Q Collective</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -479,43 +478,7 @@
 .privacy-note{font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:14px;border-top:1px solid var(--border);padding-top:12px}
 @media(max-width:680px){.tracks{grid-template-columns:1fr}.callout h2{font-size:25px}}
 
-/* find-officials autocomplete */
-.ac-wrap{flex:1;position:relative;min-width:220px}
-.ac-box{position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--white);border:1px solid var(--border);border-radius:6px;box-shadow:0 10px 28px rgba(18,40,72,.14);z-index:40;max-height:300px;overflow-y:auto;display:none;text-align:left}
-.ac-box.show{display:block}
-.ac-item{padding:11px 14px;font-size:14.5px;color:var(--text);cursor:pointer;border-bottom:1px solid #f0ece2;font-family:'DM Sans',sans-serif}
-.ac-item:last-child{border-bottom:none}
-.ac-item:hover{background:var(--off-white)}
-
-/* Q score + profile */
-.qbadge{display:inline-block;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.5px;background:var(--navy-deep);color:var(--gold-light);padding:5px 10px;border-radius:4px}
-.qbadge.pending{background:var(--off-white);color:var(--text-muted);border:1px solid var(--border)}
-.profile-link{display:inline-block;margin-left:14px;font-size:13px;color:var(--navy-deep)}
-.score-big{font-family:'Playfair Display',serif;font-size:60px;font-weight:700;color:var(--navy-deep);line-height:1}
-.score-label{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
-.score-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);font-size:15px}
-.score-row:last-child{border-bottom:none}.score-row .v{font-family:'DM Mono',monospace;color:var(--navy-deep)}
-
-/* q-help, branch groups, advocacy form */
-.qhelp{font-size:11px;color:var(--text-muted);margin-left:8px;white-space:nowrap}
-.off-group{font-family:'Playfair Display',serif;font-size:22px;color:var(--navy-deep);margin:30px 0 10px;padding-top:18px;border-top:1px solid var(--border)}
-.off-group:first-of-type{border-top:none;padding-top:0;margin-top:18px}
-.off-actions{display:flex;flex-wrap:wrap;gap:10px 26px;margin:18px 0 0}
-.off-actions .oa-link{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.5px;color:var(--navy-deep)}
-.checks{display:flex;flex-direction:column;gap:8px;margin-top:6px}
-.checks label,.consent{font-weight:400;font-size:15px;display:flex;gap:9px;align-items:flex-start;line-height:1.5}
-.checks input,.consent input{margin-top:3px}
-.consent{font-size:14px;color:var(--text-light)}
-.rubric .plabel{margin-top:0}
-
-.hub-bills{display:flex;flex-direction:column;gap:8px}
-.brow{display:flex;gap:14px;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 14px}
-.bnum{font-family:'DM Mono',monospace;font-size:12px;color:#B8962E;white-space:nowrap;min-width:96px}
-.btitle{font-size:15px;color:var(--text)}.bstatus{font-size:12px;color:var(--text-muted);margin-top:3px}
-
-.q-champ{display:inline-flex;align-items:center;gap:5px;font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;font-weight:500;color:var(--navy-deep);background:linear-gradient(135deg,var(--gold-light),var(--gold));padding:4px 9px;border-radius:20px;animation:qglow 2.2s ease-in-out infinite;vertical-align:middle}.q-champ .star{font-size:11px;line-height:1}@keyframes qglow{0%,100%{box-shadow:0 0 6px 1px rgba(212,175,80,.5)}50%{box-shadow:0 0 15px 4px rgba(212,175,80,.85)}}@media(prefers-reduced-motion:reduce){.q-champ{animation:none;box-shadow:0 0 8px 2px rgba(212,175,80,.6)}}.why-q-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:16px 0 0}.score-math{margin-top:18px}.qm-nar{font-size:13.5px;line-height:1.6;color:var(--text-light);margin:6px 0 16px}.qm-row{margin-bottom:11px}.qm-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}.qm-name{font-size:13.5px;color:var(--navy-deep);font-weight:500}.qm-name .qm-w{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-left:7px}.qm-val{font-family:'DM Mono',monospace;font-size:13px;color:var(--navy-deep);white-space:nowrap}.qm-val .qm-lost{font-size:10.5px;color:var(--text-muted);margin-left:8px}.qm-bar{height:5px;background:var(--off-white);border:1px solid var(--border);border-radius:3px;overflow:hidden;margin-top:6px}.qm-bar span{display:block;height:100%;background:var(--gold-light)}.qm-drag .qm-name{font-weight:700}.qm-drag .qm-val .qm-lost{color:var(--gold);font-weight:600}.qm-drag .qm-bar span{background:var(--gold)}.qm-net{margin-top:14px;padding-top:11px;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.3px;color:var(--navy-deep);line-height:1.5}.qm-foot{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin:9px 0 0}.qform-wrap{margin-top:20px;background:var(--off-white);border:1px solid var(--border);border-radius:12px;padding:24px 22px}.qform label{display:block;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--navy-deep);margin:14px 0 5px}.qform input[type=text],.qform input[type=email],.qform select,.qform textarea{width:100%;box-sizing:border-box;font-family:'DM Sans',sans-serif;font-size:14px;padding:10px 12px;border:1px solid var(--border);border-radius:7px;background:#fff;color:var(--navy-deep)}.qform textarea{min-height:78px;resize:vertical}.qform .qf-radios{display:flex;flex-wrap:wrap;gap:14px;margin-top:6px}.qform .qf-radios label{display:inline-flex;align-items:center;gap:6px;margin:0;text-transform:none;letter-spacing:.2px;font-family:'DM Sans',sans-serif;font-size:13.5px;color:var(--text-light)}.qform .qf-radios input{width:auto}.qform .qf-row{display:flex;gap:12px;flex-wrap:wrap}.qform .qf-row>div{flex:1;min-width:130px}.qform button{margin-top:18px;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;background:var(--gold);color:var(--navy-deep);border:none;border-radius:7px;padding:13px 22px;cursor:pointer;font-weight:600}.qform button:hover{background:var(--gold-light)}.qf-consent{font-size:11.5px;color:var(--text-muted);margin-top:14px;line-height:1.5}.qf-msg{margin-top:12px;font-size:14px}.qf-msg.ok{color:#1a764d}.qf-msg.err{color:#822111}.pactions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:18px 0 4px}.pa-btn{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.5px;text-transform:uppercase;background:var(--off-white);color:var(--navy-deep);border:1px solid var(--border);border-radius:7px;padding:9px 15px;cursor:pointer;text-decoration:none}.pa-btn:hover{border-color:var(--gold)}.pa-save.saved{background:var(--gold);border-color:var(--gold);color:var(--navy-deep)}.pa-spark{display:inline-flex;align-items:center;gap:7px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted)}#officeQ{margin:2px 0 14px;padding:12px 14px;background:var(--off-white);border:1px solid var(--gold-pale);border-radius:8px}@media print{.topbar,.nav-overlay,#navov,.footer,.qform-wrap,.pactions{display:none!important}body{background:#fff}}.print-card{display:none}@media print{html,body{background:#fff!important}.top-stripe,.topbar,.nav-overlay,footer,.pagehead,.pactions{display:none!important}#l-body>*:not(.print-card){display:none!important}.print-card{display:block!important;font-family:'DM Sans',sans-serif;color:#111}@page{margin:0.6in}}.print-card .pc-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid #B8962E;padding-bottom:10px;margin-bottom:18px}.print-card .pc-brand{font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:#122848}.print-card .pc-q{color:#B8962E}.print-card .pc-kicker{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#B8962E}.print-card .pc-name{font-family:'Playfair Display',serif;font-size:30px;color:#122848;margin:0}.print-card .pc-meta{font-size:13px;color:#555;margin:2px 0 16px}.print-card .pc-scorebox{display:flex;align-items:center;gap:16px;background:#F9F6F0;border:1px solid #e5ddcb;border-radius:10px;padding:14px 20px;margin-bottom:18px}.print-card .pc-num{font-family:'Playfair Display',serif;font-size:52px;font-weight:800;color:#122848;line-height:1}.print-card .pc-scorelabel{font-family:'DM Mono',monospace;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#B8962E}.print-card .pc-break{width:100%;border-collapse:collapse;margin-bottom:8px}.print-card .pc-break td{padding:7px 0;border-bottom:1px solid #eee;font-size:13.5px;color:#222}.print-card .pc-break .pc-w{text-align:right;color:#888;font-family:'DM Mono',monospace;font-size:11px}.print-card .pc-break .pc-s{text-align:right;font-weight:700;color:#122848}.print-card .pc-formula{font-family:'DM Mono',monospace;font-size:12px;color:#444;margin:6px 0 14px}.print-card .pc-why{font-size:13.5px;line-height:1.55;color:#333;font-style:italic;border-left:3px solid #B8962E;padding-left:12px;margin:0 0 20px}.print-card .pc-contacts{display:flex;gap:36px;border-top:1px solid #ddd;padding-top:16px;margin-bottom:14px}.print-card .pc-c{display:flex;flex-direction:column;gap:3px;font-size:12.5px;color:#333}.print-card .pc-ct{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:#122848;font-weight:700;margin-bottom:3px}.print-card .pc-foot{font-size:10.5px;color:#888;border-top:1px solid #eee;padding-top:10px;margin:0}
-.official-strip{margin:14px 0 2px;padding:10px 14px;background:var(--off-white);border:1px solid var(--gold-pale);border-left:3px solid var(--gold);border-radius:8px;font-size:12.5px;line-height:1.55;color:var(--text-light)}
-.official-strip a{color:var(--navy-deep);font-weight:600;text-decoration:underline;text-decoration-color:var(--gold)}.footer-li{display:inline-flex;align-items:center}.footer-li .li-ico{opacity:.85;transition:opacity .15s}.footer-li:hover .li-ico{opacity:1}</style>
+.footer-li{display:inline-flex;align-items:center}.footer-li .li-ico{opacity:.85;transition:opacity .15s}.footer-li:hover .li-ico{opacity:1}</style>
 </head><body>
 <div class="top-stripe"></div>
 <div class="topbar"><div class="topbar-inner">
@@ -545,11 +508,70 @@
 <div class="ov-foot">The Q Collective LLC &middot; Doctrine Policy Group</div>
 </div>
 <script>document.addEventListener('keydown',function(e){if(e.key==='Escape'){var o=document.getElementById('navov');if(o)o.classList.remove('open');}});</script>
-<section class="pagehead"><p class="ph-eyebrow" id="l-office">Legislator Profile</p><h1 id="l-name">Loading&hellip;</h1><p id="l-sub"></p></section>
-<div class="pagewrap">
-<div id="l-body">Loading&hellip;</div>
-<p style="margin-top:26px"><a href="hub.html">&larr; Back to the Hub</a></p>
+<section class="pagehead"><p class="ph-eyebrow">Governance &middot; Public</p><h1>How we operate.</h1>
+<p>An accountability organization has to live by the standard it asks of everyone else. So we wrote ours down, in the open. Read it, download it, print it &mdash; and hold us to it.</p></section>
+<style>
+  .gov-wrap{max-width:820px;margin:0 auto;padding:8px 24px 40px}
+  .docband{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 40px}
+  @media(max-width:640px){.docband{grid-template-columns:1fr}}
+  .doccard{background:#fff;border:1px solid var(--border);border-top:3px solid var(--gold);border-radius:10px;padding:22px 22px 18px}
+  .doccard h3{font-family:'Playfair Display',serif;font-size:19px;color:var(--navy-deep);line-height:1.2;margin-bottom:6px}
+  .doccard p{font-size:14px;color:var(--text-light);line-height:1.6;margin-bottom:14px}
+  .docacts{display:flex;flex-wrap:wrap;gap:8px}
+  .docacts a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;padding:8px 13px;border-radius:5px}
+  .docacts a.p{background:var(--gold);color:var(--navy-deep)}
+  .docacts a.p:hover{background:var(--gold-light)}
+  .docacts a.o{border:1px solid var(--navy);color:var(--navy)}
+  .docacts a.o:hover{background:var(--navy);color:#fff}
+  .gov h2.part{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:40px 0 2px}
+  .gov h2.pt{font-family:'Playfair Display',serif;font-size:28px;color:var(--navy-deep);margin:0 0 2px;line-height:1.15}
+  .gov .blurb{font-style:italic;color:var(--text-muted);margin-bottom:16px}
+  .gov h3.art{font-family:'Playfair Display',serif;font-size:19px;color:var(--navy-deep);margin:22px 0 6px}
+  .gov h3.art .an{display:block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+  .gov p{font-size:15.5px;color:var(--text);line-height:1.75;margin:0 0 10px}
+  .oathbox{background:#fbf8f1;border:1px solid var(--gold);border-radius:12px;padding:26px 28px;margin:14px 0;text-align:center}
+  .oathbox p{font-size:15.5px;color:var(--navy-deep);margin:0 0 8px;line-height:1.6}
+  .codelist{list-style:none;padding:0;margin:8px 0}
+  .codelist li{position:relative;padding-left:22px;margin:0 0 9px;font-size:15.5px;line-height:1.7;color:var(--text)}
+  .codelist li:before{content:"\2014";position:absolute;left:0;color:var(--gold)}
+  .citizen{background:var(--navy-deep);border-radius:14px;padding:38px 32px;margin:44px 0 10px;position:relative;overflow:hidden}
+  .citizen-wm{position:absolute;font-family:'Playfair Display',serif;font-weight:900;font-size:340px;color:rgba(255,255,255,.05);top:-90px;right:-40px;pointer-events:none}
+  .citizen-in{position:relative;z-index:1;max-width:640px}
+  .citizen .eyeb{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);margin-bottom:10px}
+  .citizen h2{font-family:'Playfair Display',serif;font-size:30px;color:#fff;line-height:1.1;margin-bottom:12px}
+  .citizen p{color:rgba(255,255,255,.8);font-size:15.5px;line-height:1.75;margin-bottom:10px}
+  .citizen .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+  .attribline{text-align:center;color:var(--text-muted);font-size:13.5px;border-top:1px solid var(--border);margin-top:44px;padding-top:20px;line-height:1.8}
+</style>
+<div class="gov-wrap">
+<div class="docband">
+  <div class="doccard">
+    <h3>Charter &amp; Operating Constitution</h3>
+    <p>Who we are, the promises we make to the public, and the non-negotiable rules every person in Q operates by. Includes the Member Oath and the Code.</p>
+    <div class="docacts">
+      <a class="p" href="q-collective-constitution.pdf" target="_blank" rel="noopener">Open / Download PDF</a>
+      <a class="o" href="q-collective-constitution.pdf" target="_blank" rel="noopener">Print</a>
+    </div>
+  </div>
+  <div class="doccard">
+    <h3>The Citizen Champion Card</h3>
+    <p>A short, nonpartisan pledge anyone can sign and print &mdash; to put citizens first and never bow to extremism, from any direction.</p>
+    <div class="docacts">
+      <a class="p" href="citizen-champion.html" target="_blank" rel="noopener">Print your card</a>
+      <a class="o" href="citizen-champion-card.pdf" target="_blank" rel="noopener">Download PDF</a>
+    </div>
+  </div>
 </div>
+<div class="gov"><h2 class="part" style="margin-top:8px">Preamble</h2><p style="font-size:16px;color:var(--text);line-height:1.8;margin:0 0 12px">The Q Collective exists for a simple reason: ordinary people deserve legislation written with the same seriousness, rigor, and care that money and titles command — and they deserve the tools to hold the powerful accountable to it.</p><p style="font-size:16px;color:var(--text);line-height:1.8;margin:0 0 12px">We are a citizen-powered legislative accountability and policy organization. We write ready-to-file bills. We measure the record of those in power against one standard, applied to everyone. And we put both in the open, where anyone can check our work.</p><p style="font-size:16px;color:var(--text);line-height:1.8;margin:0 0 12px">This document is our promise — to the public, and to one another. It is written to be read by anyone, because an organization that demands transparency from power must live transparently itself.</p><p style="font-size:16px;color:var(--text);line-height:1.8;margin:0 0 12px">It doesn’t matter where you started. What matters is where you finish, and the journey along the way. This is how we intend to finish.</p><h2 class="part">Part I</h2><h2 class="pt">The External Charter</h2><p class="blurb">Our promises to the public.</p><h3 class="art"><span class="an">Article 1</span>Mission & Purpose</h3><p>Our mission is to give citizens a real seat at the table where laws are made — through serious policy they can stand behind, and honest accountability they can trust.</p><p>We build detailed, ready-to-file legislation grounded in evidence. We measure those in office against the pillars of life stability, by the same yardstick for every party. And we hand people the tools — the scores, the records, the plain-language explanations — to act for themselves.</p><p>We do not exist to win elections, to serve a party, or to enrich anyone. We exist to move good policy, and to keep power honest.</p><h3 class="art"><span class="an">Article 2</span>The Nonpartisan Doctrine</h3><p>Our credibility is load-bearing. The moment we read as a front for one party, everything we build is worth less. So nonpartisanship here is not a preference — it is a rule, and we enforce it on ourselves.</p><p>One standard for everyone. We score a champion and an opponent by the identical rubric. The 80-point Accountability Champion threshold never bends for a friend and never sharpens for a rival.</p><p>Ledger balance. Visible symmetry is not optional. Where the organization engages one side, it engages the other on equal terms. We own the neutral ground and bring both parties to the same table, rather than pick one.</p><p>Extremism, from any direction. We stand against political violence, intimidation, and authoritarian tactics wherever they come from — left, right, or anywhere they hide. Rejecting extremism is not a partisan act. It is the price of a free people.</p><h3 class="art"><span class="an">Article 3</span>How We Engage Power</h3><p>Speak softly, carry a big stick. Our power is our substance — the quality of the work and the strength of the record — never the volume of the attack.</p><p>Treat everyone with respect, even those who have not earned it. We are sharp on substance and gracious in tone. We contrast records; we do not smear people.</p><p>Speak with passion. Respect is not timidity. We say hard, true things plainly, and we mean them.</p><h3 class="art"><span class="an">Article 4</span>The Standard We Hold Ourselves To</h3><p>We ask the public to trust our numbers, so we earn it.</p><p>Show the work. Every Q Score is backed by the underlying record, and every change to every score is written to a public, tamper-evident audit log.</p><p>Score records, not outcomes. Judicial scores are anchored to independent performance-evaluation data, never to whether we liked a ruling. Legislative and executive scores follow the published rubric, whose weights are fixed and change only by explicit authorization and a version bump.</p><p>Correct fast, and in the open. When verified facts contradict our outputs, the verified facts win — immediately — and the correction is recorded.</p><p>Prove it in Colorado first. We earn the right to expand by proving the model at home before we claim it anywhere else.</p><h3 class="art"><span class="an">Article 5</span>How We Work With Others</h3><p>We collaborate — with legislators, experts, partners, and volunteers — and the same standard travels with the work.</p><p>Anyone we work with is accountable to the facts and to the public record, not to us personally. We do not trade scores, endorsements, or favorable treatment for access, money, or support — there is nothing to buy here.</p><p>Partners are told plainly how we operate before we begin, including these promises. Association with The Q Collective is association with this standard.</p><h3 class="art"><span class="an">Article 6</span>Independence & Integrity</h3><p>The work came first. This organization is the permanent home for policy work that predates any campaign, and it is never framed as having grown out of one. No campaign language appears in our output.</p><p>Unpaid where the law watches. Our lobbying is registered and volunteer — unpaid — and it stays that way, so no one can claim our advocacy is bought.</p><p>Money in the light. We are transparent about how we are funded, and no contribution buys a position, a score, or a bill.</p><h2 class="part">Part II</h2><h2 class="pt">The Internal Operating Constitution</h2><p class="blurb">How every person in Q operates.</p><h3 class="art"><span class="an">Article 7</span>Who This Governs</h3><p>This part governs every person who acts in the name of The Q Collective — founder, staff, volunteer, contractor, or collaborator. It is not a job description, and it is not role-specific. It is the floor every one of us stands on, from the first day to the last. Titles change. This does not.</p><h3 class="art"><span class="an">Article 8</span>The Non-Negotiables</h3><p>These do not bend without an explicit, recorded decision:</p><p>1.  Nonpartisan credibility above all. Nothing we do may make the organization read as partisan.</p><p>2.  Keep the person and the organization separate. An individual may take part in partisan life on their own time, self-funded, with no Q Collective branding or resources — and matched, for balance, on the other side. The organization’s name, money, and tools stay strictly nonpartisan.</p><p>3.  Never touch a bill without sign-off. We never add, cut, or change anything in a bill on our own. We ask the author first. Every version carries a new number and a plain “what’s new.”</p><p>4.  Verified data wins. When confirmed facts conflict with a derived output, the verified fact is locked in and overrides the machine.</p><p>5.  The standard is fixed. The 80-point Champion line and the scoring weights do not move without explicit authorization and a version bump.</p><p>6.  Colorado first. National and federal work stays visible but dormant until Colorado is proven.</p><h3 class="art"><span class="an">Article 9</span>How We Decide & Build</h3><p>Confirm before you build. Large or multi-part changes get a plan and a sign-off first.</p><p>Finish the work. We hand over complete, usable work — not fragments and homework.</p><p>Flag it early. Uncomfortable truths surface at the start, not after the fact.</p><p>Hold the house standard. Our published work follows the house format and attribution, every time.</p><h3 class="art"><span class="an">Article 10</span>Conduct With Each Other and the Public</h3><p>We live the same three rules inward that we show the world: speak softly and carry a big stick, treat everyone with respect even when it isn’t returned, and speak with passion. We disagree hard and stay kind. We do not punch down, trade in stereotypes, or let a rough day become a rough word to someone else.</p><h3 class="art"><span class="an">Article 11</span>Money & Structure</h3><p>We operate today as The Q Collective LLC and intend to grow into a nonprofit built to last. No one uses the organization for private enrichment. Contributions, and any future donations, are handled honestly and transparently — and are never called tax-deductible unless and until the law makes them so.</p><h3 class="art"><span class="an">Article 12</span>Amendment & Version Discipline</h3><p>This document is versioned like everything we build. It changes only by a deliberate, recorded decision, and every version opens with what changed and why. This is Version 1.0.</p><h2 class="part">Part III</h2><h2 class="pt">The Q Member Oath</h2><p class="blurb">Taken by every person who acts in the name of The Q Collective. Short enough to carry. Serious enough to keep.</p><div class="oathbox"><p>I stand with The Q Collective.</p><p>I put people before party — always, and without exception.</p><p>I will speak softly and carry a big stick: my strength is my work, never the cheap attack.</p><p>I will treat everyone with respect, even those who have not earned it.</p><p>I will tell the truth, show my work, and answer for it in the open.</p><p>I will never bend the standard for a friend or sharpen it for a rival.</p><p>Where I started does not define me. Where I finish — and how I get there — does.</p></div><h2 class="part">Part IV</h2><h2 class="pt">The Code — A Self-Standard</h2><p class="blurb">The personal standard each of us keeps, in our own hands.</p><ul class="codelist"><li>I will keep the organization nonpartisan, in fact and in appearance.</li><li>I will keep my own politics separate from the work, and self-funded.</li><li>I will never alter another person’s bill without their sign-off.</li><li>I will let verified facts overrule my assumptions — fast, and in public.</li><li>I will apply the same standard to every party, every time.</li><li>I will disclose conflicts before they become problems.</li><li>I will refuse any money, favor, or pressure that would bend a score or a bill.</li><li>I will correct my mistakes openly, and thank the people who catch them.</li><li>I will finish what I start, and finish it well.</li></ul></div><div class="citizen"><div class="citizen-wm">Q</div><div class="citizen-in">
+  <div class="eyeb">For Every Citizen</div>
+  <h2>Become a Citizen Champion.</h2>
+  <p>Our Q Scores name the officials who earn the title of Accountability Champion. But accountability doesn’t belong to officials alone — it belongs to citizens. The Citizen’s Oath is how you claim it.</p>
+  <p>It’s a nonpartisan pledge: put your country and your neighbors before any party, reject extremism and political violence wherever they come from, and hold every official to the same standard. Print it, sign it, keep it where you’ll see it.</p>
+  <div class="acts">
+    <a class="btn-gold" href="citizen-champion.html" target="_blank" rel="noopener">Print your card &rarr;</a>
+    <a class="btn-outline" href="citizen-champion-card.pdf" target="_blank" rel="noopener">Download the PDF</a>
+  </div>
+</div><p class="attribline">The Q Collective Charter &amp; Operating Constitution &middot; Version 1.0 &middot; July 2026<br>Published by The Q Collective LLC / Doctrine Policy Group &middot; team@theQcollective.org</p></div>
 <div class="footer">
 
   <!-- BALANCE STATEMENT -->
@@ -714,145 +736,6 @@
 </div>
 <script>
 function goTo(e, url){ try{ if(window.top && window.top!==window.self){ window.top.location.href=url; } else { window.location.href=url; } if(e && e.preventDefault) e.preventDefault(); return false; }catch(err){ return true; } }
-</script>
-<script>
-function qs(k){var m=new RegExp('[?&]'+k+'=([^&]*)').exec(location.search);return m?decodeURIComponent(m[1]):null;}
-function pf(p){p=(p||'').toUpperCase();return p==='D'?'Democrat':p==='R'?'Republican':p==='I'?'Independent':(p||'');}
-function esc(s){return (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-function officialEntry(){var f=document.querySelector('.qform-wrap');if(!f)return false;var r=f.querySelector('input[name="purpose"][value="Dispute / review"]');if(r){r.checked=true;if(typeof toggleOffice==='function')toggleOffice();}f.scrollIntoView({behavior:'smooth'});return false;}
-function submitQForm(e,f){e.preventDefault();var msg=f.querySelector('.qf-msg');msg.className='qf-msg';msg.textContent='Sending\u2026';fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)}).then(function(r){return r.json();}).then(function(j){if(j.success){var els=f.querySelectorAll('input,select,textarea,button');for(var i=0;i<els.length;i++)els[i].disabled=true;msg.className='qf-msg ok';msg.textContent=f.getAttribute('data-thanks')||'Thank you \u2014 your voice is in.';}else{msg.className='qf-msg err';msg.textContent='Something went wrong. Email team@theQcollective.org and we\u2019ll take it from there.';}}).catch(function(){msg.className='qf-msg err';msg.textContent='Something went wrong. Email team@theQcollective.org and we\u2019ll take it from there.';});return false;}
-function slugify(n){return (n||'').toLowerCase().replace(/[^a-z\s-]/g,'').trim().replace(/\s+/g,'-');}
-/* =============================================================
-   LEGISLATOR EMAIL - single source of truth   (v2 - 2026-07)
-   Model: VERIFIED override wins; otherwise derive.
-   WHAT CHANGED vs v1: the surname used to be the LAST word only,
-   which broke two-word surnames (e.g. "Garcia Sander" -> "sander").
-   Now surname = every token after the first name, joined, with
-   middle initials and suffixes (Jr/Sr/II-V) removed and accents
-   folded. Any address confirmed against a state's official roster
-   is locked in VERIFIED_EMAILS and can never be re-broken.
-   ============================================================= */
-var VERIFIED_EMAILS = {
-  // Colorado - confirmed against leg.colorado.gov
-  "26066": "lori.garciasander.house"   + String.fromCharCode(64) + "coleg.gov", // Lori Garcia Sander
-  "26492": "lynda.zamorawilson.senate" + String.fromCharCode(64) + "coleg.gov"  // Lynda Zamora Wilson
-};
-
-// Fold accents, drop non-letters, lowercase: "Jose"->"jose", "O'Brien"->"obrien"
-function _norm(s){
-  return (s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z]/g,'');
-}
-var _SUFFIX = {jr:1, sr:1, ii:1, iii:1, iv:1, v:1};
-
-/* Split a full name into {first, surname} with the best general rule:
-   first token = first name; everything after = surname, EXCEPT
-   recognized suffixes (Jr/Sr/II-V) and lone middle initials ("A."). */
-function nameParts(name){
-  var toks=(name||'').trim().split(/\s+/);
-  if(toks.length<2) return null;
-  var rest=[];
-  for(var i=1;i<toks.length;i++){
-    var raw=toks[i], bare=raw.toLowerCase().replace(/[^a-z]/g,'');
-    if(_SUFFIX[bare]) continue;              // drop Jr/Sr/II/III/IV/V
-    if(/^[A-Za-z]\.?$/.test(raw)) continue;  // drop a lone middle initial
-    rest.push(raw);
-  }
-  if(!rest.length) rest=[toks[toks.length-1]];
-  return { first:_norm(toks[0]), surname:_norm(rest.join('')) };
-}
-
-// Colorado address pattern. Add a builder per state as you grow.
-function coEmail(first, surname, chamber){
-  return first + '.' + surname + '.' + chamber + String.fromCharCode(64) + 'coleg.gov';
-}
-
-/* Single source of truth for a legislator email:
-   1) verified override wins;  2) else derive for the state. */
-function legEmail(l){
-  if(!l) return '';
-  if(VERIFIED_EMAILS[l.id]) return VERIFIED_EMAILS[l.id];
-  var np=nameParts(l.name);
-  if(!np||!np.first||!np.surname) return '';
-  var ch=/sen/i.test(l.chamber||l.role||'')?'senate':'house';
-  return coEmail(np.first, np.surname, ch); // branch here when other states are added
-}
-
-/* FUTURE GATE - runs on every load over the whole roster and warns in the
-   console about any address that is a GUESS rather than verified, and any
-   name shaped in a way that has broken derivation before. Your early-warning
-   system as you add states: after loading a new roster, open the console and
-   lock anything flagged into VERIFIED_EMAILS. Never changes the public page. */
-function auditLegislators(list, state){
-  if(!list||!list.length||typeof console==='undefined') return;
-  var flags=[];
-  list.forEach(function(l){
-    if(VERIFIED_EMAILS[l.id]) return;               // already trusted
-    var name=(l.name||'').trim(), toks=name.split(/\s+/), reasons=[];
-    if(toks.length<2) reasons.push('single-token name (cannot derive)');
-    if(/[-']/.test(name)) reasons.push('hyphen/apostrophe (convention varies)');
-    var real=toks.slice(1).filter(function(t){var b=t.toLowerCase().replace(/[^a-z]/g,'');return b && !_SUFFIX[b] && !/^[A-Za-z]\.?$/.test(t);});
-    if(real.length>1) reasons.push('multi-word surname (verify)');
-    if(reasons.length) flags.push({id:l.id, name:name, guessed:legEmail(l), why:reasons.join('; ')});
-  });
-  var v=list.filter(function(l){return VERIFIED_EMAILS[l.id];}).length;
-  console.log('%c[Q email audit] '+(state||'')+': '+list.length+' legislators, '+v+' verified, '+flags.length+' to review','color:#B0862B;font-weight:bold');
-  if(flags.length) console.table(flags);
-}
-
-function contactAndVoice(l){var off='https://leg.colorado.gov/legislators/'+slugify(l.name);var k="da0f4760-ac24-433c-b27f-52058241488e";var em=legEmail(l);
-return '<p class="section-label" style="margin-top:48px">Reach Them</p><h2 class="section-title" style="margin-bottom:6px">Contact this legislator</h2><div class="section-divider"></div><p style="font-size:14.5px;color:var(--text-light)">'+(em?'<strong>Email:</strong> <a href="mailto:'+em+'">'+em+'</a><br>':'')+'<strong>Phone &amp; address:</strong> <a target="_blank" rel="noopener" href="'+off+'">their official page \u2197</a><br><span style="font-size:12px;color:var(--text-muted)">Colorado uses the public firstname.lastname.chamber&#64;coleg.gov format; the official page lists direct phone and office.</span></p>'
-+'<div class="official-strip">Are you '+esc(l.name)+' or part of their office? <a href="#" onclick="return officialEntry()">Request a review of this record</a> &mdash; verified official responses come straight to our desk. Or <a href="work-with-us.html">work with us on the 2027 session</a>.</div>'
-+'<div class="qform-wrap"><p class="section-label" style="margin-top:0">Be Heard</p><h3 style="font-family:\'Playfair Display\',serif;font-size:21px;color:var(--navy-deep);margin:2px 0 4px">Your voice on '+esc(l.name)+'</h3><p style="font-size:13.5px;color:var(--text-light);margin:0 0 6px">We advocate at the Capitol for the seven pillars of life stability. Tell us where you stand \u2014 and we may raise it directly as part of our work.</p>'
-+'<form class="qform" data-thanks="Got it \u2014 thank you for speaking up. If you asked for a score review, we\u2019ll re-check this record against the published rubric and respond. Same yardstick for everyone." onsubmit="return submitQForm(event,this)">'
-+'<input type="hidden" name="access_key" value="'+k+'"><input type="hidden" name="subject" value="Constituent voice \u2014 '+esc(l.name)+'"><input type="hidden" name="legislator" value="'+esc(l.name)+'"><input type="hidden" name="legislator_id" value="'+esc(l.id)+'">'
-+'<label>What would you like?</label><div class="qf-radios"><label><input type="radio" name="purpose" value="Reach out" checked onchange="toggleOffice()"> Ask us to reach out to them</label><label><input type="radio" name="purpose" value="Dispute / review" onchange="toggleOffice()"> Dispute or request a score review</label><label><input type="radio" name="purpose" value="Constituent voice" onchange="toggleOffice()"> Just want them to hear from a constituent</label></div><div id="officeQ" style="display:none"><label>Are you this legislator, or part of their office?</label><div class="qf-radios"><label><input type="radio" name="is_official" value="Yes - legislator or office"> Yes</label><label><input type="radio" name="is_official" value="No - constituent"> No, I&rsquo;m a constituent</label></div><p style="font-size:12px;color:var(--text-muted);margin:6px 0 0">If yes, we&rsquo;ll treat this as an official right of reply and may verify via your &#64;coleg.gov email before publishing anything.</p></div>'
-+'<label>About which bill or issue? (optional)</label><input type="text" name="bill_or_issue" placeholder="e.g. HB1001, or housing">'
-+'<label>Your position (optional)</label><select name="position"><option value="">\u2014</option><option>Support</option><option>Oppose</option><option>Concerned</option></select>'
-+'<label>What should we \u2014 or they \u2014 know?</label><textarea name="message" placeholder="A sentence or two"></textarea>'
-+'<div class="qf-row"><div><label>Your name (optional)</label><input type="text" name="name"></div><div><label>Email (optional)</label><input type="email" name="email"></div><div><label>ZIP (optional)</label><input type="text" name="zip"></div></div>'
-+'<button type="submit">Send</button><p class="qf-consent">By submitting, you\u2019re sharing your view with The Q Collective to inform our advocacy. We may note that constituents in this district raised an issue. We won\u2019t share your contact info, and we can\u2019t guarantee a specific response from any official.</p><div class="qf-msg"></div></form></div>';}
-
-function scoreBreakdown(l){
-var W=[{k:'pillar',name:'Pillar Alignment',w:0.40},{k:'attendance',name:'Attendance',w:0.25},{k:'impact',name:'Citizen Impact',w:0.25},{k:'sponsorship',name:'Sponsorship',w:0.10}];
-for(var i=0;i<W.length;i++){if(typeof l[W[i].k]!=='number')return '';}
-var rows=W.map(function(c){var s=l[c.k];return {name:c.name,w:c.w,s:s,lost:c.w*(100-s)};});
-var totalLost=rows.reduce(function(a,r){return a+r.lost;},0);
-var earned=rows.reduce(function(a,r){return a+r.w*r.s;},0);
-var byScore=rows.slice().sort(function(a,b){return b.s-a.s;});
-var byLost=rows.slice().sort(function(a,b){return b.lost-a.lost;});
-var topDrag=byLost[0];
-var fmt=function(n){return (Math.round(n*10)/10).toString();};
-var strong=byScore[0],d1=byLost[0],d2=byLost[1];
-var nar;
-if(l.score>=95){nar='A strong record across the board &mdash; '+strong.name+' ('+strong.s+') leads, with only small gaps elsewhere.';}
-else{nar='What lifts this score most is '+strong.name+' ('+strong.s+'). What holds it back: '+d1.name+' ('+d1.s+') and '+d2.name+' ('+d2.s+') &mdash; together those two gaps cost about '+fmt(d1.lost+d2.lost)+' of the '+fmt(totalLost)+' points between this score and a perfect 100.';if(l.score>=80)nar+=' Even so, the record clears the 80-point Accountability Champion line.';}
-var bars=rows.map(function(r){var drag=(r===topDrag&&r.lost>0);return '<div class="qm-row'+(drag?' qm-drag':'')+'"><div class="qm-top"><span class="qm-name">'+r.name+'<span class="qm-w">'+Math.round(r.w*100)+'% of score</span></span><span class="qm-val">'+r.s+'<span class="qm-lost">'+(r.lost<0.05?'0 pts':'&minus;'+fmt(r.lost)+' pts')+'</span></span></div><div class="qm-bar"><span style="width:'+r.s+'%"></span></div></div>';}).join('');
-return '<div class="score-math"><p class="why-q-label">What brought it here</p><p class="qm-nar">'+nar+'</p>'+bars+'<div class="qm-net">The math: 0.40('+l.pillar+') + 0.25('+l.attendance+') + 0.25('+l.impact+') + 0.10('+l.sponsorship+') = '+fmt(earned)+' &rarr; <b>'+l.score+'</b></div><p class="qm-foot">Same fixed, public weights for every legislator &mdash; no thumb on the scale.</p></div>';
-}
-
-function toggleOffice(){var d=document.querySelector('input[name=purpose][value="Dispute / review"]');var q=document.getElementById('officeQ');if(q)q.style.display=(d&&d.checked)?'block':'none';}
-function _reps(){try{return JSON.parse(localStorage.getItem('qc_myreps')||'[]');}catch(e){return [];}}
-function _saveReps(a){try{localStorage.setItem('qc_myreps',JSON.stringify(a));}catch(e){}}
-function toggleRep(){var el=document.querySelector('.pactions');if(!el)return;var id=el.getAttribute('data-id');var a=_reps();var i=a.map(function(x){return String(x.id);}).indexOf(String(id));var btn=document.getElementById('paSave');if(i>-1){a.splice(i,1);btn.className='pa-btn pa-save';btn.innerHTML='\u2606 Save to My Reps';}else{a.push({id:id,name:el.getAttribute('data-name'),score:el.getAttribute('data-score'),chamber:el.getAttribute('data-ch'),district:el.getAttribute('data-dist')});btn.className='pa-btn pa-save saved';btn.innerHTML='\u2605 Saved';}_saveReps(a);}
-function shareProfile(btn){try{navigator.clipboard.writeText(location.href);}catch(e){}var o=btn.textContent;btn.textContent='Copied \u2713';setTimeout(function(){btn.textContent=o;},1500);}
-function reportCard(l){var em=legEmail(l);var party=({D:'Democrat',R:'Republican',I:'Independent'})[(l.party||'').toUpperCase()]||(l.party||'');var meta=[l.role||l.chamber,(l.district?'District '+l.district:''),party].filter(Boolean).join(' \u00b7 ');return '<div class="print-card"><div class="pc-head"><span class="pc-brand"><span class="pc-q">Q</span> The Q Collective</span><span class="pc-kicker">Accountability Report Card</span></div><div class="pc-rep"><h2 class="pc-name">'+esc(l.name)+'</h2><p class="pc-meta">'+esc(meta)+'</p></div><div class="pc-scorebox"><div class="pc-num">'+esc(l.score)+'</div><div class="pc-scorelabel">'+esc(l.label||'Q Score')+'</div></div><table class="pc-break"><tr><td>Seven Pillars of Life Stability</td><td class="pc-w">40%</td><td class="pc-s">'+esc(l.pillar)+'</td></tr><tr><td>Attendance</td><td class="pc-w">25%</td><td class="pc-s">'+esc(l.attendance)+'</td></tr><tr><td>Legislative Impact</td><td class="pc-w">25%</td><td class="pc-s">'+esc(l.impact)+'</td></tr><tr><td>Sponsorship</td><td class="pc-w">10%</td><td class="pc-s">'+esc(l.sponsorship)+'</td></tr></table><p class="pc-formula">0.40('+esc(l.pillar)+') + 0.25('+esc(l.attendance)+') + 0.25('+esc(l.impact)+') + 0.10('+esc(l.sponsorship)+') = <b>'+esc(l.score)+'</b></p>'+(l.why?'<p class="pc-why">'+esc(l.why)+'</p>':'')+'<div class="pc-contacts"><div class="pc-c"><span class="pc-ct">Reach this legislator</span>'+(em?'<span>'+em+'</span>':'')+'<span>Phone &amp; office: leg.colorado.gov</span></div><div class="pc-c"><span class="pc-ct">The Q Collective</span><span>970.725.6656</span><span>team&#64;theQcollective.org</span><span>theqcollective.org</span></div></div><p class="pc-foot">This Q Score is set by a fixed, public rubric &mdash; the same yardstick for every legislator. Published by The Q Collective LLC / Doctrine Policy Group.</p></div>';}
-function profileActions(l){return '<div class="pactions" data-id="'+esc(l.id)+'" data-name="'+esc(l.name)+'" data-score="'+esc(l.score)+'" data-ch="'+esc(l.chamber||l.role||'')+'" data-dist="'+esc(l.district||'')+'"><button type="button" class="pa-btn" onclick="window.print()">Print report card</button><button type="button" class="pa-btn" onclick="shareProfile(this)">Copy link</button><a class="pa-btn" id="paX" target="_blank" rel="noopener">Post on X \u2197</a><button type="button" class="pa-btn pa-save" id="paSave" onclick="toggleRep()">\u2606 Save to My Reps</button><span class="pa-spark" id="sparkWrap" style="display:none">Trend <span id="sparkline"></span></span></div>';}
-function initProfile(l,state){var x=document.getElementById('paX');if(x)x.href='https://twitter.com/intent/tweet?text='+encodeURIComponent(l.name+' scores '+l.score+' on The Q Collective Accountability Hub')+'&url='+encodeURIComponent(location.href);var id=String(l.id);if(_reps().some(function(r){return String(r.id)===id;})){var b=document.getElementById('paSave');if(b){b.className='pa-btn pa-save saved';b.innerHTML='\u2605 Saved';}}
-fetch('data/'+(state||'CO')+'_snapshots.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(sn){if(!sn)return;var S=sn.snapshots||sn;var pts=[];Object.keys(S).sort().forEach(function(dd){var v=S[dd]&&S[dd][id];if(v!=null)pts.push(+v);});if(pts.length<2)return;var w=120,h=26,mn=Math.min.apply(null,pts),mx=Math.max.apply(null,pts),rng=(mx-mn)||1;var pd=pts.map(function(v,i){return (i/(pts.length-1)*w).toFixed(1)+','+(h-((v-mn)/rng)*h).toFixed(1);}).join(' ');document.getElementById('sparkline').innerHTML='<svg width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'"><polyline points="'+pd+'" fill="none" stroke="var(--gold)" stroke-width="2"/></svg>';document.getElementById('sparkWrap').style.display='inline-flex';}).catch(function(){});}
-(function(){var state=qs('state'),id=qs('id');var body=document.getElementById('l-body');
-if(!state||!id){document.getElementById('l-name').textContent='No legislator selected';body.innerHTML='<p>Head to the <a href="hub.html">Hub</a> to choose someone.</p>';return;}
-fetch('data/'+state+'.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(d){
-if(!d){document.getElementById('l-name').textContent='Not available';body.innerHTML='<p>That state isn\u2019t scored yet. <a href="hub.html">Back to the Hub</a>.</p>';return;}
-auditLegislators(d.legislators,state);
-var l=d.legislators.filter(function(x){return String(x.id)===String(id);})[0];
-if(!l){document.getElementById('l-name').textContent='Legislator not found';body.innerHTML='<p><a href="hub.html">Back to the Hub</a>.</p>';return;}
-document.getElementById('l-office').textContent=(l.chamber||l.role||'Legislator')+' \u00b7 '+(l.body||d.state_name||state);
-document.getElementById('l-name').textContent=l.name;document.title=l.name+' \u2014 The Q Collective';
-document.getElementById('l-sub').textContent=pf(l.party)+(l.district?' \u00b7 District '+l.district:'');
-var sc='<div class="factbox"><div class="score-big">'+l.score+'</div><div class="score-label">'+(l.label||'Q Score')+'</div>'+(l.score>=80?'<div style="margin-top:8px"><span class="q-champ"><span class="star">&#9733;</span>Accountability Champion</span></div>':'')+''+scoreBreakdown(l)+''+(l.why?'<p class="why-q-label">Why this score</p><p style="margin:4px 0 0;font-style:italic;color:var(--text-light)">\u201c'+l.why+'\u201d</p>':'')+'<p style="margin:10px 0 0;font-size:13px"><a href="how-q-scores-work.html">How is this calculated? &rarr;</a></p></div>';
-var bills=l.bills||[];var bh=bills.length?bills.map(function(b){return '<div class="brow"><div class="bnum">'+(b.number||'')+(b.primary?' &middot; Primary':'')+'</div><div class="btitle">'+'<a href="bill.html?state='+state+'&number='+encodeURIComponent(b.number||'')+'">'+(b.title||'')+'</a>'+'<div class="bstatus">'+(b.status||'')+'</div></div></div>';}).join(''):'<p>No sponsored bills recorded this session.</p>';
-body.innerHTML='<p class="section-label">Accountability</p><h2 class="section-title" style="margin-bottom:6px">Q Score</h2><div class="section-divider"></div>'+sc+profileActions(l)+contactAndVoice(l)+'<p class="section-label" style="margin-top:44px">Their Record</p><h2 class="section-title" style="margin-bottom:6px">Bills they sponsored ('+bills.length+')</h2><div class="section-divider"></div><div class="hub-bills">'+bh+'</div>'+reportCard(l);initProfile(l,state);
-}).catch(function(){document.getElementById('l-name').textContent='Could not load';body.innerHTML='<p><a href="hub.html">Back to the Hub</a>.</p>';});})();
 </script>
  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6aff6948b0f84ed0b1530a42458bbb3b"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="q-config.js"></script><script src="q-chat.js"></script>

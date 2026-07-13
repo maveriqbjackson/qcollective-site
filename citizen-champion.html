@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Citizen Champion Card &mdash; The Q Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--navy:#1B3A6B;--navy-deep:#122848;--gold:#B8962E;--gold-light:#D4AF50;--off-white:#F9F6F0;--text:#1a1a1a;--text-light:#4a4a4a;--text-muted:#5a5a5a;--border:#E0D5BE}
+  body{background:var(--off-white);font-family:'DM Sans',sans-serif;color:var(--text);-webkit-font-smoothing:antialiased;padding:26px 16px 60px}
+  .top-stripe{height:5px;background:linear-gradient(90deg,var(--gold),var(--gold-light) 50%,var(--gold));position:fixed;top:0;left:0;right:0}
+  .bar{max-width:720px;margin:14px auto 20px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+  .bar a.back{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);text-decoration:none}
+  .bar .btns{display:flex;gap:10px}
+  .bar button,.bar a.dl{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:10px 16px;border-radius:5px;border:none;cursor:pointer;text-decoration:none}
+  .bar button{background:var(--gold);color:var(--navy-deep)}
+  .bar a.dl{border:1px solid var(--navy);color:var(--navy)}
+  .card{max-width:720px;margin:0 auto;background:#fff;border:3px solid var(--gold);border-radius:14px;padding:40px 44px 34px;position:relative;overflow:hidden;text-align:center;box-shadow:0 2px 10px rgba(18,40,72,.08)}
+  .card-wm{position:absolute;top:32%;left:0;right:0;text-align:center;font-family:'Playfair Display',serif;font-weight:900;font-size:280px;color:rgba(184,150,46,.06);pointer-events:none;line-height:1}
+  .card-in{position:relative;z-index:1}
+  .badge{font-family:'DM Mono',monospace;letter-spacing:4px;text-transform:uppercase;font-size:13px;color:var(--gold)}
+  .card h1{font-family:'Playfair Display',serif;font-size:36px;color:var(--navy-deep);margin:6px 0 2px}
+  .tag{font-family:'Playfair Display',serif;font-style:italic;font-size:16px;color:var(--text-light)}
+  .rule{width:64px;height:3px;background:var(--gold);margin:16px auto 22px}
+  .cl{font-size:16px;line-height:1.55;color:var(--text);margin:0 0 10px;max-width:560px;margin-left:auto;margin-right:auto}
+  .cl.strong{color:var(--navy-deep);font-weight:700}
+  .sig{display:flex;justify-content:center;gap:40px;margin-top:28px;flex-wrap:wrap}
+  .sig .ln{border-top:1.5px solid #999;width:240px;padding-top:5px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted)}
+  .sig .dn{border-top:1.5px solid #999;width:130px;padding-top:5px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted)}
+  .foot{margin-top:26px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.5px;color:var(--text-muted);line-height:1.7}
+  .foot b{color:var(--gold)}
+  @media print{
+    body{background:#fff;padding:0}
+    .top-stripe,.bar{display:none !important}
+    .card{border:3px solid var(--gold);box-shadow:none;max-width:100%;margin:0}
+    @page{margin:0.5in}
+  }
+</style></head><body>
+<div class="top-stripe"></div>
+<div class="bar">
+  <a class="back" href="constitution.html">&larr; Our Constitution</a>
+  <div class="btns">
+    <button onclick="window.print()">Print this card</button>
+    <a class="dl" href="citizen-champion-card.pdf" target="_blank" rel="noopener">Download PDF</a>
+  </div>
+</div>
+<div class="card"><div class="card-wm">Q</div><div class="card-in">
+  <div class="badge">Citizen Champion</div>
+  <h1>The Citizen&rsquo;s Oath</h1>
+  <div class="tag">I put citizens first.</div>
+  <div class="rule"></div>
+  <p class="cl">I put my country and my neighbors before any party.</p><p class="cl strong">I will never bow to extremism — from the right, the left, or anywhere it hides.</p><p class="cl">I reject political violence, intimidation, and the lie that my neighbor is my enemy.</p><p class="cl">I will treat those I disagree with as fellow citizens — with respect they may not return.</p><p class="cl">I will stay informed, show up, and hold every official to the same standard, no matter their party.</p><p class="cl">I will speak softly and carry a big stick: reason over rage, truth over noise.</p><p class="cl">Where we started does not matter. Where we finish — together — does.</p>
+  <div class="sig"><span class="ln">Signed</span><span class="dn">Date</span></div>
+  <div class="foot">A nonpartisan pledge from <b>The Q Collective</b> &middot; theqcollective.org<br>Not affiliated with any party or candidate.</div>
+</div></div>
+</body></html>
