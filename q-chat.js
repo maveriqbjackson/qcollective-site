@@ -48,7 +48,7 @@
   var s = document.createElement("style"); s.textContent = CSS; document.head.appendChild(s);
 
   var Q = "Q Assistant";
-  var INTRO = "Hi \u2014 I'm the Q Assistant. Ask me anything, or paste a link and I'll weigh it against the seven pillars.<br><br><b>Quick links:</b> <a href='find-officials.html'>Find your reps</a> &middot; <a href='hub.html'>Q Scores</a> &middot; <a href='the-work.html'>The bills</a> &middot; <a href='support-a-bill.html'>Support a bill</a><br><br><b>Reach us:</b> <a href=\'contact.html\'>Contact</a> or <a href=\'work-with-us.html\'>Work with us</a>, or email team@theQcollective.org (Attention: mav QBJ).<br><br><b>New here?</b> Tell me who you are below and I&rsquo;ll tailor this.";
+  var INTRO = "Hi \u2014 I'm the Q Assistant. Ask me anything, or paste a link and I'll weigh it against the seven pillars.<br><br><b>Quick links:</b> <a href='find-officials.html'>Find your reps</a> &middot; <a href='hub.html'>Q Scores</a> &middot; <a href='the-work.html'>The bills</a> &middot; <a href='support-a-bill.html'>Support a bill</a><br><br><b>Reach us:</b> <a href=\'contact.html\'>Contact</a> or <a href=\'work-with-us.html\'>Work with us</a>, or email team@theQcollective.org.<br><br><b>New here?</b> Tell me who you are below and I&rsquo;ll tailor this.";
 
   var wrap = document.createElement("div");
   wrap.innerHTML =
