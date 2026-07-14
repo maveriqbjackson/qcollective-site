@@ -35,6 +35,8 @@
   ".qc-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 15px 10px;background:#F9F6F0}" +
   ".qc-chip{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.4px;background:#fff;border:1px solid #E0D5BE;color:#1B3A6B;padding:6px 10px;border-radius:16px;cursor:pointer}" +
   ".qc-chip:hover{background:#B8962E;border-color:#B8962E;color:#122848}" +
+  ".qc-chip.role{background:#122848;color:#fff;border-color:#122848}" +
+  ".qc-chip.role:hover{background:#B8962E;border-color:#B8962E;color:#122848}" +
   ".qc-input{display:flex;gap:8px;padding:11px 12px;border-top:1px solid #E0D5BE;background:#fbf9f4}" +
   ".qc-input textarea{flex:1;resize:none;border:1px solid #E0D5BE;border-radius:8px;padding:9px 11px;font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.4;color:#1a1a1a;min-height:40px;max-height:120px}" +
   ".qc-input textarea:focus{outline:none;border-color:#B8962E}" +
@@ -46,7 +48,7 @@
   var s = document.createElement("style"); s.textContent = CSS; document.head.appendChild(s);
 
   var Q = "Q Assistant";
-  var INTRO = "Hi \u2014 I'm the Q Assistant. Ask me anything, or paste a link and I'll weigh it against the seven pillars.<br><br><b>Quick links:</b> <a href='find-officials.html'>Find your reps</a> &middot; <a href='hub.html'>Q Scores</a> &middot; <a href='the-work.html'>The bills</a> &middot; <a href='support-a-bill.html'>Support a bill</a><br><br><b>Reach us:</b> <a href=\'contact.html\'>Contact</a> or <a href=\'work-with-us.html\'>Work with us</a>, or email team@theQcollective.org (Attention: mav QBJ).";
+  var INTRO = "Hi \u2014 I'm the Q Assistant. Ask me anything, or paste a link and I'll weigh it against the seven pillars.<br><br><b>Quick links:</b> <a href='find-officials.html'>Find your reps</a> &middot; <a href='hub.html'>Q Scores</a> &middot; <a href='the-work.html'>The bills</a> &middot; <a href='support-a-bill.html'>Support a bill</a><br><br><b>Reach us:</b> <a href=\'contact.html\'>Contact</a> or <a href=\'work-with-us.html\'>Work with us</a>, or email team@theQcollective.org (Attention: mav QBJ).<br><br><b>New here?</b> Tell me who you are below and I&rsquo;ll tailor this.";
 
   var wrap = document.createElement("div");
   wrap.innerHTML =
@@ -57,8 +59,11 @@
         '<h4>Ask the Q Assistant</h4><p>Ask anything \u00b7 or paste a link to evaluate</p></div>' +
       '<div class="qc-log" id="qcLog"></div>' +
       '<div class="qc-chips" id="qcChips">' +
+        '<span class="qc-chip role" data-q="I am a citizen. How can I find my representatives and their scores?">I\u2019m a citizen</span>' +
+        '<span class="qc-chip role" data-q="I am an elected official. Where can I see my Q Score and how do I respond to it?">Elected official</span>' +
+        '<span class="qc-chip role" data-q="I am a member of the press. Where is your scoring methodology and how do I request comment?">Press</span>' +
+        '<span class="qc-chip role" data-q="I am from another branch of government (executive or judicial). How does scoring apply to me?">Another branch</span>' +
         '<span class="qc-chip" data-q="What is the Colorado Economic Security Act, in plain language?">What is CESA?</span>' +
-        '<span class="qc-chip" data-q="How are the Q Scores calculated?">How do Q Scores work?</span>' +
         '<span class="qc-chip" data-q="What are the seven pillars of life stability?">The seven pillars</span>' +
       '</div>' +
       '<div class="qc-input"><textarea id="qcBox" rows="1" placeholder="Ask a question, or paste a link\u2026"></textarea><button id="qcSend">Send</button></div>' +
@@ -73,8 +78,12 @@
   var history=[], started=false, tipTimer;
 
   function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+  function linkify(t){t=esc(t);
+    t=t.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|[a-z0-9_\-]+\.html[^\s)]*)\)/gi,function(_,txt,url){var ext=/^https?:/i.test(url);return '<a href="'+url+'"'+(ext?' target="_blank" rel="noopener"':'')+'>'+txt+'</a>';});
+    t=t.replace(/(^|[\s(])(https?:\/\/[^\s<)]+)/g,function(m,pre,url){return pre+'<a href="'+url+'" target="_blank" rel="noopener">'+url+'</a>';});
+    return t;}
   function bub(role,text){var d=document.createElement("div");d.className="qc-b "+(role==="user"?"u":"a");
-    if(role!=="user"){d.innerHTML='<span class="qc-who">'+Q+'</span>'+esc(text);}else{d.textContent=text;}
+    if(role!=="user"){d.innerHTML='<span class="qc-who">'+Q+'</span>'+linkify(text);}else{d.textContent=text;}
     log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
   function bubHTML(html){var d=document.createElement("div");d.className="qc-b a";d.innerHTML='<span class="qc-who">'+Q+'</span>'+html;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
   function typing(){var d=document.createElement("div");d.className="qc-typing";d.textContent="Thinking\u2026";log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}

@@ -495,6 +495,8 @@
   .chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 24px 18px}
   .chip{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.5px;background:var(--off-white);border:1px solid var(--border);color:var(--navy);padding:8px 13px;border-radius:20px;cursor:pointer;transition:all .15s}
   .chip:hover{background:var(--gold);border-color:var(--gold);color:var(--navy-deep)}
+  .chip.role{background:var(--navy-deep);color:#fff;border-color:var(--navy-deep)}
+  .chip.role:hover{background:var(--gold);border-color:var(--gold);color:var(--navy-deep)}
   .chat-input{display:flex;gap:10px;padding:16px 18px;border-top:1px solid var(--border);background:#fbf9f4}
   .chat-input textarea{flex:1;resize:none;border:1px solid var(--border);border-radius:9px;padding:12px 14px;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.5;color:var(--text);background:#fff;min-height:48px;max-height:150px}
   .chat-input textarea:focus{outline:none;border-color:var(--gold)}
@@ -513,10 +515,12 @@
     <div id="notready" class="notready" style="display:none">The assistant is being connected right now. In the meantime, you can read the full framework on <a href="the-work.html">The Work</a> or reach us at <a href="contact.html">Contact</a>.</div>
     <div class="chat-log" id="log"></div>
     <div class="chips" id="chips">
+      <span class="chip role" data-q="I am a citizen. How can I find my representatives and their scores?">I&rsquo;m a citizen</span>
+      <span class="chip role" data-q="I am an elected official. Where can I see my Q Score and how do I respond to it?">Elected official</span>
+      <span class="chip role" data-q="I am a member of the press. Where is your scoring methodology and how do I request comment?">Press</span>
+      <span class="chip role" data-q="I am from another branch of government (executive or judicial). How does scoring apply to me?">Another branch</span>
       <span class="chip" data-q="What is the Colorado Economic Security Act, in plain language?">What is CESA?</span>
-      <span class="chip" data-q="How are the Q Scores calculated, and what makes someone an Accountability Champion?">How do Q Scores work?</span>
       <span class="chip" data-q="What are the seven pillars of life stability?">The seven pillars</span>
-      <span class="chip" data-q="How is CESA paid for without raising taxes?">How is it paid for?</span>
     </div>
     <div class="chat-input">
       <textarea id="box" placeholder="Ask a question, or paste a link to evaluate&hellip;" rows="1"></textarea>
@@ -541,11 +545,15 @@ var INTRO="Hi — I'm the Q Assistant. Ask me anything, or paste a link and I'll
 
 function bubble(role,text){
   var d=document.createElement('div'); d.className='bub '+(role==='user'?'u':'a');
-  if(role!=='user'){ d.innerHTML='<span class="who">Q Assistant</span>'+esc(text); }
+  if(role!=='user'){ d.innerHTML='<span class="who">Q Assistant</span>'+linkify(text); }
   else { d.textContent=text; }
   log.appendChild(d); log.scrollTop=log.scrollHeight; return d;
 }
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function linkify(t){t=esc(t);
+t=t.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|[a-z0-9_\-]+\.html[^\s)]*)\)/gi,function(_,txt,url){var ext=/^https?:/i.test(url);return '<a href="'+url+'"'+(ext?' target="_blank" rel="noopener"':'')+'>'+txt+'</a>';});
+t=t.replace(/(^|[\s(])(https?:\/\/[^\s<)]+)/g,function(m,pre,url){return pre+'<a href="'+url+'" target="_blank" rel="noopener">'+url+'</a>';});
+return t;}
 function bubbleHTML(html){var d=document.createElement('div');d.className='bub a';d.innerHTML='<span class="who">Q Assistant</span>'+html;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
 function autindicate(){var t=document.createElement('div');t.className='typing';t.textContent='Thinking…';log.appendChild(t);log.scrollTop=log.scrollHeight;return t;}
 

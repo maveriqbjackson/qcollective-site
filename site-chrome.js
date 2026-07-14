@@ -13,4 +13,5 @@
   var t=document.getElementById('q-chrome-top'); if(t){ t.innerHTML=TOP; }
   var f=document.getElementById('q-chrome-footer'); if(f){ f.innerHTML=FOOT; }
   document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ var o=document.getElementById('navov'); if(o) o.classList.remove('open'); } });
+  if(!document.querySelector('link[rel="icon"]')){ var fav=document.createElement('link'); fav.rel='icon'; fav.type='image/svg+xml'; fav.href='favicon.svg'; document.head.appendChild(fav); }
 })();
