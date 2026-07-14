@@ -28,6 +28,7 @@
   ".qc-log{flex:1;overflow-y:auto;padding:16px 15px;display:flex;flex-direction:column;gap:11px;background:#F9F6F0}" +
   ".qc-b{max-width:86%;padding:10px 13px;border-radius:13px;font-size:14px;line-height:1.55;white-space:pre-wrap;word-wrap:break-word}" +
   ".qc-b.a{align-self:flex-start;background:#fff;border:1px solid #E0D5BE;border-bottom-left-radius:4px;color:#1a1a1a}" +
+  ".qc-b.a a{color:#1B3A6B;text-decoration:underline;font-weight:500}" +
   ".qc-b.u{align-self:flex-end;background:#1B3A6B;color:#fff;border-bottom-right-radius:4px}" +
   ".qc-b.a .qc-who{display:block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.4px;text-transform:uppercase;color:#B8962E;margin-bottom:4px}" +
   ".qc-typing{align-self:flex-start;color:#5a5a5a;font-size:13px;font-style:italic;padding:2px 4px}" +
@@ -45,7 +46,7 @@
   var s = document.createElement("style"); s.textContent = CSS; document.head.appendChild(s);
 
   var Q = "Q Assistant";
-  var INTRO = "Hi \u2014 I'm the Q Assistant. Ask me about the Doctrine, a bill, the Q Scores, or paste a link and I'll weigh it against the seven pillars of life stability.";
+  var INTRO = "Hi \u2014 I'm the Q Assistant. Ask me anything, or paste a link and I'll weigh it against the seven pillars.<br><br><b>Quick links:</b> <a href='find-officials.html'>Find your reps</a> &middot; <a href='hub.html'>Q Scores</a> &middot; <a href='the-work.html'>The bills</a> &middot; <a href='support-a-bill.html'>Support a bill</a><br><br><b>Reach us:</b> <a href=\'contact.html\'>Contact</a> or <a href=\'work-with-us.html\'>Work with us</a>, or email team@theQcollective.org (Attention: mav QBJ).";
 
   var wrap = document.createElement("div");
   wrap.innerHTML =
@@ -75,10 +76,11 @@
   function bub(role,text){var d=document.createElement("div");d.className="qc-b "+(role==="user"?"u":"a");
     if(role!=="user"){d.innerHTML='<span class="qc-who">'+Q+'</span>'+esc(text);}else{d.textContent=text;}
     log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+  function bubHTML(html){var d=document.createElement("div");d.className="qc-b a";d.innerHTML='<span class="qc-who">'+Q+'</span>'+html;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
   function typing(){var d=document.createElement("div");d.className="qc-typing";d.textContent="Thinking\u2026";log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
 
   function open(){panel.classList.add("open");bubble.setAttribute("aria-expanded","true");bq.textContent="";bubble.querySelector(".qc-q").innerHTML='<span class="qc-x">&times;</span>';
-    if(!started){started=true;bub("assistant",INTRO);} setTimeout(function(){box.focus();},60); hideTip();}
+    if(!started){started=true;bubHTML(INTRO);} setTimeout(function(){box.focus();},60); hideTip();}
   function close(){panel.classList.remove("open");bubble.setAttribute("aria-expanded","false");bubble.querySelector(".qc-q").textContent="Q";}
   function toggle(){panel.classList.contains("open")?close():open();}
   function hideTip(){tip.classList.remove("show");clearTimeout(tipTimer);}
