@@ -60,7 +60,7 @@
       '<div class="qc-log" id="qcLog"></div>' +
       '<div class="qc-chips" id="qcChips">' +
         '<span class="qc-chip role" data-q="I am a citizen. How can I find my representatives and their scores?">I\u2019m a citizen</span>' +
-        '<span class="qc-chip role" data-q="I am an elected official. Where can I see my Q Score and how do I respond to it?">Elected official</span>' +
+        '<span class="qc-chip role" data-official="1">Elected official</span>' +
         '<span class="qc-chip role" data-q="I am a member of the press. Where is your scoring methodology and how do I request comment?">Press</span>' +
         '<span class="qc-chip role" data-q="I am from another branch of government (executive or judicial). How does scoring apply to me?">Another branch</span>' +
         '<span class="qc-chip" data-q="What is the Colorado Economic Security Act, in plain language?">What is CESA?</span>' +
@@ -94,8 +94,23 @@
   function toggle(){panel.classList.contains("open")?close():open();}
   function hideTip(){tip.classList.remove("show");clearTimeout(tipTimer);}
 
+  var awaitOfficial=false, rosterCache=null;
+  function startOfficialLookup(){bubHTML('Sure \u2014 type your name as it appears on the ballot (for example, <b>Jane Smith</b>) and I\u2019ll pull up your Q Score and profile.');awaitOfficial=true;box.focus();}
+  function lookupOfficial(name){var t=typing();function done(list){t.remove();matchOfficial(name,list);}
+    if(rosterCache){done(rosterCache);return;}
+    fetch('data/CO.json').then(function(r){return r.json();}).then(function(d){rosterCache=(d&&d.legislators)||[];done(rosterCache);}).catch(function(){t.remove();bub('assistant','I couldn\u2019t load the roster just now. You can find your profile via the Accountability Hub (hub.html) or Find Your Officials (find-officials.html).');});}
+  function matchOfficial(name,list){var q=name.toLowerCase().replace(/\s+/g,' ').trim();var hit=null,hits=[];
+    for(var i=0;i<list.length;i++){var n=(list[i].name||'').toLowerCase();if(n===q){hit=list[i];break;}
+      var pa=n.split(' '),pb=q.split(' ');if(n.indexOf(q)>=0||q.indexOf(n)>=0||pa[pa.length-1]===pb[pb.length-1])hits.push(list[i]);}
+    if(!hit&&hits.length===1)hit=hits[0];
+    if(hit){var url='legislator.html?state=CO&id='+encodeURIComponent(hit.id);var lab=hit.label?(' \u2014 '+esc(hit.label)):'';
+      bubHTML('Here you are, <b>'+esc(hit.name)+'</b> ('+esc(hit.role||'')+', District '+esc(String(hit.district||''))+'):<br><br>Your Q Score is <b>'+esc(String(hit.score))+'</b>'+lab+'.<br><br>See your full profile \u2014 every factor and the data behind it: <a href="'+url+'">Your profile &amp; record</a>. If anything needs context, you can submit an official response via <a href="contact.html">Contact</a>.');}
+    else if(hits.length>1){var links=hits.slice(0,6).map(function(h){return '<a href="legislator.html?state=CO&id='+encodeURIComponent(h.id)+'">'+esc(h.name)+'</a>';}).join(' &middot; ');
+      bubHTML('I found a few possible matches \u2014 which one is you? '+links);}
+    else{bubHTML('I couldn\u2019t find that exact name in the Colorado roster. Double-check the spelling, or browse everyone at <a href="find-officials.html">Find Your Officials</a> or the <a href="hub.html">Accountability Hub</a>.');}}
   function ask(text){
     if(!text.trim())return;
+    if(awaitOfficial){awaitOfficial=false;bub("user",text);box.value="";box.style.height="auto";lookupOfficial(text.trim());return;}
     bub("user",text);history.push({role:"user",content:text});
     box.value="";box.style.height="auto";send.disabled=true;
     var url=window.Q_WORKER_URL||"";
@@ -115,7 +130,7 @@
   send.addEventListener("click",function(){ask(box.value);});
   box.addEventListener("keydown",function(e){if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();ask(box.value);}});
   box.addEventListener("input",function(){box.style.height="auto";box.style.height=Math.min(box.scrollHeight,120)+"px";});
-  chips.addEventListener("click",function(e){if(e.target.classList.contains("qc-chip"))ask(e.target.getAttribute("data-q"));});
+  chips.addEventListener("click",function(e){if(!e.target.classList.contains("qc-chip"))return;if(e.target.getAttribute("data-official")){startOfficialLookup();return;}ask(e.target.getAttribute("data-q"));});
   document.addEventListener("keydown",function(e){if(e.key==="Escape"&&panel.classList.contains("open"))close();});
 
   // gentle first-visit nudge
