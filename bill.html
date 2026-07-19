@@ -554,7 +554,9 @@ function taTab(btn,sup){var w=btn.closest('.ta-card');var ts=w.querySelectorAll(
 function taCopyMsg(btn){var w=btn.closest('.ta-card');var el=w.querySelector('#ta-support');if(el.style.display==='none')el=w.querySelector('#ta-oppose');el.select();try{navigator.clipboard.writeText(el.value);}catch(e){try{document.execCommand('copy');}catch(e2){}}var o=btn.textContent;btn.textContent='Copied \u2713';setTimeout(function(){btn.textContent=o;},1600);}
 function taCopyLink(btn){try{navigator.clipboard.writeText(location.href);}catch(e){}var o=btn.textContent;btn.textContent='Link copied \u2713';setTimeout(function(){btn.textContent=o;},1600);}
 function taToggle(btn){var d=btn.nextElementSibling;d.classList.toggle('open');btn.textContent=d.classList.contains('open')?'\u2013 Hide the testimony guide':'+ How to testify on this bill';}
-function taFollow(e,f){e.preventDefault();var m=f.querySelector('.ta-fmsg');m.textContent='Saving\u2026';fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)}).then(function(r){return r.json();}).then(function(){f.reset();m.textContent='Done \u2014 we will email you when this bill moves.';}).catch(function(){m.textContent='Something went wrong \u2014 please try again.';});return false;}
+function taFollow(e,f){e.preventDefault();var m=f.querySelector('.ta-fmsg');m.textContent='Saving\u2026';fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)}).then(function(r){return r.json();}).then(function(){f.reset();m.textContent='Done \u2014 you are on the watch list. We will reach out when live alerts launch.';}).catch(function(){m.textContent='Something went wrong \u2014 please try again.';});return false;}
+function _billSaved(n){try{var a=JSON.parse(localStorage.getItem('qc_mybills')||'[]');for(var i=0;i<a.length;i++){if(String(a[i].number)===String(n))return true;}return false;}catch(e){return false;}}
+function taStarBill(btn){var n=btn.getAttribute('data-number'),t=btn.getAttribute('data-title');var a;try{a=JSON.parse(localStorage.getItem('qc_mybills')||'[]');}catch(e){a=[];}var i=-1;for(var j=0;j<a.length;j++){if(String(a[j].number)===String(n)){i=j;break;}}if(i>-1){a.splice(i,1);btn.innerHTML='\u2606 Save to My Bills';}else{a.push({number:n,title:t});btn.innerHTML='\u2605 Saved to My Bills';}try{localStorage.setItem('qc_mybills',JSON.stringify(a));}catch(e){}}
 function takeAction(number,title){
   var k="da0f4760-ac24-433c-b27f-52058241488e";var ttl=title||number;
   var sup="Dear Representative or Senator,\n\nI am a constituent writing to urge you to SUPPORT "+number+" \u2014 "+ttl+".\n\n[Add one sentence on why this matters to you.]\n\nPlease vote yes. Thank you for your service.\n\nSincerely,\n[Your name] \u00b7 [Your city or ZIP]";
@@ -577,9 +579,11 @@ function takeAction(number,title){
   +'<li><b>Keep it short.</b> You usually get about 3 minutes. Say who you are, whether you support or oppose '+esc(number)+', and one real reason why.</li>'
   +'<li><b>A simple structure:</b> \u201cMy name is ___, I live in ___. I am here to [support/oppose] '+esc(number)+'. This matters to me because ___. I urge a [yes/no] vote. Thank you.\u201d</li>'
   +'</ol></div></div>'
-  +'<div class="ta-card"><h3>Follow this bill</h3><p>Get an email from us when '+esc(number)+' moves \u2014 a new vote, a status change, a hearing.</p>'
-  +'<form onsubmit="return taFollow(event,this)"><input type="hidden" name="access_key" value="'+k+'"><input type="hidden" name="subject" value="Follow bill \u2014 '+esc(number)+'"><input type="hidden" name="bill" value="'+esc(number)+'">'
-  +'<div class="ta-follow"><input type="email" name="email" placeholder="you@email.com" required><button class="ta-btn" type="submit">Notify me</button></div>'
+  +'<div class="ta-card"><h3>Follow this bill</h3><p>Save it to your personal <b>My Bills</b> list \u2014 it shows where the bill is in the process and updates as it moves.</p>'
+  +'<button class="ta-btn" data-number="'+esc(number)+'" data-title="'+esc(ttl)+'" onclick="taStarBill(this)">'+(_billSaved(number)?'\u2605 Saved to My Bills':'\u2606 Save to My Bills')+'</button>'
+  +'<p style="margin:16px 0 8px;font-size:13px;color:var(--text-light)">Want an email when it changes? Join our watch list \u2014 we will notify you once live bill alerts are on.</p>'
+  +'<form onsubmit="return taFollow(event,this)"><input type="hidden" name="access_key" value="'+k+'"><input type="hidden" name="subject" value="Watch list \u2014 '+esc(number)+'"><input type="hidden" name="bill" value="'+esc(number)+'">'
+  +'<div class="ta-follow"><input type="email" name="email" placeholder="you@email.com" required><button class="ta-btn" type="submit">Join the watch list</button></div>'
   +'<p class="ta-fmsg" style="font-size:12px;color:var(--text-muted);margin:8px 0 0"></p></form></div>';
 }
 
