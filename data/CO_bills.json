@@ -117522,6 +117522,21 @@
      "date": "2026-04-16"
     },
     {
+     "action": "House Considered Senate Amendments - Result was to Not Concur - Request Conference Committee",
+     "chamber": "H",
+     "date": "2026-04-17"
+    },
+    {
+     "action": "Senate Consideration of First Conference Committee Report result was to Adopt Committee Report - Repass",
+     "chamber": "S",
+     "date": "2026-04-24"
+    },
+    {
+     "action": "House Consideration of First Conference Committee Report result was to Adopt Committee Report - Repass",
+     "chamber": "H",
+     "date": "2026-04-28"
+    },
+    {
      "action": "Signed by the Speaker of the House",
      "chamber": "H",
      "date": "2026-06-03"
@@ -117532,29 +117547,14 @@
      "date": "2026-06-03"
     },
     {
-     "action": "House Considered Senate Amendments - Result was to Not Concur - Request Conference Committee",
-     "chamber": "H",
-     "date": "2026-04-17"
-    },
-    {
      "action": "Sent to the Governor",
      "chamber": "",
      "date": "2026-06-03"
     },
     {
-     "action": "Senate Consideration of First Conference Committee Report result was to Adopt Committee Report - Repass",
-     "chamber": "S",
-     "date": "2026-04-24"
-    },
-    {
      "action": "Governor Signed",
      "chamber": "",
      "date": "2026-06-04"
-    },
-    {
-     "action": "House Consideration of First Conference Committee Report result was to Adopt Committee Report - Repass",
-     "chamber": "H",
-     "date": "2026-04-28"
     }
    ],
    "number": "HB1399",
@@ -117592,28 +117592,28 @@
      "event": "Referred"
     },
     {
-     "date": "2026-06-03",
-     "event": "Engrossed"
-    },
-    {
-     "date": "2026-06-03",
-     "event": "Engrossed"
-    },
-    {
-     "date": "2026-06-03",
+     "date": "2026-04-24",
      "event": "Enrolled"
     },
     {
-     "date": "2026-04-24",
+     "date": "2026-04-28",
+     "event": "Enrolled"
+    },
+    {
+     "date": "2026-06-03",
+     "event": "Engrossed"
+    },
+    {
+     "date": "2026-06-03",
+     "event": "Engrossed"
+    },
+    {
+     "date": "2026-06-03",
      "event": "Enrolled"
     },
     {
      "date": "2026-06-04",
      "event": "Passed"
-    },
-    {
-     "date": "2026-04-28",
-     "event": "Enrolled"
     }
    ],
    "sponsors": [
