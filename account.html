@@ -483,17 +483,27 @@
 <div id="q-chrome-top"></div>
 
 <style>
-  .acct-wrap{max-width:520px;margin:0 auto;padding:6px 24px 64px}
+  .acct-wrap{max-width:540px;margin:0 auto;padding:6px 24px 64px}
   .acct-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px 26px;margin-bottom:16px}
   .acct-card h3{font-family:'Playfair Display',Georgia,serif;font-size:20px;color:var(--navy-deep);margin:0 0 8px}
-  .acct-card p{font-size:14px;color:var(--text-light);line-height:1.6;margin:0 0 16px}
+  .acct-card p{font-size:14px;color:var(--text-light);line-height:1.6;margin:0 0 14px}
+  .acct-sub{font-size:13px;color:var(--text-light);margin:2px 0 8px}
+  .role-pick{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+  .role-btn{flex:1;min-width:150px;border:1px solid var(--border);background:var(--off-white);color:var(--text);cursor:pointer;font-size:13.5px;padding:13px 12px;border-radius:9px;font-weight:500}
+  .role-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
   .acct-input{width:100%;border:1px solid var(--border);border-radius:9px;padding:13px 15px;font-size:15px;box-sizing:border-box;margin-bottom:12px}
+  .off-results{border:1px solid var(--border);border-radius:9px;overflow:hidden;margin-bottom:10px;display:none}
+  .off-item{padding:10px 14px;font-size:14px;cursor:pointer;border-top:1px solid var(--border)}
+  .off-item:first-child{border-top:none}
+  .off-item:hover{background:var(--off-white)}
+  .off-chosen{font-size:13.5px;color:var(--navy-deep);font-weight:600;margin:0 0 12px;display:none}
   .acct-btn{display:inline-block;border:none;cursor:pointer;background:var(--gold);color:var(--navy-deep);font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:13px 24px;border-radius:8px;font-weight:500}
   .acct-btn:hover{background:var(--gold-light)}
   .acct-btn.ghost{background:transparent;border:1px solid var(--border);color:var(--navy-deep)}
   .acct-msg{font-size:13px;color:var(--navy-deep);margin:10px 0 0;min-height:18px}
   .acct-note{font-size:12.5px;color:var(--text-light);line-height:1.6;background:var(--off-white);border:1px solid var(--border);border-radius:9px;padding:13px 15px;margin-top:18px}
   .acct-note b{color:var(--navy-deep)}
+  .pend{background:var(--gold-pale);border:1px solid var(--gold);border-radius:9px;padding:13px 15px;font-size:13.5px;color:var(--navy-deep);line-height:1.6;margin:0 0 14px}
 </style>
 
 <section class="pagehead"><p class="ph-eyebrow">Your Account</p><h1>Sign in</h1>
@@ -503,18 +513,30 @@
   <div id="acctOut">
     <div class="acct-card">
       <h3>Sign in or create your account</h3>
-      <p>Enter your email and we&rsquo;ll send a secure sign-in link &mdash; no password needed.</p>
+      <p>First &mdash; who are you?</p>
+      <div class="role-pick">
+        <button type="button" class="role-btn active" data-role="citizen">I&rsquo;m a citizen</button>
+        <button type="button" class="role-btn" data-role="official">I&rsquo;m an elected official</button>
+      </div>
+      <div id="officialPick" style="display:none">
+        <p class="acct-sub">Which official are you? We&rsquo;ll verify this before you can respond to your record.</p>
+        <input id="offSearch" class="acct-input" placeholder="Start typing your name\u2026" autocomplete="off">
+        <div id="offResults" class="off-results"></div>
+        <p id="offChosen" class="off-chosen"></p>
+      </div>
       <input id="acctEmail" type="email" placeholder="you@email.com" class="acct-input" autocomplete="email">
       <button id="acctBtn" class="acct-btn">Send my sign-in link</button>
       <p id="acctMsg" class="acct-msg"></p>
-      <div class="acct-note"><b>Are you an elected official?</b> Sign in with your official <b>@coleg.gov</b> email &mdash; clicking the link proves it&rsquo;s really you, so you can respond to your record. Using a personal email? You can still sign in, but we&rsquo;ll confirm with your office before verifying you as an official. We never let anyone post as an official without a fact-check.</div>
+      <div class="acct-note"><b>Officials:</b> pick your name above and sign in with your official <b>government email</b> (for Colorado legislators, that&rsquo;s your <b>@coleg.gov</b> address) &mdash; clicking the link proves it&rsquo;s really you. If you use a personal email, we&rsquo;ll confirm with your office before verifying you. We never let anyone post as an official without a fact-check.</div>
     </div>
   </div>
+
   <div id="acctIn" style="display:none">
     <div class="acct-card">
       <h3>You&rsquo;re signed in</h3>
       <p id="acctWho"></p>
-      <p>Your saved reps and bills will sync to this account across devices. Syncing and the official response tools are being wired in next.</p>
+      <div id="acctStatus"></div>
+      <p>Your saved reps and bills will sync to this account across devices. Syncing and the response tools are being wired in next.</p>
       <button id="acctOutBtn" class="acct-btn ghost">Sign out</button>
     </div>
   </div>
@@ -523,17 +545,74 @@
 <script src="q-auth.js"></script>
 <script>
 (function(){
+  var role='citizen', chosenId=null, chosenName=null, roster=null;
   var out=document.getElementById('acctOut'), inn=document.getElementById('acctIn'), msg=document.getElementById('acctMsg');
-  function show(user){ if(user){ out.style.display='none'; inn.style.display='block'; document.getElementById('acctWho').innerHTML='Signed in as <b>'+((user.email||'').replace(/</g,'&lt;'))+'</b>'; } else { out.style.display='block'; inn.style.display='none'; } }
+  var offPick=document.getElementById('officialPick'), offSearch=document.getElementById('offSearch'),
+      offResults=document.getElementById('offResults'), offChosen=document.getElementById('offChosen');
+
+  // role selector
+  document.querySelectorAll('.role-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('.role-btn').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); role=b.getAttribute('data-role');
+      offPick.style.display=(role==='official')?'block':'none';
+      if(role==='official' && !roster){ fetch('data/CO.json').then(function(r){return r.json();}).then(function(d){roster=(d&&d.legislators)||[];}).catch(function(){roster=[];}); }
+    });
+  });
+  // official search
+  offSearch && offSearch.addEventListener('input', function(){
+    var q=(offSearch.value||'').toLowerCase().trim(); offChosen.style.display='none'; chosenId=null; chosenName=null;
+    if(!q||!roster){ offResults.style.display='none'; offResults.innerHTML=''; return; }
+    var hits=roster.filter(function(p){return (p.name||'').toLowerCase().indexOf(q)>=0;}).slice(0,8);
+    offResults.innerHTML=hits.map(function(p){return '<div class="off-item" data-id="'+p.id+'" data-name="'+(p.name||'').replace(/"/g,'')+'">'+(p.name||'')+' \u00b7 '+(p.role||'')+(p.district?' \u00b7 D'+p.district:'')+'</div>';}).join('');
+    offResults.style.display=hits.length?'block':'none';
+  });
+  offResults && offResults.addEventListener('click', function(e){
+    var it=e.target.closest('.off-item'); if(!it)return;
+    chosenId=it.getAttribute('data-id'); chosenName=it.getAttribute('data-name');
+    offSearch.value=chosenName; offResults.style.display='none';
+    offChosen.textContent='Selected: '+chosenName; offChosen.style.display='block';
+  });
+
+  function show(user){
+    if(user){ out.style.display='none'; inn.style.display='block';
+      document.getElementById('acctWho').innerHTML='Signed in as <b>'+((user.email||'').replace(/</g,'&lt;'))+'</b>';
+    } else { out.style.display='block'; inn.style.display='none'; }
+  }
+
   window.qcReady.then(function(qc){
     if(!qc){ msg.textContent='Sign-in service is unavailable right now. Please try again shortly.'; return; }
-    qc.auth.getSession().then(function(r){ show(r && r.data && r.data.session ? r.data.session.user : null); });
-    qc.auth.onAuthStateChange(function(_e, session){ show(session ? session.user : null); });
+
+    function afterLogin(user){
+      show(user);
+      // apply signup intent (role + claimed official) to the profile
+      var intent=null; try{intent=JSON.parse(localStorage.getItem('qc_signup_intent')||'null');}catch(e){}
+      if(!intent && user.user_metadata && user.user_metadata.account_type){ intent={role:user.user_metadata.account_type, personId:user.user_metadata.claimed_person_id, personName:user.user_metadata.claimed_person_name}; }
+      var write=Promise.resolve();
+      if(intent && intent.role==='official' && intent.personId){
+        write=qc.from('profiles').update({account_type:'official', claimed_person_id:String(intent.personId)}).eq('id', user.id);
+      }
+      try{localStorage.removeItem('qc_signup_intent');}catch(e){}
+      // read profile and show status
+      Promise.resolve(write).then(function(){ return qc.from('profiles').select('account_type,claimed_person_id,official_status').eq('id',user.id).single(); })
+        .then(function(res){ var p=res&&res.data; var box=document.getElementById('acctStatus'); if(!box)return;
+          if(p && p.account_type==='official'){
+            if(p.official_status==='verified'){ box.innerHTML='<div class="pend" style="background:#e6f4ec;border-color:#1a764d">\u2713 Verified official. You can respond to your record.</div>'; }
+            else { box.innerHTML='<div class="pend">Your official account is <b>pending verification</b>. We\u2019ll confirm it\u2019s really you \u2014 through your official email or your office \u2014 before you can respond to your record. You\u2019re on our review list.</div>'; }
+          } else { box.innerHTML=''; }
+        }).catch(function(){});
+    }
+
+    qc.auth.getSession().then(function(r){ var u=r&&r.data&&r.data.session?r.data.session.user:null; if(u)afterLogin(u); else show(null); });
+    qc.auth.onAuthStateChange(function(_e, session){ if(session&&session.user)afterLogin(session.user); else show(null); });
+
     document.getElementById('acctBtn').addEventListener('click', function(){
       var email=(document.getElementById('acctEmail').value||'').trim();
       if(!email){ msg.textContent='Please enter your email.'; return; }
+      if(role==='official' && !chosenId){ msg.textContent='Please pick your name from the list above.'; return; }
+      try{localStorage.setItem('qc_signup_intent', JSON.stringify({role:role, personId:chosenId, personName:chosenName}));}catch(e){}
       msg.textContent='Sending\u2026';
-      qc.auth.signInWithOtp({ email: email, options:{ emailRedirectTo: location.origin+'/account.html' } })
+      qc.auth.signInWithOtp({ email: email, options:{ emailRedirectTo: location.origin+'/account.html', data:{ account_type: role, claimed_person_id: chosenId, claimed_person_name: chosenName } } })
         .then(function(res){ msg.textContent = (res && res.error) ? ('Error: '+res.error.message) : 'Check your email \u2014 we sent you a sign-in link.'; })
         .catch(function(){ msg.textContent='Something went wrong. Please try again.'; });
     });
