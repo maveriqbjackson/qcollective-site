@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Your Account — The Q Collective</title>
+<title>Response Policy — The Q Collective</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -483,218 +483,69 @@
 <div id="q-chrome-top"></div>
 
 <style>
-  .acct-wrap{max-width:620px;margin:0 auto;padding:6px 24px 64px}
-  .acct-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:26px 24px;margin-bottom:16px}
-  .acct-card h3{font-family:'Playfair Display',Georgia,serif;font-size:20px;color:var(--navy-deep);margin:0 0 8px}
-  .acct-card p{font-size:14px;color:var(--text-light);line-height:1.6;margin:0 0 14px}
-  .acct-sub{font-size:13px;color:var(--text-light);margin:2px 0 8px}
-  .role-pick{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
-  .role-btn{flex:1;min-width:150px;border:1px solid var(--border);background:var(--off-white);color:var(--text);cursor:pointer;font-size:13.5px;padding:13px 12px;border-radius:9px;font-weight:500}
-  .role-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-  .acct-input,.acct-sel{width:100%;border:1px solid var(--border);border-radius:9px;padding:13px 15px;font-size:15px;box-sizing:border-box;margin-bottom:12px;font-family:inherit;background:#fff}
-  .acct-ta{width:100%;min-height:150px;border:1px solid var(--border);border-radius:9px;padding:13px 15px;font-size:14px;line-height:1.55;box-sizing:border-box;font-family:inherit;resize:vertical}
-  .off-results{border:1px solid var(--border);border-radius:9px;overflow:hidden;margin-bottom:10px;display:none}
-  .off-item{padding:10px 14px;font-size:14px;cursor:pointer;border-top:1px solid var(--border)}
-  .off-item:first-child{border-top:none}.off-item:hover{background:var(--off-white)}
-  .off-chosen{font-size:13.5px;color:var(--navy-deep);font-weight:600;margin:0 0 12px;display:none}
-  .acct-btn{display:inline-block;border:none;cursor:pointer;background:var(--gold);color:var(--navy-deep);font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:13px 24px;border-radius:8px;font-weight:500}
-  .acct-btn:hover{background:var(--gold-light)}
-  .acct-btn.ghost{background:transparent;border:1px solid var(--border);color:var(--navy-deep)}
-  .acct-msg{font-size:13px;color:var(--navy-deep);margin:10px 0 0;min-height:18px}
-  .acct-note{font-size:12.5px;color:var(--text-light);line-height:1.6;background:var(--off-white);border:1px solid var(--border);border-radius:9px;padding:13px 15px;margin-top:18px}
-  .acct-note b{color:var(--navy-deep)}
-  .pend{background:var(--gold-pale);border:1px solid var(--gold);border-radius:9px;padding:13px 15px;font-size:13.5px;color:var(--navy-deep);line-height:1.6;margin:0 0 14px}
-  .ok-box{background:#e6f4ec;border:1px solid #1a764d;border-radius:9px;padding:13px 15px;font-size:13.5px;color:#0f4d33;line-height:1.6;margin:0 0 14px}
-  .cc{font-family:'DM Mono',monospace;font-size:11px;color:var(--text-muted);text-align:right;margin:-4px 0 12px}
-  .sub-row{border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:10px;background:var(--off-white)}
-  .sub-top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:6px;flex-wrap:wrap}
-  .sub-kind{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:var(--navy-deep)}
-  .sub-st{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.6px;text-transform:uppercase;padding:4px 9px;border-radius:5px}
-  .st-pending{background:var(--gold-pale);color:var(--navy-deep)}
-  .st-published{background:#1a764d;color:#fff}
-  .st-declined{background:#822111;color:#fff}
-  .sub-body{font-size:13.5px;color:var(--text-light);line-height:1.55;margin:0}
-  .sub-date{font-family:'DM Mono',monospace;font-size:10px;color:var(--text-muted);margin-top:6px}
+  .rp{max-width:760px;margin:0 auto;padding:8px 24px 64px}
+  .rp h2{font-family:'Playfair Display',Georgia,serif;font-size:21px;color:var(--navy-deep);margin:34px 0 8px}
+  .rp p{font-size:15px;line-height:1.7;color:var(--text-light);margin:0 0 13px}
+  .rp ul{margin:0 0 14px 20px;padding:0}
+  .rp li{font-size:15px;line-height:1.7;color:var(--text-light);margin-bottom:8px}
+  .rp b{color:var(--navy-deep)}
+  .rp-key{background:var(--navy-deep);border-radius:12px;padding:22px 26px;margin:6px 0 12px}
+  .rp-key p{color:#fff;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:17px;line-height:1.55;text-align:center;margin:0}
+  .rp-key .g{color:var(--gold-light);font-style:normal}
+  .rp-note{background:var(--off-white);border:1px solid var(--border);border-radius:10px;padding:16px 20px;font-size:13.5px;color:var(--text-light);line-height:1.65;margin-top:26px}
 </style>
 
-<section class="pagehead"><p class="ph-eyebrow">Your Account</p><h1>Sign in</h1>
-<p>Create a free account to sync your saved reps and bills across every device. Verified elected officials can respond to their own record.</p></section>
+<section class="pagehead"><p class="ph-eyebrow">Response Policy</p><h1>The right to respond.</h1>
+<p>We publish an accountability record. Anyone we score has a permanent, unedited right to answer it. This page is the whole standard &mdash; applied the same way to every official, of every party.</p></section>
 
-<div class="acct-wrap">
-  <div id="acctOut">
-    <div class="acct-card">
-      <h3>Sign in or create your account</h3>
-      <p>First &mdash; who are you?</p>
-      <div class="role-pick">
-        <button type="button" class="role-btn active" data-role="citizen">I&rsquo;m a citizen</button>
-        <button type="button" class="role-btn" data-role="official">I&rsquo;m an elected official</button>
-      </div>
-      <div id="officialPick" style="display:none">
-        <p class="acct-sub">Which official are you? We&rsquo;ll verify this before you can respond to your record.</p>
-        <input id="offSearch" class="acct-input" placeholder="Start typing your name\u2026" autocomplete="off">
-        <div id="offResults" class="off-results"></div>
-        <p id="offChosen" class="off-chosen"></p>
-      </div>
-      <input id="acctEmail" type="email" placeholder="you@email.com" class="acct-input" autocomplete="email">
-      <button id="acctBtn" class="acct-btn">Send my sign-in link</button>
-      <p id="acctMsg" class="acct-msg"></p>
-      <div class="acct-note"><b>Officials:</b> pick your name above and sign in with your official <b>government email</b> (for Colorado legislators, that&rsquo;s your <b>@coleg.gov</b> address) &mdash; clicking the link proves it&rsquo;s really you. If you use a personal email, we&rsquo;ll confirm with your office before verifying you. We never let anyone post as an official without a fact-check.</div>
-    </div>
-  </div>
+<div class="rp">
 
-  <div id="acctIn" style="display:none">
-    <div class="acct-card">
-      <h3>You&rsquo;re signed in</h3>
-      <p id="acctWho"></p>
-      <div id="acctStatus"></div>
-      <p id="acctSaved" style="margin:0 0 14px"></p>
-      <button id="acctOutBtn" class="acct-btn ghost">Sign out</button>
-    </div>
+  <div class="rp-key"><p>&ldquo;We measure the record. <span class="g">They get the last word on what it meant.</span>&rdquo;</p></div>
 
-    <div id="respondCard" class="acct-card" style="display:none">
-      <h3>Respond to your record</h3>
-      <p>Add context in your own words. We publish responses unedited, clearly labeled and dated. <a href="response-policy.html">Read the Response Policy &rarr;</a></p>
-      <select id="respKind" class="acct-sel">
-        <option value="profile">About my record or Q Score</option>
-        <option value="bill">About a specific bill or vote</option>
-      </select>
-      <input id="respBill" class="acct-input" placeholder="Bill number (e.g. HB25-1001)" style="display:none" list="billList">
-      <datalist id="billList"></datalist>
-      <textarea id="respBody" class="acct-ta" maxlength="1500" placeholder="Write your response\u2026"></textarea>
-      <p class="cc"><span id="ccNum">0</span>/1500</p>
-      <button id="respBtn" class="acct-btn">Submit for review</button>
-      <p id="respMsg" class="acct-msg"></p>
-      <div class="acct-note">Responses are reviewed before publishing, and they <b>do not affect your Q Score</b> &mdash; scores are calculated from the public record only.</div>
-    </div>
+  <h2>Who can respond</h2>
+  <p>Any currently serving elected official we score, or their office acting on their behalf. Responses can only be submitted from a <b>verified account</b>.</p>
 
-    <div id="subsCard" class="acct-card" style="display:none">
-      <h3>Your submissions</h3>
-      <div id="subsList"></div>
-    </div>
-  </div>
+  <h2>How we verify an official</h2>
+  <p>We confirm identity before a single word is published. There are two paths:</p>
+  <ul>
+    <li><b>Official email.</b> Signing in with a government email address (for Colorado legislators, an <b>&#64;coleg.gov</b> address) proves control of that inbox.</li>
+    <li><b>Office confirmation.</b> If a personal email is used, we contact the official&rsquo;s office directly to confirm the request is genuine.</li>
+  </ul>
+  <p>Until verification is complete, an account cannot publish anything as that official. <b>No one posts as an elected official on this site without a fact-check.</b></p>
+
+  <h2>What we publish</h2>
+  <p>Responses must be anchored to something in the public record. In practice, that means:</p>
+  <ul>
+    <li><b>A specific bill or vote</b> &mdash; why they voted the way they did.</li>
+    <li><b>Their record or Q Score</b> &mdash; context, disagreement, or correction.</li>
+  </ul>
+  <p>We publish these <b>unedited</b>, clearly labeled &ldquo;In Their Words,&rdquo; dated, and visually distinct from our data. We do not rewrite, trim, or summarize an official&rsquo;s response.</p>
+
+  <h2>What we don&rsquo;t publish</h2>
+  <p>This is an accountability record, not a publishing platform. We decline:</p>
+  <ul>
+    <li>General commentary or press releases not tied to a specific bill, vote, or score.</li>
+    <li>Campaign material, fundraising appeals, or election appeals.</li>
+    <li>Personal attacks, or content targeting private individuals.</li>
+    <li>Anything unlawful, or any claim presented as our finding rather than their statement.</li>
+  </ul>
+  <p>If we decline something, we say so in the submitting account, with the reason.</p>
+
+  <h2>Responses never change a score</h2>
+  <p><b>Q Scores are calculated from the public record alone.</b> Responding cannot raise a score, and declining to respond cannot lower one. There is no version of this system where talking to us improves a number. That separation is the point &mdash; it is what makes both the score and the response worth reading.</p>
+
+  <h2>Corrections</h2>
+  <p>If an official believes our underlying data is factually wrong &mdash; a vote recorded incorrectly, a bill misattributed &mdash; that is a <b>correction</b>, not a response, and we treat it with priority. Verified errors are fixed at the source and noted in our public audit log.</p>
+
+  <h2>Who is speaking</h2>
+  <p>Accounts are verified to the <b>office</b>. In practice, staff often write on an official&rsquo;s behalf &mdash; that is normal and expected. Published responses are attributed to the elected official, who is responsible for them.</p>
+
+  <h2>Length and timing</h2>
+  <p>Responses are limited to <b>1,500 characters</b> &mdash; enough for a real explanation, short enough to stay readable. We review submissions in the order received. There is no limit on how many times an official may respond over time.</p>
+
+  <div class="rp-note"><b>One standard, applied equally.</b> This policy is public so that no official has to wonder how they will be treated, and no citizen has to wonder whether someone got special handling. If you believe we have applied it unevenly, write to us at team&#64;theQcollective.org and say so plainly &mdash; we would rather hear it than not.<br><br>Published by The Q Collective LLC / Doctrine Policy Group.</div>
+
 </div>
-
-<script src="q-auth.js"></script>
-<script>
-(function(){
-  var role='citizen', chosenId=null, chosenName=null, roster=null, ME=null, PROF=null;
-  var out=document.getElementById('acctOut'), inn=document.getElementById('acctIn'), msg=document.getElementById('acctMsg');
-  var offPick=document.getElementById('officialPick'), offSearch=document.getElementById('offSearch'),
-      offResults=document.getElementById('offResults'), offChosen=document.getElementById('offChosen');
-  function esc(t){return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-
-  document.querySelectorAll('.role-btn').forEach(function(b){
-    b.addEventListener('click',function(){
-      document.querySelectorAll('.role-btn').forEach(function(x){x.classList.remove('active');});
-      b.classList.add('active'); role=b.getAttribute('data-role');
-      offPick.style.display=(role==='official')?'block':'none';
-      if(role==='official'&&!roster){fetch('data/CO.json').then(function(r){return r.json();}).then(function(d){roster=(d&&d.legislators)||[];}).catch(function(){roster=[];});}
-    });
-  });
-  offSearch&&offSearch.addEventListener('input',function(){
-    var q=(offSearch.value||'').toLowerCase().trim(); offChosen.style.display='none'; chosenId=null; chosenName=null;
-    if(!q||!roster){offResults.style.display='none';offResults.innerHTML='';return;}
-    var hits=roster.filter(function(p){return (p.name||'').toLowerCase().indexOf(q)>=0;}).slice(0,8);
-    offResults.innerHTML=hits.map(function(p){return '<div class="off-item" data-id="'+esc(p.id)+'" data-name="'+esc(p.name)+'">'+esc(p.name)+' \u00b7 '+esc(p.role||'')+(p.district?' \u00b7 D'+esc(p.district):'')+'</div>';}).join('');
-    offResults.style.display=hits.length?'block':'none';
-  });
-  offResults&&offResults.addEventListener('click',function(e){
-    var it=e.target.closest('.off-item'); if(!it)return;
-    chosenId=it.getAttribute('data-id'); chosenName=it.getAttribute('data-name');
-    offSearch.value=chosenName; offResults.style.display='none';
-    offChosen.textContent='Selected: '+chosenName; offChosen.style.display='block';
-  });
-
-  var ta=document.getElementById('respBody'), cc=document.getElementById('ccNum');
-  ta&&ta.addEventListener('input',function(){cc.textContent=ta.value.length;});
-  document.getElementById('respKind').addEventListener('change',function(){
-    document.getElementById('respBill').style.display=(this.value==='bill')?'block':'none';
-  });
-
-  function show(u){ if(u){out.style.display='none';inn.style.display='block';document.getElementById('acctWho').innerHTML='Signed in as <b>'+esc(u.email)+'</b>';} else {out.style.display='block';inn.style.display='none';} }
-
-  function savedSummary(){
-    var r=0,b=0; try{r=(JSON.parse(localStorage.getItem('qc_myreps')||'[]')).length;}catch(e){}
-    try{b=(JSON.parse(localStorage.getItem('qc_mybills')||'[]')).length;}catch(e){}
-    document.getElementById('acctSaved').innerHTML='Synced to this account: <b>'+r+'</b> saved rep'+(r===1?'':'s')+' and <b>'+b+'</b> saved bill'+(b===1?'':'s')+'. <a href="hub.html">Open the Hub &rarr;</a>';
-  }
-
-  function loadSubs(qc){
-    qc.from('submissions').select('id,kind,subject_bill_number,body,status,created_at').eq('user_id',ME.id).order('created_at',{ascending:false})
-      .then(function(res){
-        var rows=(res&&res.data)||[]; var box=document.getElementById('subsCard'), list=document.getElementById('subsList');
-        if(!rows.length){box.style.display='none';return;}
-        list.innerHTML=rows.map(function(s){
-          var what=s.subject_bill_number?('Bill \u00b7 '+esc(s.subject_bill_number)):'My record';
-          var d=(s.created_at||'').slice(0,10);
-          return '<div class="sub-row"><div class="sub-top"><span class="sub-kind">'+what+'</span><span class="sub-st st-'+esc(s.status)+'">'+esc(s.status)+'</span></div><p class="sub-body">'+esc(String(s.body||'').slice(0,240))+(String(s.body||'').length>240?'\u2026':'')+'</p><div class="sub-date">'+esc(d)+'</div></div>';
-        }).join('');
-        box.style.display='block';
-      }).catch(function(){});
-  }
-
-  function afterLogin(qc,u){
-    ME=u; show(u); savedSummary();
-    var intent=null; try{intent=JSON.parse(localStorage.getItem('qc_signup_intent')||'null');}catch(e){}
-    if(!intent&&u.user_metadata&&u.user_metadata.account_type){intent={role:u.user_metadata.account_type,personId:u.user_metadata.claimed_person_id,personName:u.user_metadata.claimed_person_name};}
-    var w=Promise.resolve();
-    if(intent&&intent.role==='official'&&intent.personId){w=qc.from('profiles').update({account_type:'official',claimed_person_id:String(intent.personId)}).eq('id',u.id);}
-    try{localStorage.removeItem('qc_signup_intent');}catch(e){}
-    Promise.resolve(w).then(function(){return qc.from('profiles').select('account_type,claimed_person_id,official_status').eq('id',u.id).single();})
-      .then(function(res){
-        PROF=(res&&res.data)||{}; var box=document.getElementById('acctStatus');
-        if(PROF.account_type==='official'){
-          if(PROF.official_status==='verified'){
-            box.innerHTML='<div class="ok-box">\u2713 <b>Verified official.</b> You can respond to your record below.</div>';
-            document.getElementById('respondCard').style.display='block';
-            fetch('data/CO_bills.json').then(function(r){return r.json();}).then(function(d){
-              var bl=(d&&(d.bills||d))||[]; var arr=Array.isArray(bl)?bl:Object.keys(bl).map(function(k){return bl[k];});
-              document.getElementById('billList').innerHTML=arr.slice(0,400).map(function(x){return '<option value="'+esc(x.number||'')+'">'+esc(String(x.title||'').slice(0,60))+'</option>';}).join('');
-            }).catch(function(){});
-          } else {
-            box.innerHTML='<div class="pend">Your official account is <b>pending verification</b>. We\u2019ll confirm it\u2019s really you \u2014 through your official email or your office \u2014 before you can respond to your record.</div>';
-          }
-        } else { box.innerHTML=''; }
-        loadSubs(qc);
-      }).catch(function(){});
-  }
-
-  window.qcReady.then(function(qc){
-    if(!qc){msg.textContent='Sign-in service is unavailable right now. Please try again shortly.';return;}
-    qc.auth.getSession().then(function(r){var u=r&&r.data&&r.data.session?r.data.session.user:null; if(u)afterLogin(qc,u); else show(null);});
-    qc.auth.onAuthStateChange(function(_e,s){ if(s&&s.user)afterLogin(qc,s.user); else show(null); });
-
-    document.getElementById('acctBtn').addEventListener('click',function(){
-      var email=(document.getElementById('acctEmail').value||'').trim();
-      if(!email){msg.textContent='Please enter your email.';return;}
-      if(role==='official'&&!chosenId){msg.textContent='Please pick your name from the list above.';return;}
-      try{localStorage.setItem('qc_signup_intent',JSON.stringify({role:role,personId:chosenId,personName:chosenName}));}catch(e){}
-      msg.textContent='Sending\u2026';
-      qc.auth.signInWithOtp({email:email,options:{emailRedirectTo:location.origin+'/account.html',data:{account_type:role,claimed_person_id:chosenId,claimed_person_name:chosenName}}})
-        .then(function(res){msg.textContent=(res&&res.error)?('Error: '+res.error.message):'Check your email \u2014 we sent you a sign-in link.';})
-        .catch(function(){msg.textContent='Something went wrong. Please try again.';});
-    });
-    document.getElementById('acctOutBtn').addEventListener('click',function(){qc.auth.signOut();});
-
-    document.getElementById('respBtn').addEventListener('click',function(){
-      var m=document.getElementById('respMsg'); var kind=document.getElementById('respKind').value;
-      var body=(document.getElementById('respBody').value||'').trim();
-      var bill=(document.getElementById('respBill').value||'').trim();
-      if(!body){m.textContent='Please write your response.';return;}
-      if(kind==='bill'&&!bill){m.textContent='Please enter the bill number.';return;}
-      if(!PROF||PROF.official_status!=='verified'){m.textContent='Your account is not verified yet.';return;}
-      m.textContent='Submitting\u2026';
-      qc.from('submissions').insert({user_id:ME.id,kind:'official_response',subject_person_id:String(PROF.claimed_person_id||''),subject_bill_number:(kind==='bill'?bill:null),body:body})
-        .then(function(res){
-          if(res&&res.error){m.textContent='Error: '+res.error.message;return;}
-          m.textContent='Submitted \u2014 we\u2019ll review it and publish it on your profile.';
-          document.getElementById('respBody').value=''; document.getElementById('ccNum').textContent='0';
-          document.getElementById('respBill').value=''; loadSubs(qc);
-        }).catch(function(){m.textContent='Something went wrong. Please try again.';});
-    });
-  });
-})();
-</script>
 
 <div id="q-chrome-footer"></div>
 <script>

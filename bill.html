@@ -556,7 +556,7 @@ function taCopyLink(btn){try{navigator.clipboard.writeText(location.href);}catch
 function taToggle(btn){var d=btn.nextElementSibling;d.classList.toggle('open');btn.textContent=d.classList.contains('open')?'\u2013 Hide the testimony guide':'+ How to testify on this bill';}
 function taFollow(e,f){e.preventDefault();var m=f.querySelector('.ta-fmsg');m.textContent='Saving\u2026';fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)}).then(function(r){return r.json();}).then(function(){f.reset();m.textContent='Done \u2014 you are on the watch list. We will reach out when live alerts launch.';}).catch(function(){m.textContent='Something went wrong \u2014 please try again.';});return false;}
 function _billSaved(n){try{var a=JSON.parse(localStorage.getItem('qc_mybills')||'[]');for(var i=0;i<a.length;i++){if(String(a[i].number)===String(n))return true;}return false;}catch(e){return false;}}
-function taStarBill(btn){var n=btn.getAttribute('data-number'),t=btn.getAttribute('data-title');var a;try{a=JSON.parse(localStorage.getItem('qc_mybills')||'[]');}catch(e){a=[];}var i=-1;for(var j=0;j<a.length;j++){if(String(a[j].number)===String(n)){i=j;break;}}if(i>-1){a.splice(i,1);btn.innerHTML='\u2606 Save to My Bills';}else{a.push({number:n,title:t});btn.innerHTML='\u2605 Saved to My Bills';}try{localStorage.setItem('qc_mybills',JSON.stringify(a));}catch(e){}}
+function taStarBill(btn){var n=btn.getAttribute('data-number'),t=btn.getAttribute('data-title');var a;try{a=JSON.parse(localStorage.getItem('qc_mybills')||'[]');}catch(e){a=[];}var i=-1;for(var j=0;j<a.length;j++){if(String(a[j].number)===String(n)){i=j;break;}}if(i>-1){a.splice(i,1);if(window.qSync)qSync.delBill(n);btn.innerHTML='\u2606 Save to My Bills';}else{a.push({number:n,title:t});if(window.qSync)qSync.addBill(n);btn.innerHTML='\u2605 Saved to My Bills';}try{localStorage.setItem('qc_mybills',JSON.stringify(a));}catch(e){}}
 function takeAction(number,title){
   var k="da0f4760-ac24-433c-b27f-52058241488e";var ttl=title||number;
   var sup="Dear Representative or Senator,\n\nI am a constituent writing to urge you to SUPPORT "+number+" \u2014 "+ttl+".\n\n[Add one sentence on why this matters to you.]\n\nPlease vote yes. Thank you for your service.\n\nSincerely,\n[Your name] \u00b7 [Your city or ZIP]";
@@ -626,4 +626,5 @@ fetch('data/'+state+'_bills.json?v='+Date.now()).then(function(r){return r.ok?r.
  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6aff6948b0f84ed0b1530a42458bbb3b"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="q-config.js"></script><script src="q-chat.js"></script>
 <script src="site-chrome.js"></script>
+<script src="q-auth.js"></script>
 </body></html>
