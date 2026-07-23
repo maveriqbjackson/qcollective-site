@@ -33,6 +33,15 @@ jobs:
           MODEL: "claude-sonnet-4-6"
         run: python score.py
 
+      - name: Send bill alerts
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          SITE_URL: "https://theqcollective.org"
+          STATES: "CO"
+        run: python send_alerts.py
+
       - name: Commit updated scores
         run: |
           git config user.name "q-score-bot"
