@@ -1,7 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Bill — The Q Collective</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Privacy — The Q Collective</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -479,149 +478,98 @@
 .privacy-note{font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:14px;border-top:1px solid var(--border);padding-top:12px}
 @media(max-width:680px){.tracks{grid-template-columns:1fr}.callout h2{font-size:25px}}
 
-/* find-officials autocomplete */
-.ac-wrap{flex:1;position:relative;min-width:220px}
-.ac-box{position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--white);border:1px solid var(--border);border-radius:6px;box-shadow:0 10px 28px rgba(18,40,72,.14);z-index:40;max-height:300px;overflow-y:auto;display:none;text-align:left}
-.ac-box.show{display:block}
-.ac-item{padding:11px 14px;font-size:14.5px;color:var(--text);cursor:pointer;border-bottom:1px solid #f0ece2;font-family:'DM Sans',sans-serif}
-.ac-item:last-child{border-bottom:none}
-.ac-item:hover{background:var(--off-white)}
-
-/* Q score + profile */
-.qbadge{display:inline-block;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.5px;background:var(--navy-deep);color:var(--gold-light);padding:5px 10px;border-radius:4px}
-.qbadge.pending{background:var(--off-white);color:var(--text-muted);border:1px solid var(--border)}
-.profile-link{display:inline-block;margin-left:14px;font-size:13px;color:var(--navy-deep)}
-.score-big{font-family:'Playfair Display',serif;font-size:60px;font-weight:700;color:var(--navy-deep);line-height:1}
-.score-label{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
-.score-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);font-size:15px}
-.score-row:last-child{border-bottom:none}.score-row .v{font-family:'DM Mono',monospace;color:var(--navy-deep)}
-
-/* q-help, branch groups, advocacy form */
-.qhelp{font-size:11px;color:var(--text-muted);margin-left:8px;white-space:nowrap}
-.off-group{font-family:'Playfair Display',serif;font-size:22px;color:var(--navy-deep);margin:30px 0 10px;padding-top:18px;border-top:1px solid var(--border)}
-.off-group:first-of-type{border-top:none;padding-top:0;margin-top:18px}
-.off-actions{display:flex;flex-wrap:wrap;gap:10px 26px;margin:18px 0 0}
-.off-actions .oa-link{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.5px;color:var(--navy-deep)}
-.checks{display:flex;flex-direction:column;gap:8px;margin-top:6px}
-.checks label,.consent{font-weight:400;font-size:15px;display:flex;gap:9px;align-items:flex-start;line-height:1.5}
-.checks input,.consent input{margin-top:3px}
-.consent{font-size:14px;color:var(--text-light)}
-.rubric .plabel{margin-top:0}
-
-.hub-bills{display:flex;flex-direction:column;gap:8px}
-.brow{display:flex;gap:14px;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 14px}
-.bnum{font-family:'DM Mono',monospace;font-size:12px;color:#B8962E;white-space:nowrap;min-width:96px}
-.btitle{font-size:15px;color:var(--text)}.bstatus{font-size:12px;color:var(--text-muted);margin-top:3px}
-
-.q-champ{display:inline-flex;align-items:center;gap:5px;font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;font-weight:500;color:var(--navy-deep);background:linear-gradient(135deg,var(--gold-light),var(--gold));padding:4px 9px;border-radius:20px;animation:qglow 2.2s ease-in-out infinite;vertical-align:middle}.q-champ .star{font-size:11px;line-height:1}@keyframes qglow{0%,100%{box-shadow:0 0 6px 1px rgba(212,175,80,.5)}50%{box-shadow:0 0 15px 4px rgba(212,175,80,.85)}}@media(prefers-reduced-motion:reduce){.q-champ{animation:none;box-shadow:0 0 8px 2px rgba(212,175,80,.6)}}.why-q-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:16px 0 0}.score-math{margin-top:18px}.qm-nar{font-size:13.5px;line-height:1.6;color:var(--text-light);margin:6px 0 16px}.qm-row{margin-bottom:11px}.qm-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}.qm-name{font-size:13.5px;color:var(--navy-deep);font-weight:500}.qm-name .qm-w{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-left:7px}.qm-val{font-family:'DM Mono',monospace;font-size:13px;color:var(--navy-deep);white-space:nowrap}.qm-val .qm-lost{font-size:10.5px;color:var(--text-muted);margin-left:8px}.qm-bar{height:5px;background:var(--off-white);border:1px solid var(--border);border-radius:3px;overflow:hidden;margin-top:6px}.qm-bar span{display:block;height:100%;background:var(--gold-light)}.qm-drag .qm-name{font-weight:700}.qm-drag .qm-val .qm-lost{color:var(--gold);font-weight:600}.qm-drag .qm-bar span{background:var(--gold)}.qm-net{margin-top:14px;padding-top:11px;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.3px;color:var(--navy-deep);line-height:1.5}.qm-foot{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin:9px 0 0}.bill-status{display:inline-block;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:7px 14px;border-radius:6px;font-weight:500}.bill-status .bs-date{opacity:.8;text-transform:none;letter-spacing:.3px;font-size:11px}.st-pass{background:#1a764d;color:#fff}.st-fail{background:#822111;color:#fff}.st-prog{background:var(--gold-pale);color:var(--navy-deep);border:1px solid var(--border)}.bill-desc{font-size:15.5px;line-height:1.7;color:var(--text-light);margin:18px 0 0;max-width:680px}.bill-texts{display:flex;flex-wrap:wrap;gap:12px}.btext{display:flex;flex-direction:column;gap:3px;text-decoration:none;background:var(--off-white);border:1px solid var(--border);border-radius:8px;padding:13px 18px;transition:border-color .15s,transform .15s}.btext:hover{border-color:var(--gold);transform:translateY(-1px)}.bt-type{font-family:'Playfair Display',serif;font-weight:700;font-size:16px;color:var(--navy-deep)}.bt-meta{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--gold)}.timeline{list-style:none;margin:6px 0 0;padding:0;border-left:2px solid var(--border)}.timeline li{position:relative;padding:0 0 18px 22px}.timeline li:before{content:'';position:absolute;left:-7px;top:4px;width:11px;height:11px;border-radius:50%;background:var(--gold);border:2px solid var(--off-white)}.tl-date{display:block;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.5px;color:var(--gold)}.tl-action{display:block;font-size:14.5px;color:var(--navy-deep);margin-top:2px}.sponsor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}.sponsor{display:flex;flex-direction:column;gap:2px;text-decoration:none;background:#fff;border:1px solid var(--border);border-radius:9px;padding:14px 16px;transition:border-color .15s,transform .15s}a.sponsor:hover{border-color:var(--gold);transform:translateY(-1px)}.sp-primary{border-left:3px solid var(--gold)}.sp-name{font-family:'Playfair Display',serif;font-weight:700;font-size:16px;color:var(--navy-deep)}.sp-role{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted)}.sp-go{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);margin-top:7px}.bill-source{margin-top:30px;font-size:13px;color:var(--text-light)}.qform-wrap{margin-top:20px;background:var(--off-white);border:1px solid var(--border);border-radius:12px;padding:24px 22px}.qform label{display:block;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--navy-deep);margin:14px 0 5px}.qform input[type=text],.qform input[type=email],.qform select,.qform textarea{width:100%;box-sizing:border-box;font-family:'DM Sans',sans-serif;font-size:14px;padding:10px 12px;border:1px solid var(--border);border-radius:7px;background:#fff;color:var(--navy-deep)}.qform textarea{min-height:78px;resize:vertical}.qform .qf-radios{display:flex;flex-wrap:wrap;gap:14px;margin-top:6px}.qform .qf-radios label{display:inline-flex;align-items:center;gap:6px;margin:0;text-transform:none;letter-spacing:.2px;font-family:'DM Sans',sans-serif;font-size:13.5px;color:var(--text-light)}.qform .qf-radios input{width:auto}.qform .qf-row{display:flex;gap:12px;flex-wrap:wrap}.qform .qf-row>div{flex:1;min-width:130px}.qform button{margin-top:18px;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;background:var(--gold);color:var(--navy-deep);border:none;border-radius:7px;padding:13px 22px;cursor:pointer;font-weight:600}.qform button:hover{background:var(--gold-light)}.qf-consent{font-size:11.5px;color:var(--text-muted);margin-top:14px;line-height:1.5}.qf-msg{margin-top:12px;font-size:14px}.qf-msg.ok{color:#1a764d}.qf-msg.err{color:#822111}.footer-li{display:inline-flex;align-items:center}.footer-li .li-ico{opacity:.85;transition:opacity .15s}.footer-li:hover .li-ico{opacity:1}
-.ta-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin-bottom:16px}
-.ta-card h3{font-family:'Playfair Display',Georgia,serif;font-size:17px;color:var(--navy-deep);margin:0 0 6px}
-.ta-card p{font-size:13.5px;color:var(--text-light);line-height:1.55;margin:0 0 12px}
-.ta-tabs{display:flex;gap:8px;margin-bottom:10px}
-.ta-tab{border:1px solid var(--border);background:var(--off-white);color:var(--text);font-size:12px;padding:7px 16px;border-radius:7px;cursor:pointer;font-family:'DM Mono',monospace;letter-spacing:.5px}
-.ta-tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-.ta-msg{width:100%;min-height:150px;border:1px solid var(--border);border-radius:8px;padding:12px;font-family:inherit;font-size:13px;line-height:1.5;color:var(--text);resize:vertical;background:var(--off-white);box-sizing:border-box}
-.ta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;align-items:center}
-.ta-btn{display:inline-block;border:none;cursor:pointer;background:var(--gold);color:var(--navy-deep);font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:10px 18px;border-radius:7px;text-decoration:none;font-weight:500}
-.ta-btn:hover{background:var(--gold-light)}
-.ta-btn.ghost{background:transparent;border:1px solid var(--border);color:var(--navy-deep)}
-.ta-share{display:flex;gap:10px;flex-wrap:wrap}
-.ta-toggle{background:none;border:none;color:var(--navy);font-weight:600;cursor:pointer;font-size:14px;padding:0}
-.ta-details{display:none;margin-top:12px;font-size:13.5px;color:var(--text-light);line-height:1.65}
-.ta-details.open{display:block}
-.ta-details ol{margin:8px 0 0 18px;padding:0}
-.ta-details li{margin-bottom:8px}
-.ta-follow{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
-.ta-follow input{flex:1;min-width:200px;border:1px solid var(--border);border-radius:8px;padding:11px 14px;font-size:14px;box-sizing:border-box}
-</style>
+.footer-li{display:inline-flex;align-items:center}.footer-li .li-ico{opacity:.85;transition:opacity .15s}.footer-li:hover .li-ico{opacity:1}</style>
 </head><body>
 <div id="q-chrome-top"></div>
-<section class="pagehead"><p class="ph-eyebrow" id="b-office">Colorado Bill</p><h1 id="b-name">Loading&hellip;</h1><p id="b-sub"></p></section>
-<div class="pagewrap">
-<div id="b-body">Loading&hellip;</div>
-<p style="margin-top:26px"><a href="hub.html">&larr; Back to the Hub</a></p>
+
+<style>
+  .pv{max-width:760px;margin:0 auto;padding:8px 24px 64px}
+  .pv h2{font-family:'Playfair Display',Georgia,serif;font-size:21px;color:var(--navy-deep);margin:34px 0 8px}
+  .pv p{font-size:15px;line-height:1.7;color:var(--text-light);margin:0 0 13px}
+  .pv ul{margin:0 0 14px 20px;padding:0}
+  .pv li{font-size:15px;line-height:1.7;color:var(--text-light);margin-bottom:8px}
+  .pv b{color:var(--navy-deep)}
+  .pv-key{background:var(--navy-deep);border-radius:12px;padding:22px 26px;margin:6px 0 12px}
+  .pv-key p{color:#fff;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:17px;line-height:1.55;text-align:center;margin:0}
+  .pv-key .g{color:var(--gold-light);font-style:normal}
+  .pv-note{background:var(--off-white);border:1px solid var(--border);border-radius:10px;padding:16px 20px;font-size:13.5px;color:var(--text-light);line-height:1.65;margin-top:26px}
+</style>
+
+<section class="pagehead"><p class="ph-eyebrow">Privacy</p><h1>What we collect, and what we never do with it.</h1>
+<p>We ask people to trust us with an accountability record. That starts with being plain about your own information. This page is written to be read, not to be survived.</p></section>
+
+<div class="pv">
+  <div class="pv-key"><p>&ldquo;We collect the least we can. <span class="g">We sell none of it. Ever.</span>&rdquo;</p></div>
+
+  <h2>The short version</h2>
+  <ul>
+    <li>You can use almost all of this site <b>without an account</b> and without telling us anything.</li>
+    <li>We <b>never sell, rent, or trade</b> your information. There are no ads on this site.</li>
+    <li>We don&rsquo;t track you across other websites.</li>
+    <li>You can delete your account and your data at any time by emailing us.</li>
+  </ul>
+
+  <h2>What we collect</h2>
+  <p><b>If you never sign up:</b> nothing that identifies you. Saved reps and bills are stored <b>in your own browser</b>, not on our servers.</p>
+  <p><b>If you create an account:</b> your email address, the reps and bills you save, and the date you joined. That&rsquo;s it. We use passwordless sign-in, so <b>we never see or store a password</b>.</p>
+  <p><b>If you sign up for bill alerts:</b> your email address and which bills you asked about.</p>
+  <p><b>If you&rsquo;re a verified elected official:</b> the responses you submit, their status, and which record they concern. Published responses are public by design.</p>
+  <p><b>If you write to us</b> through a form: whatever you choose to send.</p>
+  <p><b>Site analytics:</b> we use privacy-focused analytics that count visits without cookies and without building a profile of you.</p>
+
+  <h2>What we do with it</h2>
+  <p>Only what you asked for: keep you signed in, sync your saved lists, send the alerts you requested, publish official responses, and answer your messages. We do not profile you, score you, or use your activity for anything else.</p>
+
+  <h2>Who else touches it</h2>
+  <p>We keep the list short and use them only as plumbing:</p>
+  <ul>
+    <li><b>Supabase</b> &mdash; stores accounts and saved lists.</li>
+    <li><b>Resend</b> &mdash; delivers sign-in links and alerts.</li>
+    <li><b>Cloudflare</b> &mdash; analytics and the Ask Q assistant.</li>
+    <li><b>Anthropic</b> &mdash; powers the Ask Q assistant; what you type there is sent to their API to generate a reply. <b>Don&rsquo;t put sensitive personal information into the assistant.</b></li>
+    <li><b>Stripe</b> &mdash; processes donations. <b>We never see or store your card number.</b></li>
+    <li><b>GitHub Pages</b> &mdash; hosts the site.</li>
+  </ul>
+
+  <h2>Donations</h2>
+  <p>We accept money from <b>individuals only</b>. We publish aggregate refund totals for money we return, and we <b>never publish the names of people we refuse</b>. Donating has no effect on any Q Score, ever. See <a href="donate.html">Support the Work</a>.</p>
+
+  <h2>What&rsquo;s public, and what isn&rsquo;t</h2>
+  <p>Q Scores, votes, sponsorships, and bill records come from the <b>public record</b> and are public here. Published official responses are public, by their own choice. <b>Your account, your saved lists, and your alert signups are private</b> and are never displayed to anyone else.</p>
+
+  <h2>Your control</h2>
+  <ul>
+    <li><b>Delete your account and data</b> &mdash; email <a href="mailto:team&#64;theQcollective.org">team&#64;theQcollective.org</a> and we&rsquo;ll remove it.</li>
+    <li><b>Stop alerts</b> &mdash; every alert email has a one-click unsubscribe link.</li>
+    <li><b>Clear device-only saves</b> &mdash; clearing your browser data removes them.</li>
+    <li><b>Ask what we hold</b> &mdash; email us and we&rsquo;ll tell you.</li>
+  </ul>
+
+  <h2>Children</h2>
+  <p>This site is built for civic participation by adults. We don&rsquo;t knowingly collect information from children under 13. If you believe we have, tell us and we&rsquo;ll delete it.</p>
+
+  <h2>Security, honestly stated</h2>
+  <p>We use reputable providers, passwordless sign-in, and database rules that keep each person&rsquo;s data reachable only by them. <b>No system is perfect.</b> We hold as little as possible precisely so there is little to lose, and if something ever goes wrong we will say so plainly rather than quietly.</p>
+
+  <h2>Changes</h2>
+  <p>If we change this policy in a way that matters, we&rsquo;ll say so on the site rather than hoping you don&rsquo;t notice.</p>
+
+  <div class="pv-note"><b>Questions, or a request to delete your data?</b> Write to <a href="mailto:team&#64;theQcollective.org">team&#64;theQcollective.org</a>. A person reads it.<br><br>Published by The Q Collective LLC / Doctrine Policy Group.</div>
 </div>
+
 <div id="q-chrome-footer"></div>
 <script>
 function goTo(e, url){ try{ if(window.top && window.top!==window.self){ window.top.location.href=url; } else { window.location.href=url; } if(e && e.preventDefault) e.preventDefault(); return false; }catch(err){ return true; } }
-</script>
-<script>
-function qs(k){var m=new RegExp('[?&]'+k+'=([^&]*)').exec(location.search);return m?decodeURIComponent(m[1]):null;}
-function pf(p){p=(p||'').toUpperCase();return p==='D'?'Democrat':p==='R'?'Republican':p==='I'?'Independent':(p||'');}
-function submitQForm(e,f){e.preventDefault();var msg=f.querySelector('.qf-msg');msg.className='qf-msg';msg.textContent='Sending\u2026';fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)}).then(function(r){return r.json();}).then(function(j){if(j.success){var els=f.querySelectorAll('input,select,textarea,button');for(var i=0;i<els.length;i++)els[i].disabled=true;msg.className='qf-msg ok';msg.textContent=f.getAttribute('data-thanks')||'Thank you \u2014 your voice is in.';}else{msg.className='qf-msg err';msg.textContent='Something went wrong. Email team@theQcollective.org and we\u2019ll take it from there.';}}).catch(function(){msg.className='qf-msg err';msg.textContent='Something went wrong. Email team@theQcollective.org and we\u2019ll take it from there.';});return false;}
+</script><script>
 
-function taTab(btn,sup){var w=btn.closest('.ta-card');var ts=w.querySelectorAll('.ta-tab');for(var i=0;i<ts.length;i++)ts[i].classList.remove('active');btn.classList.add('active');w.querySelector('#ta-support').style.display=sup?'block':'none';w.querySelector('#ta-oppose').style.display=sup?'none':'block';}
-function taCopyMsg(btn){var w=btn.closest('.ta-card');var el=w.querySelector('#ta-support');if(el.style.display==='none')el=w.querySelector('#ta-oppose');el.select();try{navigator.clipboard.writeText(el.value);}catch(e){try{document.execCommand('copy');}catch(e2){}}var o=btn.textContent;btn.textContent='Copied \u2713';setTimeout(function(){btn.textContent=o;},1600);}
-function taCopyLink(btn){try{navigator.clipboard.writeText(location.href);}catch(e){}var o=btn.textContent;btn.textContent='Link copied \u2713';setTimeout(function(){btn.textContent=o;},1600);}
-function taToggle(btn){var d=btn.nextElementSibling;d.classList.toggle('open');btn.textContent=d.classList.contains('open')?'\u2013 Hide the testimony guide':'+ How to testify on this bill';}
-function taFollow(e,f){e.preventDefault();var m=f.querySelector('.ta-fmsg');var em=(f.querySelector('input[type=email]').value||'').trim();var bn=f.getAttribute('data-bill');var st=(new URLSearchParams(location.search)).get('state')||'CO';if(!em){m.textContent='Please enter your email.';return false;}m.textContent='Saving\u2026';if(!window.qcReady){m.textContent='Alerts are unavailable right now.';return false;}window.qcReady.then(function(qc){if(!qc){m.textContent='Alerts are unavailable right now.';return;}qc.from('bill_followers').insert({email:em,bill_number:bn,state:st}).then(function(res){if(res&&res.error){if(String(res.error.code||'')==='23505'){m.textContent='You\u2019re already on the list for this bill.';}else{m.textContent='Sorry \u2014 that didn\u2019t save. Please try again.';}return;}f.reset();m.textContent='Almost there \u2014 check your email and click the confirmation link.';}).catch(function(){m.textContent='Sorry \u2014 that didn\u2019t save. Please try again.';});});return false;}
-function _billSaved(n){try{var a=JSON.parse(localStorage.getItem('qc_mybills')||'[]');for(var i=0;i<a.length;i++){if(String(a[i].number)===String(n))return true;}return false;}catch(e){return false;}}
-function taStarBill(btn){var n=btn.getAttribute('data-number'),t=btn.getAttribute('data-title');var a;try{a=JSON.parse(localStorage.getItem('qc_mybills')||'[]');}catch(e){a=[];}var i=-1;for(var j=0;j<a.length;j++){if(String(a[j].number)===String(n)){i=j;break;}}if(i>-1){a.splice(i,1);if(window.qSync)qSync.delBill(n);btn.innerHTML='\u2606 Save to My Bills';}else{a.push({number:n,title:t});if(window.qSync)qSync.addBill(n);btn.innerHTML='\u2605 Saved to My Bills';}try{localStorage.setItem('qc_mybills',JSON.stringify(a));}catch(e){}}
-function takeAction(number,title){
-  var k="da0f4760-ac24-433c-b27f-52058241488e";var ttl=title||number;
-  var sup="Dear Representative or Senator,\n\nI am a constituent writing to urge you to SUPPORT "+number+" \u2014 "+ttl+".\n\n[Add one sentence on why this matters to you.]\n\nPlease vote yes. Thank you for your service.\n\nSincerely,\n[Your name] \u00b7 [Your city or ZIP]";
-  var opp="Dear Representative or Senator,\n\nI am a constituent writing to urge you to OPPOSE "+number+" \u2014 "+ttl+".\n\n[Add one sentence on why this concerns you.]\n\nPlease vote no. Thank you for your service.\n\nSincerely,\n[Your name] \u00b7 [Your city or ZIP]";
-  var eSub=encodeURIComponent("Colorado bill: "+number);var eBody=encodeURIComponent("I am following "+number+" ("+ttl+") on The Q Collective: "+location.href);
-  return '<p class="section-label" style="margin-top:44px">Take Action</p><h2 class="section-title" style="margin-bottom:6px">Make your voice count on '+esc(number)+'</h2><div class="section-divider"></div>'
-  +'<div class="ta-card"><h3>Contact your representative</h3><p>Copy a message, add a line of your own, and send it to your legislator. <a href="find-officials.html">Find your representative \u2192</a></p>'
-  +'<div class="ta-tabs"><button class="ta-tab active" onclick="taTab(this,true)">Support</button><button class="ta-tab" onclick="taTab(this,false)">Oppose</button></div>'
-  +'<textarea class="ta-msg" id="ta-support">'+esc(sup)+'</textarea><textarea class="ta-msg" id="ta-oppose" style="display:none">'+esc(opp)+'</textarea>'
-  +'<div class="ta-row"><button class="ta-btn" onclick="taCopyMsg(this)">Copy message</button></div></div>'
-  +'<div class="ta-card"><h3>Share this bill</h3><p>Put it in front of people who should see it.</p><div class="ta-share">'
-  +'<button class="ta-btn ghost" onclick="taCopyLink(this)">Copy link</button>'
-  +'<a class="ta-btn ghost" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(location.href)+'">LinkedIn</a>'
-  +'<a class="ta-btn ghost" href="mailto:?subject='+eSub+'&body='+eBody+'">Email</a></div></div>'
-  +'<div class="ta-card"><h3>Testify on it</h3><p>You have the right to speak on any bill at the Colorado legislature \u2014 here is how.</p>'
-  +'<button class="ta-toggle" onclick="taToggle(this)">+ How to testify on this bill</button>'
-  +'<div class="ta-details"><ol>'
-  +'<li><b>Find the hearing.</b> Check this bill\u2019s status above for its committee, then find the hearing date on the <a href="https://leg.colorado.gov" target="_blank" rel="noopener">Colorado General Assembly site \u2197</a>.</li>'
-  +'<li><b>Sign up to testify</b> in person or remotely, or submit written testimony through the committee.</li>'
-  +'<li><b>Keep it short.</b> You usually get about 3 minutes. Say who you are, whether you support or oppose '+esc(number)+', and one real reason why.</li>'
-  +'<li><b>A simple structure:</b> \u201cMy name is ___, I live in ___. I am here to [support/oppose] '+esc(number)+'. This matters to me because ___. I urge a [yes/no] vote. Thank you.\u201d</li>'
-  +'</ol></div></div>'
-  +'<div class="ta-card"><h3>Follow this bill</h3><p>Save it to your personal <b>My Bills</b> list \u2014 it shows where the bill is in the process and updates as it moves.</p>'
-  +'<button class="ta-btn" data-number="'+esc(number)+'" data-title="'+esc(ttl)+'" onclick="taStarBill(this)">'+(_billSaved(number)?'\u2605 Saved to My Bills':'\u2606 Save to My Bills')+'</button>'
-  +'<p style="margin:16px 0 8px;font-size:13px;color:var(--text-light)">Want an email when it changes? We\u2019ll notify you on a vote, a status change, or a hearing.</p>'+'<form data-bill="'+esc(number)+'" onsubmit="return taFollow(event,this)">'+'<div class="ta-follow"><input type="email" name="email" placeholder="you@email.com" required><button class="ta-btn" type="submit">Email me updates</button></div>'+'<p class="ta-fmsg" style="font-size:12px;color:var(--text-muted);margin:8px 0 0"></p>'+'<p style="font-size:11.5px;color:var(--text-muted);margin:8px 0 0">We\u2019ll send one confirmation email first. Unsubscribe any time. <a href="privacy.html">Privacy</a></p></form></div>';
-}
-
-function standForm(number){var k="da0f4760-ac24-433c-b27f-52058241488e";
-return '<p class="section-label" style="margin-top:44px">Be Heard</p><h2 class="section-title" style="margin-bottom:6px">Where do you stand on '+esc(number)+'?</h2><div class="section-divider"></div><p style="font-size:13.5px;color:var(--text-light);margin:0 0 6px">Tell us \u2014 we tally constituent positions to show legislators where their district stands.</p>'
-+'<div class="qform-wrap"><form class="qform" data-thanks="Recorded \u2014 thank you. Your position is now part of the case we carry." onsubmit="return submitQForm(event,this)"><input type="hidden" name="access_key" value="'+k+'"><input type="hidden" name="subject" value="Where do you stand \u2014 '+esc(number)+'"><input type="hidden" name="bill" value="'+esc(number)+'">'
-+'<label>Your position</label><div class="qf-radios"><label><input type="radio" name="position" value="Support" required> Support</label><label><input type="radio" name="position" value="Oppose"> Oppose</label><label><input type="radio" name="position" value="Watching"> Watching</label></div>'
-+'<div class="qf-row"><div><label>ZIP (optional)</label><input type="text" name="zip"></div><div><label>Email (optional)</label><input type="email" name="email"></div></div>'
-+'<label>Anything to add? (optional)</label><textarea name="comment" placeholder="Optional"></textarea>'
-+'<button type="submit">Submit my position</button><p class="qf-consent">We collect these to show legislators their district\u2019s voice. We won\u2019t share your contact info.</p><div class="qf-msg"></div></form></div>';}
-
-function esc(s){return (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-function statusClass(s){s=(s||'').toLowerCase();if(s.indexOf('pass')>-1||s.indexOf('enact')>-1)return 'st-pass';if(s.indexOf('veto')>-1||s.indexOf('fail')>-1||s.indexOf('dead')>-1)return 'st-fail';return 'st-prog';}
-(function(){
-var state=qs('state')||'CO', number=qs('number');
-var nameEl=document.getElementById('b-name'), subEl=document.getElementById('b-sub'), body=document.getElementById('b-body');
-if(!number){nameEl.textContent='No bill selected';body.innerHTML='<p>Head to the <a href="hub.html">Accountability Hub</a> to find a bill.</p>';return;}
-nameEl.textContent=number;
-fetch('data/'+state+'_bills.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(d){
-  if(!d||!d.bills){nameEl.textContent='Not published yet';body.innerHTML='<p>Bill detail for this state isn\u2019t published yet. <a href="hub.html">Back to the Hub</a>.</p>';return;}
-  var b=d.bills[number];
-  if(!b){nameEl.textContent=number+' \u2014 not found';body.innerHTML='<p>We couldn\u2019t find that bill. <a href="hub.html">Back to the Hub</a>.</p>';return;}
-  document.title=number+' \u2014 '+(b.title||'Bill')+' \u2014 The Q Collective';
-  nameEl.textContent=number; subEl.innerHTML=esc(b.title||'');
-  var html='<div class="bill-status '+statusClass(b.status)+'">'+esc(b.status||'Status unknown')+(b.status_date?' <span class="bs-date">as of '+esc(b.status_date)+'</span>':'')+'</div>';
-  if(b.description) html+='<p class="bill-desc">'+esc(b.description)+'</p>';
-  if(b.texts&&b.texts.length){html+='<p class="section-label" style="margin-top:36px">The Bill Itself</p><h2 class="section-title" style="margin-bottom:6px">Read the text</h2><div class="section-divider"></div><div class="bill-texts">';
-    html+=b.texts.map(function(t){var link=t.state_link||t.url;return link?'<a class="btext" target="_blank" rel="noopener" href="'+esc(link)+'"><span class="bt-type">'+esc(t.type||'Text')+'</span><span class="bt-meta">'+(t.date?esc(t.date)+' \u00b7 ':'')+'official PDF \u2197</span></a>':'';}).join('')+'</div>';}
-  if(b.history&&b.history.length){html+='<p class="section-label" style="margin-top:40px">Tracking</p><h2 class="section-title" style="margin-bottom:6px">Every step, start to finish</h2><div class="section-divider"></div><ol class="timeline">';
-    html+=b.history.map(function(h){return '<li><span class="tl-date">'+esc(h.date||'')+'</span><span class="tl-action">'+esc(h.action||'')+'</span></li>';}).join('')+'</ol>';}
-  if(b.sponsors&&b.sponsors.length){html+='<p class="section-label" style="margin-top:40px">Who\u2019s Behind It</p><h2 class="section-title" style="margin-bottom:6px">Sponsors ('+b.sponsors.length+')</h2><div class="section-divider"></div><div class="sponsor-grid">';
-    html+=b.sponsors.map(function(sp){var label=sp.primary?'Prime sponsor':'Co-sponsor';var meta=pf(sp.party);var inner='<span class="sp-name">'+esc(sp.name||'Unknown')+'</span><span class="sp-role">'+label+(meta?' \u00b7 '+meta:'')+'</span>';return sp.people_id?'<a class="sponsor'+(sp.primary?' sp-primary':'')+'" href="legislator.html?state='+encodeURIComponent(state)+'&id='+encodeURIComponent(sp.people_id)+'">'+inner+'<span class="sp-go">View their record \u2192</span></a>':'<div class="sponsor'+(sp.primary?' sp-primary':'')+'">'+inner+'</div>';}).join('')+'</div>';}
-  var src=b.state_link||b.url;
-  if(src) html+='<p class="bill-source">Official source: <a target="_blank" rel="noopener" href="'+esc(src)+'">Colorado General Assembly \u2197</a></p>';
-  html+=takeAction(number,b.title||number);html+=standForm(number);html+='<p style="margin-top:30px"><a href="hub.html">\u2190 Back to the Accountability Hub</a></p>';
-  body.innerHTML=html;
-}).catch(function(){nameEl.textContent='Could not load';body.innerHTML='<p><a href="hub.html">Back to the Hub</a>.</p>';});
-})();
+(function(){var f=document.getElementById('qform'),m=document.getElementById('qmsg');if(!f)return;
+f.addEventListener('submit',function(e){e.preventDefault();m.textContent='Sending...';m.style.color='#8a8a8a';
+fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)}).then(function(r){return r.json();})
+.then(function(d){if(d.success){f.reset();m.textContent='Thank you \u2014 you\u2019re on the list.';m.style.color='#2e7d32';}
+else{m.textContent='Something went wrong. Please email team@theQcollective.org.';m.style.color='#c0392b';}})
+.catch(function(){m.textContent='Something went wrong. Please email team@theQcollective.org.';m.style.color='#c0392b';});});})();
 </script>
  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6aff6948b0f84ed0b1530a42458bbb3b"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="q-config.js"></script><script src="q-chat.js"></script>
 <script src="site-chrome.js"></script>
-<script src="q-auth.js"></script>
 </body></html>
