@@ -524,6 +524,18 @@
 .itw-date{font-family:'DM Mono',monospace;font-size:10px;color:var(--text-muted)}
 .itw-body{font-size:14.5px;line-height:1.65;color:var(--text);margin:0;white-space:pre-wrap}
 .itw-bill{display:inline-block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.5px;background:var(--gold-pale);color:var(--navy-deep);padding:3px 8px;border-radius:5px;margin-bottom:8px;text-decoration:none}
+
+.q-official-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:0 0 26px;padding:15px 20px;background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:8px}
+.q-official-copy{font-size:14.5px;color:var(--text-light);line-height:1.65;max-width:600px}
+.q-official-flag{display:inline-block;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-right:9px}
+.q-official-btn{flex:0 0 auto;background:var(--navy-deep);color:var(--gold-light);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;padding:13px 20px;border-radius:5px;text-decoration:none;white-space:nowrap;transition:background .2s}
+.q-official-btn:hover{background:var(--navy)}
+.q-sync{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:14px 0 0;padding:13px 18px;background:var(--off-white2);border:1px solid var(--border);border-radius:8px}
+.q-sync-copy{font-size:13.5px;color:var(--text-light);line-height:1.6;max-width:560px}
+.q-sync-copy strong{color:var(--navy-deep)}
+.q-sync-btn{flex:0 0 auto;background:var(--white);border:1px solid var(--navy-deep);color:var(--navy-deep);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;padding:11px 18px;border-radius:5px;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}
+.q-sync-btn:hover{background:var(--navy-deep);color:var(--gold-light)}
+@media(max-width:640px){.q-official-bar,.q-sync{flex-direction:column;align-items:flex-start}.q-official-btn,.q-sync-btn{width:100%;text-align:center;box-sizing:border-box}}
 </style>
 </head><body>
 <div id="q-chrome-top"></div>
@@ -658,6 +670,28 @@ function toggleRep(){var el=document.querySelector('.pactions');if(!el)return;va
 function shareProfile(btn){try{navigator.clipboard.writeText(location.href);}catch(e){}var o=btn.textContent;btn.textContent='Copied \u2713';setTimeout(function(){btn.textContent=o;},1500);}
 function reportCard(l){var em=legEmail(l);var party=({D:'Democrat',R:'Republican',I:'Independent'})[(l.party||'').toUpperCase()]||(l.party||'');var meta=[l.role||l.chamber,(l.district?'District '+l.district:''),party].filter(Boolean).join(' \u00b7 ');return '<div class="print-card"><div class="pc-head"><span class="pc-brand"><span class="pc-q">Q</span> The Q Collective</span><span class="pc-kicker">Accountability Report Card</span></div><div class="pc-rep"><h2 class="pc-name">'+esc(l.name)+'</h2><p class="pc-meta">'+esc(meta)+'</p></div><div class="pc-scorebox"><div class="pc-num">'+esc(l.score)+'</div><div class="pc-scorelabel">'+esc(l.label||'Q Score')+'</div></div><table class="pc-break"><tr><td>Seven Pillars of Life Stability</td><td class="pc-w">40%</td><td class="pc-s">'+esc(l.pillar)+'</td></tr><tr><td>Attendance</td><td class="pc-w">25%</td><td class="pc-s">'+esc(l.attendance)+'</td></tr><tr><td>Legislative Impact</td><td class="pc-w">25%</td><td class="pc-s">'+esc(l.impact)+'</td></tr><tr><td>Sponsorship</td><td class="pc-w">10%</td><td class="pc-s">'+esc(l.sponsorship)+'</td></tr></table><p class="pc-formula">0.40('+esc(l.pillar)+') + 0.25('+esc(l.attendance)+') + 0.25('+esc(l.impact)+') + 0.10('+esc(l.sponsorship)+') = <b>'+esc(l.score)+'</b></p>'+(l.why?'<p class="pc-why">'+esc(l.why)+'</p>':'')+'<div class="pc-contacts"><div class="pc-c"><span class="pc-ct">Reach this legislator</span>'+(em?'<span>'+em+'</span>':'')+'<span>Phone &amp; office: leg.colorado.gov</span></div><div class="pc-c"><span class="pc-ct">The Q Collective</span><span>970.725.6656</span><span>team&#64;theQcollective.org</span><span>theqcollective.org</span></div></div><p class="pc-foot">This Q Score is set by a fixed, public rubric &mdash; the same yardstick for every legislator. Published by The Q Collective LLC / Doctrine Policy Group.</p></div>';}
 function profileActions(l){return '<div class="pactions" data-id="'+esc(l.id)+'" data-name="'+esc(l.name)+'" data-score="'+esc(l.score)+'" data-ch="'+esc(l.chamber||l.role||'')+'" data-dist="'+esc(l.district||'')+'"><button type="button" class="pa-btn" onclick="window.print()">Print report card</button><button type="button" class="pa-btn" onclick="shareProfile(this)">Copy link</button><a class="pa-btn" id="paX" target="_blank" rel="noopener">Post on X \u2197</a><button type="button" class="pa-btn pa-save" id="paSave" onclick="toggleRep()">\u2606 Save to My Reps</button><span class="pa-spark" id="sparkWrap" style="display:none">Trend <span id="sparkline"></span></span></div>';}
+/* ---- official access + citizen sync ---- */
+var OFFICIAL_ACCESS_URL='account.html';
+var CITIZEN_ACCOUNT_URL='account.html';
+var QC_SIGNED_IN=false;
+function officialBar(l,state){
+  var q='?state='+encodeURIComponent(state||'')+'&id='+encodeURIComponent(l&&l.id!=null?l.id:'');
+  return '<div class="q-official-bar">'+
+    '<div class="q-official-copy">'+
+      '<span class="q-official-flag">Official Access</span>'+
+      'Are you this legislator, or a member of their staff? Verify your account to respond to this record &mdash; on the record, in your own words, published unedited.'+
+    '</div>'+
+    '<a class="q-official-btn" href="'+OFFICIAL_ACCESS_URL+q+'">Log in / Register as Official &rarr;</a>'+
+  '</div>';
+}
+function citizenSync(){
+  if(QC_SIGNED_IN) return '';
+  return '<div class="q-sync">'+
+    '<div class="q-sync-copy"><strong>Saved reps live on this device.</strong> Sign in to keep your list across devices and follow the bills you care about.</div>'+
+    '<a class="q-sync-btn" href="'+CITIZEN_ACCOUNT_URL+'">Sign in / Create account</a>'+
+  '</div>';
+}
+if(window.qSync)qSync.init(function(on){QC_SIGNED_IN=!!on;if(on){var b=document.querySelector('.q-sync');if(b)b.style.display='none';}});
 function loadITW(id,name){
   if(!window.qcReady)return;
   window.qcReady.then(function(qc){ if(!qc)return;
@@ -690,7 +724,7 @@ document.getElementById('l-name').textContent=l.name;document.title=l.name+' \u2
 document.getElementById('l-sub').textContent=pf(l.party)+(l.district?' \u00b7 District '+l.district:'');
 var sc='<div class="factbox"><div class="score-big">'+l.score+'</div><div class="score-label">'+(l.label||'Q Score')+'</div>'+(l.score>=80?'<div style="margin-top:8px"><span class="q-champ"><span class="star">&#9733;</span>Accountability Champion</span></div>':'')+''+scoreBreakdown(l)+''+(l.why?'<p class="why-q-label">Why this score</p><p style="margin:4px 0 0;font-style:italic;color:var(--text-light)">\u201c'+l.why+'\u201d</p>':'')+'<p style="margin:10px 0 0;font-size:13px"><a href="how-q-scores-work.html">How is this calculated? &rarr;</a></p></div>';
 var bills=l.bills||[];var bh=bills.length?bills.map(function(b){return '<div class="brow"><div class="bnum">'+(b.number||'')+(b.primary?' &middot; Primary':'')+'</div><div class="btitle">'+'<a href="bill.html?state='+state+'&number='+encodeURIComponent(b.number||'')+'">'+(b.title||'')+'</a>'+'<div class="bstatus">'+(b.status||'')+'</div></div></div>';}).join(''):'<p>No sponsored bills recorded this session.</p>';
-body.innerHTML='<p class="section-label">Accountability</p><h2 class="section-title" style="margin-bottom:6px">Q Score</h2><div class="section-divider"></div>'+sc+profileActions(l)+contactAndVoice(l)+'<div id="itw"></div><p class="section-label" style="margin-top:44px">Their Record</p><h2 class="section-title" style="margin-bottom:6px">Bills they sponsored ('+bills.length+')</h2><div class="section-divider"></div><div class="hub-bills">'+bh+'</div>'+reportCard(l);initProfile(l,state);
+body.innerHTML='<p class="section-label">Accountability</p>'+officialBar(l,state)+'<h2 class="section-title" style="margin-bottom:6px">Q Score</h2><div class="section-divider"></div>'+sc+profileActions(l)+citizenSync()+contactAndVoice(l)+'<div id="itw"></div><p class="section-label" style="margin-top:44px">Their Record</p><h2 class="section-title" style="margin-bottom:6px">Bills they sponsored ('+bills.length+')</h2><div class="section-divider"></div><div class="hub-bills">'+bh+'</div>'+reportCard(l);initProfile(l,state);
 }).catch(function(){document.getElementById('l-name').textContent='Could not load';body.innerHTML='<p><a href="hub.html">Back to the Hub</a>.</p>';});})();
 </script>
  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6aff6948b0f84ed0b1530a42458bbb3b"}'></script><!-- End Cloudflare Web Analytics -->
