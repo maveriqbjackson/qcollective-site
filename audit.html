@@ -34,6 +34,29 @@
   .btn.gold:hover{background:var(--gold-light)}
   .btn.out{border:1px solid var(--navy);color:var(--navy)}
   .btn.out:hover{background:var(--navy);color:#fff}
+  /* ===== System Status banner (added) ===== */
+  .sysstat{border-radius:12px;padding:20px 22px;margin-bottom:24px;border:1px solid var(--border);background:#fff}
+  .sysstat .ss-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .ss-badge{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;display:inline-flex;align-items:center;gap:9px;white-space:nowrap}
+  .ss-dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:0 0 auto;background:var(--text-muted)}
+  .ss-headline{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:var(--navy-deep);line-height:1.2}
+  .ss-sub{font-size:14.5px;color:var(--text-light);margin-top:8px}
+  .ss-errlist{margin-top:12px;font-family:'DM Mono',monospace;font-size:12.5px;color:var(--bad);background:#fff;border:1px solid #e6c3c3;border-radius:8px;padding:11px 13px;white-space:pre-wrap;line-height:1.55}
+  .ss-strip{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:16px;padding-top:15px;border-top:1px solid var(--border)}
+  .ss-item{display:flex;flex-direction:column;gap:2px}
+  .ss-k{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-muted)}
+  .ss-v{font-family:'DM Mono',monospace;font-size:13px;color:var(--navy-deep)}
+  .ss-actions{margin-top:15px}
+  .ss-actions a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:2px}
+  .ss-actions a:hover{color:var(--navy)}
+  .sysstat.ok{background:#f2f7f3;border-color:#cfe3d5}
+  .sysstat.ok .ss-dot{background:var(--good)} .sysstat.ok .ss-badge{color:var(--good)}
+  .sysstat.stale{background:#fdf6e3;border-color:#ecd9a8}
+  .sysstat.stale .ss-dot{background:var(--gold)} .sysstat.stale .ss-badge{color:#7a5c12}
+  .sysstat.err{background:#fbeeee;border-color:#e6c3c3}
+  .sysstat.err .ss-dot{background:var(--bad)} .sysstat.err .ss-badge{color:var(--bad)}
+  .run-err{background:#fbeeee;border:1px solid #e6c3c3;color:var(--bad);border-radius:8px;padding:9px 12px;font-family:'DM Mono',monospace;font-size:12.5px;margin-bottom:10px;line-height:1.5}
+  /* ===== end added ===== */
   .controls{display:flex;align-items:center;gap:10px;margin:6px 0 18px;font-size:13.5px;color:var(--text-muted)}
   .run{background:#fff;border:1px solid var(--border);border-radius:10px;margin-bottom:16px;overflow:hidden}
   .run-head{display:flex;align-items:center;gap:12px;padding:15px 20px;background:#fbf8f1;border-bottom:1px solid var(--border);flex-wrap:wrap}
@@ -79,6 +102,18 @@
 </div></div>
 
 <div class="wrap">
+
+  <div class="sysstat" id="sysstat">
+    <div class="ss-top">
+      <span class="ss-badge"><span class="ss-dot"></span><span id="ss-label">Checking status&hellip;</span></span>
+      <span class="ss-headline" id="ss-headline">System status</span>
+    </div>
+    <p class="ss-sub" id="ss-sub">Reading the latest run health&hellip;</p>
+    <div class="ss-errlist" id="ss-err" style="display:none"></div>
+    <div class="ss-strip" id="ss-strip" style="display:none"></div>
+    <div class="ss-actions"><a id="ss-actions-link" href="https://github.com/maveriqbjackson/qcollective-site/actions" target="_blank" rel="noopener">View all runs in GitHub Actions &#8599;</a></div>
+  </div>
+
   <div class="explain">
     <h2>How to trust this page</h2>
     <p>Every change to every score &mdash; whether you or an automated run made it &mdash; is recorded the instant it happens: a timestamp, the exact before-and-after value, and a permanent fingerprint. Because each entry is cryptographically chained to the one before it, an old record can't be quietly altered without breaking every record that follows. Nothing changes here without a permanent, tamper-evident trail.</p>
@@ -104,6 +139,7 @@
 <script>
 var REPO="maveriqbjackson/qcollective-site";
 document.getElementById('lnk-src').href="https://github.com/"+REPO;
+document.getElementById('ss-actions-link').href="https://github.com/"+REPO+"/actions";
 var ALL=[];
 function esc(s){return (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function fmtTs(t){ if(!t)return ''; var d=new Date(t); if(!isNaN(d)) return d.toUTCString().replace('GMT','UTC'); return esc(t); }
@@ -141,6 +177,10 @@ function renderChanges(c){
 function renderRun(r){
   var sha=r.git_sha? '<span class="fp">'+esc(r.git_sha)+'</span>' : '';
   var meta=[]; if(r.engine_version)meta.push('engine '+esc(r.engine_version)); if(sha)meta.push('fingerprint '+sha);
+  if(r.run_url)meta.push('<a href="'+esc(r.run_url)+'" target="_blank" rel="noopener">run log &#8599;</a>');
+  var errBlock='';
+  if(r.errors && r.errors.length){ errBlock='<div class="run-err">&#9888; '+r.errors.map(esc).join('<br>')+'</div>'; }
+  else if(r.error){ errBlock='<div class="run-err">&#9888; '+esc(r.error)+'</div>'; }
   var body='';
   if(r.run_type==='genesis'){ body='<p class="note">'+esc(r.note||'Audit log activated.')+'</p>'; }
   else {
@@ -165,7 +205,7 @@ function renderRun(r){
     '<span class="run-ts">'+fmtTs(r.ts)+'</span>'+
     '<span class="rtype '+esc(r.run_type||'')+'">'+esc((r.run_type||'run').replace('_',' '))+'</span>'+
     '<span class="run-meta">'+meta.join('<span>&middot;</span>')+'</span>'+
-    '</div><div class="run-body">'+body+'</div></div>';
+    '</div><div class="run-body">'+errBlock+body+'</div></div>';
 }
 function draw(){
   var only=document.getElementById('onlychg').checked;
@@ -174,10 +214,71 @@ function draw(){
   document.getElementById('runs').innerHTML = list.length? list.map(renderRun).join('') : '<p style="color:var(--text-muted)">No runs match.</p>';
 }
 document.getElementById('onlychg').addEventListener('change',draw);
-fetch('data/audit.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(d){
-  if(!d||!d.runs){document.getElementById('runs').innerHTML='<p style="color:var(--text-muted)">No runs logged yet. The first entry will appear here after the next scoring run.</p>';return;}
-  ALL=d.runs; draw();
-}).catch(function(){document.getElementById('runs').innerHTML='<p style="color:var(--text-muted)">Could not load the audit log right now.</p>';});
+
+/* ===== System Status (added) ===== */
+function parseUpdated(s){
+  if(!s) return null;
+  var m=String(s).match(/([A-Za-z]+)\s+(\d{1,2}),\s+(\d{4})/);
+  if(!m){ var d=new Date(s); return isNaN(d)?null:d; }
+  var mo={january:0,february:1,march:2,april:3,may:4,june:5,july:6,august:7,september:8,october:9,november:10,december:11};
+  var mi=mo[m[1].toLowerCase()]; if(mi==null) return null;
+  return new Date(+m[3],mi,+m[2]);
+}
+function daysSince(d){ return Math.floor((Date.now()-d.getTime())/86400000); }
+function renderStatus(health,idx,ds,latestCounts,engine){
+  var box=document.getElementById('sysstat');
+  var lbl=document.getElementById('ss-label'),head=document.getElementById('ss-headline'),
+      sub=document.getElementById('ss-sub'),errEl=document.getElementById('ss-err'),strip=document.getElementById('ss-strip');
+  var hasErr = health && (health.ok===false || (health.errors && health.errors.length));
+  var updated = (idx && idx.updated) || (health && health.last_run);
+  var d = updated? parseUpdated(updated): null;
+  var days = d? daysSince(d): null;
+  var dateStr = updated? String(updated).replace(/\s+at\s+.*$/,'') : '\u2014';
+  var state = hasErr? 'err' : (days!=null && days>9? 'stale':'ok');
+  box.className='sysstat '+state;
+  if(state==='err'){
+    lbl.textContent='Error';
+    head.textContent='The last scoring run reported a problem';
+    sub.textContent='Scores on the site may be out of date until the next successful run. Details below, and the full log is in GitHub Actions.';
+    if(health && health.errors && health.errors.length){ errEl.style.display='block'; errEl.textContent=health.errors.join('\n'); }
+  } else if(state==='stale'){
+    lbl.textContent='Refresh overdue';
+    head.textContent='A weekly refresh looks overdue';
+    sub.textContent='Scores last updated '+dateStr+' ('+days+' days ago). The engine runs every Sunday \u2014 a scheduled run may have been missed. Check the Actions link below.';
+  } else {
+    lbl.textContent='Operational';
+    head.textContent='All systems operational';
+    sub.textContent='Scores last updated '+dateStr+(days!=null?' ('+days+' day'+(days===1?'':'s')+' ago)':'')+'. The engine refreshes automatically every Sunday.';
+  }
+  var items=[];
+  var eng=(health&&health.scoring_version)||engine||'';
+  if(eng) items.push(['Engine',eng]);
+  var co=ds&&ds.CO;
+  if(co){ if(co.session_id) items.push(['Session','#'+co.session_id]); if(co.dataset_date) items.push(['Dataset',co.dataset_date]); }
+  if(updated) items.push(['Last run',dateStr]);
+  var cnt = idx&&idx.states&&idx.states[0]&&idx.states[0].count;
+  if(cnt) items.push(['Scored',cnt+' legislators']);
+  if(latestCounts&&latestCounts.champions!=null) items.push(['Champions',latestCounts.champions]);
+  if(items.length){ strip.style.display='flex'; strip.innerHTML=items.map(function(it){return '<div class="ss-item"><span class="ss-k">'+esc(it[0])+'</span><span class="ss-v">'+esc(it[1])+'</span></div>';}).join(''); }
+}
+function getJson(p){ return fetch(p+'?v='+Date.now()).then(function(r){return r&&r.ok?r.json():null;}).catch(function(){return null;}); }
+
+Promise.all([getJson('data/audit.json'),getJson('data/health.json'),getJson('data/index.json'),getJson('data/dataset_state.json')])
+.then(function(res){
+  var audit=res[0],health=res[1],idx=res[2],ds=res[3];
+  var latestCounts=null,engine=null;
+  if(audit&&audit.runs){ ALL=audit.runs; engine=audit.engine;
+    for(var i=audit.runs.length-1;i>=0;i--){ try{ if(audit.runs[i].states&&audit.runs[i].states.CO&&audit.runs[i].states.CO.counts){latestCounts=audit.runs[i].states.CO.counts;break;} }catch(e){} }
+    draw();
+  } else { document.getElementById('runs').innerHTML='<p style="color:var(--text-muted)">No runs logged yet. The first entry will appear here after the next scoring run.</p>'; }
+  try{ renderStatus(health,idx,ds,latestCounts,engine); }
+  catch(e){ document.getElementById('ss-label').textContent='Status unavailable'; document.getElementById('ss-sub').textContent='Could not read the health files right now.'; }
+})
+.catch(function(){
+  document.getElementById('runs').innerHTML='<p style="color:var(--text-muted)">Could not load the audit log right now.</p>';
+  document.getElementById('ss-label').textContent='Status unavailable';
+  document.getElementById('ss-sub').textContent='Could not reach the data files right now.';
+});
 </script>
 <script src="q-config.js"></script><script src="q-chat.js"></script>
 </body></html>
