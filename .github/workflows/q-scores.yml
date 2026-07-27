@@ -3,9 +3,10 @@ name: Q Score Engine
 on:
   workflow_dispatch:
   schedule:
-    - cron: "23 18 * * 0"      # Sundays at 18:23 UTC = 12:23 PM Mountain (summer) / 11:23 AM (winter).
-                               # Weekly to match LegiScan's Sunday refresh. Off-the-hour minute on
+    - cron: "38 18 * * 0"      # Sundays at 18:38 UTC = 12:38 PM Mountain (summer) / 11:38 AM (winter).
+                               # Weekly, to match LegiScan's Sunday refresh. Off-the-hour minute on
                                # purpose: GitHub drops/delays on-the-hour scheduled runs under load.
+                               # The minute is not arbitrary — it's where Colorado finished.
 
 permissions:
   contents: write
