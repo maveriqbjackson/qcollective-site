@@ -188,21 +188,30 @@ function renderJud(j,court){
 
 (function(){
   var branch=(qs('branch')||'').toLowerCase();
-  fetch('data/CO.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(d){
-    if(!d){miss('Couldn\u2019t load Colorado data right now.');return;}
-    if(branch==='executive'){
-      var office=qs('office');var o=(d.executive||[]).filter(function(x){return x.office===office;})[0];
+  function fail(){miss('Couldn\u2019t load the profile.');}
+  if(branch==='executive'){
+    fetch('data/executive.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(d){
+      if(!d){miss('Couldn\u2019t load executive data right now.');return;}
+      var office=(qs('office')||'').replace(/\+/g,' ');var offices=d.offices||{};
+      var key=Object.keys(offices).filter(function(k){return k.toLowerCase()===office.toLowerCase();})[0]
+        ||Object.keys(offices).filter(function(k){return ((offices[k]||{}).holder||'').toLowerCase()===office.toLowerCase();})[0];
+      var o=key?offices[key]:null;
       if(!o){miss('That office isn\u2019t on the board yet.');return;}
+      o.office=key;if(o.label==null)o.label=o.badge;
       renderExec(o);
-    } else if(branch==='judicial'){
-      var name=qs('name');var found=null,courtName='';
-      (d.judicial||[]).forEach(function(c){(c.justices||[]).forEach(function(x){if(x.name===name){found=x;courtName=c.court;}});});
+    }).catch(fail);
+  } else if(branch==='judicial'){
+    fetch('data/judicial.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(d){
+      if(!d){miss('Couldn\u2019t load judicial data right now.');return;}
+      var name=(qs('name')||'').replace(/\+/g,' ');var found=null,courtName='';
+      Object.keys(d).forEach(function(k){if(k==='branch'||k==='state'||k==='score_version')return;var arr=d[k];if(Array.isArray(arr)){arr.forEach(function(x){if((x.name||'').toLowerCase()===name.toLowerCase()){found=x;courtName=k;}});}});
       if(!found){miss('That justice isn\u2019t on the board yet.');return;}
+      if(found.label==null)found.label=found.badge;
       renderJud(found,courtName);
-    } else {
-      miss('No official selected. Head back to the Hub and pick one.');
-    }
-  }).catch(function(){miss('Couldn\u2019t load the profile.');});
+    }).catch(fail);
+  } else {
+    miss('No official selected. Head back to the Hub and pick one.');
+  }
 })();
 </script>
 <script src="q-config.js"></script><script src="q-chat.js"></script>
