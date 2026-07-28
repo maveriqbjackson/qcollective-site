@@ -612,7 +612,7 @@ fetch('data/'+state+'_bills.json?v='+Date.now()).then(function(r){return r.ok?r.
     html+=b.texts.map(function(t){var link=t.state_link||t.url;return link?'<a class="btext" target="_blank" rel="noopener" href="'+esc(link)+'"><span class="bt-type">'+esc(t.type||'Text')+'</span><span class="bt-meta">'+(t.date?esc(t.date)+' \u00b7 ':'')+'official PDF \u2197</span></a>':'';}).join('')+'</div>';}
   if(b.history&&b.history.length){html+='<p class="section-label" style="margin-top:40px">Tracking</p><h2 class="section-title" style="margin-bottom:6px">Every step, start to finish</h2><div class="section-divider"></div><ol class="timeline">';
     html+=b.history.map(function(h){return '<li><span class="tl-date">'+esc(h.date||'')+'</span><span class="tl-action">'+esc(h.action||'')+'</span></li>';}).join('')+'</ol>';}
-  if(b.sponsors&&b.sponsors.length){html+='<p class="section-label" style="margin-top:40px">Who\u2019s Behind It</p><h2 class="section-title" style="margin-bottom:6px">Sponsors ('+b.sponsors.length+')</h2><div class="section-divider"></div><div class="sponsor-grid">';
+  if(b.sponsors&&b.sponsors.length){html+='<p class="section-label" style="margin-top:40px">Who\u2019s Behind It</p><h2 class="section-title" style="margin-bottom:6px">Sponsors ('+b.sponsors.length+')</h2><div class="section-divider"></div><div id="qcBillSponsors"></div><div class="sponsor-grid">';
     html+=b.sponsors.map(function(sp){var label=sp.primary?'Prime sponsor':'Co-sponsor';var meta=pf(sp.party);var inner='<span class="sp-name">'+esc(sp.name||'Unknown')+'</span><span class="sp-role">'+label+(meta?' \u00b7 '+meta:'')+'</span>';return sp.people_id?'<a class="sponsor'+(sp.primary?' sp-primary':'')+'" href="legislator.html?state='+encodeURIComponent(state)+'&id='+encodeURIComponent(sp.people_id)+'">'+inner+'<span class="sp-go">View their record \u2192</span></a>':'<div class="sponsor'+(sp.primary?' sp-primary':'')+'">'+inner+'</div>';}).join('')+'</div>';}
   var src=b.state_link||b.url;
   if(src) html+='<p class="bill-source">Official source: <a target="_blank" rel="noopener" href="'+esc(src)+'">Colorado General Assembly \u2197</a></p>';
@@ -624,5 +624,6 @@ fetch('data/'+state+'_bills.json?v='+Date.now()).then(function(r){return r.ok?r.
  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6aff6948b0f84ed0b1530a42458bbb3b"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="q-config.js"></script><script src="q-chat.js"></script>
 <script src="site-chrome.js"></script>
+<script src="bill-sponsors.js"></script>
 <script src="q-auth.js"></script>
 </body></html>
