@@ -557,6 +557,24 @@ a.hrow:hover{border-left-color:var(--navy-deep);box-shadow:0 3px 12px rgba(0,0,0
 .mb-status.mb-pass{background:#1a764d;color:#fff}
 .mb-status.mb-fail{background:#822111;color:#fff}
 .mb-status.mb-prog{background:var(--gold-pale);color:var(--navy-deep)}
+
+/* compact offices zone (fold-downs) */
+.offices-zone{max-width:1100px;margin:0 auto;padding:22px 32px 4px}
+@media(max-width:640px){.offices-zone{padding:16px 20px 2px}}
+.offfold{background:#fff;border:1px solid #E0D5BE;border-radius:12px;margin-bottom:10px;overflow:hidden}
+.offfold[open]{box-shadow:0 4px 16px rgba(18,40,72,.07)}
+.offfold summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:16px 20px}
+.offfold summary::-webkit-details-marker{display:none}
+.offfold .chev{width:22px;height:22px;flex:0 0 auto;color:#B8962E;transition:transform .2s}
+.offfold[open] .chev{transform:rotate(90deg)}
+.off-t{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#122848}
+.off-m{font-family:'DM Mono',monospace;font-size:11px;color:#5a5a5a;margin-top:2px}
+.off-badge{margin-left:auto;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.5px;text-transform:uppercase;background:#f2efe8;color:#5a5a5a;border-radius:12px;padding:4px 10px;white-space:nowrap}
+.off-body{padding:2px 20px 20px}
+.off-body .nat-glabel{margin-top:14px}
+.off-statesel{display:flex;align-items:center;gap:10px;margin:4px 0 16px;flex-wrap:wrap}
+.off-statesel label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#5a5a5a}
+.off-soon{font-family:'DM Mono',monospace;font-size:11px;color:#5a5a5a}
 </style>
 <style id="soCSS">
 #stateOffices{margin:6px 0 10px}
@@ -586,17 +604,22 @@ a.so-card{cursor:pointer;transition:border-color .15s,box-shadow .15s}a.so-card:
 <p>Real bills. Real votes. One transparent score &mdash; so you can see exactly how your representatives serve the stability of everyday people.</p>
 <p style="margin:0"><span class="ph-count" id="sessCount"></span></p></section>
 
-<section class="natstrip">
-<div class="natwrap">
-<p class="nat-eyebrow">Every Branch, One Standard</p>
-<h2 class="nat-title">The Executive &amp; the Court</h2>
-<p class="nat-note">Accountability doesn&rsquo;t stop at the statehouse. Q Scores for these offices launch with our executive &amp; judicial scoring. <a href="how-q-scores-work.html">See how the scoring works &rarr;</a></p>
-<p class="nat-glabel">Executive Branch</p>
-<div class="nat-cards" id="natExec"></div>
-<p class="nat-glabel j">United States Supreme Court</p>
-<div class="nat-cards" id="natJud"></div>
+<div id="officesZone" class="offices-zone">
+<details id="fedFold" class="offfold">
+<summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg><div><div class="off-t">Federal offices</div><div class="off-m">The Executive &amp; the U.S. Supreme Court</div></div><span class="off-badge">Scores launching soon</span></summary>
+<div class="off-body">
+<p class="nat-glabel">Executive Branch</p><div class="nat-cards" id="natExec"></div>
+<p class="nat-glabel j">United States Supreme Court</p><div class="nat-cards" id="natJud"></div>
 </div>
-</section>
+</details>
+<details id="stateFold" class="offfold">
+<summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg><div><div class="off-t">State offices</div><div class="off-m">Governor, statewide execs &amp; the state Supreme Court</div></div><span class="off-badge" id="stateFoldBadge">Colorado</span></summary>
+<div class="off-body">
+<div class="off-statesel"><label for="hubState">Choose your state</label><select id="hubState" class="hub-select" onchange="loadState()"></select><span class="off-soon">&mdash; more states on the way</span></div>
+<div id="stateOffices"></div>
+</div>
+</details>
+</div>
 <script>
 (function(){
   function ini(n){return (n||'').split(/\s+/).filter(Boolean).slice(0,2).map(function(w){return w.charAt(0);}).join('').toUpperCase();}
@@ -605,7 +628,7 @@ a.so-card{cursor:pointer;transition:border-color .15s,box-shadow .15s}a.so-card:
     var sc=(p.score===null||p.score===undefined||p.score==='')?'<span class="nat-soon">Score soon</span>':'<span class="nat-score">'+p.score+'</span>';
     return '<a class="nat-card" href="national-profile.html?id='+encodeURIComponent(p.id||'')+'">'+av+'<div class="nat-info"><div class="nat-name">'+(p.name||'')+'</div><div class="nat-office">'+(p.office||'')+'</div></div>'+sc+'</a>';
   }
-  function hide(){var s=document.querySelector('.natstrip');if(s)s.style.display='none';}
+  function hide(){var s=document.getElementById('fedFold');if(s)s.style.display='none';}
   fetch('national.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(d){
     if(!d||(!d.executive&&!d.judicial)){hide();return;}
     var e=document.getElementById('natExec'),j=document.getElementById('natJud');
@@ -624,7 +647,7 @@ a.so-card{cursor:pointer;transition:border-color .15s,box-shadow .15s}a.so-card:
 <div id="hubStatus" class="hub-status">Connecting to the live tracker&hellip;</div>
 <div id="hubWrap" style="display:none">
 <div class="hub-controls">
-<select id="hubState" class="hub-select" onchange="loadState()"></select>
+
 <div class="view-toggle" id="viewToggle"><button type="button" data-mode="leg" class="vt-btn active" onclick="setMode('leg')">Legislators</button><button type="button" data-mode="bills" class="vt-btn" onclick="setMode('bills')">Bills</button><button type="button" data-mode="all" class="vt-btn" onclick="setMode('all')">All</button></div>
 <select id="hubParty" class="hub-select" onchange="renderAll()"><option value="">All parties</option></select>
 <input id="hubSearch" class="hub-search" type="text" placeholder="Search by name or district&hellip;" oninput="renderAll()">
@@ -632,7 +655,7 @@ a.so-card{cursor:pointer;transition:border-color .15s,box-shadow .15s}a.so-card:
 <div class="tag-bar" id="tagBar"></div>
 <p class="hub-updated" id="hubUpdated"></p>
 <div style="margin:6px 0 14px"><a href="audit.html" style="display:inline-block;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.5px;color:#B8962E;text-decoration:none;border:1px solid #E0D5BE;border-radius:20px;padding:5px 14px">&#128220; Every score change is on the public record &mdash; see the Audit Log &rarr;</a></div>
-<div id="stateOffices"></div>
+
 <div id="hubLeaders" style="display:none"></div>
 <div class="lens-tabs" id="lensTabs" style="display:none"></div>
 <div id="mySaved"><div id="myReps" style="display:none"></div><div id="myBills" style="display:none"></div></div><div id="legSection"><p class="section-label" id="legHdr" style="display:none;margin-top:8px">Lawmakers</p><div id="hubList" class="hub-list"></div></div>

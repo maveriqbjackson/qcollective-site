@@ -49,7 +49,7 @@
     /* web lens */
     ".qw-stage{background:#0e1f3a;border-radius:16px 16px 0 0;overflow:hidden;border:1px solid #0a1730;border-bottom:none}" +
     ".qw-head{display:flex;justify-content:space-between;align-items:baseline;padding:14px 18px 2px;color:#fff}.qw-head .t{font-family:'Playfair Display',serif;font-size:14px}.qw-head .r{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.45)}" +
-    ".qw-canvas{position:relative}.qw-canvas svg{width:100%;height:auto;display:block;touch-action:none;cursor:grab}" +
+    ".qw-canvas{position:relative}.qw-canvas svg{width:100%;height:auto;display:block;cursor:grab}" +
     ".qw-edge{fill:none;stroke:#a9c5ec;stroke-opacity:.22}.qw-edge.xp{stroke:#B8962E;stroke-opacity:.55}" +
     ".qw-node{cursor:pointer}.qw-dim{opacity:.05!important}.qw-nlab{font-family:'DM Mono',monospace;font-size:9px;fill:#fff;pointer-events:none}.qw-nlab.me{font-size:11px;font-weight:600}" +
     ".qw-zoom{position:absolute;right:12px;bottom:12px;display:flex;flex-direction:column;gap:5px;z-index:6}.qw-zoom button{width:32px;height:32px;border-radius:8px;border:1px solid rgba(255,255,255,.25);background:rgba(10,23,48,.72);color:#fff;font-size:16px;line-height:1;cursor:pointer;font-family:'DM Mono',monospace}.qw-zoom button:hover{background:rgba(184,150,46,.9);color:#122848}" +
@@ -69,7 +69,7 @@
   /* ---------- switcher ---------- */
   var TABS = [["list", "List"], ["briefing", "Briefing"], ["web", "Who works with whom"]];
   var listOnly = ["viewToggle", "hubParty", "hubSearch", "tagBar"];
-  var normal = ["stateOffices", "hubLeaders", "mySaved", "legSection", "billSection"];
+  var normal = ["officesZone", "hubLeaders", "mySaved", "legSection", "billSection"];
   function setLens(name) {
     current = name;
     if (name !== "web") webPin = null;
@@ -200,11 +200,6 @@
     window.addEventListener("mousemove", function (e) { if (!drag) return; var a = svgPt(lx, ly), b = svgPt(e.clientX, e.clientY); vpX += b.x - a.x; vpY += b.y - a.y; lx = e.clientX; ly = e.clientY; applyVp(); });
     window.addEventListener("mouseup", function () { if (drag) { drag = false; svg.style.cursor = "grab"; } });
     byId("qwZoom").addEventListener("click", function (e) { var b = e.target.closest("button"); if (!b) return; var r = svg.getBoundingClientRect(), c = svgPt(r.left + r.width / 2, r.top + r.height / 2); if (b.dataset.z === "in") zoomAt(c.x, c.y, 1.3); else if (b.dataset.z === "out") zoomAt(c.x, c.y, 1 / 1.3); else { vpS = 1; vpX = 0; vpY = 0; applyVp(); zLabels(); } });
-    var tPan=false,tPinch=false,tTapId=null,tLX=0,tLY=0,tD0=0,tS0=1,tMX=0,tMY=0,tMoved=0;
-    function tDist(t){var dx=t[0].clientX-t[1].clientX,dy=t[0].clientY-t[1].clientY;return Math.sqrt(dx*dx+dy*dy);}
-    svg.addEventListener("touchstart",function(e){if(e.touches.length===2){tPinch=true;tPan=false;tTapId=null;tD0=tDist(e.touches);tS0=vpS;var m=svgPt((e.touches[0].clientX+e.touches[1].clientX)/2,(e.touches[0].clientY+e.touches[1].clientY)/2);tMX=m.x;tMY=m.y;return;}var t=e.touches[0],el=document.elementFromPoint(t.clientX,t.clientY),nd=el&&el.closest?el.closest(".qw-node"):null;if(nd){tTapId=nd.dataset.id;tMoved=0;tLX=t.clientX;tLY=t.clientY;}else{tPan=true;tLX=t.clientX;tLY=t.clientY;}},{passive:false});
-    svg.addEventListener("touchmove",function(e){if(tPinch&&e.touches.length===2){e.preventDefault();var d=tDist(e.touches),ns=Math.max(1,Math.min(4,tS0*(d/(tD0||1)))),wx=(tMX-vpX)/vpS,wy=(tMY-vpY)/vpS;vpS=ns;vpX=tMX-wx*vpS;vpY=tMY-wy*vpS;if(vpS<=1){vpS=1;vpX=0;vpY=0;}applyVp();zLabels();return;}var t=e.touches[0];if(!t)return;if(tTapId){tMoved+=Math.abs(t.clientX-tLX)+Math.abs(t.clientY-tLY);tLX=t.clientX;tLY=t.clientY;}else if(tPan){e.preventDefault();var a=svgPt(tLX,tLY),b=svgPt(t.clientX,t.clientY);vpX+=b.x-a.x;vpY+=b.y-a.y;tLX=t.clientX;tLY=t.clientY;applyVp();}},{passive:false});
-    svg.addEventListener("touchend",function(e){if(tTapId&&tMoved<12){e.preventDefault();pin(tTapId);}if(!e.touches.length){tPan=false;tPinch=false;tTapId=null;}},{passive:false});
 
     var state = { pinned: null };
     function highlight(id) { var nb = nbrs[id]; circles.forEach(function (x) { x.classList.toggle("qw-dim", !nb[x.dataset.id]); }); paths.forEach(function (p) { p.classList.toggle("qw-dim", !(nb[p.dataset.a] && (p.dataset.a === id || p.dataset.b === id))); }); var g = ""; Object.keys(nb).forEach(function (q) { var n = byId3[q]; g += '<text class="qw-nlab' + (q === id ? " me" : "") + '" x="' + (n.x + rad(n) + 3).toFixed(1) + '" y="' + (n.y + 3).toFixed(1) + '">' + esc(last(n.n)) + "</text>"; }); labs.innerHTML = g; }
