@@ -1,0 +1,10 @@
+# The Q Collective — theqcollective.org
+User-agent: *
+Allow: /
+
+# Internal / functional pages (no SEO value)
+Disallow: /q-console.html
+Disallow: /hq.html
+Disallow: /account.html
+
+Sitemap: https://theqcollective.org/sitemap.xml
