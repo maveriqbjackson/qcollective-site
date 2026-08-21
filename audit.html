@@ -75,7 +75,7 @@
   .run-head{display:flex;align-items:center;gap:12px;padding:15px 20px;background:#fbf8f1;border-bottom:1px solid var(--border);flex-wrap:wrap}
   .run-ts{font-family:'DM Mono',monospace;font-size:13.5px;color:var(--navy-deep);font-weight:500}
   .rtype{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:12px;background:#eef1f6;color:var(--navy)}
-  .rtype.scheduled{background:#e7eefb}.rtype.manual{background:#fdf3d4;color:#7a5c12}.rtype.genesis{background:#e4f1e8;color:var(--good)}
+  .rtype.scheduled{background:#e7eefb}.rtype.manual{background:#fdf3d4;color:#7a5c12}.rtype.genesis{background:#e4f1e8;color:var(--good)}.rtype.correction{background:#fbe9e7;color:#a33f2b}
   .run-meta{margin-left:auto;font-family:'DM Mono',monospace;font-size:11px;color:var(--text-muted);display:flex;gap:12px;flex-wrap:wrap}
   .run-meta a{color:var(--gold);text-decoration:none}
   .run-body{padding:16px 20px}
@@ -163,7 +163,7 @@ function scoreChip(old,nu){
 function runHasChange(r){
   var st=r.states||{}; for(var k in st){var c=st[k].changes||{};
     if((c.legislators||[]).length||(c.executive||[]).length||(c.judicial||[]).length||(c.added||[]).length||(c.removed||[]).length) return true;}
-  return r.run_type==='genesis';
+  return r.run_type==='genesis'||r.run_type==='correction';
 }
 function renderChanges(c){
   var h='';
@@ -196,6 +196,12 @@ function renderRun(r){
   else if(r.error){ errBlock='<div class="run-err">&#9888; '+esc(r.error)+'</div>'; }
   var body='';
   if(r.run_type==='genesis'){ body='<p class="note">'+esc(r.note||'Audit log activated.')+'</p>'; }
+  else if(r.run_type==='correction'){ var cc=r.correction||{};
+    body='<p class="note">'+esc(r.note||'')+'</p>'+
+      '<div class="pills">'+(cc.subject?'<span class="pill">subject: '+esc(cc.subject)+'</span>':'')+
+      (cc.scope?'<span class="pill">'+esc(cc.scope)+'</span>':'')+
+      '<span class="pill '+(cc.scores_affected?'upd':'unch')+'">scores affected: '+(cc.scores_affected?'yes':'no')+'</span>'+
+      (cc.records_updated?'<span class="pill">'+esc(cc.records_updated)+' summaries updated</span>':'')+'</div>'; }
   else {
     var st=r.states||{}; var keys=Object.keys(st);
     if(!keys.length){ body='<p class="nochange">Run completed; no state data recorded.</p>'; }

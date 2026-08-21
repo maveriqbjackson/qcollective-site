@@ -745,7 +745,7 @@ document.getElementById('l-name').textContent=l.name;document.title=l.name+' \u2
 document.getElementById('l-sub').textContent=pf(l.party)+(l.district?' \u00b7 District '+l.district:'');
 var sc='<div class="factbox"><div class="score-big">'+l.score+'</div><div class="score-label">'+(l.label||'Q Score')+'</div>'+(l.score>=80?'<div style="margin-top:8px"><span class="q-champ"><span class="star">&#9733;</span>Accountability Champion</span></div>':'')+''+scoreBreakdown(l)+''+(l.why?'<p class="why-q-label">Why this score</p><p style="margin:4px 0 0;font-style:italic;color:var(--text-light)">\u201c'+l.why+'\u201d</p>':'')+'<p style="margin:10px 0 0;font-size:13px"><a href="how-q-scores-work.html">How is this calculated? &rarr;</a></p></div>';
 var bills=l.bills||[];var bh=bills.length?bills.map(function(b){return '<div class="brow"><div class="bnum">'+(b.number||'')+(b.primary?' &middot; Primary':'')+'</div><div class="btitle">'+'<a href="bill.html?state='+state+'&number='+encodeURIComponent(b.number||'')+'">'+(b.title||'')+'</a>'+'<div class="bstatus">'+(b.status||'')+'</div></div></div>';}).join(''):'<p>No sponsored bills recorded this session.</p>';
-body.innerHTML='<p class="section-label">Accountability</p>'+officialBar(l,state)+'<h2 class="section-title" style="margin-bottom:6px">Q Score</h2><div class="section-divider"></div>'+sc+profileActions(l)+citizenSync()+contactAndVoice(l)+'<div id="itw"></div><div id="qcCoauthor"></div><p class="section-label" style="margin-top:44px">Their Record</p><h2 class="section-title" style="margin-bottom:6px">Bills they sponsored ('+bills.length+')</h2><div class="section-divider"></div><div class="hub-bills">'+bh+'</div>'+reportCard(l);initProfile(l,state);
+body.innerHTML='<p class="section-label">Accountability</p>'+officialBar(l,state)+'<h2 class="section-title" style="margin-bottom:6px">Q Score</h2><div class="section-divider"></div>'+sc+profileActions(l)+citizenSync()+contactAndVoice(l)+'<div id="itw"></div><div id="qcCorrections"></div><div id="qcCoauthor"></div><p class="section-label" style="margin-top:44px">Their Record</p><h2 class="section-title" style="margin-bottom:6px">Bills they sponsored ('+bills.length+')</h2><div class="section-divider"></div><div class="hub-bills">'+bh+'</div>'+reportCard(l);initProfile(l,state);
 }).catch(function(){document.getElementById('l-name').textContent='Could not load';body.innerHTML='<p><a href="hub.html">Back to the Hub</a>.</p>';});})();
 </script>
  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6aff6948b0f84ed0b1530a42458bbb3b"}'></script><!-- End Cloudflare Web Analytics -->
@@ -753,4 +753,5 @@ body.innerHTML='<p class="section-label">Accountability</p>'+officialBar(l,state
 <script src="site-chrome.js"></script>
 <script src="q-auth.js"></script>
 <script src="profile-coauthor.js"></script>
+<script src="profile-corrections.js"></script>
 </body></html>
