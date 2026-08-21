@@ -1,0 +1,16 @@
+{
+ "updated": "August 21, 2026",
+ "policy": "The Q Collective publishes every correction it makes. Corrections record what was changed and when. They never disclose private information shared by an official.",
+ "corrections": [
+  {
+   "id": "26060",
+   "state": "CO",
+   "name": "Dusty Johnson",
+   "date": "August 21, 2026",
+   "scope": "Profile summary",
+   "summary": "The written summary on this profile used an incorrect pronoun. It has been corrected, and the scoring engine now writes all member summaries without gendered pronouns.",
+   "source": "Reported by the representative's office",
+   "affects": "All 100 member summaries were reviewed and updated."
+  }
+ ]
+}
