@@ -238,6 +238,26 @@ def anthropic_call(body):
             log("  Anthropic error:", str(e)); time.sleep(3*(attempt+1))
     return {}
 
+OBJ_VERBS = r"(giving|gives|keeping|keeps|marking|marks|leaving|leaves|putting|puts|placing|places|ranking|ranks|pushing|pushes|earning|earns|making|makes|setting|sets|holding|holds|landing|lands|showing|shows)"
+
+def degender(w):
+    """Safety net: the prompt forbids gendered pronouns, but never trust a name to imply gender.
+    Any that slip through are rewritten to neutral they/their/them."""
+    if not w:
+        return w
+    out = re.sub(OBJ_VERBS + r"\s+(her|him)\b", lambda m: m.group(1) + " them", w, flags=re.I)
+    out = re.sub(r"\bhim\b", "them", out); out = re.sub(r"\bHim\b", "Them", out)
+    out = re.sub(r"\bhis\b", "their", out); out = re.sub(r"\bHis\b", "Their", out)
+    out = re.sub(r"\bhers\b", "theirs", out)
+    out = re.sub(r"\b(herself|himself)\b", "themselves", out, flags=re.I)
+    out = re.sub(r"\bher\b", "their", out); out = re.sub(r"\bHer\b", "Their", out)
+    out = re.sub(r"\b(he|she)\s+is\b", "they are", out, flags=re.I)
+    out = re.sub(r"\b(he|she)\s+was\b", "they were", out, flags=re.I)
+    out = re.sub(r"\b(he|she)\s+has\b", "they have", out, flags=re.I)
+    out = re.sub(r"\b(he|she)\b", "they", out, flags=re.I)
+    return out
+
+
 def score_person(name, role, state_name, primary_bills, co_count):
     enacted = sum(1 for s in primary_bills if "Passed" in (s.get("status") or "") or "Enacted" in (s.get("status") or ""))
     if primary_bills:
@@ -272,7 +292,10 @@ def score_person(name, role, state_name, primary_bills, co_count):
         "  pillar       - do their prime-sponsored, enacted bills advance the seven pillars?\n"
         "  impact       - real, broad benefit to everyday people from what they actually passed\n"
         "  sponsorship  - leadership: how many weighty pillar-aligned bills they prime-sponsored and enacted\n\n"
-        'Return ONLY compact JSON, no prose: {"pillar":N,"impact":N,"sponsorship":N,"why":"one specific sentence about THIS member\'s record"}')
+        "WRITING THE 'why' SENTENCE - MANDATORY: NEVER use gendered pronouns (he, his, him, she, her, hers) "
+        "about the member. You do NOT know any member's gender and must never infer it from a name. "
+        "Refer to them by surname, or use they/their/them. This is a hard requirement.\n\n"
+        'Return ONLY compact JSON, no prose: {"pillar":N,"impact":N,"sponsorship":N,"why":"one specific sentence about THIS member\'s record, using no gendered pronouns"}')
     data = anthropic_call({"model": MODEL, "max_tokens": 320, "messages":[{"role":"user","content":prompt}]})
     txt = "".join(c.get("text","") for c in data.get("content",[]) if c.get("type")=="text").strip().strip("`")
     m = re.search(r"\{.*\}", txt, re.S)
@@ -373,7 +396,7 @@ def do_state(abbr, ds):
         else:
             sc = score_person(nm, role, name, primary, co_count)
             pillar, impact, ai_spons = clamp(sc.get("pillar")), clamp(sc.get("impact")), clamp(sc.get("sponsorship"))
-            why = sc.get("why",""); scored += 1; time.sleep(0.4)
+            why = degender(sc.get("why","")); scored += 1; time.sleep(0.4)
         att_raw = round(100 * a["votes_cast"] / a["votes_total"]) if a["votes_total"] else 0
         att = attendance_score(att_raw)
         enacted_primary = sum(1 for s in primary if "Enacted" in (s["status"] or "") or "Passed" in (s["status"] or ""))  # v6.5: over de-duped primary
