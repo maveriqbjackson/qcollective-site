@@ -1,6 +1,6 @@
 {
  "engine": "v7.0",
- "updated": "August 16, 2026 at 12:58 PM MDT",
+ "updated": "August 21, 2026",
  "runs": [
   {
    "ts": "2026-07-11",
@@ -804,7 +804,7 @@
         "new": 89
        },
        {
-        "name": "Monica M\u00e1rquez (Chief Justice)",
+        "name": "Monica Márquez (Chief Justice)",
         "old": null,
         "new": 89
        },
@@ -974,6 +974,22 @@
      },
      "summary": "legislator scores unchanged."
     }
+   }
+  },
+  {
+   "ts": "August 21, 2026",
+   "run_type": "correction",
+   "engine_version": "v7.1",
+   "git_sha": "",
+   "run_id": "",
+   "run_url": "",
+   "note": "Correction - profile summaries. A member summary used an incorrect pronoun, reported by the representative's office. The summary was corrected. Root cause: the scoring engine inferred gender from names when writing summaries. The engine now writes every member summary without gendered pronouns, and all 100 existing summaries were reviewed and rewritten. No scores were affected.",
+   "correction": {
+    "state": "CO",
+    "subject": "Dusty Johnson",
+    "scope": "Profile summary",
+    "scores_affected": false,
+    "records_updated": 53
    }
   }
  ]
