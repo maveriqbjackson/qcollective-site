@@ -1,6 +1,6 @@
 {
  "engine": "v7.0",
- "updated": "August 21, 2026",
+ "updated": "August 21, 2026 at 11:47 AM MDT",
  "runs": [
   {
    "ts": "2026-07-11",
@@ -804,7 +804,7 @@
         "new": 89
        },
        {
-        "name": "Monica Márquez (Chief Justice)",
+        "name": "Monica M\u00e1rquez (Chief Justice)",
         "old": null,
         "new": 89
        },
@@ -990,6 +990,37 @@
     "scope": "Profile summary",
     "scores_affected": false,
     "records_updated": 53
+   }
+  },
+  {
+   "ts": "August 21, 2026 at 11:47 AM MDT",
+   "run_type": "manual",
+   "engine_version": "v7.0",
+   "git_sha": "953a8be",
+   "run_id": "32509986444",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/32509986444",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
    }
   }
  ]
