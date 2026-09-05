@@ -3,6 +3,8 @@
 <title>The Q Collective — Citizen-Powered Policy</title>
 <meta name="description" content="The Q Collective is a nonpartisan Colorado organization that grades every member of the General Assembly against one transparent standard — the Q Score — so citizens can see who is really working for them.">
 <link rel="canonical" href="https://theqcollective.org/">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="q-humanize.css">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Q Collective">
 <meta property="og:title" content="The Q Collective — Citizen-Powered Policy">
@@ -506,10 +508,10 @@
 <section class="hero">
 <div class="hero-wm">Q</div><div class="hero-wm2">Q</div>
 <div class="hero-inner">
-<p class="hero-eyebrow">Citizen-Powered Policy &nbsp;&middot;&nbsp; Colorado</p>
+<p class="hero-eyebrow">A nonpartisan policy group in Colorado</p>
 <h1>Power belongs to the people who <span>grant it.</span></h1>
-<p class="hero-sub">The Q Collective builds detailed, ready-to-file legislation and the tools to hold power accountable &mdash; written by citizens, for the people the system is supposed to serve.</p>
-<p class="hero-org"><strong>The Q Collective LLC</strong> &nbsp;/&nbsp; Doctrine Policy Group &nbsp;&middot;&nbsp; Lakewood, Colorado</p>
+<p class="hero-sub">We write real, ready-to-file legislation. We grade every Colorado lawmaker against one public standard. All of it is open, and any of it can be checked by anyone who wants to.</p>
+<p class="hero-org"><strong>The Q Collective LLC</strong>  / Doctrine Policy Group. Lakewood, Colorado.</p>
 <div class="hero-cta">
 <a href="hub.html" class="btn-gold">Check the Record</a>
 <a href="get-involved.html" class="btn-outline">Get Involved</a>
@@ -517,61 +519,107 @@
 
 <section class="section" style="background:var(--off-white)">
 <div class="section-inner">
-<p class="section-label">Proof, Not Promises</p>
-<h2 class="section-title">Don&rsquo;t take our word for it.<br>Check the record.</h2>
+<p class="section-label">The record</p>
+<h2 class="section-title">See how your lawmakers are actually doing.</h2>
 <div class="section-divider"></div>
-<p class="section-lead">The Legislative Accountability Hub scores every Colorado lawmaker on the bills they file and the votes they cast &mdash; one transparent number you can check against the public record yourself. No endorsements. No spin. Just the receipts.</p>
+<p class="section-lead">The Accountability Hub scores every Colorado lawmaker on the bills they file and the votes they cast. One number, one formula, published in full. Every score can be checked against the public record, and every change to a score is logged where you can see it.</p>
 <div style="margin-top:30px;background:var(--navy-deep);border-radius:12px;padding:38px 34px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px">
 <div style="min-width:250px">
-<div style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(212,175,80,.5);border-radius:40px;padding:6px 14px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light)"><span style="width:8px;height:8px;border-radius:50%;background:var(--gold-light);display:inline-block"></span>Live &middot; Colorado &middot; Updated Every Sunday</div>
-<p style="color:#fff;font-family:'Playfair Display',serif;font-size:23px;line-height:1.3;margin:16px 0 0;max-width:30ch">Every lawmaker. The same standard. A score you can verify.</p>
+<div style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(212,175,80,.5);border-radius:40px;padding:6px 14px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light)"><span style="width:8px;height:8px;border-radius:50%;background:var(--gold-light);display:inline-block"></span><span id="q-live-line">Live in Colorado. Updated every Sunday.</span></div>
+<p style="color:#fff;font-family:'Source Serif 4',Georgia,serif;font-size:23px;line-height:1.35;margin:16px 0 0;max-width:32ch">Every lawmaker held to the same standard.</p><p id="q-stamp" style="color:rgba(255,255,255,.55);font-size:14px;margin:10px 0 0"></p>
 </div>
 <div style="display:flex;flex-direction:column;gap:13px;align-items:flex-start">
-<a href="hub.html" class="btn-gold">Open the Accountability Hub &rarr;</a>
-<a href="how-q-scores-work.html" style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none">How the Q Score works &rarr;</a>
+<a href="hub.html" class="btn-gold">Open the Accountability Hub</a>
+<a href="how-q-scores-work.html" style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none">How the Q Score works</a>
 </div>
 </div>
 </div>
 </section>
 
+<style>
+  /* an honest note about scope. deliberately plainer than everything
+     around it: a correction should not look like marketing. */
+  .honest { background: var(--off-white2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 46px 32px; }
+  .honest-inner { max-width: 760px; margin: 0 auto; }
+  .honest h2 { font-family: 'Source Serif 4', Georgia, serif; font-size: 25px; font-weight: 600; color: var(--navy-deep); margin-bottom: 14px; line-height: 1.3; }
+  .honest p { font-size: 16.5px; line-height: 1.8; color: var(--text-light); margin-bottom: 13px; }
+  .honest p:last-child { margin-bottom: 0; }
+  .honest a { color: var(--navy); font-weight: 600; }
+  @media (max-width: 760px) { .honest { padding: 36px 22px; } .honest h2 { font-size: 22px; } .honest p { font-size: 16px; } }
+</style>
+<section class="honest">
+  <div class="honest-inner">
+    <h2>What we do not do, so you are not surprised later</h2>
+    <p>We only cover Colorado right now. We do not score city or county offices. The federal and judicial scores are built but not live yet, and we would rather leave them dark than publish something we cannot stand behind.</p>
+    <p>The Q Score also measures one thing: a public record against seven pillars. It cannot tell you whether someone is decent to their staff, whether they return your call, or whether they were right about something the record does not capture. Use it for what it is, and use your own judgment for the rest.</p>
+    <p>When we get something wrong, we correct it in public and leave the old number visible. <a href="audit.html" onclick="return goTo(event, this.href)">Every change is in the audit log.</a></p>
+  </div>
+</section>
 <section class="section" style="background:var(--white);border-top:1px solid var(--border)">
 <div class="section-inner">
-<p class="section-label">Genuinely Nonpartisan</p>
-<h2 class="section-title">We make both sides<br>uncomfortable.</h2>
-<div class="section-divider"></div>
-<p class="section-lead">We don&rsquo;t pick a team. We pick the seven pillars of life stability &mdash; and we follow the evidence even when it annoys the people who assume we&rsquo;re on their side. Here&rsquo;s where it shows.</p>
+<h2 class="section-title">We follow the seven pillars, wherever they lead.</h2>
+<p class="section-lead">We do not pick a team. We pick the seven pillars of life stability, and we follow the evidence wherever it goes, including past people who assumed we were on their side. Here is where that shows up in the work.</p>
 <div class="work-grid" style="margin-top:30px">
-<div class="work-card"><div class="wtag">Workers and Employers</div><h3>FWMRA</h3><p>Honest grounds and fair process for workers &mdash; and capped, predictable liability for employers. Unions don&rsquo;t get a blank check; chambers don&rsquo;t get pure at-will. Both sides give something to get something.</p></div>
-<div class="work-card"><div class="wtag">Security Without New Taxes</div><h3>CESA</h3><p>Real economic security &mdash; funded through TABOR-compliant enterprise structures with no new taxes. Too much government for one side, not enough for the other. That tension is the design, not an accident.</p></div>
-<div class="work-card"><div class="wtag">Party-Blind by Design</div><h3>The Q Score</h3><p>Every lawmaker is scored on the same formula, against the public record. The data doesn&rsquo;t care who&rsquo;s in office or which letter is next to their name &mdash; and neither do we.</p></div>
+<div class="work-card"><div class="wtag">Where workers and employers meet</div><h3>FWMRA</h3><p>Honest grounds and fair process for workers. Capped, predictable liability for employers. Unions do not get a blank check and chambers do not get pure at-will. Both sides give something to get something.</p></div>
+<div class="work-card"><div class="wtag">Security, without new taxes</div><h3>CESA</h3><p>Real economic security, funded through TABOR-compliant enterprise structures with no new taxes. It is too much government for one side and not enough for the other. That tension is deliberate.</p></div>
+<div class="work-card"><div class="wtag">The letter after the name is not an input</div><h3>The Q Score</h3><p>Every lawmaker is scored on the same formula, against the same public record. The letter next to a name is not an input, because it does not tell you anything about whether someone showed up.</p></div>
 </div>
 </div>
 </section>
 
 <section class="section mission"><div class="section-inner">
-<p class="section-label">Who We Are</p>
-<h2 class="section-title">Transformation,<br>not tweaks.</h2>
+<p class="section-label">Who we are</p>
+<h2 class="section-title">Built to hold together.</h2>
 <div class="section-divider"></div>
-<p class="section-lead">From a Colorado family&rsquo;s stability to the Constitution itself, each framework reinforces the next &mdash; state, federal, regional, and constitutional. Together they form <strong>the maveriQ Doctrine</strong>: real legislation and real tools, built as one connected whole.</p>
+<p class="section-lead">Each framework holds up the one above it, from a Colorado family&rsquo;s stability all the way to the Constitution. State, federal, regional and constitutional. Together they form <strong>the maveriQ Doctrine</strong>: real legislation and real tools, built as one connected whole.</p>
 </div></section>
 
 <section class="section work" id="work"><div class="section-inner">
-<p class="section-label">The Work</p>
-<h2 class="section-title">Every level.<br>One vision.</h2>
-<div class="section-divider"></div>
+<h2 class="section-title">State, federal, regional, constitutional.</h2>
 <div class="work-grid">
-<div class="work-card"><div class="wtag">Flagship Legislation</div><h3>Colorado Economic Security Act</h3><p>A 400+ page framework built on seven pillars of life stability &mdash; health, income, family, housing, food, opportunity, and protection from disruption. Funded through TABOR-compliant enterprise structures, with no new taxes and voluntary participation.</p><div class="wmeta">Status: Complete &middot; Latest version</div><a class="card-link" href="cesa.pdf" target="_blank" rel="noopener">Read the full bill (PDF) &rarr;</a> <a class="card-link" href="anatomy.html">Read the anatomy &rarr;</a></div>
-<div class="work-card"><div class="wtag">Model Legislation</div><h3>Fair Work &amp; Mutual Responsibility Act</h3><p>A balanced answer to the at-will vs. just-cause fight &mdash; honest grounds and fair process for workers, capped and predictable liability for employers. One fair standard for every employer.</p><div class="wmeta">Status: Complete &middot; v6.0</div><a class="card-link" href="fwmra-v6.pdf" target="_blank" rel="noopener">Read the full bill (PDF) &rarr;</a></div>
-<div class="work-card"><div class="wtag">Federal Framework</div><h3>US-RAPA</h3><p>A democracy-protection framework focused on citizen empowerment, election security, and putting real power back in the people&rsquo;s hands at the national level.</p><div class="wmeta">Status: Working Draft &middot; seeking federal champion</div><a class="card-link" href="us-rapa.pdf" target="_blank" rel="noopener">Read the full bill (PDF) &rarr;</a></div>
-<div class="work-card"><div class="wtag">Regional Framework</div><h3>Western States Coalition</h3><p>GOARN &mdash; a western interstate compact for cooperation and shared resilience among states. Functional independence through working together. Not secession; coordination.</p><div class="wmeta">Status: Framework documented</div><a class="card-link" href="western-states.pdf" target="_blank" rel="noopener">Read the framework (PDF) &rarr;</a></div>
-<div class="work-card"><div class="wtag">Constitutional Framework</div><h3>The American Covenant</h3><p>The long game &mdash; a constitutional transformation framework for a nation of 335 million, activated through the phased, decade-long Bridge Protocol. Built to last generations.</p><div class="wmeta">Status: Framework documented &middot; the long game</div><a class="card-link" href="american-covenant.pdf" target="_blank" rel="noopener">Read the framework (PDF) &rarr;</a></div>
+<div class="work-card"><div class="wtag">Our flagship bill</div><h3>Colorado Economic Security Act</h3><p>A 400+ page framework built on seven pillars of life stability: health, income, family, housing, food, opportunity, and protection from disruption. Funded through TABOR-compliant enterprise structures, with no new taxes and voluntary participation.</p><div class="wmeta">Status: Complete. Latest version.</div><a class="card-link" href="cesa.pdf" target="_blank" rel="noopener">Read the full bill (PDF)</a> <a class="card-link" href="anatomy.html">Read how it was built</a></div>
+<div class="work-card"><div class="wtag">Ready for the 2027 session</div><h3>Fair Work &amp; Mutual Responsibility Act</h3><p>A balanced answer to the at-will versus just-cause fight. Honest grounds and fair process for workers, capped and predictable liability for employers. One standard for every employer, whatever their size.</p><div class="wmeta">Status: Complete. Version 6.0.</div><a class="card-link" href="fwmra-v6.pdf" target="_blank" rel="noopener">Read the full bill (PDF)</a></div>
+<div class="work-card"><div class="wtag">Federal, and still looking for a sponsor</div><h3>US-RAPA</h3><p>A democracy-protection framework built around citizen empowerment, election security, and putting real power back in people&rsquo;s hands at the national level.</p><div class="wmeta">Status: Working draft. Seeking a federal champion.</div><a class="card-link" href="us-rapa.pdf" target="_blank" rel="noopener">Read the full bill (PDF)</a></div>
+<div class="work-card"><div class="wtag">A compact between states</div><h3>Western States Coalition</h3><p>GOARN is a western interstate compact for cooperation and shared resilience between states. Functional independence through working together. This is coordination, not secession.</p><div class="wmeta">Status: Framework documented. No sponsor sought yet.</div><a class="card-link" href="western-states.pdf" target="_blank" rel="noopener">Read the framework (PDF)</a></div>
+<div class="work-card"><div class="wtag">The one measured in generations</div><h3>The American Covenant</h3><p>The long game. A constitutional transformation framework for a nation of 335 million, activated through the phased, decade-long Bridge Protocol. Built to last generations.</p><div class="wmeta">Status: Framework documented. Decades, not sessions.</div><a class="card-link" href="american-covenant.pdf" target="_blank" rel="noopener">Read the framework (PDF)</a></div>
 </div>
 <p class="center" style="margin-top:26px"><a href="the-work.html" class="btn-gold">See all the Work</a></p>
 </div></section>
+
+<style>
+  /* who runs this — founder strip */
+  .whois { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 66px 32px; }
+  .whois-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 220px 1fr; gap: 44px; align-items: center; }
+  .whois img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; display: block; background: var(--off-white2); border: 1px solid var(--border); }
+  .whois h2 { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; color: var(--navy-deep); line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.01em; }
+  .whois p { font-size: 17.5px; line-height: 1.8; color: var(--text-light); max-width: 60ch; margin-bottom: 14px; }
+  .whois .whois-signature { display: block; max-width: 190px; width: 100%; height: auto; margin: 22px 0 2px; }
+  .whois .whois-sig { font-family: 'Source Serif 4', Georgia, serif; font-size: 16px; color: var(--navy-deep); font-weight: 600; margin: 18px 0 20px; }
+  .whois .whois-sig span { display: block; font-family: 'Public Sans', sans-serif; font-size: 14px; font-weight: 400; color: var(--text-muted); margin-top: 2px; }
+  @media (max-width: 760px) {
+    .whois { padding: 44px 22px; }
+    .whois-inner { grid-template-columns: 1fr; gap: 26px; }
+    .whois img { max-width: 210px; }
+    .whois p { font-size: 16.5px; }
+  }
+</style>
+<section class="whois">
+  <div class="whois-inner">
+    <img src="founder.jpg" alt="maveriQ B Jackson, founder of The Q Collective">
+    <div>
+      <h2>Someone has to put their name on it.</h2>
+      <p>An organization that grades named public officials should not get to stay faceless itself. My name is maveriQ B Jackson. I founded The Q Collective, I write most of what is on this site, and I live in Lakewood.</p>
+      <p>If you think we got a score wrong, you know exactly who to tell.</p>
+      <img class="whois-signature" src="signature.png" alt="Signature of maveriQ B Jackson">
+      <div class="whois-sig">maveriQ B Jackson<span>Founder, The Q Collective LLC / Doctrine Policy Group</span></div>
+      <a href="founder.html" class="btn-outline" style="color:var(--navy-deep);border-color:var(--navy-deep)" onclick="return goTo(event, this.href)">Read why my name is on this</a>
+    </div>
+  </div>
+</section>
 <section class="callout">
 <p class="ph-eyebrow" style="color:var(--gold-light)">Work With Us</p>
 <h2>Have an idea for a law?</h2>
-<p>Citizens, legislators, governors, and press &mdash; we help turn ideas into real, well-built legislation, and we&rsquo;re ready to talk. There&rsquo;s a door here for everyone.</p>
+<p>Citizens, legislators, governors and press. If you have an idea for a law, we will help you turn it into something real and well built. There is a door here for everyone, and it is genuinely open.</p>
 <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
 <a class="btn-gold" href="work-with-us.html">Work With Us</a>
 <a class="btn-outline" href="support-a-bill.html">Support a Bill</a>
@@ -582,7 +630,7 @@
   <div style="max-width:920px;margin:0 auto;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between">
     <div style="flex:1;min-width:260px">
       <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#fff;margin-bottom:6px">Get the Sunday Update</div>
-      <div style="font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(255,255,255,.78);line-height:1.6;max-width:52ch">The Q Scores refresh every Sunday. Drop your email and we&rsquo;ll send you what moved &mdash; which bills advanced, whose record changed. No spam, unsubscribe anytime.</div>
+      <div style="font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(255,255,255,.78);line-height:1.6;max-width:52ch">The Q Scores refresh every Sunday. Leave your email and we will send you what moved that week: which bills advanced, whose record changed. No spam, and you can unsubscribe anytime.</div>
     </div>
     <form id="sundayForm" onsubmit="return sundaySignup(event,this)" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
       <input type="hidden" name="access_key" value="da0f4760-ac24-433c-b27f-52058241488e">
@@ -606,6 +654,24 @@ else{m.textContent='Something went wrong \u2014 email team@theQcollective.org.';
 function goTo(e, url){ try{ if(window.top && window.top!==window.self){ window.top.location.href=url; } else { window.location.href=url; } if(e && e.preventDefault) e.preventDefault(); return false; }catch(err){ return true; } }
 </script><script></script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6aff6948b0f84ed0b1530a42458bbb3b"}'></script><!-- End Cloudflare Web Analytics -->
+
+<script>
+/* Reads the real timestamp and lawmaker count out of the score data so the
+   homepage states a fact instead of a vague promise. If the fetch fails for
+   any reason the original wording is simply left in place. */
+(function(){
+  try{
+    fetch('data/index.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+      var co=(d.states||[]).filter(function(x){return x.code==='CO';})[0];
+      var n=co&&co.count;
+      var line=document.getElementById('q-live-line');
+      if(line&&n) line.textContent='Live in Colorado. '+n+' lawmakers scored.';
+      var st=document.getElementById('q-stamp');
+      if(st&&d.updated) st.textContent='Scores last recalculated '+d.updated+'.';
+    }).catch(function(){});
+  }catch(e){}
+})();
+</script>
 <script src="q-config.js"></script><script src="q-chat.js"></script>
 <script src="site-chrome.js"></script>
 </body></html>

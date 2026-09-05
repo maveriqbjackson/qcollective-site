@@ -1,0 +1,339 @@
+/* =========================================================================
+   Q COLLECTIVE — HUMANIZE LAYER
+   v1.0  ·  loaded automatically by site-chrome.js on every page
+
+   WHAT THIS FILE DOES
+   -------------------
+   This is an override layer. It does not replace any existing page CSS.
+   It loads last, so it wins where it needs to and leaves everything else
+   exactly as it was.
+
+   It changes four things:
+     1. Typefaces        Playfair Display / DM Sans / DM Mono are replaced
+                         with Source Serif 4 + Public Sans.
+     2. Label styling    Kills the ALL-CAPS, wide-letter-spaced micro-labels.
+     3. Nav overlay      Makes the menu scrollable and readable on phones.
+     4. Weight + accent  Softens 900-weight headlines, removes the
+                         single-word gold accent in the hero headline.
+
+   Colors are deliberately NOT changed. Navy and gold stay exactly as they
+   are so the site continues to match the bills, letterhead and PDFs.
+
+   TO REMOVE: delete the injectCSS line in site-chrome.js. Nothing else
+   depends on this file.
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+
+
+/* -------------------------------------------------------------------------
+   1. TYPEFACES
+   Source Serif 4 for headings: a humanist text serif with real warmth.
+   Public Sans for everything else: the typeface of the U.S. Web Design
+   System, which is exactly the register a legislative accountability
+   organization should be speaking in.
+   ------------------------------------------------------------------------- */
+
+html body,
+html body input,
+html body textarea,
+html body select,
+html body button {
+  font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html body h1, html body h2, html body h3, html body h4,
+html body .hero h1,
+html body .section-title,
+html body .brand-q,
+html body .stat-num,
+html body .hero-wm, html body .hero-wm2,
+html body .mission-wm, html body .pillars-wm, html body .contact-wm,
+html body .ov-brand,
+html body .ov-links a,
+html body .ov-featured {
+  font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+}
+
+/* Anything the old stylesheets set in monospace becomes Public Sans.
+   The monospace micro-label is one of the strongest "generated page"
+   signals there is, and it was being used purely as decoration. */
+html body .brand-name,
+html body .topnav a,
+html body .menu-btn,
+html body .hero-eyebrow,
+html body .hero-org,
+html body .section-label,
+html body .stat-label,
+html body .btn-gold,
+html body .btn-outline,
+html body .ov-foot,
+html body .ovf-sub,
+html body .footer-balance-label,
+html body .footer-bottom-link,
+html body .footer-sep {
+  font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+
+/* -------------------------------------------------------------------------
+   2. LABELS — no more shouting
+   Uppercase + 3px letter-spacing on every small label is template chrome.
+   Sentence case reads as written by a person.
+   ------------------------------------------------------------------------- */
+
+html body .hero-eyebrow,
+html body .section-label,
+html body .stat-label,
+html body .ov-foot,
+html body .ovf-sub,
+html body .footer-balance-label {
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+html body .hero-eyebrow {
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+html body .section-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold, #B8962E);
+}
+
+html body .stat-label {
+  font-size: 12.5px;
+  letter-spacing: 0.01em;
+}
+
+html body .hero-org {
+  letter-spacing: 0.01em;
+  font-size: 13.5px;
+}
+
+/* Buttons keep a little letter-spacing for presence, but lose the
+   all-caps bark. A button that says "Check the record" in sentence case
+   sounds like an invitation. In caps it sounds like an order. */
+html body .btn-gold,
+html body .btn-outline,
+html body .menu-btn,
+html body .topnav a {
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+html body .brand-name {
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* -------------------------------------------------------------------------
+   3. HEADLINE WEIGHT AND ACCENT
+   900-weight Playfair was doing a lot of shouting. Source Serif at 600/700
+   has more authority precisely because it is not straining.
+   ------------------------------------------------------------------------- */
+
+html body .hero h1 {
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+
+/* Coloring one word of a headline gold is a named tell. The sentence is
+   strong enough on its own. */
+html body .hero h1 span {
+  color: inherit;
+}
+
+html body .section-title {
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+
+html body .stat-num,
+html body .brand-q {
+  font-weight: 700;
+}
+
+/* The giant background "Q" watermarks stay, but quieter. */
+html body .hero-wm { opacity: 0.55; }
+
+
+/* -------------------------------------------------------------------------
+   4. NAVIGATION OVERLAY — the actual bug fix
+   The old overlay was: height 100%, content vertically centered, no
+   overflow rule. Any list taller than the screen was clipped with no way
+   to scroll to it. On a phone the two-column layout made long link names
+   wrap to three lines, so the list was always taller than the screen.
+
+   Fixed by: scrolling enabled, content anchored to the top, single column
+   and left-aligned below 760px, grouped headings so 19 links can be
+   scanned instead of read.
+   ------------------------------------------------------------------------- */
+
+html body .nav-overlay {
+  justify-content: flex-start;
+  align-items: stretch;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 76px 24px 40px;
+}
+
+html body .nav-overlay .ov-brand {
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+html body .nav-overlay .nav-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 40px;
+  width: 48px;
+  height: 48px;
+  line-height: 44px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+html body .nav-overlay .nav-close:focus-visible,
+html body .nav-overlay a:focus-visible,
+html body .menu-btn:focus-visible {
+  outline: 2px solid var(--gold-light, #D4AF50);
+  outline-offset: 3px;
+}
+
+/* Grouped columns replace the old 2-up column-count list. */
+html body .ov-links {
+  -webkit-column-count: auto;
+  column-count: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px 40px;
+  max-width: 980px;
+  width: 100%;
+  margin: 6px auto 0;
+  align-items: start;
+}
+
+html body .ov-group {
+  break-inside: avoid;
+  margin-bottom: 22px;
+}
+
+html body .ov-group h3 {
+  font-family: 'Public Sans', sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold, #B8962E);
+  margin: 0 0 8px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid rgba(184, 150, 46, 0.28);
+}
+
+html body .ov-links a {
+  display: block;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.35;
+  padding: 9px 2px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+html body .ov-links a:hover,
+html body .ov-links a:focus {
+  color: var(--gold-light, #D4AF50);
+}
+
+html body .ov-links a.ov-current {
+  color: var(--gold-light, #D4AF50);
+  font-weight: 600;
+}
+
+html body .ov-featured {
+  font-family: 'Source Serif 4', Georgia, serif;
+  max-width: 980px;
+  width: 100%;
+  margin: 10px auto 0;
+  font-size: 18px;
+  text-align: left;
+  padding: 16px 20px;
+}
+
+html body .ov-featured .ovf-sub {
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+/* The footer line used to be pinned to the bottom of the viewport, so it
+   sat on top of the last links once the list got long. It now flows. */
+html body .nav-overlay .ov-foot {
+  position: static;
+  max-width: 980px;
+  width: 100%;
+  margin: 26px auto 0;
+  text-align: left;
+  font-size: 12.5px;
+}
+
+@media (max-width: 1000px) {
+  html body .ov-links { grid-template-columns: repeat(2, 1fr); gap: 4px 32px; }
+}
+
+@media (max-width: 760px) {
+  html body .nav-overlay { padding: 70px 22px 36px; }
+  html body .ov-links {
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-width: 100%;
+  }
+  html body .ov-group { margin-bottom: 20px; }
+  /* 17px with 11px padding gives a ~44px tap target, which is the
+     minimum comfortable thumb target on a phone. */
+  html body .ov-links a { font-size: 17px; padding: 11px 2px; }
+  html body .ov-featured { font-size: 17px; margin-top: 6px; }
+}
+
+/* Stops the page behind the menu from scrolling while the menu is open. */
+html body.q-nav-open {
+  overflow: hidden;
+}
+
+
+/* -------------------------------------------------------------------------
+   5. READING COMFORT
+   Serif body copy needs more line-height and shorter measure than sans.
+   ------------------------------------------------------------------------- */
+
+html body .section-lead,
+html body .hero-sub {
+  max-width: 66ch;
+}
+
+html body .section-divider {
+  height: 2px;
+  width: 44px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  html body * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
