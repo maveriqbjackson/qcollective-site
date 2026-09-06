@@ -1,10 +1,11 @@
-# The Q Collective — theqcollective.org
 User-agent: *
+Disallow: /admin
+Disallow: /panel
+Disallow: /sign
+Disallow: /account
+Disallow: /api/
+Disallow: /mapdata/
+Disallow: /manifest.json
 Allow: /
 
-# Internal / functional pages (no SEO value)
-Disallow: /q-console.html
-Disallow: /hq.html
-Disallow: /account.html
-
-Sitemap: https://theqcollective.org/sitemap.xml
+Sitemap: https://mysovran.online/sitemap.xml
