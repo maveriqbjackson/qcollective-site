@@ -1,11 +1,11 @@
+# The Q Collective — theqcollective.org
+# Nonpartisan Colorado legislative accountability.
+
 User-agent: *
-Disallow: /admin
-Disallow: /panel
-Disallow: /sign
-Disallow: /account
-Disallow: /api/
-Disallow: /mapdata/
-Disallow: /manifest.json
 Allow: /
 
-Sitemap: https://mysovran.online/sitemap.xml
+# Internal tooling, not for indexing.
+Disallow: /q-console.html
+Disallow: /hq.html
+
+Sitemap: https://theqcollective.org/sitemap.xml
