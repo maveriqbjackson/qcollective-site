@@ -61,10 +61,10 @@
   .wrap { max-width: 900px; margin: 0 auto; padding: 0 32px; }
   .note { padding: 56px 0 20px; }
 
-  .portrait-row { display: grid; grid-template-columns: 260px 1fr; gap: 40px; align-items: start; margin-bottom: 44px; }
-  .portrait { width: 100%; border-radius: 4px; display: block; background: var(--off-white2); border: 1px solid var(--border); aspect-ratio: 4 / 5; object-fit: cover; }
-  .portrait-cap { font-size: 13.5px; color: var(--text-muted); line-height: 1.55; margin-top: 12px; }
-  .lede { font-family: 'Source Serif 4', Georgia, serif; font-size: 23px; line-height: 1.55; color: var(--text); }
+  .portrait-row { margin: 0 0 40px; }
+  .portrait { width: 100%; border-radius: 6px; display: block; background: var(--off-white2); aspect-ratio: 2 / 1; object-fit: cover; box-shadow: 0 2px 18px rgba(18,40,72,0.13); }
+  .portrait-cap { font-size: 13.5px; color: var(--text-muted); line-height: 1.55; margin-top: 11px; padding-left: 2px; }
+  .lede { font-family: 'Source Serif 4', Georgia, serif; font-size: 24px; line-height: 1.52; color: var(--text); max-width: 60ch; margin: 34px 0 4px; }
 
   .note p { font-size: 18px; line-height: 1.82; color: var(--text-light); margin-bottom: 22px; max-width: 66ch; }
   .note p strong { color: var(--text); font-weight: 600; }
@@ -101,9 +101,10 @@
     .fhead-wm { display: none; }
     .wrap { padding: 0 22px; }
     .note { padding: 38px 0 16px; }
-    .portrait-row { grid-template-columns: 1fr; gap: 24px; margin-bottom: 34px; }
-    .portrait { max-width: 300px; }
-    .lede { font-size: 20px; }
+    .portrait-row { margin-bottom: 28px; }
+    /* on a phone a 2:1 strip gets too short, so the frame squares up a little */
+    .portrait { aspect-ratio: 3 / 2; border-radius: 5px; }
+    .lede { font-size: 20px; margin: 26px 0 4px; }
     .note p { font-size: 17px; }
     .promises { padding: 26px 22px; }
     .reach { padding: 30px 24px; }
@@ -132,15 +133,14 @@
 <div class="wrap">
   <div class="note">
 
-    <div class="portrait-row">
-      <div>
-        <!-- Replace founder.jpg with your photo. Portrait orientation, roughly
-             800x1000px. A plain wall or outdoors both work. Look at the camera. -->
-        <img class="portrait" src="founder.jpg" width="900" height="1125" decoding="async" alt="maveriQ B Jackson with his dog in the foothills outside Lakewood, Colorado">
-        <p class="portrait-cap">maveriQ B Jackson, in the foothills outside Lakewood.</p>
-      </div>
-      <p class="lede">My name is maveriQ B Jackson. I founded The Q Collective, and I write most of what you will find on this site. If you are going to hold our work to a standard, you should know whose work it is.</p>
-    </div>
+    <figure class="portrait-row">
+      <!-- founder-hero.jpg is the 2:1 landscape crop. If you swap the photo,
+           keep it landscape: a 2:1 frame is what this layout expects. -->
+      <img class="portrait" src="founder-hero.jpg" width="1600" height="800" decoding="async" alt="maveriQ B Jackson crouching beside his dog in the foothills outside Lakewood, Colorado">
+      <figcaption class="portrait-cap">maveriQ B Jackson, in the foothills outside Lakewood.</figcaption>
+    </figure>
+
+    <p class="lede">My name is maveriQ B Jackson. I founded The Q Collective, and I write most of what you will find on this site. If you are going to hold our work to a standard, you should know whose work it is.</p>
 
     <p>The lowercase <strong>m</strong> and the capital <strong>Q</strong> are not a typo, and they are not a brand exercise. Where a person starts does not decide anything. Where they finish does, and so does what they do on the way there. I have organized my life around that idea. I organized this work around it too.</p>
 
