@@ -74,7 +74,8 @@
 
   /* ---------- signature ---------- */
   .sign { margin: 46px 0 10px; }
-  .sign img { display: block; max-width: 250px; width: 100%; height: auto; margin-bottom: 6px; }
+  .sign .sig-mark { display: block; font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-weight: 600; font-size: 40px; line-height: 1.1; color: var(--navy-deep); margin-bottom: 10px; letter-spacing: 0.005em; }
+  .sign .sig-img { display: none; max-width: 250px; width: 100%; height: auto; margin-bottom: 6px; }
   .sign .sign-name { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; color: var(--navy-deep); font-weight: 600; }
   .sign .sign-role { font-size: 14.5px; color: var(--text-muted); }
 
@@ -135,8 +136,8 @@
       <div>
         <!-- Replace founder.jpg with your photo. Portrait orientation, roughly
              800x1000px. A plain wall or outdoors both work. Look at the camera. -->
-        <img class="portrait" src="founder.jpg" alt="maveriQ B Jackson, founder of The Q Collective, in Lakewood, Colorado">
-        <p class="portrait-cap">maveriQ B Jackson. Lakewood, Colorado.</p>
+        <img class="portrait" src="founder.jpg" width="900" height="1125" decoding="async" alt="maveriQ B Jackson with his dog in the foothills outside Lakewood, Colorado">
+        <p class="portrait-cap">maveriQ B Jackson, in the foothills outside Lakewood.</p>
       </div>
       <p class="lede">My name is maveriQ B Jackson. I founded The Q Collective, and I write most of what you will find on this site. If you are going to hold our work to a standard, you should know whose work it is.</p>
     </div>
@@ -162,11 +163,15 @@
     <p>I know what it looks like when an organization grades named public officials while staying faceless itself. It looks like people who want the authority without the exposure. So my name is on this, my face is on this, and my phone number is at the bottom of this page. If you think we got something wrong, you know exactly who to call.</p>
 
     <div class="sign">
-      <!-- Replace signature.png with a photo of your signature.
-           Sign "mav QBJ" in dark ink on plain white paper, photograph it in
-           good light, then crop tight and remove the background so it is a
-           transparent PNG. -->
-      <img src="signature.png" alt="Signature of maveriQ B Jackson">
+      <!-- Signature block. Shows the typographic mark by default. If a
+           signature.png is present in the repo it loads and replaces the
+           mark automatically, with no edit to this file. To add one: sign
+           "mav QBJ" in dark ink on white paper, photograph it, crop tight,
+           remove the background, save as a transparent PNG. -->
+      <span class="sig-mark" id="sig-mark-f">mav QBJ</span>
+      <img class="sig-img" src="signature.png" alt="Signature of maveriQ B Jackson"
+           onerror="this.remove()"
+           onload="this.style.display='block';var m=document.getElementById('sig-mark-f');if(m)m.style.display='none';">
       <div class="sign-name">maveriQ B Jackson</div>
       <div class="sign-role">Founder, The Q Collective LLC / Doctrine Policy Group</div>
     </div>
