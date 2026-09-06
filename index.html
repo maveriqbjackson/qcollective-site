@@ -1,896 +1,685 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>SOVRAN — Today you are a record. Tomorrow you are sovereign.</title>
-<meta name="description" content="Digital self-preservation. Find yourself on the sites that sell you, get them removed, and see the surveillance you move through. Nothing readable ever leaves your device.">
-<meta name="theme-color" content="#04060C">
-<link rel="canonical" href="https://mysovran.online/">
-<meta property="og:title" content="SOVRAN — Today you are a record. Tomorrow you are sovereign.">
-<meta property="og:description" content="Your likeness, your data, your routine, your kids — mapped, defended, and never stored anywhere anyone can take them.">
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Q Collective — Citizen-Powered Policy</title>
+<meta name="description" content="The record was always public. The Q Collective is a nonpartisan Colorado organization that grades every member of the General Assembly against one transparent standard — the Q Score — so citizens can see who is really working for them.">
+<link rel="canonical" href="https://theqcollective.org/">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="q-humanize.css">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="SOVRAN">
-<meta property="og:image" content="https://mysovran.online/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="SOVRAN — today you are a record, tomorrow you are sovereign">
+<meta property="og:site_name" content="The Q Collective">
+<meta property="og:title" content="The Q Collective — Citizen-Powered Policy">
+<meta property="og:description" content="The Q Collective is a nonpartisan Colorado organization that grades every member of the General Assembly against one transparent standard — the Q Score — so citizens can see who is really working for them.">
+<meta property="og:url" content="https://theqcollective.org/">
+<meta property="og:image" content="https://theqcollective.org/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SOVRAN — Today you are a record. Tomorrow you are sovereign.">
-<meta name="twitter:description" content="Your likeness, your data, your routine, your kids — mapped, defended, and never stored anywhere anyone can take them.">
-<meta name="twitter:image" content="https://mysovran.online/og.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preload" href="fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/plex-sans-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2304060F'/%3E%3Cdefs%3E%3ClinearGradient id='b' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%237B5CD6'/%3E%3Cstop offset='.5' stop-color='%234FC3D9'/%3E%3Cstop offset='1' stop-color='%23D9AE5F'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M10 76 Q50 26 90 76' stroke='url(%23b)' stroke-width='8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta name="twitter:title" content="The Q Collective — Citizen-Powered Policy">
+<meta name="twitter:description" content="The Q Collective is a nonpartisan Colorado organization that grades every member of the General Assembly against one transparent standard — the Q Score — so citizens can see who is really working for them.">
+<meta name="twitter:image" content="https://theqcollective.org/og-image.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 <style>
-/* ── Self-hosted type. No request ever leaves this domain. ──
-   Archivo (SIL OFL 1.1) · IBM Plex Sans & Mono (SIL OFL 1.1)
-   Loading these from Google would hand them your IP and referrer on every
-   visit, which would make the promise on this page untrue. */
-@font-face{font-family:'Archivo';font-style:normal;font-weight:100 900;
-  font-stretch:62% 125%;font-display:swap;
-  src:url(fonts/archivo-var.woff2) format('woff2-variations'),
-      url(fonts/archivo-var.woff2) format('woff2')}
-@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:100 700;
-  font-display:swap;
-  src:url(fonts/plex-sans-var.woff2) format('woff2-variations'),
-      url(fonts/plex-sans-var.woff2) format('woff2')}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;
-  font-display:swap;src:url(fonts/plex-mono-400.woff2) format('woff2')}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;
-  font-display:swap;src:url(fonts/plex-mono-500.woff2) format('woff2')}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:600;
-  font-display:swap;src:url(fonts/plex-mono-600.woff2) format('woff2')}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  :root {
+    --navy: #1B3A6B; --navy-deep: #122848; --navy-mid: #243f72;
+    --gold: #B8962E; --gold-light: #D4AF50; --gold-pale: #F5EDD4;
+    --white: #FFFFFF; --off-white: #F9F6F0; --off-white2: #F2EFE8;
+    --text: #1a1a1a; --text-light: #4a4a4a; --text-muted: #5a5a5a; --border: #E0D5BE;
+  }
+  body { background: var(--off-white); font-family: 'DM Sans', sans-serif; color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; margin: 0; }
+
+  .top-stripe { height: 5px; background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%); }
+
+  /* TOP BAR */
+  .topbar { position: sticky; top: 0; z-index: 50; background: rgba(18,40,72,0.97); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(184,150,46,0.25); }
+  .topbar-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; gap: 16px; }
+  .brand { display: flex; align-items: baseline; gap: 10px; }
+  .brand-q { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 26px; color: var(--gold-light); line-height: 1; }
+  .brand-name { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--white); }
+  .topnav { display: flex; align-items: center; gap: 26px; }
+  .topnav a { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+  .topnav a:hover { color: var(--gold-light); }
+  .topnav .nav-cta { background: var(--gold); color: var(--navy-deep); padding: 9px 16px; border-radius: 4px; font-weight: 500; }
+  .topnav .nav-cta:hover { background: var(--gold-light); color: var(--navy-deep); }
+
+  /* HERO */
+  .hero { background: var(--navy-deep); position: relative; overflow: hidden; padding: 92px 32px 84px; }
+  .hero-wm { position: absolute; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 640px; line-height: 1; color: rgba(255,255,255,0.06); top: -120px; right: -60px; pointer-events: none; user-select: none; z-index: 0; }
+  .hero-wm2 { position: absolute; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 240px; line-height: 1; color: rgba(184,150,46,0.08); bottom: -50px; left: -10px; pointer-events: none; user-select: none; z-index: 0; }
+  .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-light); opacity: 0.9; margin-bottom: 22px; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 6.5vw, 82px); font-weight: 900; color: var(--white); line-height: 1.0; margin-bottom: 26px; max-width: 16ch; }
+  .hero h1 span { color: var(--gold-light); }
+  .hero-sub { font-size: clamp(16px, 2vw, 20px); color: rgba(255,255,255,0.72); max-width: 620px; line-height: 1.75; margin-bottom: 18px; }
+  .hero-org { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 1px; color: rgba(255,255,255,0.5); margin-bottom: 38px; }
+  .hero-org strong { color: var(--gold-light); font-weight: 500; }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-gold { display: inline-block; background: var(--gold); color: var(--navy-deep); font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 16px 34px; text-decoration: none; transition: background 0.2s, transform 0.15s; cursor: pointer; border: none; border-radius: 4px; }
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline { display: inline-block; border: 1px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.85); font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; padding: 16px 34px; text-decoration: none; transition: border-color 0.2s, color 0.2s; cursor: pointer; border-radius: 4px; background: transparent; }
+  .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
+
+  /* COMING SOON STRIP */
+  .soon { background: var(--gold); color: var(--navy-deep); text-align: center; padding: 14px 24px; font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
+
+  /* STATS */
+  .stats { background: var(--navy); padding: 0; }
+  .stats-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat { padding: 38px 24px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1); }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: clamp(34px, 4vw, 46px); font-weight: 900; color: var(--gold-light); line-height: 1; margin-bottom: 8px; }
+  .stat-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.7); line-height: 1.5; }
+
+  /* SECTION SHELL */
+  .section { padding: 84px 32px; position: relative; overflow: hidden; }
+  .section-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(30px, 4.5vw, 50px); font-weight: 700; color: var(--navy-deep); line-height: 1.12; margin-bottom: 18px; }
+  .section-divider { width: 52px; height: 3px; background: var(--gold); margin-bottom: 34px; }
+  .section-lead { font-size: 17px; color: var(--text-light); line-height: 1.85; max-width: 720px; }
+  .section-lead strong { color: var(--text); font-weight: 600; }
+
+  .mission { background: var(--off-white); }
+  .mission-wm { position: absolute; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 480px; color: rgba(27,58,107,0.04); top: -60px; right: -40px; pointer-events: none; user-select: none; }
+  .standard { margin-top: 34px; background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--gold); padding: 28px 32px; max-width: 760px; }
+  .standard p { font-family: 'Playfair Display', serif; font-size: 19px; font-style: italic; color: var(--navy-deep); line-height: 1.55; }
+
+  /* WORK GRID */
+  .work { background: var(--white); border-top: 1px solid var(--border); }
+  .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--border); margin-top: 40px; }
+  .work-card { background: var(--off-white); padding: 34px 32px; }
+  .work-card .wtag { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .work-card h3 { font-family: 'Playfair Display', serif; font-size: 23px; font-weight: 700; color: var(--navy-deep); line-height: 1.2; margin-bottom: 10px; }
+  .work-card p { font-size: 14.5px; color: var(--text-light); line-height: 1.7; }
+  .work-card .wmeta { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-muted); margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+
+  /* PILLARS */
+  .pillars { background: var(--navy-deep); }
+  .pillars-wm { position: absolute; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 520px; color: rgba(184,150,46,0.07); top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; user-select: none; }
+  .pillars .section-label { color: var(--gold-light); opacity: 0.9; }
+  .pillars .section-title { color: var(--white); }
+  .pillars-sub { font-size: 16px; color: rgba(255,255,255,0.66); max-width: 640px; margin-bottom: 40px; }
+  .pillar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; }
+  .pillar { background: rgba(255,255,255,0.04); border-top: 3px solid var(--gold); padding: 22px 14px; text-align: center; min-height: 150px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+  .pillar-num { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 900; color: var(--gold-light); line-height: 1; margin-bottom: 12px; }
+  .pillar-name { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; color: var(--white); line-height: 1.35; }
+
+  /* COMPARE */
+  .compare { background: var(--off-white2); }
+  .compare-sub { font-size: 17px; color: var(--text-light); line-height: 1.85; max-width: 760px; margin-bottom: 14px; }
+  .compare-note { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-muted); margin-bottom: 36px; max-width: 760px; line-height: 1.6; }
+  .ctable { background: var(--white); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: 0 10px 30px rgba(18,40,72,0.06); }
+  .crow { display: grid; grid-template-columns: 1.1fr 1.3fr 1.3fr; }
+  .crow > div { padding: 18px 20px; border-bottom: 1px solid var(--border); font-size: 14px; line-height: 1.55; }
+  .crow:last-child > div { border-bottom: none; }
+  .crow .clabel { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.5px; text-transform: uppercase; color: var(--navy); background: var(--off-white); font-weight: 500; display: flex; align-items: center; }
+  .crow .c-fw { color: var(--text); border-left: 3px solid var(--gold); background: #FCFAF3; }
+  .crow.chead > div { background: var(--navy-deep); color: var(--white); border-bottom: none; padding: 20px; }
+  .crow.chead .clabel { background: var(--navy-deep); color: rgba(255,255,255,0.55); }
+  .crow.chead .c-fw { color: var(--gold-light); border-left: 3px solid var(--gold); background: var(--navy-deep); font-weight: 700; }
+  .chead .ctitle { font-family: 'Playfair Display', serif; font-size: 18px; line-height: 1.25; }
+  .chead .csub { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; opacity: 0.7; margin-top: 4px; }
+  .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
+  .why-card { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--gold); padding: 26px 24px; }
+  .why-card h4 { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--navy-deep); margin-bottom: 8px; }
+  .why-card p { font-size: 14px; color: var(--text-light); line-height: 1.65; }
+
+  /* REPS */
+  .reps { background: var(--white); border-top: 1px solid var(--border); }
+  .reps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 36px; align-items: start; }
+  .reps-card { background: var(--off-white); border: 1px solid var(--border); padding: 30px 32px; }
+  .reps-card h3 { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--navy-deep); margin-bottom: 8px; }
+  .reps-card p { font-size: 14px; color: var(--text-light); line-height: 1.65; margin-bottom: 18px; }
+  .reps-select { width: 100%; font-family: 'DM Sans', sans-serif; font-size: 15px; padding: 14px 16px; border: 1px solid var(--border); background: var(--white); color: var(--text); border-radius: 6px; cursor: pointer; }
+  .reps-select:focus { outline: none; border-color: var(--gold); }
+  .reps-fed { list-style: none; padding: 0; margin: 16px 0 0; }
+  .reps-fed li { padding: 0; }
+  .reps-fed a { display: flex; align-items: center; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--navy); text-decoration: none; transition: color 0.2s; }
+  .reps-fed li:last-child a { border-bottom: none; }
+  .reps-fed a:hover { color: var(--gold); }
+  .reps-fed .ext { margin-left: auto; color: var(--gold); font-size: 12px; }
+
+  /* CONTACT */
+  .contact { background: var(--navy-deep); position: relative; overflow: hidden; text-align: center; }
+  .contact-wm { position: absolute; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 520px; color: rgba(255,255,255,0.04); top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; user-select: none; }
+  .contact-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+  .contact .section-label { color: var(--gold-light); opacity: 0.9; }
+  .contact h2 { font-family: 'Playfair Display', serif; font-size: clamp(30px, 4.5vw, 48px); font-weight: 700; color: var(--white); line-height: 1.12; margin-bottom: 16px; }
+  .contact h2 span { color: var(--gold-light); }
+  .contact-lead { font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 38px; }
+  .contact-methods { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .cmethod { background: rgba(255,255,255,0.05); border: 1px solid rgba(184,150,46,0.3); border-radius: 8px; padding: 24px 32px; min-width: 240px; text-decoration: none; transition: border-color 0.2s, background 0.2s; }
+  .cmethod:hover { border-color: var(--gold-light); background: rgba(255,255,255,0.08); }
+  .cmethod-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px; }
+  .cmethod-value { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); }
+  .cmethod-note { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 6px; }
+
+  /* FOOTER */
+  .lp-footer { background: #0d1f3a; padding: 36px 32px; text-align: center; }
+  .lp-footer .brand { justify-content: center; margin-bottom: 14px; }
+  .lp-footer p { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.8; }
+  .lp-footer a { color: var(--gold-light); text-decoration: none; }
+
+  .bottom-stripe { height: 5px; background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%); }
+
+  @media (max-width: 900px) {
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(2) { border-right: none; }
+    .pillar-grid { grid-template-columns: repeat(3, 1fr); }
+    .work-grid { grid-template-columns: 1fr; }
+    .why { grid-template-columns: 1fr; }
+    .reps-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 680px) {
+    .topnav { display: none; }
+    .hero { padding: 64px 22px 60px; }
+    .section { padding: 60px 22px; }
+    .pillar-grid { grid-template-columns: repeat(2, 1fr); }
+    .crow { grid-template-columns: 1fr; }
+    .crow > div { border-bottom: 1px solid var(--border); }
+    .crow .clabel { background: var(--navy-deep); color: var(--gold-light); }
+    .crow .c-fw::before { content: 'Fair Work Act — '; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
+    .crow.chead { display: none; }
+    .hero-wm, .hero-wm2, .mission-wm, .pillars-wm, .contact-wm { display: none; }
+  }
+  section[id] { scroll-margin-top: 76px; }
+  .work-card .card-link { display:inline-block; margin-top:14px; font-family:'DM Mono',monospace; font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); text-decoration:none; border-bottom:1px solid transparent; transition:border-color 0.2s; }
+  .work-card .card-link:hover { border-bottom-color:var(--gold); }
+  /* NEWSLETTER SIGNUP */
+  .signup { background: var(--gold); padding: 66px 32px; text-align: center; }
+  .signup-inner { max-width: 640px; margin: 0 auto; }
+  .signup-eyebrow { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--navy-deep); opacity:0.7; margin-bottom:12px; }
+  .signup-title { font-family:'Playfair Display',serif; font-size:clamp(28px,4vw,44px); font-weight:700; color:var(--navy-deep); line-height:1.1; margin-bottom:14px; }
+  .signup-sub { font-size:16px; color:#3a2e0a; line-height:1.7; margin-bottom:28px; }
+  .signup-form { display:flex; gap:10px; max-width:480px; margin:0 auto; flex-wrap:wrap; justify-content:center; }
+  .signup-input { flex:1; min-width:220px; font-family:'DM Sans',sans-serif; font-size:15px; padding:15px 18px; border:none; border-radius:6px; background:#fff; color:var(--text); }
+  .signup-input:focus { outline:2px solid var(--navy-deep); }
+  .signup-btn { font-family:'DM Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; font-weight:500; padding:15px 28px; border:none; border-radius:6px; background:var(--navy-deep); color:var(--gold-light); cursor:pointer; transition:background 0.2s; }
+  .signup-btn:hover { background:var(--navy); }
+  .signup-btn:disabled { opacity:0.6; cursor:default; }
+  .signup-msg { margin-top:16px; font-size:14px; color:var(--navy-deep); font-weight:500; }
+  .signup-success { margin-top:6px; font-family:'Playfair Display',serif; font-size:19px; font-style:italic; color:var(--navy-deep); }
+  @media (max-width:680px){ .signup { padding:48px 22px; } }
+
+/* ===== your footer styles ===== */
+  .footer {
+    background: #0f2347;
+    border-top: 1px solid rgba(184,150,46,0.2);
+    padding: 40px 40px 24px;
+  }
+
+  /* -- BALANCE STATEMENT BAND -- */
+  .footer-balance {
+    max-width: 760px;
+    margin: 0 auto 36px;
+    padding: 0 0 30px;
+    border-bottom: 1px solid rgba(184,150,46,0.18);
+    text-align: center;
+  }
+  .footer-balance-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #B8962E;
+    display: block;
+    margin-bottom: 14px;
+  }
+  .footer-balance p {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.8);
+  }
+  .footer-balance em { color: #D4AF50; font-style: italic; }
+
+  .footer-top {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+
+  .footer-brand {
+    flex: 0 0 auto;
+    max-width: 240px;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #D4AF50;
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+
+  .footer-logo span { color: rgba(255,255,255,0.5); font-size: 11px; font-family: 'DM Mono', monospace; font-weight: 400; display: block; margin-top: 6px; letter-spacing: 1.5px; }
+
+  .footer-tagline {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+
+  .footer-social {
+    display: inline-block;
+    margin-top: 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    border: 1px solid rgba(184,150,46,0.3);
+    padding: 6px 12px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .footer-social:hover { color: #D4AF50; border-color: #D4AF50; }
+
+  .footer-nav {
+    flex: 1;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .footer-col { flex: 1; min-width: 150px; }
+
+  .footer-col-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #B8962E;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(184,150,46,0.2);
+  }
+
+  /* -- STATE FINDER DROPDOWN -- */
+  .footer-state-finder { margin-bottom: 16px; }
+  .footer-state-finder label {
+    display: block;
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .footer-state-select {
+    width: 100%;
+    background: #0a1c3a;
+    color: #D4AF50;
+    border: 1px solid rgba(184,150,46,0.4);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    padding: 9px 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #B8962E 50%), linear-gradient(135deg, #B8962E 50%, transparent 50%);
+    background-position: calc(100% - 16px) center, calc(100% - 11px) center;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+  }
+  .footer-state-select:focus { outline: none; border-color: #D4AF50; }
+  .footer-state-select option { background: #0f2347; color: #fff; }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .footer-link {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px 0;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .footer-link:last-child { border-bottom: none; }
+  .footer-link:hover { color: #D4AF50; }
+
+  .footer-link .dot {
+    width: 5px; height: 5px;
+    background: rgba(184,150,46,0.4);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .footer-link .ext {
+    font-size: 9px;
+    color: rgba(255,255,255,0.2);
+    font-family: 'DM Mono', monospace;
+    margin-left: auto;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .footer-bottom-left {
+    font-size: 11px;
+    color: rgba(255,255,255,0.25);
+    font-family: 'DM Mono', monospace;
+    line-height: 1.6;
+  }
+
+  .footer-bottom-left a { color: #B8962E; text-decoration: none; }
+
+  .footer-bottom-right {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-bottom-link {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    transition: color 0.2s;
+  }
+  .footer-bottom-link:hover { color: #D4AF50; }
+
+  .footer-sep {
+    color: rgba(255,255,255,0.1);
+    font-size: 11px;
+  }
+
+  @media (max-width: 768px) {
+    .footer { padding: 32px 20px 20px; }
+    .footer-balance p { font-size: 14px; }
+    .footer-top { gap: 28px; }
+    .footer-brand { max-width: 100%; }
+    .footer-nav { gap: 20px; }
+    .footer-col { min-width: 100%; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+  }
+
+/* ===== interior-page helpers (uses your brand variables) ===== */
+.pagehead{background:var(--navy-deep);color:#fff;text-align:center;padding:72px 24px 56px;position:relative;overflow:hidden}
+.pagehead .ph-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-light)}
+.pagehead h1{font-family:'Playfair Display',serif;font-size:44px;color:#fff;margin:12px 0 0;line-height:1.15}
+.pagehead p{max-width:64ch;margin:14px auto 0;color:rgba(255,255,255,.82);font-size:18px;line-height:1.7}
+.pagewrap{max-width:1080px;margin:0 auto;padding:60px 32px}
+.narrow{max-width:780px}
+.center{text-align:center}
+.prose h2{font-family:'Playfair Display',serif;color:var(--navy-deep);font-size:30px;margin:36px 0 12px}
+.prose .plabel{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-top:30px}
+.prose p{font-size:18px;color:var(--text);line-height:1.8;margin-bottom:16px}
+.prose strong{color:var(--navy-deep)}
+.q-quote{border-left:3px solid var(--gold);padding:8px 0 8px 22px;margin:26px 0;font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:var(--navy-deep);line-height:1.6}
+.factbox{background:var(--off-white);border:1px solid var(--border);border-radius:8px;padding:22px 26px;margin:22px 0}
+.factbox p{margin:8px 0;font-size:16px;color:var(--text)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px}
+.step{background:var(--off-white);border:1px solid var(--border);border-top:3px solid var(--gold);padding:24px}
+.step .snum{font-family:'Playfair Display',serif;font-size:34px;color:var(--gold);font-weight:700;line-height:1}
+.step h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy-deep);margin:8px 0}
+.step p{font-size:14.5px;color:var(--text-light);line-height:1.65;margin:0}
+.form{max-width:640px;background:var(--off-white);border:1px solid var(--border);border-radius:10px;padding:30px}
+.form .frow{display:flex;gap:16px}.form .frow>*{flex:1}
+.field{margin-bottom:16px}
+.field label{display:block;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--navy-deep);margin-bottom:6px}
+.field input,.field textarea{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:16px;background:var(--white);color:var(--text)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+.field textarea{min-height:140px;resize:vertical}
+.formmsg{margin-top:14px;font-weight:600;font-family:'DM Sans',sans-serif}
+.formnote{font-size:13.5px;color:var(--text-muted);margin-top:8px}
+.topnav a.active{color:var(--gold-light)}
+.qcard-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);border:1px solid var(--border);margin-top:26px}
+@media(max-width:760px){.steps,.qcard-grid{grid-template-columns:1fr}.form .frow{display:block}}
 
 
-.acct{display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;
-  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ash);
-  text-decoration:none;border:1px solid var(--line-2);border-radius:99px;padding:8px 14px;
-  transition:all .18s;white-space:nowrap}
-.acct:hover{border-color:var(--gold);color:var(--gold)}
-.acct.in{border-color:rgba(61,232,165,.42);color:#3DE8A5}
-@media(max-width:560px){.acct span{display:none}.acct{padding:9px 11px}}
-.bar{gap:12px}
+/* ===== menu button + full-screen nav overlay (all screen sizes; scales as pages are added) ===== */
+.menu-btn{display:inline-flex;align-items:center;gap:9px;background:transparent;border:1px solid rgba(255,255,255,.30);color:#fff;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:9px 15px;border-radius:5px;cursor:pointer;transition:border-color .2s,background .2s}
+.menu-btn:hover{border-color:var(--gold);background:rgba(184,150,46,.14)}
+.menu-btn .bars{display:inline-flex;flex-direction:column;gap:3px}
+.menu-btn .bars span{width:17px;height:2px;background:var(--gold-light);display:block}
+.nav-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,35,71,.985);z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s ease}
+.nav-overlay.open{opacity:1;visibility:visible}
+.nav-overlay .nav-close{position:absolute;top:20px;right:28px;background:none;border:none;color:#fff;font-size:42px;line-height:1;cursor:pointer;transition:color .2s}
+.nav-overlay .nav-close:hover{color:var(--gold-light)}
+.nav-overlay .ov-brand{position:absolute;top:24px;left:32px;font-family:'Playfair Display',serif;color:#fff;font-size:20px}
+.nav-overlay .ov-brand b{color:var(--gold-light)}
+.ov-links{-webkit-column-count:2;column-count:2;-webkit-column-gap:54px;column-gap:54px;max-width:520px;width:100%;margin:0 auto}
+.ov-links a{display:block;-webkit-column-break-inside:avoid;break-inside:avoid;font-family:'Playfair Display',serif;font-size:25px;font-weight:700;color:#fff;text-decoration:none;padding:7px 4px;transition:color .2s;text-align:center}
+.ov-links a:hover{color:var(--gold-light)}
+.ov-foot{position:absolute;bottom:26px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5)}.ov-featured{display:block;margin:34px auto 0;max-width:520px;width:calc(100% - 64px);text-align:center;background:var(--gold);color:var(--navy-deep);font-family:'Playfair Display',serif;font-weight:700;font-size:19px;text-decoration:none;padding:17px 22px;border-radius:7px;border:1px solid var(--gold-light);transition:background .2s,transform .15s}.ov-featured .ovf-slash{color:var(--navy-mid);font-style:italic;margin:0 2px}.ov-featured .ovf-sub{display:block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;font-weight:500;color:var(--navy-mid);margin-top:7px}.ov-featured:hover{background:var(--gold-light);transform:translateY(-1px)}
 
-/* ═══════════════════════════════════════════════════════════════════════
-   STRIKING, NOT DECORATED
-   Contrast does the work: near-black, one real spectral band, type pushed
-   to the narrow end of Archivo's width axis, hard edges everywhere. No
-   glows standing in for hierarchy.
-   ═══════════════════════════════════════════════════════════════════════ */
-html{background:#04060C}
-body{background:transparent}
-html::before{
-  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.75;
-  background-image:
-    linear-gradient(rgba(232,224,206,.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(232,224,206,.035) 1px, transparent 1px);
-  background-size:48px 48px;animation:none;
-  mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 42%,transparent 72%);
-  -webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 42%,transparent 72%)}
-body::before{
-  content:'';position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.06;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
-body::after{
-  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:radial-gradient(120ch 60ch at 50% -8%, rgba(169,120,255,.16), transparent 62%) !important}
-
-/* THE BRIDGE — a real band, not a suggestion */
-header{position:relative;z-index:5;border-bottom:1px solid rgba(232,224,206,.1)}
-header::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:3px;
-  background:linear-gradient(90deg,#A878FF 0%,#6FE8FF 34%,#3DE8A5 52%,#FFCB6B 74%,#FF7ABE 100%)}
-main,footer,section{position:relative;z-index:2}
-
-.rule{height:1px !important;opacity:1 !important;overflow:visible;position:relative;
-  background:rgba(232,224,206,.1) !important;margin:clamp(56px,9vw,96px) 0 !important}
-.rule::after{content:'';position:absolute;left:0;top:-1px;width:140px;height:3px;
-  background:linear-gradient(90deg,#A878FF,#6FE8FF 50%,#FFCB6B)}
-
-/* type at its extremes */
-h1{font-size:clamp(2.6rem,9.5vw,6.2rem) !important;line-height:.92 !important;
-  letter-spacing:-.05em !important;font-variation-settings:'wdth' 82 !important}
-h2{background:none !important;-webkit-text-fill-color:var(--bone) !important;color:var(--bone) !important;
-  font-size:clamp(1.9rem,5.4vw,3.2rem) !important;line-height:1.04 !important;
-  letter-spacing:-.045em !important;font-variation-settings:'wdth' 84 !important}
-.lede{font-size:clamp(1rem,2.2vw,1.28rem) !important;max-width:56ch;color:var(--bone);opacity:.86}
-.eyebrow{padding-left:0;font-size:.62rem;letter-spacing:.28em}
-.eyebrow::before{position:static;display:inline-block;transform:none;margin-right:12px;
-  width:34px;height:2px;border-radius:0;vertical-align:middle;box-shadow:none}
-
-/* statistics, loud */
-.facts{gap:0 !important;border-top:1px solid rgba(232,224,206,.1)}
-.fact{border-radius:0 !important;border:0 !important;
-  border-bottom:1px solid rgba(232,224,206,.1) !important;
-  border-right:1px solid rgba(232,224,206,.1) !important;
-  padding:clamp(26px,4vw,38px) clamp(20px,3vw,30px) !important;
-  background:transparent !important;position:relative;overflow:hidden}
-.fact::before{content:'';position:absolute;left:0;top:0;width:3px;height:0;
-  background:linear-gradient(180deg,#A878FF,#6FE8FF);transition:height .3s}
-.fact:hover::before{height:100%}
-.fact:hover{background:rgba(169,120,255,.045) !important}
-.fact .n{font-size:clamp(3.2rem,8vw,5rem) !important;line-height:.84 !important;
-  letter-spacing:-.06em !important;font-variation-settings:'wdth' 78 !important;
-  background:linear-gradient(170deg,var(--bone) 30%,rgba(169,120,255,.75));
-  -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px}
-
-/* cards as one built object */
-.caps{gap:1px !important;background:rgba(232,224,206,.1);border:1px solid rgba(232,224,206,.1)}
-.cap{border-radius:0 !important;border:0 !important;background:#080B14 !important;
-  padding:clamp(24px,3.4vw,34px) !important;position:relative;transition:background .2s}
-.cap::after{display:none}
-.cap:hover{background:#0C1120 !important}
-.cap::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:transparent;transition:background .25s}
-.cap:hover::before{background:linear-gradient(180deg,#A878FF,#6FE8FF 50%,#FFCB6B)}
-.cap h3{font-size:clamp(1.15rem,2.4vw,1.5rem) !important;letter-spacing:-.025em;line-height:1.12}
-@media(min-width:960px){
-  .caps{grid-template-columns:repeat(6,1fr) !important;align-items:stretch}
-  .caps > .cap{grid-column:span 2}
-  .caps > .cap.wide{grid-column:span 4}
-  .caps > .cap:nth-child(1){grid-column:span 4}
-  .caps > .cap:nth-child(2){grid-column:span 2}
-  .caps > .cap:nth-child(6){grid-column:span 3}
-  .caps > .cap:nth-child(7){grid-column:span 3}
-  .caps > .cap:last-child{grid-column:span 6}}
-
-/* charter as a ledger */
-.arts{border-radius:0 !important;border:1px solid rgba(232,224,206,.1) !important}
-.arts::before{width:2px !important;background:linear-gradient(180deg,#A878FF,#6FE8FF 45%,#FFCB6B) !important}
-.art{border-radius:0;border-bottom:1px solid rgba(232,224,206,.08);
-  padding:clamp(22px,3vw,30px) clamp(20px,3vw,30px) !important;transition:background .2s}
-.art:hover{background:rgba(169,120,255,.04)}
-.art .num{font-size:1.5rem !important;font-variation-settings:'wdth' 76 !important;opacity:.5;min-width:52px !important}
-.art h3{font-size:1.1rem !important;letter-spacing:-.02em}
-
-/* buttons: square, and they move */
-.btn{border-radius:0 !important;letter-spacing:.1em;font-size:.8rem;padding:16px 30px;
-  transition:transform .15s, box-shadow .15s}
-.btn:not(.ghost){background:linear-gradient(100deg,#FFE7B4,#FFCB6B 45%,#E0A63C) !important;
-  color:#0A0806 !important;box-shadow:none !important}
-.btn:not(.ghost):hover{box-shadow:0 0 0 1px #FFCB6B, 6px 6px 0 0 rgba(169,120,255,.5) !important;
-  transform:translate(-2px,-2px)}
-.btn.ghost:hover{box-shadow:4px 4px 0 0 rgba(111,232,255,.4) !important;transform:translate(-2px,-2px)}
-
-/* everything square */
-.livebar,.cbanner,.acct,.blk,.tier,.path,.cbox,.plain,.never,.consent-form,.pinsetup,
-.status,.box,.arts,.srcbar .mini,.st,.br,.verdict,.next,.detail,.plotwrap,.canvaswrap,
-.key,.guard,.disc,.freebar,.warn,.adds,.watch,.honest,.shapes>div,.pay>div,.explain>div,
-.steps>div,.chk>div,.bgrid>div,.tags>div,.who div,.hrow,.msg,.field input,.box input,
-.form input,.pick select,.pinrow input,.srcs a{border-radius:0 !important}
-.pinrow input{border-radius:2px !important}
-.tags span,.flag,.mins,.notyet,.tlab,.srcs a{border-radius:0 !important}
-
-.mark{text-shadow:none}
-.gilt{filter:none;background:linear-gradient(160deg,#FFE7B4 10%,#FFCB6B 45%,#D08A2A 95%);
-  -webkit-background-clip:text;background-clip:text;color:transparent}
-@media(prefers-reduced-motion:reduce){html::before{animation:none}}
-
-/* canary strip — was lost when the aurora block was stripped */
-.cbanner{display:flex;align-items:center;gap:13px;max-width:var(--maxw);margin:20px auto 0;
-  padding:14px 20px;background:#080B14;border:1px solid rgba(232,224,206,.12);
-  text-decoration:none;transition:border-color .2s;width:calc(100% - var(--pad)*2);
-  position:relative;z-index:3}
-.cbanner:hover{border-color:rgba(61,232,165,.5)}
-.cbanner .cdot{width:9px;height:9px;border-radius:50%;background:var(--ash-dim);flex:none}
-.cbanner.ok .cdot{background:#3DE8A5;box-shadow:0 0 0 3px rgba(61,232,165,.16)}
-.cbanner.due .cdot{background:#FFCB6B} .cbanner.bad .cdot{background:#FF9E5E}
-.cbanner .ctext{flex:1;font-size:.86rem;color:var(--ash);line-height:1.45}
-.cbanner .ctext b{color:var(--bone);font-family:'Archivo',sans-serif;font-weight:700}
-.cbanner .cgo{font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--gold);flex:none}
-@media(max-width:620px){.cbanner .cgo{display:none}}
-
-/* footer navigation — lost when the aurora block was stripped */
-
-@media(min-width:700px){.fnav{grid-template-columns:repeat(3,1fr)}}
-.fnav>div{display:flex;flex-direction:column;gap:7px}
-.fnav span{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--gold);margin-bottom:4px}
-.fnav a{color:var(--ash);text-decoration:none;font-size:.88rem;border:0;width:fit-content;
-  transition:color .18s}
-.fnav a:hover{color:var(--gold)}
-.acct{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;
-  font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
-  color:#0A0806;text-decoration:none;border:0;padding:11px 20px;
-  background:linear-gradient(100deg,#FFE7B4,#FFCB6B 45%,#E0A63C);
-  transition:transform .15s, box-shadow .15s;white-space:nowrap;margin-left:auto}
-.acct:hover{box-shadow:0 0 0 1px #FFCB6B, 5px 5px 0 0 rgba(169,120,255,.55);
-  transform:translate(-2px,-2px)}
-.acct svg{stroke:#0A0806}
-.acct.in{background:linear-gradient(100deg,#8CFFD0,#3DE8A5 50%,#1FBF80);color:#04120C}
-.acct.in svg{stroke:#04120C}
-@media(max-width:560px){.acct span{display:none}.acct{padding:11px 13px}}
-
-/* the "use these now" strip — the seven live tools, above everything else */
-.usenow{position:relative;z-index:3;border-bottom:1px solid rgba(232,224,206,.1);
-  padding:clamp(30px,5vw,48px) 0 clamp(26px,4vw,38px);background:rgba(8,11,20,.5)}
-.un-head{margin-bottom:22px}
-.un-tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:.6rem;
-  font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#3DE8A5;
-  border:1px solid rgba(61,232,165,.35);padding:6px 12px;margin-bottom:14px}
-.un-h{font-family:'Archivo',sans-serif;font-weight:900;font-variation-settings:'wdth' 84;
-  font-size:clamp(1.5rem,4vw,2.4rem) !important;line-height:1.05;letter-spacing:-.04em;
-  color:var(--bone) !important;margin-bottom:10px;background:none !important;
-  -webkit-text-fill-color:var(--bone) !important}
-.un-p{font-size:.95rem;color:var(--ash);line-height:1.6;max-width:58ch}
-.un-grid{display:grid;gap:1px;background:rgba(232,224,206,.1);
-  border:1px solid rgba(232,224,206,.1);grid-template-columns:1fr}
-@media(min-width:600px){.un-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1000px){.un-grid{grid-template-columns:repeat(4,1fr)}}
-.un-grid a{background:#080B14;padding:18px 20px;text-decoration:none;display:block;
-  border:0;transition:background .18s;position:relative}
-.un-grid a:hover{background:#0E1424}
-.un-grid a::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
-  background:transparent;transition:background .2s}
-.un-grid a:hover::before{background:linear-gradient(180deg,#A878FF,#6FE8FF)}
-.un-grid b{display:block;font-family:'Archivo',sans-serif;font-weight:700;font-size:1rem;
-  color:var(--bone);margin-bottom:4px;letter-spacing:-.015em}
-.un-grid span{font-size:.83rem;color:var(--ash-dim);line-height:1.4}
-.un-start{display:inline-block;margin-top:20px;font-family:'IBM Plex Mono',monospace;
-  font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);
-  text-decoration:none;border-bottom:1px solid rgba(255,203,107,.4);padding-bottom:3px}
-.un-start:hover{color:var(--gold-hi)}
-</style>
-<style>
-:root{--void:#04060F; --void-2:#070B18; --surface:#0C1424; --surface-2:#131E38;
-  --line:rgba(236,230,220,.13); --line-2:rgba(236,230,220,.24);
-  --bone:#F4F0E8; --ash:#A2AEC6; --ash-dim:#74809B;
-  --gold:#FFCB6B; --gold-hi:#FFEDC0; --gold-deep:#A87A22;
-  --bif-1:#A878FF; --bif-2:#5AF0FF; --bif-3:#FFCB6B; --bif-4:#FF7ABE;
-  --ice:#5AF0FF; --alarm:#FF9E5E; --clear:#3DE8A5;
-  --r-lg:26px; --r-md:18px; --r-sm:11px;
-  --pad:clamp(20px,5vw,32px); --maxw:1120px;
+/* ===== responsive ===== */
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr !important}}
+@media(max-width:680px){
+.pagehead h1{font-size:32px}.pagehead{padding:52px 20px 40px}
+.pagewrap{padding:44px 20px}.section-title{font-size:28px}
+.steps{grid-template-columns:1fr}.qcard-grid{grid-template-columns:1fr}
+.footer-top{flex-direction:column;gap:24px}.form{padding:22px}
+.ov-links{-webkit-column-count:1;column-count:1;max-width:300px}.ov-links a{font-size:21px}.ov-featured{max-width:300px;font-size:16px}
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{background:var(--void);color:var(--bone);font-family:'IBM Plex Sans',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body::before{
-  content:'';position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.55;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700'%3E%3Cg fill='%23EDE7DA'%3E%3Ccircle cx='53' cy='88' r='.8' opacity='.5'/%3E%3Ccircle cx='188' cy='31' r='.6' opacity='.35'/%3E%3Ccircle cx='302' cy='142' r='1' opacity='.45'/%3E%3Ccircle cx='431' cy='67' r='.6' opacity='.3'/%3E%3Ccircle cx='588' cy='121' r='.9' opacity='.4'/%3E%3Ccircle cx='97' cy='233' r='.7' opacity='.38'/%3E%3Ccircle cx='249' cy='298' r='.5' opacity='.28'/%3E%3Ccircle cx='389' cy='241' r='.9' opacity='.42'/%3E%3Ccircle cx='522' cy='329' r='.6' opacity='.32'/%3E%3Ccircle cx='657' cy='266' r='.8' opacity='.36'/%3E%3Ccircle cx='31' cy='401' r='.9' opacity='.4'/%3E%3Ccircle cx='166' cy='466' r='.55' opacity='.3'/%3E%3Ccircle cx='291' cy='412' r='.75' opacity='.36'/%3E%3Ccircle cx='447' cy='488' r='1' opacity='.44'/%3E%3Ccircle cx='611' cy='434' r='.6' opacity='.3'/%3E%3Ccircle cx='122' cy='597' r='.8' opacity='.38'/%3E%3Ccircle cx='268' cy='643' r='.6' opacity='.3'/%3E%3Ccircle cx='412' cy='581' r='.85' opacity='.4'/%3E%3Ccircle cx='559' cy='657' r='.55' opacity='.28'/%3E%3Ccircle cx='678' cy='533' r='.9' opacity='.4'/%3E%3C/g%3E%3C/svg%3E");
-}
-body::after{
-  content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
-  background:
-    radial-gradient(64ch 48ch at 84% 0%, rgba(155,123,240,.16), transparent 64%),
-    radial-gradient(54ch 42ch at 4% 26%, rgba(95,220,239,.09), transparent 62%),radial-gradient(60ch 44ch at 50% 108%, rgba(217,174,95,.10), transparent 62%),
-    linear-gradient(180deg, transparent 62%, rgba(217,174,95,.05) 88%, rgba(217,174,95,.10) 100%),
-    radial-gradient(150ch 110ch at 50% 42%, transparent 42%, rgba(0,0,0,.55) 100%);
-}
-.wrap{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
 
-h1,h2,.mark{font-family:'Archivo',system-ui,sans-serif;text-transform:uppercase}
-h1{font-weight:900;font-variation-settings:'wdth' 120;font-size:clamp(2.05rem,8.2vw,4.4rem);letter-spacing:-.012em;line-height:1.06}
-h2{font-weight:900;font-variation-settings:'wdth' 116;font-size:clamp(1.6rem,5.4vw,2.6rem);letter-spacing:.005em;line-height:1.15}
-h3{font-family:'Archivo',sans-serif;font-weight:700;font-variation-settings:'wdth' 106;font-size:1.15rem;letter-spacing:-.015em;line-height:1.22}
-.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
-.eyebrow.cold{color:var(--ice)}
-.lede{font-size:clamp(1.04rem,3.3vw,1.28rem);color:var(--ash);line-height:1.58;max-width:56ch}
-p.body{color:var(--ash);max-width:62ch}
-strong{color:var(--bone);font-weight:600}
-.gilt{background:linear-gradient(160deg,var(--gold-hi) 8%,var(--gold) 46%,var(--gold-deep) 96%);-webkit-background-clip:text;background-clip:text;color:transparent}
 
-header{position:relative;z-index:3;padding:24px 0 0}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.mark{font-weight:900;font-size:1.28rem;letter-spacing:.16em;font-variation-settings:'wdth' 122;color:var(--bone);text-decoration:none;display:inline-flex;align-items:center;gap:11px}
-.bridge{width:22px;height:15px;flex:none;overflow:visible}
-.byline{font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ash-dim);text-align:right;line-height:1.75}
-.byline a{color:var(--ash);text-decoration:none;border-bottom:1px solid var(--line-2)}
-.byline a:hover{color:var(--gold);border-color:var(--gold)}
+/* ===== phase-1 components ===== */
+.field select{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:16px;background:var(--white);color:var(--text)}
+.field select:focus{outline:none;border-color:var(--gold)}
+.tracks{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:28px 0}
+.track{background:var(--off-white);border:1px solid var(--border);border-left:3px solid var(--gold);padding:22px 24px}
+.track h3{font-family:'Playfair Display',serif;color:var(--navy-deep);font-size:20px;margin:0 0 6px}
+.track p{font-size:15px;color:var(--text-light);line-height:1.6;margin:0}
+.callout{background:var(--navy-deep);color:#fff;text-align:center;padding:56px 24px;position:relative}
+.callout h2{font-family:'Playfair Display',serif;color:#fff;font-size:30px;margin:0 0 10px}
+.callout p{max-width:620px;margin:0 auto 22px;color:rgba(255,255,255,.82);font-size:17px;line-height:1.7}
+.lookup-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.lookup-row input{flex:1;min-width:220px;padding:12px 14px;border:1px solid var(--border);border-radius:6px;font-size:16px;font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text)}
+.off-results{margin-top:22px;display:grid;gap:12px}
+.off-card{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);padding:15px 18px}
+.off-card .role{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
+.off-card .nm{font-family:'Playfair Display',serif;font-size:19px;color:var(--navy-deep);margin:3px 0}
+.off-card a{color:var(--navy-deep);font-size:14px;margin-right:14px}
+.privacy-note{font-size:13px;color:var(--text-muted);line-height:1.6;margin-top:14px;border-top:1px solid var(--border);padding-top:12px}
+@media(max-width:680px){.tracks{grid-template-columns:1fr}.callout h2{font-size:25px}}
 
-.hero{padding:clamp(50px,13vw,100px) 0 clamp(56px,12vw,88px)}
-.hero .eyebrow{display:block;margin-bottom:26px}
-.h1-line{display:block}
-.today{color:#767E97}
-.hero .lede{margin-top:32px}
-
-/* SIGNATURE — machine-vision detection box */
-.detect{position:relative;display:inline-block;line-height:.92;padding:.03em .09em}
-.detect .cnr{position:absolute;width:.15em;height:.15em;border:.035em solid var(--ice);opacity:0;transition:opacity .45s ease}
-.detect .tl{top:-.11em;left:-.11em;border-right:0;border-bottom:0}
-.detect .tr{top:-.11em;right:-.11em;border-left:0;border-bottom:0}
-.detect .bl{bottom:-.11em;left:-.11em;border-right:0;border-top:0}
-.detect .br{bottom:-.11em;right:-.11em;border-left:0;border-top:0}
-.detect.on .cnr{opacity:1}
-.detect .tag{
-  position:absolute;top:-.13em;left:-.11em;transform:translateY(-100%);
-  background:var(--ice);color:var(--void);
-  font-family:'IBM Plex Mono',monospace;font-size:.16em;font-weight:600;
-  letter-spacing:.1em;padding:.42em .7em;border-radius:.3em .3em .3em 0;
-  white-space:nowrap;line-height:1.25;opacity:0;transition:opacity .35s ease .3s;
-}
-.detect.on .tag{opacity:1}
-.detect.warm .cnr{border-color:var(--gold);box-shadow:0 0 .5em rgba(217,174,95,.5)}
-.detect.warm .tag{background:var(--gold);color:#1E1403}
-
-/* live tools strip */
-.livebar{margin-top:34px;background:var(--surface);border:1px solid rgba(61,232,165,.26);
-  border-radius:var(--r-lg);padding:20px clamp(18px,3.6vw,24px);max-width:660px}
-.livebar-h{display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;
-  font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#3DE8A5;margin-bottom:16px}
-.livebar-h i{width:7px;height:7px;border-radius:50%;background:#3DE8A5;flex:none;
-  box-shadow:0 0 0 4px rgba(61,232,165,.15),0 0 10px rgba(61,232,165,.6)}
-.livegrid{display:grid;gap:9px}
-.livegrid a{display:block;background:var(--void);border:1px solid var(--line);border-radius:var(--r-sm);
-  padding:14px 16px;text-decoration:none;transition:border-color .2s,transform .2s}
-.livegrid a:hover{border-color:rgba(217,174,95,.4);transform:translateX(3px)}
-.livegrid b{display:block;color:var(--bone);font-family:'Archivo',sans-serif;font-weight:700;
-  font-size:.98rem;letter-spacing:-.01em;margin-bottom:3px}
-.livegrid span{display:block;font-size:.83rem;color:var(--ash);line-height:1.5}
-.livegrid span em{display:block;font-style:normal;color:var(--gold);margin-top:5px;font-size:.79rem}
-.livenote{margin-top:15px;font-size:.82rem;color:var(--ash-dim);line-height:1.5}
-
-/* PROMOTED — the architecture claim carries the page */
-.claim{
-  margin-top:40px;padding:26px clamp(20px,4.5vw,32px);
-  background:linear-gradient(140deg,rgba(217,174,95,.09),rgba(123,92,214,.05));
-  border:1px solid rgba(217,174,95,.24);border-radius:var(--r-lg);
-  max-width:660px;position:relative;overflow:hidden;
-}
-.claim::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--bif-1),var(--bif-2),var(--bif-3))}
-.claim p{
-  font-family:'Archivo',sans-serif;font-weight:800;font-variation-settings:'wdth' 108;
-  font-size:clamp(1.25rem,4.4vw,1.85rem);line-height:1.24;letter-spacing:-.022em;color:var(--bone);
-}
-.claim .second{display:block;margin-top:.34em;color:var(--gold-hi)}
-
-.signup{margin-top:34px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(20px,4.5vw,28px);max-width:560px;position:relative;overflow:hidden}
-.signup h3{margin-bottom:6px}
-.signup .sub{font-size:.9rem;color:var(--ash);margin-bottom:20px}
-.field{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
-label{font-family:'IBM Plex Mono',monospace;font-size:.67rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ash)}
-input,select,textarea{width:100%;background:var(--void);color:var(--bone);border:1px solid var(--line-2);border-radius:var(--r-sm);padding:14px 15px;font-family:inherit;font-size:1rem;transition:border-color .18s,box-shadow .18s}
-textarea{resize:vertical;min-height:76px}
-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A92AB' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:40px}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(217,174,95,.16)}
-input::placeholder,textarea::placeholder{color:var(--ash-dim)}
-.btn{width:100%;border:0;border-radius:var(--r-sm);cursor:pointer;background:linear-gradient(165deg,var(--gold-hi),var(--gold) 58%,var(--gold-deep));color:#1E1403;font-family:'Archivo',sans-serif;font-weight:800;font-size:.94rem;text-transform:uppercase;letter-spacing:.09em;padding:17px 20px;margin-top:6px;transition:transform .12s ease,filter .18s ease,box-shadow .18s ease}
-.btn:hover{filter:brightness(1.1);box-shadow:0 0 26px rgba(217,174,95,.28)}
-.btn:active{transform:translateY(1px)}
-.btn:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
-.fineprint{margin-top:14px;font-size:.78rem;color:var(--ash-dim);line-height:1.5}
-.status{margin-top:14px;font-size:.9rem;border-radius:var(--r-sm);padding:13px 15px;display:none}
-.status.show{display:block}
-.status.ok{background:rgba(217,174,95,.09);border:1px solid rgba(217,174,95,.34);color:var(--gold-hi)}
-.status.err{background:rgba(91,184,212,.09);border:1px solid rgba(91,184,212,.34);color:var(--ice)}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
-
-section{padding:clamp(56px,12vw,96px) 0;position:relative}
-.rule{height:1px;border:0;background:linear-gradient(90deg,transparent,var(--bif-1) 22%,var(--bif-2) 50%,var(--bif-3) 78%,transparent);opacity:.42}
-.sec-head{max-width:64ch}
-.sec-head .eyebrow{display:block;margin-bottom:18px}
-.sec-head h2{margin-bottom:20px}
-
-.facts{display:grid;gap:14px;margin-top:42px}
-@media(min-width:760px){.facts{grid-template-columns:repeat(3,1fr)}}
-.fact{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:25px}
-.fact .n{font-family:'Archivo',sans-serif;font-weight:900;font-variation-settings:'wdth' 86;font-size:clamp(2.1rem,7vw,2.8rem);color:var(--ice);letter-spacing:-.04em;line-height:1;display:block}
-.fact p{font-size:.92rem;color:var(--ash);margin-top:13px;line-height:1.5}
-.fact{display:flex;flex-direction:column}
-.fact .src{font-family:'IBM Plex Mono',monospace;font-size:.61rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ash-dim);margin-top:15px;display:block}
-.fact .act{margin-top:auto;padding-top:16px;display:block;color:var(--gold);text-decoration:none;
-  font-family:'Archivo',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:-.01em;transition:transform .18s}
-.fact:hover .act{transform:translateX(3px)}
-
-.caps{display:grid;gap:14px;margin-top:46px}
-@media(min-width:800px){.caps{grid-template-columns:repeat(2,1fr)}.caps .cap.wide{grid-column:1/-1}}
-.cap{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(22px,4.5vw,30px);transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease}
-.cap:hover{border-color:rgba(217,174,95,.3);transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
-.cap-tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:.61rem;letter-spacing:.15em;text-transform:uppercase;padding:5px 11px;border-radius:99px;margin-bottom:17px}
-.t-free{background:rgba(91,184,212,.11);color:var(--ice);border:1px solid rgba(91,184,212,.3)}
-.t-plus{background:rgba(217,174,95,.11);color:var(--gold);border:1px solid rgba(217,174,95,.32)}
-.t-live{background:rgba(61,232,165,.11);color:#3DE8A5;border:1px solid rgba(61,232,165,.32)}
-.t-soon{background:rgba(232,224,206,.05);color:var(--ash-dim);border:1px solid var(--line-2)}
-.cap h3{margin-bottom:11px}
-.cap p{font-size:.95rem;color:var(--ash);line-height:1.55}
-.cap ul{list-style:none;margin-top:17px;display:grid;gap:9px}
-.cap li{font-size:.88rem;color:var(--ash);padding-left:21px;position:relative;line-height:1.45}
-.cap li::before{content:'';position:absolute;left:0;top:.56em;width:9px;height:1.5px;background:var(--gold-deep)}
-
-/* guardrails — the lines about how this may and may not be used */
-.guard{margin-top:18px;background:linear-gradient(135deg,rgba(61,232,165,.09),rgba(79,195,217,.04));
-  border:1px solid rgba(61,232,165,.34);border-radius:var(--r-md);padding:16px 18px;display:flex;gap:13px;align-items:flex-start}
-.guard svg{flex:none;margin-top:2px}
-.guard p{font-size:.92rem!important;color:var(--bone)!important;line-height:1.55;margin:0}
-.guard p b{display:block;font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.16em;
-  text-transform:uppercase;color:#3DE8A5;margin-bottom:7px;font-weight:600}
-
-.charter{background:var(--void-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.charter-grid{display:grid;gap:38px}
-@media(min-width:920px){.charter-grid{grid-template-columns:1fr 1fr;gap:56px;align-items:start}}
-.articles{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;position:relative}
-.articles::before{content:'';position:absolute;top:0;left:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--bif-1),var(--bif-2) 46%,var(--bif-3));opacity:.7}
-.art{display:grid;grid-template-columns:auto 1fr;gap:17px;padding:22px clamp(18px,4vw,26px);border-bottom:1px solid var(--line)}
-.art:last-child{border-bottom:0}
-.art .num{font-family:'Archivo',sans-serif;font-weight:900;font-variation-settings:'wdth' 118;font-size:.82rem;letter-spacing:.1em;color:var(--gold-deep);padding-top:4px;min-width:24px}
-.art h3{font-size:.99rem;margin-bottom:7px}
-.art p{font-size:.87rem;color:var(--ash);line-height:1.5}
-.art.affirm{background:linear-gradient(90deg,rgba(217,174,95,.06),transparent 72%)}
-.art.affirm .num{color:var(--gold)}
-
-.kids-grid{display:grid;gap:14px;margin-top:42px}
-@media(min-width:720px){.kids-grid{grid-template-columns:repeat(3,1fr)}}
-.kid{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:25px}
-.kid h3{font-size:1.01rem;margin-bottom:10px}
-.kid p{font-size:.89rem;color:var(--ash);line-height:1.5}
-
-/* pricing principle */
-.principle{background:var(--void-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.pillars{display:grid;gap:14px;margin-top:38px}
-@media(min-width:720px){.pillars{grid-template-columns:repeat(2,1fr)}}
-.pillar{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:26px}
-.pillar h3{margin-bottom:11px}
-.pillar p{font-size:.92rem;color:var(--ash);line-height:1.55}
-
-.close h2{margin:18px 0 22px;max-width:19ch}
-.close .lede{margin-bottom:34px}
-.btn-inline{display:inline-block;width:auto;text-decoration:none;text-align:center;padding:17px 38px}
-
-footer{border-top:1px solid var(--line);padding:44px 0 58px;font-size:.85rem;color:var(--ash-dim);background:var(--void-2)}
-.foot-grid{display:grid;gap:26px}
-@media(min-width:720px){.foot-grid{grid-template-columns:1.4fr 1fr;align-items:start}}
-footer a{color:var(--ash);text-decoration:none;border-bottom:1px solid var(--line-2)}
-footer a:hover{color:var(--gold);border-color:var(--gold)}
-.concept{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--gold-deep);border-radius:var(--r-sm);padding:16px 18px;font-size:.84rem;color:var(--ash);line-height:1.55;margin-bottom:32px}
-
-a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .75s cubic-bezier(.2,.7,.3,1),transform .75s cubic-bezier(.2,.7,.3,1)}
-.reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.detect .cnr,.detect .tag{opacity:1}}
-</style>
-</head>
-<body>
-
-<header>
-  <div class="wrap bar">
-    <a href="#top" class="mark">
-      <svg class="bridge" viewBox="0 0 22 15" aria-hidden="true"><defs><linearGradient id="bg1" x1="0" x2="1"><stop offset="0" stop-color="#A98CFF"/><stop offset=".5" stop-color="#6FE8FF"/><stop offset="1" stop-color="#E5BC6E"/></linearGradient></defs><path d="M1.5 13 Q11 2 20.5 13" stroke="url(#bg1)" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>
-      SOVRAN
-    </a>
-    <a href="/account" class="acct" id="acctlink"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="5.2" r="2.8" stroke="currentColor" stroke-width="1.5"/><path d="M2.6 14c0-3 2.4-4.6 5.4-4.6S13.4 11 13.4 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span id="acctlabel">Account</span></a>
-    <div class="byline">A concept by<br><a href="https://aetherandash.digital" target="_blank" rel="noopener">Aether &amp; Ash</a></div>
-  </div>
-</header>
-
-<main id="top">
-<a class="cbanner" href="/canary" id="cbanner">
-  <span class="cdot" id="cbdot"></span>
-  <span class="ctext"><b>The Canary</b> <span id="cbtext">checking&hellip;</span></span>
-  <span class="cgo">What this is &rarr;</span>
-</a>
-
-<div class="usenow">
-  <div class="wrap">
-    <div class="un-head">
-      <span class="un-tag">Free &middot; No account &middot; Works offline</span>
-      <h2 class="un-h">Seven tools you can use right now.</h2>
-      <p class="un-p">Nothing to sign up for. Nothing to pay. Every one of these runs inside your browser &mdash; turn off your wifi and they still work.</p>
-    </div>
-    <div class="un-grid">
-      <a href="/photo"><b>The Photo Check</b><span>What your photo reveals</span></a>
-      <a href="/audit"><b>The Audit</b><span>Read your own social export</span></a>
-      <a href="/map"><b>The Map</b><span>Cameras on your street</span></a>
-      <a href="/guide"><b>The Guide</b><span>What to actually do</span></a>
-      <a href="/passphrase"><b>The Passphrase</b><span>A key worth having</span></a>
-      <a href="/panel"><b>Your Panel</b><span>Track your progress</span></a>
-      <a href="/account"><b>Your Account</b><span>Optional, encrypted, free</span></a>
-    </div>
-    <a href="/start" class="un-start">New here? Start with one question &rarr;</a>
-  </div>
-</div>
+.footer-li{display:inline-flex;align-items:center}.footer-li .li-ico{opacity:.85;transition:opacity .15s}.footer-li:hover .li-ico{opacity:1}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"The Q Collective",
+"alternateName":"Doctrine Policy Group","url":"https://theqcollective.org/",
+"logo":"https://theqcollective.org/favicon.svg",
+"description":"A nonpartisan Colorado legislative accountability and policy organization.",
+"email":"team@theQcollective.org","telephone":"+1-970-725-6656",
+"address":{"@type":"PostalAddress","streetAddress":"222 Wright St, Unit 102","addressLocality":"Lakewood","addressRegion":"CO","postalCode":"80228","addressCountry":"US"},
+"areaServed":{"@type":"State","name":"Colorado"}}
+</script>
+</head><body>
+<div id="q-chrome-top"></div>
 
 <section class="hero">
-  <div class="wrap">
-    <span class="eyebrow">Sovereignty over yourself is not a service. It is a right.</span>
-    <h1>
-      <span class="h1-line today">Today you are a</span>
-      <span class="h1-line today"><span class="detect" id="dbox">record<i class="cnr tl"></i><i class="cnr tr"></i><i class="cnr bl"></i><i class="cnr br"></i><span class="tag" id="dtag">SUBJECT · 00.0%</span></span>.</span>
-      <span class="h1-line" style="margin-top:.34em">Tomorrow you are</span>
-      <span class="h1-line"><span class="detect warm" id="dbox2"><span class="gilt">sovereign</span><i class="cnr tl"></i><i class="cnr tr"></i><i class="cnr bl"></i><i class="cnr br"></i><span class="tag">NO CLAIM · YOURS</span></span>.</span>
-    </h1>
-    <p class="lede">Your face, your address, your habits, your children — collected by people you never met and sold to people you'll never see. SOVRAN finds it, takes it down, and shows you the surveillance you move through every day.</p>
+<div class="hero-wm">Q</div><div class="hero-wm2">Q</div>
+<div class="hero-inner">
+<p class="hero-eyebrow">A nonpartisan policy group in Colorado</p>
+<h1>The record was always public.<br>Now you can actually read it.</h1>
+<p class="hero-sub">We write real, ready-to-file legislation. We grade every Colorado lawmaker against one public standard. All of it is open, and any of it can be checked by anyone who wants to.</p>
+<p class="hero-org"><strong>The Q Collective LLC</strong>  / Doctrine Policy Group. Lakewood, Colorado.</p>
+<div class="hero-cta">
+<a href="hub.html" class="btn-gold">Check the Record</a>
+<a href="get-involved.html" class="btn-outline">Get Involved</a>
+</div></div></section>
 
-    <div class="livebar">
-      <span class="livebar-h"><i></i>Seven tools, built and free to use right now &mdash; and growing</span>
-      <p style="font-size:.88rem;color:var(--ash);margin-bottom:14px">New here? <a href="/start" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(255,203,107,.4)">Start here instead</a> &mdash; it asks why you came and points you at one thing.</p>
-      <div class="livegrid">
-        <a href="/photo"><b>The Photo Check</b><span>Find the GPS coordinates and camera serial hidden in any photo, then download a clean copy. <em>Use it before you send a picture to anyone you don&rsquo;t know.</em></span></a>
-        <a href="/audit"><b>The Audit</b><span>Drop in your own Instagram or TikTok export and see every location and routine you&rsquo;ve published. <em>Use it once to find out what&rsquo;s already out there.</em></span></a>
-        <a href="/guide"><b>The Guide</b><span>Step-by-step answers with a broker opt-out checklist. <em>Use it when you want your address off people-search sites.</em></span></a>
-        <a href="/passphrase"><b>The Passphrase</b><span>Six random words strong enough for your email, bank, or password manager. <em>Use it anywhere a password protects something you can&rsquo;t afford to lose.</em></span></a>
-        <a href="/panel"><b>Your Panel</b><span>A checklist of everything worth doing, ordered by impact. <em>Use it to actually finish, instead of reading and forgetting.</em></span></a>
-        <a href="/map"><b>The Map</b><span>Plate readers and cameras near you, from public records. <em>Use it to find out what is watching your street.</em></span></a>
-        <a href="/account"><b>Your Account</b><span>Optional, free, and encrypted with a key we never receive. <em>Use it to carry your progress between your phone and laptop.</em></span></a>
-      </div>
-      <p class="livenote">No payment, no trial, no card. Only the account asks for an email &mdash; the other five need nothing at all.</p>
-    </div>
+<section class="section" style="background:var(--off-white)">
+<div class="section-inner">
+<p class="section-label">The record</p>
+<h2 class="section-title">See how your lawmakers are actually doing.</h2>
+<div class="section-divider"></div>
+<p class="section-lead">The Accountability Hub scores every Colorado lawmaker on the bills they file and the votes they cast. One number, one formula, published in full. Every score can be checked against the public record, and every change to a score is logged where you can see it.</p>
+<div style="margin-top:30px;background:var(--navy-deep);border-radius:12px;padding:38px 34px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px">
+<div style="min-width:250px">
+<div style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(212,175,80,.5);border-radius:40px;padding:6px 14px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light)"><span style="width:8px;height:8px;border-radius:50%;background:var(--gold-light);display:inline-block"></span><span id="q-live-line">Live in Colorado. Updated every Sunday.</span></div>
+<p style="color:#fff;font-family:'Source Serif 4',Georgia,serif;font-size:23px;line-height:1.35;margin:16px 0 0;max-width:32ch">Every lawmaker held to the same standard.</p><p id="q-stamp" style="color:rgba(255,255,255,.55);font-size:14px;margin:10px 0 0"></p>
+</div>
+<div style="display:flex;flex-direction:column;gap:13px;align-items:flex-start">
+<a href="hub.html" class="btn-gold">Open the Accountability Hub</a>
+<a href="how-q-scores-work.html" style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none">How the Q Score works</a>
+</div>
+</div>
+</div>
+</section>
 
-    <div class="claim">
-      <p>Nothing readable ever reaches our servers.<span class="second">By architecture, not by promise.</span></p>
-    </div>
+<style>
+  /* an honest note about scope. deliberately plainer than everything
+     around it: a correction should not look like marketing. */
+  .honest { background: var(--off-white2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 46px 32px; }
+  .honest-inner { max-width: 760px; margin: 0 auto; }
+  .honest h2 { font-family: 'Source Serif 4', Georgia, serif; font-size: 25px; font-weight: 600; color: var(--navy-deep); margin-bottom: 14px; line-height: 1.3; }
+  .honest p { font-size: 16.5px; line-height: 1.8; color: var(--text-light); margin-bottom: 13px; }
+  .honest p:last-child { margin-bottom: 0; }
+  .honest a { color: var(--navy); font-weight: 600; }
+  @media (max-width: 760px) { .honest { padding: 36px 22px; } .honest h2 { font-size: 22px; } .honest p { font-size: 16px; } }
+</style>
+<section class="honest">
+  <div class="honest-inner">
+    <h2>What we do not do, so you are not surprised later</h2>
+    <p>We only cover Colorado right now. We do not score city or county offices. The federal and judicial scores are built but not live yet, and we would rather leave them dark than publish something we cannot stand behind.</p>
+    <p>The Q Score also measures one thing: a public record against seven pillars. It cannot tell you whether someone is decent to their staff, whether they return your call, or whether they were right about something the record does not capture. Use it for what it is, and use your own judgment for the rest.</p>
+    <p>When we get something wrong, we correct it in public and leave the old number visible. <a href="audit.html" onclick="return goTo(event, this.href)">Every change is in the audit log.</a></p>
+  </div>
+</section>
+<section class="section" style="background:var(--white);border-top:1px solid var(--border)">
+<div class="section-inner">
+<h2 class="section-title">We follow the seven pillars, wherever they lead.</h2>
+<p class="section-lead">We do not pick a team. We pick the seven pillars of life stability, and we follow the evidence wherever it goes, including past people who assumed we were on their side. Here is where that shows up in the work.</p>
+<div class="work-grid" style="margin-top:30px">
+<div class="work-card"><div class="wtag">Where workers and employers meet</div><h3>FWMRA</h3><p>Honest grounds and fair process for workers. Capped, predictable liability for employers. Unions do not get a blank check and chambers do not get pure at-will. Both sides give something to get something.</p></div>
+<div class="work-card"><div class="wtag">Security, without new taxes</div><h3>CESA</h3><p>Real economic security, funded through TABOR-compliant enterprise structures with no new taxes. It is too much government for one side and not enough for the other. That tension is deliberate.</p></div>
+<div class="work-card"><div class="wtag">The letter after the name is not an input</div><h3>The Q Score</h3><p>Every lawmaker is scored on the same formula, against the same public record. The letter next to a name is not an input, because it does not tell you anything about whether someone showed up.</p></div>
+</div>
+</div>
+</section>
 
-    <div class="signup" id="waitlist">
-      <h3>Claim your place</h3>
-      <p class="sub">We're building this in the open. Tell us what matters most to you and we'll shape it around real answers.</p>
-      <div class="field">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="you@yourdomain.com" autocomplete="email" required>
-      </div>
-      <div class="field">
-        <label for="interest">What brought you here</label>
-        <select id="interest" name="interest">
-          <option value="">Choose one — optional</option>
-          <option>Getting my data off broker sites</option>
-          <option>Finding photos of me I didn't post</option>
-          <option>Auditing what I've already published</option>
-          <option>Protecting my kids' footprint</option>
-          <option>Understanding surveillance around me</option>
-          <option>Planning what happens to my data after I'm gone</option>
-          <option>I'm at real risk and need this</option>
-          <option>I work in privacy, security, or advocacy</option>
-          <option>Just curious</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="note">Anything you want us to know</label>
-        <textarea id="note" name="note" placeholder="Optional. What would make this actually useful to you?"></textarea>
-      </div>
-      <input class="hp" type="text" id="company" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <button class="btn" id="submit">Join the waitlist</button>
-      <div class="status" id="status" role="status" aria-live="polite"></div>
-      <p class="fineprint">We store your email and nothing else. No trackers, no analytics, no ad pixels on this page. Leave in one click, forever.</p>
+<section class="section mission"><div class="section-inner">
+<p class="section-label">Who we are</p>
+<h2 class="section-title">Built to hold together.</h2>
+<div class="section-divider"></div>
+<p class="section-lead">Each framework holds up the one above it, from a Colorado family&rsquo;s stability all the way to the Constitution. State, federal, regional and constitutional. Together they form <strong>the maveriQ Doctrine</strong>: real legislation and real tools, built as one connected whole.</p>
+</div></section>
+
+<section class="section work" id="work"><div class="section-inner">
+<h2 class="section-title">State, federal, regional, constitutional.</h2>
+<div class="work-grid">
+<div class="work-card"><div class="wtag">Our flagship bill</div><h3>Colorado Economic Security Act</h3><p>A 400+ page framework built on seven pillars of life stability: health, income, family, housing, food, opportunity, and protection from disruption. Funded through TABOR-compliant enterprise structures, with no new taxes and voluntary participation.</p><div class="wmeta">Status: Complete. Latest version.</div><a class="card-link" href="cesa.pdf" target="_blank" rel="noopener">Read the full bill (PDF)</a> <a class="card-link" href="anatomy.html">Read how it was built</a></div>
+<div class="work-card"><div class="wtag">Ready for the 2027 session</div><h3>Fair Work &amp; Mutual Responsibility Act</h3><p>A balanced answer to the at-will versus just-cause fight. Honest grounds and fair process for workers, capped and predictable liability for employers. One standard for every employer, whatever their size.</p><div class="wmeta">Status: Complete. Version 6.0.</div><a class="card-link" href="fwmra-v6.pdf" target="_blank" rel="noopener">Read the full bill (PDF)</a></div>
+<div class="work-card"><div class="wtag">Federal, and still looking for a sponsor</div><h3>US-RAPA</h3><p>A democracy-protection framework built around citizen empowerment, election security, and putting real power back in people&rsquo;s hands at the national level.</p><div class="wmeta">Status: Working draft. Seeking a federal champion.</div><a class="card-link" href="us-rapa.pdf" target="_blank" rel="noopener">Read the full bill (PDF)</a></div>
+<div class="work-card"><div class="wtag">A compact between states</div><h3>Western States Coalition</h3><p>GOARN is a western interstate compact for cooperation and shared resilience between states. Functional independence through working together. This is coordination, not secession.</p><div class="wmeta">Status: Framework documented. No sponsor sought yet.</div><a class="card-link" href="western-states.pdf" target="_blank" rel="noopener">Read the framework (PDF)</a></div>
+<div class="work-card"><div class="wtag">The one measured in generations</div><h3>The American Covenant</h3><p>The long game. A constitutional transformation framework for a nation of 335 million, activated through the phased, decade-long Bridge Protocol. Built to last generations.</p><div class="wmeta">Status: Framework documented. Decades, not sessions.</div><a class="card-link" href="american-covenant.pdf" target="_blank" rel="noopener">Read the framework (PDF)</a></div>
+</div>
+<p class="center" style="margin-top:26px"><a href="the-work.html" class="btn-gold">See all the Work</a></p>
+</div></section>
+
+<style>
+  /* who runs this — founder strip */
+  .whois { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 66px 32px; }
+  .whois-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 1fr; gap: 52px; align-items: center; }
+  .whois > .whois-inner > img { width: 100%; aspect-ratio: 3/2; object-fit: cover; border-radius: 6px; display: block; background: var(--off-white2); box-shadow: 0 2px 18px rgba(18,40,72,0.13); }
+  .whois h2 { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; color: var(--navy-deep); line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.01em; }
+  .whois p { font-size: 17.5px; line-height: 1.8; color: var(--text-light); max-width: 60ch; margin-bottom: 14px; }
+  .whois .whois-mark { display: block; font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-weight: 600; font-size: 34px; line-height: 1.1; color: var(--navy-deep); margin: 24px 0 6px; }
+  .whois .whois-signature { display: none; max-width: 190px; width: 100%; height: auto; margin: 22px 0 2px; }
+  .whois .whois-sig { font-family: 'Source Serif 4', Georgia, serif; font-size: 16px; color: var(--navy-deep); font-weight: 600; margin: 18px 0 20px; }
+  .whois .whois-sig span { display: block; font-family: 'Public Sans', sans-serif; font-size: 14px; font-weight: 400; color: var(--text-muted); margin-top: 2px; }
+  @media (max-width: 980px) {
+    .whois-inner { grid-template-columns: 1fr; gap: 30px; max-width: 620px; }
+  }
+  @media (max-width: 760px) {
+    .whois { padding: 44px 22px; }
+    .whois-inner { grid-template-columns: 1fr; gap: 24px; }
+    /* full width on a phone rather than a shrunken thumbnail */
+    .whois > .whois-inner > img { max-width: 100%; aspect-ratio: 3/2; }
+    .whois p { font-size: 16.5px; }
+  }
+</style>
+<section class="whois">
+  <div class="whois-inner">
+    <img src="founder.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="maveriQ B Jackson crouching beside his dog in the foothills outside Lakewood, Colorado">
+    <div>
+      <h2>Someone has to put their name on it.</h2>
+      <p>An organization that grades named public officials should not get to stay faceless itself. My name is maveriQ B Jackson. I founded The Q Collective, I write most of what is on this site, and I live in Lakewood.</p>
+      <p>If you think we got a score wrong, you know exactly who to tell.</p>
+      <span class="whois-mark" id="sig-mark-h">mav QBJ</span>
+      <img class="whois-signature" src="signature.png" alt="Signature of maveriQ B Jackson"
+           onerror="this.remove()"
+           onload="this.style.display='block';var m=document.getElementById('sig-mark-h');if(m)m.style.display='none';">
+      <div class="whois-sig">maveriQ B Jackson<span>Founder, The Q Collective LLC / Doctrine Policy Group</span></div>
+      <a href="founder.html" class="btn-outline" style="color:var(--navy-deep);border-color:var(--navy-deep)" onclick="return goTo(event, this.href)">Read why my name is on this</a>
     </div>
   </div>
 </section>
-
-<hr class="rule">
-
-<section>
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow cold">Where things stand</span>
-      <h2>Not fear. A count of the doors left open &mdash; and how to close each one.</h2>
-      <p class="body">None of this is hidden. It is public, documented, and almost nobody has the hours to act on it. The rights already exist &mdash; what's missing is anyone making them usable. So every number below comes with the thing you can do about it.</p>
-    </div>
-    <div class="facts">
-      <div class="fact reveal"><span class="n">500+</span><p>Data brokers registered in California alone are now legally required to delete your information on request &mdash; and to keep checking for new requests every 45 days.</p><span class="src">CalPrivacy &middot; Delete Act</span><a class="act" href="/guide#brokers">Start removing yourself &rarr;</a></div>
-      <div class="fact reveal"><span class="n">120k+</span><p>License plate readers mapped across the United States by volunteers. Most drivers have never been told one sits on their street.</p><span class="src">DeFlock &middot; OpenStreetMap</span><a class="act" href="/map">See what's on your street &rarr;</a></div>
-      <div class="fact reveal"><span class="n">48 hrs</span><p>The window platforms now have to remove intimate images shared without consent &mdash; real or AI-generated &mdash; once you file a valid request.</p><span class="src">TAKE IT DOWN Act &middot; FTC</span><a class="act" href="/guide#images">The routes that work &rarr;</a></div>
-      <div class="fact reveal"><span class="n">1 photo</span><p>A single picture from your phone can carry your exact coordinates, the second you took it, and your camera's serial number &mdash; and it travels with the file to everyone you send it to.</p><span class="src">EXIF metadata</span><a class="act" href="/photo">Check one of yours &rarr;</a></div>
-      <div class="fact reveal"><span class="n">Free</span><p>Freezing your credit at all three bureaus costs nothing and is the single strongest protection against identity theft. Most people have never done it.</p><span class="src">FTC &middot; Fair Credit Reporting Act</span><a class="act" href="/guide#start">The five that matter most &rarr;</a></div>
-      <div class="fact reveal"><span class="n">In writing</span><p>Schools can release your child's name, photo, address, and birthday to almost anyone &mdash; unless you opt out of the directory in writing, usually within a window at the start of the year.</p><span class="src">FERPA &middot; directory information</span><a class="act" href="/guide#kids">What to send the school &rarr;</a></div>
-    </div>
-  </div>
+<section class="callout">
+<p class="ph-eyebrow" style="color:var(--gold-light)">Work With Us</p>
+<h2>Have an idea for a law?</h2>
+<p>Citizens, legislators, governors and press. If you have an idea for a law, we will help you turn it into something real and well built. There is a door here for everyone, and it is genuinely open.</p>
+<div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+<a class="btn-gold" href="work-with-us.html">Work With Us</a>
+<a class="btn-outline" href="support-a-bill.html">Support a Bill</a>
+</div>
 </section>
-
-<hr class="rule">
-
-<section>
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">What it does</span>
-      <h2>Ten ways to take yourself back.</h2>
-      <p class="body">Rights you already hold are scattered across a dozen agencies and hundreds of forms. SOVRAN turns them into one place you actually check. <strong>Seven are live and free today.</strong> The rest are honestly labelled as launching soon — we would rather tell you that than imply otherwise.</p>
+<!-- Sunday Update signup -->
+<div style="background:var(--navy-deep);padding:44px 24px">
+  <div style="max-width:920px;margin:0 auto;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between">
+    <div style="flex:1;min-width:260px">
+      <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#fff;margin-bottom:6px">Get the Sunday Update</div>
+      <div style="font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(255,255,255,.78);line-height:1.6;max-width:52ch">The Q Scores refresh every Sunday. Leave your email and we will send you what moved that week: which bills advanced, whose record changed. No spam, and you can unsubscribe anytime.</div>
     </div>
-    <div class="caps">
-
-      <div class="cap wide reveal">
-        <span class="cap-tag t-soon">Free forever · Launching soon</span>
-        <h3>See yourself the way a stranger does</h3>
-        <p>Answer a few questions and find out what someone could learn about you in twenty minutes — where you live, where you train, what your car looks like, who your family is. For most people it's the first honest picture they've ever had of themselves.</p>
-        <ul>
-          <li>Ranked by what's exposed and what it actually costs you</li>
-          <li>Every source named, so you know exactly who to go after</li>
-          <li>Run it again any time to see what really changed</li>
-        </ul>
-      </div>
-
-      <div class="cap wide reveal">
-        <span class="cap-tag t-live">Free forever · Live now</span>
-        <h3>Read back everything you've already published</h3>
-        <p>Every platform is legally required to hand you a full export of your own data. Download yours, drop the file into SOVRAN, and it is read <strong>entirely on your device</strong> — no account connection, no passwords, no tokens for anyone to steal.</p>
-        <ul>
-          <li>Every geotag, EXIF coordinate, and location tag you ever attached to a post</li>
-          <li>Photos that show a house number, a school logo, a plate, a gate code, a badge</li>
-          <li>Patterns in when and where you post that reveal a schedule you didn't mean to publish</li>
-          <li>A pre-post check that flags all of it <em>before</em> you share the next one</li>
-        </ul>
-        <a href="/audit" class="btn" style="width:auto;display:inline-block;text-decoration:none;margin-top:22px;padding:15px 30px">Run the audit &rarr;</a>
-      </div>
-
-            <div class="cap reveal">
-        <span class="cap-tag t-live">Free forever · Live now</span>
-        <h3>Check a single photo in five seconds</h3>
-        <p>Drop in any photo and see the coordinates, timestamp, and camera serial number written inside it — then download a clean copy with the metadata cut out and every pixel untouched.</p>
-        <a href="/photo" class="btn" style="width:auto;display:inline-block;text-decoration:none;margin-top:20px;padding:14px 26px;font-size:.88rem">Check a photo &rarr;</a>
-      </div>
-
-      <div class="cap reveal">
-        <span class="cap-tag t-live">Free forever · Live now</span>
-        <h3>A plan you can actually finish</h3>
-        <p>A personal checklist of everything worth doing, ordered by impact, with your progress saved <strong>in your own browser and nowhere else</strong>. No account, no login, no sync. There is nothing on our side to subpoena, and a one-click erase for anyone whose device might be watched.</p>
-        <a href="/panel" class="btn" style="width:auto;display:inline-block;text-decoration:none;margin-top:20px;padding:14px 26px;font-size:.88rem">Open your panel &rarr;</a>
-      </div>
-
-      <div class="cap reveal">
-        <span class="cap-tag t-live">Free forever · Live now</span>
-        <h3>Know your moves</h3>
-        <p>Searchable, plain-language answers to what you can actually do — broker opt-outs with a checklist that remembers your progress, the routes for removing images, school directory rights, and what to ask your city council.</p>
-        <a href="/guide" class="btn" style="width:auto;display:inline-block;text-decoration:none;margin-top:20px;padding:14px 26px;font-size:.88rem">Open The Guide &rarr;</a>
-      </div>
-
-      <div class="cap reveal">
-        <span class="cap-tag t-soon">SOVRAN+ · $8/month · Launching soon</span>
-        <h3>Find yourself on the sites that sell you</h3>
-        <p>People-search sites publish your photo, your address, your phone number and your relatives to anyone who types your name. You give us a name to search. Candidate profiles come back to your device, and <strong>your own phone works out which ones are actually you</strong> by matching faces locally.</p>
-        <p style="margin-top:12px">Your face never uploads. Neither does the answer. And every confirmed match arrives with the removal request already written.</p><div class="guard"><svg width="17" height="19" viewBox="0 0 17 19" fill="none" aria-hidden="true"><path d="M8.5 1L15.5 4v6c0 4.2-3 7.2-7 8.5C4.5 17.2 1.5 14.2 1.5 10V4L8.5 1Z" stroke="#3DE8A5" stroke-width="1.6" stroke-linejoin="round"/><path d="M5.6 9.6l2 2 3.8-4" stroke="#3DE8A5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>Why it works this way</b>The obvious version of this is to crawl the web and index every face in it. That is precisely what Clearview AI built, and it is the most-condemned product this industry has produced &mdash; a biometric database of millions of people who never agreed to be in it. So we build the opposite. <em>The only face geometry that exists anywhere in this process is yours, on your own hardware, because you asked for it.</em> There is no endpoint that takes a face and returns a name &mdash; not disabled, not built. You cannot look up a stranger, and neither can anyone who takes our servers.</p></div>
-      </div>
-
-      <div class="cap reveal">
-        <span class="cap-tag t-soon">SOVRAN+ · $8/month · Launching soon</span>
-        <h3>Take it down and keep it down</h3>
-        <p>Broker deletions, copyright claims on photos you took yourself, and non-consensual image removals — filed for you, tracked to a real answer, and refiled the moment someone quietly puts it back.</p>
-      </div>
-
-      <div class="cap reveal">
-        <span class="cap-tag t-live">Free forever · Live now</span>
-        <h3>See what sees you</h3>
-        <p>Plate readers, camera networks, and who operates them, drawn from a public database and plotted on your device. No location permission, no address search, and no map tiles &mdash; because a normal map quietly reports exactly where you are looking.</p><p style="margin-top:12px;font-size:.9rem;color:var(--ash)"><strong>Free forever.</strong> This is public records mapped by volunteers. It was never ours to sell.</p><div class="guard"><svg width="17" height="19" viewBox="0 0 17 19" fill="none" aria-hidden="true"><path d="M8.5 1L15.5 4v6c0 4.2-3 7.2-7 8.5C4.5 17.2 1.5 14.2 1.5 10V4L8.5 1Z" stroke="#3DE8A5" stroke-width="1.6" stroke-linejoin="round"/><path d="M5.6 9.6l2 2 3.8-4" stroke="#3DE8A5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>Awareness, not evasion</b>This shows you what surveillance exists around you, who operates it, and how to question it. It is not a tool for avoiding a lawful investigation, and we are not going to build one.</p></div>
-        <a href="/map" class="btn" style="width:auto;display:inline-block;text-decoration:none;margin-top:20px;padding:14px 26px;font-size:.88rem">Open The Map &rarr;</a>
-      </div>
-
-      <div class="cap wide reveal">
-        <span class="cap-tag t-soon">$129 once · Launching soon</span>
-        <h3>Or once, and done</h3>
-        <p>Leaving the country. Going properly off-grid. Closing a chapter and not opening another. <strong>The Clean Break</strong> is a single sweep &mdash; every broker, every takedown route, everything a year of subscription would do, in one pass &mdash; and then it is finished. One payment, no renewal, no relationship afterwards.</p>
-        <p style="margin-top:12px">It works because brokers repopulate from <em>new</em> public records. If your life is about to stop producing them, one sweep holds. If it isn't, we will tell you so rather than sell you this.</p>
-        <a href="/access" class="btn" style="width:auto;display:inline-block;text-decoration:none;margin-top:20px;padding:14px 26px;font-size:.88rem">How both shapes work &rarr;</a>
-      </div>
-
-      <div class="cap wide reveal">
-        <span class="cap-tag t-soon">SOVRAN+ · Launching soon</span>
-        <h3>The last word</h3>
-        <p>Name someone you trust. If you die or go dark, they can erase everything SOVRAN holds and fire every removal request you had queued &mdash; <strong>without ever holding your keys while you are alive</strong>. Your record should not outlive you unless you decided it should.</p>
-        <ul>
-          <li>Your key is split, so your successor holds a piece that is useless on its own</li>
-          <li>Nothing triggers until repeated proof-of-life checks have gone unanswered for weeks</li>
-          <li>Every stage notifies you first, with a one-tap cancel</li>
-          <li>A mandatory cooling-off period even after your successor confirms</li>
-        </ul>
-        <p style="margin-top:14px;font-size:.9rem">That last part matters more than the feature does. A switch someone else can pull is a weapon pointed at exactly the people this is meant to protect.</p>
-      </div>
-
-    </div>
+    <form id="sundayForm" onsubmit="return sundaySignup(event,this)" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+      <input type="hidden" name="access_key" value="da0f4760-ac24-433c-b27f-52058241488e">
+      <input type="hidden" name="subject" value="Sunday Update signup">
+      <input type="hidden" name="from_name" value="Q Collective &mdash; Sunday Update">
+      <input type="checkbox" name="botcheck" style="display:none">
+      <input type="email" name="email" required placeholder="you@email.com" style="font-family:'DM Sans',sans-serif;font-size:15px;padding:13px 15px;border:1px solid rgba(255,255,255,.25);border-radius:8px;background:rgba(255,255,255,.06);color:#fff;min-width:240px">
+      <button type="submit" style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;background:var(--gold-light);color:var(--navy-deep);border:none;border-radius:8px;padding:14px 20px;cursor:pointer;font-weight:600">Sign Up</button>
+      <div class="sunday-msg" style="width:100%;font-family:'DM Sans',sans-serif;font-size:13px;margin-top:2px;color:var(--gold-light)"></div>
+    </form>
   </div>
-</section>
-
-<section class="charter">
-  <div class="wrap">
-    <div class="charter-grid">
-      <div class="reveal">
-        <span class="eyebrow">The charter</span>
-        <h2 style="margin:18px 0 22px">Sovereignty means<br>no one else holds<br>the keys.</h2>
-        <p style="margin-bottom:16px"><a href="/charter" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(255,203,107,.4);font-size:.92rem">Read the full Charter &rarr;</a></p>
-        <p class="body">Every service that protects your identity collects your identity first. That makes it the most valuable target in the room — for a breach, for a broker, for a subpoena. It is the reason so many privacy tools eventually become the thing they were built against.</p>
-        <p class="body" style="margin-top:17px">So SOVRAN is built to be worthless to anyone who takes it. These are not promises in a policy that changes when the company does. They are the shape of the system. <strong>A promise can be broken overnight. An architecture has to be rebuilt.</strong></p>
-      </div>
-
-      <div class="articles reveal">
-        <div class="art"><span class="num">I</span><div><h3>Your photographs stay on your device</h3><p>Faces are matched locally. The image is never uploaded, and there is no copy of it to lose.</p></div></div>
-        <div class="art"><span class="num">II</span><div><h3>Your identity is confirmed, not collected</h3><p>A third party checks your ID and tells us <em>yes</em>. We never receive the document, the number, or the photograph.</p></div></div>
-        <div class="art"><span class="num">III</span><div><h3>Your notes are sealed before they leave you</h3><p>Encrypted with a key derived from your passphrase. We hold ciphertext and cannot open it — not for a court, not for ourselves.</p></div></div>
-        <div class="art"><span class="num">IV</span><div><h3>Nothing you search for is written down</h3><p>No query logs. No history. No behavioral profile. There is no record of your use to hand to anyone.</p></div></div>
-        <div class="art"><span class="num">V</span><div><h3>We never sell, and never take money from anyone who does</h3><p>No advertising. No data brokers. No investor who needs us to change our mind about that later.</p></div></div>
-        <div class="art"><span class="num">VI</span><div><h3>You can end it completely</h3><p>Delete your account and your email leaves with it. What we hold on you goes to zero, because there was almost nothing to begin with.</p></div></div>
-        <div class="art"><span class="num">VII</span><div><h3>We never block you for how you connect</h3><p>Use a VPN. Use Tor. We will not throttle you, challenge you, or treat you as suspicious for it. Protecting yourself is not suspicious behaviour &mdash; it is the behaviour we recommend.</p></div></div>
-        <div class="art affirm"><span class="num">VIII</span><div><h3>Nobody is turned away for lack of money</h3><p>If you can&rsquo;t afford it, you say so and we believe you. No proof, no application, no review. We will not ask you to document being poor in order to be protected. <a href="/access" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(217,174,95,.35)">How this works &rarr;</a></p></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">For families</span>
-      <h2>Your child's record started before they could type.</h2>
-      <p class="body">By the time a kid is old enough to consent, thousands of images and details about them are already public — nearly all of it posted by adults who love them. SOVRAN helps parents close that down without ever building a tool that tracks a child.</p><div class="guard" style="max-width:64ch"><svg width="17" height="19" viewBox="0 0 17 19" fill="none" aria-hidden="true"><path d="M8.5 1L15.5 4v6c0 4.2-3 7.2-7 8.5C4.5 17.2 1.5 14.2 1.5 10V4L8.5 1Z" stroke="#3DE8A5" stroke-width="1.6" stroke-linejoin="round"/><path d="M5.6 9.6l2 2 3.8-4" stroke="#3DE8A5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>Where we draw the line</b>Everything here is about what <em>you</em> have published, never about monitoring your child. We will not build tracking, location sharing, or message reading for kids. Tools like that are one small step from being used against the person they claim to protect.</p></div>
-    </div>
-    <div class="kids-grid">
-      <div class="kid reveal"><h3>Audit what you posted</h3><p>Point it at your own accounts. Find the school name on the jersey, the street sign behind the birthday cake, the geotag on the soccer field — and clear it in a few taps.</p></div>
-      <div class="kid reveal"><h3>Opt out of the directory</h3><p>Schools can release your child's name, photo, and address unless you say no in writing. We tell you which form, which office, which deadline, in your district.</p></div>
-      <div class="kid reveal"><h3>Know the emergency path</h3><p>If images of your child ever surface, the removal routes exist and they move fast. We keep them one tap away so nobody has to learn them in a panic.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="principle">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">What we charge for, and what we never will</span>
-      <h2>A right is free. The work of defending it is not.</h2>
-      <p class="body">You have a right to counsel. Lawyers still bill. The right is what nobody can take from you — the labor is what someone has to do. We charge for the labor and we never, ever charge for the right.</p>
-    </div>
-    <div class="pillars">
-      <div class="pillar reveal">
-        <h3>Knowing is always free</h3>
-        <p>What's exposed about you. What rights you hold. What surveillance sits on your street. How to file every request yourself, by hand, without us. Paywalling that would mean selling you the right itself, and we won't.</p>
-      </div>
-      <div class="pillar reveal">
-        <h3>Doing it for you is the paid part</h3>
-        <p>Filing hundreds of deletions, chasing them to a real answer, and refiling when they quietly repopulate — that is ongoing human and machine work with a real cost. That's SOVRAN+.</p>
-      </div>
-      <div class="pillar reveal" style="grid-column:1/-1;border-color:rgba(61,232,165,.28)">
-        <h3>And nobody is turned away for lack of money</h3>
-        <p>The people who most need protection are very often the people least able to pay for it &mdash; someone leaving an abusive home, someone on disability, someone whose immigration status makes every record dangerous. So if you can't afford SOVRAN+, you tell us, and we believe you. <strong>No proof of income, no benefits letter, no case number, no review.</strong> A link that says you need it, and the price changes.</p>
-        <p style="margin-top:14px">We won't ask you to document being poor in order to be protected. Requiring that proof would mean building a database of exactly who is vulnerable &mdash; which is the same database this whole project exists to argue against. <a href="/access" style="color:var(--gold);border-bottom:1px solid rgba(217,174,95,.4);text-decoration:none">10% of every paid subscription</a> funds this tier &mdash; not &ldquo;a portion&rdquo;, ten percent, and we will raise it before we ever lower it.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="rule">
-
-<section class="close">
-  <div class="wrap reveal">
-    <span class="eyebrow">The long view</span>
-    <h2>We are the first generation who have to learn this. We will not be the last who need it.</h2>
-    <p class="lede">Every year we treat self-preservation as optional, the gap widens between what is known about us and what we know about ourselves. That gap is where the harm lives. SOVRAN exists to close it — and to prove that a tool built to protect people never has to collect them first.</p>
-    <a href="#waitlist" class="btn btn-inline">Claim your place</a>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="wrap">
-    <nav class="fnav">
-      <div><span>Use now</span>
-        <a href="/start">Start here</a>
-        <a href="/photo">The Photo Check</a><a href="/audit">The Audit</a><a href="/map">The Map</a>
-        <a href="/guide">The Guide</a><a href="/passphrase">The Passphrase</a><a href="/panel">Your Panel</a>
-      </div>
-      <div><span>Understand</span>
-        <a href="/consent">Face consent</a>
-        <a href="/charter">The Charter</a><a href="/access">Access &amp; cost</a><a href="/canary">The Canary</a>
-      </div>
-      <div><span>Account</span>
-        <a href="/account">Sign in or create</a><a href="/#waitlist">Join the waitlist</a>
-      </div>
-    </nav>
-
-    <p class="concept"><strong>This is a concept.</strong> SOVRAN is an early-stage prototype and not yet a working product. The rights and mechanisms described here are real and available to you today — the waitlist is how you'll hear when we've built the thing that makes them easy.</p>
-    <div class="foot-grid">
-      <div>
-        <a href="#top" class="mark" style="font-size:1.02rem">
-          <svg class="bridge" viewBox="0 0 22 15" aria-hidden="true"><defs><linearGradient id="bg2" x1="0" x2="1"><stop offset="0" stop-color="#A98CFF"/><stop offset=".5" stop-color="#6FE8FF"/><stop offset="1" stop-color="#E5BC6E"/></linearGradient></defs><path d="M1.5 13 Q11 2 20.5 13" stroke="url(#bg2)" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>
-          SOVRAN
-        </a>
-        <p style="margin-top:13px;max-width:44ch;line-height:1.55">Digital self-preservation. Built by <a href="https://aetherandash.digital" target="_blank" rel="noopener">Aether &amp; Ash</a> in Colorado.</p>
-      </div>
-      <div>
-        <p style="font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.17em;text-transform:uppercase;color:var(--ash-dim);margin-bottom:11px">Contact</p>
-        <p><!--email_off--><a href="mailto:maveriqbjackson@proton.me">maveriqbjackson@proton.me</a><!--/email_off--></p>
-        <p style="margin-top:16px;line-height:2"><a href="/charter">The Charter</a> &middot; <a href="/access">Access &amp; affordability</a> &middot; <a href="/canary">The Canary</a> &middot; <a href="/guide">The Guide</a></p>
-        <p style="margin-top:16px">© 2026 Aether &amp; Ash. No cookies. No trackers. No analytics.</p>
-      </div>
-    </div>
-  </div>
-</footer>
-
+</div>
 <script>
-(function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var box = document.getElementById('dbox'), tag = document.getElementById('dtag'),
-      box2 = document.getElementById('dbox2');
-
-  if(reduce){
-    box.classList.add('on'); tag.textContent = 'SUBJECT · 99.7%'; box2.classList.add('on');
-  } else {
-    setTimeout(function(){
-      box.classList.add('on');
-      var v = 0, target = 99.7;
-      var t = setInterval(function(){
-        v += (target - v) * 0.18 + 0.4;
-        if(v >= target - 0.05){ v = target; clearInterval(t); }
-        tag.textContent = 'SUBJECT · ' + v.toFixed(1) + '%';
-      }, 42);
-    }, 620);
-    setTimeout(function(){ box2.classList.add('on'); }, 2200);
-  }
-
-  var io = new IntersectionObserver(function(es){
-    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(function(el, i){
-    el.style.transitionDelay = (Math.min(i,3) * 70) + 'ms';
-    io.observe(el);
-  });
-
-  var btn = document.getElementById('submit'),
-      status = document.getElementById('status'),
-      email = document.getElementById('email');
-
-  function say(msg, kind){ status.textContent = msg; status.className = 'status show ' + kind; }
-
-  function submit(){
-    var val = email.value.trim();
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val)){
-      say('That email address doesn\u2019t look complete. Check it and try again.', 'err');
-      email.focus(); return;
-    }
-    btn.disabled = true; btn.textContent = 'Sending\u2026'; status.className = 'status';
-
-    var API = /^\/sovran(\/|$)/.test(location.pathname) ? '/sovran/api/waitlist' : '/api/waitlist';
-    fetch(API, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: val,
-        interest: document.getElementById('interest').value,
-        note: document.getElementById('note').value.trim(),
-        company: document.getElementById('company').value,
-        source: 'sovran-landing'
-      })
-    })
-    .then(function(r){ return r.json().then(function(d){ return { ok: r.ok, d: d }; }); })
-    .then(function(res){
-      if(res.ok){
-        say(res.d && res.d.returning
-          ? 'You\u2019re already on the list \u2014 we\u2019ve updated what you told us. Nothing else to do.'
-          : 'Your place is held. Check your inbox in a moment \u2014 and we\u2019ll only write again when there\u2019s something real to show you.', 'ok');
-        btn.textContent = res.d && res.d.returning ? 'Already in' : 'Claimed';
-        email.value = ''; document.getElementById('note').value = '';
-      } else {
-        say(res.d.error || 'That didn\u2019t go through. Try again in a moment.', 'err');
-        btn.disabled = false; btn.textContent = 'Join the waitlist';
-      }
-    })
-    .catch(function(){
-      say('Couldn\u2019t reach the server. Check your connection and try again.', 'err');
-      btn.disabled = false; btn.textContent = 'Join the waitlist';
-    });
-  }
-
-  btn.addEventListener('click', submit);
-  [email, document.getElementById('note')].forEach(function(el){
-    el.addEventListener('keydown', function(e){
-      if(e.key === 'Enter' && !e.shiftKey){ e.preventDefault(); submit(); }
-    });
-  });
-})();
-
-/* canary state in the banner, read from our own endpoint */
-(function(){
-  var b=document.getElementById('cbanner'); if(!b) return;
-  fetch('/api/canary',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
-    if(d.error) throw 0;
-    var signed=new Date(String(d.signed_at).replace(' ','T')+'Z');
-    var days=Math.floor((Date.now()-signed.getTime())/86400000);
-    var iv=d.interval_days||14, gr=d.grace_days||7;
-    b.classList.add(days<=iv?'ok':days<=iv+gr?'due':'bad');
-    document.getElementById('cbtext').innerHTML = days<=iv
-      ? '\u2713 We have received no secret order, no gag order, and no demand for your data. Signed '+(days===0?'today':days+(days===1?' day':' days')+' ago')+'.'
-      : days<=iv+gr
-      ? '\u26A0 Overdue by '+(days-iv)+' day'+(days-iv===1?'':'s')+'. Probably nothing \u2014 but check back.'
-      : '\u2717 Lapsed '+(days-iv)+' days ago. Treat assurances here as unverified.';
-  }).catch(function(){
-    document.getElementById('cbtext').textContent='A public statement that we have not been secretly ordered to hand over your data.';
-  });
-})();
+function sundaySignup(e,f){e.preventDefault();var m=f.querySelector('.sunday-msg');m.textContent='Signing you up\u2026';
+fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)}).then(function(r){return r.json();}).then(function(j){
+if(j.success){f.querySelector('input[type=email]').disabled=true;f.querySelector('button').disabled=true;m.textContent='You\u2019re in \u2014 see you Sunday.';}
+else{m.textContent='Something went wrong \u2014 email team@theQcollective.org.';}}).catch(function(){m.textContent='Something went wrong \u2014 email team@theQcollective.org.';});return false;}
 </script>
+<div id="q-chrome-footer"></div>
 <script>
+function goTo(e, url){ try{ if(window.top && window.top!==window.self){ window.top.location.href=url; } else { window.location.href=url; } if(e && e.preventDefault) e.preventDefault(); return false; }catch(err){ return true; } }
+</script><script></script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6aff6948b0f84ed0b1530a42458bbb3b"}'></script><!-- End Cloudflare Web Analytics -->
+
+<script>
+/* Reads the real timestamp and lawmaker count out of the score data so the
+   homepage states a fact instead of a vague promise. If the fetch fails for
+   any reason the original wording is simply left in place. */
 (function(){
-  // The account page stores a marker locally when signed in. This only changes
-  // the label — it proves nothing and grants nothing.
   try{
-    var a=document.getElementById('acctlink');
-    if(a && localStorage.getItem('sv-signed-in')==='1'){
-      a.classList.add('in');
-      a.href='/panel';
-      var l=document.getElementById('acctlabel'); if(l) l.textContent='Your panel';
-    }
+    fetch('data/index.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+      var co=(d.states||[]).filter(function(x){return x.code==='CO';})[0];
+      var n=co&&co.count;
+      var line=document.getElementById('q-live-line');
+      if(line&&n) line.textContent='Live in Colorado. '+n+' lawmakers scored.';
+      var st=document.getElementById('q-stamp');
+      if(st&&d.updated) st.textContent='Scores last recalculated '+d.updated+'.';
+    }).catch(function(){});
   }catch(e){}
 })();
 </script>
-</body>
-</html>
+<script src="q-config.js"></script><script src="q-chat.js"></script>
+<script src="site-chrome.js"></script>
+</body></html>
