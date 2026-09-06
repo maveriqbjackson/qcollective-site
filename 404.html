@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Page not found &mdash; The Q Collective</title>
-<meta name="description" content="That page is not here. Links to the Accountability Hub, the bills, and the rest of The Q Collective.">
-<meta name="robots" content="noindex">
+<meta name="description" content="That page is not here. Find the Accountability Hub, the bills, and the rest of The Q Collective.">
+<meta name="robots" content="noindex,follow">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,58 +19,91 @@
   }
   body { background: var(--off-white); font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
-  .nf { max-width: 780px; margin: 0 auto; padding: 92px 32px 96px; }
-  .nf-code { font-size: 15px; color: var(--text-muted); margin-bottom: 14px; }
-  .nf h1 { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(34px, 5.6vw, 56px); font-weight: 700; color: var(--navy-deep); line-height: 1.08; letter-spacing: -0.015em; margin-bottom: 20px; }
-  .nf p { font-size: 18px; line-height: 1.8; color: var(--text-light); max-width: 60ch; margin-bottom: 18px; }
+  /* ---------- masthead ---------- */
+  .nf-head { background: var(--navy-deep); padding: 76px 32px 70px; position: relative; overflow: hidden; }
+  .nf-wm { position: absolute; font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 480px; line-height: 1; color: rgba(255,255,255,0.05); top: -130px; right: -50px; pointer-events: none; user-select: none; }
+  .nf-head-in { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+  .nf-code { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--gold-light); border: 1px solid rgba(184,150,46,0.45); border-radius: 4px; padding: 4px 11px; margin-bottom: 20px; }
+  .nf-head h1 { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(36px, 6vw, 62px); font-weight: 700; color: #fff; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 20px; max-width: 15ch; }
+  .nf-head p { color: rgba(255,255,255,0.74); font-size: 18.5px; line-height: 1.75; max-width: 56ch; }
 
-  .nf-links { margin-top: 38px; border-top: 1px solid var(--border); padding-top: 30px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 40px; }
-  .nf-links h2 { font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); margin: 12px 0 8px; }
-  .nf-links a { display: block; font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; color: var(--navy-deep); text-decoration: none; padding: 8px 0; border-bottom: 1px solid rgba(224,213,190,.55); }
-  .nf-links a:hover { color: var(--gold); }
+  /* ---------- destinations ---------- */
+  .nf-body { max-width: 900px; margin: 0 auto; padding: 58px 32px 0; }
+  .nf-lead { font-family: 'Source Serif 4', Georgia, serif; font-size: 25px; font-weight: 600; color: var(--navy-deep); line-height: 1.3; margin-bottom: 26px; }
 
-  .nf-help { margin-top: 40px; background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 26px 28px; }
-  .nf-help p { font-size: 16.5px; margin-bottom: 0; }
-  .nf-help a { color: var(--navy); font-weight: 600; }
+  .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .card { display: block; background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 24px 24px 22px; text-decoration: none; transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease; }
+  .card:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: 0 6px 22px rgba(18,40,72,0.10); }
+  .card h2 { font-family: 'Source Serif 4', Georgia, serif; font-size: 21px; font-weight: 600; color: var(--navy-deep); line-height: 1.25; margin-bottom: 8px; }
+  .card p { font-size: 15.5px; line-height: 1.68; color: var(--text-light); }
 
-  @media (max-width: 700px) {
-    .nf { padding: 56px 22px 64px; }
-    .nf p { font-size: 17px; }
-    .nf-links { grid-template-columns: 1fr; }
-    .nf-help { padding: 22px 20px; }
+  /* ---------- report a broken link ---------- */
+  .nf-help { background: var(--navy-deep); border-radius: 10px; padding: 34px 32px; margin: 34px 0 80px; color: #fff; }
+  .nf-help h2 { font-family: 'Source Serif 4', Georgia, serif; font-size: 24px; font-weight: 600; margin-bottom: 11px; }
+  .nf-help p { color: rgba(255,255,255,0.76); font-size: 16.5px; line-height: 1.75; max-width: 58ch; margin-bottom: 20px; }
+  .nf-help a.btn { display: inline-block; background: var(--gold); color: var(--navy-deep); font-weight: 600; font-size: 15px; padding: 13px 26px; border-radius: 5px; text-decoration: none; }
+  .nf-help a.btn:hover { background: var(--gold-light); }
+
+  @media (max-width: 760px) {
+    .nf-head { padding: 50px 22px 48px; }
+    .nf-wm { font-size: 300px; top: -70px; right: -40px; }
+    .nf-head p { font-size: 17px; }
+    .nf-body { padding: 42px 22px 0; }
+    .nf-lead { font-size: 22px; }
+    .cards { grid-template-columns: 1fr; gap: 13px; }
+    .card { padding: 20px 20px 18px; }
+    .nf-help { padding: 26px 22px; margin-bottom: 60px; }
   }
 </style>
 </head>
 <body>
 <div id="q-chrome-top"></div>
 
-<main class="nf">
-  <p class="nf-code">Error 404</p>
-  <h1>That page is not here.</h1>
-  <p>Either the link was wrong, or we moved something and did not leave a forwarding address. If it was us, that is our mistake to fix, not yours to work around.</p>
-  <p>Here is where most people are trying to get to.</p>
+<header class="nf-head">
+  <div class="nf-wm">Q</div>
+  <div class="nf-head-in">
+    <span class="nf-code">Error 404</span>
+    <h1>That page is not here.</h1>
+    <p>Either the link was wrong, or we moved something and did not leave a forwarding address. If it was us, that is ours to fix and not yours to work around.</p>
+  </div>
+</header>
 
-  <div class="nf-links">
-    <div>
-      <h2>The record</h2>
-      <a href="hub.html" onclick="return goTo(event, this.href)">Accountability Hub</a>
-      <a href="how-q-scores-work.html" onclick="return goTo(event, this.href)">How Q Scores work</a>
-      <a href="audit.html" onclick="return goTo(event, this.href)">Audit log</a>
-      <a href="find-officials.html" onclick="return goTo(event, this.href)">Find your officials</a>
-    </div>
-    <div>
-      <h2>The work</h2>
-      <a href="the-work.html" onclick="return goTo(event, this.href)">The work</a>
-      <a href="index.html" onclick="return goTo(event, this.href)">Home</a>
-      <a href="founder.html" onclick="return goTo(event, this.href)">Who runs this</a>
-      <a href="contact.html" onclick="return goTo(event, this.href)">Contact</a>
-    </div>
+<div class="nf-body">
+  <p class="nf-lead">Here is where most people are trying to get to.</p>
+
+  <div class="cards">
+    <a class="card" href="hub.html" onclick="return goTo(event, this.href)">
+      <h2>Accountability Hub</h2>
+      <p>Every Colorado lawmaker scored on the same formula, refreshed every Sunday. Start here if you want to know how yours is doing.</p>
+    </a>
+    <a class="card" href="how-q-scores-work.html" onclick="return goTo(event, this.href)">
+      <h2>How the Q Score works</h2>
+      <p>The formula, the weights, and what each one measures. Published in full so you can argue with it.</p>
+    </a>
+    <a class="card" href="the-work.html" onclick="return goTo(event, this.href)">
+      <h2>The bills</h2>
+      <p>Ready-to-file legislation at the state, federal, regional and constitutional level. The actual documents, not summaries of them.</p>
+    </a>
+    <a class="card" href="audit.html" onclick="return goTo(event, this.href)">
+      <h2>The audit log</h2>
+      <p>Every score change ever made, with the reason attached and the old number still visible.</p>
+    </a>
+    <a class="card" href="founder.html" onclick="return goTo(event, this.href)">
+      <h2>Who runs this</h2>
+      <p>The person behind The Q Collective, why his name is on it, and what this organization will not do.</p>
+    </a>
+    <a class="card" href="get-involved.html" onclick="return goTo(event, this.href)">
+      <h2>Get involved</h2>
+      <p>Bring an idea for a law, support a bill that already exists, or put your name to the citizen's oath.</p>
+    </a>
   </div>
 
   <div class="nf-help">
-    <p>If you followed a link from somewhere on this site and landed here, tell us where it was and we will repair it. <a href="contact.html" onclick="return goTo(event, this.href)">Send us the broken link.</a></p>
+    <h2>Landed here from a link on this site?</h2>
+    <p>Then we broke something. Tell us which page sent you here and we will repair it, the same way we handle a bad score: in public, with the correction on the record.</p>
+    <a class="btn" href="contact.html" onclick="return goTo(event, this.href)">Report the broken link</a>
   </div>
-</main>
+</div>
 
 <div id="q-chrome-footer"></div>
 <script src="q-config.js"></script>
