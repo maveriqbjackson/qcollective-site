@@ -75,7 +75,10 @@ def err(m):
 # --------------------------------------------------------------------------
 def _req(url, method="GET", headers=None, body=None):
     data = json.dumps(body).encode() if body is not None else None
-    r = urllib.request.Request(url, data=data, method=method, headers=headers or {})
+    headers = dict(headers or {})
+    # Resend's firewall rejects Python's default User-Agent (Cloudflare 1010).
+    headers.setdefault("User-Agent", "TheQCollective/1.0 (+https://theqcollective.org)")
+    r = urllib.request.Request(url, data=data, method=method, headers=headers)
     try:
         with urllib.request.urlopen(r, timeout=40) as resp:
             raw = resp.read().decode() or "null"
