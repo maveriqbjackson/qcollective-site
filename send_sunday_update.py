@@ -48,6 +48,10 @@ STATE        = (os.environ.get("STATE") or "CO").strip()
 # CAN-SPAM requires a real postal address in every recap.
 POSTAL = ["The Q Collective LLC", "222 Wright St, Unit 102", "Lakewood, CO 80228"]
 
+# Every new subscriber gets the founder's direct line in their welcome email.
+FOUNDER_PHONE = "(303) 385-9063"
+FOUNDER_TEL = "+13033859063"
+
 # Dates shown under "Dates to know". Only upcoming ones inside the next
 # 75 days appear, so old dates fall off on their own. Add new ones here.
 DATES = [
@@ -334,7 +338,7 @@ def render_text(today, sections, token):
     for h, lines in sections:
         out += [h] + lines + [""]
     out += ["Thanks for being here. The record was always public. Now you can actually read it.", "",
-            "The Q Collective Team", REPLY_TO, "", "---"] + POSTAL + [
+            "The Q Collective Team", REPLY_TO, f"Founder direct: {FOUNDER_PHONE}", "", "---"] + POSTAL + [
             "", "You're getting this because you signed up for the Sunday Update at theqcollective.org.",
             f"Unsubscribe: {unsub}"]
     return "\n".join(out)
@@ -360,7 +364,7 @@ def render_html(today, sections, token):
 <table width="560" cellpadding="0" cellspacing="0" style="max-width:560px;width:100%;background:#ffffff;border:1px solid #e4e0d6;border-radius:14px;overflow:hidden;">
 <tr><td style="background:#122848;padding:22px 30px;"><span style="font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#ffffff;">The Sunday Update</span><span style="float:right;font-family:Georgia,serif;font-size:26px;font-weight:bold;color:#B8962E;">Q</span><div style="font-family:Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:2px;color:#B8962E;text-transform:uppercase;margin-top:4px;">Week of {today.strftime('%B %-d, %Y')}</div></td></tr>
 {body}
-<tr><td style="padding:26px 30px 24px;"><div style="font-family:Georgia,serif;font-size:15px;line-height:1.6;color:#2a3242;">Thanks for being here. The record was always public. Now you can actually read it.<br><br><b>The Q Collective Team</b><br><a href="mailto:{REPLY_TO}" style="color:#122848;">{REPLY_TO}</a></div></td></tr>
+<tr><td style="padding:26px 30px 24px;"><div style="font-family:Georgia,serif;font-size:15px;line-height:1.6;color:#2a3242;">Thanks for being here. The record was always public. Now you can actually read it.<br><br><b>The Q Collective Team</b><br><a href="mailto:{REPLY_TO}" style="color:#122848;">{REPLY_TO}</a><br>Founder direct: <a href="tel:{FOUNDER_TEL}" style="color:#122848;">{FOUNDER_PHONE}</a></div></td></tr>
 <tr><td style="border-top:1px solid #e4e0d6;padding:18px 30px;"><p style="font-family:Helvetica,Arial,sans-serif;font-size:11px;line-height:1.6;color:#9aa0ae;margin:0;">Nonpartisan. Citizen-powered. One standard for everyone.<br>{"<br>".join(POSTAL)}<br><br>You're getting this because you signed up for the Sunday Update at theqcollective.org.<br><a href="{unsub}" style="color:#9aa0ae;">Unsubscribe</a></p></td></tr>
 </table></td></tr></table>"""
 
@@ -374,12 +378,16 @@ def confirm_email(token):
 <h1 style="font-family:Georgia,serif;font-size:21px;color:#122848;margin:0 0 12px;">One click and you're in</h1>
 <p style="font-size:15px;line-height:1.6;color:#2a3242;margin:0 0 22px;">You signed up for the Sunday Update: every Sunday evening, what moved in the Colorado legislature that week, whose record changed, and the dates that matter. Confirm below and it'll start landing in your inbox.</p>
 <table cellpadding="0" cellspacing="0"><tr><td style="background:#B8962E;border-radius:8px;"><a href="{url}" style="display:inline-block;padding:13px 30px;font-size:14px;font-weight:bold;color:#122848;text-decoration:none;">Confirm my subscription &rarr;</a></td></tr></table>
+<div style="background:#f2efe8;border:1px solid #e4e0d6;border-radius:9px;padding:14px 16px;margin:24px 0 0;"><div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#B8962E;font-weight:bold;">A direct line to our founder</div><div style="font-size:14px;line-height:1.6;color:#2a3242;margin-top:4px;">maveriQ B Jackson wants every subscriber to have a direct line. Call or text Mav at <a href="tel:{FOUNDER_TEL}" style="color:#122848;font-weight:bold;">{FOUNDER_PHONE}</a> with questions, concerns, ideas, or just to get to know the person behind The Q Collective.</div></div>
 <p style="font-size:13px;line-height:1.6;color:#7a808f;margin:22px 0 22px;">Didn't sign up? Ignore this email and nothing else will be sent.</p>
 </td></tr>
 <tr><td style="border-top:1px solid #e4e0d6;padding:18px 30px;"><p style="font-size:11px;line-height:1.6;color:#9aa0ae;margin:0;">{"<br>".join(POSTAL)}</p></td></tr>
 </table></td></tr></table>"""
     text = ("One click and you're in.\n\nYou signed up for the Sunday Update from The Q Collective. "
-            f"Confirm here: {url}\n\nDidn't sign up? Ignore this email and nothing else will be sent.\n\n"
+            f"Confirm here: {url}\n\n"
+            f"A direct line to our founder: maveriQ B Jackson wants every subscriber to have a direct line. "
+            f"Call or text Mav at {FOUNDER_PHONE} with questions, concerns, ideas, or just to get to know "
+            f"the person behind The Q Collective.\n\nDidn't sign up? Ignore this email and nothing else will be sent.\n\n"
             + "\n".join(POSTAL))
     return html_body, text
 
