@@ -65,6 +65,11 @@ def log(m):
     print("[sunday] " + m, flush=True)
 
 
+def err(m):
+    # Shows up as a red note on the run's page in GitHub Actions.
+    print("::error title=Sunday Update::" + m.replace("\n", " "), flush=True)
+
+
 # --------------------------------------------------------------------------
 # HTTP helpers
 # --------------------------------------------------------------------------
@@ -79,10 +84,10 @@ def _req(url, method="GET", headers=None, body=None):
             except Exception:
                 return raw
     except urllib.error.HTTPError as e:
-        log("HTTP %s on %s :: %s" % (e.code, url.split("?")[0], e.read().decode()[:300]))
+        err("HTTP %s on %s :: %s" % (e.code, url.split("?")[0], e.read().decode()[:300]))
         return None
     except Exception as e:
-        log("request failed: %s" % e)
+        err("request failed: %s" % e)
         return None
 
 
@@ -464,6 +469,6 @@ if __name__ == "__main__":
     try:
         sys.exit(main())
     except Exception as e:
-        log("unexpected error: %s" % e)
+        err("unexpected error: %s" % e)
         # confirm runs stay quiet; a broken recap or test should be loud
         sys.exit(1 if MODE in ("recap", "test") else 0)
