@@ -3,12 +3,12 @@
    Install: add ONE line before </body> on any page (index.html, hub.html, ...):
        <script src="q-announce.js"></script>
    Shows once per ANNOUNCE_VERSION (remembered in localStorage). Bump the version
-   string to re-announce to everyone. Newsletter signup routes through Web3Forms
-   to team@theQcollective.org (the Sunday Update). */
+   string to re-announce to everyone. The Sunday Update sign-up goes through
+   q-sunday.js: saved to the subscriber list, confirmation email sent
+   automatically, and a heads-up still goes to team@theQcollective.org. */
 (function () {
   "use strict";
   var ANNOUNCE_VERSION = "2026-08"; // bump to re-show the popup to everyone
-  var WEB3FORMS_KEY = "da0f4760-ac24-433c-b27f-52058241488e";
   var STORE_KEY = "qc_announce_seen";
   var DELAY_MS = 900;
 
@@ -58,13 +58,22 @@
           '<li><span>&rarr;</span><div><b>Save your representatives</b> for quick check-ins on where they stand.</div></li>' +
           '<li><span>&rarr;</span><div><b>Coming soon:</b> see who works with whom, and find your rep on a Colorado map.</div></li>' +
         '</ul>' +
-        '<div id="qa-sub"><p><b>Get the Sunday Update.</b> The Q Score refreshes every Sunday &mdash; we\'ll send the recap straight to your inbox.</p>' +
+        '<div id="qa-sub"><p><b>Get the Sunday Update.</b> The Q Score refreshes every Sunday &mdash; we\'ll send the recap to your inbox every Sunday evening.</p>' +
           '<div id="qa-form"><input id="qa-email" type="email" placeholder="you@email.com" autocomplete="email"><button id="qa-go">Sign me up</button></div>' +
           '<div id="qa-msg" aria-live="polite"></div>' +
           '<button id="qa-later">Maybe later</button>' +
         '</div>' +
       '</div>' +
     '</div>';
+
+  // Loads q-sunday.js (the shared sign-up) the first time it's needed.
+  function withSignup(cb) {
+    if (window.qcSundaySignup) return cb(window.qcSundaySignup);
+    var sc = document.createElement("script"); sc.src = "q-sunday.js";
+    sc.onload = function () { cb(window.qcSundaySignup); };
+    sc.onerror = function () { cb(function () { return Promise.resolve("error"); }); };
+    document.head.appendChild(sc);
+  }
 
   function close() { back.classList.remove("on"); markSeen(); setTimeout(function () { if (back.parentNode) back.parentNode.removeChild(back); }, 260); document.removeEventListener("keydown", onKey); }
   function onKey(e) { if (e.key === "Escape") close(); }
@@ -81,13 +90,15 @@
       var v = (email.value || "").trim();
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) { msg.className = "err"; msg.textContent = "Please enter a valid email."; return; }
       go.disabled = true; msg.className = ""; msg.textContent = "Signing you up\u2026";
-      fetch("https://api.web3forms.com/submit", {
-        method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({ access_key: WEB3FORMS_KEY, subject: "Sunday Update signup", from_name: "The Q Collective site", email: v, message: "New Sunday Update subscriber: " + v })
-      }).then(function (r) { return r.json(); }).then(function (d) {
-        if (d && d.success) { msg.className = "ok"; msg.textContent = "You're in \u2014 see you Sunday."; document.getElementById("qa-form").style.display = "none"; markSeen(); }
-        else { go.disabled = false; msg.className = "err"; msg.textContent = "Something went wrong \u2014 please try again."; }
-      }).catch(function () { go.disabled = false; msg.className = "err"; msg.textContent = "Network error \u2014 please try again."; });
+      withSignup(function (signup) {
+        signup(v).then(function (res) {
+          var good = (res === "ok" || res === "already" || res === "queued");
+          msg.className = good ? "ok" : "err";
+          msg.textContent = window.qcSundayMessage(res);
+          if (good) { document.getElementById("qa-form").style.display = "none"; markSeen(); }
+          else { go.disabled = false; }
+        });
+      });
     }
     go.addEventListener("click", submit);
     email.addEventListener("keydown", function (e) { if (e.key === "Enter") submit(); });

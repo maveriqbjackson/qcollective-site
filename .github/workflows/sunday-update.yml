@@ -1,0 +1,74 @@
+name: Sunday Update
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"   # every 6 hours: send confirmation emails to new sign-ups
+                             # (also keeps Supabase awake so the free plan doesn't pause it)
+    - cron: "7 1 * * 1"      # Monday 01:07 UTC = Sunday 7:07 PM Mountain (summer) / 6:07 PM (winter)
+                             # the weekly recap, a few hours after the Q Score engine lands
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "test = send this week's recap ONLY to team@theqcollective.org. recap = send to all subscribers. confirm = just send pending confirmations."
+        type: choice
+        options: [test, recap, confirm]
+        default: test
+      force:
+        description: "Send the recap even if one already went out in the last 5 days"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sunday-update
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Pick the mode
+        id: pick
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=${{ inputs.mode }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "7 1 * * 1" ]; then
+            echo "mode=recap" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=confirm" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Send
+        env:
+          MODE: ${{ steps.pick.outputs.mode }}
+          FORCE: ${{ inputs.force && '1' || '' }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          SITE_URL: "https://theqcollective.org"
+          TEST_TO: "team@theqcollective.org"
+        run: python send_sunday_update.py
+
+      - name: Save what this week's recap reported
+        if: steps.pick.outputs.mode == 'recap'
+        run: |
+          git config user.name "q-score-bot"
+          git config user.email "q-score-bot@users.noreply.github.com"
+          git add data/sunday_state.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Nothing to save."
+            exit 0
+          fi
+          git commit -m "Sunday Update sent ($(date -u +%Y-%m-%d))"
+          git pull --rebase --autostash origin main
+          git push
