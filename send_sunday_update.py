@@ -125,7 +125,28 @@ def send_email(to, subject, html_body, text_body, token=None):
     res = _req("https://api.resend.com/emails", "POST",
                {"Authorization": "Bearer " + RESEND_KEY, "Content-Type": "application/json"},
                payload)
+    global LAST_EMAIL_ID
+    LAST_EMAIL_ID = res.get("id", "") if isinstance(res, dict) else ""
     return bool(res)
+
+
+LAST_EMAIL_ID = ""
+
+
+def delivery_status(email_id):
+    """What the mail service says happened to one email: delivered, bounced, delayed..."""
+    if not email_id:
+        return "no id returned"
+    r = urllib.request.Request("https://api.resend.com/emails/" + email_id,
+                               headers={"Authorization": "Bearer " + RESEND_KEY,
+                                        "User-Agent": "TheQCollective/1.0 (+https://theqcollective.org)"})
+    try:
+        with urllib.request.urlopen(r, timeout=30) as resp:
+            return str(json.loads(resp.read().decode()).get("last_event") or "unknown")
+    except urllib.error.HTTPError as e:
+        return "status not readable (HTTP %s %s)" % (e.code, e.read().decode("utf-8", "ignore")[:120])
+    except Exception as e:
+        return "status not readable (%s)" % e
 
 
 # --------------------------------------------------------------------------
@@ -628,12 +649,18 @@ def main():
     if MODE == "samples":
         # One copy of each sign-up email to the team, so you can see exactly what people get.
         ok = True
+        ids = []
         for label, (h, t), subj in (("WELCOME", welcome_email("test-preview"), WELCOME_SUBJECT),
                                     ("CONFIRMATION", confirm_email("test-preview"), CONFIRM_SUBJECT),
                                     ("REMINDER", remind_email("test-preview"), REMIND_SUBJECT)):
-            ok = send_email(TEST_TO, f"[SAMPLE: {label}] {subj}", h, t) and ok
+            one = send_email(TEST_TO, f"[SAMPLE: {label}] {subj}", h, t)
+            ok = one and ok
+            ids.append((label, LAST_EMAIL_ID if one else ""))
             time.sleep(0.6)
         log(f"samples to {TEST_TO}: {'sent' if ok else 'FAILED'}")
+        time.sleep(45)   # give the receiving mail server time to answer
+        for label, eid in ids:
+            print(f"::notice title=Sample {label}::{delivery_status(eid)}", flush=True)
         return 0 if ok else 1
     send_confirmations()
     if MODE == "recap":
