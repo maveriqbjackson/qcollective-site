@@ -59,6 +59,15 @@ jobs:
           TEST_TO: "team@theqcollective.org"
         run: python send_sunday_update.py
 
+      - name: Email the team if something failed
+        if: failure()
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          WHAT: "The Sunday Update (${{ steps.pick.outputs.mode }})"
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          SITE_URL: "https://theqcollective.org"
+        run: python notify_failure.py
+
       - name: Save what this week's recap reported
         if: steps.pick.outputs.mode == 'recap'
         run: |

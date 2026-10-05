@@ -27,6 +27,7 @@ jobs:
           python-version: "3.12"
 
       - name: Run the Q Score engine
+        id: engine
         env:
           LEGISCAN_KEY: ${{ secrets.LEGISCAN_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -43,16 +44,38 @@ jobs:
           STATES: "CO"
         run: python send_alerts.py
 
+      # Anything above went wrong: email the team right away.
+      - name: Email the team if something failed
+        if: failure()
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          WHAT: "The Q Score engine"
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          SITE_URL: "https://theqcollective.org"
+        run: python notify_failure.py
+
+      # Runs even after a failure, so the site can show "we hit a mild glitch"
+      # with the date of the last good update. A failed engine run saves ONLY
+      # data/health.json; scores are never saved from a run that didn't finish.
       - name: Commit updated scores
+        if: always()
         run: |
           git config user.name "q-score-bot"
           git config user.email "q-score-bot@users.noreply.github.com"
-          git add data
+          if [ "${{ steps.engine.outcome }}" = "success" ]; then
+            git add data
+            MSG="Update Q Scores ($(date -u +%Y-%m-%d))"
+          else
+            git add data/health.json 2>/dev/null || true
+            MSG="Q Score refresh did not finish ($(date -u +%Y-%m-%d))"
+          fi
           if git diff --cached --quiet; then
-            echo "No score changes to commit."
+            echo "Nothing to save."
             exit 0
           fi
-          git commit -m "Update Q Scores ($(date -u +%Y-%m-%d))"
+          git commit -m "$MSG"
+          # drop anything else a failed run left behind, then save
+          git checkout -- . 2>/dev/null || true
           # pull anything that landed on main while we were scoring, then save
           git pull --rebase --autostash origin main
           git push

@@ -60,3 +60,6 @@
 
 /* ---- announcement popup: loaded site-wide from here so it appears on every page (no per-page code) ---- */
 (function(){function load(){try{if(document.getElementById('qa-back')||window.__qaLoaded)return;window.__qaLoaded=1;var s=document.createElement('script');s.src='q-announce.js';s.async=true;document.body.appendChild(s);}catch(e){}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',load);else load();})();
+
+/* ---- score freshness: "Scores last updated ..." and the mild-glitch notice. Loaded site-wide from here; q-status.js decides which pages it applies to. ---- */
+(function(){function load(){try{if(window.__qStatusLoaded||document.querySelector('script[src^="q-status.js"]'))return;var s=document.createElement('script');s.src='q-status.js?v=1';s.async=true;document.body.appendChild(s);}catch(e){}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',load);else load();})();

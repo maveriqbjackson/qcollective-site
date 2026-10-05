@@ -158,9 +158,39 @@ def snapshot():
             bill_map[n] = {"status": (b.get("status") or "").strip(),
                            "title": (b.get("title") or "").strip()}
 
+    # last_success = the last time the engine finished cleanly. Older health files
+    # only had last_run, which meant the same thing whenever ok was true.
+    last_good = (health.get("last_success")
+                 or (health.get("last_run") if health.get("ok", True) else "")
+                 or co.get("updated") or "")
     return {"people": people, "bills": bill_map,
-            "last_run": health.get("last_run") or co.get("updated") or "",
+            "last_run": last_good,
             "run_ok": bool(health.get("ok", True))}
+
+
+def parse_stamp(s):
+    """'September 27, 2026 at 3:33 PM MDT' -> datetime in Mountain time, or None."""
+    try:
+        core = " ".join(str(s).split()[:6])          # drop the trailing time-zone word
+        return dt.datetime.strptime(core, "%B %d, %Y at %I:%M %p").replace(tzinfo=TZ)
+    except Exception:
+        return None
+
+
+def date_only(s):
+    return str(s or "").split(" at ")[0].strip()
+
+
+def is_fresh(now):
+    """True when the engine finished cleanly within the last three days.
+    The engine runs Sunday midday and this goes out Sunday evening, but GitHub
+    can start either one hours late, so 'same calendar day' is too strict."""
+    if not now.get("run_ok", True):
+        return False
+    when = parse_stamp(now.get("last_run"))
+    if not when:
+        return True     # can't tell; don't cry wolf
+    return (dt.datetime.now(TZ) - when) <= dt.timedelta(days=3)
 
 
 def title_for(p):
@@ -188,7 +218,8 @@ def build_recap(now, prev, today):
     sections = []
 
     # ---- freshness -------------------------------------------------------
-    fresh = today.strftime("%B %-d, %Y") in (now["last_run"] or "")
+    fresh = is_fresh(now)
+    last_good = date_only(now["last_run"])
     # ---- what moved ------------------------------------------------------
     moved, new_champs, lost_champs, bill_moves = [], [], [], []
     if prev:
@@ -209,9 +240,14 @@ def build_recap(now, prev, today):
 
     head = []
     if not fresh:
-        head.append(f"Heads up: this week's refresh hadn't finished when this went out. "
-                    f"The numbers below are from the last completed run ({now['last_run']}).")
-    if moved or bill_moves:
+        # Say it plainly, and never claim the engine checked anything this week.
+        head.append("We hit a mild glitch refreshing the scores this week, and we're on it.")
+        if last_good:
+            head.append(f"Everything below is from our last completed update on {last_good}. "
+                        f"Nothing is lost, and the scores will refresh as soon as the fix is in.")
+        if today.month >= 6:
+            head.append("The legislature is out of session, so the record rarely moves this time of year.")
+    elif moved or bill_moves:
         head.append(f"{len(moved)} score change{'s' if len(moved) != 1 else ''} and "
                     f"{len(bill_moves)} bill update{'s' if len(bill_moves) != 1 else ''} this week.")
     else:
@@ -220,6 +256,8 @@ def build_recap(now, prev, today):
         if today.month >= 6:
             head.append("That's expected. The legislature is out of session, so the record "
                         "holds steady until the next session opens in January.")
+    if fresh and last_good:
+        head.append(f"Scores last updated {last_good}.")
     sections.append(("THE HEADLINE", head))
 
     if moved:
@@ -437,10 +475,17 @@ def run_recap(test=False):
                                                    "bills": {k: v["status"] for k, v in now["bills"].items()}},
                                     today)
 
+    # GitHub sometimes starts the Sunday-evening run after midnight. The email is
+    # still the Sunday Update, so date it for the Sunday it belongs to.
+    sunday = today - dt.timedelta(days=(today.weekday() + 1) % 7)
+    if sunday != today:
+        subject = subject.replace(today.strftime('%B %-d'), sunday.strftime('%B %-d'), 1)
+    shown = sunday
+
     if test:
         subject = "[TEST] " + subject
-        ok = send_email(TEST_TO, subject, render_html(today, sections, "test-preview"),
-                        render_text(today, sections, "test-preview"))
+        ok = send_email(TEST_TO, subject, render_html(shown, sections, "test-preview"),
+                        render_text(shown, sections, "test-preview"))
         log(f"test recap to {TEST_TO}: {'sent' if ok else 'FAILED'}")
         return ok
 
@@ -450,8 +495,8 @@ def run_recap(test=False):
         return False
     sent = 0
     for s in subs:
-        if send_email(s["email"], subject, render_html(today, sections, s["token"]),
-                      render_text(today, sections, s["token"]), token=s["token"]):
+        if send_email(s["email"], subject, render_html(shown, sections, s["token"]),
+                      render_text(shown, sections, s["token"]), token=s["token"]):
             sent += 1
             time.sleep(0.6)
     log(f"recap sent: {sent}/{len(subs)}")
@@ -459,6 +504,15 @@ def run_recap(test=False):
         log("every send failed; state NOT saved so next run can retry.")
         return False
     save_state(now, today)
+    if not is_fresh(now):
+        # The recap went out on old scores. Subscribers were told; make sure the team knows too.
+        note = (f"The Sunday Update went to {sent} subscriber{'s' if sent != 1 else ''} tonight using scores from "
+                f"{date_only(now['last_run']) or 'an earlier run'}, because the Q Score engine has not finished "
+                f"cleanly since then. The email told readers we hit a mild glitch and are on it. "
+                f"Check the Q Score Engine runs: https://github.com/maveriqbjackson/qcollective-site/actions")
+        send_email(TEST_TO, "Needs you: Sunday Update went out on last week's scores",
+                   f'<div style="font-family:Georgia,serif;font-size:15px;line-height:1.6;color:#2a3242;">{html.escape(note)}</div>',
+                   note)
     return True
 
 

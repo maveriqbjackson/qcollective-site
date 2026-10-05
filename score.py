@@ -140,14 +140,33 @@ def chamber_label(role, abbr):
 def legiscan(op, **params):
     params["key"] = LEGISCAN_KEY; params["op"] = op
     url = "https://api.legiscan.com/?" + urllib.parse.urlencode(params)
+    # Identify ourselves. The default "Python-urllib" signature is commonly refused by firewalls.
+    req = urllib.request.Request(url, headers={
+        "User-Agent": "QCollective-QScore/7.0 (+https://theqcollective.org; team@theqcollective.org)",
+        "Accept": "application/json"})
     last = None
     for attempt in range(4):
         try:
-            with urllib.request.urlopen(url, timeout=60) as r:
-                return json.loads(r.read().decode())
+            with urllib.request.urlopen(req, timeout=60) as r:
+                res = json.loads(r.read().decode())
+            # LegiScan reports key/quota problems as a normal reply with status ERROR. Say so plainly.
+            if isinstance(res, dict) and res.get("status") == "ERROR":
+                raise RuntimeError("LegiScan said: %s" % str((res.get("alert") or {}).get("message", res))[:300])
+            return res
+        except urllib.error.HTTPError as e:
+            last = e
+            try: body = e.read().decode("utf-8", "ignore")
+            except Exception: body = ""
+            body = " ".join(body.replace(LEGISCAN_KEY or "\x00", "***").split())[:400]
+            global LAST_SOURCE_REPLY
+            LAST_SOURCE_REPLY = "LegiScan %s -> HTTP %s %s | server=%s | reply: %s" % (
+                op, e.code, e.reason, e.headers.get("Server", "?"), body or "(empty)")
+            log("  LegiScan %s attempt %d/4 failed: HTTP %s %s | server=%s | reply: %s" % (
+                op, attempt + 1, e.code, e.reason, e.headers.get("Server", "?"), body or "(empty)"))
+            time.sleep(5 * (attempt + 1))
         except Exception as e:
             last = e
-            log("  LegiScan %s attempt %d/4 failed: %s" % (op, attempt + 1, str(e)[:120]))
+            log("  LegiScan %s attempt %d/4 failed: %s" % (op, attempt + 1, str(e)[:300]))
             time.sleep(5 * (attempt + 1))
     raise last
 
@@ -456,13 +475,50 @@ def do_state(abbr, ds):
     return {"code": abbr, "name": name, "count": len(out)}
 
 def _write_health(ok, states_ok, errors):
-    health = {"last_run": stamp_now(), "scoring_version": SCORE_VERSION, "ok": bool(ok),
-              "states_ok": states_ok, "errors": errors}
+    # last_run     = when the engine last tried
+    # last_success = when it last finished cleanly. The site and the Sunday Update show THIS date,
+    #                and show a "mild glitch, we're on it" notice whenever ok is false.
+    path = os.path.join(OUTDIR, "health.json")
+    try: prev = json.load(open(path))
+    except Exception: prev = {}
+    now = stamp_now()
+    last_success = now if ok else (prev.get("last_success") or (prev.get("last_run") if prev.get("ok") else "") or "")
+    if not last_success:
+        try: last_success = json.load(open(os.path.join(OUTDIR, "index.json"))).get("updated", "")
+        except Exception: last_success = ""
+    health = {"last_run": now, "last_success": last_success, "scoring_version": SCORE_VERSION,
+              "ok": bool(ok), "states_ok": states_ok, "errors": errors}
     try:
-        with open(os.path.join(OUTDIR, "health.json"), "w") as f:
+        with open(path, "w") as f:
             json.dump(health, f, indent=1)
     except Exception as e:
         log("  could not write health.json:", e)
+
+def _public_reason(e):
+    """Short, plain reason that is safe to publish in data/health.json."""
+    if isinstance(e, urllib.error.HTTPError):
+        return "The legislative data source refused the request (HTTP %s)." % e.code
+    if isinstance(e, urllib.error.URLError):
+        return "The legislative data source could not be reached."
+    return "The weekly refresh stopped before it finished."
+
+def _record_failure(e):
+    """A run that dies early still leaves a mark: health.json says so, and the workflow emails the team."""
+    try:
+        try: prev_states = json.load(open(os.path.join(OUTDIR, "health.json"))).get("states_ok", [])
+        except Exception: prev_states = []
+        os.makedirs(OUTDIR, exist_ok=True)
+        _write_health(False, prev_states, [_public_reason(e)])
+        detail = "%s: %s" % (type(e).__name__, str(e)[:600])
+        if LEGISCAN_KEY: detail = detail.replace(LEGISCAN_KEY, "***")
+        if ANTHROPIC_KEY: detail = detail.replace(ANTHROPIC_KEY, "***")
+        # private detail for the failure email only (never committed to the site)
+        with open(os.environ.get("Q_ERROR_FILE") or os.path.join(os.environ.get("RUNNER_TEMP") or ".", "q_error.txt"), "w") as f:
+            f.write((LAST_SOURCE_REPLY + "\n" if LAST_SOURCE_REPLY else "") + detail)
+    except Exception as e2:
+        log("  could not record the failure:", e2)
+
+LAST_SOURCE_REPLY = ""
 
 
 # ---- v7.0 curated executive & judicial (Colorado-first) --------------------
@@ -646,12 +702,22 @@ def main():
     try: _audit_log(_audit_before)
     except Exception as e: log("  audit error (non-fatal):", e)
     index.sort(key=lambda x: x["name"])
-    with open(os.path.join(OUTDIR, "index.json"), "w") as f:
-        json.dump({"updated": stamp_now(), "states": index}, f, indent=1)
+    if index:   # a run where nothing succeeded leaves the last good index.json alone
+        with open(os.path.join(OUTDIR, "index.json"), "w") as f:
+            json.dump({"updated": stamp_now(), "states": index}, f, indent=1)
     _write_health(len(errors) == 0 and len(index) > 0, [r["code"] for r in index], errors)
     log("\nWrote data/index.json (%d states) + data/health.json (ok=%s)." % (len(index), len(errors)==0 and len(index)>0))
     if not index:
         raise SystemExit("No states succeeded - run is visibly failed; existing data left untouched.")
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except SystemExit as e:
+        # main() already wrote health.json for the "no states succeeded" case
+        if e.code not in (0, None) and "No states succeeded" not in str(e.code):
+            _record_failure(RuntimeError(str(e.code)))
+        raise
+    except Exception as e:
+        _record_failure(e)
+        raise
