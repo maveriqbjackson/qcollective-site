@@ -652,7 +652,7 @@
 function sundaySignup(e,f){e.preventDefault();var m=f.querySelector('.sunday-msg'),inp=f.querySelector('input[type=email]'),btn=f.querySelector('button');
 m.textContent='Signing you up\u2026';btn.disabled=true;
 window.qcSundaySignup(inp.value).then(function(res){m.textContent=window.qcSundayMessage(res);
-if(res==='ok'||res==='already'||res==='queued'){inp.disabled=true;}else{btn.disabled=false;}});return false;}
+if(res==='ok'||res==='confirm'||res==='already'||res==='queued'){inp.disabled=true;}else{btn.disabled=false;}});return false;}
 </script>
 <div id="q-chrome-footer"></div>
 <script>

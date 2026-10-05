@@ -92,7 +92,7 @@
       go.disabled = true; msg.className = ""; msg.textContent = "Signing you up\u2026";
       withSignup(function (signup) {
         signup(v).then(function (res) {
-          var good = (res === "ok" || res === "already" || res === "queued");
+          var good = (res === "ok" || res === "confirm" || res === "already" || res === "queued");
           msg.className = good ? "ok" : "err";
           msg.textContent = window.qcSundayMessage(res);
           if (good) { document.getElementById("qa-form").style.display = "none"; markSeen(); }

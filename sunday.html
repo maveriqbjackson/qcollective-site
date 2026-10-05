@@ -514,13 +514,25 @@
   window.qcReady.then(function(qc){
     if(!qc){say('Try again shortly','We couldn\u2019t reach the subscriber list just now. Please try the link again in a few minutes.',true);return;}
     var fn=(doWhat==='unsubscribe')?'unsubscribe_sunday_subscriber':'confirm_sunday_subscriber';
-    qc.rpc(fn,{t:t}).then(function(res){
-      var v=res&&res.data;
-      if(res&&res.error){say('Something went wrong','Please try the link again, or write to us at team&#64;theQcollective.org.',true);return;}
-      if(v==='notfound'){say('Link not recognized','That link is no longer valid. You can sign up again any time from the homepage.',true);return;}
-      if(doWhat==='unsubscribe'){say('You\u2019re unsubscribed','You won\u2019t get any more Sunday Updates. Changed your mind? Sign up again any time from the homepage.',true);}
-      else {say('You\u2019re confirmed \u2713','The Sunday Update will land in your inbox every Sunday evening: what moved in the Colorado legislature, whose record changed, and the dates that matter. Every email has a one-click unsubscribe.',true);}
-    }).catch(function(){say('Something went wrong','Please try the link again, or write to us at team&#64;theQcollective.org.',true);});
+    function run(){
+      box.innerHTML='<p>Working\u2026</p>';
+      qc.rpc(fn,{t:t}).then(function(res){
+        var v=res&&res.data;
+        if(res&&res.error){say('Something went wrong','Please try the link again, or write to us at team&#64;theQcollective.org.',true);return;}
+        if(v==='notfound'){say('Link not recognized','That link is no longer valid. You can sign up again any time from the homepage.',true);return;}
+        if(doWhat==='unsubscribe'){say('You\u2019re unsubscribed','You won\u2019t get any more Sunday Updates. Changed your mind? Sign up again any time from the homepage.',true);}
+        else {say('You\u2019re confirmed \u2713','The Sunday Update will land in your inbox every Sunday evening: what moved in the Colorado legislature, whose record changed, and the dates that matter. Every email has a one-click unsubscribe.',true);}
+      }).catch(function(){say('Something went wrong','Please try the link again, or write to us at team&#64;theQcollective.org.',true);});
+    }
+    /* Nothing happens until a person presses the button. Email security scanners
+       open every link in a message; acting on page load let them confirm and
+       unsubscribe people who never touched the email. */
+    if(doWhat==='unsubscribe'){
+      box.innerHTML='<h2>Stop the Sunday Update?</h2><p>Press the button and you won\u2019t get any more. You can sign up again any time from the homepage.</p><button type="button" class="al-btn" id="alGo" style="border:0;cursor:pointer">Unsubscribe me</button>';
+    } else {
+      box.innerHTML='<h2>One tap to finish</h2><p>Press the button to start getting the Sunday Update: every Sunday evening, what moved in the Colorado legislature, whose record changed, and the dates that matter.</p><button type="button" class="al-btn" id="alGo" style="border:0;cursor:pointer">Confirm my subscription</button>';
+    }
+    document.getElementById('alGo').addEventListener('click',run);
   });
 })();
 </script>

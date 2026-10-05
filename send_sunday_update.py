@@ -3,15 +3,22 @@
 THE Q COLLECTIVE — SUNDAY UPDATE SENDER
 Runs in GitHub Actions (.github/workflows/sunday-update.yml).
 
-Three modes (set by the workflow):
-  confirm  Every 6 hours. Sends a confirmation email to anyone who signed up
-           and hasn't been sent one yet. Also keeps Supabase awake so the free
-           plan doesn't pause it.
-  recap    Sunday evening. Sends confirmations, then the weekly Sunday Update
-           to every confirmed subscriber. Saves what it reported so next week
+Modes (set by the workflow):
+  confirm  Every hour. Sends each new sign-up their first email:
+             - a WELCOME (no action needed) in normal times, or
+             - a CONFIRMATION (they must press a button) when the database has
+               switched confirmation back on because sign-ups are flooding in.
+           Also keeps Supabase awake so the free plan doesn't pause it.
+  recap    Sunday evening. Sends first emails, then the weekly Sunday Update
+           to every active subscriber. Saves what it reported so next week
            can say what moved.
   test     Manual only. Builds this week's recap and sends it to TEST_TO
            (team@theqcollective.org) and nobody else. Changes nothing.
+  samples  Manual only. Sends one copy of the welcome, confirmation and reminder
+           emails to TEST_TO and nobody else. Changes nothing.
+  remind   Manual only. Sends ONE "please confirm" email to people who signed
+           up, were sent a confirmation, and never pressed it. Each address
+           gets it once, ever (reminder_sent in the database).
 
 Safety:
   • Missing secrets -> prints a note and exits 0. Never fails a run.
@@ -430,21 +437,114 @@ def confirm_email(token):
     return html_body, text
 
 
+def _shell(inner):
+    return f"""<table width="100%" cellpadding="0" cellspacing="0" style="background:#f2efe8;padding:28px 0;font-family:Helvetica,Arial,sans-serif;"><tr><td align="center">
+<table width="480" cellpadding="0" cellspacing="0" style="max-width:480px;width:100%;background:#ffffff;border:1px solid #e4e0d6;border-radius:14px;overflow:hidden;">
+<tr><td style="background:#122848;padding:22px 30px;"><span style="font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#ffffff;">The Q Collective</span><span style="float:right;font-family:Georgia,serif;font-size:26px;font-weight:bold;color:#B8962E;">Q</span></td></tr>
+<tr><td style="padding:32px 30px 10px;">{inner}</td></tr>
+<tr><td style="border-top:1px solid #e4e0d6;padding:18px 30px;"><p style="font-size:11px;line-height:1.6;color:#9aa0ae;margin:0;">{"<br>".join(POSTAL)}</p></td></tr>
+</table></td></tr></table>"""
+
+
+FOUNDER_BOX = (f'<div style="background:#f2efe8;border:1px solid #e4e0d6;border-radius:9px;padding:14px 16px;margin:24px 0 0;">'
+               f'<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#B8962E;font-weight:bold;">A direct line to our founder</div>'
+               f'<div style="font-size:14px;line-height:1.6;color:#2a3242;margin-top:4px;">maveriQ B Jackson wants every subscriber to have a direct line. '
+               f'Call or text Mav at <a href="tel:{FOUNDER_TEL}" style="color:#122848;font-weight:bold;">{FOUNDER_PHONE}</a> with questions, concerns, ideas, '
+               f'or just to get to know the person behind The Q Collective.</div></div>')
+FOUNDER_TEXT = ("A direct line to our founder: maveriQ B Jackson wants every subscriber to have a direct line. "
+                f"Call or text Mav at {FOUNDER_PHONE} with questions, concerns, ideas, or just to get to know "
+                "the person behind The Q Collective.")
+
+# The site's pop-up quotes this subject line so people can search for it.
+# If you change it, change CONFIRM_SUBJECT in q-sunday.js to match.
+CONFIRM_SUBJECT = "Confirm your Sunday Update"
+WELCOME_SUBJECT = "Welcome to the Sunday Update"
+REMIND_SUBJECT = "Please confirm your Sunday Update"
+
+
+def welcome_email(token):
+    """First email in normal times: they're already in, nothing to press."""
+    unsub = f"{SITE}/sunday.html?do=unsubscribe&token={urllib.parse.quote(token)}"
+    html_body = _shell(f"""
+<h1 style="font-family:Georgia,serif;font-size:21px;color:#122848;margin:0 0 12px;">You're in</h1>
+<p style="font-size:15px;line-height:1.6;color:#2a3242;margin:0 0 14px;">Thanks for signing up for the Sunday Update. There's nothing else to do. Every Sunday evening you'll get what moved in the Colorado legislature that week, whose record changed, and the dates that matter.</p>
+<p style="font-size:15px;line-height:1.6;color:#2a3242;margin:0 0 4px;">Want to look around first? <a href="{SITE}/hub.html" style="color:#122848;font-weight:bold;">Open the Accountability Hub</a>.</p>
+{FOUNDER_BOX}
+<p style="font-size:13px;line-height:1.6;color:#7a808f;margin:22px 0 22px;">Didn't sign up, or changed your mind? <a href="{unsub}" style="color:#7a808f;">Unsubscribe here</a> and nothing else will be sent.</p>""")
+    text = ("You're in.\n\nThanks for signing up for the Sunday Update from The Q Collective. There's nothing else to do. "
+            "Every Sunday evening you'll get what moved in the Colorado legislature that week, whose record changed, "
+            f"and the dates that matter.\n\nThe Accountability Hub: {SITE}/hub.html\n\n{FOUNDER_TEXT}\n\n"
+            f"Didn't sign up, or changed your mind? Unsubscribe: {unsub}\n\n" + "\n".join(POSTAL))
+    return html_body, text
+
+
+def remind_email(token):
+    """One-time nudge to people who were sent a confirmation and never pressed it."""
+    url = f"{SITE}/sunday.html?do=confirm&token={urllib.parse.quote(token)}"
+    html_body = _shell(f"""
+<h1 style="font-family:Georgia,serif;font-size:21px;color:#122848;margin:0 0 12px;">Still want the Sunday Update?</h1>
+<p style="font-size:15px;line-height:1.6;color:#2a3242;margin:0 0 14px;">This email address was signed up for the Sunday Update at theqcollective.org, and we never got a confirmation. We only want to write to people who asked us to.</p>
+<p style="font-size:15px;line-height:1.6;color:#2a3242;margin:0 0 22px;">If that was you and you'd like it every Sunday evening (what moved in the Colorado legislature, whose record changed, and the dates that matter), press the button.</p>
+<table cellpadding="0" cellspacing="0"><tr><td style="background:#B8962E;border-radius:8px;"><a href="{url}" style="display:inline-block;padding:13px 30px;font-size:14px;font-weight:bold;color:#122848;text-decoration:none;">Yes, send me the Sunday Update &rarr;</a></td></tr></table>
+<p style="font-size:14px;line-height:1.6;color:#2a3242;margin:22px 0 22px;"><b>Didn't sign up?</b> Do nothing. This is the last email you'll get from us, and we're sorry for the interruption.</p>""")
+    text = ("Still want the Sunday Update?\n\nThis email address was signed up for the Sunday Update at "
+            "theqcollective.org, and we never got a confirmation. We only want to write to people who asked us to.\n\n"
+            f"If that was you, confirm here: {url}\n\n"
+            "Didn't sign up? Do nothing. This is the last email you'll get from us, and we're sorry for the interruption.\n\n"
+            + "\n".join(POSTAL))
+    return html_body, text
+
+
 # --------------------------------------------------------------------------
 def send_confirmations():
+    """First email for every new sign-up. Already-active people (the normal case)
+    get a welcome. People the database is holding for confirmation get the
+    confirmation email."""
     pending = sb("sunday_subscribers?confirm_sent=eq.false&unsubscribed=eq.false"
-                 "&select=id,email,token") or []
+                 "&select=id,email,token,confirmed") or []
     if not isinstance(pending, list):
         log("couldn't read the subscriber list (is Supabase paused?)")
         return
-    sent = 0
+    welcomed = confirms = 0
     for s in pending:
-        h, t = confirm_email(s["token"])
-        if send_email(s["email"], "Confirm your Sunday Update", h, t):
+        if s.get("confirmed"):
+            h, t = welcome_email(s["token"])
+            ok = send_email(s["email"], WELCOME_SUBJECT, h, t, token=s["token"])
+        else:
+            h, t = confirm_email(s["token"])
+            ok = send_email(s["email"], CONFIRM_SUBJECT, h, t)
+        if ok:
             sb(f"sunday_subscribers?id=eq.{s['id']}", "PATCH", {"confirm_sent": True}, "return=minimal")
+            if s.get("confirmed"): welcomed += 1
+            else: confirms += 1
+            time.sleep(0.6)
+    log(f"first emails sent: {welcomed} welcome, {confirms} confirmation, of {len(pending)} waiting")
+
+
+# Phone-company "email to text" addresses. An HTML email to these arrives as a
+# garbled text message on someone's phone, so reminders skip them.
+SMS_GATEWAYS = ("vtext.com", "txt.att.net", "tmomail.net", "messaging.sprintpcs.com", "vzwpix.com", "mms.att.net")
+
+
+def send_reminders():
+    rows = sb("sunday_subscribers?confirmed=eq.false&unsubscribed=eq.false&confirm_sent=eq.true"
+              "&reminder_sent=eq.false&select=id,email,token&order=id&limit=200")
+    if not isinstance(rows, list):
+        log("couldn't read the subscriber list; no reminders sent.")
+        return False
+    sent = skipped = 0
+    for s in rows:
+        if s["email"].lower().rsplit("@", 1)[-1] in SMS_GATEWAYS:
+            skipped += 1
+            continue
+        h, t = remind_email(s["token"])
+        if send_email(s["email"], REMIND_SUBJECT, h, t):
+            sb(f"sunday_subscribers?id=eq.{s['id']}", "PATCH", {"reminder_sent": True}, "return=minimal")
             sent += 1
             time.sleep(0.6)
-    log(f"confirmations sent: {sent}/{len(pending)}")
+    log(f"reminders sent: {sent}/{len(rows)} (skipped {skipped} phone text-message addresses)")
+    print(f"::notice title=Sunday Update reminders::{sent} sent, {skipped} skipped, {len(rows) - sent - skipped} failed", flush=True)
+    return sent > 0 or not rows
 
 
 def save_state(now, today):
@@ -523,6 +623,18 @@ def main():
     log(f"mode: {MODE}")
     if MODE == "test":
         return 0 if run_recap(test=True) else 1
+    if MODE == "remind":
+        return 0 if send_reminders() else 1
+    if MODE == "samples":
+        # One copy of each sign-up email to the team, so you can see exactly what people get.
+        ok = True
+        for label, (h, t), subj in (("WELCOME", welcome_email("test-preview"), WELCOME_SUBJECT),
+                                    ("CONFIRMATION", confirm_email("test-preview"), CONFIRM_SUBJECT),
+                                    ("REMINDER", remind_email("test-preview"), REMIND_SUBJECT)):
+            ok = send_email(TEST_TO, f"[SAMPLE: {label}] {subj}", h, t) and ok
+            time.sleep(0.6)
+        log(f"samples to {TEST_TO}: {'sent' if ok else 'FAILED'}")
+        return 0 if ok else 1
     send_confirmations()
     if MODE == "recap":
         # A failed recap turns the run red so GitHub emails you about it.
@@ -536,4 +648,4 @@ if __name__ == "__main__":
     except Exception as e:
         err("unexpected error: %s" % e)
         # confirm runs stay quiet; a broken recap or test should be loud
-        sys.exit(1 if MODE in ("recap", "test") else 0)
+        sys.exit(1 if MODE in ("recap", "test", "remind", "samples") else 0)

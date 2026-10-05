@@ -2,16 +2,16 @@ name: Sunday Update
 
 on:
   schedule:
-    - cron: "17 */6 * * *"   # every 6 hours: send confirmation emails to new sign-ups
+    - cron: "17 * * * *"     # every hour: send new sign-ups their welcome (or confirmation) email
                              # (also keeps Supabase awake so the free plan doesn't pause it)
     - cron: "7 1 * * 1"      # Monday 01:07 UTC = Sunday 7:07 PM Mountain (summer) / 6:07 PM (winter)
                              # the weekly recap, a few hours after the Q Score engine lands
   workflow_dispatch:
     inputs:
       mode:
-        description: "test = send this week's recap ONLY to team@theqcollective.org. recap = send to all subscribers. confirm = just send pending confirmations."
+        description: "test = send this week's recap ONLY to team@theqcollective.org. recap = send to all subscribers. confirm = just send waiting welcome/confirmation emails. samples = one copy of each sign-up email ONLY to team@. remind = ONE-TIME please-confirm email to people who never confirmed."
         type: choice
-        options: [test, recap, confirm]
+        options: [test, recap, confirm, samples, remind]
         default: test
       force:
         description: "Send the recap even if one already went out in the last 5 days"
