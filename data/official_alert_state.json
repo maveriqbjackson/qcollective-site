@@ -1,0 +1,705 @@
+{
+ "baseline": {
+  "15133": {
+   "attendance": 85,
+   "impact": 76,
+   "pillar": 78,
+   "score": 80,
+   "sponsorship": 84
+  },
+  "16583": {
+   "attendance": 20,
+   "impact": 58,
+   "pillar": 62,
+   "score": 52,
+   "sponsorship": 73
+  },
+  "18710": {
+   "attendance": 100,
+   "impact": 68,
+   "pillar": 72,
+   "score": 79,
+   "sponsorship": 80
+  },
+  "18723": {
+   "attendance": 100,
+   "impact": 68,
+   "pillar": 72,
+   "score": 79,
+   "sponsorship": 80
+  },
+  "18939": {
+   "attendance": 95,
+   "impact": 48,
+   "pillar": 52,
+   "score": 63,
+   "sponsorship": 62
+  },
+  "19048": {
+   "attendance": 85,
+   "impact": 28,
+   "pillar": 32,
+   "score": 46,
+   "sponsorship": 45
+  },
+  "19200": {
+   "attendance": 80,
+   "impact": 51,
+   "pillar": 54,
+   "score": 61,
+   "sponsorship": 66
+  },
+  "19512": {
+   "attendance": 95,
+   "impact": 76,
+   "pillar": 78,
+   "score": 82,
+   "sponsorship": 84
+  },
+  "20024": {
+   "attendance": 90,
+   "impact": 48,
+   "pillar": 52,
+   "score": 61,
+   "sponsorship": 61
+  },
+  "20025": {
+   "attendance": 80,
+   "impact": 69,
+   "pillar": 72,
+   "score": 74,
+   "sponsorship": 80
+  },
+  "20026": {
+   "attendance": 90,
+   "impact": 58,
+   "pillar": 62,
+   "score": 69,
+   "sponsorship": 73
+  },
+  "20029": {
+   "attendance": 85,
+   "impact": 68,
+   "pillar": 72,
+   "score": 75,
+   "sponsorship": 80
+  },
+  "20031": {
+   "attendance": 100,
+   "impact": 48,
+   "pillar": 52,
+   "score": 64,
+   "sponsorship": 62
+  },
+  "20032": {
+   "attendance": 80,
+   "impact": 34,
+   "pillar": 38,
+   "score": 49,
+   "sponsorship": 52
+  },
+  "20126": {
+   "attendance": 95,
+   "impact": 31,
+   "pillar": 34,
+   "score": 50,
+   "sponsorship": 49
+  },
+  "20131": {
+   "attendance": 85,
+   "impact": 70,
+   "pillar": 72,
+   "score": 76,
+   "sponsorship": 80
+  },
+  "20136": {
+   "attendance": 95,
+   "impact": 68,
+   "pillar": 72,
+   "score": 78,
+   "sponsorship": 80
+  },
+  "20137": {
+   "attendance": 95,
+   "impact": 34,
+   "pillar": 38,
+   "score": 53,
+   "sponsorship": 55
+  },
+  "20138": {
+   "attendance": 95,
+   "impact": 51,
+   "pillar": 54,
+   "score": 65,
+   "sponsorship": 66
+  },
+  "20139": {
+   "attendance": 40,
+   "impact": 51,
+   "pillar": 54,
+   "score": 51,
+   "sponsorship": 67
+  },
+  "20140": {
+   "attendance": 90,
+   "impact": 51,
+   "pillar": 54,
+   "score": 62,
+   "sponsorship": 51
+  },
+  "20142": {
+   "attendance": 100,
+   "impact": 48,
+   "pillar": 52,
+   "score": 64,
+   "sponsorship": 66
+  },
+  "20143": {
+   "attendance": 0,
+   "impact": 24,
+   "pillar": 28,
+   "score": 21,
+   "sponsorship": 33
+  },
+  "20148": {
+   "attendance": 100,
+   "impact": 48,
+   "pillar": 52,
+   "score": 64,
+   "sponsorship": 62
+  },
+  "20159": {
+   "attendance": 95,
+   "impact": 61,
+   "pillar": 63,
+   "score": 72,
+   "sponsorship": 73
+  },
+  "20739": {
+   "attendance": 95,
+   "impact": 68,
+   "pillar": 72,
+   "score": 78,
+   "sponsorship": 80
+  },
+  "21549": {
+   "attendance": 85,
+   "impact": 58,
+   "pillar": 62,
+   "score": 68,
+   "sponsorship": 73
+  },
+  "22219": {
+   "attendance": 100,
+   "impact": 68,
+   "pillar": 72,
+   "score": 78,
+   "sponsorship": 76
+  },
+  "22220": {
+   "attendance": 75,
+   "impact": 58,
+   "pillar": 62,
+   "score": 65,
+   "sponsorship": 73
+  },
+  "22222": {
+   "attendance": 80,
+   "impact": 48,
+   "pillar": 52,
+   "score": 59,
+   "sponsorship": 62
+  },
+  "22223": {
+   "attendance": 50,
+   "impact": 76,
+   "pillar": 78,
+   "score": 71,
+   "sponsorship": 84
+  },
+  "22225": {
+   "attendance": 90,
+   "impact": 68,
+   "pillar": 72,
+   "score": 76,
+   "sponsorship": 80
+  },
+  "22226": {
+   "attendance": 95,
+   "impact": 10,
+   "pillar": 12,
+   "score": 35,
+   "sponsorship": 38
+  },
+  "22228": {
+   "attendance": 95,
+   "impact": 58,
+   "pillar": 62,
+   "score": 70,
+   "sponsorship": 73
+  },
+  "22231": {
+   "attendance": 35,
+   "impact": 68,
+   "pillar": 72,
+   "score": 63,
+   "sponsorship": 80
+  },
+  "22233": {
+   "attendance": 70,
+   "impact": 28,
+   "pillar": 32,
+   "score": 42,
+   "sponsorship": 42
+  },
+  "22456": {
+   "attendance": 90,
+   "impact": 32,
+   "pillar": 38,
+   "score": 51,
+   "sponsorship": 50
+  },
+  "22457": {
+   "attendance": 90,
+   "impact": 68,
+   "pillar": 72,
+   "score": 76,
+   "sponsorship": 80
+  },
+  "22458": {
+   "attendance": 95,
+   "impact": 61,
+   "pillar": 62,
+   "score": 71,
+   "sponsorship": 74
+  },
+  "22921": {
+   "attendance": 95,
+   "impact": 82,
+   "pillar": 84,
+   "score": 87,
+   "sponsorship": 90
+  },
+  "23046": {
+   "attendance": 95,
+   "impact": 58,
+   "pillar": 62,
+   "score": 70,
+   "sponsorship": 73
+  },
+  "23104": {
+   "attendance": 95,
+   "impact": 48,
+   "pillar": 52,
+   "score": 63,
+   "sponsorship": 65
+  },
+  "23948": {
+   "attendance": 100,
+   "impact": 18,
+   "pillar": 22,
+   "score": 43,
+   "sponsorship": 44
+  },
+  "23949": {
+   "attendance": 90,
+   "impact": 15,
+   "pillar": 18,
+   "score": 36,
+   "sponsorship": 29
+  },
+  "23950": {
+   "attendance": 85,
+   "impact": 44,
+   "pillar": 52,
+   "score": 59,
+   "sponsorship": 63
+  },
+  "23952": {
+   "attendance": 80,
+   "impact": 79,
+   "pillar": 82,
+   "score": 81,
+   "sponsorship": 89
+  },
+  "23954": {
+   "attendance": 90,
+   "impact": 70,
+   "pillar": 72,
+   "score": 77,
+   "sponsorship": 80
+  },
+  "23955": {
+   "attendance": 85,
+   "impact": 76,
+   "pillar": 78,
+   "score": 80,
+   "sponsorship": 84
+  },
+  "23956": {
+   "attendance": 90,
+   "impact": 68,
+   "pillar": 72,
+   "score": 76,
+   "sponsorship": 80
+  },
+  "23957": {
+   "attendance": 55,
+   "impact": 22,
+   "pillar": 28,
+   "score": 32,
+   "sponsorship": 16
+  },
+  "23958": {
+   "attendance": 95,
+   "impact": 68,
+   "pillar": 71,
+   "score": 77,
+   "sponsorship": 79
+  },
+  "23959": {
+   "attendance": 95,
+   "impact": 58,
+   "pillar": 62,
+   "score": 70,
+   "sponsorship": 73
+  },
+  "23960": {
+   "attendance": 100,
+   "impact": 58,
+   "pillar": 62,
+   "score": 72,
+   "sponsorship": 73
+  },
+  "23961": {
+   "attendance": 35,
+   "impact": 58,
+   "pillar": 62,
+   "score": 55,
+   "sponsorship": 73
+  },
+  "23962": {
+   "attendance": 80,
+   "impact": 48,
+   "pillar": 52,
+   "score": 59,
+   "sponsorship": 66
+  },
+  "23963": {
+   "attendance": 80,
+   "impact": 6,
+   "pillar": 8,
+   "score": 26,
+   "sponsorship": 11
+  },
+  "23967": {
+   "attendance": 85,
+   "impact": 68,
+   "pillar": 72,
+   "score": 75,
+   "sponsorship": 79
+  },
+  "23968": {
+   "attendance": 95,
+   "impact": 58,
+   "pillar": 62,
+   "score": 70,
+   "sponsorship": 73
+  },
+  "23969": {
+   "attendance": 100,
+   "impact": 48,
+   "pillar": 52,
+   "score": 64,
+   "sponsorship": 66
+  },
+  "23970": {
+   "attendance": 85,
+   "impact": 58,
+   "pillar": 61,
+   "score": 67,
+   "sponsorship": 72
+  },
+  "23972": {
+   "attendance": 90,
+   "impact": 48,
+   "pillar": 52,
+   "score": 62,
+   "sponsorship": 66
+  },
+  "23996": {
+   "attendance": 30,
+   "impact": 3,
+   "pillar": 4,
+   "score": 11,
+   "sponsorship": 8
+  },
+  "24384": {
+   "attendance": 100,
+   "impact": 58,
+   "pillar": 62,
+   "score": 72,
+   "sponsorship": 73
+  },
+  "24385": {
+   "attendance": 90,
+   "impact": 65,
+   "pillar": 68,
+   "score": 74,
+   "sponsorship": 77
+  },
+  "24616": {
+   "attendance": 95,
+   "impact": 65,
+   "pillar": 68,
+   "score": 75,
+   "sponsorship": 77
+  },
+  "24873": {
+   "attendance": 90,
+   "impact": 58,
+   "pillar": 62,
+   "score": 69,
+   "sponsorship": 68
+  },
+  "24966": {
+   "attendance": 90,
+   "impact": 58,
+   "pillar": 62,
+   "score": 68,
+   "sponsorship": 64
+  },
+  "25044": {
+   "attendance": 95,
+   "impact": 65,
+   "pillar": 68,
+   "score": 75,
+   "sponsorship": 77
+  },
+  "26051": {
+   "attendance": 95,
+   "impact": 31,
+   "pillar": 34,
+   "score": 50,
+   "sponsorship": 47
+  },
+  "26052": {
+   "attendance": 95,
+   "impact": 24,
+   "pillar": 28,
+   "score": 44,
+   "sponsorship": 27
+  },
+  "26053": {
+   "attendance": 95,
+   "impact": 48,
+   "pillar": 52,
+   "score": 63,
+   "sponsorship": 66
+  },
+  "26054": {
+   "attendance": 90,
+   "impact": 65,
+   "pillar": 68,
+   "score": 74,
+   "sponsorship": 77
+  },
+  "26055": {
+   "attendance": 90,
+   "impact": 34,
+   "pillar": 38,
+   "score": 52,
+   "sponsorship": 55
+  },
+  "26056": {
+   "attendance": 100,
+   "impact": 41,
+   "pillar": 44,
+   "score": 59,
+   "sponsorship": 60
+  },
+  "26057": {
+   "attendance": 60,
+   "impact": 71,
+   "pillar": 74,
+   "score": 70,
+   "sponsorship": 81
+  },
+  "26058": {
+   "attendance": 100,
+   "impact": 72,
+   "pillar": 74,
+   "score": 81,
+   "sponsorship": 81
+  },
+  "26059": {
+   "attendance": 80,
+   "impact": 65,
+   "pillar": 68,
+   "score": 71,
+   "sponsorship": 77
+  },
+  "26060": {
+   "attendance": 90,
+   "impact": 28,
+   "pillar": 34,
+   "score": 48,
+   "sponsorship": 52
+  },
+  "26061": {
+   "attendance": 95,
+   "impact": 28,
+   "pillar": 32,
+   "score": 48,
+   "sponsorship": 45
+  },
+  "26062": {
+   "attendance": 100,
+   "impact": 58,
+   "pillar": 61,
+   "score": 71,
+   "sponsorship": 74
+  },
+  "26063": {
+   "attendance": 95,
+   "impact": 68,
+   "pillar": 72,
+   "score": 78,
+   "sponsorship": 80
+  },
+  "26064": {
+   "attendance": 95,
+   "impact": 58,
+   "pillar": 62,
+   "score": 70,
+   "sponsorship": 73
+  },
+  "26065": {
+   "attendance": 85,
+   "impact": 68,
+   "pillar": 71,
+   "score": 75,
+   "sponsorship": 79
+  },
+  "26066": {
+   "attendance": 90,
+   "impact": 28,
+   "pillar": 32,
+   "score": 46,
+   "sponsorship": 40
+  },
+  "26067": {
+   "attendance": 85,
+   "impact": 58,
+   "pillar": 62,
+   "score": 68,
+   "sponsorship": 73
+  },
+  "26068": {
+   "attendance": 85,
+   "impact": 76,
+   "pillar": 78,
+   "score": 80,
+   "sponsorship": 84
+  },
+  "26069": {
+   "attendance": 100,
+   "impact": 68,
+   "pillar": 72,
+   "score": 79,
+   "sponsorship": 80
+  },
+  "26070": {
+   "attendance": 95,
+   "impact": 31,
+   "pillar": 34,
+   "score": 50,
+   "sponsorship": 50
+  },
+  "26071": {
+   "attendance": 90,
+   "impact": 58,
+   "pillar": 62,
+   "score": 69,
+   "sponsorship": 73
+  },
+  "26072": {
+   "attendance": 100,
+   "impact": 65,
+   "pillar": 68,
+   "score": 76,
+   "sponsorship": 77
+  },
+  "26326": {
+   "attendance": 85,
+   "impact": 68,
+   "pillar": 72,
+   "score": 75,
+   "sponsorship": 80
+  },
+  "26327": {
+   "attendance": 95,
+   "impact": 44,
+   "pillar": 48,
+   "score": 60,
+   "sponsorship": 62
+  },
+  "26391": {
+   "attendance": 70,
+   "impact": 71,
+   "pillar": 74,
+   "score": 73,
+   "sponsorship": 81
+  },
+  "26447": {
+   "attendance": 100,
+   "impact": 65,
+   "pillar": 68,
+   "score": 76,
+   "sponsorship": 77
+  },
+  "26492": {
+   "attendance": 100,
+   "impact": 11,
+   "pillar": 14,
+   "score": 35,
+   "sponsorship": 17
+  },
+  "26597": {
+   "attendance": 90,
+   "impact": 6,
+   "pillar": 8,
+   "score": 28,
+   "sponsorship": 11
+  },
+  "26598": {
+   "attendance": 95,
+   "impact": 48,
+   "pillar": 52,
+   "score": 63,
+   "sponsorship": 65
+  },
+  "26599": {
+   "attendance": 100,
+   "impact": 61,
+   "pillar": 62,
+   "score": 72,
+   "sponsorship": 74
+  },
+  "26600": {
+   "attendance": 85,
+   "impact": 24,
+   "pillar": 28,
+   "score": 42,
+   "sponsorship": 39
+  },
+  "3329": {
+   "attendance": 75,
+   "impact": 18,
+   "pillar": 22,
+   "score": 36,
+   "sponsorship": 38
+  }
+ },
+ "scoring_version": "v7.0"
+}
