@@ -646,54 +646,6 @@ def main():
         return 0 if run_recap(test=True) else 1
     if MODE == "remind":
         return 0 if send_reminders() else 1
-    if MODE == "subjects":
-        # Same bodies as the welcome and confirmation, with the subject lines that went missing.
-        tests = (("E", f"{WELCOME_SUBJECT}", welcome_email("test-preview")),
-                 ("F", f"{CONFIRM_SUBJECT}", confirm_email("test-preview")),
-                 ("G", f"[SAMPLE: WELCOME] {WELCOME_SUBJECT}", welcome_email("test-preview")),
-                 ("H", f"[SAMPLE: CONFIRMATION] {CONFIRM_SUBJECT}", confirm_email("test-preview")))
-        ok = True
-        for code, subj, (h, t) in tests:
-            one = send_email(TEST_TO, subj, h, t)
-            print(f"::notice title=Test {code}::{subj}: {'accepted' if one else 'REJECTED'}", flush=True)
-            ok = one and ok
-            time.sleep(1.5)
-        return 0 if ok else 1
-    if MODE == "diagnose":
-        # Four labeled test emails to the team that switch the founder phone box
-        # on and off, to find out which version the inbox drops.
-        g = globals()
-        box_h, box_t = g["FOUNDER_BOX"], g["FOUNDER_TEXT"]
-        def build(fn, with_box):
-            g["FOUNDER_BOX"], g["FOUNDER_TEXT"] = (box_h, box_t) if with_box else ("", "")
-            try:
-                return fn("test-preview")
-            finally:
-                g["FOUNDER_BOX"], g["FOUNDER_TEXT"] = box_h, box_t
-        def remind_with_box(tok):
-            h, t = remind_email(tok)
-            marker = '<p style="font-size:14px;line-height:1.6;color:#2a3242;margin:22px 0 22px;"><b>Didn'
-            return h.replace(marker, FOUNDER_BOX + marker, 1), t + "\n\n" + FOUNDER_TEXT
-        def confirm_without_box():
-            # the confirmation email has its own copy of the box written in
-            h, t = confirm_email("test-preview")
-            a = h.find('<div style="background:#f2efe8;border:1px solid #e4e0d6;border-radius:9px;')
-            b = h.find("</div></div>", a)
-            if a != -1 and b != -1:
-                h = h[:a] + h[b + len("</div></div>"):]
-            t = "\n\n".join(p for p in t.split("\n\n") if not p.startswith("A direct line"))
-            return h, t
-        tests = (("A", "welcome WITHOUT phone box", build(welcome_email, False)),
-                 ("B", "welcome WITH phone box", build(welcome_email, True)),
-                 ("C", "reminder WITH phone box added", build(remind_with_box, True)),
-                 ("D", "confirmation WITHOUT phone box", confirm_without_box()))
-        ok = True
-        for code, what, (h, t) in tests:
-            one = send_email(TEST_TO, f"[TEST {code}] {what}", h, t)
-            print(f"::notice title=Test {code}::{what}: {'accepted' if one else 'REJECTED'}", flush=True)
-            ok = one and ok
-            time.sleep(1.5)
-        return 0 if ok else 1
     if MODE == "samples":
         # One copy of each sign-up email to the team, so you can see exactly what people get.
         ok = True
@@ -701,7 +653,8 @@ def main():
         for label, (h, t), subj in (("WELCOME", welcome_email("test-preview"), WELCOME_SUBJECT),
                                     ("CONFIRMATION", confirm_email("test-preview"), CONFIRM_SUBJECT),
                                     ("REMINDER", remind_email("test-preview"), REMIND_SUBJECT)):
-            one = send_email(TEST_TO, f"[SAMPLE: {label}] {subj}", h, t)
+            # "[TEST ...]" labels reach the team inbox; "[SAMPLE: ...]" ones were filtered out (Oct 2026).
+            one = send_email(TEST_TO, f"[TEST {label}] {subj}", h, t)
             ok = one and ok
             ids.append((label, LAST_EMAIL_ID if one else ""))
             time.sleep(0.6)
@@ -723,4 +676,4 @@ if __name__ == "__main__":
     except Exception as e:
         err("unexpected error: %s" % e)
         # confirm runs stay quiet; a broken recap or test should be loud
-        sys.exit(1 if MODE in ("recap", "test", "remind", "samples", "diagnose", "subjects") else 0)
+        sys.exit(1 if MODE in ("recap", "test", "remind", "samples") else 0)
