@@ -1,0 +1,711 @@
+{
+ "state": "CO",
+ "checked": "2026-10-08",
+ "about": "Official contact emails for every scored Colorado legislator, taken from the leg.colorado.gov roster. This file is the single source of truth: legislator profiles and the score-change emails both read it. To fix an address, edit it here.",
+ "contacts": {
+  "23954": {
+   "name": "Javier Mabrey",
+   "chamber": "House",
+   "district": "1",
+   "email": "javier.mabrey.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "21549": {
+   "name": "Steven Woodrow",
+   "chamber": "House",
+   "district": "2",
+   "email": "steven.woodrow.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "20739": {
+   "name": "Meg Froelich",
+   "chamber": "House",
+   "district": "3",
+   "email": "meg.froelich.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26056": {
+   "name": "Cecelia Espenoza",
+   "chamber": "House",
+   "district": "4",
+   "email": "cecelia.espenoza.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "20143": {
+   "name": "Alex Valdez",
+   "chamber": "House",
+   "district": "5",
+   "email": "alex.valdez.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26054": {
+   "name": "Sean Camacho",
+   "chamber": "House",
+   "district": "6",
+   "email": "sean.camacho.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "22220": {
+   "name": "Jennifer Bacon",
+   "chamber": "House",
+   "district": "7",
+   "email": "jennifer.bacon.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26058": {
+   "name": "Lindsay Gilchrist",
+   "chamber": "House",
+   "district": "8",
+   "email": "lindsay.gilchrist.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "20024": {
+   "name": "Emily Sirota",
+   "chamber": "House",
+   "district": "9",
+   "email": "emily.sirota.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23956": {
+   "name": "Junie Joseph",
+   "chamber": "House",
+   "district": "10",
+   "email": "junie.joseph.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "22228": {
+   "name": "Karen McCormick",
+   "chamber": "House",
+   "district": "11",
+   "email": "karen.mccormick.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "24873": {
+   "name": "Kyle Brown",
+   "chamber": "House",
+   "district": "12",
+   "email": "kyle.brown.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "20025": {
+   "name": "Julie McCluskie",
+   "chamber": "House",
+   "district": "13",
+   "email": "julie.mccluskie.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26597": {
+   "name": "Ava Flanell",
+   "chamber": "House",
+   "district": "14",
+   "email": "ava.flanell.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23996": {
+   "name": "Scott Bottoms",
+   "chamber": "House",
+   "district": "15",
+   "email": "scott.bottoms.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26061": {
+   "name": "Rebecca Keltie",
+   "chamber": "House",
+   "district": "16",
+   "email": "rebecca.keltie.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23961": {
+   "name": "Regina English",
+   "chamber": "House",
+   "district": "17",
+   "email": "regina.english.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26062": {
+   "name": "Amy Paschal",
+   "chamber": "House",
+   "district": "18",
+   "email": "amy.paschal.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "22233": {
+   "name": "Dan Woog",
+   "chamber": "House",
+   "district": "19",
+   "email": "dan.woog.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26053": {
+   "name": "Jarvis Caldwell",
+   "chamber": "House",
+   "district": "20",
+   "email": "jarvis.caldwell.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "22222": {
+   "name": "Mary Bradfield",
+   "chamber": "House",
+   "district": "21",
+   "email": "mary.bradfield.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23957": {
+   "name": "Ken Degraaf",
+   "chamber": "House",
+   "district": "22",
+   "email": "ken.degraaf.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "20148": {
+   "name": "Monica Duran",
+   "chamber": "House",
+   "district": "23",
+   "email": "monica.duran.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26057": {
+   "name": "Lisa Feret",
+   "chamber": "House",
+   "district": "24",
+   "email": "lisa.feret.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "20032": {
+   "name": "Tammy Story",
+   "chamber": "House",
+   "district": "25",
+   "email": "tammy.story.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23960": {
+   "name": "Meghan Lukens",
+   "chamber": "House",
+   "district": "26",
+   "email": "meghan.lukens.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "20142": {
+   "name": "Brianna Titone",
+   "chamber": "House",
+   "district": "27",
+   "email": "brianna.titone.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23967": {
+   "name": "Sheila Lieder",
+   "chamber": "House",
+   "district": "28",
+   "email": "sheila.lieder.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26598": {
+   "name": "Lori Goldstein",
+   "chamber": "House",
+   "district": "29",
+   "email": "lori.goldstein.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26068": {
+   "name": "Rebekah Stewart",
+   "chamber": "House",
+   "district": "30",
+   "email": "rebekah.stewart.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26063": {
+   "name": "Jacque Phillips",
+   "chamber": "House",
+   "district": "31",
+   "email": "jacque.phillips.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "24966": {
+   "name": "Manny Rutinel",
+   "chamber": "House",
+   "district": "32",
+   "email": "manny.rutinel.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08",
+   "resigned": true,
+   "note": "Resigned 2026-09-04 per the official roster. No alerts."
+  },
+  "26599": {
+   "name": "Kenny Nguyen",
+   "chamber": "House",
+   "district": "33",
+   "email": "kenny.nguyen.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23955": {
+   "name": "Jenny Willford",
+   "chamber": "House",
+   "district": "34",
+   "email": "jenny.willford.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "24385": {
+   "name": "Lorena Garcia",
+   "chamber": "House",
+   "district": "35",
+   "email": "lorena.garcia.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26055": {
+   "name": "Michael Carter",
+   "chamber": "House",
+   "district": "36",
+   "email": "michael.carter.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "25044": {
+   "name": "Chad Clifford",
+   "chamber": "House",
+   "district": "37",
+   "email": "chad.clifford.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26065": {
+   "name": "Gretchen Rydin",
+   "chamber": "House",
+   "district": "38",
+   "email": "gretchen.rydin.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23950": {
+   "name": "Brandi Bradley",
+   "chamber": "House",
+   "district": "39",
+   "email": "brandi.bradley.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "22231": {
+   "name": "Naquetta Ricks",
+   "chamber": "House",
+   "district": "40",
+   "email": "naquetta.ricks.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26391": {
+   "name": "Jamie Jackson",
+   "chamber": "House",
+   "district": "41",
+   "email": "jamie.jackson.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23046": {
+   "name": "Mandy Lindsay",
+   "chamber": "House",
+   "district": "42",
+   "email": "mandy.lindsay.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23949": {
+   "name": "Bob Marshall",
+   "chamber": "House",
+   "district": "43",
+   "email": "bob.marshall.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23948": {
+   "name": "Anthony Hartsook",
+   "chamber": "House",
+   "district": "44",
+   "email": "anthony.hartsook.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26052": {
+   "name": "Max Brooks",
+   "chamber": "House",
+   "district": "45",
+   "email": "max.brooks.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "24616": {
+   "name": "Tisha Mauro",
+   "chamber": "House",
+   "district": "46",
+   "email": "tisha.mauro.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23968": {
+   "name": "Ty Winter",
+   "chamber": "House",
+   "district": "47",
+   "email": "ty.winter.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26051": {
+   "name": "Carlos Barron",
+   "chamber": "House",
+   "district": "48",
+   "email": "carlos.barron.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26067": {
+   "name": "Lesley Smith",
+   "chamber": "House",
+   "district": "49",
+   "email": "lesley.smith.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26059": {
+   "name": "Ryan Gonzalez",
+   "chamber": "House",
+   "district": "50",
+   "email": "ryan.gonzalez.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23963": {
+   "name": "Ron Weinberg",
+   "chamber": "House",
+   "district": "51",
+   "email": "ron.weinberg.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26071": {
+   "name": "Yara Zokaie",
+   "chamber": "House",
+   "district": "52",
+   "email": "yara.zokaie.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "22921": {
+   "name": "Andrew Boesenecker",
+   "chamber": "House",
+   "district": "53",
+   "email": "andrew.boesenecker.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "20139": {
+   "name": "Matt Soper",
+   "chamber": "House",
+   "district": "54",
+   "email": "matthew.soper.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23962": {
+   "name": "Rick Taggart",
+   "chamber": "House",
+   "district": "55",
+   "email": "rick.taggart.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26064": {
+   "name": "Chris Richardson",
+   "chamber": "House",
+   "district": "56",
+   "email": "chris.richardson.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23952": {
+   "name": "Elizabeth Velasco",
+   "chamber": "House",
+   "district": "57",
+   "email": "elizabeth.velasco.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26070": {
+   "name": "Larry Suckla",
+   "chamber": "House",
+   "district": "58",
+   "email": "larry.suckla.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26069": {
+   "name": "Katie Stewart",
+   "chamber": "House",
+   "district": "59",
+   "email": "katie.stewart.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "22226": {
+   "name": "Stephanie Luck",
+   "chamber": "House",
+   "district": "60",
+   "email": "stephanie.luck.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "24384": {
+   "name": "Eliza Hamrick",
+   "chamber": "House",
+   "district": "61",
+   "email": "eliza.hamrick.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23959": {
+   "name": "Matthew Martinez",
+   "chamber": "House",
+   "district": "62",
+   "email": "matthew.martinez.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26060": {
+   "name": "Dusty Johnson",
+   "chamber": "House",
+   "district": "63",
+   "email": "dustyforcolorado@gmail.com",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26600": {
+   "name": "Scott Slaugh",
+   "chamber": "House",
+   "district": "64",
+   "email": "scott.slaugh.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26066": {
+   "name": "Lori Garcia Sander",
+   "chamber": "House",
+   "district": "65",
+   "email": "lori.garciasander.house@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23972": {
+   "name": "Byron Pelton",
+   "chamber": "Senate",
+   "district": "1",
+   "email": "byron.pelton.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23958": {
+   "name": "Lisa Frizell",
+   "chamber": "Senate",
+   "district": "2",
+   "email": "lisa.frizell.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23104": {
+   "name": "Nick Hinrichsen",
+   "chamber": "Senate",
+   "district": "3",
+   "email": "nick.hinrichsen.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "20126": {
+   "name": "Mark Baisley",
+   "chamber": "Senate",
+   "district": "4",
+   "email": "mark.baisley@senate.co.com",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "19200": {
+   "name": "Marc Catlin",
+   "chamber": "Senate",
+   "district": "5",
+   "email": "marc.catlin.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "22457": {
+   "name": "Cleave Simpson",
+   "chamber": "Senate",
+   "district": "6",
+   "email": "cleave.simpson.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "20137": {
+   "name": "Janice Rich",
+   "chamber": "Senate",
+   "district": "7",
+   "email": "janicerichsd7@gmail.com",
+   "source": "leg.colorado.gov roster, checked 2026-10-08",
+   "roster_email": "janice.rich.senate@coleg.gov",
+   "note": "Kept the personal address locked in after the September outreach. The official roster now lists the coleg.gov address; pending Mav's choice."
+  },
+  "19512": {
+   "name": "Dylan Roberts",
+   "chamber": "Senate",
+   "district": "8",
+   "email": "dylan.roberts.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26492": {
+   "name": "Lynda Zamora Wilson",
+   "chamber": "Senate",
+   "district": "9",
+   "email": "lynda.zamorawilson.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "3329": {
+   "name": "Larry Liston",
+   "chamber": "Senate",
+   "district": "10",
+   "email": "larry.liston.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "15133": {
+   "name": "Tony Exum",
+   "chamber": "Senate",
+   "district": "11",
+   "email": "tony.exum.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "20138": {
+   "name": "Marc Snyder",
+   "chamber": "Senate",
+   "district": "12",
+   "email": "marc.snyder.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26072": {
+   "name": "Scott Bright",
+   "chamber": "Senate",
+   "district": "13",
+   "email": "scott.bright.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "20159": {
+   "name": "Cathy Kipp",
+   "chamber": "Senate",
+   "district": "14",
+   "email": "cathy.kipp.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23970": {
+   "name": "Janice Marchman",
+   "chamber": "Senate",
+   "district": "15",
+   "email": "janice.marchman.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "22458": {
+   "name": "Chris Kolker",
+   "chamber": "Senate",
+   "district": "16",
+   "email": "chris.kolker.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26447": {
+   "name": "Katie Wallace",
+   "chamber": "Senate",
+   "district": "17",
+   "email": "katie.wallace.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "22219": {
+   "name": "Judith Amabile",
+   "chamber": "Senate",
+   "district": "18",
+   "email": "judy.amabile.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "22223": {
+   "name": "Lindsey Daugherty",
+   "chamber": "Senate",
+   "district": "19",
+   "email": "lindsey.daugherty.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "20131": {
+   "name": "Lisa Cutter",
+   "chamber": "Senate",
+   "district": "20",
+   "email": "lisa.cutter.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "18710": {
+   "name": "Adrienne Benavidez",
+   "chamber": "Senate",
+   "district": "21",
+   "email": "adrienne.benavidez.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "16583": {
+   "name": "Jessie Danielson",
+   "chamber": "Senate",
+   "district": "22",
+   "email": "jessie.danielson.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "22456": {
+   "name": "Barbara Kirkmeyer",
+   "chamber": "Senate",
+   "district": "23",
+   "email": "barbara.kirkmeyer.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "20136": {
+   "name": "Kyle Mullica",
+   "chamber": "Senate",
+   "district": "24",
+   "email": "kyle.mullica.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "23969": {
+   "name": "William Lindstedt",
+   "chamber": "Senate",
+   "district": "25",
+   "email": "william.lindstedt.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "19048": {
+   "name": "Jeff Bridges",
+   "chamber": "Senate",
+   "district": "26",
+   "email": "jeff.bridges.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "20140": {
+   "name": "Tom Sullivan",
+   "chamber": "Senate",
+   "district": "27",
+   "email": "tom.sullivan.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "18723": {
+   "name": "Michael Weissman",
+   "chamber": "Senate",
+   "district": "28",
+   "email": "mike.weissman.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "22225": {
+   "name": "Iman Jodeh",
+   "chamber": "Senate",
+   "district": "29",
+   "email": "iman.jodeh.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26327": {
+   "name": "John Carson",
+   "chamber": "Senate",
+   "district": "30",
+   "email": "john.carson.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "26326": {
+   "name": "Matt Ball",
+   "chamber": "Senate",
+   "district": "31",
+   "email": "matt.ball.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "20031": {
+   "name": "Robert Rodriguez",
+   "chamber": "Senate",
+   "district": "32",
+   "email": "robert.rodriguez.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "18939": {
+   "name": "James Coleman",
+   "chamber": "Senate",
+   "district": "33",
+   "email": "james.coleman.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "20029": {
+   "name": "Julie Gonzales",
+   "chamber": "Senate",
+   "district": "34",
+   "email": "julie.gonzales.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  },
+  "20026": {
+   "name": "Rod Pelton",
+   "chamber": "Senate",
+   "district": "35",
+   "email": "rod.pelton.senate@coleg.gov",
+   "source": "leg.colorado.gov roster, checked 2026-10-08"
+  }
+ }
+}

@@ -7,6 +7,10 @@ on:
         description: "Only send a TEST failure email to team@theqcollective.org. Does not run the engine."
         type: boolean
         default: false
+      lawmaker_sample:
+        description: "Only send the team two SAMPLE lawmaker score-change emails. Does not run the engine."
+        type: boolean
+        default: false
   schedule:
     - cron: "38 18 * * 0"      # Sundays at 18:38 UTC = 12:38 PM Mountain (summer) / 11:38 AM (winter).
                                # Weekly, to match LegiScan's Sunday refresh. Off-the-hour minute on
@@ -38,8 +42,23 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: python notify_failure.py
 
+  # Tick "lawmaker_sample" when running by hand to see what lawmakers would receive.
+  lawmaker-sample:
+    if: ${{ inputs.lawmaker_sample }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Send two sample lawmaker emails to the team
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          MODE: "sample"
+        run: python send_official_alerts.py
+
   score:
-    if: ${{ !inputs.test_alert }}
+    if: ${{ !inputs.test_alert && !inputs.lawmaker_sample }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -65,6 +84,18 @@ jobs:
           SITE_URL: "https://theqcollective.org"
           STATES: "CO"
         run: python send_alerts.py
+
+      # Lawmakers whose score moved 5+ points or crossed 80 get one email.
+      # PREVIEW "1" = every one of those emails goes to team@ instead, plus a summary.
+      # Change to "0" to send them to the lawmakers for real.
+      - name: Score-change emails to lawmakers
+        if: steps.engine.outcome == 'success'
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          PREVIEW: "1"
+          STATE: "CO"
+          SITE_URL: "https://theqcollective.org"
+        run: python send_official_alerts.py
 
       # Anything above went wrong: email the team right away.
       - name: Email the team if something failed

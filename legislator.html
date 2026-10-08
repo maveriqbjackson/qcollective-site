@@ -736,7 +736,13 @@ function initProfile(l,state){loadITW(l.id,l.name);var x=document.getElementById
 fetch('data/'+(state||'CO')+'_snapshots.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(sn){if(!sn)return;var S=sn.snapshots||sn;var pts=[];Object.keys(S).sort().forEach(function(dd){var v=S[dd]&&S[dd][id];if(v!=null)pts.push(+v);});if(pts.length<2)return;var w=120,h=26,mn=Math.min.apply(null,pts),mx=Math.max.apply(null,pts),rng=(mx-mn)||1;var pd=pts.map(function(v,i){return (i/(pts.length-1)*w).toFixed(1)+','+(h-((v-mn)/rng)*h).toFixed(1);}).join(' ');document.getElementById('sparkline').innerHTML='<svg width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'"><polyline points="'+pd+'" fill="none" stroke="var(--gold)" stroke-width="2"/></svg>';document.getElementById('sparkWrap').style.display='inline-flex';}).catch(function(){});}
 (function(){var state=qs('state'),id=qs('id');var body=document.getElementById('l-body');
 if(!state||!id){document.getElementById('l-name').textContent='No legislator selected';body.innerHTML='<p>Head to the <a href="hub.html">Hub</a> to choose someone.</p>';return;}
-fetch('data/'+state+'.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(d){
+/* Contact emails come from data/<state>_contacts.json (the official roster), not from guessing.
+   The name-pattern builder below stays only as a fallback if that file can't be read. */
+Promise.all([
+  fetch('data/'+state+'.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}),
+  fetch('data/'+state+'_contacts.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;})
+]).then(function(res){var d=res[0],ct=res[1];
+if(ct&&ct.contacts){Object.keys(ct.contacts).forEach(function(k){var c=ct.contacts[k];if(c&&c.email)VERIFIED_EMAILS[k]=c.email;});}
 if(!d){document.getElementById('l-name').textContent='Not available';body.innerHTML='<p>That state isn\u2019t scored yet. <a href="hub.html">Back to the Hub</a>.</p>';return;}
 auditLegislators(d.legislators,state);
 var l=d.legislators.filter(function(x){return String(x.id)===String(id);})[0];
