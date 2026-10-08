@@ -646,6 +646,19 @@ def main():
         return 0 if run_recap(test=True) else 1
     if MODE == "remind":
         return 0 if send_reminders() else 1
+    if MODE == "subjects":
+        # Same bodies as the welcome and confirmation, with the subject lines that went missing.
+        tests = (("E", f"{WELCOME_SUBJECT}", welcome_email("test-preview")),
+                 ("F", f"{CONFIRM_SUBJECT}", confirm_email("test-preview")),
+                 ("G", f"[SAMPLE: WELCOME] {WELCOME_SUBJECT}", welcome_email("test-preview")),
+                 ("H", f"[SAMPLE: CONFIRMATION] {CONFIRM_SUBJECT}", confirm_email("test-preview")))
+        ok = True
+        for code, subj, (h, t) in tests:
+            one = send_email(TEST_TO, subj, h, t)
+            print(f"::notice title=Test {code}::{subj}: {'accepted' if one else 'REJECTED'}", flush=True)
+            ok = one and ok
+            time.sleep(1.5)
+        return 0 if ok else 1
     if MODE == "diagnose":
         # Four labeled test emails to the team that switch the founder phone box
         # on and off, to find out which version the inbox drops.
@@ -710,4 +723,4 @@ if __name__ == "__main__":
     except Exception as e:
         err("unexpected error: %s" % e)
         # confirm runs stay quiet; a broken recap or test should be loud
-        sys.exit(1 if MODE in ("recap", "test", "remind", "samples", "diagnose") else 0)
+        sys.exit(1 if MODE in ("recap", "test", "remind", "samples", "diagnose", "subjects") else 0)
