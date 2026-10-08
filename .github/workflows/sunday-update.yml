@@ -9,9 +9,9 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "test = send this week's recap ONLY to team@theqcollective.org. recap = send to all subscribers. confirm = just send waiting welcome/confirmation emails. samples = one copy of each sign-up email ONLY to team@. remind = ONE-TIME please-confirm email to people who never confirmed."
+        description: "test = send this week's recap ONLY to team@theqcollective.org. recap = send to all subscribers. confirm = just send waiting welcome/confirmation emails. samples = one copy of each sign-up email ONLY to team@. diagnose = four labeled delivery tests ONLY to team@. remind = ONE-TIME please-confirm email to people who never confirmed."
         type: choice
-        options: [test, recap, confirm, samples, remind]
+        options: [test, recap, confirm, samples, diagnose, remind]
         default: test
       force:
         description: "Send the recap even if one already went out in the last 5 days"
