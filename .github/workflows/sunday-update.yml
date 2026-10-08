@@ -73,7 +73,7 @@ jobs:
         run: |
           git config user.name "q-score-bot"
           git config user.email "q-score-bot@users.noreply.github.com"
-          git add data/sunday_state.json 2>/dev/null || true
+          git add data/sunday_state.json data/sunday_note.txt 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "Nothing to save."
             exit 0

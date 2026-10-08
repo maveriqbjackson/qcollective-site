@@ -85,7 +85,17 @@
   }
   window.qcSundayConfirmPopup = showConfirmPopup;   // lets the team preview it from the browser console
 
-  window.qcSundaySignup = function (email) {
+  // Where a sign-up came from, so we can see which channels work.
+  // A ?src= on the link wins (QR code, LinkedIn post...), then the form's own label, then the page name.
+  function sourceOf(src) {
+    var q = "";
+    try { q = new URLSearchParams(location.search).get("src") || ""; } catch (e) {}
+    var page = (location.pathname.split("/").pop() || "index.html").replace(/\.html$/, "") || "index";
+    var s = String(q || src || page).toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 24);
+    return s || "site";
+  }
+
+  window.qcSundaySignup = function (email, src) {
     var v = String(email || "").trim();
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) return Promise.resolve("invalid");
 
@@ -96,7 +106,7 @@
         "Authorization": "Bearer " + SUPABASE_KEY,
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ e: v })
+      body: JSON.stringify({ e: v, src: sourceOf(src) })
     }).then(function (r) {
       if (!r.ok) throw new Error("status " + r.status);
       return r.json();

@@ -1,17 +1,17 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>The Sunday Update | The Q Collective</title>
-<meta name="description" content="Confirm or manage your Sunday Update from The Q Collective: what moved in the Colorado legislature each week.">
+<meta name="description" content="Free every Sunday evening: what moved in the Colorado legislature, whose record changed, and the dates that matter. From The Q Collective.">
 <link rel="canonical" href="https://theqcollective.org/sunday.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Q Collective">
 <meta property="og:title" content="The Sunday Update — The Q Collective">
-<meta property="og:description" content="Confirm or manage your Sunday Update from The Q Collective: what moved in the Colorado legislature each week.">
+<meta property="og:description" content="Free every Sunday evening: what moved in the Colorado legislature, whose record changed, and the dates that matter. From The Q Collective.">
 <meta property="og:url" content="https://theqcollective.org/sunday.html">
 <meta property="og:image" content="https://theqcollective.org/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Sunday Update — The Q Collective">
-<meta name="twitter:description" content="Confirm or manage your Sunday Update from The Q Collective: what moved in the Colorado legislature each week.">
+<meta name="twitter:description" content="Free every Sunday evening: what moved in the Colorado legislature, whose record changed, and the dates that matter. From The Q Collective.">
 <meta name="twitter:image" content="https://theqcollective.org/og-image.png">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 <style>
@@ -498,6 +498,10 @@
 <style>
   .al{max-width:560px;margin:0 auto;padding:8px 24px 70px;text-align:center}
   .al-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:34px 28px}
+  .su-list{margin:6px 0 20px;padding-left:20px;line-height:1.6}.su-list li{margin:0 0 6px}
+  .su-form{display:flex;flex-wrap:wrap;gap:10px}.su-form input{flex:1 1 200px;min-width:0;font-size:16px;padding:13px 14px;border:1px solid var(--border);border-radius:8px}
+  .su-msg{min-height:1.2em;margin:12px 0 0;font-weight:600;color:var(--navy-deep)}
+  .su-fine{font-size:13px;color:#6b6b6b;margin:14px 0 0}
   .al-card h2{font-family:'Playfair Display',Georgia,serif;font-size:23px;color:var(--navy-deep);margin:0 0 10px}
   .al-card p{font-size:15px;line-height:1.65;color:var(--text-light);margin:0 0 16px}
   .al-btn{display:inline-block;background:var(--gold);color:var(--navy-deep);font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:13px 26px;border-radius:8px;text-decoration:none;font-weight:500}
@@ -510,7 +514,33 @@
   var q=new URLSearchParams(location.search), t=q.get('token'), doWhat=(q.get('do')||'confirm');
   var box=document.getElementById('alBox');
   function say(h,p,link){box.innerHTML='<h2>'+h+'</h2><p>'+p+'</p>'+(link?'<a class="al-btn" href="hub.html">Go to the Hub</a>':'');}
-  if(!t){say('Nothing to do here','This link is missing its code. If you were trying to confirm or stop the Sunday Update, use the link in the email we sent you.',true);return;}
+  /* No code in the link: this is the shareable sign-up page (theqcollective.org/sunday.html). */
+  if(!t){
+    var h1=document.querySelector('.pagehead h1'); if(h1) h1.textContent='The record, in your inbox every Sunday';
+    box.style.textAlign='left';
+    box.innerHTML='<h2 style="text-align:center">Get the Sunday Update</h2>'+
+      '<p>One short email every Sunday evening, free:</p>'+
+      '<ul class="su-list"><li><b>What moved</b> in the Colorado legislature that week</li>'+
+      '<li><b>Whose record changed</b>, and who became an Accountability Champion</li>'+
+      '<li><b>The dates that matter</b>, from ballots to the next session</li></ul>'+
+      '<form id="suForm" class="su-form" novalidate><input type="email" id="suEmail" required placeholder="you@email.com" aria-label="Your email" autocomplete="email">'+
+      '<button type="submit" class="al-btn" style="border:0;cursor:pointer">Sign me up</button></form>'+
+      '<p id="suMsg" class="su-msg" role="status"></p>'+
+      '<p class="su-fine">Nonpartisan. One standard for every lawmaker. Unsubscribe anytime with one click.</p>';
+    var f=document.getElementById('suForm'),inp=document.getElementById('suEmail'),msg=document.getElementById('suMsg'),btn=f.querySelector('button');
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var v=(inp.value||'').trim();
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)){msg.textContent='Please enter a valid email.';return;}
+      btn.disabled=true; msg.textContent='Signing you up\u2026';
+      var go=function(){window.qcSundaySignup(v,'sunday').then(function(res){
+        msg.textContent=window.qcSundayMessage(res);
+        if(res==='ok'||res==='confirm'||res==='already'||res==='queued'){inp.disabled=true;}else{btn.disabled=false;}
+      });};
+      if(window.qcSundaySignup){go();}else{var sc=document.createElement('script');sc.src='q-sunday.js';sc.onload=go;document.body.appendChild(sc);}
+    });
+    return;
+  }
   window.qcReady.then(function(qc){
     if(!qc){say('Try again shortly','We couldn\u2019t reach the subscriber list just now. Please try the link again in a few minutes.',true);return;}
     var fn=(doWhat==='unsubscribe')?'unsubscribe_sunday_subscriber':'confirm_sunday_subscriber';

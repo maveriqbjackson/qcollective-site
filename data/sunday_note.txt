@@ -1,0 +1,4 @@
+# A NOTE FROM MAV for the next Sunday Update.
+# Write your note below these # lines. Blank lines start new paragraphs.
+# It goes out at the top of the next Sunday Update, signed "mav QBJ",
+# and this file clears itself after it sends. Leave it empty to skip a week.

@@ -691,7 +691,7 @@ a.so-card{cursor:pointer;transition:border-color .15s,box-shadow .15s}a.so-card:
 <div class="work-card"><div class="wtag">10%</div><h3>Sponsorship</h3><p>Whether the lawmaker leads &mdash; sponsoring and co-sponsoring legislation that helps.</p></div>
 </div>
 <div class="factbox" style="margin-top:24px"><p><strong>A score of 80 or higher</strong> earns the designation of <strong>Accountability Champion</strong> &mdash; a lawmaker whose record consistently serves the stability of the people they represent.</p></div>
-<div class="sunday-band"><div class="sb-txt"><p class="sb-h">Get the Sunday Update</p><p class="sb-p">Scores refresh every Sunday. Drop your email and we&rsquo;ll send you what moved &mdash; no spam, unsubscribe anytime.</p></div><form class="sb-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="return sbSubmit(event,this)"><input type="hidden" name="access_key" value="da0f4760-ac24-433c-b27f-52058241488e"><input type="hidden" name="subject" value="Sunday Update signup"><input type="checkbox" name="botcheck" style="display:none"><input type="email" name="email" required placeholder="you@email.com"><button type="submit">Sign up</button><p class="sb-msg"></p></form></div>
+<div data-q-sunday-band data-src="hub"></div>
 </div>
 <div id="q-chrome-footer"></div>
 <script>
@@ -721,7 +721,7 @@ var cols=partiesPresent().map(col).join('');
 el.innerHTML='<div class="lead-grid">'+cols+'</div><p class="lead-note">The current leaders of each caucus &mdash; same rubric, measured within each party; ties at the cutoff are included. Every party is shown equally, whether it holds one seat or many. <span class="lead-star">&#9733;</span> = Accountability Champion (80+). Refreshes every Sunday.</p>';
 el.style.display='block';}
 (function(){var el=document.getElementById('sessCount');if(!el)return;var t=new Date(2027,0,13),d=Math.ceil((t-new Date())/86400000);if(d>1)el.textContent='The 2027 Colorado session convenes in '+d+' days';else if(d>=0)el.textContent='The 2027 Colorado session convenes this week';else el.textContent='The 2027 Colorado session is underway';})();
-function sbSubmit(e,f){e.preventDefault();var m=f.querySelector('.sb-msg');m.textContent='Signing you up\u2026';fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)}).then(function(r){return r.json();}).then(function(j){if(j.success){f.querySelector('input[type=email]').disabled=true;f.querySelector('button').disabled=true;m.textContent='You\u2019re in \u2014 see you Sunday.';}else{m.textContent='Something went wrong \u2014 email team@theQcollective.org.';}}).catch(function(){m.textContent='Something went wrong \u2014 email team@theQcollective.org.';});return false;}
+
 function setMode(m){MODE=m;SHOWN=50;var b=document.querySelectorAll('.vt-btn');for(var i=0;i<b.length;i++){b[i].className='vt-btn'+(b[i].getAttribute('data-mode')===m?' active':'');}renderAll();}
 function setTag(t){TAG=(TAG===t?'':t);SHOWN=50;renderTagBar();renderAll();}
 function showMore(){SHOWN+=50;renderBillsView();}
@@ -802,6 +802,7 @@ function loadState(){var code=document.getElementById('hubState').value;document
 <script src="wip-notice.js?v=1" data-id="hub-progress" data-msg="Colorado's legislature is fully scored and live. Executive and judicial Q Scores are rolling out now, and federal offices (President, VP, U.S. Supreme Court) aren't scored yet." data-link="how-q-scores-work.html" data-linktext="How scoring works"></script>
 <script src="q-config.js"></script><script src="q-chat.js"></script>
 <script src="site-chrome.js"></script>
+<script src="q-sunday-band.js"></script>
 <script src="q-auth.js"></script>
 <script src="hub-lenses.js"></script>
 </body></html>

@@ -34,6 +34,7 @@ import datetime as dt
 import html
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -66,6 +67,56 @@ DATES = [
     ("2026-11-03", "Election Day in Colorado"),
     ("2027-01-13", "The 2027 legislative session opens"),
 ]
+
+# ---------------------------------------------------------------------------
+# THIS WEEK'S FEATURE: one short piece in every Sunday Update, so the email is
+# worth opening even when the legislature is out of session. It rotates by week:
+#   week 1  Champion spotlight   (an Accountability Champion and why they earned it)
+#   week 2  A law you may have missed (an enacted bill tied to the seven pillars)
+#   week 3  Your move            (one practical civic tip, from the list below)
+# Everything comes from our own published data or the list below. Nothing is
+# made up at send time. Edit or add tips here; they rotate in order.
+CIVIC_TIPS = [
+    ("Know your two lawmakers",
+     "Every Coloradan has one State Representative and one State Senator. Look yours up by address, "
+     "then check both of their Q Scores.", "find-officials.html"),
+    ("Speak up on a bill",
+     "Committee hearings at the Colorado Capitol take public testimony, in person or remotely. When a bill "
+     "you care about is scheduled, sign up to testify through the legislature's website.", "https://leg.colorado.gov"),
+    ("Write the email that gets read",
+     "Short and specific works best: the bill number, your town, and one sentence on how it touches your life. "
+     "Send it to both of your lawmakers.", "find-officials.html"),
+    ("The off-season isn't off",
+     "Between sessions, interim committees study issues and recommend bills for next year. Their meetings are "
+     "public and posted on the legislature's website.", "https://leg.colorado.gov"),
+    ("Follow a bill",
+     "Every bill page on our site has a Follow button. You'll get an email the moment that bill moves.", "hub.html"),
+    ("Make sure your ballot finds you",
+     "Moved, changed your name, or didn't get a ballot? Check and update your voter registration at "
+     "GoVoteColorado.gov. Colorado also lets you register and vote in person right up through Election Day.",
+     "https://www.govotecolorado.gov"),
+    ("Check the math yourself",
+     "Every Q Score shows what lifted it and what held it back. Same rubric, same weights, for all 100 lawmakers.",
+     "how-q-scores-work.html"),
+    ("Read a bill number like a pro",
+     "HB means it started in the House, SB in the Senate. The 2027 session opens January 13 and runs up to "
+     "120 days, so watch for new numbers starting then.", "hub.html"),
+]
+
+# Subjects that line up with the seven pillars (Health, Income, Family, Housing,
+# Food, Economic Opportunity, Protection from Disruption).
+PILLAR_SUBJECTS = ("Housing", "Health Care & Health Insurance", "Public Health", "Children & Domestic Matters",
+                   "Human Services", "Labor & Employment", "Business & Economic Development", "Agriculture",
+                   "Insurance", "Fiscal Policy & Taxes", "Education & School Finance (Pre & K-12)")
+
+# A personal note: write it in data/sunday_note.txt (the GitHub web editor is fine).
+# It goes out at the top of the next Sunday Update, signed "mav QBJ", and the file
+# is cleared after it sends. Lines starting with # are instructions and never sent.
+NOTE_FILE = os.path.join("data", "sunday_note.txt")
+NOTE_TEMPLATE = ("# A NOTE FROM MAV for the next Sunday Update.\n"
+                 "# Write your note below these # lines. Blank lines start new paragraphs.\n"
+                 "# It goes out at the top of the next Sunday Update, signed \"mav QBJ\",\n"
+                 "# and this file clears itself after it sends. Leave it empty to skip a week.\n")
 
 TZ = ZoneInfo("America/Denver")
 STATE_FILE = os.path.join("data", "sunday_state.json")
@@ -221,6 +272,81 @@ def is_fresh(now):
     return (dt.datetime.now(TZ) - when) <= dt.timedelta(days=3)
 
 
+def read_note():
+    try:
+        with open(NOTE_FILE, encoding="utf-8") as fh:
+            raw = fh.read()
+    except Exception:
+        return []
+    text = "\n".join(l.rstrip() for l in raw.splitlines() if not l.lstrip().startswith("#")).strip()
+    if not text:
+        return []
+    paras = [" ".join(p.split()) for p in text.split("\n\n") if p.strip()]
+    return paras
+
+
+def clear_note():
+    try:
+        with open(NOTE_FILE, "w", encoding="utf-8") as fh:
+            fh.write(NOTE_TEMPLATE)
+    except Exception as e:
+        log(f"could not clear the note file: {e}")
+
+
+def weekly_feature(today):
+    """(heading, lines) for this week's feature, or None if the data isn't there."""
+    week = today.isocalendar()[1]
+    kind, turn = week % 3, week // 3
+    co = load_json(os.path.join("data", f"{STATE}.json"), {}) or {}
+
+    if kind == 0:
+        champs = sorted([l for l in co.get("legislators", []) if (l.get("score") or 0) >= CHAMPION],
+                        key=lambda l: str(l.get("id")))
+        if champs:
+            c = champs[turn % len(champs)]
+            senate = "Senate" in (c.get("chamber") or "")
+            who = f"{'Sen.' if senate else 'Rep.'} {c.get('name', '')}, {'SD' if senate else 'HD'} {c.get('district', '')}"
+            why = (c.get("why") or "").strip()
+            lines = [f"{who}, scored {c.get('score')} out of 100."]
+            if why:
+                lines.append(why)
+            lines.append(f"{SITE}/legislator.html?state={STATE}&id={c.get('id')}")
+            return ("CHAMPION SPOTLIGHT", lines)
+        kind = 1
+
+    if kind == 1:
+        doc = load_json(os.path.join("data", f"{STATE}_bills.json"), {}) or {}
+        bills = doc.get("bills", doc) if isinstance(doc, dict) else doc
+        bills = list(bills.values()) if isinstance(bills, dict) else (bills or [])
+        # Prefer laws our engine itself singled out as pillar-advancing in a legislator's
+        # score explanation: those are the ones with real reach.
+        cited = set(re.findall(r"\b(?:HB|SB)\d{3,4}\b", " ".join(l.get("why") or "" for l in co.get("legislators", []))))
+        pool = sorted([b for b in bills
+                       if b.get("status") == "Passed/Enacted"
+                       and (not cited or b.get("number") in cited)
+                       and str(b.get("number", "")).startswith(("HB", "SB"))
+                       and b.get("description")
+                       and any(sj in PILLAR_SUBJECTS for sj in (b.get("subjects") or []))
+                       and "revisor" not in (b.get("title") or "").lower()],
+                      key=lambda b: str(b.get("number")))
+        if pool:
+            b = pool[(turn * 37) % len(pool)]          # steps through the list without repeating for a long time
+            prime = [sp.get("name") for sp in (b.get("sponsors") or []) if sp.get("primary") and sp.get("name")]
+            lines = [f"{b['number']}: {b.get('title', '').strip()}", b["description"].strip()]
+            if prime:
+                lines.append("Prime sponsors: " + ", ".join(prime[:4]) + (" and others" if len(prime) > 4 else "") + ".")
+            try:
+                when = dt.date.fromisoformat(str(b.get("status_date"))).strftime("%B %-d, %Y")
+                lines.append(f"Final action: {when}.")
+            except Exception:
+                pass
+            lines.append(f"{SITE}/bill.html?state={STATE}&number={urllib.parse.quote(str(b['number']))}")
+            return ("A LAW YOU MAY HAVE MISSED", lines)
+
+    t, body, link = CIVIC_TIPS[turn % len(CIVIC_TIPS)]
+    return ("YOUR MOVE THIS WEEK", [t + ".", body, link if link.startswith("http") else f"{SITE}/{link}"])
+
+
 def title_for(p):
     pre = "Sen." if p["senate"] else "Rep."
     dist = ("SD " if p["senate"] else "HD ") + p["district"]
@@ -287,6 +413,13 @@ def build_recap(now, prev, today):
     if fresh and last_good:
         head.append(f"Scores last updated {last_good}.")
     sections.append(("THE HEADLINE", head))
+
+    note = read_note()
+    if note:
+        sections.append(("A NOTE FROM MAV", note + ["mav QBJ"]))
+    feat = weekly_feature(today)
+    if feat:
+        sections.append(feat)
 
     if moved:
         lines = []
@@ -384,7 +517,7 @@ def build_recap(now, prev, today):
     if upcoming:
         sections.append(("DATES TO KNOW", upcoming))
 
-    sections.append(("YOUR MOVE", ["Look up your own House and Senate members: what they scored, "
+    sections.append(("LOOK UP YOUR LAWMAKERS", ["Look up your own House and Senate members: what they scored, "
                                    "what lifted them, and what held them back.", SITE]))
 
     subject = f"The Sunday Update: {today.strftime('%B %-d')}"
@@ -625,6 +758,8 @@ def run_recap(test=False):
         log("every send failed; state NOT saved so next run can retry.")
         return False
     save_state(now, today)
+    if read_note() and sent:
+        clear_note()
     if not is_fresh(now):
         # The recap went out on old scores. Subscribers were told; make sure the team knows too.
         note = (f"The Sunday Update went to {sent} subscriber{'s' if sent != 1 else ''} tonight using scores from "
