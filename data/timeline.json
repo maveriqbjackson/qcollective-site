@@ -1,0 +1,107 @@
+{
+  "_how_to_edit": "Add a new entry by copying any block below, pasting it inside the entries list, and changing the words. Order does not matter: the site sorts by date and moves an item from 'Coming up' to 'Done' on its own once the date passes. kind can be: filing, bill, site, watch, session. precision can be day or month. points, why and links are optional. Set featured to true to give an entry the gold highlight.",
+  "entries": [
+    {
+      "id": "session-2027",
+      "date": "2027-01-13",
+      "precision": "day",
+      "kind": "session",
+      "title": "Colorado's 2027 legislative session opens",
+      "summary": "The General Assembly convenes at the Capitol. FWMRA is drafted and ready for a sponsor, and the Q Scores start tracking a new session's bills and votes.",
+      "links": [
+        { "label": "Read FWMRA", "href": "fwmra-v6.pdf" },
+        { "label": "Open the Hub", "href": "hub.html" }
+      ]
+    },
+    {
+      "id": "admt-effective",
+      "date": "2027-01-01",
+      "precision": "day",
+      "kind": "watch",
+      "title": "Colorado's AI decision and chatbot laws take effect",
+      "summary": "SB 26-189 and HB 26-1263 become enforceable. From this day, a Coloradan turned down for housing, a job, a loan or care with help from an automated system is owed a notice, the reasons, and a route to human review."
+    },
+    {
+      "id": "admt-hearing",
+      "date": "2026-10-26",
+      "precision": "day",
+      "kind": "watch",
+      "title": "Public hearing on the AI rules, and the last day for comments",
+      "summary": "The Attorney General's office holds its formal rulemaking hearing. Written comments are accepted through this date. If you want your own voice in the record, there is still time.",
+      "links": [
+        { "label": "Comment at coag.gov/ai", "href": "https://coag.gov/ai/automated-decision-making-technology-act-and-chatbot-safety-act-form/" }
+      ]
+    },
+    {
+      "id": "admt-comment",
+      "date": "2026-10-02",
+      "precision": "day",
+      "kind": "filing",
+      "featured": true,
+      "title": "We filed public comments on Colorado's AI decision rules",
+      "summary": "Colorado's new law says you have a right to know when an automated system helped deny you an apartment, a job, a loan or care. The draft rules decide how much that right is actually worth. Most of the comments on file came from the companies being regulated. We filed for the people on the other end of the decision, with no client and no money in the outcome.",
+      "points": [
+        "Count any real AI influence on a decision, not only cases where the AI was the biggest factor.",
+        "Name the actual company that supplied the data, so a person can get a wrong record fixed.",
+        "Keep human review independent of the original decision-maker, and keep it fully human.",
+        "Keep notices going out two ways, and keep the 10-business-day turnaround on follow-up questions.",
+        "No grace period past January 1, 2027, and no swapping in the narrower federal credit notices."
+      ],
+      "why": "Federal regulators found that 1 in 5 consumers had an error on at least one credit report, and 4 out of 5 who disputed an error got their report changed. People win when they know who to write to. A notice that only says \"a consumer reporting agency\" leaves them nobody to write to.",
+      "links": [
+        { "label": "Read our full comment (PDF, 9 pages)", "href": "admt-comment-2026-10-02.pdf" },
+        { "label": "The rulemaking at coag.gov/ai", "href": "https://coag.gov/ai/automated-decision-making-technology-act-and-chatbot-safety-act-form/" }
+      ]
+    },
+    {
+      "id": "fwmra-v62",
+      "date": "2026-10-01",
+      "precision": "day",
+      "kind": "bill",
+      "title": "FWMRA version 6.2 published",
+      "summary": "The Fair Work and Mutual Responsibility Act gets a formal bill title and a tighter single-subject statement. It is now in the shape a sponsor can carry into the 2027 session.",
+      "links": [
+        { "label": "Read the bill (PDF)", "href": "fwmra-v6.pdf" }
+      ]
+    },
+    {
+      "id": "sunday-auto",
+      "date": "2026-09-28",
+      "precision": "day",
+      "kind": "site",
+      "title": "The Sunday Update goes automatic",
+      "summary": "Every Sunday evening, subscribers get what moved that week: which bills advanced and whose record changed.",
+      "links": [
+        { "label": "Get the Sunday Update", "href": "sunday.html" }
+      ]
+    },
+    {
+      "id": "admt-draft-rules",
+      "date": "2026-08-11",
+      "precision": "day",
+      "kind": "watch",
+      "title": "The Attorney General publishes the draft AI rules",
+      "summary": "The Colorado Department of Law releases proposed rules for both new laws (4 CCR 904-6) and opens the public comment window."
+    },
+    {
+      "id": "hub-engine",
+      "date": "2026-06-25",
+      "precision": "month",
+      "kind": "site",
+      "title": "The Accountability Hub starts scoring on its own engine",
+      "summary": "Every Colorado lawmaker, scored against the seven pillars, recalculated every Sunday. Every change to a score is kept in a public audit log.",
+      "links": [
+        { "label": "Open the Hub", "href": "hub.html" },
+        { "label": "Audit log", "href": "audit.html" }
+      ]
+    },
+    {
+      "id": "admt-signed",
+      "date": "2026-05-14",
+      "precision": "day",
+      "kind": "watch",
+      "title": "Colorado's AI decision and chatbot laws are signed",
+      "summary": "The Automated Decision-Making Technology in Consequential Decisions Act (SB 26-189) and the Conversational Artificial Intelligence Services Act (HB 26-1263) become law, set to start January 1, 2027."
+    }
+  ]
+}
