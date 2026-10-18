@@ -1,6 +1,6 @@
 {
  "engine": "v7.0",
- "updated": "October 11, 2026 at 4:23 PM MDT",
+ "updated": "October 18, 2026 at 2:58 PM MDT",
  "runs": [
   {
    "ts": "2026-07-11",
@@ -1278,6 +1278,37 @@
    "git_sha": "9cca097",
    "run_id": "38180234726",
    "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/38180234726",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "October 18, 2026 at 2:58 PM MDT",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "bab691a",
+   "run_id": "39165740545",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/39165740545",
    "states": {
     "CO": {
      "legiscan": {
