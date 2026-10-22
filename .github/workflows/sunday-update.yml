@@ -4,8 +4,11 @@ on:
   schedule:
     - cron: "17 * * * *"     # every hour: send new sign-ups their welcome (or confirmation) email
                              # (also keeps Supabase awake so the free plan doesn't pause it)
-    - cron: "7 1 * * 1"      # Monday 01:07 UTC = Sunday 7:07 PM Mountain (summer) / 6:07 PM (winter)
-                             # the weekly recap, a few hours after the Q Score engine lands
+    - cron: "7 1 * * 1"      # FALLBACK only: Monday 01:07 UTC. If the after-engine recap already went out,
+                             # the 5-day guard makes this run skip. If the engine never finished, this still sends.
+  workflow_run:              # the weekly recap: starts as soon as the Q Score engine finishes on Sunday,
+    workflows: ["Q Score Engine"]   # and Resend holds each email until 6:00 PM Mountain
+    types: [completed]
   workflow_dispatch:
     inputs:
       mode:
@@ -27,13 +30,13 @@ concurrency:
 
 jobs:
   send:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: main
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -42,6 +45,13 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "mode=${{ inputs.mode }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event_name }}" = "workflow_run" ]; then
+            # only after the real Sunday engine run, never after a manual test run
+            if [ "${{ github.event.workflow_run.event }}" = "schedule" ] && [ "${{ github.event.workflow_run.conclusion }}" = "success" ]; then
+              echo "mode=recap" >> "$GITHUB_OUTPUT"
+            else
+              echo "mode=confirm" >> "$GITHUB_OUTPUT"
+            fi
           elif [ "${{ github.event.schedule }}" = "7 1 * * 1" ]; then
             echo "mode=recap" >> "$GITHUB_OUTPUT"
           else

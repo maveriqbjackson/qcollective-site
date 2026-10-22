@@ -29,10 +29,10 @@ jobs:
   # Tick "test_alert" when running by hand to prove the failure email reaches you.
   test-alert:
     if: ${{ inputs.test_alert }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Send a test failure email
@@ -45,10 +45,10 @@ jobs:
   # Tick "lawmaker_sample" when running by hand to see what lawmakers would receive.
   lawmaker-sample:
     if: ${{ inputs.lawmaker_sample }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Send two sample lawmaker emails to the team
@@ -59,11 +59,11 @@ jobs:
 
   score:
     if: ${{ !inputs.test_alert && !inputs.lawmaker_sample }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 

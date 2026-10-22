@@ -95,10 +95,44 @@
     return s || "site";
   }
 
-  window.qcSundaySignup = function (email, src) {
-    var v = String(email || "").trim();
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) return Promise.resolve("invalid");
-
+  /* ---- Bot check (Cloudflare Turnstile) ----------------------------------
+     Switched on by putting the Turnstile SITE KEY in q-config.js as
+     window.Q_TURNSTILE_SITEKEY. With no key, sign-ups use the direct path
+     exactly as before. With a key, the browser gets a "this is a person"
+     token from Cloudflare (invisible for almost everyone) and the sign-up
+     goes through the sunday-signup function, which checks it first. */
+  var tsLoading = null;
+  function loadTurnstile() {
+    if (window.turnstile) return Promise.resolve(window.turnstile);
+    if (tsLoading) return tsLoading;
+    tsLoading = new Promise(function (ok, no) {
+      var sc = document.createElement("script");
+      sc.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      sc.async = true;
+      sc.onload = function () { window.turnstile ? ok(window.turnstile) : no(new Error("no turnstile")); };
+      sc.onerror = function () { no(new Error("turnstile blocked")); };
+      document.head.appendChild(sc);
+    });
+    return tsLoading;
+  }
+  function getHumanToken() {
+    return loadTurnstile().then(function (ts) {
+      return new Promise(function (ok, no) {
+        var box = document.createElement("div");
+        box.style.cssText = "position:fixed;bottom:16px;left:16px;z-index:9999";
+        document.body.appendChild(box);
+        var done = function () { setTimeout(function () { try { ts.remove(id); } catch (e) {} if (box.parentNode) box.parentNode.removeChild(box); }, 400); };
+        var id = ts.render(box, {
+          sitekey: window.Q_TURNSTILE_SITEKEY,
+          appearance: "interaction-only",
+          callback: function (t) { done(); ok(t); },
+          "error-callback": function () { done(); no(new Error("turnstile error")); },
+          "timeout-callback": function () { done(); no(new Error("turnstile timeout")); }
+        });
+      });
+    });
+  }
+  function directSignup(v, src) {
     return fetch(SUPABASE_URL + "/rest/v1/rpc/subscribe_sunday", {
       method: "POST",
       headers: {
@@ -110,7 +144,31 @@
     }).then(function (r) {
       if (!r.ok) throw new Error("status " + r.status);
       return r.json();
-    }).then(function (res) {
+    });
+  }
+  function checkedSignup(v, src) {
+    return getHumanToken().then(function (token) {
+      return fetch(SUPABASE_URL + "/functions/v1/sunday-signup", {
+        method: "POST",
+        headers: { "apikey": SUPABASE_KEY, "Content-Type": "application/json" },
+        body: JSON.stringify({ email: v, src: sourceOf(src), token: token })
+      });
+    }).then(function (r) {
+      return r.json().catch(function () { return null; }).then(function (res) {
+        if (r.status === 503 && res === "not-configured") return directSignup(v, src);
+        if (r.status === 403 && res === "bot") return "bot";
+        if (!r.ok) throw new Error("status " + r.status);
+        return res;
+      });
+    });
+  }
+
+  window.qcSundaySignup = function (email, src) {
+    var v = String(email || "").trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) return Promise.resolve("invalid");
+
+    return (window.Q_TURNSTILE_SITEKEY ? checkedSignup(v, src) : directSignup(v, src)).then(function (res) {
+      if (res === "bot") return "bot";
       if (res === "ok") { notifyTeam(v); return "ok"; }
       if (res === "confirm") {
         notifyTeam(v, "Confirmation is ON for this sign-up (a flood of sign-ups, or this address was already waiting). They are not active until they confirm.");
@@ -133,6 +191,7 @@
       case "confirm": return "One more step: confirm by email. Subject line: \u201c" + CONFIRM_SUBJECT + "\u201d. Check spam too.";
       case "already": return "You're already on the list. See you Sunday.";
       case "invalid": return "Please enter a valid email.";
+      case "bot":     return "We couldn't confirm you're a person. Please refresh the page and try again, or email team@theqcollective.org.";
       case "queued":  return "Got it. We'll add you to the list shortly.";
       default:        return "Something went wrong. Please email team@theQcollective.org.";
     }

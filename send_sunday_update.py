@@ -164,7 +164,7 @@ def sb(path, method="GET", body=None, prefer=None):
     return _req(SUPABASE_URL + "/rest/v1/" + path, method, h, body)
 
 
-def send_email(to, subject, html_body, text_body, token=None):
+def send_email(to, subject, html_body, text_body, token=None, scheduled_at=None):
     headers = {}
     if token:
         unsub = f"{SITE}/sunday.html?do=unsubscribe&token={urllib.parse.quote(token)}"
@@ -173,6 +173,9 @@ def send_email(to, subject, html_body, text_body, token=None):
                "subject": subject, "html": html_body, "text": text_body}
     if headers:
         payload["headers"] = headers
+    if scheduled_at:
+        # Resend holds the email and delivers it at this time (ISO 8601 with offset).
+        payload["scheduled_at"] = scheduled_at
     res = _req("https://api.resend.com/emails", "POST",
                {"Authorization": "Bearer " + RESEND_KEY, "Content-Type": "application/json"},
                payload)
@@ -747,13 +750,23 @@ def run_recap(test=False):
     if not isinstance(subs, list):
         log("couldn't read the subscriber list; recap NOT sent, state NOT saved.")
         return False
+    # Readers were promised Sunday evening. This run now starts right after the
+    # Q Score engine finishes (Sunday afternoon), so hand each email to Resend
+    # with a delivery time of 6:00 PM Mountain on that Sunday. If it is already
+    # past that (a late engine run, or the Monday fallback), send right away.
+    deliver_at = dt.datetime.combine(shown, dt.time(18, 0), tzinfo=TZ)
+    when = None
+    if dt.datetime.now(TZ) < deliver_at - dt.timedelta(minutes=5):
+        when = deliver_at.isoformat()
     sent = 0
     for s in subs:
         if send_email(s["email"], subject, render_html(shown, sections, s["token"]),
-                      render_text(shown, sections, s["token"]), token=s["token"]):
+                      render_text(shown, sections, s["token"]), token=s["token"], scheduled_at=when):
             sent += 1
             time.sleep(0.6)
-    log(f"recap sent: {sent}/{len(subs)}")
+    timing = ("scheduled for " + deliver_at.strftime("%A %B %-d at %-I:%M %p %Z")) if when else "sent immediately"
+    log(f"recap sent: {sent}/{len(subs)} ({timing})")
+    print(f"::notice title=Sunday Update recap::{sent} of {len(subs)} subscriber emails accepted, {timing}.", flush=True)
     if subs and sent == 0:
         log("every send failed; state NOT saved so next run can retry.")
         return False

@@ -117,7 +117,11 @@
 
   function split(entries) {
     var t = today(), up = [], done = [];
-    entries.forEach(function (e) { (parse(e.date) >= t ? up : done).push(e); });
+    entries.forEach(function (e) {
+      // Something we already did today counts as done; a hearing or session later today is still coming up.
+      var d = parse(e.date), isUp = d > t || (+d === +t && (e.kind === "watch" || e.kind === "session"));
+      (isUp ? up : done).push(e);
+    });
     up.sort(function (a, b) { return parse(a.date) - parse(b.date); });
     done.sort(function (a, b) { return parse(b.date) - parse(a.date); });
     return { up: up, done: done };
