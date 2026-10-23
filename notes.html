@@ -95,6 +95,31 @@
     .post p, .post li { font-size: 17px; } .lede { font-size: 20px !important; }
     .box, .deadline { padding: 20px 18px; } .note-card { padding: 20px; }
   }
+
+  /* notes grid: small cards, no long scroll */
+  .notes-wrap { max-width: 1060px; padding-top: 34px; }
+  .nf { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 6px; margin-bottom: 20px; scrollbar-width: none; }
+  .nf::-webkit-scrollbar { display: none; }
+  .nf-chip { flex: none; font: inherit; font-size: 14.5px; font-weight: 600; background: var(--white); color: var(--navy-deep); border: 1px solid var(--border); border-radius: 20px; padding: 8px 15px; cursor: pointer; }
+  .nf-chip[aria-pressed=true] { background: var(--navy-deep); color: #fff; border-color: var(--navy-deep); }
+  .ng { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .ng li[hidden] { display: none; }
+  .nc { display: flex; flex-direction: column; height: 100%; background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--gold); border-radius: 8px; padding: 16px 18px; text-decoration: none; color: inherit; transition: border-color .15s, transform .15s; }
+  .nc:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .nc-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 6px; }
+  .nc-title { font-family: 'Source Serif 4', Georgia, serif; font-size: 19px; font-weight: 600; line-height: 1.28; color: var(--navy-deep); }
+  .nc-sum { font-size: 14.5px; line-height: 1.55; color: var(--text-light); margin-top: 6px; }
+  @media (max-width: 900px) { .ng { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) {
+    .ng { grid-template-columns: 1fr; gap: 8px; }
+    .nc { flex-direction: column; padding: 11px 14px; border-top: 1px solid var(--border); border-left: 3px solid var(--gold); }
+    .nc-title { font-size: 17px; }
+    .nc-sum { display: none; }
+    .notes-wrap { padding-top: 22px; }
+  }
+  .fhead { padding: 40px 32px 34px !important; }
+  .fhead h1 { font-size: clamp(30px, 4.4vw, 44px) !important; }
+  @media (max-width: 560px) { .fhead { padding: 24px 18px 20px !important; } .fhead p.sub { display: none; } }
 </style>
 </head>
 <body>
@@ -105,60 +130,28 @@
 <p class="sub">Short explainers on what Colorado is doing, what it means for you, and how to have a say. We post when there's something worth your time.</p>
 </div></header>
 
-<main class="wrap post">
-<!-- To add a note: copy one <li> block below, paste it at the TOP of the list, and change the link, date, title and summary. -->
-<ul class="notes-list">
-<li><a class="note-card" href="q-score-explained.html">
-<div class="meta">October 23, 2026 &middot; The Q Score</div>
-<h2>How the Q Score works, in plain English</h2>
-<p>One number from 0 to 100, built the same way for every lawmaker. What goes into it, what it can't tell you, and how to challenge one.</p>
-<span class="more">Read the note &rarr;</span>
-</a></li>
-<li><a class="note-card" href="cesa-explained.html">
-<div class="meta">October 23, 2026 &middot; Our bills</div>
-<h2>CESA in plain English</h2>
-<p>Our 431-page flagship bill in a few minutes: what it does for a family, how it's paid for, the hard parts, and why it stays one bill.</p>
-<span class="more">Read the note &rarr;</span>
-</a></li>
-<li><a class="note-card" href="fwmra-explained.html">
-<div class="meta">October 23, 2026 &middot; Our bills</div>
-<h2>FWMRA in plain English</h2>
-<p>Protection from being fired for no reason, predictable costs for employers, and fair dealing both ways. Ready for 2027.</p>
-<span class="more">Read the note &rarr;</span>
-</a></li>
-<li><a class="note-card" href="who-we-are.html">
-<div class="meta">October 23, 2026 &middot; About us</div>
-<h2>Who we are, and why my name is on it</h2>
-<p>A small, nonpartisan Colorado group with a name and a phone number on it. How it started and the rules we hold ourselves to.</p>
-<span class="more">Read the note &rarr;</span>
-</a></li>
-<li><a class="note-card" href="the-long-game.html">
-<div class="meta">October 23, 2026 &middot; Our bills</div>
-<h2>US-RAPA and the long game</h2>
-<p>The federal, regional and long-horizon pieces of the work, US-RAPA, GOARN and the American Covenant, and how far along each one honestly is.</p>
-<span class="more">Read the note &rarr;</span>
-</a></li>
-<li><a class="note-card" href="whats-next-2027.html">
-<div class="meta">October 23, 2026 &middot; Looking ahead</div>
-<h2>What's next: our plan for 2027</h2>
-<p>Heading into Colorado's 2027 session: live scoring, two bills ready for sponsors, the AI law, and more ways to talk back.</p>
-<span class="more">Read the note &rarr;</span>
-</a></li>
-<li><a class="note-card" href="beyond-colorado.html">
-<div class="meta">October 23, 2026 &middot; Looking ahead</div>
-<h2>Where Q goes beyond Colorado</h2>
-<p>The goal is every elected official we can get solid data on, from Congress to governors to the courts. What's built, what isn't, and what's in the way.</p>
-<span class="more">Read the note &rarr;</span>
-</a></li>
-<li><a class="note-card" href="colorado-ai-law.html">
-<div class="meta">October 22, 2026 &middot; AI and your rights</div>
-<h2>Colorado's new AI law, in plain English</h2>
-<p>You now have a right to know when a computer helped turn you down for housing, a job, a loan or care. The rules being written this month decide whether that right works. Comments close October 26.</p>
-<span class="more">Read the note &rarr;</span>
-</a></li>
+<main class="wrap notes-wrap">
+<!-- To add a note: copy one <li> line below, paste it where you want it, and change the link, topic, date, title and one-line summary.
+     data-t must be one of: bills, q, ai, ahead, about -->
+<div class="nf" role="group" aria-label="Filter notes by topic"><button type="button" class="nf-chip" data-t="all" aria-pressed="true">All</button><button type="button" class="nf-chip" data-t="bills" aria-pressed="false">Our bills</button><button type="button" class="nf-chip" data-t="q" aria-pressed="false">The Q Score</button><button type="button" class="nf-chip" data-t="ai" aria-pressed="false">AI and your rights</button><button type="button" class="nf-chip" data-t="ahead" aria-pressed="false">Looking ahead</button><button type="button" class="nf-chip" data-t="about" aria-pressed="false">About us</button></div>
+<ul class="ng">
+<li data-t="ai"><a class="nc" href="colorado-ai-law.html"><span class="nc-meta">AI and your rights &middot; Oct 22</span><span class="nc-title">Colorado's new AI law, in plain English</span><span class="nc-sum">Your new right to know when a computer helped turn you down, and how to weigh in.</span></a></li>
+<li data-t="q"><a class="nc" href="q-score-explained.html"><span class="nc-meta">The Q Score &middot; Oct 23</span><span class="nc-title">How the Q Score works</span><span class="nc-sum">One number from 0 to 100, built the same way for every lawmaker.</span></a></li>
+<li data-t="bills"><a class="nc" href="cesa-explained.html"><span class="nc-meta">Our bills &middot; Oct 23</span><span class="nc-title">CESA in plain English</span><span class="nc-sum">What our flagship bill does for a family, and how it's paid for.</span></a></li>
+<li data-t="bills"><a class="nc" href="fwmra-explained.html"><span class="nc-meta">Our bills &middot; Oct 23</span><span class="nc-title">FWMRA in plain English</span><span class="nc-sum">No firing for no reason, with predictable costs for employers.</span></a></li>
+<li data-t="bills"><a class="nc" href="the-long-game.html"><span class="nc-meta">Our bills &middot; Oct 23</span><span class="nc-title">US-RAPA and the long game</span><span class="nc-sum">The federal, regional and generational pieces of the work.</span></a></li>
+<li data-t="about"><a class="nc" href="who-we-are.html"><span class="nc-meta">About us &middot; Oct 23</span><span class="nc-title">Who we are, and why my name is on it</span><span class="nc-sum">A small, nonpartisan Colorado group with a name on it.</span></a></li>
+<li data-t="ahead"><a class="nc" href="whats-next-2027.html"><span class="nc-meta">Looking ahead &middot; Oct 23</span><span class="nc-title">What's next: our plan for 2027</span><span class="nc-sum">Live scoring, two bills ready for sponsors, and more ways to talk back.</span></a></li>
+<li data-t="ahead"><a class="nc" href="beyond-colorado.html"><span class="nc-meta">Looking ahead &middot; Oct 23</span><span class="nc-title">Where Q goes beyond Colorado</span><span class="nc-sum">Every elected official we can get solid data on.</span></a></li>
 </ul>
-<p class="src" style="margin-top:26px">Looking for something with dates? <a href="timeline.html">Our timeline</a> lists everything we've done and what's coming up.</p>
+<p class="src" style="margin-top:26px">Looking for dates? <a href="timeline.html">Our timeline</a> lists everything we've done and what's coming up.</p>
 </main>
+<script>
+(function(){var b=document.querySelectorAll('.nf-chip'),li=document.querySelectorAll('.ng li');
+Array.prototype.forEach.call(b,function(x){x.addEventListener('click',function(){var t=x.getAttribute('data-t');
+Array.prototype.forEach.call(b,function(y){y.setAttribute('aria-pressed',y===x?'true':'false');});
+Array.prototype.forEach.call(li,function(l){l.hidden=!(t==='all'||l.getAttribute('data-t')===t);});});});})();
+</script>
 
 <div style="max-width:760px;margin:0 auto;padding:0 18px 44px"><div data-q-sunday-band data-src="notes"></div></div>
 <div id="q-chrome-footer"></div>
