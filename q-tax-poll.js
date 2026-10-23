@@ -20,7 +20,7 @@
     ["junk_food", "High-sugar, high-fat foods", "An extra 8% sales tax on things like candy, chips, cookies and ice cream."],
     ["ultra_processed", "Ultra-processed foods", "An extra 5% sales tax on heavily processed foods."],
     ["chain_restaurant", "Chain-restaurant meals", "An extra 3% sales tax on prepared food from chain restaurants."],
-    ["alcohol", "Alcohol", "A 15% sales tax on beer, wine, spirits and canned cocktails, with the money going first to mental health and addiction care. (Proposed for the next version of CESA.)"],
+    ["alcohol", "Alcohol", "A 21% sales tax on beer, wine, spirits and canned cocktails, with the money going first to mental health and addiction care. (Proposed for the next version of CESA.)"],
     ["general_sales", "A general sales tax increase instead", "Not in CESA. Would you rather pay for it with a small sales tax increase on most purchases?"],
     ["income_backup", "Income tax, only as a last-resort backup", "Only if CESA's fees fall short, and only if voters approve it first."]
   ];
