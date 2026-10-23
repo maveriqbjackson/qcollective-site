@@ -527,6 +527,7 @@
   <p><b>If you sign up for bill alerts:</b> your email address and which bills you asked about.</p>
   <p><b>If you&rsquo;re a verified elected official:</b> the responses you submit, their status, and which record they concern. Published responses are public by design.</p>
   <p><b>If you write to us</b> through a form: whatever you choose to send.</p>
+  <p><b>If you answer the CESA tax poll:</b> your answers and, only if you give it, your ZIP code. To count one response per person per day we keep a one-way scrambled code made from your connection and browser. It can&rsquo;t be turned back into your IP address, and we don&rsquo;t store the address itself. Only totals are ever shown.</p>
   <p><b>Site analytics:</b> we use privacy-focused analytics that count visits without cookies and without building a profile of you.</p>
 
   <h2>What we do with it</h2>
@@ -537,7 +538,7 @@
   <ul>
     <li><b>Supabase</b> &mdash; stores accounts and saved lists.</li>
     <li><b>Resend</b> &mdash; delivers sign-in links and alerts.</li>
-    <li><b>Cloudflare</b> &mdash; analytics and the Ask Q assistant.</li>
+    <li><b>Cloudflare</b> &mdash; analytics, the Ask Q assistant, and the &ldquo;are you a person?&rdquo; check on our sign-up and poll forms (Turnstile).</li>
     <li><b>Anthropic</b> &mdash; powers the Ask Q assistant; what you type there is sent to their API to generate a reply. <b>Don&rsquo;t put sensitive personal information into the assistant.</b></li>
     <li><b>Stripe</b> &mdash; processes donations. <b>We never see or store your card number.</b></li>
     <li><b>GitHub Pages</b> &mdash; hosts the site.</li>
