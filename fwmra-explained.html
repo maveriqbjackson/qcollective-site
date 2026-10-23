@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>FWMRA in plain English | The Q Collective</title>
+<meta name="description" content="The Fair Work and Mutual Responsibility Act: protection from being fired for no reason, predictable costs for employers, and fair dealing in both directions.">
+<link rel="canonical" href="https://theqcollective.org/fwmra-explained.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Q Collective">
+<meta property="og:title" content="FWMRA in plain English">
+<meta property="og:description" content="The Fair Work and Mutual Responsibility Act: protection from being fired for no reason, predictable costs for employers, and fair dealing in both directions.">
+<meta property="og:url" content="https://theqcollective.org/fwmra-explained.html">
+<meta property="og:image" content="https://theqcollective.org/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FWMRA in plain English">
+<meta name="twitter:description" content="The Fair Work and Mutual Responsibility Act: protection from being fired for no reason, predictable costs for employers, and fair dealing in both directions.">
+<meta name="twitter:image" content="https://theqcollective.org/og-image.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"FWMRA in plain English",
+"datePublished":"2026-10-23","author":{"@type":"Person","name":"maveriQ B Jackson","url":"https://theqcollective.org/founder.html"},
+"publisher":{"@type":"Organization","name":"The Q Collective","url":"https://theqcollective.org/"},
+"mainEntityOfPage":"https://theqcollective.org/fwmra-explained.html"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="q-chrome.css">
+<link rel="stylesheet" href="q-humanize.css">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #1B3A6B; --navy-deep: #122848; --navy-mid: #243f72;
+    --gold: #B8962E; --gold-light: #D4AF50; --gold-pale: #F5EDD4;
+    --white: #FFFFFF; --off-white: #F9F6F0; --off-white2: #F2EFE8;
+    --text: #1a1a1a; --text-light: #4a4a4a; --text-muted: #5a5a5a; --border: #E0D5BE;
+  }
+  body {
+    background: var(--off-white);
+    font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .top-stripe { height: 5px; background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%); }
+  .topbar { position: sticky; top: 0; z-index: 50; background: rgba(18,40,72,0.97); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(184,150,46,0.25); }
+  .topbar-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; gap: 16px; }
+  .brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; }
+  .brand-q { font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 26px; color: var(--gold-light); line-height: 1; }
+  .brand-name { font-size: 14px; font-weight: 600; color: var(--white); }
+  .menu-btn { display: inline-flex; align-items: center; gap: 9px; background: transparent; border: 1px solid rgba(255,255,255,.30); color: #fff; font-size: 14.5px; font-weight: 600; padding: 9px 15px; border-radius: 5px; cursor: pointer; }
+  .menu-btn .bars { display: inline-flex; flex-direction: column; gap: 3px; }
+  .menu-btn .bars span { width: 17px; height: 2px; background: var(--gold-light); display: block; }
+  .nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,35,71,.985); z-index: 1000; display: flex; flex-direction: column; opacity: 0; visibility: hidden; transition: opacity .25s ease; }
+  .nav-overlay.open { opacity: 1; visibility: visible; }
+  .nav-overlay .nav-close { background: none; border: none; color: #fff; font-size: 42px; line-height: 1; cursor: pointer; }
+  .nav-overlay .ov-brand { font-family: 'Source Serif 4', Georgia, serif; color: #fff; font-size: 20px; }
+  .nav-overlay .ov-brand b { color: var(--gold-light); }
+  .ov-links a { display: block; color: #fff; text-decoration: none; }
+  .ov-featured { display: block; background: var(--gold); color: var(--navy-deep); font-weight: 700; text-decoration: none; border-radius: 7px; border: 1px solid var(--gold-light); }
+  .ov-foot { color: rgba(255,255,255,.5); }
+
+  .fhead { background: var(--navy-deep); padding: 64px 32px 58px; position: relative; overflow: hidden; }
+  .fhead-wm { position: absolute; font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 460px; line-height: 1; color: rgba(255,255,255,0.05); top: -110px; right: -40px; pointer-events: none; user-select: none; }
+  .fhead-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+  .fhead p.kicker { color: rgba(255,255,255,0.62); font-size: 15px; margin-bottom: 16px; }
+  .fhead p.kicker a { color: var(--gold-light); text-decoration: none; }
+  .fhead h1 { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 700; color: #fff; line-height: 1.1; letter-spacing: -0.015em; }
+  .fhead p.sub { color: rgba(255,255,255,0.76); font-size: 18.5px; line-height: 1.7; max-width: 58ch; margin-top: 18px; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 32px 30px; }
+  .post p, .post li { font-size: 18px; line-height: 1.8; color: var(--text-light); }
+  .post p { margin-bottom: 20px; }
+  .post p strong, .post li strong { color: var(--text); font-weight: 600; }
+  .post h2 { font-family: 'Source Serif 4', Georgia, serif; font-size: 27px; font-weight: 600; color: var(--navy-deep); margin: 44px 0 14px; line-height: 1.25; }
+  .post h3 { font-family: 'Source Serif 4', Georgia, serif; font-size: 21px; font-weight: 600; color: var(--navy-deep); margin: 28px 0 8px; }
+  .post ul, .post ol { margin: 0 0 22px 22px; }
+  .post li { margin-bottom: 9px; }
+  .post a { color: var(--navy); font-weight: 600; }
+  .lede { font-family: 'Source Serif 4', Georgia, serif; font-size: 22px !important; line-height: 1.55 !important; color: var(--text) !important; }
+  .box { background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--gold); border-radius: 6px; padding: 22px 26px; margin: 28px 0; }
+  .box p:last-child, .box ul:last-child, .box ol:last-child { margin-bottom: 0; }
+  .box h3 { margin-top: 0; }
+  .deadline { background: var(--navy-deep); color: #fff; border-radius: 8px; padding: 26px 28px; margin: 30px 0; }
+  .deadline .when { font-family: 'Source Serif 4', Georgia, serif; font-size: 24px; font-weight: 600; color: var(--gold-light); margin-bottom: 8px; }
+  .deadline strong { color: #fff !important; }
+  .deadline p { color: rgba(255,255,255,0.82) !important; margin-bottom: 10px; font-size: 17px !important; }
+  .deadline a.btn { display: inline-block; background: var(--gold); color: var(--navy-deep); font-weight: 700; font-size: 15.5px; padding: 13px 24px; border-radius: 5px; text-decoration: none; margin: 8px 10px 0 0; }
+  .deadline a.ghost { background: transparent; border: 1px solid rgba(255,255,255,.4); color: #fff; }
+  .sample { background: var(--off-white2); border-radius: 6px; padding: 20px 24px; font-family: 'Source Serif 4', Georgia, serif; font-size: 17.5px; line-height: 1.7; color: var(--text); white-space: pre-wrap; margin: 0 0 12px; }
+  .copybtn { font: inherit; font-size: 14.5px; font-weight: 600; background: var(--white); color: var(--navy-deep); border: 1px solid var(--border); border-radius: 5px; padding: 8px 14px; cursor: pointer; margin-bottom: 26px; }
+  .sign { margin: 44px 0 10px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .sign .mark { font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-weight: 600; font-size: 32px; color: var(--navy-deep); }
+  .sign .who { font-size: 15px; color: var(--text-muted); }
+  .src { font-size: 14.5px !important; color: var(--text-muted) !important; line-height: 1.65 !important; }
+  .notes-list { list-style: none; margin: 0 !important; padding: 0; }
+  .note-card { display: block; background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 26px 28px; text-decoration: none; color: inherit; margin-bottom: 16px; }
+  .note-card:hover { border-color: var(--gold); }
+  .note-card .meta { font-size: 14.5px; color: var(--text-muted); margin-bottom: 6px; }
+  .note-card h2 { margin: 0 0 8px !important; font-size: 25px !important; }
+  .note-card p { margin: 0 !important; font-size: 17px !important; }
+  .note-card .more { display: inline-block; margin-top: 12px; font-weight: 600; color: var(--navy); border-bottom: 1px solid var(--gold); }
+  @media (max-width: 760px) {
+    .fhead { padding: 44px 20px 40px; } .fhead-wm { display: none; } .fhead p.sub { font-size: 17px; }
+    .wrap { padding: 32px 18px 24px; }
+    .post p, .post li { font-size: 17px; } .lede { font-size: 20px !important; }
+    .box, .deadline { padding: 20px 18px; } .note-card { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+<div id="q-chrome-top"></div>
+<header class="fhead"><div class="fhead-wm">Q</div><div class="fhead-inner">
+<p class="kicker"><a href="notes.html">Notes</a> &middot; October 23, 2026 &middot; About a 5 minute read</p>
+<h1>FWMRA in plain English</h1>
+<p class="sub">You shouldn't be fired for no reason. Employers should still be able to run their business. This bill does both.</p>
+</div></header>
+
+<main class="wrap"><article class="post">
+
+<p class="lede">In most of Colorado today, you can be fired for any reason or no reason at all. That's what "at-will" means. The usual fight is all-or-nothing: workers want strong protection, employers want flexibility. The Fair Work and Mutual Responsibility Act makes each side give something to get something.</p>
+
+<p>FWMRA is a standalone bill, version <strong>6.2</strong>, and it's ready for the <strong>2027 session</strong>. <a href="fwmra-v6.pdf" target="_blank" rel="noopener">Read the full bill (PDF, 16 pages).</a></p>
+
+<h2>What workers get</h2>
+<ul>
+<li><strong>Protection from day one.</strong> No six-month probation period.</li>
+<li><strong>Three fair reasons to let someone go:</strong> conduct, capacity, or a real business need. "Because I felt like it" is gone.</li>
+<li><strong>A fair process.</strong> Except for serious misconduct like theft or violence, the employer warns you, gives you a real chance to improve, tells you the reason, and keeps simple notes.</li>
+<li><strong>Temp and staffing-agency workers are covered too.</strong> The responsibility sits with the agency that actually employs them.</li>
+<li><strong>Protection for trainers.</strong> You can't be punished because a trainee you trained in good faith washed out.</li>
+<li><strong>Fair layoffs.</strong> In real economic cuts, employers weigh time on the job, age, dependents and disability. No picking favorites.</li>
+</ul>
+
+<h2>What employers get</h2>
+<ul>
+<li><strong>One clear checklist.</strong> Follow the four steps and you're protected.</li>
+<li><strong>Capped, predictable costs.</strong> If a firing is found unfair, the worker either gets the job back or gets paid: the greater of <strong>4 weeks</strong>, or <strong>2 weeks per year worked</strong>, up to <strong>26 weeks</strong>. No surprise emotional-distress or punitive awards unless there's real fraud or malice.</li>
+<li><strong>Legal fees can go either way.</strong> The winner can recover them, whichever side that is.</li>
+<li><strong>A low-cost tribunal</strong> instead of years in court.</li>
+<li><strong>A 90-day setup window</strong> for paperwork. It covers process only. It never excuses an unfair firing, retaliation or discrimination.</li>
+</ul>
+
+<h2>Fair runs both ways</h2>
+<p>Workers are encouraged, never forced, to give about two weeks' notice and leave on good terms. In return they get rehire priority and faster transition help. Nobody can be made to keep working. Walking off for three straight days without a word counts as quitting.</p>
+
+<h2>Who it covers</h2>
+<p>Every Colorado employer, from a two-person shop to the biggest company in the state. No size cutoff and no carve-outs. Genuine independent contractors aren't covered.</p>
+
+<h2>Why now</h2>
+<p>The last big at-will fight in Colorado collapsed in 2025 without settling anything. FWMRA is built to be ready when the issue comes back, with a version both sides can live with. It's built to work alongside <a href="cesa-explained.html">CESA</a>, and its safety net works best with CESA in place, but it's a standalone bill that can be passed on its own.</p>
+
+<div class="sign">
+<div class="mark">mav QBJ</div>
+<div class="who">maveriQ B Jackson, Founder, The Q Collective LLC / Doctrine Policy Group</div>
+</div>
+<p class="src">More notes: <a href="notes.html">all notes</a> &middot; <a href="timeline.html">our timeline</a>. Spot an error? <a href="contact.html">Tell us</a> and we will correct it in public.</p>
+</article></main>
+
+<div style="max-width:760px;margin:0 auto;padding:0 18px 44px"><div data-q-sunday-band data-src="note-fwmra"></div></div>
+<div id="q-chrome-footer"></div>
+<script src="q-sunday-band.js"></script>
+<script src="q-config.js"></script>
+<script src="site-chrome.js"></script>
+<script src="q-chat.js"></script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6aff6948b0f84ed0b1530a42458bbb3b"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>

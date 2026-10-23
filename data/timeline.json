@@ -2,6 +2,20 @@
   "_how_to_edit": "Add a new entry by copying any block below, pasting it inside the entries list, and changing the words. Order does not matter: the site sorts by date and moves an item from 'Coming up' to 'Done' on its own once the date passes. kind can be: filing, bill, site, watch, session. precision can be day or month. points, why and links are optional. Set featured to true to give an entry the gold highlight.",
   "entries": [
     {
+      "id": "notes-seven",
+      "date": "2026-10-23",
+      "precision": "day",
+      "kind": "site",
+      "title": "Seven new Notes: our bills, the Q Score and where we're headed",
+      "summary": "Plain-English explainers on how the Q Score works, CESA, FWMRA, US-RAPA and the long game, who we are, our 2027 plan, and taking Q beyond Colorado.",
+      "links": [
+        {
+          "label": "Read the Notes",
+          "href": "notes.html"
+        }
+      ]
+    },
+    {
       "id": "session-2027",
       "date": "2027-01-13",
       "precision": "day",
@@ -9,8 +23,14 @@
       "title": "Colorado's 2027 legislative session opens",
       "summary": "The General Assembly convenes at the Capitol. FWMRA is drafted and ready for a sponsor, and the Q Scores start tracking a new session's bills and votes.",
       "links": [
-        { "label": "Read FWMRA", "href": "fwmra-v6.pdf" },
-        { "label": "Open the Hub", "href": "hub.html" }
+        {
+          "label": "Read FWMRA",
+          "href": "fwmra-v6.pdf"
+        },
+        {
+          "label": "Open the Hub",
+          "href": "hub.html"
+        }
       ]
     },
     {
@@ -29,8 +49,14 @@
       "title": "Public hearing on the AI rules, and the last day for comments",
       "summary": "The Attorney General's office holds its formal rulemaking hearing at 10:00 a.m. in Denver, with a Zoom option. Written comments are accepted until 11:59 p.m. Mountain Time. If you want your own voice in the record, there is still time.",
       "links": [
-        { "label": "How to weigh in, in plain English", "href": "colorado-ai-law.html" },
-        { "label": "Comment at coag.gov/ai", "href": "https://coag.gov/ai/automated-decision-making-technology-act-and-chatbot-safety-act-form/" }
+        {
+          "label": "How to weigh in, in plain English",
+          "href": "colorado-ai-law.html"
+        },
+        {
+          "label": "Comment at coag.gov/ai",
+          "href": "https://coag.gov/ai/automated-decision-making-technology-act-and-chatbot-safety-act-form/"
+        }
       ]
     },
     {
@@ -41,7 +67,10 @@
       "title": "New note: Colorado's new AI law, in plain English",
       "summary": "What the two new laws do, the three fights over the rules, and how to get your own comment in before the October 26 deadline.",
       "links": [
-        { "label": "Read the note", "href": "colorado-ai-law.html" }
+        {
+          "label": "Read the note",
+          "href": "colorado-ai-law.html"
+        }
       ]
     },
     {
@@ -61,9 +90,18 @@
       ],
       "why": "Federal regulators found that 1 in 5 consumers had an error on at least one credit report, and 4 out of 5 who disputed an error got their report changed. People win when they know who to write to. A notice that only says \"a consumer reporting agency\" leaves them nobody to write to.",
       "links": [
-        { "label": "Read our full comment (PDF, 9 pages)", "href": "admt-comment-2026-10-02.pdf" },
-        { "label": "The plain-English version", "href": "colorado-ai-law.html" },
-        { "label": "The rulemaking at coag.gov/ai", "href": "https://coag.gov/ai/automated-decision-making-technology-act-and-chatbot-safety-act-form/" }
+        {
+          "label": "Read our full comment (PDF, 9 pages)",
+          "href": "admt-comment-2026-10-02.pdf"
+        },
+        {
+          "label": "The plain-English version",
+          "href": "colorado-ai-law.html"
+        },
+        {
+          "label": "The rulemaking at coag.gov/ai",
+          "href": "https://coag.gov/ai/automated-decision-making-technology-act-and-chatbot-safety-act-form/"
+        }
       ]
     },
     {
@@ -74,7 +112,10 @@
       "title": "FWMRA version 6.2 published",
       "summary": "The Fair Work and Mutual Responsibility Act gets a formal bill title and a tighter single-subject statement. It is now in the shape a sponsor can carry into the 2027 session.",
       "links": [
-        { "label": "Read the bill (PDF)", "href": "fwmra-v6.pdf" }
+        {
+          "label": "Read the bill (PDF)",
+          "href": "fwmra-v6.pdf"
+        }
       ]
     },
     {
@@ -85,7 +126,10 @@
       "title": "The Sunday Update goes automatic",
       "summary": "Every Sunday evening, subscribers get what moved that week: which bills advanced and whose record changed.",
       "links": [
-        { "label": "Get the Sunday Update", "href": "sunday.html" }
+        {
+          "label": "Get the Sunday Update",
+          "href": "sunday.html"
+        }
       ]
     },
     {
@@ -104,8 +148,14 @@
       "title": "The Accountability Hub starts scoring on its own engine",
       "summary": "Every Colorado lawmaker, scored against the seven pillars, recalculated every Sunday. Every change to a score is kept in a public audit log.",
       "links": [
-        { "label": "Open the Hub", "href": "hub.html" },
-        { "label": "Audit log", "href": "audit.html" }
+        {
+          "label": "Open the Hub",
+          "href": "hub.html"
+        },
+        {
+          "label": "Audit log",
+          "href": "audit.html"
+        }
       ]
     },
     {
