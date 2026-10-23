@@ -13,4 +13,4 @@ window.Q_WORKER_URL = "https://q-assistant.maveriqbjackson.workers.dev";   // e.
    Leave it empty ("") and sign-ups work exactly as before.
    The SECRET key never goes here. It goes in Supabase only.
    ============================================================ */
-window.Q_TURNSTILE_SITEKEY = "";
+window.Q_TURNSTILE_SITEKEY = "0x4AAAAAAFiiYOU9M5lZKjjn";
