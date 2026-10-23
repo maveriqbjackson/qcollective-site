@@ -20,7 +20,7 @@
     ["junk_food", "High-sugar, high-fat foods", "An extra 8% sales tax on things like candy, chips, cookies and ice cream."],
     ["ultra_processed", "Ultra-processed foods", "An extra 5% sales tax on heavily processed foods."],
     ["chain_restaurant", "Chain-restaurant meals", "An extra 3% sales tax on prepared food from chain restaurants."],
-    ["alcohol", "Alcohol", "A 21% sales tax on beer, wine, spirits and canned cocktails, with the money going first to mental health and addiction care. (Proposed for the next version of CESA.)"],
+    ["alcohol", "Alcohol", "A 21% sales tax on beer, wine, spirits and canned cocktails, with the money going first to mental health and addiction care."],
     ["general_sales", "A general sales tax increase instead", "Not in CESA. Would you rather pay for it with a small sales tax increase on most purchases?"],
     ["income_backup", "Income tax, only as a last-resort backup", "Only if CESA's fees fall short, and only if voters approve it first."]
   ];
@@ -103,14 +103,14 @@
         (n ? '<span class="y" style="width:' + p(r.yes) + '%"></span><span class="n" style="width:' + p(r.no) + '%"></span><span class="u" style="width:' + p(r.unsure) + '%"></span>' : '') +
         '</div><div class="tp-nums">' + (n ? p(r.yes) + '% yes · ' + p(r.no) + '% no · ' + p(r.unsure) + '% not sure (' + n + ')' : 'No answers yet') + '</div></div>';
     });
-    html += '<p class="tp-fine">An informal poll, not a scientific survey. Answers are anonymous, and one response per person per day counts. In CESA\'s next version, every new tax goes to voters as its own ballot question. <a href="cesa-explained.html">How CESA is paid for</a>.</p>';
+    html += '<p class="tp-fine">An informal poll, not a scientific survey. Answers are anonymous, and one response per person per day counts. Under CESA, every new tax goes to voters as its own ballot question. <a href="cesa-explained.html">How CESA is paid for</a>.</p>';
     el.innerHTML = html;
   }
 
   function renderForm(el) {
     var picks = {};
     var html = '<h3>Which CESA taxes would you vote yes on?</h3>' +
-      '<p class="tp-intro">CESA runs mostly on fees. In its next version, every new tax in it goes to Colorado voters as its own question, so you would decide each one. Tell us where you stand. Fresh fruits and vegetables would be tax-free under the bill.</p>';
+      '<p class="tp-intro">CESA runs mostly on fees. Every new tax in it goes to Colorado voters as its own question, so you would decide each one. Tell us where you stand. Fresh fruits and vegetables would be tax-free under the bill.</p>';
     QUESTIONS.forEach(function (x) {
       html += '<div class="tp-q" data-k="' + x[0] + '"><div><div class="tp-t">' + esc(x[1]) + '</div><div class="tp-d">' + esc(x[2]) + '</div></div>' +
         '<div class="tp-b" role="group" aria-label="' + esc(x[1]) + '">' +

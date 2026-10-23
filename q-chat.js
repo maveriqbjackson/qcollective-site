@@ -63,7 +63,7 @@
         '<span class="qc-chip role" data-official="1">Elected official</span>' +
         '<span class="qc-chip role" data-q="I am a member of the press. Where is your scoring methodology and how do I request comment?">Press</span>' +
         '<span class="qc-chip role" data-q="I am from another branch of government (executive or judicial). How does scoring apply to me?">Another branch</span>' +
-        '<span class="qc-chip" data-q="What is the Colorado Economic Security Act, in plain language?">What is CESA?</span>' +
+        '<span class="qc-chip" data-q="What is the Colorado Everyday Stability Act, in plain language?">What is CESA?</span>' +
         '<span class="qc-chip" data-q="What are the seven pillars of life stability?">The seven pillars</span>' +
       '</div>' +
       '<div class="qc-input"><textarea id="qcBox" rows="1" placeholder="Ask a question, or paste a link\u2026"></textarea><button id="qcSend">Send</button></div>' +

@@ -2,6 +2,40 @@
   "_how_to_edit": "Add a new entry by copying any block below, pasting it inside the entries list, and changing the words. Order does not matter: the site sorts by date and moves an item from 'Coming up' to 'Done' on its own once the date passes. kind can be: filing, bill, site, watch, session. precision can be day or month. points, why and links are optional. Set featured to true to give an entry the gold highlight.",
   "entries": [
     {
+      "id": "cesa-163",
+      "date": "2026-10-23",
+      "precision": "day",
+      "kind": "bill",
+      "featured": true,
+      "title": "CESA version 16.3: the Colorado Everyday Stability Act",
+      "summary": "Our flagship bill gets a new name and its biggest cleanup yet. Every new tax in it now goes to voters as its own ballot question, a 21% alcohol tax funds mental health and addiction care first, and Care Without Fear launches as a public option with full single-payer as the goal once voters approve it.",
+      "points": [
+        "New name, same letters: the Colorado Everyday Stability Act (CESA).",
+        "A new Section 1.9 and connection clauses make the case that CESA is one bill about one subject: the life stability of Colorado residents.",
+        "Every new tax goes to voters, one question at a time, even if TABOR ever goes away.",
+        "New 21% health-impact alcohol tax, with the money going first to mental health and addiction care.",
+        "Public option first. Full single-payer happens when voters approve it, with a target of Year 3."
+      ],
+      "links": [
+        {
+          "label": "Read CESA 16.3 (PDF)",
+          "href": "cesa.pdf"
+        },
+        {
+          "label": "CESA in plain English",
+          "href": "cesa-explained.html"
+        },
+        {
+          "label": "Which taxes would you vote for?",
+          "href": "cesa-taxes.html"
+        },
+        {
+          "label": "Version 16.2 (archive)",
+          "href": "cesa-v16.2.pdf"
+        }
+      ]
+    },
+    {
       "id": "notes-seven",
       "date": "2026-10-23",
       "precision": "day",
