@@ -54,7 +54,7 @@ SITE         = (os.environ.get("SITE_URL") or "https://theqcollective.org").rstr
 STATE        = (os.environ.get("STATE") or "CO").strip()
 
 # CAN-SPAM requires a real postal address in every recap.
-POSTAL = ["The Q Collective LLC", "222 Wright St, Unit 102", "Lakewood, CO 80228"]
+POSTAL = ["The Q Collective", "222 Wright St, Unit 102", "Lakewood, CO 80228"]
 
 # Every new subscriber gets the founder's direct line in their welcome email.
 FOUNDER_PHONE = "(303) 385-9063"

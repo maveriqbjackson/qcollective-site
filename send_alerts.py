@@ -96,7 +96,7 @@ def shell(title, intro, button_label, button_url, footer_extra=""):
 {intro}
 <table cellpadding="0" cellspacing="0"><tr><td style="background:#B8962E;border-radius:8px;"><a href="{button_url}" style="display:inline-block;padding:13px 30px;font-size:14px;font-weight:bold;color:#122848;text-decoration:none;">{button_label}</a></td></tr></table>
 </td></tr>
-<tr><td style="border-top:1px solid #e4e0d6;padding:18px 30px;"><p style="font-size:11px;line-height:1.6;color:#9aa0ae;margin:0;">Nonpartisan. Citizen-powered. One standard for everyone.<br>The Q Collective LLC / Doctrine Policy Group &middot; theqcollective.org{footer_extra}</p></td></tr>
+<tr><td style="border-top:1px solid #e4e0d6;padding:18px 30px;"><p style="font-size:11px;line-height:1.6;color:#9aa0ae;margin:0;">Nonpartisan. Citizen-powered. One standard for everyone.<br>The Q Collective / Doctrine Policy Group &middot; theqcollective.org{footer_extra}</p></td></tr>
 </table></td></tr></table>"""
 
 

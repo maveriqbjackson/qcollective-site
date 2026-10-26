@@ -62,7 +62,7 @@ PREVIEW_INDIVIDUAL_MAX = 10      # in preview, show up to this many full emails;
 PARTS = (("pillar", "Pillar alignment"), ("impact", "Citizen impact"),
          ("attendance", "Attendance"), ("sponsorship", "Sponsorship"))
 
-POSTAL = ["The Q Collective LLC", "222 Wright St, Unit 102", "Lakewood, CO 80228"]
+POSTAL = ["The Q Collective", "222 Wright St, Unit 102", "Lakewood, CO 80228"]
 TZ = ZoneInfo("America/Denver")
 
 DATA = "data"
