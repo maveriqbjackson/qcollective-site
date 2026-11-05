@@ -64,17 +64,8 @@
   #gate .err{color:#e8a0a0;font-size:12px;min-height:16px;margin-top:8px}
 </style></head><body>
 
-<div id="gate"><div class="box">
-  <div class="q">Q</div><h1>Command Center</h1><p>Enter your access code.</p>
-  <input id="code" type="password" autocomplete="off" autofocus onkeydown="if(event.key==='Enter')unlock()">
-  <button onclick="unlock()">Unlock</button><div class="err" id="err"></div>
-</div></div>
-<script>
-var PASS_HASH=639090475676760;
-var cyrb53=function(str,seed){seed=seed||0;var h1=0xdeadbeef^seed,h2=0x41c6ce57^seed;for(var i=0,c;i<str.length;i++){c=str.charCodeAt(i);h1=Math.imul(h1^c,2654435761);h2=Math.imul(h2^c,1597334677);}h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);return 4294967296*(2097151&h2)+(h1>>>0);};
-try{if(sessionStorage.getItem("hq_unlocked")==="1")document.getElementById("gate").style.display="none";}catch(e){}
-function unlock(){var v=document.getElementById("code").value;if(cyrb53(v)===PASS_HASH){try{sessionStorage.setItem("hq_unlocked","1");}catch(e){}document.getElementById("gate").style.display="none";}else{document.getElementById("err").textContent="Incorrect code.";document.getElementById("code").value="";}}
-</script>
+<script src="q-auth.js"></script>
+<script src="q-admin-gate.js"></script>
 
 <div class="top-stripe"></div>
 <div class="bar">
@@ -164,13 +155,13 @@ Promise.all([
 
 /* ---- private workspace (localStorage; never committed) ---- */
 var NK='hq_notes_v1', TK='hq_todos_v1';
-function saveNotes(){try{localStorage.setItem(NK,document.getElementById('notes').value);document.getElementById('nsaved').textContent='Saved '+new Date().toLocaleTimeString();}catch(e){}}
+function saveNotes(){clearTimeout(window._nt);window._nt=setTimeout(function(){if(window.qAdmin)qAdmin.save('notes',{text:document.getElementById('notes').value});},800);try{localStorage.setItem(NK,document.getElementById('notes').value);document.getElementById('nsaved').textContent='Saved '+new Date().toLocaleTimeString();}catch(e){}}
 function loadNotes(){try{var v=localStorage.getItem(NK);if(v!=null)document.getElementById('notes').value=v;else document.getElementById('notes').value=DEFAULT_NOTES;}catch(e){document.getElementById('notes').value=DEFAULT_NOTES;}}
 var DEFAULT_NOTES="Commit order after a Console pass:\n1) Export executive.json + judicial.json\n2) Commit both to /data/\n3) Actions -> Run workflow\n4) Check the Hub + Audit Log\n\n— your private notes save here automatically —";
 var TODOS=[];
 function loadTodos(){try{TODOS=JSON.parse(localStorage.getItem(TK)||'null')||DEFAULT_TODOS.slice();}catch(e){TODOS=DEFAULT_TODOS.slice();}drawTodos();}
 var DEFAULT_TODOS=[{t:"Decide donation platform (Stripe or Ko-fi) + merch (Bonfire or Spring)",d:false},{t:"Run the workflow to publish exec/judicial scores",d:false},{t:"Add Audit Log link to Hub + footer",d:false}];
-function saveTodos(){try{localStorage.setItem(TK,JSON.stringify(TODOS));}catch(e){}}
+function saveTodos(){if(window.qAdmin)qAdmin.save('todos',{items:TODOS});try{localStorage.setItem(TK,JSON.stringify(TODOS));}catch(e){}}
 function drawTodos(){var ul=document.getElementById('todo');ul.innerHTML=TODOS.map(function(x,i){return '<li><input type="checkbox" '+(x.d?'checked':'')+' onchange="toggleTodo('+i+')"><span class="txt '+(x.d?'done':'')+'">'+esc(x.t)+'</span><button class="x" onclick="delTodo('+i+')">&times;</button></li>';}).join('')||'<li style="color:var(--muted)">Nothing yet.</li>';}
 function addTodo(){var el=document.getElementById('newtodo');var v=el.value.trim();if(!v)return;TODOS.push({t:v,d:false});el.value='';saveTodos();drawTodos();}
 function toggleTodo(i){TODOS[i].d=!TODOS[i].d;saveTodos();drawTodos();}
@@ -179,5 +170,10 @@ function esc(s){return (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g
 function exportWS(){var blob=new Blob([JSON.stringify({notes:document.getElementById('notes').value,todos:TODOS,exported:new Date().toISOString()},null,1)],{type:'application/json'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='qhq-workspace.json';a.click();}
 function importWS(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(){try{var d=JSON.parse(r.result);if(d.notes!=null){document.getElementById('notes').value=d.notes;saveNotes();}if(Array.isArray(d.todos)){TODOS=d.todos;saveTodos();drawTodos();}}catch(err){alert('Could not read that file.');}};r.readAsText(f);e.target.value='';}
 loadNotes();loadTodos();
+/* Private notes and to-dos live in the admin-only database table, so they follow you to any device. */
+if(window.qAdmin)qAdmin.ready(function(){
+  qAdmin.load('notes').then(function(b){if(b&&typeof b.text==='string'){document.getElementById('notes').value=b.text;try{localStorage.setItem(NK,b.text);}catch(e){}}else{qAdmin.save('notes',{text:document.getElementById('notes').value});}});
+  qAdmin.load('todos').then(function(b){if(b&&Array.isArray(b.items)){TODOS=b.items;try{localStorage.setItem(TK,JSON.stringify(TODOS));}catch(e){}drawTodos();}else{qAdmin.save('todos',{items:TODOS});}});
+});
 </script>
 </body></html>
