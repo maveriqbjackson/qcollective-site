@@ -1396,6 +1396,102 @@
    }
   },
   {
+   "ts": "November 5, 2026 at 9:52 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "7785e5a",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/7785e5a",
+   "note": "We published the 2026 election results: a Colorado page and a clickable national map.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Election Results: Colorado",
+      "url": "election-2026.html",
+      "what": "New page. Statewide winners, every Colorado House and Senate district, ballot measures, and the dates when results become official."
+     },
+     {
+      "page": "2026 Election Map",
+      "url": "election-2026-map.html",
+      "what": "New page. A map of all 50 states showing governor and U.S. Senate results. Any result not yet confirmed is labeled \"Being confirmed,\" with the reason and when we expect to confirm it."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 5, 2026 at 9:59 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "0f22c8a",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/0f22c8a",
+   "note": "We added a banner pointing to the election results.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Every page",
+      "url": "election-2026-map.html",
+      "what": "A banner at the top of the site links to the election results. Visitors can close it, and it comes down on January 15, 2027."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 5, 2026 at 10:09 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "f9fcb84",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/f9fcb84",
+   "note": "We set up how the site handles the change of officeholders in January 2027.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Past Officials",
+      "url": "past-officials.html",
+      "what": "New page. When someone leaves office, their final record and Q Score stay public here. It lists who is leaving after the 2026 election."
+     },
+     {
+      "page": "Legislator profiles",
+      "url": "hub.html",
+      "what": "Profiles of members who are leaving now say so. New members are marked as new."
+     },
+     {
+      "page": "Scoring rule for new members",
+      "url": "how-q-scores-work.html",
+      "what": "Starting with the 2027 session, a lawmaker isn't scored until they've cast at least 5 votes, so nobody is judged on a blank record. No current score changed."
+     },
+     {
+      "page": "Governor and statewide offices",
+      "url": "state-profile.html",
+      "what": "These pages switch to the new officeholders on January 12, 2027, when they take office."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 5, 2026 at 10:26 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "ac66580",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/ac66580",
+   "note": "We added U.S. House results to the election map.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Election Map",
+      "url": "election-2026-map.html",
+      "what": "New U.S. House view: seats that changed parties, Colorado's full delegation, and clear notes on which races aren't fully counted yet."
+     }
+    ]
+   }
+  },
+  {
    "ts": "November 5, 2026 at 3:36 PM MST",
    "run_type": "site_change",
    "engine_version": "v7.0",
