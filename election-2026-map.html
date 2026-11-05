@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026 results, state by state | The Q Collective</title>
+<meta name="description" content="Tap any state for who won its governor's race and U.S. Senate seat in 2026, with every result sourced.">
+<link rel="canonical" href="https://theqcollective.org/election-2026-map.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Q Collective">
+<meta property="og:title" content="2026 results, state by state">
+<meta property="og:description" content="Tap any state for who won its governor's race and U.S. Senate seat in 2026, with every result sourced.">
+<meta property="og:url" content="https://theqcollective.org/election-2026-map.html">
+<meta property="og:image" content="https://theqcollective.org/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="2026 results, state by state">
+<meta name="twitter:description" content="Tap any state for who won its governor's race and U.S. Senate seat in 2026, with every result sourced.">
+<meta name="twitter:image" content="https://theqcollective.org/og-image.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"2026 results, state by state",
+"datePublished":"2026-11-05","author":{"@type":"Person","name":"maveriQ B Jackson","url":"https://theqcollective.org/founder.html"},
+"publisher":{"@type":"Organization","name":"The Q Collective","url":"https://theqcollective.org/"},
+"mainEntityOfPage":"https://theqcollective.org/election-2026-map.html"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="q-chrome.css">
+<link rel="stylesheet" href="q-humanize.css">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #1B3A6B; --navy-deep: #122848; --navy-mid: #243f72;
+    --gold: #B8962E; --gold-light: #D4AF50; --gold-pale: #F5EDD4;
+    --white: #FFFFFF; --off-white: #F9F6F0; --off-white2: #F2EFE8;
+    --text: #1a1a1a; --text-light: #4a4a4a; --text-muted: #5a5a5a; --border: #E0D5BE;
+  }
+  body {
+    background: var(--off-white);
+    font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .top-stripe { height: 5px; background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%); }
+  .topbar { position: sticky; top: 0; z-index: 50; background: rgba(18,40,72,0.97); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(184,150,46,0.25); }
+  .topbar-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; gap: 16px; }
+  .brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; }
+  .brand-q { font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 26px; color: var(--gold-light); line-height: 1; }
+  .brand-name { font-size: 14px; font-weight: 600; color: var(--white); }
+  .menu-btn { display: inline-flex; align-items: center; gap: 9px; background: transparent; border: 1px solid rgba(255,255,255,.30); color: #fff; font-size: 14.5px; font-weight: 600; padding: 9px 15px; border-radius: 5px; cursor: pointer; }
+  .menu-btn .bars { display: inline-flex; flex-direction: column; gap: 3px; }
+  .menu-btn .bars span { width: 17px; height: 2px; background: var(--gold-light); display: block; }
+  .nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,35,71,.985); z-index: 1000; display: flex; flex-direction: column; opacity: 0; visibility: hidden; transition: opacity .25s ease; }
+  .nav-overlay.open { opacity: 1; visibility: visible; }
+  .nav-overlay .nav-close { background: none; border: none; color: #fff; font-size: 42px; line-height: 1; cursor: pointer; }
+  .nav-overlay .ov-brand { font-family: 'Source Serif 4', Georgia, serif; color: #fff; font-size: 20px; }
+  .nav-overlay .ov-brand b { color: var(--gold-light); }
+  .ov-links a { display: block; color: #fff; text-decoration: none; }
+  .ov-featured { display: block; background: var(--gold); color: var(--navy-deep); font-weight: 700; text-decoration: none; border-radius: 7px; border: 1px solid var(--gold-light); }
+  .ov-foot { color: rgba(255,255,255,.5); }
+
+  .fhead { background: var(--navy-deep); padding: 64px 32px 58px; position: relative; overflow: hidden; }
+  .fhead-wm { position: absolute; font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 460px; line-height: 1; color: rgba(255,255,255,0.05); top: -110px; right: -40px; pointer-events: none; user-select: none; }
+  .fhead-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+  .fhead p.kicker { color: rgba(255,255,255,0.62); font-size: 15px; margin-bottom: 16px; }
+  .fhead p.kicker a { color: var(--gold-light); text-decoration: none; }
+  .fhead h1 { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 700; color: #fff; line-height: 1.1; letter-spacing: -0.015em; }
+  .fhead p.sub { color: rgba(255,255,255,0.76); font-size: 18.5px; line-height: 1.7; max-width: 58ch; margin-top: 18px; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 32px 30px; }
+  .post p, .post li { font-size: 18px; line-height: 1.8; color: var(--text-light); }
+  .post p { margin-bottom: 20px; }
+  .post p strong, .post li strong { color: var(--text); font-weight: 600; }
+  .post h2 { font-family: 'Source Serif 4', Georgia, serif; font-size: 27px; font-weight: 600; color: var(--navy-deep); margin: 44px 0 14px; line-height: 1.25; }
+  .post h3 { font-family: 'Source Serif 4', Georgia, serif; font-size: 21px; font-weight: 600; color: var(--navy-deep); margin: 28px 0 8px; }
+  .post ul, .post ol { margin: 0 0 22px 22px; }
+  .post li { margin-bottom: 9px; }
+  .post a { color: var(--navy); font-weight: 600; }
+  .lede { font-family: 'Source Serif 4', Georgia, serif; font-size: 22px !important; line-height: 1.55 !important; color: var(--text) !important; }
+  .box { background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--gold); border-radius: 6px; padding: 22px 26px; margin: 28px 0; }
+  .box p:last-child, .box ul:last-child, .box ol:last-child { margin-bottom: 0; }
+  .box h3 { margin-top: 0; }
+  .deadline { background: var(--navy-deep); color: #fff; border-radius: 8px; padding: 26px 28px; margin: 30px 0; }
+  .deadline .when { font-family: 'Source Serif 4', Georgia, serif; font-size: 24px; font-weight: 600; color: var(--gold-light); margin-bottom: 8px; }
+  .deadline strong { color: #fff !important; }
+  .deadline p { color: rgba(255,255,255,0.82) !important; margin-bottom: 10px; font-size: 17px !important; }
+  .deadline a.btn { display: inline-block; background: var(--gold); color: var(--navy-deep); font-weight: 700; font-size: 15.5px; padding: 13px 24px; border-radius: 5px; text-decoration: none; margin: 8px 10px 0 0; }
+  .deadline a.ghost { background: transparent; border: 1px solid rgba(255,255,255,.4); color: #fff; }
+  .sample { background: var(--off-white2); border-radius: 6px; padding: 20px 24px; font-family: 'Source Serif 4', Georgia, serif; font-size: 17.5px; line-height: 1.7; color: var(--text); white-space: pre-wrap; margin: 0 0 12px; }
+  .copybtn { font: inherit; font-size: 14.5px; font-weight: 600; background: var(--white); color: var(--navy-deep); border: 1px solid var(--border); border-radius: 5px; padding: 8px 14px; cursor: pointer; margin-bottom: 26px; }
+  .sign { margin: 44px 0 10px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .sign .mark { font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-weight: 600; font-size: 32px; color: var(--navy-deep); }
+  .sign .who { font-size: 15px; color: var(--text-muted); }
+  .src { font-size: 14.5px !important; color: var(--text-muted) !important; line-height: 1.65 !important; }
+  .notes-list { list-style: none; margin: 0 !important; padding: 0; }
+  .note-card { display: block; background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 26px 28px; text-decoration: none; color: inherit; margin-bottom: 16px; }
+  .note-card:hover { border-color: var(--gold); }
+  .note-card .meta { font-size: 14.5px; color: var(--text-muted); margin-bottom: 6px; }
+  .note-card h2 { margin: 0 0 8px !important; font-size: 25px !important; }
+  .note-card p { margin: 0 !important; font-size: 17px !important; }
+  .note-card .more { display: inline-block; margin-top: 12px; font-weight: 600; color: var(--navy); border-bottom: 1px solid var(--gold); }
+  @media (max-width: 760px) {
+    .fhead { padding: 44px 20px 40px; } .fhead-wm { display: none; } .fhead p.sub { font-size: 17px; }
+    .wrap { padding: 32px 18px 24px; }
+    .post p, .post li { font-size: 17px; } .lede { font-size: 20px !important; }
+    .box, .deadline { padding: 20px 18px; } .note-card { padding: 20px; }
+  }
+
+  .asof { background: var(--gold-pale); border-left: 4px solid var(--gold); padding: 14px 18px; border-radius: 4px; font-size: 15.5px !important; line-height: 1.6 !important; color: var(--text) !important; margin: 0 0 28px; }
+  .tally { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 8px 0 26px; }
+  .tcard { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 18px 18px 16px; }
+  .tcard .lab { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); }
+  .tcard .big { font-family: 'Source Serif 4', Georgia, serif; font-size: 30px; font-weight: 700; color: var(--navy-deep); line-height: 1.15; margin: 6px 0 4px; }
+  .tcard .big span { font-size: 15px; font-weight: 600; color: var(--text-muted); font-family: 'Public Sans', sans-serif; }
+  .tcard p { font-size: 14.5px !important; line-height: 1.55 !important; margin: 0 !important; }
+  .bar { display: flex; height: 8px; border-radius: 4px; overflow: hidden; background: var(--off-white2); margin: 8px 0 10px; }
+  .bar i { display: block; height: 100%; }
+  .bar .d { background: #3B5B92; } .bar .r { background: #A44A3F; } .bar .u { background: #CFC6B4; }
+  .rtable { width: 100%; border-collapse: collapse; margin: 6px 0 26px; font-size: 16px; background: var(--white); border: 1px solid var(--border); }
+  .rtable th { text-align: left; font-size: 13px; letter-spacing: .05em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; padding: 10px 12px; border-bottom: 2px solid var(--border); background: var(--off-white2); }
+  .rtable td { padding: 11px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text-light); line-height: 1.5; }
+  .rtable td strong { color: var(--text); }
+  .rtable .st { white-space: nowrap; font-size: 13.5px; font-weight: 700; }
+  .st.won { color: #2F6B3A; } .st.open { color: #8A6A12; } .st.lost { color: #8B3A32; }
+  .tally.two { grid-template-columns: repeat(2, 1fr); }
+  .find { width: 100%; font: inherit; font-size: 16px; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 6px; background: var(--white); margin: 6px 0 4px; }
+  .find:focus { outline: none; border-color: var(--gold); }
+  .rtable.leg td:first-child { width: 64px; font-weight: 600; color: var(--navy-deep); }
+  tr.hit td { background: var(--gold-pale); }
+  .none { font-size: 15.5px !important; color: var(--text-muted) !important; }
+  .tw { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  @media (max-width: 760px) { .tally, .tally.two { grid-template-columns: 1fr; } .rtable { font-size: 15px; } .rtable td, .rtable th { padding: 9px 9px; } }
+</style>
+<style>
+  .mapwrap { margin: 8px 0 18px; }
+  .toggle { display: inline-flex; border: 1.5px solid var(--navy-deep); border-radius: 999px; padding: 3px; margin: 4px 0 14px; background: var(--white); }
+  .toggle button { border: 0; background: none; font: inherit; font-weight: 600; font-size: 15px; padding: 8px 18px; border-radius: 999px; cursor: pointer; color: var(--navy-deep); }
+  .toggle button[aria-pressed="true"] { background: var(--navy-deep); color: #fff; }
+  .tiles { display: grid; grid-template-columns: repeat(11, 1fr); gap: 4px; max-width: 760px; }
+  .tile { aspect-ratio: 1; border: 0; border-radius: 4px; font: inherit; font-weight: 700; font-size: clamp(10px, 1.7vw, 14px); letter-spacing: .02em; cursor: pointer; display: flex; align-items: center; justify-content: center; position: relative; padding: 0; transition: transform .12s; }
+  .tile:hover, .tile:focus-visible { transform: scale(1.08); outline: none; z-index: 2; box-shadow: 0 0 0 2px var(--gold); }
+  .tile.sel { box-shadow: 0 0 0 3px var(--gold); z-index: 2; }
+  .tile.D { background: #3B5B92; color: #fff; } .tile.R { background: #A44A3F; color: #fff; }
+  .tile.open { background: repeating-linear-gradient(45deg, #D4AF50 0 5px, #E8CF85 5px 10px); color: #2a2208; }
+  .tile.none { background: #E4DED2; color: #6b6355; }
+  .tile.flip::after { content: ""; position: absolute; top: 4px; right: 4px; width: 7px; height: 7px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 1.5px rgba(0,0,0,.25); }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14.5px; color: var(--text-muted); margin: 14px 0 6px; }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .legend i { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+  .panel { background: var(--white); border: 1px solid var(--border); border-top: 4px solid var(--gold); border-radius: 6px; padding: 20px 22px; margin: 18px 0 8px; }
+  .panel h3 { margin: 0 0 12px !important; font-size: 26px !important; }
+  .panel .race { padding: 12px 0; border-top: 1px solid var(--border); }
+  .panel .race:first-of-type { border-top: 0; padding-top: 0; }
+  .panel .lab { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); }
+  .panel .who { font-size: 18px; color: var(--text); margin-top: 3px; }
+  .panel .meta { font-size: 15px; color: var(--text-muted); }
+  .chip { display: inline-block; font-size: 12.5px; font-weight: 700; padding: 2px 9px; border-radius: 999px; margin-left: 6px; vertical-align: 2px; }
+  .chip.flip { background: var(--gold-pale); color: #6e5410; } .chip.open { background: #F3E3B0; color: #5a4608; }
+  .panel .more { margin: 14px 0 0 !important; font-size: 15.5px !important; }
+  .rtable { width: 100%; border-collapse: collapse; margin: 6px 0 26px; font-size: 15.5px; background: var(--white); border: 1px solid var(--border); }
+  .rtable th { text-align: left; font-size: 13px; letter-spacing: .05em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; padding: 10px 12px; border-bottom: 2px solid var(--border); background: var(--off-white2); }
+  .rtable td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text-light); line-height: 1.5; }
+  .rtable td:first-child { font-weight: 600; color: var(--navy-deep); }
+  .tw { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .asof { background: var(--gold-pale); border-left: 4px solid var(--gold); padding: 14px 18px; border-radius: 4px; font-size: 15.5px !important; line-height: 1.6 !important; color: var(--text) !important; margin: 0 0 28px; }
+  @media (max-width: 760px) { .tiles { gap: 3px; } .tile { border-radius: 3px; } .tile.flip::after { width: 5px; height: 5px; top: 2px; right: 2px; } .panel { padding: 16px; } }
+</style>
+</head>
+<body>
+<div id="q-chrome-top"></div>
+<header class="fhead"><div class="fhead-wm">Q</div><div class="fhead-inner">
+<p class="kicker"><a href="notes.html">Notes</a> &middot; November 5, 2026 &middot; Tap a state</p>
+<h1>2026 results, state by state</h1>
+<p class="sub">Every governor's race and every U.S. Senate seat on this year's ballot, in one map. Tap a state to see who won.</p>
+</div></header>
+
+<main class="wrap"><article class="post">
+
+<p class="asof"><strong>Results as of Thursday, November 5.</strong> A few races are still being counted and nothing is official until each state certifies. We'll update this map as races are called.</p>
+
+<div class="toggle" role="group" aria-label="Color the map by"><button type="button" data-k="g" aria-pressed="true">Governors</button><button type="button" data-k="s" aria-pressed="false">U.S. Senate</button></div>
+
+<div class="mapwrap"><div class="tiles" id="tiles" role="list"></div>
+<div class="legend"><span><i style="background:#3B5B92"></i>Democrat won</span><span><i style="background:#A44A3F"></i>Republican won</span><span><i style="background:repeating-linear-gradient(45deg,#D4AF50 0 4px,#E8CF85 4px 8px)"></i>Still counting</span><span><i style="background:#E4DED2"></i>No race this year</span><span><i style="background:#fff;border-radius:50%;box-shadow:0 0 0 1.5px rgba(0,0,0,.3);width:9px;height:9px"></i>Changed parties</span></div>
+</div>
+
+<div class="panel" id="panel" aria-live="polite"><h3>Pick a state</h3><p class="meta" style="margin:0">Tap any square on the map, or find a state in the list below.</p></div>
+
+<h2>The big picture</h2>
+<p><strong>Senate:</strong> 35 seats were on the ballot. Democrats won 20 and Republicans 13, with Alaska and Mississippi still counting. Democrats flipped 7 seats: Iowa, Kansas, Maine, North Carolina, Ohio, South Carolina and Texas. Republicans flipped none. That gives Democrats a majority of at least 54 in the next Senate, counting the two independents who vote with them.</p>
+<p><strong>Governors:</strong> 36 states elected a governor. Democrats flipped 6: Alaska, Georgia, Iowa, Nevada, Ohio and Texas. Republicans flipped none. Kansas is still counting.</p>
+<p><strong>Colorado:</strong> we have every race, down to each state House district, on our <a href="election-2026.html">full Colorado results page</a>.</p>
+
+<h2>Every state</h2>
+<div class="tw"><table class="rtable" id="list"><tr><th>State</th><th>Governor</th><th>U.S. Senate</th></tr></table></div>
+
+<p>We don't endorse candidates or parties. We publish the record, on behalf of the people of the United States. We have no client and no money riding on the outcome.</p>
+
+<p class="src">Sources: Senate, <a href="https://theworlddata.com/us-senate-election-results-by-state/">TheWorldData</a> and <a href="https://ballotpedia.org/United_States_Senate_elections,_2026">Ballotpedia</a> (Nov. 4), flips confirmed by <a href="https://www.nbcchicago.com/news/local/election-2026-which-races-still-havent-been-called-and-what-states-flipped-seats-mississippi-alaska-election-results/4012174/">NBC Chicago</a>; Mississippi count, <a href="https://www.wdam.com/2026/11/05/colom-leads-senate-race-against-hyde-smith-day-3-ballot-counting/">WDAM</a> (Nov. 5). Governors, <a href="https://www.multistate.us/resources/governors-2026-state-election-results">MultiState</a>; Alaska, <a href="https://www.multistate.us/elections/governor-race/alaska-2026">AP projection via MultiState</a>. Kentucky, Montana, Oklahoma, West Virginia and Wyoming: Republican candidates, since every source agrees Republicans lost no seats except the 7 flips listed above. Spot an error? <a href="contact.html">Tell us</a> and we will correct it in public.</p>
+
+<div class="sign">
+<div class="mark">mav QBJ</div>
+<div class="who">maveriQ B Jackson, Founder, The Q Collective / Doctrine Policy Group</div>
+</div>
+</article></main>
+<script>
+(function(){
+var D={"AL": {"n": "Alabama", "x": 6, "y": 6, "g": {"w": "Tommy Tuberville", "p": "R", "f": 0, "s": "won"}, "s": {"w": "Barry Moore", "p": "R", "f": 0, "s": "won", "o": ""}}, "AK": {"n": "Alaska", "x": 0, "y": 0, "g": {"w": "Jonathan Kreiss-Tomkins", "p": "D", "f": 1, "s": "won"}, "s": {"w": "Dan Sullivan (R) leads Mary Peltola (D)", "p": "", "f": 0, "s": "open", "o": ""}}, "AZ": {"n": "Arizona", "x": 1, "y": 5, "g": {"w": "Katie Hobbs", "p": "D", "f": 0, "s": "won"}}, "AR": {"n": "Arkansas", "x": 4, "y": 5, "g": {"w": "Sarah Huckabee Sanders", "p": "R", "f": 0, "s": "won"}, "s": {"w": "Tom Cotton", "p": "R", "f": 0, "s": "won", "o": ""}}, "CA": {"n": "California", "x": 0, "y": 4, "g": {"w": "Xavier Becerra", "p": "D", "f": 0, "s": "won"}}, "CO": {"n": "Colorado", "x": 2, "y": 4, "g": {"w": "Phil Weiser", "p": "D", "f": 0, "s": "won"}, "s": {"w": "John Hickenlooper", "p": "D", "f": 0, "s": "won", "o": "Mark Baisley (R)"}}, "CT": {"n": "Connecticut", "x": 9, "y": 3, "g": {"w": "Ned Lamont", "p": "D", "f": 0, "s": "won"}}, "DE": {"n": "Delaware", "x": 9, "y": 4, "s": {"w": "Chris Coons", "p": "D", "f": 0, "s": "won", "o": ""}}, "FL": {"n": "Florida", "x": 8, "y": 7, "g": {"w": "Byron Donalds", "p": "R", "f": 0, "s": "won"}, "s": {"w": "Ashley Moody", "p": "R", "f": 0, "s": "won", "o": "Special election"}}, "GA": {"n": "Georgia", "x": 7, "y": 6, "g": {"w": "Keisha Lance Bottoms", "p": "D", "f": 1, "s": "won"}, "s": {"w": "Jon Ossoff", "p": "D", "f": 0, "s": "won", "o": ""}}, "HI": {"n": "Hawaii", "x": 0, "y": 7, "g": {"w": "Josh Green", "p": "D", "f": 0, "s": "won"}}, "ID": {"n": "Idaho", "x": 1, "y": 2, "g": {"w": "Brad Little", "p": "R", "f": 0, "s": "won"}, "s": {"w": "Jim Risch", "p": "R", "f": 0, "s": "won", "o": ""}}, "IL": {"n": "Illinois", "x": 5, "y": 2, "g": {"w": "JB Pritzker", "p": "D", "f": 0, "s": "won"}, "s": {"w": "Juliana Stratton", "p": "D", "f": 0, "s": "won", "o": ""}}, "IN": {"n": "Indiana", "x": 5, "y": 3}, "IA": {"n": "Iowa", "x": 4, "y": 3, "g": {"w": "Rob Sand", "p": "D", "f": 1, "s": "won"}, "s": {"w": "Josh Turek", "p": "D", "f": 1, "s": "won", "o": "Ashley Hinson (R)"}}, "KS": {"n": "Kansas", "x": 3, "y": 5, "g": {"w": "Cindy Holscher (D) and Ty Masterson (R) are nearly tied", "p": "", "f": 0, "s": "open"}, "s": {"w": "Adam Hamilton", "p": "D", "f": 1, "s": "won", "o": "Roger Marshall (R)"}}, "KY": {"n": "Kentucky", "x": 5, "y": 4, "s": {"w": "Andy Barr", "p": "R", "f": 0, "s": "won", "o": ""}}, "LA": {"n": "Louisiana", "x": 4, "y": 6, "s": {"w": "Julia Letlow", "p": "R", "f": 0, "s": "won", "o": ""}}, "ME": {"n": "Maine", "x": 10, "y": 0, "g": {"w": "Hannah Pingree", "p": "D", "f": 0, "s": "won"}, "s": {"w": "Troy Jackson", "p": "D", "f": 1, "s": "won", "o": "Susan Collins (R)"}}, "MD": {"n": "Maryland", "x": 8, "y": 4, "g": {"w": "Wes Moore", "p": "D", "f": 0, "s": "won"}}, "MA": {"n": "Massachusetts", "x": 10, "y": 2, "g": {"w": "Maura Healey", "p": "D", "f": 0, "s": "won"}, "s": {"w": "Ed Markey", "p": "D", "f": 0, "s": "won", "o": ""}}, "MI": {"n": "Michigan", "x": 7, "y": 2, "g": {"w": "Jocelyn Benson", "p": "D", "f": 0, "s": "won"}, "s": {"w": "Abdul El-Sayed", "p": "D", "f": 0, "s": "won", "o": ""}}, "MN": {"n": "Minnesota", "x": 4, "y": 2, "g": {"w": "Amy Klobuchar", "p": "D", "f": 0, "s": "won"}, "s": {"w": "Peggy Flanagan", "p": "D", "f": 0, "s": "won", "o": ""}}, "MS": {"n": "Mississippi", "x": 5, "y": 6, "s": {"w": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 1,100 votes", "p": "", "f": 0, "s": "open", "o": ""}}, "MO": {"n": "Missouri", "x": 4, "y": 4}, "MT": {"n": "Montana", "x": 2, "y": 2, "s": {"w": "Kurt Alme", "p": "R", "f": 0, "s": "won", "o": ""}}, "NE": {"n": "Nebraska", "x": 3, "y": 4, "g": {"w": "Jim Pillen", "p": "R", "f": 0, "s": "won"}, "s": {"w": "Pete Ricketts", "p": "R", "f": 0, "s": "won", "o": ""}}, "NV": {"n": "Nevada", "x": 1, "y": 3, "g": {"w": "Aaron Ford", "p": "D", "f": 1, "s": "won"}}, "NH": {"n": "New Hampshire", "x": 10, "y": 1, "g": {"w": "Kelly Ayotte", "p": "R", "f": 0, "s": "won"}, "s": {"w": "Chris Pappas", "p": "D", "f": 0, "s": "won", "o": ""}}, "NJ": {"n": "New Jersey", "x": 8, "y": 3, "s": {"w": "Cory Booker", "p": "D", "f": 0, "s": "won", "o": ""}}, "NM": {"n": "New Mexico", "x": 2, "y": 5, "g": {"w": "Deb Haaland", "p": "D", "f": 0, "s": "won"}, "s": {"w": "Ben Ray Luján", "p": "D", "f": 0, "s": "won", "o": ""}}, "NY": {"n": "New York", "x": 8, "y": 2, "g": {"w": "Kathy Hochul", "p": "D", "f": 0, "s": "won"}}, "NC": {"n": "North Carolina", "x": 6, "y": 5, "s": {"w": "Roy Cooper", "p": "D", "f": 1, "s": "won", "o": "Michael Whatley (R)"}}, "ND": {"n": "North Dakota", "x": 3, "y": 2}, "OH": {"n": "Ohio", "x": 6, "y": 3, "g": {"w": "Amy Acton", "p": "D", "f": 1, "s": "won"}, "s": {"w": "Sherrod Brown", "p": "D", "f": 1, "s": "won", "o": "Jon Husted (R). Special election"}}, "OK": {"n": "Oklahoma", "x": 3, "y": 6, "g": {"w": "Mike Mazzei", "p": "R", "f": 0, "s": "won"}, "s": {"w": "Kevin Hern", "p": "R", "f": 0, "s": "won", "o": ""}}, "OR": {"n": "Oregon", "x": 0, "y": 3, "g": {"w": "Tina Kotek", "p": "D", "f": 0, "s": "won"}, "s": {"w": "Jeff Merkley", "p": "D", "f": 0, "s": "won", "o": ""}}, "PA": {"n": "Pennsylvania", "x": 7, "y": 3, "g": {"w": "Josh Shapiro", "p": "D", "f": 0, "s": "won"}}, "RI": {"n": "Rhode Island", "x": 9, "y": 2, "g": {"w": "Helena Foulkes", "p": "D", "f": 0, "s": "won"}, "s": {"w": "Jack Reed", "p": "D", "f": 0, "s": "won", "o": ""}}, "SC": {"n": "South Carolina", "x": 7, "y": 5, "g": {"w": "Alan Wilson", "p": "R", "f": 0, "s": "won"}, "s": {"w": "Annie Andrews", "p": "D", "f": 1, "s": "won", "o": "the Republican incumbent"}}, "SD": {"n": "South Dakota", "x": 3, "y": 3, "g": {"w": "Larry Rhoden", "p": "R", "f": 0, "s": "won"}, "s": {"w": "Mike Rounds", "p": "R", "f": 0, "s": "won", "o": ""}}, "TN": {"n": "Tennessee", "x": 5, "y": 5, "g": {"w": "Marsha Blackburn", "p": "R", "f": 0, "s": "won"}, "s": {"w": "Bill Hagerty", "p": "R", "f": 0, "s": "won", "o": ""}}, "TX": {"n": "Texas", "x": 3, "y": 7, "g": {"w": "Gina Hinojosa", "p": "D", "f": 1, "s": "won"}, "s": {"w": "James Talarico", "p": "D", "f": 1, "s": "won", "o": "Ken Paxton (R)"}}, "UT": {"n": "Utah", "x": 1, "y": 4}, "VT": {"n": "Vermont", "x": 9, "y": 1, "g": {"w": "Phil Scott", "p": "R", "f": 0, "s": "won"}}, "VA": {"n": "Virginia", "x": 7, "y": 4, "s": {"w": "Mark Warner", "p": "D", "f": 0, "s": "won", "o": ""}}, "WA": {"n": "Washington", "x": 0, "y": 2}, "WV": {"n": "West Virginia", "x": 6, "y": 4, "s": {"w": "Shelley Moore Capito", "p": "R", "f": 0, "s": "won", "o": ""}}, "WI": {"n": "Wisconsin", "x": 6, "y": 2, "g": {"w": "David Crowley", "p": "D", "f": 0, "s": "won"}}, "WY": {"n": "Wyoming", "x": 2, "y": 3, "g": {"w": "Eric Barlow", "p": "R", "f": 0, "s": "won"}, "s": {"w": "Harriet Hageman", "p": "R", "f": 0, "s": "won", "o": ""}}};var mode='g',sel=null;
+var P={D:'Democrat',R:'Republican'};
+function cls(r){if(!r)return'none';if(r.s==='open')return'open';return r.p+(r.f?' flip':'');}
+function slug(n){return n.replace(/ /g,'_');}
+function raceHtml(lab,r,co){if(!r)return'<div class="race"><div class="lab">'+lab+'</div><div class="meta">No race this year.</div></div>';
+ var w=r.s==='open'?r.w:'<strong>'+r.w+'</strong> ('+r.p+')';
+ var chip=r.s==='open'?'<span class="chip open">Still counting</span>':(r.f?'<span class="chip flip">Flipped to '+P[r.p]+'</span>':'');
+ var meta=r.s==='open'?'':(r.o?'<div class="meta">'+(/^Special/.test(r.o)?'':'Defeated ')+r.o+'</div>':'');
+ return'<div class="race"><div class="lab">'+lab+'</div><div class="who">'+w+chip+'</div>'+meta+'</div>';}
+function panel(k){var s=D[k];sel=k;document.querySelectorAll('.tile').forEach(function(t){t.classList.toggle('sel',t.dataset.k===k);});
+ var more=k==='CO'?'<a href="election-2026.html">Every Colorado race, district by district</a>':'<a href="https://ballotpedia.org/'+slug(s.n)+'_elections,_2026" rel="noopener">All of '+s.n+'\'s 2026 results on Ballotpedia</a>';
+ document.getElementById('panel').innerHTML='<h3>'+s.n+'</h3>'+raceHtml('Governor',s.g)+raceHtml('U.S. Senate',s.s)+'<p class="more">'+more+'</p>';}
+function draw(){var box=document.getElementById('tiles');box.innerHTML='';
+ Object.keys(D).forEach(function(k){var s=D[k],r=s[mode],b=document.createElement('button');b.type='button';b.className='tile '+cls(r);b.textContent=k;b.dataset.k=k;
+ b.style.gridColumn=(s.x+1);b.style.gridRow=(s.y+1);b.setAttribute('role','listitem');
+ b.setAttribute('aria-label',s.n+': '+(r?(r.s==='open'?'still counting':P[r.p]+' won'+(r.f?', flipped':'')):'no race'));
+ b.onclick=function(){panel(k);if(window.innerWidth<760)document.getElementById('panel').scrollIntoView({behavior:'smooth',block:'start'});};box.appendChild(b);});
+ if(sel)panel(sel);}
+document.querySelectorAll('.toggle button').forEach(function(b){b.onclick=function(){mode=b.dataset.k;document.querySelectorAll('.toggle button').forEach(function(x){x.setAttribute('aria-pressed',x===b);});draw();};});
+var t=document.getElementById('list');Object.keys(D).sort(function(a,b){return D[a].n<D[b].n?-1:1;}).forEach(function(k){var s=D[k];
+ function c(r){if(!r)return'<span style="color:#8a8170">No race</span>';if(r.s==='open')return r.w+' <span class="chip open">Counting</span>';return r.w+' ('+r.p+')'+(r.f?' <span class="chip flip">Flip</span>':'');}
+ var tr=document.createElement('tr');tr.innerHTML='<td><a href="#" data-k="'+k+'">'+s.n+'</a></td><td>'+c(s.g)+'</td><td>'+c(s.s)+'</td>';t.appendChild(tr);});
+t.addEventListener('click',function(e){var a=e.target.closest('a[data-k]');if(!a)return;e.preventDefault();panel(a.dataset.k);document.getElementById('panel').scrollIntoView({behavior:'smooth',block:'start'});});
+draw();var h=(location.hash||'').slice(1).toUpperCase();if(D[h])panel(h);
+})();
+</script>
+<div style="max-width:760px;margin:0 auto;padding:0 18px 44px"><div data-q-sunday-band data-src="note-election-map-2026"></div></div>
+<div id="q-chrome-footer"></div>
+<script src="q-sunday-band.js"></script>
+<script src="q-config.js"></script>
+<script src="site-chrome.js"></script>
+<script src="q-chat.js"></script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6aff6948b0f84ed0b1530a42458bbb3b"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
