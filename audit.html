@@ -78,7 +78,8 @@
   .run-head{display:flex;align-items:center;gap:12px;padding:15px 20px;background:#fbf8f1;border-bottom:1px solid var(--border);flex-wrap:wrap}
   .run-ts{font-family:'DM Mono',monospace;font-size:13.5px;color:var(--navy-deep);font-weight:500}
   .rtype{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:12px;background:#eef1f6;color:var(--navy)}
-  .rtype.scheduled{background:#e7eefb}.rtype.manual{background:#fdf3d4;color:#7a5c12}.rtype.genesis{background:#e4f1e8;color:var(--good)}.rtype.correction{background:#fbe9e7;color:#a33f2b}
+  .rtype.scheduled{background:#e7eefb}.rtype.manual{background:#fdf3d4;color:#7a5c12}.rtype.genesis{background:#e4f1e8;color:var(--good)}.rtype.correction{background:#fbe9e7;color:#a33f2b}.rtype.site_change{background:#efe9fb;color:#4b3a8a}
+  .sc-list{margin:8px 0 0;padding-left:20px;font-size:14.5px;color:var(--text-light)}.sc-list li{margin:4px 0}.sc-list a{color:var(--navy);border-bottom:1px solid var(--gold);text-decoration:none}
   .run-meta{margin-left:auto;font-family:'DM Mono',monospace;font-size:11px;color:var(--text-muted);display:flex;gap:12px;flex-wrap:wrap}
   .run-meta a{color:var(--gold);text-decoration:none}
   .run-body{padding:16px 20px}
@@ -110,7 +111,7 @@
 <div class="hero"><div class="hero-wm">Q</div><div class="hero-inner">
   <div class="eyebrow">Public Record</div>
   <h1>The Audit Log</h1>
-  <p>Every change to every score, on the record. A score is never a black box, and neither is how it moves.</p>
+  <p>Every change to every score, and to how we explain our scoring, on the record. A score is never a black box, and neither is how it moves.</p>
 </div></div>
 
 <div class="wrap">
@@ -129,6 +130,7 @@
   <div class="explain">
     <h2>How to trust this page</h2>
     <p>Every change to every score is recorded the instant it happens, whether a person or an automated run made it: a timestamp, the exact before-and-after value, and a permanent fingerprint. Because each entry is cryptographically chained to the one before it, an old record can't be quietly altered without breaking every record that follows. Nothing changes here without a permanent, tamper-evident trail.</p>
+    <p>We log changes to the website here too. Any time we change a page that explains how scores work, our rules, or what we stand for, it shows up below as a <strong>site change</strong>, with what changed, why, and whether any score moved.</p>
     <p>This page reads that log directly and lays out every run in plain language. No code and no digging required. Each run below carries the same permanent fingerprint recorded in the system underneath, shown right on the entry so you can see it&rsquo;s stamped.</p>
   </div>
 
@@ -158,7 +160,7 @@ function scoreChip(old,nu){
 function runHasChange(r){
   var st=r.states||{}; for(var k in st){var c=st[k].changes||{};
     if((c.legislators||[]).length||(c.executive||[]).length||(c.judicial||[]).length||(c.added||[]).length||(c.removed||[]).length) return true;}
-  return r.run_type==='genesis'||r.run_type==='correction';
+  return r.run_type==='genesis'||r.run_type==='correction'||r.run_type==='site_change';
 }
 function renderChanges(c){
   var h='';
@@ -191,6 +193,10 @@ function renderRun(r){
   else if(r.error){ errBlock='<div class="run-err">&#9888; '+esc(r.error)+'</div>'; }
   var body='';
   if(r.run_type==='genesis'){ body='<p class="note">'+esc(r.note||'Audit log activated.')+'</p>'; }
+  else if(r.run_type==='site_change'){ var sc=r.site_change||{};
+    body='<p class="note">'+esc(r.note||'')+'</p>'+
+      ((sc.items||[]).length?'<ul class="sc-list">'+sc.items.map(function(it){return '<li>'+(it.url?'<a href="'+esc(it.url)+'">'+esc(it.page)+'</a>':esc(it.page))+': '+esc(it.what)+'</li>';}).join('')+'</ul>':'')+
+      '<div class="pills"><span class="pill '+(sc.scores_affected?'upd':'unch')+'">scores affected: '+(sc.scores_affected?'yes':'no')+'</span></div>'; }
   else if(r.run_type==='correction'){ var cc=r.correction||{};
     body='<p class="note">'+esc(r.note||'')+'</p>'+
       '<div class="pills">'+(cc.subject?'<span class="pill">subject: '+esc(cc.subject)+'</span>':'')+

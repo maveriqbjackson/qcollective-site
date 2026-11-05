@@ -1394,6 +1394,40 @@
      "summary": "legislator scores unchanged."
     }
    }
+  },
+  {
+   "ts": "November 5, 2026 at 3:36 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "0fa31b4",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/0fa31b4",
+   "note": "We tightened how we explain the Q Score so it matches exactly how the engine works, and added a plain answer to the most common question we get: does the score lean toward a party?",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "How the Q Score works, in plain English",
+      "url": "q-score-explained.html#party",
+      "what": "New section, \"Does the Q Score lean toward a party?\" It explains that the engine never reads party, the four questions every law is graded on, that we don't decide whether a bill is good or bad, and why Democrats score higher right now."
+     },
+     {
+      "page": "How the Q Score works, in plain English",
+      "url": "q-score-explained.html",
+      "what": "Fixed wording. It said pillar alignment came from \"bills and votes.\" Votes only count toward attendance, and a yes and a no count the same. It now says pillar alignment comes from the bills a lawmaker leads and passes."
+     },
+     {
+      "page": "How Q Scores Work",
+      "url": "how-q-scores-work.html",
+      "what": "Same \"bills and votes\" fix in the rubric, plus a link to the new party section."
+     },
+     {
+      "page": "Our Constitution",
+      "url": "constitution.html",
+      "what": "\"We exist to move good policy\" now reads \"We exist to move policy that makes everyday life more stable, measured by the seven pillars.\" \"Good\" was too loose a word for a nonpartisan standard."
+     }
+    ]
+   }
   }
  ]
 }
