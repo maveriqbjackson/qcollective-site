@@ -804,7 +804,7 @@
         "new": 89
        },
        {
-        "name": "Monica M\u00e1rquez (Chief Justice)",
+        "name": "Monica Márquez (Chief Justice)",
         "old": null,
         "new": 89
        },
@@ -1527,6 +1527,42 @@
       "what": "\"Good\" was too loose a word for a nonpartisan standard, so we replaced it with what we actually measure.",
       "before": "We exist to move good policy, and to keep power honest.",
       "after": "We exist to move policy that makes everyday life more stable, measured by the seven pillars, and to keep power honest."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 5, 2026 at 4:20 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "de64bcd",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/de64bcd",
+   "note": "We updated the 2026 election results with the latest calls and counts.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "The AP called Colorado's 5th Congressional District for Jessica Killin (D).",
+      "before": "Jessica Killin (D) leads Jeff Crank (R), 51.6% to 45.3%, with 72% counted",
+      "after": "Jessica Killin (D) over Jeff Crank (R), 50.6% to 46.0%, flipped from Republican"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "New count in the 4th District, new yes shares for the 8 ballot measures still counting, and a note that the 4th is near the automatic recount line."
+     },
+     {
+      "page": "2026 Election Map",
+      "url": "election-2026-map.html",
+      "what": "Added Colorado's 5th as a seat that changed parties, named Ami Bera as the winner in California's 3rd, confirmed Zach Dembo in Kentucky's 6th, and updated the Alaska Senate and Kansas governor leads and the national House count."
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "New entry for the 5th District call."
      }
     ]
    }
