@@ -249,13 +249,13 @@ def run_weekly():
     version = co.get("scoring_version") or ""
 
     if not state or not state.get("baseline"):
-        save(STATE_FILE, {"scoring_version": version, "baseline": {str(l["id"]): snapshot_of(l) for l in L}})
+        save(STATE_FILE, {"scoring_version": version, "baseline": {str(l["id"]): snapshot_of(l) for l in L if l.get("score") is not None}})
         log("first run: recorded a starting point for every lawmaker. Nobody emailed.")
         return 0
 
     base = state["baseline"]
     if state.get("scoring_version") and version and state["scoring_version"] != version:
-        save(STATE_FILE, {"scoring_version": version, "baseline": {str(l["id"]): snapshot_of(l) for l in L}})
+        save(STATE_FILE, {"scoring_version": version, "baseline": {str(l["id"]): snapshot_of(l) for l in L if l.get("score") is not None}})
         team_summary([], note=(f"The scoring rubric changed ({state['scoring_version']} to {version}). Scores that "
                                f"moved because of the rubric are not something lawmakers did, so nobody was emailed. "
                                f"The new scores are the new starting point."))
@@ -265,6 +265,18 @@ def run_weekly():
     rows, shown = [], 0
     for l in L:
         lid = str(l.get("id"))
+        # Session handover (see transition.py): new members with no score yet are skipped, and a
+        # returning member showing last session's carried score is never emailed. The first real
+        # score of a new session becomes the new starting point quietly, because a change caused
+        # by the session turning over is not something the lawmaker did.
+        if l.get("score") is None:
+            continue
+        if l.get("carried"):
+            base[lid] = dict(snapshot_of(l), carried=True)
+            continue
+        if base.get(lid, {}).get("carried"):
+            base[lid] = snapshot_of(l)
+            continue
         if lid not in base:
             base[lid] = snapshot_of(l)          # new member: start tracking, no email
             continue

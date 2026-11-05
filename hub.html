@@ -744,7 +744,9 @@ function removeRep(id){if(window.qSync)qSync.delRep(id);try{var a=JSON.parse(loc
 function buildPartyFilter(){var sel=document.getElementById('hubParty');if(!sel||!CUR)return;var cur=sel.value;var opts='<option value="">All parties ('+((CUR.legislators||[]).length)+')</option>';partiesPresent().forEach(function(n){opts+='<option value="'+n+'">'+n+' ('+partyCount(n)+')</option>';});sel.innerHTML=opts;if(cur)sel.value=cur;}
 function renderAll(){buildPartyFilter();renderList();renderMyReps();renderMyBills();renderBillsView();var _hl=document.getElementById('hubLeaders');if(_hl)_hl.style.display=(MODE==='bills'||!_hl.innerHTML)?'none':'block';document.getElementById('legSection').style.display=(MODE==='bills')?'none':'block';document.getElementById('billSection').style.display=(MODE==='leg')?'none':'block';document.getElementById('legHdr').style.display=(MODE==='all')?'block':'none';document.getElementById('hubParty').style.display=(MODE==='bills')?'none':'inline-block';var s=document.getElementById('hubSearch');s.placeholder=(MODE==='bills')?'Search bills by number or title\u2026':(MODE==='all'?'Search names or bills\u2026':'Search by name or district\u2026');}
 function loadBillsThenRender(code){fetch('data/'+code+'_bills.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(bd){BILLSOBJ=bd||{bills:{}};buildTags();renderTagBar();setMode('leg');}).catch(function(){BILLSOBJ={bills:{}};buildTags();renderTagBar();setMode('leg');});}
-function row(l){var href='legislator.html?state='+encodeURIComponent(CUR.state)+'&id='+encodeURIComponent(l.id);return '<a class="hrow" href="'+href+'"><div class="hmain"><div class="hname">'+l.name+'</div><div class="hmeta">'+(l.chamber||l.role)+(l.district?' &middot; District '+l.district:'')+(l.party?' &middot; '+pf(l.party):'')+'</div></div><div class="hsc">'+pill(l.score)+(l.score>=80?'<div class="hlabel"><span class="q-champ"><span class="star">&#9733;</span>Champion</span></div>':(l.label?'<div class="hlabel">'+l.label+'</div>':''))+'</div><div class="hbreak"><span>Pillar '+l.pillar+'</span><span>Attend '+l.attendance+'</span><span>Impact '+l.impact+'</span><span>Spons '+l.sponsorship+'</span><span class="hview">View profile &amp; bills &rarr;</span></div></a>';}
+function row(l){var href='legislator.html?state='+encodeURIComponent(CUR.state)+'&id='+encodeURIComponent(l.id);var lv=window.qHandover&&qHandover.leaving(l.id);var tag=lv?' &middot; <span style="color:#8a6a12;font-weight:600">Leaving office in January</span>':(l.carried?' &middot; <span style="color:#5a5a5a">'+(l.carried_from||'Last session')+' score, new votes count after 5</span>':'');
+if(l.score===null||l.score===undefined){return '<a class="hrow" href="'+href+'"><div class="hmain"><div class="hname">'+l.name+'</div><div class="hmeta">'+(l.chamber||l.role)+(l.district?' &middot; District '+l.district:'')+(l.party?' &middot; '+pf(l.party):'')+'</div></div><div class="hsc"><div class="hlabel">New member</div></div><div class="hbreak"><span>Scoring starts after 5 recorded votes</span><span class="hview">View profile &rarr;</span></div></a>';}
+return '<a class="hrow" href="'+href+'"><div class="hmain"><div class="hname">'+l.name+'</div><div class="hmeta">'+(l.chamber||l.role)+(l.district?' &middot; District '+l.district:'')+(l.party?' &middot; '+pf(l.party):'')+tag+'</div></div><div class="hsc">'+pill(l.score)+(l.score>=80?'<div class="hlabel"><span class="q-champ"><span class="star">&#9733;</span>Champion</span></div>':(l.label?'<div class="hlabel">'+l.label+'</div>':''))+'</div><div class="hbreak"><span>Pillar '+l.pillar+'</span><span>Attend '+l.attendance+'</span><span>Impact '+l.impact+'</span><span>Spons '+l.sponsorship+'</span><span class="hview">View profile &amp; bills &rarr;</span></div></a>';}
 function renderList(){if(!CUR)return;var q=(document.getElementById('hubSearch').value||'').toLowerCase();var party=document.getElementById('hubParty').value;var list=CUR.legislators.filter(function(l){if(party&&pf(l.party)!==party)return false;if(TAG&&(l._tags||[]).indexOf(TAG)<0)return false;if(q&&(l.name+' '+l.district).toLowerCase().indexOf(q)<0)return false;return true;});document.getElementById('hubList').innerHTML=list.length?list.map(row).join(''):'<p>No legislators match those filters.</p>';}
 function renderBills(){var b=(CUR.recent_bills||[]);document.getElementById('hubBills').innerHTML=b.length?b.map(function(x){return '<div class="brow"><div class="bnum">'+(x.number||'')+'</div><div class="btitle">'+'<a href="bill.html?state='+(CUR.state||'CO')+'&number='+encodeURIComponent(x.number||'')+'">'+(x.title||'')+'</a>'+'<div class="bstatus">'+(x.status||'')+(x.date?' &middot; '+x.date:'')+'</div></div></div>';}).join(''):'<p>No recent bills to show yet.</p>';}
 
@@ -763,13 +765,16 @@ function renderStateOffices(){
   var host=document.getElementById('stateOffices');if(!host)return;host.innerHTML='';
   var html='';
   var ex=(CUR&&CUR.executive)||[];
+  if(window.qHandover){ex=ex.map(function(o){return qHandover.office(o);});}
   if(ex.length){
     html+='<div class="so-h">Executive</div><div class="so-grid">';
     ex.forEach(function(o){
-      var sub=esc(o.holder||o.note||'');
+      var sub=esc(o.holder||o.note||'')+(o._incoming?' &middot; <span style="white-space:nowrap">'+esc(o._incoming.incoming)+' takes office '+esc(qHandover.fmt(o._incoming.takes_office).replace(/, \d{4}$/,''))+'</span>':'');
       var href='state-profile.html?branch=executive&office='+encodeURIComponent(o.office);
-      if(o.status==='scored'&&!soPending(o.components)){
-        html+=soCardNum(o.office, esc(o.holder||''), o.score, 'Executive', o.label, o.components, SO_EXECL, href);
+      if(o.status==='new_in_office'){
+        html+=soCardPending(o.office, esc(o.holder), 'new in office', href);
+      }else if(o.status==='scored'&&!soPending(o.components)){
+        html+=soCardNum(o.office, sub, o.score, 'Executive', o.label, o.components, SO_EXECL, href);
       }else{
         var lab=(o.status==='slot')?'unscored':(o.status==='scored'?'awaiting review':'in development');
         html+=soCardPending(o.office, sub, lab, href);
@@ -811,4 +816,6 @@ function loadState(){var code=document.getElementById('hubState').value;document
 <script src="q-sunday-band.js"></script>
 <script src="q-auth.js"></script>
 <script src="hub-lenses.js"></script>
+<script src="q-handover.js"></script>
+<script>if(window.qHandover)qHandover.ready(function(){try{renderStateOffices();if(typeof renderAll==='function')renderAll();}catch(e){}});</script>
 </body></html>

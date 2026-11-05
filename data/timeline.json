@@ -1,204 +1,298 @@
 {
-  "_how_to_edit": "Add a new entry by copying any block below, pasting it inside the entries list, and changing the words. Order does not matter: the site sorts by date and moves an item from 'Coming up' to 'Done' on its own once the date passes. kind can be: filing, bill, site, watch, session. precision can be day or month. points, why and links are optional. Set featured to true to give an entry the gold highlight.",
-  "entries": [
+ "_how_to_edit": "Add a new entry by copying any block below, pasting it inside the entries list, and changing the words. Order does not matter: the site sorts by date and moves an item from 'Coming up' to 'Done' on its own once the date passes. kind can be: filing, bill, site, watch, session. precision can be day or month. points, why and links are optional. Set featured to true to give an entry the gold highlight.",
+ "entries": [
+  {
+   "id": "cesa-163",
+   "date": "2026-10-23",
+   "precision": "day",
+   "kind": "bill",
+   "featured": true,
+   "title": "CESA version 16.3: the Colorado Everyday Stability Act",
+   "summary": "Our flagship bill gets a new name and its biggest cleanup yet. Every new tax in it now goes to voters as its own ballot question, a 21% alcohol tax funds mental health and addiction care first, and Care Without Fear launches as a public option with full single-payer as the goal once voters approve it.",
+   "points": [
+    "New name, same letters: the Colorado Everyday Stability Act (CESA).",
+    "A new Section 1.9 and connection clauses make the case that CESA is one bill about one subject: the life stability of Colorado residents.",
+    "Every new tax goes to voters, one question at a time, even if TABOR ever goes away.",
+    "New 21% health-impact alcohol tax, with the money going first to mental health and addiction care.",
+    "Public option first. Full single-payer happens when voters approve it, with a target of Year 3."
+   ],
+   "links": [
     {
-      "id": "cesa-163",
-      "date": "2026-10-23",
-      "precision": "day",
-      "kind": "bill",
-      "featured": true,
-      "title": "CESA version 16.3: the Colorado Everyday Stability Act",
-      "summary": "Our flagship bill gets a new name and its biggest cleanup yet. Every new tax in it now goes to voters as its own ballot question, a 21% alcohol tax funds mental health and addiction care first, and Care Without Fear launches as a public option with full single-payer as the goal once voters approve it.",
-      "points": [
-        "New name, same letters: the Colorado Everyday Stability Act (CESA).",
-        "A new Section 1.9 and connection clauses make the case that CESA is one bill about one subject: the life stability of Colorado residents.",
-        "Every new tax goes to voters, one question at a time, even if TABOR ever goes away.",
-        "New 21% health-impact alcohol tax, with the money going first to mental health and addiction care.",
-        "Public option first. Full single-payer happens when voters approve it, with a target of Year 3."
-      ],
-      "links": [
-        {
-          "label": "Read CESA 16.3 (PDF)",
-          "href": "cesa.pdf"
-        },
-        {
-          "label": "CESA in plain English",
-          "href": "cesa-explained.html"
-        },
-        {
-          "label": "Which taxes would you vote for?",
-          "href": "cesa-taxes.html"
-        },
-        {
-          "label": "Version 16.2 (archive)",
-          "href": "cesa-v16.2.pdf"
-        }
-      ]
+     "label": "Read CESA 16.3 (PDF)",
+     "href": "cesa.pdf"
     },
     {
-      "id": "notes-seven",
-      "date": "2026-10-23",
-      "precision": "day",
-      "kind": "site",
-      "title": "Seven new Notes: our bills, the Q Score and where we're headed",
-      "summary": "Plain-English explainers on how the Q Score works, CESA, FWMRA, US-RAPA and the long game, who we are, our 2027 plan, and taking Q beyond Colorado.",
-      "links": [
-        {
-          "label": "Read the Notes",
-          "href": "notes.html"
-        }
-      ]
+     "label": "CESA in plain English",
+     "href": "cesa-explained.html"
     },
     {
-      "id": "session-2027",
-      "date": "2027-01-13",
-      "precision": "day",
-      "kind": "session",
-      "title": "Colorado's 2027 legislative session opens",
-      "summary": "The General Assembly convenes at the Capitol. FWMRA is drafted and ready for a sponsor, and the Q Scores start tracking a new session's bills and votes.",
-      "links": [
-        {
-          "label": "Read FWMRA",
-          "href": "fwmra-v6.pdf"
-        },
-        {
-          "label": "Open the Hub",
-          "href": "hub.html"
-        }
-      ]
+     "label": "Which taxes would you vote for?",
+     "href": "cesa-taxes.html"
     },
     {
-      "id": "admt-effective",
-      "date": "2027-01-01",
-      "precision": "day",
-      "kind": "watch",
-      "title": "Colorado's AI decision and chatbot laws take effect",
-      "summary": "SB 26-189 and HB 26-1263 become enforceable. From this day, a Coloradan turned down for housing, a job, a loan or care with help from an automated system is owed a notice, the reasons, and a route to human review."
-    },
-    {
-      "id": "admt-hearing",
-      "date": "2026-10-26",
-      "precision": "day",
-      "kind": "watch",
-      "title": "Public hearing on the AI rules, and the last day for comments",
-      "summary": "The Attorney General's office holds its formal rulemaking hearing at 10:00 a.m. in Denver, with a Zoom option. Written comments are accepted until 11:59 p.m. Mountain Time. If you want your own voice in the record, there is still time.",
-      "links": [
-        {
-          "label": "How to weigh in, in plain English",
-          "href": "colorado-ai-law.html"
-        },
-        {
-          "label": "Comment at coag.gov/ai",
-          "href": "https://coag.gov/ai/automated-decision-making-technology-act-and-chatbot-safety-act-form/"
-        }
-      ]
-    },
-    {
-      "id": "ai-law-note",
-      "date": "2026-10-22",
-      "precision": "day",
-      "kind": "site",
-      "title": "New note: Colorado's new AI law, in plain English",
-      "summary": "What the two new laws do, the three fights over the rules, and how to get your own comment in before the October 26 deadline.",
-      "links": [
-        {
-          "label": "Read the note",
-          "href": "colorado-ai-law.html"
-        }
-      ]
-    },
-    {
-      "id": "admt-comment",
-      "date": "2026-10-02",
-      "precision": "day",
-      "kind": "filing",
-      "featured": true,
-      "title": "We filed public comments on Colorado's AI decision rules",
-      "summary": "Colorado's new law says you have a right to know when an automated system helped deny you an apartment, a job, a loan or care. The draft rules decide how much that right is actually worth. Most of the comments on file came from the companies being regulated. We filed for the people on the other end of the decision, with no client and no money in the outcome.",
-      "points": [
-        "Count any real AI influence on a decision, not only cases where the AI was the biggest factor.",
-        "Name the actual company that supplied the data, so a person can get a wrong record fixed.",
-        "Keep human review independent of the original decision-maker, and keep it fully human.",
-        "Keep notices going out two ways, and keep the 10-business-day turnaround on follow-up questions.",
-        "No grace period past January 1, 2027, and no swapping in the narrower federal credit notices."
-      ],
-      "why": "Federal regulators found that 1 in 5 consumers had an error on at least one credit report, and 4 out of 5 who disputed an error got their report changed. People win when they know who to write to. A notice that only says \"a consumer reporting agency\" leaves them nobody to write to.",
-      "links": [
-        {
-          "label": "Read our full comment (PDF, 9 pages)",
-          "href": "admt-comment-2026-10-02.pdf"
-        },
-        {
-          "label": "The plain-English version",
-          "href": "colorado-ai-law.html"
-        },
-        {
-          "label": "The rulemaking at coag.gov/ai",
-          "href": "https://coag.gov/ai/automated-decision-making-technology-act-and-chatbot-safety-act-form/"
-        }
-      ]
-    },
-    {
-      "id": "fwmra-v62",
-      "date": "2026-10-01",
-      "precision": "day",
-      "kind": "bill",
-      "title": "FWMRA version 6.2 published",
-      "summary": "The Fair Work and Mutual Responsibility Act gets a formal bill title and a tighter single-subject statement. It is now in the shape a sponsor can carry into the 2027 session.",
-      "links": [
-        {
-          "label": "Read the bill (PDF)",
-          "href": "fwmra-v6.pdf"
-        }
-      ]
-    },
-    {
-      "id": "sunday-auto",
-      "date": "2026-09-28",
-      "precision": "day",
-      "kind": "site",
-      "title": "The Sunday Update goes automatic",
-      "summary": "Every Sunday evening, subscribers get what moved that week: which bills advanced and whose record changed.",
-      "links": [
-        {
-          "label": "Get the Sunday Update",
-          "href": "sunday.html"
-        }
-      ]
-    },
-    {
-      "id": "admt-draft-rules",
-      "date": "2026-08-11",
-      "precision": "day",
-      "kind": "watch",
-      "title": "The Attorney General publishes the draft AI rules",
-      "summary": "The Colorado Department of Law releases proposed rules for both new laws (4 CCR 904-6) and opens the public comment window."
-    },
-    {
-      "id": "hub-engine",
-      "date": "2026-06-25",
-      "precision": "month",
-      "kind": "site",
-      "title": "The Accountability Hub starts scoring on its own engine",
-      "summary": "Every Colorado lawmaker, scored against the seven pillars, recalculated every Sunday. Every change to a score is kept in a public audit log.",
-      "links": [
-        {
-          "label": "Open the Hub",
-          "href": "hub.html"
-        },
-        {
-          "label": "Audit log",
-          "href": "audit.html"
-        }
-      ]
-    },
-    {
-      "id": "admt-signed",
-      "date": "2026-05-14",
-      "precision": "day",
-      "kind": "watch",
-      "title": "Colorado's AI decision and chatbot laws are signed",
-      "summary": "The Automated Decision-Making Technology in Consequential Decisions Act (SB 26-189) and the Conversational Artificial Intelligence Services Act (HB 26-1263) become law, set to start January 1, 2027."
+     "label": "Version 16.2 (archive)",
+     "href": "cesa-v16.2.pdf"
     }
-  ]
+   ]
+  },
+  {
+   "id": "notes-seven",
+   "date": "2026-10-23",
+   "precision": "day",
+   "kind": "site",
+   "title": "Seven new Notes: our bills, the Q Score and where we're headed",
+   "summary": "Plain-English explainers on how the Q Score works, CESA, FWMRA, US-RAPA and the long game, who we are, our 2027 plan, and taking Q beyond Colorado.",
+   "links": [
+    {
+     "label": "Read the Notes",
+     "href": "notes.html"
+    }
+   ]
+  },
+  {
+   "id": "session-2027",
+   "date": "2027-01-13",
+   "precision": "day",
+   "kind": "session",
+   "title": "Colorado's 2027 legislative session opens",
+   "summary": "The General Assembly convenes at the Capitol. FWMRA is drafted and ready for a sponsor, and the Q Scores start tracking a new session's bills and votes. New lawmakers are sworn in, and anyone who left moves to Past Officials.",
+   "links": [
+    {
+     "label": "Read FWMRA",
+     "href": "fwmra-v6.pdf"
+    },
+    {
+     "label": "Open the Hub",
+     "href": "hub.html"
+    }
+   ]
+  },
+  {
+   "id": "admt-effective",
+   "date": "2027-01-01",
+   "precision": "day",
+   "kind": "watch",
+   "title": "Colorado's AI decision and chatbot laws take effect",
+   "summary": "SB 26-189 and HB 26-1263 become enforceable. From this day, a Coloradan turned down for housing, a job, a loan or care with help from an automated system is owed a notice, the reasons, and a route to human review."
+  },
+  {
+   "id": "admt-hearing",
+   "date": "2026-10-26",
+   "precision": "day",
+   "kind": "watch",
+   "title": "Public hearing on the AI rules, and the last day for comments",
+   "summary": "The Attorney General's office holds its formal rulemaking hearing at 10:00 a.m. in Denver, with a Zoom option. Written comments are accepted until 11:59 p.m. Mountain Time. If you want your own voice in the record, there is still time.",
+   "links": [
+    {
+     "label": "How to weigh in, in plain English",
+     "href": "colorado-ai-law.html"
+    },
+    {
+     "label": "Comment at coag.gov/ai",
+     "href": "https://coag.gov/ai/automated-decision-making-technology-act-and-chatbot-safety-act-form/"
+    }
+   ]
+  },
+  {
+   "id": "ai-law-note",
+   "date": "2026-10-22",
+   "precision": "day",
+   "kind": "site",
+   "title": "New note: Colorado's new AI law, in plain English",
+   "summary": "What the two new laws do, the three fights over the rules, and how to get your own comment in before the October 26 deadline.",
+   "links": [
+    {
+     "label": "Read the note",
+     "href": "colorado-ai-law.html"
+    }
+   ]
+  },
+  {
+   "id": "admt-comment",
+   "date": "2026-10-02",
+   "precision": "day",
+   "kind": "filing",
+   "featured": true,
+   "title": "We filed public comments on Colorado's AI decision rules",
+   "summary": "Colorado's new law says you have a right to know when an automated system helped deny you an apartment, a job, a loan or care. The draft rules decide how much that right is actually worth. Most of the comments on file came from the companies being regulated. We filed for the people on the other end of the decision, with no client and no money in the outcome.",
+   "points": [
+    "Count any real AI influence on a decision, not only cases where the AI was the biggest factor.",
+    "Name the actual company that supplied the data, so a person can get a wrong record fixed.",
+    "Keep human review independent of the original decision-maker, and keep it fully human.",
+    "Keep notices going out two ways, and keep the 10-business-day turnaround on follow-up questions.",
+    "No grace period past January 1, 2027, and no swapping in the narrower federal credit notices."
+   ],
+   "why": "Federal regulators found that 1 in 5 consumers had an error on at least one credit report, and 4 out of 5 who disputed an error got their report changed. People win when they know who to write to. A notice that only says \"a consumer reporting agency\" leaves them nobody to write to.",
+   "links": [
+    {
+     "label": "Read our full comment (PDF, 9 pages)",
+     "href": "admt-comment-2026-10-02.pdf"
+    },
+    {
+     "label": "The plain-English version",
+     "href": "colorado-ai-law.html"
+    },
+    {
+     "label": "The rulemaking at coag.gov/ai",
+     "href": "https://coag.gov/ai/automated-decision-making-technology-act-and-chatbot-safety-act-form/"
+    }
+   ]
+  },
+  {
+   "id": "fwmra-v62",
+   "date": "2026-10-01",
+   "precision": "day",
+   "kind": "bill",
+   "title": "FWMRA version 6.2 published",
+   "summary": "The Fair Work and Mutual Responsibility Act gets a formal bill title and a tighter single-subject statement. It is now in the shape a sponsor can carry into the 2027 session.",
+   "links": [
+    {
+     "label": "Read the bill (PDF)",
+     "href": "fwmra-v6.pdf"
+    }
+   ]
+  },
+  {
+   "id": "sunday-auto",
+   "date": "2026-09-28",
+   "precision": "day",
+   "kind": "site",
+   "title": "The Sunday Update goes automatic",
+   "summary": "Every Sunday evening, subscribers get what moved that week: which bills advanced and whose record changed.",
+   "links": [
+    {
+     "label": "Get the Sunday Update",
+     "href": "sunday.html"
+    }
+   ]
+  },
+  {
+   "id": "admt-draft-rules",
+   "date": "2026-08-11",
+   "precision": "day",
+   "kind": "watch",
+   "title": "The Attorney General publishes the draft AI rules",
+   "summary": "The Colorado Department of Law releases proposed rules for both new laws (4 CCR 904-6) and opens the public comment window."
+  },
+  {
+   "id": "hub-engine",
+   "date": "2026-06-25",
+   "precision": "month",
+   "kind": "site",
+   "title": "The Accountability Hub starts scoring on its own engine",
+   "summary": "Every Colorado lawmaker, scored against the seven pillars, recalculated every Sunday. Every change to a score is kept in a public audit log.",
+   "links": [
+    {
+     "label": "Open the Hub",
+     "href": "hub.html"
+    },
+    {
+     "label": "Audit log",
+     "href": "audit.html"
+    }
+   ]
+  },
+  {
+   "id": "admt-signed",
+   "date": "2026-05-14",
+   "precision": "day",
+   "kind": "watch",
+   "title": "Colorado's AI decision and chatbot laws are signed",
+   "summary": "The Automated Decision-Making Technology in Consequential Decisions Act (SB 26-189) and the Conversational Artificial Intelligence Services Act (HB 26-1263) become law, set to start January 1, 2027."
+  },
+  {
+   "id": "election-day-2026",
+   "date": "2026-11-03",
+   "precision": "day",
+   "kind": "watch",
+   "title": "Colorado and the country vote",
+   "summary": "Colorado elects a new governor, attorney general, secretary of state and treasurer, all 65 state House seats, 21 state Senate seats, eight U.S. House seats and 14 statewide ballot measures."
+  },
+  {
+   "id": "election-results-2026",
+   "date": "2026-11-05",
+   "precision": "day",
+   "kind": "site",
+   "featured": true,
+   "title": "2026 election results: every Colorado race, plus a national map",
+   "summary": "Every Colorado race from governor down to each state House district, all 14 ballot measures, and a map of every governor and U.S. Senate race in the country. Updated as races are called until every result is certified.",
+   "links": [
+    {
+     "label": "Colorado results",
+     "href": "election-2026.html"
+    },
+    {
+     "label": "National map",
+     "href": "election-2026-map.html"
+    }
+   ]
+  },
+  {
+   "id": "past-officials",
+   "date": "2026-11-05",
+   "precision": "day",
+   "kind": "site",
+   "title": "Past Officials: a permanent public record",
+   "summary": "When someone leaves office, their record doesn't disappear. Everyone we've scored keeps a page with their final Q Score, for good. It lists who is leaving after the 2026 election now, and fills in as they go.",
+   "links": [
+    {
+     "label": "See past officials",
+     "href": "past-officials.html"
+    }
+   ]
+  },
+  {
+   "id": "handover-ready",
+   "date": "2026-11-05",
+   "precision": "day",
+   "kind": "site",
+   "title": "The Q Score is ready for the new legislature",
+   "summary": "Before anyone new gets a score, they need at least 5 recorded votes, so nobody is graded on a blank record. Returning lawmakers keep their 2025–26 score, clearly marked, until the new session's votes count. The finished session is saved for good.",
+   "links": [
+    {
+     "label": "How Q Scores work",
+     "href": "how-q-scores-work.html"
+    }
+   ]
+  },
+  {
+   "id": "county-certify-2026",
+   "date": "2026-11-25",
+   "precision": "day",
+   "kind": "watch",
+   "title": "Colorado counties certify their results",
+   "summary": "Every county canvass board has until today to certify its count. It's also the last day to request a recount."
+  },
+  {
+   "id": "state-certify-2026",
+   "date": "2026-11-30",
+   "precision": "day",
+   "kind": "watch",
+   "title": "Colorado certifies the 2026 results",
+   "summary": "The Secretary of State certifies statewide and congressional results. Any close race goes to a mandatory recount if the margin is half a percent or less of the winner's votes, and those finish by December 4."
+  },
+  {
+   "id": "congress-2027",
+   "date": "2027-01-03",
+   "precision": "day",
+   "kind": "session",
+   "title": "The new Congress is sworn in",
+   "summary": "Colorado's new U.S. House delegation takes office. As Q goes national, Congress is next on the list to score."
+  },
+  {
+   "id": "statewide-2027",
+   "date": "2027-01-12",
+   "precision": "day",
+   "kind": "session",
+   "featured": true,
+   "title": "Colorado's new statewide officials take office",
+   "summary": "Phil Weiser becomes governor, with Lesley Dahlkemper as lieutenant governor. Jena Griswold becomes attorney general, Amanda Gonzalez secretary of state and Jeff Bridges treasurer. Their pages switch over on the site that day, and the outgoing officials' records move to Past Officials.",
+   "links": [
+    {
+     "label": "Past officials",
+     "href": "past-officials.html"
+    }
+   ]
+  }
+ ]
 }

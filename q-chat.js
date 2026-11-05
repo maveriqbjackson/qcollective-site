@@ -104,7 +104,7 @@
       var pa=n.split(' '),pb=q.split(' ');if(n.indexOf(q)>=0||q.indexOf(n)>=0||pa[pa.length-1]===pb[pb.length-1])hits.push(list[i]);}
     if(!hit&&hits.length===1)hit=hits[0];
     if(hit){var url='legislator.html?state=CO&id='+encodeURIComponent(hit.id);var lab=hit.label?(' \u2014 '+esc(hit.label)):'';
-      bubHTML('Here you are, <b>'+esc(hit.name)+'</b> ('+esc(hit.role||'')+', District '+esc(String(hit.district||''))+'):<br><br>Your Q Score is <b>'+esc(String(hit.score))+'</b>'+lab+'.<br><br>See your full profile \u2014 every factor and the data behind it: <a href="'+url+'">Your profile &amp; record</a>. If anything needs context, you can submit an official response via <a href="contact.html">Contact</a>.');}
+      bubHTML('Here you are, <b>'+esc(hit.name)+'</b> ('+esc(hit.role||'')+', District '+esc(String(hit.district||''))+'):<br><br>'+(hit.score==null?'You don’t have a Q Score yet. It starts once you’ve cast 5 recorded votes this session':'Your Q Score is <b>'+esc(String(hit.score))+'</b>')+''+lab+'.<br><br>See your full profile \u2014 every factor and the data behind it: <a href="'+url+'">Your profile &amp; record</a>. If anything needs context, you can submit an official response via <a href="contact.html">Contact</a>.');}
     else if(hits.length>1){var links=hits.slice(0,6).map(function(h){return '<a href="legislator.html?state=CO&id='+encodeURIComponent(h.id)+'">'+esc(h.name)+'</a>';}).join(' &middot; ');
       bubHTML('I found a few possible matches \u2014 which one is you? '+links);}
     else{bubHTML('I couldn\u2019t find that exact name in the Colorado roster. Double-check the spelling, or browse everyone at <a href="find-officials.html">Find Your Officials</a> or the <a href="hub.html">Accountability Hub</a>.');}}

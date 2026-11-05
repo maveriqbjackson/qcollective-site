@@ -2,6 +2,11 @@
 # ============================================================
 # The Q Score Engine  -  The Q Collective / Doctrine Policy Group
 # version history (newest first):
+#   v7.0+transition SESSION HANDOVER (rubric and weights UNCHANGED; SCORE_VERSION not bumped).
+#        See transition.py: holds on the old session until the new one lists 90% of seats,
+#        archives the finished session for good, adds departing members to the public Past
+#        Officials list, and applies the five-vote rule (no new score before 5 recorded votes;
+#        returning members show last session's final score, marked, until then).
 #   v7.0+audit PUBLIC AUDIT LOG: writes data/audit.json on every run - a plain-language,
 #        version-controlled record of each run (scheduled/manual), whether LegiScan had new
 #        data, and EXACTLY which scores moved (old -> new, with component deltas), plus
@@ -62,6 +67,7 @@
 # ============================================================
 import os, sys, json, base64, io, zipfile, time, re, hashlib
 import urllib.request, urllib.parse, urllib.error
+import transition   # session handover: hold, archive, past officials, five-vote rule
 
 LEGISCAN_KEY  = os.environ.get("LEGISCAN_KEY", "")
 ANTHROPIC_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
@@ -387,8 +393,14 @@ def do_state(abbr, ds):
     log("  parsed people=%d bills=%d roll_calls=%d" % (len(people), len(bills), len(votes)))
     if not people:
         log("  no legislators - skipping"); return None
+    # Session handover (transition.py): hold, archive, past officials, five-vote rule.
+    tctx = transition.begin(OUTDIR, abbr, ds, [str(p) for p in people if str(p) not in EXCLUDE_PEOPLE], log)
+    if tctx is None:   # new session not filled in yet: leave this week's file exactly as it is
+        try: held = len(json.load(open(state_file)).get("legislators", []))
+        except Exception: held = 0
+        return {"code": abbr, "name": name, "count": held}
     agg = aggregate(people, bills, votes)
-    cache = load_cache(os.path.join(OUTDIR, abbr + ".json"))
+    cache = {} if tctx["switching"] else load_cache(os.path.join(OUTDIR, abbr + ".json"))
     items = list(agg.items())
     if LIMIT: items = items[:LIMIT]
     reused = scored = no_primary = 0
@@ -407,6 +419,15 @@ def do_state(abbr, ds):
                 _seen_bill.add(s["bill_id"]); primary.append(s)
         co_count = len({s["bill_id"] for s in a["sponsored"] if not s["primary"]} - _seen_bill)
         if not primary: no_primary += 1
+        early = transition.early_record(tctx, {
+            "id": str(pid), "name": nm, "role": role, "chamber": chamber_label(role, abbr), "body": body,
+            "home": (us_home_state(p) if abbr == "US" else abbr), "party": p.get("party",""),
+            "district": clean_district(p), "photo": p.get("photo",""),
+            "bills": [{"number": s["number"], "title": s["title"], "status": s["status"],
+                       "url": s["url"], "primary": s["primary"]} for s in a["sponsored"][:60]]},
+            pid, a["votes_total"])
+        if early is not None:   # fewer than 5 votes this session: no new score yet
+            out.append(early); continue
         h = record_hash(a["sponsored"], a["votes_total"])
         prior = cache.get(str(pid))
         if prior and prior.get("_h") == h and prior.get("pillar") is not None:
@@ -431,7 +452,7 @@ def do_state(abbr, ds):
                     "label": "Accountability Champion" if total >= 80 else "",
                     "pillar": pillar, "attendance": att, "attendance_raw": att_raw,
                     "impact": impact, "sponsorship": spons, "ai_spons": ai_spons, "enacted": enacted_primary, "why": why, "bills": bills_list, "_h": h})
-    out.sort(key=lambda x: x["score"], reverse=True)
+    out.sort(key=transition.sort_key)
     seat_seen = {}
     for x in out:
         if not x["district"]: continue
@@ -440,8 +461,8 @@ def do_state(abbr, ds):
             log("  WARNING duplicate seat: %s District %s lists both '%s' and '%s' - a seat may have changed hands; add the former member's id to EXCLUDE_PEOPLE." % (x["chamber"], x["district"], seat_seen[seat], x["name"]))
         else:
             seat_seen[seat] = x["name"]
-    champs = sum(1 for x in out if x["score"] >= 80)
-    top = out[0]["score"] if out else 0
+    champs = sum(1 for x in out if (x.get("score") or 0) >= 80 and not x.get("carried"))
+    top = (out[0].get("score") or 0) if out else 0
     recent = sorted(bills.values(), key=lambda b: b.get("status_date",""), reverse=True)[:30]
     recent = [{"number": b.get("bill_number"), "title": b.get("title"), "status": status_text(b),
                "date": b.get("status_date"), "url": b.get("url") or b.get("state_link")} for b in recent]
@@ -459,7 +480,7 @@ def do_state(abbr, ds):
     snap_path = os.path.join(OUTDIR, abbr + "_snapshots.json")
     try: snaps = json.load(open(snap_path)).get("snapshots", {})
     except Exception: snaps = {}
-    today_map = {x["id"]: x["score"] for x in out}
+    today_map = {x["id"]: x["score"] for x in out if x.get("score") is not None and not x.get("carried")}
     last_key = max(snaps.keys()) if snaps else None
     if (not last_key) or snaps.get(last_key) != today_map:
         from datetime import datetime, timezone

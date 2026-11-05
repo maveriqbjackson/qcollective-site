@@ -1,0 +1,56 @@
+{
+ "note": "Who is leaving office after the 2026 election, and when the handover happens. Built from called races only. Races still being counted are listed under 'pending' and are not marked as leaving until they are called.",
+ "updated": "2026-11-05",
+ "dates": {
+  "legislature_last_day": "2027-01-12",
+  "legislature_sworn_in": "2027-01-13",
+  "statewide_take_office": "2027-01-12",
+  "congress_sworn_in": "2027-01-03"
+ },
+ "legislators_leaving": [
+  {"id": "21549", "name": "Steven Woodrow", "chamber": "State House", "district": "2", "successor": "Scott Baldermann"},
+  {"id": "20739", "name": "Meg Froelich", "chamber": "State House", "district": "3", "successor": "Gena Ozols"},
+  {"id": "20143", "name": "Alex Valdez", "chamber": "State House", "district": "5", "successor": "Justine Sandoval"},
+  {"id": "26054", "name": "Sean Camacho", "chamber": "State House", "district": "6", "successor": "Iris Halpern"},
+  {"id": "20024", "name": "Emily Sirota", "chamber": "State House", "district": "9", "successor": "Monica VanBuskirk", "next": "Elected to State Senate District 32"},
+  {"id": "20025", "name": "Julie McCluskie", "chamber": "State House", "district": "13", "successor": "Consuelo Redhorse"},
+  {"id": "23996", "name": "Scott Bottoms", "chamber": "State House", "district": "15", "successor": "Still being counted"},
+  {"id": "26061", "name": "Rebecca Keltie", "chamber": "State House", "district": "16", "successor": "Stephanie Vigil"},
+  {"id": "22233", "name": "Dan Woog", "chamber": "State House", "district": "19", "successor": "Jillaire McMillan"},
+  {"id": "22222", "name": "Mary Bradfield", "chamber": "State House", "district": "21", "successor": "Still being counted"},
+  {"id": "20148", "name": "Monica Duran", "chamber": "State House", "district": "23", "successor": "Alexis Hoffkling", "next": "Elected to State Senate District 22"},
+  {"id": "20142", "name": "Brianna Titone", "chamber": "State House", "district": "27", "successor": "Danielle Varda"},
+  {"id": "23967", "name": "Sheila Lieder", "chamber": "State House", "district": "28", "successor": "David Rein", "next": "Elected to State Senate District 20"},
+  {"id": "26063", "name": "Jacque Phillips", "chamber": "State House", "district": "31", "successor": "Gabriel Cervantes"},
+  {"id": "24966", "name": "Manny Rutinel", "chamber": "State House", "district": "32", "successor": "Chris VanDijk", "next": "Elected to the U.S. House, Colorado's 8th District"},
+  {"id": "23046", "name": "Mandy Lindsay", "chamber": "State House", "district": "42", "successor": "Sarah Woodson"},
+  {"id": "23963", "name": "Ron Weinberg", "chamber": "State House", "district": "51", "successor": "Still being counted"},
+  {"id": "20139", "name": "Matt Soper", "chamber": "State House", "district": "54", "successor": "Jason Bias"},
+  {"id": "22226", "name": "Stephanie Luck", "chamber": "State House", "district": "60", "successor": "Matthew Alexander"},
+  {"id": "23104", "name": "Nick Hinrichsen", "chamber": "State Senate", "district": "3", "successor": "Aaron Gutierrez"},
+  {"id": "20126", "name": "Mark Baisley", "chamber": "State Senate", "district": "4", "successor": "Teddy Collins"},
+  {"id": "26492", "name": "Lynda Zamora Wilson", "chamber": "State Senate", "district": "9", "successor": "Terri Carver"},
+  {"id": "20131", "name": "Lisa Cutter", "chamber": "State Senate", "district": "20", "successor": "Sheila Lieder"},
+  {"id": "16583", "name": "Jessie Danielson", "chamber": "State Senate", "district": "22", "successor": "Monica Duran"},
+  {"id": "20031", "name": "Robert Rodriguez", "chamber": "State Senate", "district": "32", "successor": "Emily Sirota"},
+  {"id": "20029", "name": "Julie Gonzales", "chamber": "State Senate", "district": "34", "successor": "Chela Garcia Irlando"}
+ ],
+ "pending": [
+  {"id": "26597", "name": "Ava Flanell", "chamber": "State House", "district": "14", "standing": "Leading"},
+  {"id": "23957", "name": "Ken DeGraaf", "chamber": "State House", "district": "22", "standing": "Leading"},
+  {"id": "23950", "name": "Brandi Bradley", "chamber": "State House", "district": "39", "standing": "Leading"},
+  {"id": "23948", "name": "Anthony Hartsook", "chamber": "State House", "district": "44", "standing": "Leading"},
+  {"id": "26051", "name": "Carlos Barron", "chamber": "State House", "district": "48", "standing": "Leading"},
+  {"id": "26059", "name": "Ryan Gonzalez", "chamber": "State House", "district": "50", "standing": "Trailing"},
+  {"id": "26600", "name": "Scott Slaugh", "chamber": "State House", "district": "64", "standing": "Leading"},
+  {"id": "15133", "name": "Tony Exum", "chamber": "State Senate", "district": "11", "standing": "Leading"},
+  {"id": "26327", "name": "John Carson", "chamber": "State Senate", "district": "30", "standing": "Trailing"}
+ ],
+ "statewide": [
+  {"office": "Governor", "outgoing": "Jared Polis", "incoming": "Phil Weiser", "party": "D", "takes_office": "2027-01-12"},
+  {"office": "Lt. Governor", "outgoing": "Dianne Primavera", "incoming": "Lesley Dahlkemper", "party": "D", "takes_office": "2027-01-12"},
+  {"office": "Attorney General", "outgoing": "Phil Weiser", "incoming": "Jena Griswold", "party": "D", "takes_office": "2027-01-12"},
+  {"office": "Secretary of State", "outgoing": "Jena Griswold", "incoming": "Amanda Gonzalez", "party": "D", "takes_office": "2027-01-12"},
+  {"office": "Treasurer", "outgoing": "Dave Young", "incoming": "Jeff Bridges", "party": "D", "takes_office": "2027-01-12"}
+ ]
+}

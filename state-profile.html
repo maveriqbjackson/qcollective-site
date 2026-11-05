@@ -131,6 +131,7 @@
   <a href="how-q-scores-work.html">How Q Scores work</a> &middot; <a href="hub.html">Accountability Hub</a>
 </div>
 
+<script src="q-handover.js"></script>
 <script>
 var EXEC_W=[["pillar_alignment","Pillar Alignment of Actions","40%","Do the office's orders, budgets, and signatures serve the seven pillars?"],
   ["citizen_impact","Citizen Impact","30%","Who is helped or harmed by what this office does?"],
@@ -152,17 +153,23 @@ function pending(c){if(!c)return true;var t=0;for(var k in c)t+=(+c[k]||0);retur
 function setHead(eyebrow,name,sub){document.getElementById('eyebrow').textContent=eyebrow;document.getElementById('pname').textContent=name;document.getElementById('psub').innerHTML=sub;document.title=name+' \u2014 The Q Collective';}
 function miss(msg){document.getElementById('wrap').innerHTML='<div class="miss"><h2 class="section-title">'+esc(msg)+'</h2><p><a href="hub.html">&larr; Back to the Accountability Hub</a></p></div>';}
 
+function handoverNote(o){
+  var f=window.qHandover?qHandover.fmt:function(x){return x;};
+  if(o._incoming){var h=o._incoming;return '<div class="card" style="border-left:4px solid var(--gold)"><p class="section-label">Changing hands</p><p class="why" style="margin:6px 0 0"><strong>'+esc(h.incoming)+'</strong> won this office in November 2026 and takes over on <strong>'+esc(f(h.takes_office))+'</strong>. On that day this page switches to the new officeholder, and '+esc(o.holder)+'’s final record moves to <a href="past-officials.html">Past Officials</a>, where it stays public for good.</p></div>';}
+  if(o.status==='new_in_office'){return '<div class="card" style="border-left:4px solid var(--gold)"><p class="section-label">New in office</p><p class="why" style="margin:6px 0 0">'+esc(o.holder)+' took office on '+esc(f(o._since))+'. Scoring starts once there’s a record of official actions to review.'+(o._former&&o._former.holder?' The previous officeholder, '+esc(o._former.holder)+', is on <a href="past-officials.html">Past Officials</a>'+(o._former.score!=null?' with a final Q Score of '+esc(o._former.score):'')+'.':'')+'</p></div>';}
+  return '';
+}
 function renderExec(o){
-  setHead('Executive Branch', o.office, esc(o.holder||'')+' &middot; Colorado');
+  setHead('Executive Branch', o.office, esc(o.holder||'')+(o._incoming?' &middot; '+esc(o._incoming.incoming)+' takes office '+esc(window.qHandover?qHandover.fmt(o._incoming.takes_office):o._incoming.takes_office):'')+' &middot; Colorado');
   var scored=o.status==='scored'&&!pending(o.components);
   var champ=scored&&o.score>=80;
   var scoreHTML = scored
     ? '<div class="scorebig"><span class="n">'+o.score+'</span><span class="tag">/ 100 &middot; Executive</span></div>'+(champ?'<span class="badge">&#9733; '+esc(o.label||'Delivers for the People')+'</span>':'')+meter(o.score,champ)
-    : '<div class="pending">'+(o.status==='slot'?'Unscored &mdash; shown for completeness':'In development &mdash; awaiting review')+'</div>'+(o.note?'<p class="why" style="margin-top:10px">'+esc(o.note)+'</p>':'');
+    : '<div class="pending">'+(o.status==='new_in_office'?'New in office &mdash; not scored yet':o.status==='slot'?'Unscored &mdash; shown for completeness':'In development &mdash; awaiting review')+'</div>'+(o.note?'<p class="why" style="margin-top:10px">'+esc(o.note)+'</p>':'');
   var ev=(o.entries||[]).map(function(e){
     return '<div class="ev"><div class="t">'+esc(e.title)+'</div><div class="m">'+(e.pillar&&e.pillar!=='none'?'<span class="chip">'+esc(e.pillar)+'</span>':'')+dirChip(e.direction)+(e.date?'<span class="chip na">'+esc(e.date)+'</span>':'')+'</div>'+(e.note?'<div class="note">'+esc(e.note)+'</div>':'')+(e.source?'<div style="margin-top:5px"><a class="src" href="'+esc(e.source)+'" target="_blank" rel="noopener">View the source &rarr;</a></div>':'')+'</div>';
   }).join('') || '<p class="why empty">No actions logged yet.</p>';
-  document.getElementById('wrap').innerHTML=
+  document.getElementById('wrap').innerHTML=handoverNote(o)+
     '<div class="grid"><div>'+
       '<div class="card"><p class="section-label">Accountability</p><h2 class="section-title">Q Score</h2><div class="divider"></div>'+scoreHTML+
         (scored?'<div style="margin-top:22px">'+comps(o.components,EXEC_W)+'</div>':'')+
@@ -211,7 +218,7 @@ function renderJud(j,court){
       var o=key?offices[key]:null;
       if(!o){miss('That office isn\u2019t on the board yet.');return;}
       o.office=key;if(o.label==null)o.label=o.badge;
-      renderExec(o);
+      if(window.qHandover){qHandover.ready(function(){renderExec(qHandover.office(o));});}else{renderExec(o);}
     }).catch(fail);
   } else if(branch==='judicial'){
     fetch('data/judicial.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(d){

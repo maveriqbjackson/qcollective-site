@@ -222,6 +222,10 @@ def snapshot():
 
     people = {}
     for l in co.get("legislators", []):
+        # New members with no score yet, and returning members still showing last session's
+        # score, stay out of the weekly numbers until they have a real score this session.
+        if l.get("score") is None or l.get("carried"):
+            continue
         people[str(l.get("id"))] = {
             "name": l.get("name", ""),
             "senate": "Senate" in (l.get("chamber") or ""),
