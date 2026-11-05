@@ -1510,17 +1510,23 @@
      {
       "page": "How the Q Score works, in plain English",
       "url": "q-score-explained.html",
-      "what": "Fixed wording. It said pillar alignment came from \"bills and votes.\" Votes only count toward attendance, and a yes and a no count the same. It now says pillar alignment comes from the bills a lawmaker leads and passes."
+      "what": "Fixed wording that didn't match how the engine works. Votes only count toward attendance, and a yes and a no count the same.",
+      "before": "Pillar alignment, 40%. Do their bills and votes push the pillars forward or backward?",
+      "after": "Pillar alignment, 40%. Do the bills they lead and pass push the pillars forward?"
      },
      {
       "page": "How Q Scores Work",
       "url": "how-q-scores-work.html",
-      "what": "Same \"bills and votes\" fix in the rubric, plus a link to the new party section."
+      "what": "Same wording fix in the scoring rubric, plus a new link to the party section.",
+      "before": "Pillar Alignment: do their bills and votes advance the seven pillars?",
+      "after": "Pillar Alignment: do the bills they lead and pass advance the seven pillars?"
      },
      {
       "page": "Our Constitution",
       "url": "constitution.html",
-      "what": "\"We exist to move good policy\" now reads \"We exist to move policy that makes everyday life more stable, measured by the seven pillars.\" \"Good\" was too loose a word for a nonpartisan standard."
+      "what": "\"Good\" was too loose a word for a nonpartisan standard, so we replaced it with what we actually measure.",
+      "before": "We exist to move good policy, and to keep power honest.",
+      "after": "We exist to move policy that makes everyday life more stable, measured by the seven pillars, and to keep power honest."
      }
     ]
    }
