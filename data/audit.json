@@ -804,7 +804,7 @@
         "new": 89
        },
        {
-        "name": "Monica Márquez (Chief Justice)",
+        "name": "Monica M\u00e1rquez (Chief Justice)",
         "old": null,
         "new": 89
        },
@@ -1598,6 +1598,40 @@
       "what": "Added four U.S. House seats that changed parties, each confirmed by two outlets: Arizona's 1st (Amish Shah, D), North Carolina's 9th (Richard Ojeda, D), Virginia's 1st (Shannon Taylor, D) and Tennessee's 9th (Brent Taylor, R).",
       "before": "Our map shows the 33 flips we have confirmed by name so far (32 to Democrats, 1 to Republicans)",
       "after": "Our map shows the 37 flips we have confirmed by name so far (35 to Democrats, 2 to Republicans)"
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 6, 2026 at 10:24 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "6cf7631",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/6cf7631",
+   "note": "We launched The Q Collective canary: a public statement, renewed every 7 days, that we have received no secret government order, gag order, subpoena or demand for our records. If it ever stops being renewed, read the silence.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "The Canary",
+      "url": "canary.html",
+      "what": "New page. The current statement, a green, yellow or red status worked out in your own browser, who signed it last and when, how to read it, and every recent signing."
+     },
+     {
+      "page": "Homepage",
+      "url": "index.html#qcanary",
+      "what": "New section, \"If we ever go quiet, that's the message,\" explaining what the canary is, with a live status button."
+     },
+     {
+      "page": "Audit log",
+      "url": "audit.html",
+      "what": "Every canary signing now appears here as a CANARY entry, with who signed and when."
+     },
+     {
+      "page": "Sign the Canary",
+      "url": "canary-sign.html",
+      "what": "New page for signers only. Each signer signs in with their own email. The statement's wording can't be changed from this page."
      }
     ]
    }
