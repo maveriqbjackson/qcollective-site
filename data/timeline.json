@@ -307,6 +307,20 @@
      "href": "election-2026.html"
     }
    ]
+  },
+  {
+   "id": "co3-called-2026",
+   "date": "2026-11-06",
+   "precision": "day",
+   "kind": "watch",
+   "title": "Colorado's 3rd District is called",
+   "summary": "The AP called the 3rd Congressional District for Jeff Hurd (R), re-elected over Dwayne Romero (D). Colorado voters also passed Amendment 87, the graduated income tax, and rejected Prop 136. The 4th is still being counted.",
+   "links": [
+    {
+     "label": "Colorado results",
+     "href": "election-2026.html"
+    }
+   ]
   }
  ]
 }

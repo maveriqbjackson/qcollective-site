@@ -1,6 +1,6 @@
 {
  "note": "Who is leaving office after the 2026 election, and when the handover happens. Built from called races only. Races still being counted are listed under 'pending' and are not marked as leaving until they are called.",
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "dates": {
   "legislature_last_day": "2027-01-12",
   "legislature_sworn_in": "2027-01-13",
@@ -25,6 +25,7 @@
   {"id": "24966", "name": "Manny Rutinel", "chamber": "State House", "district": "32", "successor": "Chris VanDijk", "next": "Elected to the U.S. House, Colorado's 8th District"},
   {"id": "23046", "name": "Mandy Lindsay", "chamber": "State House", "district": "42", "successor": "Sarah Woodson"},
   {"id": "23963", "name": "Ron Weinberg", "chamber": "State House", "district": "51", "successor": "Still being counted"},
+  {"id": "26059", "name": "Ryan Gonzalez", "chamber": "State House", "district": "50", "successor": "Tommy Butler"},
   {"id": "20139", "name": "Matt Soper", "chamber": "State House", "district": "54", "successor": "Jason Bias"},
   {"id": "22226", "name": "Stephanie Luck", "chamber": "State House", "district": "60", "successor": "Matthew Alexander"},
   {"id": "23104", "name": "Nick Hinrichsen", "chamber": "State Senate", "district": "3", "successor": "Aaron Gutierrez"},
@@ -32,6 +33,7 @@
   {"id": "26492", "name": "Lynda Zamora Wilson", "chamber": "State Senate", "district": "9", "successor": "Terri Carver"},
   {"id": "20131", "name": "Lisa Cutter", "chamber": "State Senate", "district": "20", "successor": "Sheila Lieder"},
   {"id": "16583", "name": "Jessie Danielson", "chamber": "State Senate", "district": "22", "successor": "Monica Duran"},
+  {"id": "26327", "name": "John Carson", "chamber": "State Senate", "district": "30", "successor": "Kevin Leung"},
   {"id": "20031", "name": "Robert Rodriguez", "chamber": "State Senate", "district": "32", "successor": "Emily Sirota"},
   {"id": "20029", "name": "Julie Gonzales", "chamber": "State Senate", "district": "34", "successor": "Chela Garcia Irlando"}
  ],
@@ -41,10 +43,8 @@
   {"id": "23950", "name": "Brandi Bradley", "chamber": "State House", "district": "39", "standing": "Leading"},
   {"id": "23948", "name": "Anthony Hartsook", "chamber": "State House", "district": "44", "standing": "Leading"},
   {"id": "26051", "name": "Carlos Barron", "chamber": "State House", "district": "48", "standing": "Leading"},
-  {"id": "26059", "name": "Ryan Gonzalez", "chamber": "State House", "district": "50", "standing": "Trailing"},
   {"id": "26600", "name": "Scott Slaugh", "chamber": "State House", "district": "64", "standing": "Leading"},
-  {"id": "15133", "name": "Tony Exum", "chamber": "State Senate", "district": "11", "standing": "Leading"},
-  {"id": "26327", "name": "John Carson", "chamber": "State Senate", "district": "30", "standing": "Trailing"}
+  {"id": "15133", "name": "Tony Exum", "chamber": "State Senate", "district": "11", "standing": "Leading"}
  ],
  "statewide": [
   {"office": "Governor", "outgoing": "Jared Polis", "incoming": "Phil Weiser", "party": "D", "takes_office": "2027-01-12"},
