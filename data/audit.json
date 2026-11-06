@@ -1566,6 +1566,41 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 5, 2026 at 6:10 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "e23a6dd",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/e23a6dd",
+   "note": "We updated the Kansas governor count and added four newly confirmed U.S. House seats that changed parties.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Updated Cindy Holscher's lead in the Kansas governor's race, still uncalled.",
+      "before": "Kansas is still counting, with Cindy Holscher (D) ahead by about 5,500 votes.",
+      "after": "Kansas is still counting: Cindy Holscher (D) leads by about 7,000 votes, with about 99% counted."
+     },
+     {
+      "page": "2026 Election Map",
+      "url": "election-2026-map.html",
+      "what": "Updated the Kansas governor lead.",
+      "before": "Cindy Holscher (D) leads Ty Masterson (R) by about 5,500 votes",
+      "after": "Cindy Holscher (D) leads Ty Masterson (R) by about 7,000 votes"
+     },
+     {
+      "page": "2026 Election Map",
+      "url": "election-2026-map.html",
+      "what": "Added four U.S. House seats that changed parties, each confirmed by two outlets: Arizona's 1st (Amish Shah, D), North Carolina's 9th (Richard Ojeda, D), Virginia's 1st (Shannon Taylor, D) and Tennessee's 9th (Brent Taylor, R).",
+      "before": "Our map shows the 33 flips we have confirmed by name so far (32 to Democrats, 1 to Republicans)",
+      "after": "Our map shows the 37 flips we have confirmed by name so far (35 to Democrats, 2 to Republicans)"
+     }
+    ]
+   }
   }
  ]
 }
