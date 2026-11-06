@@ -580,7 +580,7 @@
 <script>
 /* Admin sign-in from Q HQ or the Q Console lands here first; send them back where they started. */
 (function(){var k='qc_after_login',v=null;try{v=JSON.parse(localStorage.getItem(k)||'null');}catch(e){}
-if(!v||!v.to||Date.now()-(v.at||0)>3600e3||['hq.html','q-console.html'].indexOf(v.to)<0)return;
+if(!v||!v.to||Date.now()-(v.at||0)>3600e3||['hq.html','q-console.html','canary-sign.html'].indexOf(v.to)<0)return;
 var tries=0;(function wait(){if(!window.qAuth)return;qAuth.user().then(function(u){if(u){try{localStorage.removeItem(k);}catch(e){}location.replace(v.to);}else if(tries++<20){setTimeout(wait,500);}});})();})();
 </script>
 <script>

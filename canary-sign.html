@@ -1,0 +1,193 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sign the Canary | The Q Collective</title>
+<meta name="robots" content="noindex"><meta name="description" content="For canary signers only.">
+<link rel="canonical" href="https://theqcollective.org/canary-sign.html">
+<meta property="og:type" content="website"><meta property="og:site_name" content="The Q Collective">
+<meta property="og:title" content="Sign the Canary | The Q Collective"><meta property="og:description" content="For canary signers only.">
+<meta property="og:url" content="https://theqcollective.org/canary-sign.html"><meta property="og:image" content="https://theqcollective.org/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="q-chrome.css">
+<link rel="stylesheet" href="q-humanize.css">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #1B3A6B; --navy-deep: #122848; --navy-mid: #243f72;
+    --gold: #B8962E; --gold-light: #D4AF50; --gold-pale: #F5EDD4;
+    --white: #FFFFFF; --off-white: #F9F6F0; --off-white2: #F2EFE8;
+    --text: #1a1a1a; --text-light: #4a4a4a; --text-muted: #5a5a5a; --border: #E0D5BE;
+  }
+  body {
+    background: var(--off-white);
+    font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .top-stripe { height: 5px; background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%); }
+  .topbar { position: sticky; top: 0; z-index: 50; background: rgba(18,40,72,0.97); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(184,150,46,0.25); }
+  .topbar-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; gap: 16px; }
+  .brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; }
+  .brand-q { font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 26px; color: var(--gold-light); line-height: 1; }
+  .brand-name { font-size: 14px; font-weight: 600; color: var(--white); }
+  .menu-btn { display: inline-flex; align-items: center; gap: 9px; background: transparent; border: 1px solid rgba(255,255,255,.30); color: #fff; font-size: 14.5px; font-weight: 600; padding: 9px 15px; border-radius: 5px; cursor: pointer; }
+  .menu-btn .bars { display: inline-flex; flex-direction: column; gap: 3px; }
+  .menu-btn .bars span { width: 17px; height: 2px; background: var(--gold-light); display: block; }
+  .nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,35,71,.985); z-index: 1000; display: flex; flex-direction: column; opacity: 0; visibility: hidden; transition: opacity .25s ease; }
+  .nav-overlay.open { opacity: 1; visibility: visible; }
+  .nav-overlay .nav-close { background: none; border: none; color: #fff; font-size: 42px; line-height: 1; cursor: pointer; }
+  .nav-overlay .ov-brand { font-family: 'Source Serif 4', Georgia, serif; color: #fff; font-size: 20px; }
+  .nav-overlay .ov-brand b { color: var(--gold-light); }
+  .ov-links a { display: block; color: #fff; text-decoration: none; }
+  .ov-featured { display: block; background: var(--gold); color: var(--navy-deep); font-weight: 700; text-decoration: none; border-radius: 7px; border: 1px solid var(--gold-light); }
+  .ov-foot { color: rgba(255,255,255,.5); }
+
+  .fhead { background: var(--navy-deep); padding: 64px 32px 58px; position: relative; overflow: hidden; }
+  .fhead-wm { position: absolute; font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 460px; line-height: 1; color: rgba(255,255,255,0.05); top: -110px; right: -40px; pointer-events: none; user-select: none; }
+  .fhead-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+  .fhead p.kicker { color: rgba(255,255,255,0.62); font-size: 15px; margin-bottom: 16px; }
+  .fhead p.kicker a { color: var(--gold-light); text-decoration: none; }
+  .fhead h1 { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 700; color: #fff; line-height: 1.1; letter-spacing: -0.015em; }
+  .fhead p.sub { color: rgba(255,255,255,0.76); font-size: 18.5px; line-height: 1.7; max-width: 58ch; margin-top: 18px; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 32px 30px; }
+  .post p, .post li { font-size: 18px; line-height: 1.8; color: var(--text-light); }
+  .post p { margin-bottom: 20px; }
+  .post p strong, .post li strong { color: var(--text); font-weight: 600; }
+  .post h2 { font-family: 'Source Serif 4', Georgia, serif; font-size: 27px; font-weight: 600; color: var(--navy-deep); margin: 44px 0 14px; line-height: 1.25; }
+  .post h3 { font-family: 'Source Serif 4', Georgia, serif; font-size: 21px; font-weight: 600; color: var(--navy-deep); margin: 28px 0 8px; }
+  .post ul, .post ol { margin: 0 0 22px 22px; }
+  .post li { margin-bottom: 9px; }
+  .post a { color: var(--navy); font-weight: 600; }
+  .lede { font-family: 'Source Serif 4', Georgia, serif; font-size: 22px !important; line-height: 1.55 !important; color: var(--text) !important; }
+  .box { background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--gold); border-radius: 6px; padding: 22px 26px; margin: 28px 0; }
+  .box p:last-child, .box ul:last-child, .box ol:last-child { margin-bottom: 0; }
+  .box h3 { margin-top: 0; }
+  .deadline { background: var(--navy-deep); color: #fff; border-radius: 8px; padding: 26px 28px; margin: 30px 0; }
+  .deadline .when { font-family: 'Source Serif 4', Georgia, serif; font-size: 24px; font-weight: 600; color: var(--gold-light); margin-bottom: 8px; }
+  .deadline strong { color: #fff !important; }
+  .deadline p { color: rgba(255,255,255,0.82) !important; margin-bottom: 10px; font-size: 17px !important; }
+  .deadline a.btn { display: inline-block; background: var(--gold); color: var(--navy-deep); font-weight: 700; font-size: 15.5px; padding: 13px 24px; border-radius: 5px; text-decoration: none; margin: 8px 10px 0 0; }
+  .deadline a.ghost { background: transparent; border: 1px solid rgba(255,255,255,.4); color: #fff; }
+  .sample { background: var(--off-white2); border-radius: 6px; padding: 20px 24px; font-family: 'Source Serif 4', Georgia, serif; font-size: 17.5px; line-height: 1.7; color: var(--text); white-space: pre-wrap; margin: 0 0 12px; }
+  .copybtn { font: inherit; font-size: 14.5px; font-weight: 600; background: var(--white); color: var(--navy-deep); border: 1px solid var(--border); border-radius: 5px; padding: 8px 14px; cursor: pointer; margin-bottom: 26px; }
+  .sign { margin: 44px 0 10px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .sign .mark { font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-weight: 600; font-size: 32px; color: var(--navy-deep); }
+  .sign .who { font-size: 15px; color: var(--text-muted); }
+  .src { font-size: 14.5px !important; color: var(--text-muted) !important; line-height: 1.65 !important; }
+  .notes-list { list-style: none; margin: 0 !important; padding: 0; }
+  .note-card { display: block; background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 26px 28px; text-decoration: none; color: inherit; margin-bottom: 16px; }
+  .note-card:hover { border-color: var(--gold); }
+  .note-card .meta { font-size: 14.5px; color: var(--text-muted); margin-bottom: 6px; }
+  .note-card h2 { margin: 0 0 8px !important; font-size: 25px !important; }
+  .note-card p { margin: 0 !important; font-size: 17px !important; }
+  .note-card .more { display: inline-block; margin-top: 12px; font-weight: 600; color: var(--navy); border-bottom: 1px solid var(--gold); }
+  @media (max-width: 760px) {
+    .fhead { padding: 44px 20px 40px; } .fhead-wm { display: none; } .fhead p.sub { font-size: 17px; }
+    .wrap { padding: 32px 18px 24px; }
+    .post p, .post li { font-size: 17px; } .lede { font-size: 20px !important; }
+    .box, .deadline { padding: 20px 18px; } .note-card { padding: 20px; }
+  }
+
+  .cstat{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin:6px 0 30px}
+  .cstat .bar{display:flex;align-items:center;gap:12px;padding:16px 22px;font-weight:700;font-size:17px}
+  .cstat .dot{width:14px;height:14px;border-radius:50%;flex:none}
+  .cstat.alive .bar{background:#e4f1e8;color:#1f5a33}.cstat.alive .dot{background:#2e7d4f}
+  .cstat.due .bar{background:#fdf3d4;color:#7a5c12}.cstat.due .dot{background:#c9971c}
+  .cstat.dead .bar,.cstat.none .bar{background:#fbe9e7;color:#8b2e20}.cstat.dead .dot,.cstat.none .dot{background:#b23b2a}
+  .cstat .stmt{padding:22px 24px 6px;font-family:'Source Serif 4',Georgia,serif;font-size:19px;line-height:1.65;color:var(--text)}
+  .cstat .stmt p{margin:0 0 12px;font-size:19px;color:var(--text)}
+  .cstat .meta{padding:6px 24px 20px;font-size:15px;color:var(--text-muted)}
+  .cstat .meta div{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--off-white2);padding:8px 0}
+  .key div{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:12px 16px;margin:0 0 10px;font-size:16.5px;color:var(--text-light);line-height:1.6}
+  .key b{display:block;color:var(--text)}
+  .hist{width:100%;border-collapse:collapse;font-size:15.5px;margin:6px 0 24px}
+  .hist td,.hist th{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border)}
+  .hist th{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted)}
+  .signbx{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:24px;margin:10px 0 30px}
+  .signbx input{width:100%;font:inherit;font-size:16px;padding:12px;border:1.5px solid var(--border);border-radius:6px;margin:6px 0 10px}
+  .signbx button{font:inherit;font-weight:700;font-size:16px;background:var(--navy-deep);color:#fff;border:0;border-radius:6px;padding:12px 20px;cursor:pointer}
+  .signbx button:disabled{opacity:.5;cursor:default}
+  .signbx .ghost{background:none;color:var(--navy-deep);border:1px solid var(--border);margin-left:8px}
+  .signbx label.chk{display:flex;gap:10px;align-items:flex-start;font-size:16.5px;color:var(--text);margin:14px 0}
+  .signbx label.chk input{width:auto;margin-top:5px}
+  .msg{font-size:15.5px;margin-top:12px;color:var(--text-light)}.err{color:#8b3a32}
+</style>
+</head>
+<body>
+<div id="q-chrome-top"></div>
+<header class="fhead"><div class="fhead-wm">Q</div><div class="fhead-inner">
+<p class="kicker"><a href="canary.html">The Canary</a></p>
+<h1>Sign the Canary</h1>
+<p class="sub">For signers only. Read the statement, and renew it only if every word is still true.</p>
+</div></header>
+<main class="wrap"><article class="post">
+<div id="card"><p>Loading&hellip;</p></div>
+<div class="signbx" id="box"><p>Checking your sign-in&hellip;</p></div>
+<div class="box"><h3>Before you sign</h3>
+<p>You're promising that, as of right now, The Q Collective has received no secret order, no gag order, no subpoena and no demand for our records or our supporters' information.</p>
+<p><strong>If you're not sure every line is still true, don't sign.</strong> Call Mav first. If you've been told not to talk about something, don't sign and don't explain. Just let it lapse. The silence is the message, and it's the one part of this that can't be forced.</p></div>
+</article></main>
+<script src="q-auth.js"></script>
+
+<script>
+window.QC_CANARY=function(){
+  var URL="https://asjvyhppqclglafueppb.supabase.co/rest/v1/rpc/canary_status",K="sb_publishable_75yNLzcnQV-C08DLKwbHiQ_YXrMI92C";
+  return fetch(URL,{method:"POST",headers:{"apikey":K,"Authorization":"Bearer "+K,"Content-Type":"application/json"},body:"{}"}).then(function(r){return r.json();});
+};
+window.QC_CANARY_STATE=function(d){
+  var s=(d.signings||[])[0]; if(!s) return {state:"none",days:null,last:null};
+  var last=new Date(s.signed_at), days=Math.floor((Date.now()-last.getTime())/86400000);
+  var iv=d.interval_days||7, gr=d.grace_days||3;
+  return {state: days<=iv?"alive":(days<=iv+gr?"due":"dead"), days:days, last:last, by:s.signed_by, iv:iv, gr:gr};
+};
+function qcEsc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function qcFmt(d){return d.toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"})+" at "+d.toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit",timeZoneName:"short"});}
+function qcCard(d){
+  var st=QC_CANARY_STATE(d), lab={alive:"Signed and current",due:"Due for renewal",dead:"Overdue. Read the silence.",none:"Not signed yet"}[st.state];
+  var lines=String(d.statement||"").split("\n").filter(function(x){return x.trim();}).map(function(x){return "<p>"+qcEsc(x)+"</p>";}).join("");
+  var meta=st.last?'<div><span>Last signed</span><span>'+qcFmt(st.last)+' &middot; '+(st.days===0?"today":st.days+(st.days===1?" day":" days")+" ago")+'</span></div><div><span>Signed by</span><span>'+qcEsc(st.by)+'</span></div>':'';
+  meta+='<div><span>Renewal schedule</span><span>every '+(d.interval_days||7)+' days</span></div>';
+  return '<div class="cstat '+st.state+'"><div class="bar"><span class="dot"></span>'+lab+'</div><div class="stmt">'+lines+'</div><div class="meta">'+meta+'</div></div>';
+}
+</script>
+<script>
+var AFTER="qc_after_login";
+function box(h){document.getElementById("box").innerHTML=h;}
+function load(){return QC_CANARY().then(function(d){document.getElementById("card").innerHTML=qcCard(d);return d;});}
+function askEmail(){
+  box('<p>Sign in with the email you were added with. We&rsquo;ll send you a one-time link.</p><input id="em" type="email" autocomplete="email" placeholder="you@email.com"><button id="go" type="button">Email me a sign-in link</button><div class="msg" id="m"></div>');
+  var go=function(){var e=(document.getElementById("em").value||"").trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){document.getElementById("m").innerHTML='<span class="err">That email doesn&rsquo;t look right.</span>';return;}
+    try{localStorage.setItem(AFTER,JSON.stringify({to:"canary-sign.html",at:Date.now()}));}catch(x){}
+    document.getElementById("go").disabled=true;
+    qAuth.signIn(e).then(function(r){if(r&&r.error){document.getElementById("m").innerHTML='<span class="err">'+qcEsc(r.error.message||"That didn&rsquo;t send. Try again.")+'</span>';document.getElementById("go").disabled=false;return;}
+      box('<p><strong>Check your email.</strong> We sent a sign-in link to '+qcEsc(e)+'. Open it on this device and you&rsquo;ll come straight back here.</p>');});};
+  document.getElementById("go").onclick=go;
+}
+function signForm(u){
+  box('<p>Signed in as <strong>'+qcEsc(u.email)+'</strong>.</p><label class="chk"><input type="checkbox" id="ok"> I&rsquo;ve read the statement above, and every word of it is true today.</label><button id="sg" type="button" disabled>Sign the canary</button><button class="ghost" id="out" type="button">Sign out</button><div class="msg" id="m"></div>');
+  document.getElementById("ok").onchange=function(){document.getElementById("sg").disabled=!this.checked;};
+  document.getElementById("out").onclick=function(){qAuth.signOut().then(function(){location.reload();});};
+  document.getElementById("sg").onclick=function(){var b=this;b.disabled=true;
+    qcReady.then(function(qc){return qc.rpc("sign_canary");}).then(function(r){
+      if(r.error){document.getElementById("m").innerHTML='<span class="err">'+qcEsc(r.error.message)+'</span>';b.disabled=false;return;}
+      document.getElementById("card").innerHTML=qcCard(r.data);
+      box('<p><strong>Signed. Thank you.</strong> The canary is current, and your signing is on the public record.</p><p><a href="canary.html">See the canary</a></p>');});};
+}
+load().catch(function(){});
+qAuth.user().then(function(u){
+  if(!u) return askEmail();
+  qcReady.then(function(qc){return qc.rpc("my_canary_role");}).then(function(r){
+    if(r&&r.data==="signer") return signForm(u);
+    if(r&&r.data==="witness") return box('<p>Signed in as <strong>'+qcEsc(u.email)+'</strong>. You&rsquo;re a witness: you can watch the canary and you&rsquo;ll get reminder emails, but you can&rsquo;t sign it.</p>');
+    box('<p>Signed in as <strong>'+qcEsc(u.email)+'</strong>, which isn&rsquo;t on the signer list. If that&rsquo;s a mistake, contact Mav.</p><button class="ghost" id="out" type="button" style="margin:0">Sign out</button>');
+    document.getElementById("out").onclick=function(){qAuth.signOut().then(function(){location.reload();});};
+  });
+}).catch(askEmail);
+</script>
+<div id="q-chrome-footer"></div>
+<script src="q-config.js"></script>
+<script src="site-chrome.js"></script>
+<script src="q-chat.js"></script>
+</body></html>
