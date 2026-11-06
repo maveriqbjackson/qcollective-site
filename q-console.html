@@ -121,34 +121,8 @@
 #qc-gate button{width:100%;padding:10px;border-radius:8px;border:none;background:#c9a23a;color:#0a2540;font-weight:700;font-size:14px;cursor:pointer}
 #qc-gate .err{color:#e8a0a0;font-size:12px;min-height:16px;margin:8px 0 0}
 </style>
-<div id="qc-gate">
-  <div class="gatebox">
-    <div class="gq">Q<sub>m</sub></div>
-    <h1>Q Console</h1>
-    <p>Enter your access code.</p>
-    <input id="qc-code" type="password" autocomplete="off" autofocus onkeydown="if(event.key==='Enter')qcUnlock()">
-    <button onclick="qcUnlock()">Unlock</button>
-    <div class="err" id="qc-err"></div>
-  </div>
-</div>
-<script>
-/* ===== ACCESS GATE (soft) ============================================
-   Casual-discovery gate only. The check runs in the page, so this is a
-   light lock, NOT real security. Do NOT reuse a password you use for
-   anything important (email, banking, etc.).
-
-   TO CHANGE YOUR CODE (browser only, no plaintext left in your repo):
-     1) set NEWPASS below to your new code, in quotes
-     2) load this page once -> it pops up the new hash
-     3) paste that number into PASS_HASH, then set NEWPASS back to ""
-   ==================================================================== */
-var PASS_HASH = 639090475676760;
-var NEWPASS = "";
-var cyrb53=function(str,seed){seed=seed||0;var h1=0xdeadbeef^seed,h2=0x41c6ce57^seed;for(var i=0,c;i<str.length;i++){c=str.charCodeAt(i);h1=Math.imul(h1^c,2654435761);h2=Math.imul(h2^c,1597334677);}h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);return 4294967296*(2097151&h2)+(h1>>>0);};
-if(NEWPASS){setTimeout(function(){alert("Hash for your new code:\n\n"+cyrb53(NEWPASS)+"\n\nPaste it into PASS_HASH, then set NEWPASS back to \"\".");},300);}
-try{if(sessionStorage.getItem("qc_unlocked")==="1"){document.getElementById("qc-gate").style.display="none";}}catch(e){}
-function qcUnlock(){var v=document.getElementById("qc-code").value;if(cyrb53(v)===PASS_HASH||(NEWPASS&&v===NEWPASS)){try{sessionStorage.setItem("qc_unlocked","1");}catch(e){}document.getElementById("qc-gate").style.display="none";}else{document.getElementById("qc-err").textContent="Incorrect code.";document.getElementById("qc-code").value="";}}
-</script>
+<script src="q-auth.js"></script>
+<script src="q-admin-gate.js"></script>
 <div class="top-stripe"></div>
 <header>
   <div class="wm">Q</div>
