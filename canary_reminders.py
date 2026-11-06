@@ -13,8 +13,7 @@ brief of what changed on the site (from the audit log), the sign-in link, and
 the rule: if you're not sure, don't sign. Call Mav first.
 
 Secrets: SUPABASE_URL, SUPABASE_SERVICE_KEY, RESEND_API_KEY
-Optional: SOVRAN_OPEN_TO_ALL=1 once SOVRAN signing moves to the email sign-in
-(until then SOVRAN reminders go to Mav only, because only he can sign it).
+SOVRAN reminders go to everyone on the list too (set SOVRAN_OPEN_TO_ALL=0 to send them to Mav only).
 """
 import datetime as dt
 import html
@@ -29,7 +28,7 @@ RESEND_KEY = os.environ.get("RESEND_API_KEY") or ""
 SEND_FROM = "The Q Collective <noreply@auth.theqcollective.org>"
 REPLY_TO = "team@theqcollective.org"
 MAV = ["maveriqbjackson@proton.me", "team@theqcollective.org"]
-SOVRAN_OPEN = (os.environ.get("SOVRAN_OPEN_TO_ALL") or "").strip() in ("1", "true", "yes")
+SOVRAN_OPEN = (os.environ.get("SOVRAN_OPEN_TO_ALL") or "1").strip() in ("1", "true", "yes")
 DRY = (os.environ.get("DRY_RUN") or "").strip() in ("1", "true", "yes")
 STATE_PATH = "data/canary_reminder_state.json"
 UA = "QCollective-canary-reminders/1.0"
