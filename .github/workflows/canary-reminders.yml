@@ -1,0 +1,54 @@
+name: Canary reminders
+
+on:
+  schedule:
+    - cron: "23 15 * * *"   # every day, about 8:23 AM Mountain
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Only print who would be emailed"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: canary-reminders
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Check both canaries and email signers if needed
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+        run: python canary_reminders.py
+      - name: Email the team if something failed
+        if: failure()
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          WHAT: "Canary reminders"
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          SITE_URL: "https://theqcollective.org"
+        run: python notify_failure.py
+      - name: Remember what was sent
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git config user.name "q-score-bot"
+          git config user.email "q-score-bot@users.noreply.github.com"
+          git add data/canary_reminder_state.json 2>/dev/null || true
+          if git diff --cached --quiet; then echo "Nothing to save."; exit 0; fi
+          git commit -m "Canary reminders ($(date -u +%Y-%m-%d))"
+          git pull --rebase --autostash origin main
+          git push
