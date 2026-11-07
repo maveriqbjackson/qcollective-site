@@ -1741,6 +1741,103 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 6, 2026 at 6:00 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "8217d8f",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/8217d8f",
+   "note": "We recorded the Friday evening election calls: three Colorado state House seats, the last state Senate seat, two ballot measures, five U.S. Senate winners we had been confirming and six more U.S. House seats that changed parties.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html#houseT",
+      "what": "State House District 14 called, confirmed by MultiState and Decision Desk HQ.",
+      "before": "Ava Flanell (R) leads Sarah Emery (D), 53.6% to 46.4% (Counting)",
+      "after": "Ava Flanell (R), 54%, over Sarah Emery (D) (Won)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html#houseT",
+      "what": "State House District 48 called, confirmed by MultiState and Decision Desk HQ.",
+      "before": "Carlos Barron (R) leads Dez Packard (D), 54.1% to 43.4% (Counting)",
+      "after": "Carlos Barron (R), over Dez Packard (D) and Eric Joss (L) (Won)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html#houseT",
+      "what": "State House District 64 called, confirmed by MultiState and Decision Desk HQ.",
+      "before": "Scott Slaugh (R) leads Maureen Dower (D), 55.0% to 45.0% (Counting)",
+      "after": "Scott Slaugh (R), 55%, over Maureen Dower (D) (Won)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html#senT",
+      "what": "State Senate District 11 called, confirmed by MultiState and Decision Desk HQ. Every state Senate race is now called: 24 Democrats, 11 Republicans.",
+      "before": "Tony Exum Sr. (D) leads Levon Stilson (R), 60.5% to 36.0% (Counting)",
+      "after": "Tony Exum Sr. (D), about 60%, over Levon Stilson (R) and Janet Turner (L) (Won)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html#houseT",
+      "what": "Refreshed the leads in State House Districts 15, 21, 22, 39 and 51, all still counting. The state House tally card now reads 46 D, 13 R, with 6 still counting."
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Amendment 85 failed, short of the 55% it needed.",
+      "before": "Amendment 85: 51.1% yes (Counting)",
+      "after": "Amendment 85: 51.1% yes (Failed)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Prop 135 passed.",
+      "before": "Prop 135: 52.0% yes (Counting)",
+      "after": "Prop 135: 52.0% yes (Passed)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "National House tally card updated.",
+      "before": "248 D, 150 R, 37 still counting (Nov. 5)",
+      "after": "253 D, 157 R, 25 still counting (Nov. 6)"
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "U.S. Senate winners confirmed from direct sources in Kentucky, Montana, Oklahoma, West Virginia and Wyoming.",
+      "before": "Andy Barr, Kurt Alme, Kevin Hern, Shelley Moore Capito, Harriet Hageman (Being confirmed)",
+      "after": "Andy Barr (R), Kurt Alme (R), Kevin Hern (R), Shelley Moore Capito (R), Harriet Hageman (R) (Won)"
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "Mississippi Senate lead refreshed, still counting.",
+      "before": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 1,100 votes",
+      "after": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,000 votes"
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "Six more U.S. House seats that changed parties added, bringing the map to 46 (44 to Democrats, 2 to Republicans): New Jersey 2nd (Zack Mullock), New York 17th (Cait Conley), Ohio 10th (Kristina Knickerbocker), North Carolina 6th (Cyril Jefferson), 13th (Paul Barringer) and 14th (Lakesha Womack), all Democrats."
+     },
+     {
+      "page": "Past officials",
+      "url": "past-officials.html",
+      "what": "Ava Flanell, Carlos Barron, Scott Slaugh and Tony Exum removed from still counting after winning their races."
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "Added an entry for the Colorado state Senate being fully called and the Amendment 85 and Prop 135 results."
+     }
+    ]
+   }
   }
  ]
 }
