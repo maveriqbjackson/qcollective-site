@@ -1838,6 +1838,65 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 7, 2026 at 11:55 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "3322ac0",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/3322ac0",
+   "note": "We recorded the Saturday morning election calls: two Colorado state House seats, Prop 137 and one more U.S. House seat that changed parties, and refreshed the count in Colorado's 4th District.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html#houseT",
+      "what": "State House District 39 called, confirmed by AP via Rocky Mountain Voice and MultiState.",
+      "before": "Brandi Bradley (R) leads Christian Schilder (D), 53.9% to 46.1% (Counting)",
+      "after": "Brandi Bradley (R), 54%, over Christian Schilder (D) (Won)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html#houseT",
+      "what": "State House District 44 called, confirmed by AP via Rocky Mountain Voice and MultiState. The state House tally card now reads 46 D, 15 R, with 4 still counting.",
+      "before": "Tony Hartsook (R) leads Richard Bowness (D), 51.5% to 46.2% (Counting)",
+      "after": "Tony Hartsook (R), 51%, over Richard Bowness (D) and John Sutton (L) (Won)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Prop 137 passed, called by AP. Every statewide ballot measure is now decided.",
+      "before": "Prop 137: 51.6% yes (Counting)",
+      "after": "Prop 137: 51.8% yes (Passed)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Colorado's 4th District count refreshed, still counting and outside the automatic recount range for now.",
+      "before": "Eileen Laubacher (D) leads Lauren Boebert (R) by 3,069 votes, about 48.8% to 48.0%",
+      "after": "Eileen Laubacher (D) leads Lauren Boebert (R) by 3,172 votes, about 48.8% to 47.9%"
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "South Carolina 1st added as a U.S. House seat that changed parties, confirmed by CBS News and The Post and Courier. The map now shows 47 flips (45 to Democrats, 2 to Republicans).",
+      "before": "South Carolina: no House flips",
+      "after": "South Carolina 1st: Nancy Lacore (D), flipped from Republican"
+     },
+     {
+      "page": "Past officials",
+      "url": "past-officials.html",
+      "what": "Brandi Bradley and Anthony Hartsook removed from still counting after winning their races."
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "Added an entry for Prop 137 passing and State House Districts 39 and 44 being called."
+     }
+    ]
+   }
   }
  ]
 }
