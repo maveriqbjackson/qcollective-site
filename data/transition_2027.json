@@ -38,13 +38,9 @@
   {"id": "20029", "name": "Julie Gonzales", "chamber": "State Senate", "district": "34", "successor": "Chela Garcia Irlando"}
  ],
  "pending": [
-  {"id": "26597", "name": "Ava Flanell", "chamber": "State House", "district": "14", "standing": "Leading"},
   {"id": "23957", "name": "Ken DeGraaf", "chamber": "State House", "district": "22", "standing": "Leading"},
   {"id": "23950", "name": "Brandi Bradley", "chamber": "State House", "district": "39", "standing": "Leading"},
-  {"id": "23948", "name": "Anthony Hartsook", "chamber": "State House", "district": "44", "standing": "Leading"},
-  {"id": "26051", "name": "Carlos Barron", "chamber": "State House", "district": "48", "standing": "Leading"},
-  {"id": "26600", "name": "Scott Slaugh", "chamber": "State House", "district": "64", "standing": "Leading"},
-  {"id": "15133", "name": "Tony Exum", "chamber": "State Senate", "district": "11", "standing": "Leading"}
+  {"id": "23948", "name": "Anthony Hartsook", "chamber": "State House", "district": "44", "standing": "Leading"}
  ],
  "statewide": [
   {"office": "Governor", "outgoing": "Jared Polis", "incoming": "Phil Weiser", "party": "D", "takes_office": "2027-01-12"},

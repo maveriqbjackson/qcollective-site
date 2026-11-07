@@ -321,6 +321,20 @@
      "href": "election-2026.html"
     }
    ]
+  },
+  {
+   "id": "co-senate-called-2026",
+   "date": "2026-11-06",
+   "precision": "day",
+   "kind": "watch",
+   "title": "Every Colorado state Senate race is called",
+   "summary": "Tony Exum Sr. (D) held Senate District 11, giving Democrats 24 of 35 seats, a two-thirds supermajority. Republicans held state House Districts 14, 48 and 64. Prop 135 passed and Amendment 85 failed. The 4th Congressional District, six state House races and Prop 137 are still being counted.",
+   "links": [
+    {
+     "label": "Colorado results",
+     "href": "election-2026.html"
+    }
+   ]
   }
  ]
 }
