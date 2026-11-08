@@ -1935,6 +1935,51 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 8, 2026 at 11:55 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "b42b895",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/b42b895",
+   "note": "No new races were called, so we refreshed the national House count, the Mississippi Senate lead and the Kansas audit, and noted a disagreement between sources on Colorado state House District 51.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "U.S. House tally card refreshed from the AP count reported by Yahoo News (11:17 a.m. ET, Nov. 7).",
+      "before": "253 D, 162 R. Called as of Friday afternoon, Nov. 6, with 20 still counting.",
+      "after": "254 D, 162 R. Called as of Saturday morning, Nov. 7, with 19 still counting."
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "Mississippi Senate lead refreshed, still counting, from AP figures via Democracy Docket and Yahoo News.",
+      "before": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,500 votes",
+      "after": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,600 votes"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "State House District 51 lead refreshed from Rocky Mountain Voice (9:28 a.m. Nov. 7). MultiState lists Jacki Marsh (D) as the winner but AP has not called it, so the race stays counting and the page says so.",
+      "before": "Jacki Marsh (D) leads Amy Parks (R), 51.3% to 48.7%",
+      "after": "Jacki Marsh (D) leads Amy Parks (R), 51.4% to 48.6%. MultiState lists her as the winner, but AP has not called it, so we still show it as counting."
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "House note and big-picture text updated to the same House count; Kansas governor text notes the state-required hand-count audit; Mississippi text notes about 3,100 mail ballots due by Nov. 10. Sources and as-of lines updated."
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "\"What we're watching\" Now row: Colorado's 4th unchanged at Eileen Laubacher (D) +3,172 with only Elbert County finished; added the Mississippi mail-ballot deadline, the Kansas audit and the District 51 source disagreement."
+     }
+    ]
+   }
   }
  ]
 }
