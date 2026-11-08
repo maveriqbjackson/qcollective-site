@@ -1897,6 +1897,44 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 7, 2026 at 6:10 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "80509c8",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/80509c8",
+   "note": "No new races were called this evening, so we refreshed the national seat counts and the Mississippi Senate lead and noted that Colorado's count has not moved since Friday.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "U.S. House tally card refreshed from the AP count reported by Yahoo News (4:45 p.m. ET, Nov. 6), with CBS News's updated count of seats that changed parties.",
+      "before": "253 D, 157 R. Called as of Friday morning, Nov. 6, with 25 still counting. CBS News counts 45 seats that changed parties: 43 to Democrats and 2 to Republicans.",
+      "after": "253 D, 162 R. Called as of Friday afternoon, Nov. 6, with 20 still counting. CBS News counts 46 seats that changed parties: 44 to Democrats and 2 to Republicans."
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "Mississippi Senate lead refreshed, still counting, from AP figures via Mississippi Free Press and Democracy Docket (5 p.m. CT, Nov. 6).",
+      "before": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,000 votes",
+      "after": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,500 votes"
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "House note and big-picture text updated to the same House count and CBS News's 46 flips; the map still shows 47 flips confirmed by name (45 to Democrats, 2 to Republicans). Sources line and as-of line updated."
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "\"What we're watching\" Now row: noted Colorado's count is unchanged since Friday afternoon, counties have until Nov. 13 to finish counting, and added the Mississippi lead. Colorado's 4th stays at Eileen Laubacher (D) +3,172, still counting."
+     }
+    ]
+   }
   }
  ]
 }
