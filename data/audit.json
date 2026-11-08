@@ -1,6 +1,6 @@
 {
  "engine": "v7.0",
- "updated": "November 1, 2026 at 3:18 PM MST",
+ "updated": "November 8, 2026 at 3:24 PM MST",
  "runs": [
   {
    "ts": "2026-07-11",
@@ -1979,6 +1979,37 @@
       "what": "\"What we're watching\" Now row: Colorado's 4th unchanged at Eileen Laubacher (D) +3,172 with only Elbert County finished; added the Mississippi mail-ballot deadline, the Kansas audit and the District 51 source disagreement."
      }
     ]
+   }
+  },
+  {
+   "ts": "November 8, 2026 at 3:24 PM MST",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "f892669",
+   "run_id": "42530112585",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/42530112585",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
    }
   }
  ]
