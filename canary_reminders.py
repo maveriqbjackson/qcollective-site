@@ -73,7 +73,7 @@ def q_canary():
     people = req(SUPABASE_URL + "/rest/v1/canary_people?select=email,name,role", "GET", sk)
     s = (d.get("signings") or [None])[0]
     return {
-        "key": "q", "name": "The Q Collective canary",
+        "key": "q", "name": "Q Collective canary",
         "page": "https://theqcollective.org/canary.html",
         "sign": "https://theqcollective.org/canary-sign.html",
         "signed_at": s and s["signed_at"], "signed_by": s and s["signed_by"],
@@ -115,13 +115,47 @@ LABEL = {"ok": "Signed and current", "due_soon": "Due in the next 2 days", "due"
          "overdue": "OVERDUE (the public page shows red)", "never": "Not signed yet"}
 
 
-def email(to, subject, lines_html):
+ROW = {"ok": "Current", "due_soon": "Due soon", "due": "Due today", "overdue": "Overdue", "never": "Not signed yet"}
+DOT = {"ok": "#2e7d4f", "due_soon": "#c9971c", "due": "#c9971c", "overdue": "#b23b2a", "never": "#b23b2a"}
+
+
+def render(c, canaries, notes):
+    """One clean, short email: what's needed, one button, the rule, both statuses."""
+    e = html.escape
+    first = {"due_soon": f"The {c['name']} is due in the next 2 days.",
+             "due": f"The {c['name']} is due today.",
+             "overdue": f"The {c['name']} is overdue. Its public page now shows red.",
+             "never": f"The {c['name']} needs its first signing."}[c["stage"]]
+    rows = "".join(
+        f'<tr><td style="padding:7px 0;border-top:1px solid #eee9de"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:{DOT[x["stage"]]};margin-right:8px"></span>{e(x["name"])}</td>'
+        f'<td style="padding:7px 0;border-top:1px solid #eee9de;text-align:right;color:#5a5a5a">{ROW[x["stage"]]}'
+        + (f' &middot; {x["days"]}d ago' if x["days"] is not None else "") + "</td></tr>" for x in canaries)
+    news = "".join(f'<p style="margin:0 0 6px;font-size:14px;color:#5a5a5a">{e(n)}</p>' for n in notes)
+    html_out = f"""<div style="background:#F9F6F0;padding:28px 12px;font-family:-apple-system,Segoe UI,Arial,sans-serif;color:#1a1a1a">
+<div style="max-width:520px;margin:0 auto;background:#fff;border:1px solid #E0D5BE;border-radius:12px;overflow:hidden">
+<div style="background:#122848;padding:16px 24px"><span style="font:700 24px Georgia,serif;color:#D4AF50">Q</span><span style="font:600 15px Arial,sans-serif;color:#fff;margin-left:10px">The Q Collective</span></div>
+<div style="padding:26px 24px 8px">
+<p style="margin:0 0 6px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#B8962E">Canary check</p>
+<p style="margin:0 0 14px;font:600 21px/1.35 Georgia,serif;color:#122848">{e(first)}</p>
+<p style="margin:0 0 20px;font-size:16px;line-height:1.6">Read the statement. If every word is still true today, sign it. It takes about a minute.</p>
+<a href="{c['sign']}" style="display:inline-block;background:#122848;color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:13px 22px;border-radius:8px">Check and sign</a>
+<p style="margin:22px 0 0;padding:12px 14px;background:#fdf3d4;border-radius:8px;font-size:14.5px;line-height:1.55"><b>Not sure every line is still true? Don't sign.</b> Call Mav first. If you've been told not to talk about something, don't sign and don't explain. Just let it lapse.</p>
+<table style="width:100%;border-collapse:collapse;margin:22px 0 4px;font-size:14.5px">{rows}</table>
+{('<p style="margin:18px 0 8px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#B8962E">Lately on the site</p>' + news) if news else ''}
+</div>
+<div style="padding:16px 24px 22px;font-size:12.5px;color:#777;line-height:1.5">You're getting this because you're a canary signer. Reply to this email with any question.<br>The Q Collective &middot; 6212 E Pine Ln, Unit 2159, Parker, CO 80138</div>
+</div></div>"""
+    text = (f"Canary check\n\n{first}\n\nRead the statement. If every word is still true today, sign it:\n{c['sign']}\n\n"
+            "Not sure every line is still true? Don't sign. Call Mav first. If you've been told not to talk about something, don't sign and don't explain. Just let it lapse.\n\n"
+            + "\n".join(f"{x['name']}: {LABEL[x['stage']]}" for x in canaries) + "\n\nThe Q Collective\n")
+    return html_out, text
+
+
+def email(to, subject, html_body, text_body):
     if DRY:
         print(f"  [dry run] would email {to}: {subject}")
         return
-    body = {"from": SEND_FROM, "to": [to], "reply_to": REPLY_TO, "subject": subject,
-            "html": "<div style=\"font-family:Arial,sans-serif;font-size:16px;line-height:1.6;color:#1a1a1a;max-width:560px\">"
-                    + "".join(lines_html) + "</div>"}
+    body = {"from": SEND_FROM, "to": [to], "reply_to": REPLY_TO, "subject": subject, "html": html_body, "text": text_body}
     req("https://api.resend.com/emails", "POST", {"Authorization": "Bearer " + RESEND_KEY}, body)
     print("  emailed", to, "-", subject)
 
@@ -140,11 +174,6 @@ def main():
         c["days"] = None if not c["signed_at"] else (now - parse_time(c["signed_at"])).days
         c["stage"] = stage(c["days"], c["iv"], c["gr"])
 
-    status_html = "".join(
-        f"<p style=\"margin:0 0 6px\"><b>{html.escape(c['name'])}:</b> {LABEL[c['stage']]}"
-        + (f" (last signed {c['days']} day{'s' if c['days'] != 1 else ''} ago)" if c['days'] is not None else "")
-        + f" &middot; <a href=\"{c['page']}\">see it</a></p>" for c in canaries)
-
     sent_any = False
     for c in canaries:
         if c["stage"] in ("ok",):
@@ -154,26 +183,11 @@ def main():
             continue
         to = people if ((c["key"] == "q" or SOVRAN_OPEN) and c["stage"] != "never") else MAV
         to = sorted(set(to + MAV))
-        b = brief(state.get("last_sent"))
-        first = {"due_soon": f"The {c['name']} is due in the next 2 days.",
-                 "due": f"The {c['name']} is due for renewal.",
-                 "overdue": f"The {c['name']} is overdue. The public page now shows red.",
-                 "never": f"The {c['name']} hasn't been signed yet."}[c["stage"]]
-        subject = {"due_soon": "Canary check: due soon", "due": "Canary check: due now",
-                   "overdue": "Canary OVERDUE: please check now", "never": "Canary check: needs its first signing"}[c["stage"]]
-        parts = [
-            f"<p><b>{html.escape(first)}</b></p>",
-            "<p>Please read the statement. If every word is still true today, sign it:</p>",
-            f"<p><a href=\"{c['sign']}\" style=\"display:inline-block;background:#122848;color:#fff;text-decoration:none;font-weight:bold;padding:11px 18px;border-radius:6px\">Check and sign</a></p>",
-            "<p style=\"background:#fdf3d4;padding:12px 14px;border-radius:6px\"><b>If you're not sure every line is still true, don't sign.</b> Call Mav first. If you've been told not to talk about something, don't sign and don't explain. Just let it lapse.</p>",
-            "<p style=\"margin:18px 0 6px\"><b>Where both canaries stand</b></p>", status_html,
-        ]
-        if b:
-            parts.append("<p style=\"margin:18px 0 6px\"><b>What changed on the site lately</b></p>")
-            parts += [f"<p style=\"margin:0 0 6px;font-size:14.5px;color:#4a4a4a\">{html.escape(x)}</p>" for x in b]
-        parts.append("<p style=\"margin-top:20px;font-size:13px;color:#777\">You're getting this because you're a canary signer for The Q Collective. Questions? Reply to this email or call Mav.</p>")
+        subject = {"due_soon": "Canary check: due in 2 days", "due": "Canary check: due today",
+                   "overdue": "Canary overdue: please check now", "never": "Canary check: first signing"}[c["stage"]]
+        h, t = render(c, canaries, [n[:150] for n in brief(state.get("last_sent"))[:2]])
         for addr in to:
-            email(addr, subject, parts)
+            email(addr, subject, h, t)
         state[c["key"]] = tag
         sent_any = True
     if sent_any:
