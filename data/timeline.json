@@ -349,6 +349,20 @@
      "href": "election-2026.html"
     }
    ]
+  },
+  {
+   "id": "ak-gov-correction-2026",
+   "date": "2026-11-08",
+   "precision": "day",
+   "kind": "site",
+   "title": "Correction: Alaska's governor race is still counting",
+   "summary": "We had listed Alaska as a governorship Democrats flipped. Jonathan Kreiss-Tomkins (D) leads with about 49% of first choices, but most outlets have not called it, so we moved it back to still counting. The ranked-choice tally is Nov. 18.",
+   "links": [
+    {
+     "label": "National map",
+     "href": "election-2026-map.html"
+    }
+   ]
   }
  ]
 }
