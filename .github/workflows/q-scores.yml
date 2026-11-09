@@ -97,6 +97,14 @@ jobs:
           SITE_URL: "https://theqcollective.org"
         run: python send_official_alerts.py
 
+      # Every lawmaker's share page and link-preview card, rebuilt from this week's scores
+      # so a shared profile never shows an old number.
+      - name: Rebuild lawmaker share cards
+        if: steps.engine.outcome == 'success'
+        run: |
+          pip install --quiet pillow==11.0.0
+          python make_profile_cards.py
+
       # Anything above went wrong: email the team right away.
       - name: Email the team if something failed
         if: failure()
@@ -116,7 +124,7 @@ jobs:
           git config user.name "q-score-bot"
           git config user.email "q-score-bot@users.noreply.github.com"
           if [ "${{ steps.engine.outcome }}" = "success" ]; then
-            git add data
+            git add data p og/p
             MSG="Update Q Scores ($(date -u +%Y-%m-%d))"
           else
             git add data/health.json 2>/dev/null || true
