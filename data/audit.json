@@ -2011,6 +2011,49 @@
      "summary": "legislator scores unchanged."
     }
    }
+  },
+  {
+   "ts": "November 8, 2026 at 5:52 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "12ac005",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/12ac005",
+   "note": "We corrected the Alaska governor's race back to still counting, since most outlets have not called it, and noted new Senate developments in Alaska and Mississippi.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "Alaska governor moved from won (flipped) back to still counting. MultiState lists an AP projection, but Alaska Public Media, Newsweek, Duane Morris and Poliwave show it uncalled, and no candidate has 50% of first choices.",
+      "before": "Jonathan Kreiss-Tomkins (D), won, flipped",
+      "after": "Jonathan Kreiss-Tomkins (D) leads Bernadette Wilson (R), 49.1% to 29.2% of first choices. Ranked-choice tally Nov. 18 if no one tops 50%. MultiState lists it as called, but other outlets still show it as uncalled"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Governors tally card corrected to 5 flips, with Alaska and Kansas still counting and a public correction note.",
+      "before": "6 flipped. Democrats flipped Alaska, Georgia, Iowa, Nevada, Ohio and Texas.",
+      "after": "5 flipped. Democrats flipped Georgia, Iowa, Nevada, Ohio and Texas. Alaska and Kansas are still counting."
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "Governors big-picture paragraph corrected to 5 flips with a dated correction note; sources line updated. As-of line moved to Sunday evening, Nov. 8."
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "\"What we're watching\" Now row: Colorado's 4th unchanged at Eileen Laubacher (D) +3,172; added the Peltola campaign's lawsuit over rejected absentee ballot records, Mississippi's Nov. 13 county certification deadline and the Alaska governor's race. As-of line updated."
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "Added a correction entry for the Alaska governor's race."
+     }
+    ]
+   }
   }
  ]
 }
