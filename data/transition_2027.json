@@ -1,6 +1,6 @@
 {
  "note": "Who is leaving office after the 2026 election, and when the handover happens. Built from called races only. Races still being counted are listed under 'pending' and are not marked as leaving until they are called.",
- "updated": "2026-11-07",
+ "updated": "2026-11-09",
  "dates": {
   "legislature_last_day": "2027-01-12",
   "legislature_sworn_in": "2027-01-13",
@@ -24,7 +24,7 @@
   {"id": "26063", "name": "Jacque Phillips", "chamber": "State House", "district": "31", "successor": "Gabriel Cervantes"},
   {"id": "24966", "name": "Manny Rutinel", "chamber": "State House", "district": "32", "successor": "Chris VanDijk", "next": "Elected to the U.S. House, Colorado's 8th District"},
   {"id": "23046", "name": "Mandy Lindsay", "chamber": "State House", "district": "42", "successor": "Sarah Woodson"},
-  {"id": "23963", "name": "Ron Weinberg", "chamber": "State House", "district": "51", "successor": "Still being counted"},
+  {"id": "23963", "name": "Ron Weinberg", "chamber": "State House", "district": "51", "successor": "Jacki Marsh"},
   {"id": "26059", "name": "Ryan Gonzalez", "chamber": "State House", "district": "50", "successor": "Tommy Butler"},
   {"id": "20139", "name": "Matt Soper", "chamber": "State House", "district": "54", "successor": "Jason Bias"},
   {"id": "22226", "name": "Stephanie Luck", "chamber": "State House", "district": "60", "successor": "Matthew Alexander"},

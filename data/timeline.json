@@ -363,6 +363,20 @@
      "href": "election-2026-map.html"
     }
    ]
+  },
+  {
+   "id": "co-hd51-called-2026",
+   "date": "2026-11-07",
+   "precision": "day",
+   "kind": "watch",
+   "title": "Colorado House District 51 is called",
+   "summary": "The AP called state House District 51 for Jacki Marsh (D) over Amy Parks (R), a pickup from Republicans. Democrats now hold 47 of 65 state House seats, with Districts 15, 21 and 22 and the 4th Congressional District still being counted.",
+   "links": [
+    {
+     "label": "Colorado results",
+     "href": "election-2026.html"
+    }
+   ]
   }
  ]
 }
