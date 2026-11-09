@@ -2075,6 +2075,34 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 9, 2026 at 6:50 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "5623e96",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/5623e96",
+   "note": "Every Colorado lawmaker now has their own share link. When it's shared, the preview shows their name, seat, party and current Q Score. Every lawmaker uses the same card.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Lawmaker profiles",
+      "url": "legislator.html",
+      "what": "Copy link and Post on X now share the lawmaker's own share link instead of the generic page link. The profile itself did not change.",
+      "before": "Shared links showed the general Q Collective preview",
+      "after": "Shared links show that lawmaker's name, seat, party and current Q Score"
+     },
+     {
+      "page": "Lawmaker share pages (new)",
+      "url": "hub.html",
+      "what": "100 share pages at theqcollective.org/p/, one per Colorado legislator. They send people straight to the full profile. Rebuilt every Sunday right after scoring, so a shared card always matches the site.",
+      "before": "None",
+      "after": "100 share pages and preview cards"
+     }
+    ]
+   }
   }
  ]
 }
