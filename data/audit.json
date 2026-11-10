@@ -2293,6 +2293,34 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 10, 2026 at 9:41 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "3217418",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/3217418",
+   "note": "Behind the scenes: messages sent through our forms now arrive in the team inbox tagged, so the ones waiting on a reply stand out. Nothing you see on the site changed.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Contact, Work With Us, Request Advocacy",
+      "url": "contact.html",
+      "what": "The email the team receives is tagged [Reply · Q].",
+      "before": "Untagged subject",
+      "after": "Tagged so it gets answered"
+     },
+     {
+      "page": "Get Involved, Support a Bill, lawmaker and bill forms",
+      "url": "get-involved.html",
+      "what": "The email the team receives is tagged [FYI · Q].",
+      "before": "Untagged subject",
+      "after": "Tagged as a record"
+     }
+    ]
+   }
   }
  ]
 }
