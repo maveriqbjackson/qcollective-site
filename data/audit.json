@@ -2321,6 +2321,53 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 10, 2026 at 11:50 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "cebbf02",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/cebbf02",
+   "note": "We updated the Tuesday midday election counts: Colorado's 4th District is still uncalled with a wider lead, one more U.S. House seat was called, and the Alaska Senate lead grew. No Colorado race was called.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Updated the count in Colorado's 4th Congressional District, still uncalled by AP and outside the automatic recount range.",
+      "before": "Eileen Laubacher (D) leads Lauren Boebert (R) by 3,237 votes, about 48.8% to 47.9%",
+      "after": "Eileen Laubacher (D) leads Lauren Boebert (R) by 3,352 votes, about 48.8% to 47.9%"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "National U.S. House count updated after Florida's 26th was called for Mario Diaz-Balart (R).",
+      "before": "254 D, 163 R, 18 still counting",
+      "after": "254 D, 164 R, 17 still counting"
+     },
+     {
+      "page": "2026 national election map",
+      "url": "election-2026-map.html",
+      "what": "Alaska Senate lead updated, still counting.",
+      "before": "Mary Peltola (D) leads Dan Sullivan (R) by about 640 votes",
+      "after": "Mary Peltola (D) leads Dan Sullivan (R) by 2,517 votes as of Nov. 9"
+     },
+     {
+      "page": "2026 national election map",
+      "url": "election-2026-map.html",
+      "what": "Alaska governor first-choice share updated, still counting.",
+      "before": "Jonathan Kreiss-Tomkins (D) leads Bernadette Wilson (R), 49.1% to 29.2%",
+      "after": "Jonathan Kreiss-Tomkins (D) leads Bernadette Wilson (R), 49.4% to 28.8%"
+     },
+     {
+      "page": "2026 national election map",
+      "url": "election-2026-map.html",
+      "what": "Added Mississippi's mail ballot count and deadline and Kansas's canvass and recount request dates. Both races are still counting."
+     }
+    ]
+   }
   }
  ]
 }
