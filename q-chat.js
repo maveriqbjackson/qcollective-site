@@ -134,7 +134,7 @@
   document.addEventListener("keydown",function(e){if(e.key==="Escape"&&panel.classList.contains("open"))close();});
 
   // gentle first-visit nudge
-  tipTimer=setTimeout(function(){if(!panel.classList.contains("open")){tip.classList.add("show");setTimeout(hideTip,4200);}},1400);
+  tipTimer=setTimeout(function(){if(!panel.classList.contains("open")){tip.classList.add("show");}},1400);
 })();
 
 /* Canary badge: a small pill above the chat button on every page that has the chat.
