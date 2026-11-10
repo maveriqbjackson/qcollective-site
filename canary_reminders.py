@@ -127,7 +127,7 @@ def render(c, canaries, notes):
              "overdue": f"The {c['name']} is overdue. Its public page now shows red.",
              "never": f"The {c['name']} needs its first signing."}[c["stage"]]
     rows = "".join(
-        f'<tr><td style="padding:7px 0;border-top:1px solid #eee9de"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:{DOT[x["stage"]]};margin-right:8px"></span>{e(x["name"])}</td>'
+        f'<tr><td style="padding:7px 12px 7px 0;border-top:1px solid #eee9de"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:{DOT[x["stage"]]};margin-right:8px"></span>{e(x["name"])}</td>'
         f'<td style="padding:7px 0;border-top:1px solid #eee9de;text-align:right;color:#5a5a5a">{ROW[x["stage"]]}'
         + (f' &middot; {x["days"]}d ago' if x["days"] is not None else "") + "</td></tr>" for x in canaries)
     news = "".join(f'<p style="margin:0 0 6px;font-size:14px;color:#5a5a5a">{e(n)}</p>' for n in notes)
