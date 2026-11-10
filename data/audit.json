@@ -2251,6 +2251,27 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 9, 2026 at 6:46 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "c636772",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/c636772",
+   "note": "Privacy policy: the Ask Q assistant now keeps a copy of a message only if it threatens someone, tries to get around the assistant's rules, or tries to get at our code, with the address it came from. Ordinary questions still aren't kept.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Privacy policy",
+      "url": "privacy.html",
+      "what": "Added a sentence to the Anthropic line under \"Who else touches it\" explaining when an assistant message is kept.",
+      "before": "No assistant messages kept",
+      "after": "Only threatening, rule-breaking or code-fishing messages are kept, with the address they came from"
+     }
+    ]
+   }
   }
  ]
 }
