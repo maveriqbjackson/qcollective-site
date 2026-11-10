@@ -1,2256 +1,2256 @@
 {
-  "engine": "v7.0",
-  "updated": "November 8, 2026 at 3:24 PM MST",
-  "runs": [
-    {
-      "ts": "2026-07-11",
-      "run_type": "genesis",
-      "engine_version": "v7.0",
-      "git_sha": "",
-      "run_id": "",
-      "run_url": "",
-      "note": "Public audit log activated. From here on, every scoring run - scheduled or manual - and every change to the data is recorded here automatically, with the exact scores that moved.",
-      "states": {}
-    },
-    {
-      "ts": "July 12, 2026 at 3:17 PM MDT",
-      "run_type": "scheduled",
-      "engine_version": "v7.0",
-      "git_sha": "34c0894",
-      "run_id": "29209104508",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/29209104508",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "updated",
-            "dataset_hash": "dc8cc0fa31e988e2738cc073ecc60d4d",
-            "dataset_date": "2026-07-12"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 0
-          },
-          "changes": {
-            "legislators": [
-              {
-                "name": "Andrew Boesenecker",
-                "old": 82,
-                "new": 87,
-                "components": {
-                  "pillar": [
-                    78,
-                    84
-                  ],
-                  "impact": [
-                    76,
-                    82
-                  ],
-                  "sponsorship": [
-                    84,
-                    90
-                  ]
-                }
-              },
-              {
-                "name": "Lindsay Gilchrist",
-                "old": 80,
-                "new": 81,
-                "components": {
-                  "impact": [
-                    71,
-                    72
-                  ]
-                }
-              },
-              {
-                "name": "Rebekah Stewart",
-                "old": 77,
-                "new": 80,
-                "components": {
-                  "pillar": [
-                    74,
-                    78
-                  ],
-                  "impact": [
-                    72,
-                    76
-                  ],
-                  "sponsorship": [
-                    81,
-                    84
-                  ]
-                }
-              },
-              {
-                "name": "Jenny Willford",
-                "old": 77,
-                "new": 80,
-                "components": {
-                  "pillar": [
-                    74,
-                    78
-                  ],
-                  "impact": [
-                    72,
-                    76
-                  ],
-                  "sponsorship": [
-                    81,
-                    84
-                  ]
-                }
-              },
-              {
-                "name": "Michael Weissman",
-                "old": 78,
-                "new": 79,
-                "components": {
-                  "pillar": [
-                    71,
-                    72
-                  ],
-                  "sponsorship": [
-                    79,
-                    80
-                  ]
-                }
-              },
-              {
-                "name": "Kyle Mullica",
-                "old": 79,
-                "new": 78,
-                "components": {
-                  "pillar": [
-                    74,
-                    72
-                  ],
-                  "impact": [
-                    71,
-                    68
-                  ],
-                  "sponsorship": [
-                    81,
-                    80
-                  ]
-                }
-              },
-              {
-                "name": "Javier Mabrey",
-                "old": 76,
-                "new": 77,
-                "components": {
-                  "pillar": [
-                    71,
-                    72
-                  ],
-                  "impact": [
-                    68,
-                    70
-                  ],
-                  "sponsorship": [
-                    81,
-                    80
-                  ]
-                }
-              },
-              {
-                "name": "Lisa Frizell",
-                "old": 72,
-                "new": 77,
-                "components": {
-                  "pillar": [
-                    63,
-                    71
-                  ],
-                  "impact": [
-                    61,
-                    68
-                  ],
-                  "sponsorship": [
-                    73,
-                    79
-                  ]
-                }
-              },
-              {
-                "name": "Junie Joseph",
-                "old": 74,
-                "new": 76,
-                "components": {
-                  "pillar": [
-                    68,
-                    72
-                  ],
-                  "impact": [
-                    65,
-                    68
-                  ],
-                  "sponsorship": [
-                    77,
-                    80
-                  ]
-                }
-              },
-              {
-                "name": "Lisa Cutter",
-                "old": 75,
-                "new": 76,
-                "components": {
-                  "impact": [
-                    68,
-                    70
-                  ]
-                }
-              },
-              {
-                "name": "Iman Jodeh",
-                "old": 77,
-                "new": 76,
-                "components": {
-                  "impact": [
-                    70,
-                    68
-                  ]
-                }
-              },
-              {
-                "name": "Scott Bright",
-                "old": 79,
-                "new": 76,
-                "components": {
-                  "pillar": [
-                    72,
-                    68
-                  ],
-                  "impact": [
-                    68,
-                    65
-                  ],
-                  "sponsorship": [
-                    80,
-                    77
-                  ]
-                }
-              },
-              {
-                "name": "Katie Wallace",
-                "old": 78,
-                "new": 76,
-                "components": {
-                  "pillar": [
-                    71,
-                    68
-                  ],
-                  "impact": [
-                    68,
-                    65
-                  ],
-                  "sponsorship": [
-                    79,
-                    77
-                  ]
-                }
-              },
-              {
-                "name": "Tisha Mauro",
-                "old": 72,
-                "new": 75,
-                "components": {
-                  "pillar": [
-                    63,
-                    68
-                  ],
-                  "impact": [
-                    61,
-                    65
-                  ],
-                  "sponsorship": [
-                    76,
-                    77
-                  ]
-                }
-              },
-              {
-                "name": "Sean Camacho",
-                "old": 76,
-                "new": 74,
-                "components": {
-                  "pillar": [
-                    71,
-                    68
-                  ],
-                  "impact": [
-                    68,
-                    65
-                  ],
-                  "sponsorship": [
-                    79,
-                    77
-                  ]
-                }
-              },
-              {
-                "name": "Amy Paschal",
-                "old": 72,
-                "new": 71,
-                "components": {
-                  "pillar": [
-                    62,
-                    61
-                  ],
-                  "sponsorship": [
-                    73,
-                    74
-                  ]
-                }
-              },
-              {
-                "name": "Ryan Gonzalez",
-                "old": 74,
-                "new": 71,
-                "components": {
-                  "pillar": [
-                    72,
-                    68
-                  ],
-                  "impact": [
-                    68,
-                    65
-                  ],
-                  "sponsorship": [
-                    80,
-                    77
-                  ]
-                }
-              },
-              {
-                "name": "Lindsey Daugherty",
-                "old": 68,
-                "new": 71,
-                "components": {
-                  "pillar": [
-                    74,
-                    78
-                  ],
-                  "impact": [
-                    72,
-                    76
-                  ],
-                  "sponsorship": [
-                    81,
-                    84
-                  ]
-                }
-              },
-              {
-                "name": "Rod Pelton",
-                "old": 66,
-                "new": 69,
-                "components": {
-                  "pillar": [
-                    58,
-                    62
-                  ],
-                  "impact": [
-                    55,
-                    58
-                  ],
-                  "sponsorship": [
-                    70,
-                    73
-                  ]
-                }
-              },
-              {
-                "name": "Steven Woodrow",
-                "old": 65,
-                "new": 68,
-                "components": {
-                  "pillar": [
-                    58,
-                    62
-                  ],
-                  "impact": [
-                    55,
-                    58
-                  ],
-                  "sponsorship": [
-                    70,
-                    73
-                  ]
-                }
-              },
-              {
-                "name": "Manny Rutinel",
-                "old": 65,
-                "new": 68,
-                "components": {
-                  "pillar": [
-                    58,
-                    62
-                  ],
-                  "impact": [
-                    52,
-                    58
-                  ],
-                  "sponsorship": [
-                    59,
-                    64
-                  ]
-                }
-              },
-              {
-                "name": "Janice Marchman",
-                "old": 68,
-                "new": 67,
-                "components": {
-                  "pillar": [
-                    62,
-                    61
-                  ],
-                  "sponsorship": [
-                    73,
-                    72
-                  ]
-                }
-              },
-              {
-                "name": "Jennifer Bacon",
-                "old": 73,
-                "new": 65,
-                "components": {
-                  "pillar": [
-                    72,
-                    62
-                  ],
-                  "impact": [
-                    68,
-                    58
-                  ],
-                  "sponsorship": [
-                    80,
-                    73
-                  ]
-                }
-              },
-              {
-                "name": "Monica Duran",
-                "old": 65,
-                "new": 64,
-                "components": {
-                  "impact": [
-                    49,
-                    48
-                  ],
-                  "sponsorship": [
-                    66,
-                    62
-                  ]
-                }
-              },
-              {
-                "name": "Tom Sullivan",
-                "old": 65,
-                "new": 62,
-                "components": {
-                  "pillar": [
-                    58,
-                    54
-                  ],
-                  "impact": [
-                    55,
-                    51
-                  ],
-                  "sponsorship": [
-                    55,
-                    51
-                  ]
-                }
-              },
-              {
-                "name": "Marc Catlin",
-                "old": 59,
-                "new": 61,
-                "components": {
-                  "pillar": [
-                    52,
-                    54
-                  ],
-                  "impact": [
-                    48,
-                    51
-                  ]
-                }
-              },
-              {
-                "name": "John Carson",
-                "old": 63,
-                "new": 60,
-                "components": {
-                  "pillar": [
-                    52,
-                    48
-                  ],
-                  "impact": [
-                    48,
-                    44
-                  ],
-                  "sponsorship": [
-                    66,
-                    62
-                  ]
-                }
-              },
-              {
-                "name": "Mary Bradfield",
-                "old": 56,
-                "new": 59,
-                "components": {
-                  "pillar": [
-                    48,
-                    52
-                  ],
-                  "impact": [
-                    44,
-                    48
-                  ]
-                }
-              },
-              {
-                "name": "Brandi Bradley",
-                "old": 50,
-                "new": 59,
-                "components": {
-                  "pillar": [
-                    38,
-                    52
-                  ],
-                  "impact": [
-                    32,
-                    44
-                  ],
-                  "sponsorship": [
-                    54,
-                    63
-                  ]
-                }
-              },
-              {
-                "name": "Cecelia Espenoza",
-                "old": 64,
-                "new": 59,
-                "components": {
-                  "pillar": [
-                    52,
-                    44
-                  ],
-                  "impact": [
-                    48,
-                    41
-                  ],
-                  "sponsorship": [
-                    62,
-                    60
-                  ]
-                }
-              },
-              {
-                "name": "Michael Carter",
-                "old": 55,
-                "new": 52,
-                "components": {
-                  "pillar": [
-                    42,
-                    38
-                  ],
-                  "impact": [
-                    38,
-                    34
-                  ],
-                  "sponsorship": [
-                    58,
-                    55
-                  ]
-                }
-              },
-              {
-                "name": "Matt Soper",
-                "old": 50,
-                "new": 51,
-                "components": {
-                  "pillar": [
-                    52,
-                    54
-                  ],
-                  "impact": [
-                    49,
-                    51
-                  ],
-                  "sponsorship": [
-                    66,
-                    67
-                  ]
-                }
-              },
-              {
-                "name": "Barbara Kirkmeyer",
-                "old": 52,
-                "new": 51,
-                "components": {
-                  "impact": [
-                    35,
-                    32
-                  ],
-                  "sponsorship": [
-                    52,
-                    50
-                  ]
-                }
-              },
-              {
-                "name": "Carlos Barron",
-                "old": 53,
-                "new": 50,
-                "components": {
-                  "pillar": [
-                    38,
-                    34
-                  ],
-                  "impact": [
-                    35,
-                    31
-                  ],
-                  "sponsorship": [
-                    53,
-                    47
-                  ]
-                }
-              },
-              {
-                "name": "Mark Baisley",
-                "old": 52,
-                "new": 50,
-                "components": {
-                  "pillar": [
-                    38,
-                    34
-                  ],
-                  "impact": [
-                    32,
-                    31
-                  ],
-                  "sponsorship": [
-                    52,
-                    49
-                  ]
-                }
-              },
-              {
-                "name": "Tammy Story",
-                "old": 48,
-                "new": 49,
-                "components": {
-                  "impact": [
-                    32,
-                    34
-                  ],
-                  "sponsorship": [
-                    51,
-                    52
-                  ]
-                }
-              },
-              {
-                "name": "Jeff Bridges",
-                "old": 42,
-                "new": 46,
-                "components": {
-                  "pillar": [
-                    28,
-                    32
-                  ],
-                  "impact": [
-                    22,
-                    28
-                  ],
-                  "sponsorship": [
-                    43,
-                    45
-                  ]
-                }
-              },
-              {
-                "name": "Anthony Hartsook",
-                "old": 42,
-                "new": 43,
-                "components": {
-                  "sponsorship": [
-                    40,
-                    44
-                  ]
-                }
-              },
-              {
-                "name": "Scott Slaugh",
-                "old": 45,
-                "new": 42,
-                "components": {
-                  "pillar": [
-                    32,
-                    28
-                  ],
-                  "impact": [
-                    28,
-                    24
-                  ],
-                  "sponsorship": [
-                    42,
-                    39
-                  ]
-                }
-              },
-              {
-                "name": "Bob Marshall",
-                "old": 37,
-                "new": 36,
-                "components": {
-                  "sponsorship": [
-                    32,
-                    29
-                  ]
-                }
-              },
-              {
-                "name": "Lynda Zamora Wilson",
-                "old": 34,
-                "new": 35,
-                "components": {
-                  "pillar": [
-                    12,
-                    14
-                  ],
-                  "impact": [
-                    10,
-                    11
-                  ]
-                }
-              }
-            ],
-            "executive": [
-              {
-                "office": "Governor",
-                "old": null,
-                "new": 0
-              }
-            ],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "41 legislator score changes; 1 executive change."
+ "engine": "v7.0",
+ "updated": "November 8, 2026 at 3:24 PM MST",
+ "runs": [
+  {
+   "ts": "2026-07-11",
+   "run_type": "genesis",
+   "engine_version": "v7.0",
+   "git_sha": "",
+   "run_id": "",
+   "run_url": "",
+   "note": "Public audit log activated. From here on, every scoring run - scheduled or manual - and every change to the data is recorded here automatically, with the exact scores that moved.",
+   "states": {}
+  },
+  {
+   "ts": "July 12, 2026 at 3:17 PM MDT",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "34c0894",
+   "run_id": "29209104508",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/29209104508",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "updated",
+      "dataset_hash": "dc8cc0fa31e988e2738cc073ecc60d4d",
+      "dataset_date": "2026-07-12"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 0
+     },
+     "changes": {
+      "legislators": [
+       {
+        "name": "Andrew Boesenecker",
+        "old": 82,
+        "new": 87,
+        "components": {
+         "pillar": [
+          78,
+          84
+         ],
+         "impact": [
+          76,
+          82
+         ],
+         "sponsorship": [
+          84,
+          90
+         ]
         }
-      }
-    },
-    {
-      "ts": "July 12, 2026 at 4:23 PM MDT",
-      "run_type": "manual",
-      "engine_version": "v7.0",
-      "git_sha": "6d9bb95",
-      "run_id": "29211409438",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/29211409438",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "dc8cc0fa31e988e2738cc073ecc60d4d",
-            "dataset_date": "2026-07-12"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [
-              {
-                "office": "Governor",
-                "old": 0,
-                "new": 81
-              }
-            ],
-            "judicial": [
-              {
-                "name": "Maria Berkenkotter",
-                "old": null,
-                "new": 90
-              },
-              {
-                "name": "Brian Boatright",
-                "old": null,
-                "new": 87
-              },
-              {
-                "name": "Richard Gabriel",
-                "old": null,
-                "new": 90
-              },
-              {
-                "name": "William W. Hood III",
-                "old": 0,
-                "new": 89
-              },
-              {
-                "name": "Monica Márquez (Chief Justice)",
-                "old": null,
-                "new": 89
-              },
-              {
-                "name": "Carlos Armando Samour Jr.",
-                "old": null,
-                "new": 86
-              }
-            ],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged; 1 executive change; 6 judicial changes."
+       },
+       {
+        "name": "Lindsay Gilchrist",
+        "old": 80,
+        "new": 81,
+        "components": {
+         "impact": [
+          71,
+          72
+         ]
         }
-      }
-    },
-    {
-      "ts": "July 20, 2026 at 7:23 AM MDT",
-      "run_type": "manual",
-      "engine_version": "v7.0",
-      "git_sha": "a8f7de6",
-      "run_id": "29746066988",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/29746066988",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "178999d3762a0cbeaf50b7e09355420f",
-            "dataset_date": "2026-07-19"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged."
+       },
+       {
+        "name": "Rebekah Stewart",
+        "old": 77,
+        "new": 80,
+        "components": {
+         "pillar": [
+          74,
+          78
+         ],
+         "impact": [
+          72,
+          76
+         ],
+         "sponsorship": [
+          81,
+          84
+         ]
         }
-      }
-    },
-    {
-      "ts": "July 26, 2026 at 1:41 PM MDT",
-      "run_type": "scheduled",
-      "engine_version": "v7.0",
-      "git_sha": "62f762d",
-      "run_id": "30217361320",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/30217361320",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "bad8b0f77e24e5076a5bd3ba2271d976",
-            "dataset_date": "2026-07-26"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged."
+       },
+       {
+        "name": "Jenny Willford",
+        "old": 77,
+        "new": 80,
+        "components": {
+         "pillar": [
+          74,
+          78
+         ],
+         "impact": [
+          72,
+          76
+         ],
+         "sponsorship": [
+          81,
+          84
+         ]
         }
-      }
-    },
-    {
-      "ts": "August 2, 2026 at 1:46 PM MDT",
-      "run_type": "scheduled",
-      "engine_version": "v7.0",
-      "git_sha": "4abdad0",
-      "run_id": "30764123810",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/30764123810",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "49b4a45160c0c24f67cdf3cd33fb76e2",
-            "dataset_date": "2026-08-02"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged."
+       },
+       {
+        "name": "Michael Weissman",
+        "old": 78,
+        "new": 79,
+        "components": {
+         "pillar": [
+          71,
+          72
+         ],
+         "sponsorship": [
+          79,
+          80
+         ]
         }
-      }
-    },
-    {
-      "ts": "August 9, 2026 at 1:17 PM MDT",
-      "run_type": "scheduled",
-      "engine_version": "v7.0",
-      "git_sha": "21991ab",
-      "run_id": "31331243655",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/31331243655",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
-            "dataset_date": "2026-08-09"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged."
+       },
+       {
+        "name": "Kyle Mullica",
+        "old": 79,
+        "new": 78,
+        "components": {
+         "pillar": [
+          74,
+          72
+         ],
+         "impact": [
+          71,
+          68
+         ],
+         "sponsorship": [
+          81,
+          80
+         ]
         }
-      }
-    },
-    {
-      "ts": "August 16, 2026 at 12:58 PM MDT",
-      "run_type": "scheduled",
-      "engine_version": "v7.0",
-      "git_sha": "997138a",
-      "run_id": "31966174940",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/31966174940",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
-            "dataset_date": "2026-08-09"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged."
+       },
+       {
+        "name": "Javier Mabrey",
+        "old": 76,
+        "new": 77,
+        "components": {
+         "pillar": [
+          71,
+          72
+         ],
+         "impact": [
+          68,
+          70
+         ],
+         "sponsorship": [
+          81,
+          80
+         ]
         }
-      }
-    },
-    {
-      "ts": "August 21, 2026",
-      "run_type": "correction",
-      "engine_version": "v7.1",
-      "git_sha": "",
-      "run_id": "",
-      "run_url": "",
-      "note": "Correction - profile summaries. A member summary used an incorrect pronoun, reported by the representative's office. The summary was corrected. Root cause: the scoring engine inferred gender from names when writing summaries. The engine now writes every member summary without gendered pronouns, and all 100 existing summaries were reviewed and rewritten. No scores were affected.",
-      "correction": {
-        "state": "CO",
-        "subject": "Dusty Johnson",
-        "scope": "Profile summary",
-        "scores_affected": false,
-        "records_updated": 53
-      }
-    },
-    {
-      "ts": "August 21, 2026 at 11:47 AM MDT",
-      "run_type": "manual",
-      "engine_version": "v7.0",
-      "git_sha": "953a8be",
-      "run_id": "32509986444",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/32509986444",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
-            "dataset_date": "2026-08-09"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged."
+       },
+       {
+        "name": "Lisa Frizell",
+        "old": 72,
+        "new": 77,
+        "components": {
+         "pillar": [
+          63,
+          71
+         ],
+         "impact": [
+          61,
+          68
+         ],
+         "sponsorship": [
+          73,
+          79
+         ]
         }
-      }
-    },
-    {
-      "ts": "August 23, 2026 at 12:59 PM MDT",
-      "run_type": "scheduled",
-      "engine_version": "v7.0",
-      "git_sha": "d99f31a",
-      "run_id": "32659791373",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/32659791373",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
-            "dataset_date": "2026-08-09"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged."
+       },
+       {
+        "name": "Junie Joseph",
+        "old": 74,
+        "new": 76,
+        "components": {
+         "pillar": [
+          68,
+          72
+         ],
+         "impact": [
+          65,
+          68
+         ],
+         "sponsorship": [
+          77,
+          80
+         ]
         }
-      }
-    },
-    {
-      "ts": "August 30, 2026 at 3:28 PM MDT",
-      "run_type": "scheduled",
-      "engine_version": "v7.0",
-      "git_sha": "ac680ce",
-      "run_id": "33336509460",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/33336509460",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
-            "dataset_date": "2026-08-09"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged."
+       },
+       {
+        "name": "Lisa Cutter",
+        "old": 75,
+        "new": 76,
+        "components": {
+         "impact": [
+          68,
+          70
+         ]
         }
-      }
-    },
-    {
-      "ts": "September 6, 2026 at 2:45 PM MDT",
-      "run_type": "scheduled",
-      "engine_version": "v7.0",
-      "git_sha": "9797718",
-      "run_id": "34058946955",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/34058946955",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
-            "dataset_date": "2026-08-09"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged."
+       },
+       {
+        "name": "Iman Jodeh",
+        "old": 77,
+        "new": 76,
+        "components": {
+         "impact": [
+          70,
+          68
+         ]
         }
-      }
-    },
-    {
-      "ts": "September 13, 2026 at 3:05 PM MDT",
-      "run_type": "scheduled",
-      "engine_version": "v7.0",
-      "git_sha": "82e089a",
-      "run_id": "34782752061",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/34782752061",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
-            "dataset_date": "2026-08-09"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged."
+       },
+       {
+        "name": "Scott Bright",
+        "old": 79,
+        "new": 76,
+        "components": {
+         "pillar": [
+          72,
+          68
+         ],
+         "impact": [
+          68,
+          65
+         ],
+         "sponsorship": [
+          80,
+          77
+         ]
         }
-      }
-    },
-    {
-      "ts": "September 20, 2026 at 3:01 PM MDT",
-      "run_type": "scheduled",
-      "engine_version": "v7.0",
-      "git_sha": "aa2c319",
-      "run_id": "35537348072",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/35537348072",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
-            "dataset_date": "2026-08-09"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged."
+       },
+       {
+        "name": "Katie Wallace",
+        "old": 78,
+        "new": 76,
+        "components": {
+         "pillar": [
+          71,
+          68
+         ],
+         "impact": [
+          68,
+          65
+         ],
+         "sponsorship": [
+          79,
+          77
+         ]
         }
-      }
-    },
-    {
-      "ts": "September 27, 2026 at 3:33 PM MDT",
-      "run_type": "scheduled",
-      "engine_version": "v7.0",
-      "git_sha": "0968d27",
-      "run_id": "36352140103",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/36352140103",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
-            "dataset_date": "2026-08-09"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged."
+       },
+       {
+        "name": "Tisha Mauro",
+        "old": 72,
+        "new": 75,
+        "components": {
+         "pillar": [
+          63,
+          68
+         ],
+         "impact": [
+          61,
+          65
+         ],
+         "sponsorship": [
+          76,
+          77
+         ]
         }
-      }
-    },
-    {
-      "ts": "October 5, 2026 at 8:04 AM MDT",
-      "run_type": "manual",
-      "engine_version": "v7.0",
-      "git_sha": "d6832aa",
-      "run_id": "37321786716",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/37321786716",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
-            "dataset_date": "2026-08-09"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged."
+       },
+       {
+        "name": "Sean Camacho",
+        "old": 76,
+        "new": 74,
+        "components": {
+         "pillar": [
+          71,
+          68
+         ],
+         "impact": [
+          68,
+          65
+         ],
+         "sponsorship": [
+          79,
+          77
+         ]
         }
-      }
-    },
-    {
-      "ts": "October 8, 2026 at 9:10 AM MDT",
-      "run_type": "manual",
-      "engine_version": "v7.0",
-      "git_sha": "391003f",
-      "run_id": "37798542373",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/37798542373",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
-            "dataset_date": "2026-08-09"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged."
+       },
+       {
+        "name": "Amy Paschal",
+        "old": 72,
+        "new": 71,
+        "components": {
+         "pillar": [
+          62,
+          61
+         ],
+         "sponsorship": [
+          73,
+          74
+         ]
         }
-      }
-    },
-    {
-      "ts": "October 11, 2026 at 4:23 PM MDT",
-      "run_type": "scheduled",
-      "engine_version": "v7.0",
-      "git_sha": "9cca097",
-      "run_id": "38180234726",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/38180234726",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
-            "dataset_date": "2026-08-09"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged."
+       },
+       {
+        "name": "Ryan Gonzalez",
+        "old": 74,
+        "new": 71,
+        "components": {
+         "pillar": [
+          72,
+          68
+         ],
+         "impact": [
+          68,
+          65
+         ],
+         "sponsorship": [
+          80,
+          77
+         ]
         }
-      }
-    },
-    {
-      "ts": "October 18, 2026 at 2:58 PM MDT",
-      "run_type": "scheduled",
-      "engine_version": "v7.0",
-      "git_sha": "bab691a",
-      "run_id": "39165740545",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/39165740545",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
-            "dataset_date": "2026-08-09"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged."
+       },
+       {
+        "name": "Lindsey Daugherty",
+        "old": 68,
+        "new": 71,
+        "components": {
+         "pillar": [
+          74,
+          78
+         ],
+         "impact": [
+          72,
+          76
+         ],
+         "sponsorship": [
+          81,
+          84
+         ]
         }
-      }
-    },
-    {
-      "ts": "October 25, 2026 at 3:10 PM MDT",
-      "run_type": "scheduled",
-      "engine_version": "v7.0",
-      "git_sha": "d9b3182",
-      "run_id": "40234206726",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/40234206726",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
-            "dataset_date": "2026-08-09"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged."
+       },
+       {
+        "name": "Rod Pelton",
+        "old": 66,
+        "new": 69,
+        "components": {
+         "pillar": [
+          58,
+          62
+         ],
+         "impact": [
+          55,
+          58
+         ],
+         "sponsorship": [
+          70,
+          73
+         ]
         }
-      }
-    },
-    {
-      "ts": "November 1, 2026 at 3:18 PM MST",
-      "run_type": "scheduled",
-      "engine_version": "v7.0",
-      "git_sha": "52a307d",
-      "run_id": "41356435711",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/41356435711",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
-            "dataset_date": "2026-08-09"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged."
+       },
+       {
+        "name": "Steven Woodrow",
+        "old": 65,
+        "new": 68,
+        "components": {
+         "pillar": [
+          58,
+          62
+         ],
+         "impact": [
+          55,
+          58
+         ],
+         "sponsorship": [
+          70,
+          73
+         ]
         }
-      }
-    },
-    {
-      "ts": "November 5, 2026 at 9:52 AM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "7785e5a",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/7785e5a",
-      "note": "We published the 2026 election results: a Colorado page and a clickable national map.",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "2026 Election Results: Colorado",
-            "url": "election-2026.html",
-            "what": "New page. Statewide winners, every Colorado House and Senate district, ballot measures, and the dates when results become official."
-          },
-          {
-            "page": "2026 Election Map",
-            "url": "election-2026-map.html",
-            "what": "New page. A map of all 50 states showing governor and U.S. Senate results. Any result not yet confirmed is labeled \"Being confirmed,\" with the reason and when we expect to confirm it."
-          }
-        ]
-      }
-    },
-    {
-      "ts": "November 5, 2026 at 9:59 AM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "0f22c8a",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/0f22c8a",
-      "note": "We added a banner pointing to the election results.",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "Every page",
-            "url": "election-2026-map.html",
-            "what": "A banner at the top of the site links to the election results. Visitors can close it, and it comes down on January 15, 2027."
-          }
-        ]
-      }
-    },
-    {
-      "ts": "November 5, 2026 at 10:09 AM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "f9fcb84",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/f9fcb84",
-      "note": "We set up how the site handles the change of officeholders in January 2027.",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "Past Officials",
-            "url": "past-officials.html",
-            "what": "New page. When someone leaves office, their final record and Q Score stay public here. It lists who is leaving after the 2026 election."
-          },
-          {
-            "page": "Legislator profiles",
-            "url": "hub.html",
-            "what": "Profiles of members who are leaving now say so. New members are marked as new."
-          },
-          {
-            "page": "Scoring rule for new members",
-            "url": "how-q-scores-work.html",
-            "what": "Starting with the 2027 session, a lawmaker isn't scored until they've cast at least 5 votes, so nobody is judged on a blank record. No current score changed."
-          },
-          {
-            "page": "Governor and statewide offices",
-            "url": "state-profile.html",
-            "what": "These pages switch to the new officeholders on January 12, 2027, when they take office."
-          }
-        ]
-      }
-    },
-    {
-      "ts": "November 5, 2026 at 10:26 AM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "ac66580",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/ac66580",
-      "note": "We added U.S. House results to the election map.",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "2026 Election Map",
-            "url": "election-2026-map.html",
-            "what": "New U.S. House view: seats that changed parties, Colorado's full delegation, and clear notes on which races aren't fully counted yet."
-          }
-        ]
-      }
-    },
-    {
-      "ts": "November 5, 2026 at 3:36 PM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "0fa31b4",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/0fa31b4",
-      "note": "We tightened how we explain the Q Score so it matches exactly how the engine works, and added a plain answer to the most common question we get: does the score lean toward a party?",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "How the Q Score works, in plain English",
-            "url": "q-score-explained.html#party",
-            "what": "New section, \"Does the Q Score lean toward a party?\" It explains that the engine never reads party, the four questions every law is graded on, that we don't decide whether a bill is good or bad, and why Democrats score higher right now."
-          },
-          {
-            "page": "How the Q Score works, in plain English",
-            "url": "q-score-explained.html",
-            "what": "Fixed wording that didn't match how the engine works. Votes only count toward attendance, and a yes and a no count the same.",
-            "before": "Pillar alignment, 40%. Do their bills and votes push the pillars forward or backward?",
-            "after": "Pillar alignment, 40%. Do the bills they lead and pass push the pillars forward?"
-          },
-          {
-            "page": "How Q Scores Work",
-            "url": "how-q-scores-work.html",
-            "what": "Same wording fix in the scoring rubric, plus a new link to the party section.",
-            "before": "Pillar Alignment: do their bills and votes advance the seven pillars?",
-            "after": "Pillar Alignment: do the bills they lead and pass advance the seven pillars?"
-          },
-          {
-            "page": "Our Constitution",
-            "url": "constitution.html",
-            "what": "\"Good\" was too loose a word for a nonpartisan standard, so we replaced it with what we actually measure.",
-            "before": "We exist to move good policy, and to keep power honest.",
-            "after": "We exist to move policy that makes everyday life more stable, measured by the seven pillars, and to keep power honest."
-          }
-        ]
-      }
-    },
-    {
-      "ts": "November 5, 2026 at 4:20 PM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "de64bcd",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/de64bcd",
-      "note": "We updated the 2026 election results with the latest calls and counts.",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "The AP called Colorado's 5th Congressional District for Jessica Killin (D).",
-            "before": "Jessica Killin (D) leads Jeff Crank (R), 51.6% to 45.3%, with 72% counted",
-            "after": "Jessica Killin (D) over Jeff Crank (R), 50.6% to 46.0%, flipped from Republican"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "New count in the 4th District, new yes shares for the 8 ballot measures still counting, and a note that the 4th is near the automatic recount line."
-          },
-          {
-            "page": "2026 Election Map",
-            "url": "election-2026-map.html",
-            "what": "Added Colorado's 5th as a seat that changed parties, named Ami Bera as the winner in California's 3rd, confirmed Zach Dembo in Kentucky's 6th, and updated the Alaska Senate and Kansas governor leads and the national House count."
-          },
-          {
-            "page": "Timeline",
-            "url": "timeline.html",
-            "what": "New entry for the 5th District call."
-          }
-        ]
-      }
-    },
-    {
-      "ts": "November 5, 2026 at 6:10 PM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "e23a6dd",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/e23a6dd",
-      "note": "We updated the Kansas governor count and added four newly confirmed U.S. House seats that changed parties.",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "Updated Cindy Holscher's lead in the Kansas governor's race, still uncalled.",
-            "before": "Kansas is still counting, with Cindy Holscher (D) ahead by about 5,500 votes.",
-            "after": "Kansas is still counting: Cindy Holscher (D) leads by about 7,000 votes, with about 99% counted."
-          },
-          {
-            "page": "2026 Election Map",
-            "url": "election-2026-map.html",
-            "what": "Updated the Kansas governor lead.",
-            "before": "Cindy Holscher (D) leads Ty Masterson (R) by about 5,500 votes",
-            "after": "Cindy Holscher (D) leads Ty Masterson (R) by about 7,000 votes"
-          },
-          {
-            "page": "2026 Election Map",
-            "url": "election-2026-map.html",
-            "what": "Added four U.S. House seats that changed parties, each confirmed by two outlets: Arizona's 1st (Amish Shah, D), North Carolina's 9th (Richard Ojeda, D), Virginia's 1st (Shannon Taylor, D) and Tennessee's 9th (Brent Taylor, R).",
-            "before": "Our map shows the 33 flips we have confirmed by name so far (32 to Democrats, 1 to Republicans)",
-            "after": "Our map shows the 37 flips we have confirmed by name so far (35 to Democrats, 2 to Republicans)"
-          }
-        ]
-      }
-    },
-    {
-      "ts": "November 6, 2026 at 10:24 AM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "6cf7631",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/6cf7631",
-      "note": "We launched The Q Collective canary: a public statement, renewed every 7 days, that we have received no secret government order, gag order, subpoena or demand for our records. If it ever stops being renewed, read the silence.",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "The Canary",
-            "url": "canary.html",
-            "what": "New page. The current statement, a green, yellow or red status worked out in your own browser, who signed it last and when, how to read it, and every recent signing."
-          },
-          {
-            "page": "Homepage",
-            "url": "index.html#qcanary",
-            "what": "New section, \"If we ever go quiet, that's the message,\" explaining what the canary is, with a live status button."
-          },
-          {
-            "page": "Audit log",
-            "url": "audit.html",
-            "what": "Every canary signing now appears here as a CANARY entry, with who signed and when."
-          },
-          {
-            "page": "Sign the Canary",
-            "url": "canary-sign.html",
-            "what": "New page for signers only. Each signer signs in with their own email. The statement's wording can't be changed from this page."
-          }
-        ]
-      }
-    },
-    {
-      "ts": "November 6, 2026 at 11:49 AM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "fe7f631",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/fe7f631",
-      "note": "We recorded the Friday morning election calls: Colorado's 3rd District for Jeff Hurd, two state legislative seats, five ballot measures and three more U.S. House seats that changed parties.",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "Colorado's 3rd Congressional District was called by the AP for Jeff Hurd (R).",
-            "before": "Jeff Hurd (R) leads Dwayne Romero (D), 49.2% to 47.6% (Counting)",
-            "after": "Jeff Hurd (R), re-elected over Dwayne Romero (D), about 49.3% to 47.4% (Won)"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "Updated the count in Colorado's 4th Congressional District, still uncalled and outside the automatic recount range for now.",
-            "before": "Eileen Laubacher (D) leads Lauren Boebert (R), 48.7% to 48.1%, by about 2,300 votes",
-            "after": "Eileen Laubacher (D) leads Lauren Boebert (R) by 3,069 votes, about 48.8% to 48.0%"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html#houseT",
-            "what": "State House District 50 called, confirmed by two outlets.",
-            "before": "Tommy Butler (D) leads Ryan Gonzalez (R), 59.5% to 40.5% (Counting)",
-            "after": "Tommy Butler (D), 59%, flipped from Republican, over Ryan Gonzalez (R) (Won)"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html#senT",
-            "what": "State Senate District 30 called, confirmed by two outlets.",
-            "before": "Kevin Leung (D) leads John Carson (R), 52.4% to 47.6% (Counting)",
-            "after": "Kevin Leung (D), 52%, flipped from Republican, over John Carson (R) (Won)"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "Amendment 86 failed.",
-            "before": "Amendment 86: 47% yes (Counting)",
-            "after": "Amendment 86: 46.9% yes (Failed)"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "Amendment 87 passed.",
-            "before": "Amendment 87: 50.6% yes (Counting)",
-            "after": "Amendment 87: 51.4% yes (Passed)"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "Prop 132 passed.",
-            "before": "Prop 132: 53% yes (Counting)",
-            "after": "Prop 132: 52.7% yes (Passed)"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "Prop 134 passed (called by the AP).",
-            "before": "Prop 134: 52.7% yes (Counting)",
-            "after": "Prop 134: 52.3% yes (Passed)"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "Prop 136 failed.",
-            "before": "Prop 136: 47.6% yes (Counting)",
-            "after": "Prop 136: 47.3% yes (Failed)"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "Refreshed the yes shares for Amendment 85, Prop 135 and Prop 137, which are still being counted, and the state legislature and national tally cards."
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "Updated the national U.S. House count.",
-            "before": "240 D, 147 R. Called as of Thursday morning, Nov. 5, with 48 still counting then.",
-            "after": "248 D, 150 R. Called as of Thursday evening, Nov. 5, by Ballotpedia's count, with 37 still counting."
-          },
-          {
-            "page": "2026 Election Map",
-            "url": "election-2026-map.html",
-            "what": "Added three U.S. House seats that changed parties, each confirmed by two outlets: Arizona's 6th (JoAnna Mendoza, D), Montana's 1st (Sam Forstag, D) and Ohio's 15th (Don Leonard, D). Colorado's 3rd now shows Jeff Hurd (R) as the winner.",
-            "before": "Our map shows the 37 flips we have confirmed by name so far (35 to Democrats, 2 to Republicans)",
-            "after": "Our map shows the 40 flips we have confirmed by name so far (38 to Democrats, 2 to Republicans)"
-          },
-          {
-            "page": "Past Officials",
-            "url": "past-officials.html",
-            "what": "Ryan Gonzalez (House District 50) and John Carson (Senate District 30) moved from still counting to leaving office, with their successors Tommy Butler and Kevin Leung."
-          },
-          {
-            "page": "Timeline",
-            "url": "timeline.html",
-            "what": "Added an entry for the Colorado 3rd District call and the income tax measures."
-          }
-        ]
-      }
-    },
-    {
-      "ts": "November 6, 2026 at 6:00 PM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "8217d8f",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/8217d8f",
-      "note": "We recorded the Friday evening election calls: three Colorado state House seats, the last state Senate seat, two ballot measures, five U.S. Senate winners we had been confirming and six more U.S. House seats that changed parties.",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html#houseT",
-            "what": "State House District 14 called, confirmed by MultiState and Decision Desk HQ.",
-            "before": "Ava Flanell (R) leads Sarah Emery (D), 53.6% to 46.4% (Counting)",
-            "after": "Ava Flanell (R), 54%, over Sarah Emery (D) (Won)"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html#houseT",
-            "what": "State House District 48 called, confirmed by MultiState and Decision Desk HQ.",
-            "before": "Carlos Barron (R) leads Dez Packard (D), 54.1% to 43.4% (Counting)",
-            "after": "Carlos Barron (R), over Dez Packard (D) and Eric Joss (L) (Won)"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html#houseT",
-            "what": "State House District 64 called, confirmed by MultiState and Decision Desk HQ.",
-            "before": "Scott Slaugh (R) leads Maureen Dower (D), 55.0% to 45.0% (Counting)",
-            "after": "Scott Slaugh (R), 55%, over Maureen Dower (D) (Won)"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html#senT",
-            "what": "State Senate District 11 called, confirmed by MultiState and Decision Desk HQ. Every state Senate race is now called: 24 Democrats, 11 Republicans.",
-            "before": "Tony Exum Sr. (D) leads Levon Stilson (R), 60.5% to 36.0% (Counting)",
-            "after": "Tony Exum Sr. (D), about 60%, over Levon Stilson (R) and Janet Turner (L) (Won)"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html#houseT",
-            "what": "Refreshed the leads in State House Districts 15, 21, 22, 39 and 51, all still counting. The state House tally card now reads 46 D, 13 R, with 6 still counting."
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "Amendment 85 failed, short of the 55% it needed.",
-            "before": "Amendment 85: 51.1% yes (Counting)",
-            "after": "Amendment 85: 51.1% yes (Failed)"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "Prop 135 passed.",
-            "before": "Prop 135: 52.0% yes (Counting)",
-            "after": "Prop 135: 52.0% yes (Passed)"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "National House tally card updated.",
-            "before": "248 D, 150 R, 37 still counting (Nov. 5)",
-            "after": "253 D, 157 R, 25 still counting (Nov. 6)"
-          },
-          {
-            "page": "2026 national results map",
-            "url": "election-2026-map.html",
-            "what": "U.S. Senate winners confirmed from direct sources in Kentucky, Montana, Oklahoma, West Virginia and Wyoming.",
-            "before": "Andy Barr, Kurt Alme, Kevin Hern, Shelley Moore Capito, Harriet Hageman (Being confirmed)",
-            "after": "Andy Barr (R), Kurt Alme (R), Kevin Hern (R), Shelley Moore Capito (R), Harriet Hageman (R) (Won)"
-          },
-          {
-            "page": "2026 national results map",
-            "url": "election-2026-map.html",
-            "what": "Mississippi Senate lead refreshed, still counting.",
-            "before": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 1,100 votes",
-            "after": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,000 votes"
-          },
-          {
-            "page": "2026 national results map",
-            "url": "election-2026-map.html",
-            "what": "Six more U.S. House seats that changed parties added, bringing the map to 46 (44 to Democrats, 2 to Republicans): New Jersey 2nd (Zack Mullock), New York 17th (Cait Conley), Ohio 10th (Kristina Knickerbocker), North Carolina 6th (Cyril Jefferson), 13th (Paul Barringer) and 14th (Lakesha Womack), all Democrats."
-          },
-          {
-            "page": "Past officials",
-            "url": "past-officials.html",
-            "what": "Ava Flanell, Carlos Barron, Scott Slaugh and Tony Exum removed from still counting after winning their races."
-          },
-          {
-            "page": "Timeline",
-            "url": "timeline.html",
-            "what": "Added an entry for the Colorado state Senate being fully called and the Amendment 85 and Prop 135 results."
-          }
-        ]
-      }
-    },
-    {
-      "ts": "November 7, 2026 at 11:55 AM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "3322ac0",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/3322ac0",
-      "note": "We recorded the Saturday morning election calls: two Colorado state House seats, Prop 137 and one more U.S. House seat that changed parties, and refreshed the count in Colorado's 4th District.",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html#houseT",
-            "what": "State House District 39 called, confirmed by AP via Rocky Mountain Voice and MultiState.",
-            "before": "Brandi Bradley (R) leads Christian Schilder (D), 53.9% to 46.1% (Counting)",
-            "after": "Brandi Bradley (R), 54%, over Christian Schilder (D) (Won)"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html#houseT",
-            "what": "State House District 44 called, confirmed by AP via Rocky Mountain Voice and MultiState. The state House tally card now reads 46 D, 15 R, with 4 still counting.",
-            "before": "Tony Hartsook (R) leads Richard Bowness (D), 51.5% to 46.2% (Counting)",
-            "after": "Tony Hartsook (R), 51%, over Richard Bowness (D) and John Sutton (L) (Won)"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "Prop 137 passed, called by AP. Every statewide ballot measure is now decided.",
-            "before": "Prop 137: 51.6% yes (Counting)",
-            "after": "Prop 137: 51.8% yes (Passed)"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "Colorado's 4th District count refreshed, still counting and outside the automatic recount range for now.",
-            "before": "Eileen Laubacher (D) leads Lauren Boebert (R) by 3,069 votes, about 48.8% to 48.0%",
-            "after": "Eileen Laubacher (D) leads Lauren Boebert (R) by 3,172 votes, about 48.8% to 47.9%"
-          },
-          {
-            "page": "2026 national results map",
-            "url": "election-2026-map.html",
-            "what": "South Carolina 1st added as a U.S. House seat that changed parties, confirmed by CBS News and The Post and Courier. The map now shows 47 flips (45 to Democrats, 2 to Republicans).",
-            "before": "South Carolina: no House flips",
-            "after": "South Carolina 1st: Nancy Lacore (D), flipped from Republican"
-          },
-          {
-            "page": "Past officials",
-            "url": "past-officials.html",
-            "what": "Brandi Bradley and Anthony Hartsook removed from still counting after winning their races."
-          },
-          {
-            "page": "Timeline",
-            "url": "timeline.html",
-            "what": "Added an entry for Prop 137 passing and State House Districts 39 and 44 being called."
-          }
-        ]
-      }
-    },
-    {
-      "ts": "November 7, 2026 at 6:10 PM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "80509c8",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/80509c8",
-      "note": "No new races were called this evening, so we refreshed the national seat counts and the Mississippi Senate lead and noted that Colorado's count has not moved since Friday.",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "U.S. House tally card refreshed from the AP count reported by Yahoo News (4:45 p.m. ET, Nov. 6), with CBS News's updated count of seats that changed parties.",
-            "before": "253 D, 157 R. Called as of Friday morning, Nov. 6, with 25 still counting. CBS News counts 45 seats that changed parties: 43 to Democrats and 2 to Republicans.",
-            "after": "253 D, 162 R. Called as of Friday afternoon, Nov. 6, with 20 still counting. CBS News counts 46 seats that changed parties: 44 to Democrats and 2 to Republicans."
-          },
-          {
-            "page": "2026 national results map",
-            "url": "election-2026-map.html",
-            "what": "Mississippi Senate lead refreshed, still counting, from AP figures via Mississippi Free Press and Democracy Docket (5 p.m. CT, Nov. 6).",
-            "before": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,000 votes",
-            "after": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,500 votes"
-          },
-          {
-            "page": "2026 national results map",
-            "url": "election-2026-map.html",
-            "what": "House note and big-picture text updated to the same House count and CBS News's 46 flips; the map still shows 47 flips confirmed by name (45 to Democrats, 2 to Republicans). Sources line and as-of line updated."
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "\"What we're watching\" Now row: noted Colorado's count is unchanged since Friday afternoon, counties have until Nov. 13 to finish counting, and added the Mississippi lead. Colorado's 4th stays at Eileen Laubacher (D) +3,172, still counting."
-          }
-        ]
-      }
-    },
-    {
-      "ts": "November 8, 2026 at 11:55 AM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "b42b895",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/b42b895",
-      "note": "No new races were called, so we refreshed the national House count, the Mississippi Senate lead and the Kansas audit, and noted a disagreement between sources on Colorado state House District 51.",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "U.S. House tally card refreshed from the AP count reported by Yahoo News (11:17 a.m. ET, Nov. 7).",
-            "before": "253 D, 162 R. Called as of Friday afternoon, Nov. 6, with 20 still counting.",
-            "after": "254 D, 162 R. Called as of Saturday morning, Nov. 7, with 19 still counting."
-          },
-          {
-            "page": "2026 national results map",
-            "url": "election-2026-map.html",
-            "what": "Mississippi Senate lead refreshed, still counting, from AP figures via Democracy Docket and Yahoo News.",
-            "before": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,500 votes",
-            "after": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,600 votes"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "State House District 51 lead refreshed from Rocky Mountain Voice (9:28 a.m. Nov. 7). MultiState lists Jacki Marsh (D) as the winner but AP has not called it, so the race stays counting and the page says so.",
-            "before": "Jacki Marsh (D) leads Amy Parks (R), 51.3% to 48.7%",
-            "after": "Jacki Marsh (D) leads Amy Parks (R), 51.4% to 48.6%. MultiState lists her as the winner, but AP has not called it, so we still show it as counting."
-          },
-          {
-            "page": "2026 national results map",
-            "url": "election-2026-map.html",
-            "what": "House note and big-picture text updated to the same House count; Kansas governor text notes the state-required hand-count audit; Mississippi text notes about 3,100 mail ballots due by Nov. 10. Sources and as-of lines updated."
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "\"What we're watching\" Now row: Colorado's 4th unchanged at Eileen Laubacher (D) +3,172 with only Elbert County finished; added the Mississippi mail-ballot deadline, the Kansas audit and the District 51 source disagreement."
-          }
-        ]
-      }
-    },
-    {
-      "ts": "November 8, 2026 at 3:24 PM MST",
-      "run_type": "scheduled",
-      "engine_version": "v7.0",
-      "git_sha": "f892669",
-      "run_id": "42530112585",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/42530112585",
-      "states": {
-        "CO": {
-          "legiscan": {
-            "status": "unchanged",
-            "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
-            "dataset_date": "2026-08-09"
-          },
-          "counts": {
-            "legislators": 100,
-            "champions": 7,
-            "executive_scored": 1,
-            "judicial_scored": 6
-          },
-          "changes": {
-            "legislators": [],
-            "executive": [],
-            "judicial": [],
-            "added": [],
-            "removed": []
-          },
-          "summary": "legislator scores unchanged."
+       },
+       {
+        "name": "Manny Rutinel",
+        "old": 65,
+        "new": 68,
+        "components": {
+         "pillar": [
+          58,
+          62
+         ],
+         "impact": [
+          52,
+          58
+         ],
+         "sponsorship": [
+          59,
+          64
+         ]
         }
-      }
-    },
-    {
-      "ts": "November 8, 2026 at 5:52 PM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "12ac005",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/12ac005",
-      "note": "We corrected the Alaska governor's race back to still counting, since most outlets have not called it, and noted new Senate developments in Alaska and Mississippi.",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "2026 national results map",
-            "url": "election-2026-map.html",
-            "what": "Alaska governor moved from won (flipped) back to still counting. MultiState lists an AP projection, but Alaska Public Media, Newsweek, Duane Morris and Poliwave show it uncalled, and no candidate has 50% of first choices.",
-            "before": "Jonathan Kreiss-Tomkins (D), won, flipped",
-            "after": "Jonathan Kreiss-Tomkins (D) leads Bernadette Wilson (R), 49.1% to 29.2% of first choices. Ranked-choice tally Nov. 18 if no one tops 50%. MultiState lists it as called, but other outlets still show it as uncalled"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "Governors tally card corrected to 5 flips, with Alaska and Kansas still counting and a public correction note.",
-            "before": "6 flipped. Democrats flipped Alaska, Georgia, Iowa, Nevada, Ohio and Texas.",
-            "after": "5 flipped. Democrats flipped Georgia, Iowa, Nevada, Ohio and Texas. Alaska and Kansas are still counting."
-          },
-          {
-            "page": "2026 national results map",
-            "url": "election-2026-map.html",
-            "what": "Governors big-picture paragraph corrected to 5 flips with a dated correction note; sources line updated. As-of line moved to Sunday evening, Nov. 8."
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "\"What we're watching\" Now row: Colorado's 4th unchanged at Eileen Laubacher (D) +3,172; added the Peltola campaign's lawsuit over rejected absentee ballot records, Mississippi's Nov. 13 county certification deadline and the Alaska governor's race. As-of line updated."
-          },
-          {
-            "page": "Timeline",
-            "url": "timeline.html",
-            "what": "Added a correction entry for the Alaska governor's race."
-          }
-        ]
-      }
-    },
-    {
-      "ts": "November 8, 2026 at 7:30 PM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "f82189a",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/f82189a",
-      "note": "Every page now shows its own preview when the link is shared in a text, email or social post, with that page's title and a short description.",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "Every public page",
-            "url": "index.html",
-            "what": "Link previews. Each page now has its own preview card (page title, one-line description, theqcollective.org) instead of one shared image for the whole site. No page text, scores or bills changed.",
-            "before": "One shared preview image for every page",
-            "after": "A preview card made for each page"
-          }
-        ]
-      }
-    },
-    {
-      "ts": "November 9, 2026 at 6:50 AM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "5623e96",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/5623e96",
-      "note": "Every Colorado lawmaker now has their own share link. When it's shared, the preview shows their name, seat, party and current Q Score. Every lawmaker uses the same card.",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "Lawmaker profiles",
-            "url": "legislator.html",
-            "what": "Copy link and Post on X now share the lawmaker's own share link instead of the generic page link. The profile itself did not change.",
-            "before": "Shared links showed the general Q Collective preview",
-            "after": "Shared links show that lawmaker's name, seat, party and current Q Score"
-          },
-          {
-            "page": "Lawmaker share pages (new)",
-            "url": "hub.html",
-            "what": "100 share pages at theqcollective.org/p/, one per Colorado legislator. They send people straight to the full profile. Rebuilt every Sunday right after scoring, so a shared card always matches the site.",
-            "before": "None",
-            "after": "100 share pages and preview cards"
-          }
-        ]
-      }
-    },
-    {
-      "ts": "November 9, 2026 at 11:47 AM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "87ef23b",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/87ef23b",
-      "note": "We recorded the AP call in Colorado state House District 51, updated the vote lead in Colorado's 4th Congressional District and refreshed the national House count.",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "State House District 51 moved from still counting to won, called by AP via Rocky Mountain Voice and confirmed by MultiState. State House tally card moved from 46 D, 15 R with 4 counting to 47 D, 15 R with 3 counting.",
-            "before": "Jacki Marsh (D) leads Amy Parks (R), 51.4% to 48.6%. MultiState lists her as the winner, but AP has not called it, so we still show it as counting.",
-            "after": "Jacki Marsh (D), 51%, flipped from Republican, over Amy Parks (R). Won"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "Colorado's 4th Congressional District lead corrected to match Rocky Mountain Voice, Poliwave and American Muckrakers. Still counting.",
-            "before": "Eileen Laubacher (D) leads Lauren Boebert (R) by 3,172 votes, about 48.8% to 47.9%",
-            "after": "Eileen Laubacher (D) leads Lauren Boebert (R) by 3,237 votes, about 48.8% to 47.9%"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "U.S. House tally card updated to the AP count as of Monday morning, Nov. 9.",
-            "before": "254 D, 162 R, with 19 still counting (Nov. 7)",
-            "after": "254 D, 163 R, with 18 still counting (Nov. 9)"
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "\"What we're watching\" Now row: three state House races left, District 51 call noted, 4th District lead and counting status updated, Mississippi mail ballots outstanding updated to just over 2,800. As-of line moved to midday Monday, Nov. 9."
-          },
-          {
-            "page": "2026 national results map",
-            "url": "election-2026-map.html",
-            "what": "House count in the big-picture text and House note updated to 254 D, 163 R, 18 still counting; Mississippi mail ballots updated; sources and as-of line updated."
-          },
-          {
-            "page": "Transition list",
-            "url": "data/transition_2027.json",
-            "what": "Filled in Jacki Marsh as Ron Weinberg's successor in state House District 51.",
-            "before": "Still being counted",
-            "after": "Jacki Marsh"
-          },
-          {
-            "page": "Timeline",
-            "url": "timeline.html",
-            "what": "Added an entry for the District 51 call."
-          }
-        ]
-      }
-    },
-    {
-      "ts": "November 9, 2026 at 5:58 PM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "1a063e2",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/1a063e2",
-      "note": "We noted Eileen Laubacher's victory claim in Colorado's 4th Congressional District, which AP has not called, and refreshed the Mississippi Senate and Kansas governor counts. No races were called.",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "\"What we're watching\" Now row: Laubacher's Monday victory claim and Boebert's response added for the 4th District, which stays as still counting; Mississippi lead and outstanding ballots updated; Kansas hand count noted. As-of line moved to Monday evening, Nov. 9.",
-            "before": "Boebert's campaign has raised concerns about voting patterns and says it expects a recount either way, which it could request.",
-            "after": "Laubacher declared victory Monday, but AP has not called the race, with about 98% counted. Boebert has not conceded. Her campaign has raised concerns about voting patterns, says it is considering a recount, which it could request at its own expense, and will decide its next steps after counting ends Nov. 13."
-          },
-          {
-            "page": "2026 Colorado election results",
-            "url": "election-2026.html",
-            "what": "U.S. Senate tally card: Mississippi lead updated. Still counting.",
-            "before": "about 2,600 in Mississippi",
-            "after": "about 2,500 in Mississippi"
-          },
-          {
-            "page": "2026 national results map",
-            "url": "election-2026-map.html",
-            "what": "Mississippi Senate lead updated (still counting); Kansas hand count and the Colorado 4th victory claim added to the big-picture text; sources and as-of line updated.",
-            "before": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,600 votes",
-            "after": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,500 votes"
-          }
-        ]
-      }
-    },
-    {
-      "ts": "November 9, 2026 at 6:10 PM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "b495526",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/b495526",
-      "note": "The canary now shows on every page with the chat: a small badge above the chat button with the date it was last signed. Its color shows whether it's current, due or overdue.",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "Every page with the chat",
-            "url": "canary.html",
-            "what": "New canary badge above the chat button. It reads the same public canary status as the canary page and links to it.",
-            "before": "The canary status showed only on the homepage and the canary page",
-            "after": "A badge on every page: green when current, amber when due, red when overdue or not signed"
-          },
-          {
-            "page": "Chat button",
-            "url": "index.html",
-            "what": "The \"Ask me anything\" label next to the Q now stays up until the chat is opened, instead of disappearing after four seconds.",
-            "before": "Label showed for about four seconds",
-            "after": "Label stays until the chat is opened"
-          }
-        ]
-      }
-    },
-    {
-      "ts": "November 9, 2026 at 6:32 PM MST",
-      "run_type": "site_change",
-      "engine_version": "v7.0",
-      "git_sha": "1f58ffd",
-      "run_id": "",
-      "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/1f58ffd",
-      "note": "New page: What's on my ballot? It points to the official sources for seeing your own ballot, in Colorado and every other state. Nonpartisan: no endorsements, official links only.",
-      "site_change": {
-        "scores_affected": false,
-        "items": [
-          {
-            "page": "What's on my ballot?",
-            "url": "ballot.html",
-            "what": "New page with four steps for Colorado voters (sample ballot on GoVoteColorado, the Blue Book, BallotTrax, county clerk) and links for every other state (USAGov's state election office list, vote.gov).",
-            "before": "No ballot page",
-            "after": "One page with official links for every state"
-          },
-          {
-            "page": "Site menu",
-            "url": "index.html",
-            "what": "Added \"What's on my ballot?\" to the menu after Find your officials.",
-            "before": "Not in the menu",
-            "after": "In the menu on every page"
-          }
-        ]
-      }
+       },
+       {
+        "name": "Janice Marchman",
+        "old": 68,
+        "new": 67,
+        "components": {
+         "pillar": [
+          62,
+          61
+         ],
+         "sponsorship": [
+          73,
+          72
+         ]
+        }
+       },
+       {
+        "name": "Jennifer Bacon",
+        "old": 73,
+        "new": 65,
+        "components": {
+         "pillar": [
+          72,
+          62
+         ],
+         "impact": [
+          68,
+          58
+         ],
+         "sponsorship": [
+          80,
+          73
+         ]
+        }
+       },
+       {
+        "name": "Monica Duran",
+        "old": 65,
+        "new": 64,
+        "components": {
+         "impact": [
+          49,
+          48
+         ],
+         "sponsorship": [
+          66,
+          62
+         ]
+        }
+       },
+       {
+        "name": "Tom Sullivan",
+        "old": 65,
+        "new": 62,
+        "components": {
+         "pillar": [
+          58,
+          54
+         ],
+         "impact": [
+          55,
+          51
+         ],
+         "sponsorship": [
+          55,
+          51
+         ]
+        }
+       },
+       {
+        "name": "Marc Catlin",
+        "old": 59,
+        "new": 61,
+        "components": {
+         "pillar": [
+          52,
+          54
+         ],
+         "impact": [
+          48,
+          51
+         ]
+        }
+       },
+       {
+        "name": "John Carson",
+        "old": 63,
+        "new": 60,
+        "components": {
+         "pillar": [
+          52,
+          48
+         ],
+         "impact": [
+          48,
+          44
+         ],
+         "sponsorship": [
+          66,
+          62
+         ]
+        }
+       },
+       {
+        "name": "Mary Bradfield",
+        "old": 56,
+        "new": 59,
+        "components": {
+         "pillar": [
+          48,
+          52
+         ],
+         "impact": [
+          44,
+          48
+         ]
+        }
+       },
+       {
+        "name": "Brandi Bradley",
+        "old": 50,
+        "new": 59,
+        "components": {
+         "pillar": [
+          38,
+          52
+         ],
+         "impact": [
+          32,
+          44
+         ],
+         "sponsorship": [
+          54,
+          63
+         ]
+        }
+       },
+       {
+        "name": "Cecelia Espenoza",
+        "old": 64,
+        "new": 59,
+        "components": {
+         "pillar": [
+          52,
+          44
+         ],
+         "impact": [
+          48,
+          41
+         ],
+         "sponsorship": [
+          62,
+          60
+         ]
+        }
+       },
+       {
+        "name": "Michael Carter",
+        "old": 55,
+        "new": 52,
+        "components": {
+         "pillar": [
+          42,
+          38
+         ],
+         "impact": [
+          38,
+          34
+         ],
+         "sponsorship": [
+          58,
+          55
+         ]
+        }
+       },
+       {
+        "name": "Matt Soper",
+        "old": 50,
+        "new": 51,
+        "components": {
+         "pillar": [
+          52,
+          54
+         ],
+         "impact": [
+          49,
+          51
+         ],
+         "sponsorship": [
+          66,
+          67
+         ]
+        }
+       },
+       {
+        "name": "Barbara Kirkmeyer",
+        "old": 52,
+        "new": 51,
+        "components": {
+         "impact": [
+          35,
+          32
+         ],
+         "sponsorship": [
+          52,
+          50
+         ]
+        }
+       },
+       {
+        "name": "Carlos Barron",
+        "old": 53,
+        "new": 50,
+        "components": {
+         "pillar": [
+          38,
+          34
+         ],
+         "impact": [
+          35,
+          31
+         ],
+         "sponsorship": [
+          53,
+          47
+         ]
+        }
+       },
+       {
+        "name": "Mark Baisley",
+        "old": 52,
+        "new": 50,
+        "components": {
+         "pillar": [
+          38,
+          34
+         ],
+         "impact": [
+          32,
+          31
+         ],
+         "sponsorship": [
+          52,
+          49
+         ]
+        }
+       },
+       {
+        "name": "Tammy Story",
+        "old": 48,
+        "new": 49,
+        "components": {
+         "impact": [
+          32,
+          34
+         ],
+         "sponsorship": [
+          51,
+          52
+         ]
+        }
+       },
+       {
+        "name": "Jeff Bridges",
+        "old": 42,
+        "new": 46,
+        "components": {
+         "pillar": [
+          28,
+          32
+         ],
+         "impact": [
+          22,
+          28
+         ],
+         "sponsorship": [
+          43,
+          45
+         ]
+        }
+       },
+       {
+        "name": "Anthony Hartsook",
+        "old": 42,
+        "new": 43,
+        "components": {
+         "sponsorship": [
+          40,
+          44
+         ]
+        }
+       },
+       {
+        "name": "Scott Slaugh",
+        "old": 45,
+        "new": 42,
+        "components": {
+         "pillar": [
+          32,
+          28
+         ],
+         "impact": [
+          28,
+          24
+         ],
+         "sponsorship": [
+          42,
+          39
+         ]
+        }
+       },
+       {
+        "name": "Bob Marshall",
+        "old": 37,
+        "new": 36,
+        "components": {
+         "sponsorship": [
+          32,
+          29
+         ]
+        }
+       },
+       {
+        "name": "Lynda Zamora Wilson",
+        "old": 34,
+        "new": 35,
+        "components": {
+         "pillar": [
+          12,
+          14
+         ],
+         "impact": [
+          10,
+          11
+         ]
+        }
+       }
+      ],
+      "executive": [
+       {
+        "office": "Governor",
+        "old": null,
+        "new": 0
+       }
+      ],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "41 legislator score changes; 1 executive change."
     }
-  ]
+   }
+  },
+  {
+   "ts": "July 12, 2026 at 4:23 PM MDT",
+   "run_type": "manual",
+   "engine_version": "v7.0",
+   "git_sha": "6d9bb95",
+   "run_id": "29211409438",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/29211409438",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "dc8cc0fa31e988e2738cc073ecc60d4d",
+      "dataset_date": "2026-07-12"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [
+       {
+        "office": "Governor",
+        "old": 0,
+        "new": 81
+       }
+      ],
+      "judicial": [
+       {
+        "name": "Maria Berkenkotter",
+        "old": null,
+        "new": 90
+       },
+       {
+        "name": "Brian Boatright",
+        "old": null,
+        "new": 87
+       },
+       {
+        "name": "Richard Gabriel",
+        "old": null,
+        "new": 90
+       },
+       {
+        "name": "William W. Hood III",
+        "old": 0,
+        "new": 89
+       },
+       {
+        "name": "Monica Márquez (Chief Justice)",
+        "old": null,
+        "new": 89
+       },
+       {
+        "name": "Carlos Armando Samour Jr.",
+        "old": null,
+        "new": 86
+       }
+      ],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged; 1 executive change; 6 judicial changes."
+    }
+   }
+  },
+  {
+   "ts": "July 20, 2026 at 7:23 AM MDT",
+   "run_type": "manual",
+   "engine_version": "v7.0",
+   "git_sha": "a8f7de6",
+   "run_id": "29746066988",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/29746066988",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "178999d3762a0cbeaf50b7e09355420f",
+      "dataset_date": "2026-07-19"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "July 26, 2026 at 1:41 PM MDT",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "62f762d",
+   "run_id": "30217361320",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/30217361320",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "bad8b0f77e24e5076a5bd3ba2271d976",
+      "dataset_date": "2026-07-26"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "August 2, 2026 at 1:46 PM MDT",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "4abdad0",
+   "run_id": "30764123810",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/30764123810",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "49b4a45160c0c24f67cdf3cd33fb76e2",
+      "dataset_date": "2026-08-02"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "August 9, 2026 at 1:17 PM MDT",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "21991ab",
+   "run_id": "31331243655",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/31331243655",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "August 16, 2026 at 12:58 PM MDT",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "997138a",
+   "run_id": "31966174940",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/31966174940",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "August 21, 2026",
+   "run_type": "correction",
+   "engine_version": "v7.1",
+   "git_sha": "",
+   "run_id": "",
+   "run_url": "",
+   "note": "Correction - profile summaries. A member summary used an incorrect pronoun, reported by the representative's office. The summary was corrected. Root cause: the scoring engine inferred gender from names when writing summaries. The engine now writes every member summary without gendered pronouns, and all 100 existing summaries were reviewed and rewritten. No scores were affected.",
+   "correction": {
+    "state": "CO",
+    "subject": "Dusty Johnson",
+    "scope": "Profile summary",
+    "scores_affected": false,
+    "records_updated": 53
+   }
+  },
+  {
+   "ts": "August 21, 2026 at 11:47 AM MDT",
+   "run_type": "manual",
+   "engine_version": "v7.0",
+   "git_sha": "953a8be",
+   "run_id": "32509986444",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/32509986444",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "August 23, 2026 at 12:59 PM MDT",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "d99f31a",
+   "run_id": "32659791373",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/32659791373",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "August 30, 2026 at 3:28 PM MDT",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "ac680ce",
+   "run_id": "33336509460",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/33336509460",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "September 6, 2026 at 2:45 PM MDT",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "9797718",
+   "run_id": "34058946955",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/34058946955",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "September 13, 2026 at 3:05 PM MDT",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "82e089a",
+   "run_id": "34782752061",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/34782752061",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "September 20, 2026 at 3:01 PM MDT",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "aa2c319",
+   "run_id": "35537348072",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/35537348072",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "September 27, 2026 at 3:33 PM MDT",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "0968d27",
+   "run_id": "36352140103",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/36352140103",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "October 5, 2026 at 8:04 AM MDT",
+   "run_type": "manual",
+   "engine_version": "v7.0",
+   "git_sha": "d6832aa",
+   "run_id": "37321786716",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/37321786716",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "October 8, 2026 at 9:10 AM MDT",
+   "run_type": "manual",
+   "engine_version": "v7.0",
+   "git_sha": "391003f",
+   "run_id": "37798542373",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/37798542373",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "October 11, 2026 at 4:23 PM MDT",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "9cca097",
+   "run_id": "38180234726",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/38180234726",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "October 18, 2026 at 2:58 PM MDT",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "bab691a",
+   "run_id": "39165740545",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/39165740545",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "October 25, 2026 at 3:10 PM MDT",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "d9b3182",
+   "run_id": "40234206726",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/40234206726",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "November 1, 2026 at 3:18 PM MST",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "52a307d",
+   "run_id": "41356435711",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/41356435711",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "November 5, 2026 at 9:52 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "7785e5a",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/7785e5a",
+   "note": "We published the 2026 election results: a Colorado page and a clickable national map.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Election Results: Colorado",
+      "url": "election-2026.html",
+      "what": "New page. Statewide winners, every Colorado House and Senate district, ballot measures, and the dates when results become official."
+     },
+     {
+      "page": "2026 Election Map",
+      "url": "election-2026-map.html",
+      "what": "New page. A map of all 50 states showing governor and U.S. Senate results. Any result not yet confirmed is labeled \"Being confirmed,\" with the reason and when we expect to confirm it."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 5, 2026 at 9:59 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "0f22c8a",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/0f22c8a",
+   "note": "We added a banner pointing to the election results.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Every page",
+      "url": "election-2026-map.html",
+      "what": "A banner at the top of the site links to the election results. Visitors can close it, and it comes down on January 15, 2027."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 5, 2026 at 10:09 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "f9fcb84",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/f9fcb84",
+   "note": "We set up how the site handles the change of officeholders in January 2027.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Past Officials",
+      "url": "past-officials.html",
+      "what": "New page. When someone leaves office, their final record and Q Score stay public here. It lists who is leaving after the 2026 election."
+     },
+     {
+      "page": "Legislator profiles",
+      "url": "hub.html",
+      "what": "Profiles of members who are leaving now say so. New members are marked as new."
+     },
+     {
+      "page": "Scoring rule for new members",
+      "url": "how-q-scores-work.html",
+      "what": "Starting with the 2027 session, a lawmaker isn't scored until they've cast at least 5 votes, so nobody is judged on a blank record. No current score changed."
+     },
+     {
+      "page": "Governor and statewide offices",
+      "url": "state-profile.html",
+      "what": "These pages switch to the new officeholders on January 12, 2027, when they take office."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 5, 2026 at 10:26 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "ac66580",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/ac66580",
+   "note": "We added U.S. House results to the election map.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Election Map",
+      "url": "election-2026-map.html",
+      "what": "New U.S. House view: seats that changed parties, Colorado's full delegation, and clear notes on which races aren't fully counted yet."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 5, 2026 at 3:36 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "0fa31b4",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/0fa31b4",
+   "note": "We tightened how we explain the Q Score so it matches exactly how the engine works, and added a plain answer to the most common question we get: does the score lean toward a party?",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "How the Q Score works, in plain English",
+      "url": "q-score-explained.html#party",
+      "what": "New section, \"Does the Q Score lean toward a party?\" It explains that the engine never reads party, the four questions every law is graded on, that we don't decide whether a bill is good or bad, and why Democrats score higher right now."
+     },
+     {
+      "page": "How the Q Score works, in plain English",
+      "url": "q-score-explained.html",
+      "what": "Fixed wording that didn't match how the engine works. Votes only count toward attendance, and a yes and a no count the same.",
+      "before": "Pillar alignment, 40%. Do their bills and votes push the pillars forward or backward?",
+      "after": "Pillar alignment, 40%. Do the bills they lead and pass push the pillars forward?"
+     },
+     {
+      "page": "How Q Scores Work",
+      "url": "how-q-scores-work.html",
+      "what": "Same wording fix in the scoring rubric, plus a new link to the party section.",
+      "before": "Pillar Alignment: do their bills and votes advance the seven pillars?",
+      "after": "Pillar Alignment: do the bills they lead and pass advance the seven pillars?"
+     },
+     {
+      "page": "Our Constitution",
+      "url": "constitution.html",
+      "what": "\"Good\" was too loose a word for a nonpartisan standard, so we replaced it with what we actually measure.",
+      "before": "We exist to move good policy, and to keep power honest.",
+      "after": "We exist to move policy that makes everyday life more stable, measured by the seven pillars, and to keep power honest."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 5, 2026 at 4:20 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "de64bcd",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/de64bcd",
+   "note": "We updated the 2026 election results with the latest calls and counts.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "The AP called Colorado's 5th Congressional District for Jessica Killin (D).",
+      "before": "Jessica Killin (D) leads Jeff Crank (R), 51.6% to 45.3%, with 72% counted",
+      "after": "Jessica Killin (D) over Jeff Crank (R), 50.6% to 46.0%, flipped from Republican"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "New count in the 4th District, new yes shares for the 8 ballot measures still counting, and a note that the 4th is near the automatic recount line."
+     },
+     {
+      "page": "2026 Election Map",
+      "url": "election-2026-map.html",
+      "what": "Added Colorado's 5th as a seat that changed parties, named Ami Bera as the winner in California's 3rd, confirmed Zach Dembo in Kentucky's 6th, and updated the Alaska Senate and Kansas governor leads and the national House count."
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "New entry for the 5th District call."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 5, 2026 at 6:10 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "e23a6dd",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/e23a6dd",
+   "note": "We updated the Kansas governor count and added four newly confirmed U.S. House seats that changed parties.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Updated Cindy Holscher's lead in the Kansas governor's race, still uncalled.",
+      "before": "Kansas is still counting, with Cindy Holscher (D) ahead by about 5,500 votes.",
+      "after": "Kansas is still counting: Cindy Holscher (D) leads by about 7,000 votes, with about 99% counted."
+     },
+     {
+      "page": "2026 Election Map",
+      "url": "election-2026-map.html",
+      "what": "Updated the Kansas governor lead.",
+      "before": "Cindy Holscher (D) leads Ty Masterson (R) by about 5,500 votes",
+      "after": "Cindy Holscher (D) leads Ty Masterson (R) by about 7,000 votes"
+     },
+     {
+      "page": "2026 Election Map",
+      "url": "election-2026-map.html",
+      "what": "Added four U.S. House seats that changed parties, each confirmed by two outlets: Arizona's 1st (Amish Shah, D), North Carolina's 9th (Richard Ojeda, D), Virginia's 1st (Shannon Taylor, D) and Tennessee's 9th (Brent Taylor, R).",
+      "before": "Our map shows the 33 flips we have confirmed by name so far (32 to Democrats, 1 to Republicans)",
+      "after": "Our map shows the 37 flips we have confirmed by name so far (35 to Democrats, 2 to Republicans)"
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 6, 2026 at 10:24 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "6cf7631",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/6cf7631",
+   "note": "We launched The Q Collective canary: a public statement, renewed every 7 days, that we have received no secret government order, gag order, subpoena or demand for our records. If it ever stops being renewed, read the silence.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "The Canary",
+      "url": "canary.html",
+      "what": "New page. The current statement, a green, yellow or red status worked out in your own browser, who signed it last and when, how to read it, and every recent signing."
+     },
+     {
+      "page": "Homepage",
+      "url": "index.html#qcanary",
+      "what": "New section, \"If we ever go quiet, that's the message,\" explaining what the canary is, with a live status button."
+     },
+     {
+      "page": "Audit log",
+      "url": "audit.html",
+      "what": "Every canary signing now appears here as a CANARY entry, with who signed and when."
+     },
+     {
+      "page": "Sign the Canary",
+      "url": "canary-sign.html",
+      "what": "New page for signers only. Each signer signs in with their own email. The statement's wording can't be changed from this page."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 6, 2026 at 11:49 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "fe7f631",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/fe7f631",
+   "note": "We recorded the Friday morning election calls: Colorado's 3rd District for Jeff Hurd, two state legislative seats, five ballot measures and three more U.S. House seats that changed parties.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Colorado's 3rd Congressional District was called by the AP for Jeff Hurd (R).",
+      "before": "Jeff Hurd (R) leads Dwayne Romero (D), 49.2% to 47.6% (Counting)",
+      "after": "Jeff Hurd (R), re-elected over Dwayne Romero (D), about 49.3% to 47.4% (Won)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Updated the count in Colorado's 4th Congressional District, still uncalled and outside the automatic recount range for now.",
+      "before": "Eileen Laubacher (D) leads Lauren Boebert (R), 48.7% to 48.1%, by about 2,300 votes",
+      "after": "Eileen Laubacher (D) leads Lauren Boebert (R) by 3,069 votes, about 48.8% to 48.0%"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html#houseT",
+      "what": "State House District 50 called, confirmed by two outlets.",
+      "before": "Tommy Butler (D) leads Ryan Gonzalez (R), 59.5% to 40.5% (Counting)",
+      "after": "Tommy Butler (D), 59%, flipped from Republican, over Ryan Gonzalez (R) (Won)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html#senT",
+      "what": "State Senate District 30 called, confirmed by two outlets.",
+      "before": "Kevin Leung (D) leads John Carson (R), 52.4% to 47.6% (Counting)",
+      "after": "Kevin Leung (D), 52%, flipped from Republican, over John Carson (R) (Won)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Amendment 86 failed.",
+      "before": "Amendment 86: 47% yes (Counting)",
+      "after": "Amendment 86: 46.9% yes (Failed)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Amendment 87 passed.",
+      "before": "Amendment 87: 50.6% yes (Counting)",
+      "after": "Amendment 87: 51.4% yes (Passed)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Prop 132 passed.",
+      "before": "Prop 132: 53% yes (Counting)",
+      "after": "Prop 132: 52.7% yes (Passed)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Prop 134 passed (called by the AP).",
+      "before": "Prop 134: 52.7% yes (Counting)",
+      "after": "Prop 134: 52.3% yes (Passed)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Prop 136 failed.",
+      "before": "Prop 136: 47.6% yes (Counting)",
+      "after": "Prop 136: 47.3% yes (Failed)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Refreshed the yes shares for Amendment 85, Prop 135 and Prop 137, which are still being counted, and the state legislature and national tally cards."
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Updated the national U.S. House count.",
+      "before": "240 D, 147 R. Called as of Thursday morning, Nov. 5, with 48 still counting then.",
+      "after": "248 D, 150 R. Called as of Thursday evening, Nov. 5, by Ballotpedia's count, with 37 still counting."
+     },
+     {
+      "page": "2026 Election Map",
+      "url": "election-2026-map.html",
+      "what": "Added three U.S. House seats that changed parties, each confirmed by two outlets: Arizona's 6th (JoAnna Mendoza, D), Montana's 1st (Sam Forstag, D) and Ohio's 15th (Don Leonard, D). Colorado's 3rd now shows Jeff Hurd (R) as the winner.",
+      "before": "Our map shows the 37 flips we have confirmed by name so far (35 to Democrats, 2 to Republicans)",
+      "after": "Our map shows the 40 flips we have confirmed by name so far (38 to Democrats, 2 to Republicans)"
+     },
+     {
+      "page": "Past Officials",
+      "url": "past-officials.html",
+      "what": "Ryan Gonzalez (House District 50) and John Carson (Senate District 30) moved from still counting to leaving office, with their successors Tommy Butler and Kevin Leung."
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "Added an entry for the Colorado 3rd District call and the income tax measures."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 6, 2026 at 6:00 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "8217d8f",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/8217d8f",
+   "note": "We recorded the Friday evening election calls: three Colorado state House seats, the last state Senate seat, two ballot measures, five U.S. Senate winners we had been confirming and six more U.S. House seats that changed parties.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html#houseT",
+      "what": "State House District 14 called, confirmed by MultiState and Decision Desk HQ.",
+      "before": "Ava Flanell (R) leads Sarah Emery (D), 53.6% to 46.4% (Counting)",
+      "after": "Ava Flanell (R), 54%, over Sarah Emery (D) (Won)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html#houseT",
+      "what": "State House District 48 called, confirmed by MultiState and Decision Desk HQ.",
+      "before": "Carlos Barron (R) leads Dez Packard (D), 54.1% to 43.4% (Counting)",
+      "after": "Carlos Barron (R), over Dez Packard (D) and Eric Joss (L) (Won)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html#houseT",
+      "what": "State House District 64 called, confirmed by MultiState and Decision Desk HQ.",
+      "before": "Scott Slaugh (R) leads Maureen Dower (D), 55.0% to 45.0% (Counting)",
+      "after": "Scott Slaugh (R), 55%, over Maureen Dower (D) (Won)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html#senT",
+      "what": "State Senate District 11 called, confirmed by MultiState and Decision Desk HQ. Every state Senate race is now called: 24 Democrats, 11 Republicans.",
+      "before": "Tony Exum Sr. (D) leads Levon Stilson (R), 60.5% to 36.0% (Counting)",
+      "after": "Tony Exum Sr. (D), about 60%, over Levon Stilson (R) and Janet Turner (L) (Won)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html#houseT",
+      "what": "Refreshed the leads in State House Districts 15, 21, 22, 39 and 51, all still counting. The state House tally card now reads 46 D, 13 R, with 6 still counting."
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Amendment 85 failed, short of the 55% it needed.",
+      "before": "Amendment 85: 51.1% yes (Counting)",
+      "after": "Amendment 85: 51.1% yes (Failed)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Prop 135 passed.",
+      "before": "Prop 135: 52.0% yes (Counting)",
+      "after": "Prop 135: 52.0% yes (Passed)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "National House tally card updated.",
+      "before": "248 D, 150 R, 37 still counting (Nov. 5)",
+      "after": "253 D, 157 R, 25 still counting (Nov. 6)"
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "U.S. Senate winners confirmed from direct sources in Kentucky, Montana, Oklahoma, West Virginia and Wyoming.",
+      "before": "Andy Barr, Kurt Alme, Kevin Hern, Shelley Moore Capito, Harriet Hageman (Being confirmed)",
+      "after": "Andy Barr (R), Kurt Alme (R), Kevin Hern (R), Shelley Moore Capito (R), Harriet Hageman (R) (Won)"
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "Mississippi Senate lead refreshed, still counting.",
+      "before": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 1,100 votes",
+      "after": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,000 votes"
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "Six more U.S. House seats that changed parties added, bringing the map to 46 (44 to Democrats, 2 to Republicans): New Jersey 2nd (Zack Mullock), New York 17th (Cait Conley), Ohio 10th (Kristina Knickerbocker), North Carolina 6th (Cyril Jefferson), 13th (Paul Barringer) and 14th (Lakesha Womack), all Democrats."
+     },
+     {
+      "page": "Past officials",
+      "url": "past-officials.html",
+      "what": "Ava Flanell, Carlos Barron, Scott Slaugh and Tony Exum removed from still counting after winning their races."
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "Added an entry for the Colorado state Senate being fully called and the Amendment 85 and Prop 135 results."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 7, 2026 at 11:55 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "3322ac0",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/3322ac0",
+   "note": "We recorded the Saturday morning election calls: two Colorado state House seats, Prop 137 and one more U.S. House seat that changed parties, and refreshed the count in Colorado's 4th District.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html#houseT",
+      "what": "State House District 39 called, confirmed by AP via Rocky Mountain Voice and MultiState.",
+      "before": "Brandi Bradley (R) leads Christian Schilder (D), 53.9% to 46.1% (Counting)",
+      "after": "Brandi Bradley (R), 54%, over Christian Schilder (D) (Won)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html#houseT",
+      "what": "State House District 44 called, confirmed by AP via Rocky Mountain Voice and MultiState. The state House tally card now reads 46 D, 15 R, with 4 still counting.",
+      "before": "Tony Hartsook (R) leads Richard Bowness (D), 51.5% to 46.2% (Counting)",
+      "after": "Tony Hartsook (R), 51%, over Richard Bowness (D) and John Sutton (L) (Won)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Prop 137 passed, called by AP. Every statewide ballot measure is now decided.",
+      "before": "Prop 137: 51.6% yes (Counting)",
+      "after": "Prop 137: 51.8% yes (Passed)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Colorado's 4th District count refreshed, still counting and outside the automatic recount range for now.",
+      "before": "Eileen Laubacher (D) leads Lauren Boebert (R) by 3,069 votes, about 48.8% to 48.0%",
+      "after": "Eileen Laubacher (D) leads Lauren Boebert (R) by 3,172 votes, about 48.8% to 47.9%"
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "South Carolina 1st added as a U.S. House seat that changed parties, confirmed by CBS News and The Post and Courier. The map now shows 47 flips (45 to Democrats, 2 to Republicans).",
+      "before": "South Carolina: no House flips",
+      "after": "South Carolina 1st: Nancy Lacore (D), flipped from Republican"
+     },
+     {
+      "page": "Past officials",
+      "url": "past-officials.html",
+      "what": "Brandi Bradley and Anthony Hartsook removed from still counting after winning their races."
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "Added an entry for Prop 137 passing and State House Districts 39 and 44 being called."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 7, 2026 at 6:10 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "80509c8",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/80509c8",
+   "note": "No new races were called this evening, so we refreshed the national seat counts and the Mississippi Senate lead and noted that Colorado's count has not moved since Friday.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "U.S. House tally card refreshed from the AP count reported by Yahoo News (4:45 p.m. ET, Nov. 6), with CBS News's updated count of seats that changed parties.",
+      "before": "253 D, 157 R. Called as of Friday morning, Nov. 6, with 25 still counting. CBS News counts 45 seats that changed parties: 43 to Democrats and 2 to Republicans.",
+      "after": "253 D, 162 R. Called as of Friday afternoon, Nov. 6, with 20 still counting. CBS News counts 46 seats that changed parties: 44 to Democrats and 2 to Republicans."
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "Mississippi Senate lead refreshed, still counting, from AP figures via Mississippi Free Press and Democracy Docket (5 p.m. CT, Nov. 6).",
+      "before": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,000 votes",
+      "after": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,500 votes"
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "House note and big-picture text updated to the same House count and CBS News's 46 flips; the map still shows 47 flips confirmed by name (45 to Democrats, 2 to Republicans). Sources line and as-of line updated."
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "\"What we're watching\" Now row: noted Colorado's count is unchanged since Friday afternoon, counties have until Nov. 13 to finish counting, and added the Mississippi lead. Colorado's 4th stays at Eileen Laubacher (D) +3,172, still counting."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 8, 2026 at 11:55 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "b42b895",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/b42b895",
+   "note": "No new races were called, so we refreshed the national House count, the Mississippi Senate lead and the Kansas audit, and noted a disagreement between sources on Colorado state House District 51.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "U.S. House tally card refreshed from the AP count reported by Yahoo News (11:17 a.m. ET, Nov. 7).",
+      "before": "253 D, 162 R. Called as of Friday afternoon, Nov. 6, with 20 still counting.",
+      "after": "254 D, 162 R. Called as of Saturday morning, Nov. 7, with 19 still counting."
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "Mississippi Senate lead refreshed, still counting, from AP figures via Democracy Docket and Yahoo News.",
+      "before": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,500 votes",
+      "after": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,600 votes"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "State House District 51 lead refreshed from Rocky Mountain Voice (9:28 a.m. Nov. 7). MultiState lists Jacki Marsh (D) as the winner but AP has not called it, so the race stays counting and the page says so.",
+      "before": "Jacki Marsh (D) leads Amy Parks (R), 51.3% to 48.7%",
+      "after": "Jacki Marsh (D) leads Amy Parks (R), 51.4% to 48.6%. MultiState lists her as the winner, but AP has not called it, so we still show it as counting."
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "House note and big-picture text updated to the same House count; Kansas governor text notes the state-required hand-count audit; Mississippi text notes about 3,100 mail ballots due by Nov. 10. Sources and as-of lines updated."
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "\"What we're watching\" Now row: Colorado's 4th unchanged at Eileen Laubacher (D) +3,172 with only Elbert County finished; added the Mississippi mail-ballot deadline, the Kansas audit and the District 51 source disagreement."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 8, 2026 at 3:24 PM MST",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "f892669",
+   "run_id": "42530112585",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/42530112585",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
+  },
+  {
+   "ts": "November 8, 2026 at 5:52 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "12ac005",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/12ac005",
+   "note": "We corrected the Alaska governor's race back to still counting, since most outlets have not called it, and noted new Senate developments in Alaska and Mississippi.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "Alaska governor moved from won (flipped) back to still counting. MultiState lists an AP projection, but Alaska Public Media, Newsweek, Duane Morris and Poliwave show it uncalled, and no candidate has 50% of first choices.",
+      "before": "Jonathan Kreiss-Tomkins (D), won, flipped",
+      "after": "Jonathan Kreiss-Tomkins (D) leads Bernadette Wilson (R), 49.1% to 29.2% of first choices. Ranked-choice tally Nov. 18 if no one tops 50%. MultiState lists it as called, but other outlets still show it as uncalled"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Governors tally card corrected to 5 flips, with Alaska and Kansas still counting and a public correction note.",
+      "before": "6 flipped. Democrats flipped Alaska, Georgia, Iowa, Nevada, Ohio and Texas.",
+      "after": "5 flipped. Democrats flipped Georgia, Iowa, Nevada, Ohio and Texas. Alaska and Kansas are still counting."
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "Governors big-picture paragraph corrected to 5 flips with a dated correction note; sources line updated. As-of line moved to Sunday evening, Nov. 8."
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "\"What we're watching\" Now row: Colorado's 4th unchanged at Eileen Laubacher (D) +3,172; added the Peltola campaign's lawsuit over rejected absentee ballot records, Mississippi's Nov. 13 county certification deadline and the Alaska governor's race. As-of line updated."
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "Added a correction entry for the Alaska governor's race."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 8, 2026 at 7:30 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "f82189a",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/f82189a",
+   "note": "Every page now shows its own preview when the link is shared in a text, email or social post, with that page's title and a short description.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Every public page",
+      "url": "index.html",
+      "what": "Link previews. Each page now has its own preview card (page title, one-line description, theqcollective.org) instead of one shared image for the whole site. No page text, scores or bills changed.",
+      "before": "One shared preview image for every page",
+      "after": "A preview card made for each page"
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 9, 2026 at 6:50 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "5623e96",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/5623e96",
+   "note": "Every Colorado lawmaker now has their own share link. When it's shared, the preview shows their name, seat, party and current Q Score. Every lawmaker uses the same card.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Lawmaker profiles",
+      "url": "legislator.html",
+      "what": "Copy link and Post on X now share the lawmaker's own share link instead of the generic page link. The profile itself did not change.",
+      "before": "Shared links showed the general Q Collective preview",
+      "after": "Shared links show that lawmaker's name, seat, party and current Q Score"
+     },
+     {
+      "page": "Lawmaker share pages (new)",
+      "url": "hub.html",
+      "what": "100 share pages at theqcollective.org/p/, one per Colorado legislator. They send people straight to the full profile. Rebuilt every Sunday right after scoring, so a shared card always matches the site.",
+      "before": "None",
+      "after": "100 share pages and preview cards"
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 9, 2026 at 11:47 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "87ef23b",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/87ef23b",
+   "note": "We recorded the AP call in Colorado state House District 51, updated the vote lead in Colorado's 4th Congressional District and refreshed the national House count.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "State House District 51 moved from still counting to won, called by AP via Rocky Mountain Voice and confirmed by MultiState. State House tally card moved from 46 D, 15 R with 4 counting to 47 D, 15 R with 3 counting.",
+      "before": "Jacki Marsh (D) leads Amy Parks (R), 51.4% to 48.6%. MultiState lists her as the winner, but AP has not called it, so we still show it as counting.",
+      "after": "Jacki Marsh (D), 51%, flipped from Republican, over Amy Parks (R). Won"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Colorado's 4th Congressional District lead corrected to match Rocky Mountain Voice, Poliwave and American Muckrakers. Still counting.",
+      "before": "Eileen Laubacher (D) leads Lauren Boebert (R) by 3,172 votes, about 48.8% to 47.9%",
+      "after": "Eileen Laubacher (D) leads Lauren Boebert (R) by 3,237 votes, about 48.8% to 47.9%"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "U.S. House tally card updated to the AP count as of Monday morning, Nov. 9.",
+      "before": "254 D, 162 R, with 19 still counting (Nov. 7)",
+      "after": "254 D, 163 R, with 18 still counting (Nov. 9)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "\"What we're watching\" Now row: three state House races left, District 51 call noted, 4th District lead and counting status updated, Mississippi mail ballots outstanding updated to just over 2,800. As-of line moved to midday Monday, Nov. 9."
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "House count in the big-picture text and House note updated to 254 D, 163 R, 18 still counting; Mississippi mail ballots updated; sources and as-of line updated."
+     },
+     {
+      "page": "Transition list",
+      "url": "data/transition_2027.json",
+      "what": "Filled in Jacki Marsh as Ron Weinberg's successor in state House District 51.",
+      "before": "Still being counted",
+      "after": "Jacki Marsh"
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "Added an entry for the District 51 call."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 9, 2026 at 5:58 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "1a063e2",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/1a063e2",
+   "note": "We noted Eileen Laubacher's victory claim in Colorado's 4th Congressional District, which AP has not called, and refreshed the Mississippi Senate and Kansas governor counts. No races were called.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "\"What we're watching\" Now row: Laubacher's Monday victory claim and Boebert's response added for the 4th District, which stays as still counting; Mississippi lead and outstanding ballots updated; Kansas hand count noted. As-of line moved to Monday evening, Nov. 9.",
+      "before": "Boebert's campaign has raised concerns about voting patterns and says it expects a recount either way, which it could request.",
+      "after": "Laubacher declared victory Monday, but AP has not called the race, with about 98% counted. Boebert has not conceded. Her campaign has raised concerns about voting patterns, says it is considering a recount, which it could request at its own expense, and will decide its next steps after counting ends Nov. 13."
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "U.S. Senate tally card: Mississippi lead updated. Still counting.",
+      "before": "about 2,600 in Mississippi",
+      "after": "about 2,500 in Mississippi"
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "Mississippi Senate lead updated (still counting); Kansas hand count and the Colorado 4th victory claim added to the big-picture text; sources and as-of line updated.",
+      "before": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,600 votes",
+      "after": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,500 votes"
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 9, 2026 at 6:10 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "b495526",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/b495526",
+   "note": "The canary now shows on every page with the chat: a small badge above the chat button with the date it was last signed. Its color shows whether it's current, due or overdue.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Every page with the chat",
+      "url": "canary.html",
+      "what": "New canary badge above the chat button. It reads the same public canary status as the canary page and links to it.",
+      "before": "The canary status showed only on the homepage and the canary page",
+      "after": "A badge on every page: green when current, amber when due, red when overdue or not signed"
+     },
+     {
+      "page": "Chat button",
+      "url": "index.html",
+      "what": "The \"Ask me anything\" label next to the Q now stays up until the chat is opened, instead of disappearing after four seconds.",
+      "before": "Label showed for about four seconds",
+      "after": "Label stays until the chat is opened"
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 9, 2026 at 6:32 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "1f58ffd",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/1f58ffd",
+   "note": "New page: What's on my ballot? It points to the official sources for seeing your own ballot, in Colorado and every other state. Nonpartisan: no endorsements, official links only.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "What's on my ballot?",
+      "url": "ballot.html",
+      "what": "New page with four steps for Colorado voters (sample ballot on GoVoteColorado, the Blue Book, BallotTrax, county clerk) and links for every other state (USAGov's state election office list, vote.gov).",
+      "before": "No ballot page",
+      "after": "One page with official links for every state"
+     },
+     {
+      "page": "Site menu",
+      "url": "index.html",
+      "what": "Added \"What's on my ballot?\" to the menu after Find your officials.",
+      "before": "Not in the menu",
+      "after": "In the menu on every page"
+     }
+    ]
+   }
+  }
+ ]
 }
