@@ -124,8 +124,8 @@
     <a href="state-profile.html?branch=executive&office=Governor">Governor profile</a>
   </div>
 
-  <h2>My Workspace <span style="text-transform:none;letter-spacing:0;color:var(--muted);font-weight:400">(private &mdash; saved on this device only)</span></h2>
-  <div class="priv">These notes and to-dos live in <b>your browser only</b> &mdash; they are never uploaded to GitHub and never public. Use <b>Export</b> to back them up or move them to another device.</div>
+  <h2>My Workspace <span style="text-transform:none;letter-spacing:0;color:var(--muted);font-weight:400">(private)</span></h2>
+  <div class="priv">These notes and to-dos are private: never on GitHub, never public. Signed in, they save to the admin-only database, so the same notes show in <b>Ash HQ &rarr; The Q Collective</b>. Ash HQ is the main admin for Q now; this page still works.</div>
   <div class="two">
     <div class="panel">
       <h3>Notes</h3>
@@ -182,8 +182,23 @@ function importWS(e){var f=e.target.files[0];if(!f)return;var r=new FileReader()
 loadNotes();loadTodos();
 /* Private notes and to-dos live in the admin-only database table, so they follow you to any device. */
 if(window.qAdmin)qAdmin.ready(function(){
-  qAdmin.load('notes').then(function(b){if(b&&typeof b.text==='string'){document.getElementById('notes').value=b.text;try{localStorage.setItem(NK,b.text);}catch(e){}}else{qAdmin.save('notes',{text:document.getElementById('notes').value});}});
-  qAdmin.load('todos').then(function(b){if(b&&Array.isArray(b.items)){TODOS=b.items;try{localStorage.setItem(TK,JSON.stringify(TODOS));}catch(e){}drawTodos();}else{qAdmin.save('todos',{items:TODOS});}});
+  /* Never lose this device's notes: if the online copy (also edited from Ash HQ) differs, keep both. */
+  qAdmin.load('notes').then(function(b){
+    var local=document.getElementById('notes').value, mine=(local&&local!==DEFAULT_NOTES)?local:'';
+    if(b&&typeof b.text==='string'){
+      var v=b.text;
+      if(mine&&v.indexOf(mine)<0&&mine.indexOf(v)<0){v=v+(v?'\n\n':'')+'--- From this device ('+new Date().toLocaleDateString()+') ---\n'+mine;qAdmin.save('notes',{text:v});}
+      else if(mine&&mine.indexOf(v)>=0&&mine!==v){v=mine;qAdmin.save('notes',{text:v});}
+      document.getElementById('notes').value=v;try{localStorage.setItem(NK,v);}catch(e){}
+    }else{qAdmin.save('notes',{text:local});}
+  });
+  qAdmin.load('todos').then(function(b){
+    if(b&&Array.isArray(b.items)){
+      var seen={},out=[];b.items.concat(TODOS).forEach(function(x){if(x&&x.t&&!seen[x.t]){seen[x.t]=1;out.push(x);}});
+      var changed=out.length!==b.items.length;TODOS=out;if(changed)qAdmin.save('todos',{items:TODOS});
+      try{localStorage.setItem(TK,JSON.stringify(TODOS));}catch(e){}drawTodos();
+    }else{qAdmin.save('todos',{items:TODOS});}
+  });
 });
 </script>
 </body></html>
