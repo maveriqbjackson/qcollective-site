@@ -2272,6 +2272,27 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 10, 2026 at 9:15 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "2db0858",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/2db0858",
+   "note": "The private team dashboard (Q HQ) moved into the team's main admin. The old address forwards there. Nothing public changed, and no scores were affected.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Q HQ (private)",
+      "url": "hq.html",
+      "what": "Now forwards to the team's main admin. The Q Console is unchanged.",
+      "before": "Separate private dashboard",
+      "after": "Forwards to the main admin"
+     }
+    ]
+   }
   }
  ]
 }
