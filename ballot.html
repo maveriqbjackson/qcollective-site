@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>What's on my ballot? | The Q Collective</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Q Collective">
+<meta property="og:title" content="What's on my ballot?">
+<meta property="og:description" content="See your own Colorado ballot from the official sources in about two minutes: your sample ballot, the Blue Book on statewide measures, ballot tracking and your county clerk.">
+<meta property="og:url" content="https://theqcollective.org/ballot.html">
+<meta property="og:image" content="https://theqcollective.org/og/ballot.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://theqcollective.org/og/ballot.png">
+<meta name="description" content="See your own Colorado ballot from the official sources in about two minutes: your sample ballot, the Blue Book on statewide measures, ballot tracking and your county clerk.">
+<link rel="canonical" href="https://theqcollective.org/ballot.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="q-chrome.css">
+<link rel="stylesheet" href="q-humanize.css">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #1B3A6B; --navy-deep: #122848; --navy-mid: #243f72;
+    --gold: #B8962E; --gold-light: #D4AF50; --gold-pale: #F5EDD4;
+    --white: #FFFFFF; --off-white: #F9F6F0; --off-white2: #F2EFE8;
+    --text: #1a1a1a; --text-light: #4a4a4a; --text-muted: #5a5a5a; --border: #E0D5BE;
+  }
+  body {
+    background: var(--off-white);
+    font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .top-stripe { height: 5px; background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%); }
+  .topbar { position: sticky; top: 0; z-index: 50; background: rgba(18,40,72,0.97); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(184,150,46,0.25); }
+  .topbar-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; gap: 16px; }
+  .brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; }
+  .brand-q { font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 26px; color: var(--gold-light); line-height: 1; }
+  .brand-name { font-size: 14px; font-weight: 600; color: var(--white); }
+  .menu-btn { display: inline-flex; align-items: center; gap: 9px; background: transparent; border: 1px solid rgba(255,255,255,.30); color: #fff; font-size: 14.5px; font-weight: 600; padding: 9px 15px; border-radius: 5px; cursor: pointer; }
+  .menu-btn .bars { display: inline-flex; flex-direction: column; gap: 3px; }
+  .menu-btn .bars span { width: 17px; height: 2px; background: var(--gold-light); display: block; }
+  .nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,35,71,.985); z-index: 1000; display: flex; flex-direction: column; opacity: 0; visibility: hidden; transition: opacity .25s ease; }
+  .nav-overlay.open { opacity: 1; visibility: visible; }
+  .nav-overlay .nav-close { background: none; border: none; color: #fff; font-size: 42px; line-height: 1; cursor: pointer; }
+  .nav-overlay .ov-brand { font-family: 'Source Serif 4', Georgia, serif; color: #fff; font-size: 20px; }
+  .nav-overlay .ov-brand b { color: var(--gold-light); }
+  .ov-links a { display: block; color: #fff; text-decoration: none; }
+  .ov-featured { display: block; background: var(--gold); color: var(--navy-deep); font-weight: 700; text-decoration: none; border-radius: 7px; border: 1px solid var(--gold-light); }
+  .ov-foot { color: rgba(255,255,255,.5); }
+
+  .fhead { background: var(--navy-deep); padding: 64px 32px 58px; position: relative; overflow: hidden; }
+  .fhead-wm { position: absolute; font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 460px; line-height: 1; color: rgba(255,255,255,0.05); top: -110px; right: -40px; pointer-events: none; user-select: none; }
+  .fhead-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+  .fhead p.kicker { color: rgba(255,255,255,0.62); font-size: 15px; margin-bottom: 16px; }
+  .fhead p.kicker a { color: var(--gold-light); text-decoration: none; }
+  .fhead h1 { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 700; color: #fff; line-height: 1.1; letter-spacing: -0.015em; }
+  .fhead p.sub { color: rgba(255,255,255,0.76); font-size: 18.5px; line-height: 1.7; max-width: 58ch; margin-top: 18px; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 32px 30px; }
+  .post p, .post li { font-size: 18px; line-height: 1.8; color: var(--text-light); }
+  .post p { margin-bottom: 20px; }
+  .post p strong, .post li strong { color: var(--text); font-weight: 600; }
+  .post h2 { font-family: 'Source Serif 4', Georgia, serif; font-size: 27px; font-weight: 600; color: var(--navy-deep); margin: 44px 0 14px; line-height: 1.25; }
+  .post h3 { font-family: 'Source Serif 4', Georgia, serif; font-size: 21px; font-weight: 600; color: var(--navy-deep); margin: 28px 0 8px; }
+  .post ul, .post ol { margin: 0 0 22px 22px; }
+  .post li { margin-bottom: 9px; }
+  .post a { color: var(--navy); font-weight: 600; }
+  .lede { font-family: 'Source Serif 4', Georgia, serif; font-size: 22px !important; line-height: 1.55 !important; color: var(--text) !important; }
+  .box { background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--gold); border-radius: 6px; padding: 22px 26px; margin: 28px 0; }
+  .box p:last-child, .box ul:last-child, .box ol:last-child { margin-bottom: 0; }
+  .box h3 { margin-top: 0; }
+  .deadline { background: var(--navy-deep); color: #fff; border-radius: 8px; padding: 26px 28px; margin: 30px 0; }
+  .deadline .when { font-family: 'Source Serif 4', Georgia, serif; font-size: 24px; font-weight: 600; color: var(--gold-light); margin-bottom: 8px; }
+  .deadline strong { color: #fff !important; }
+  .deadline p { color: rgba(255,255,255,0.82) !important; margin-bottom: 10px; font-size: 17px !important; }
+  .deadline a.btn { display: inline-block; background: var(--gold); color: var(--navy-deep); font-weight: 700; font-size: 15.5px; padding: 13px 24px; border-radius: 5px; text-decoration: none; margin: 8px 10px 0 0; }
+  .deadline a.ghost { background: transparent; border: 1px solid rgba(255,255,255,.4); color: #fff; }
+  .sample { background: var(--off-white2); border-radius: 6px; padding: 20px 24px; font-family: 'Source Serif 4', Georgia, serif; font-size: 17.5px; line-height: 1.7; color: var(--text); white-space: pre-wrap; margin: 0 0 12px; }
+  .copybtn { font: inherit; font-size: 14.5px; font-weight: 600; background: var(--white); color: var(--navy-deep); border: 1px solid var(--border); border-radius: 5px; padding: 8px 14px; cursor: pointer; margin-bottom: 26px; }
+  .sign { margin: 44px 0 10px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .sign .mark { font-family: 'Source Serif 4', Georgia, serif; font-style: italic; font-weight: 600; font-size: 32px; color: var(--navy-deep); }
+  .sign .who { font-size: 15px; color: var(--text-muted); }
+  .src { font-size: 14.5px !important; color: var(--text-muted) !important; line-height: 1.65 !important; }
+  .notes-list { list-style: none; margin: 0 !important; padding: 0; }
+  .note-card { display: block; background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 26px 28px; text-decoration: none; color: inherit; margin-bottom: 16px; }
+  .note-card:hover { border-color: var(--gold); }
+  .note-card .meta { font-size: 14.5px; color: var(--text-muted); margin-bottom: 6px; }
+  .note-card h2 { margin: 0 0 8px !important; font-size: 25px !important; }
+  .note-card p { margin: 0 !important; font-size: 17px !important; }
+  .note-card .more { display: inline-block; margin-top: 12px; font-weight: 600; color: var(--navy); border-bottom: 1px solid var(--gold); }
+  @media (max-width: 760px) {
+    .fhead { padding: 44px 20px 40px; } .fhead-wm { display: none; } .fhead p.sub { font-size: 17px; }
+    .wrap { padding: 32px 18px 24px; }
+    .post p, .post li { font-size: 17px; } .lede { font-size: 20px !important; }
+    .box, .deadline { padding: 20px 18px; } .note-card { padding: 20px; }
+  }
+</style>
+</head>
+<style>
+.steps{list-style:none;padding:0;margin:28px 0;display:grid;gap:16px;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:20px 22px 20px 70px;background:#fff;border:1px solid #E0D5BE;border-radius:12px}
+.steps li:before{content:counter(s);position:absolute;left:20px;top:18px;width:34px;height:34px;border-radius:50%;background:#122848;color:#D4AF50;display:grid;place-items:center;font-weight:700;font-family:Georgia,serif}
+.steps h3{margin:0 0 6px}.steps p{margin:0 0 12px}.steps .btn{margin-top:2px}
+.fair{background:#F3EEE3;border-left:4px solid #B8962E;border-radius:8px;padding:14px 18px;margin:26px 0}
+.help{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0 8px}
+.help a{display:block;padding:16px;border:1px solid #E0D5BE;border-radius:12px;background:#fff;text-decoration:none;color:#122848}
+@media(max-width:560px){.help{grid-template-columns:1fr}}
+.post .steps a.btn{display:inline-block;background:#D4AF50;color:#122848;text-decoration:none;font-weight:700;font-size:15px;padding:11px 18px;border-radius:5px}
+.post .steps a.btn.ghost{background:transparent;border:1.5px solid #122848}
+.help a b{display:block;margin-bottom:4px}.help a span{color:#5a5a5a;font-size:15px}
+</style>
+</head>
+<body>
+<div id="q-chrome-top"></div>
+<header class="fhead"><div class="fhead-wm">Q</div><div class="fhead-inner">
+<p class="kicker">Voting &middot; Colorado</p>
+<h1>What's on my ballot?</h1>
+<p class="sub">Your ballot depends on where you live. Here's where to see your own, straight from the official sources, in about two minutes.</p>
+</div></header>
+
+<main class="wrap"><article class="post">
+
+<div class="fair"><strong>We don't tell you how to vote.</strong> The Q Collective is nonpartisan. We don't endorse candidates or ballot measures, and every link below goes to an official Colorado source.</div>
+
+<ol class="steps">
+<li><h3>See your sample ballot</h3>
+<p>Go to GoVoteColorado, the Colorado Secretary of State's voter site. Look yourself up and choose <strong>View my sample ballot</strong>. It shows every race and measure on <em>your</em> ballot, for your address.</p>
+<a class="btn" href="https://www.govotecolorado.gov/" target="_blank" rel="noopener">Open GoVoteColorado &#8599;</a></li>
+
+<li><h3>Read the plain-English guide to statewide measures</h3>
+<p>The <strong>Blue Book</strong> is written by the legislature's nonpartisan staff. For each statewide measure it gives the full text, a fair and impartial analysis, and the main arguments for and against. It's mailed to voters before each statewide election and posted online.</p>
+<a class="btn" href="https://leg.colorado.gov/BlueBook" target="_blank" rel="noopener">Read the Blue Book &#8599;</a></li>
+
+<li><h3>Track your ballot</h3>
+<p>On GoVoteColorado, choose <strong>Sign up for BallotTrax</strong> to get a text or email when your ballot is mailed, received and counted. You can also <strong>check my mail ballot status</strong> there any time.</p>
+<a class="btn ghost" href="https://www.govotecolorado.gov/" target="_blank" rel="noopener">Track it on GoVoteColorado &#8599;</a></li>
+
+<li><h3>Ask your county clerk</h3>
+<p>Your county clerk and recorder runs your election: where to drop off your ballot, where to vote in person, and anything that looks wrong on your ballot. The Secretary of State keeps a contact list for all 64 counties.</p>
+<a class="btn ghost" href="https://www.coloradosos.gov/pubs/elections/Resources/files/CountyClerkRosterWebsite.pdf" target="_blank" rel="noopener">Find your county clerk (PDF) &#8599;</a></li>
+</ol>
+
+<h2>Not in Colorado?</h2>
+<p>Every state runs its own elections, so your sample ballot comes from your state or county election office. USAGov lists the official office for every state, D.C. and the U.S. territories. Pick yours and look for <strong>sample ballot</strong> or <strong>what's on my ballot</strong>.</p>
+<div class="help">
+<a href="https://www.usa.gov/state-election-office" target="_blank" rel="noopener"><b>Find your state's election office &#8599;</b><span>USAGov's list of every official state and territory office.</span></a>
+<a href="https://vote.gov/" target="_blank" rel="noopener"><b>Register or check your registration &#8599;</b><span>Vote.gov, the federal government's official site.</span></a>
+</div>
+
+<h2>Where we can help</h2>
+<p>Once you know what's on your ballot, these pages show the record behind the people already in office.</p>
+<div class="help">
+<a href="find-officials.html"><b>Find your officials</b><span>Who represents you, and their Q Score.</span></a>
+<a href="hub.html"><b>Accountability Hub</b><span>Q Scores for all 100 Colorado lawmakers.</span></a>
+<a href="alerts.html"><b>Bill alerts</b><span>Follow a bill and get an email when it moves.</span></a>
+<a href="q-score-explained.html"><b>How the Q Score works</b><span>One number, the same questions for everyone.</span></a>
+</div>
+
+<p style="color:#5a5a5a;font-size:15px;margin-top:26px">Something here out of date? <a href="contact.html">Tell us</a> and we'll fix it in public, in the <a href="audit.html">audit log</a>.</p>
+
+</article></main>
+
+<div id="q-chrome-footer"></div>
+<script src="q-sunday-band.js"></script>
+<script src="q-config.js"></script>
+<script src="site-chrome.js"></script>
+<script src="q-chat.js"></script>
+</body></html>
