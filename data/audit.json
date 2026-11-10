@@ -2160,6 +2160,41 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 9, 2026 at 5:58 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "1a063e2",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/1a063e2",
+   "note": "We noted Eileen Laubacher's victory claim in Colorado's 4th Congressional District, which AP has not called, and refreshed the Mississippi Senate and Kansas governor counts. No races were called.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "\"What we're watching\" Now row: Laubacher's Monday victory claim and Boebert's response added for the 4th District, which stays as still counting; Mississippi lead and outstanding ballots updated; Kansas hand count noted. As-of line moved to Monday evening, Nov. 9.",
+      "before": "Boebert's campaign has raised concerns about voting patterns and says it expects a recount either way, which it could request.",
+      "after": "Laubacher declared victory Monday, but AP has not called the race, with about 98% counted. Boebert has not conceded. Her campaign has raised concerns about voting patterns, says it is considering a recount, which it could request at its own expense, and will decide its next steps after counting ends Nov. 13."
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "U.S. Senate tally card: Mississippi lead updated. Still counting.",
+      "before": "about 2,600 in Mississippi",
+      "after": "about 2,500 in Mississippi"
+     },
+     {
+      "page": "2026 national results map",
+      "url": "election-2026-map.html",
+      "what": "Mississippi Senate lead updated (still counting); Kansas hand count and the Colorado 4th victory claim added to the big-picture text; sources and as-of line updated.",
+      "before": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,600 votes",
+      "after": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,500 votes"
+     }
+    ]
+   }
   }
  ]
 }
