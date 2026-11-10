@@ -1,6 +1,6 @@
 /* ============================================================
    Q Collective: admin sign-in gate (q-admin-gate.js)
-   Used by hq.html and q-console.html.
+   Used by q-console.html (Q HQ moved to Ash HQ in Nov 2026).
 
    Real email sign-in through the site's existing Supabase accounts:
      1. You type your email and get a one-time sign-in link.
