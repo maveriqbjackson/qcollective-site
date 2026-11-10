@@ -2195,6 +2195,34 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 9, 2026 at 6:10 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "b495526",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/b495526",
+   "note": "The canary now shows on every page with the chat: a small badge above the chat button with the date it was last signed. Its color shows whether it's current, due or overdue.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Every page with the chat",
+      "url": "canary.html",
+      "what": "New canary badge above the chat button. It reads the same public canary status as the canary page and links to it.",
+      "before": "The canary status showed only on the homepage and the canary page",
+      "after": "A badge on every page: green when current, amber when due, red when overdue or not signed"
+     },
+     {
+      "page": "Chat button",
+      "url": "index.html",
+      "what": "The \"Ask me anything\" label next to the Q now stays up until the chat is opened, instead of disappearing after four seconds.",
+      "before": "Label showed for about four seconds",
+      "after": "Label stays until the chat is opened"
+     }
+    ]
+   }
   }
  ]
 }
