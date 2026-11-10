@@ -134,5 +134,44 @@
   document.addEventListener("keydown",function(e){if(e.key==="Escape"&&panel.classList.contains("open"))close();});
 
   // gentle first-visit nudge
-  tipTimer=setTimeout(function(){if(!panel.classList.contains("open")){tip.classList.add("show");setTimeout(hideTip,4200);}},1400);
+  tipTimer=setTimeout(function(){if(!panel.classList.contains("open")){tip.classList.add("show");}},1400);
+})();
+
+/* Canary badge: a small pill above the chat button on every page that has the chat.
+   The bird's circle shows the canary's state (green current, amber due, red overdue or
+   not signed yet) and the pill shows the date it was last signed. Tap it to read the statement. */
+(function () {
+  if (window.__qCanaryBadge) return; window.__qCanaryBadge = true;
+  var K = "sb_publishable_75yNLzcnQV-C08DLKwbHiQ_YXrMI92C";
+  var css = ".qcb{position:fixed;right:20px;bottom:92px;z-index:2147482999;display:flex;align-items:center;gap:8px;height:38px;padding:0 13px 0 4px;border-radius:999px;background:#fff;border:1px solid #E0D5BE;box-shadow:0 4px 14px rgba(18,40,72,.18);text-decoration:none;color:#122848;font:600 12.5px/1 'DM Sans',system-ui,sans-serif;transition:transform .15s,box-shadow .15s}" +
+    ".qcb:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(18,40,72,.24)}.qcb:focus-visible{outline:2px solid #B8962E;outline-offset:2px}" +
+    ".qcb i{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#8a8f99;transition:background .3s}.qcb i svg{width:20px;height:20px}" +
+    ".qcb small{display:block;font:500 10px/1.2 'DM Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#7a7a7a;margin-bottom:2px}" +
+    "@media(max-width:460px){.qcb{right:12px;bottom:88px;height:34px;padding-right:11px}.qcb i{width:26px;height:26px}}" +
+    "@media print{.qcb{display:none}}";
+  var bird = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 15.5l4.2-1.6-.6 3.6z" fill="#E3AE1C"/><ellipse cx="10.6" cy="14.4" rx="6.6" ry="4.9" transform="rotate(-14 10.6 14.4)" fill="#F7D23E"/><circle cx="15.6" cy="8.6" r="4" fill="#F7D23E"/><path d="M19.3 8.1l2.9 1.1-2.9 1.2z" fill="#F08A24"/><circle cx="16.7" cy="7.8" r=".95" fill="#122848"/><path d="M7.4 13.2c2.2-.6 4.4.1 5.6 1.8-2 .9-4.3.6-5.6-1.8z" fill="#E3AE1C"/><path d="M9.8 19.1v2.2M12.4 18.8v2.4" stroke="#122848" stroke-width="1" stroke-linecap="round"/></svg>';
+  function add() {
+    var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
+    var a = document.createElement("a"); a.className = "qcb"; a.href = "canary.html";
+    a.setAttribute("aria-label", "The Q Collective canary: checking");
+    a.innerHTML = '<i>' + bird + '</i><span><small>Canary</small><b id="qcbT">Checking…</b></span>';
+    document.body.appendChild(a);
+    fetch("https://asjvyhppqclglafueppb.supabase.co/rest/v1/rpc/canary_status", { method: "POST", headers: { apikey: K, Authorization: "Bearer " + K, "Content-Type": "application/json" }, body: "{}" })
+      .then(function (r) { return r.json(); }).then(function (d) {
+        var s = (d.signings || [])[0], txt, col, word;
+        if (!s) { txt = "Not signed yet"; col = "#b23b2a"; word = "not signed yet"; }
+        else {
+          var at = new Date(s.signed_at), days = Math.floor((Date.now() - at.getTime()) / 864e5), iv = d.interval_days || 7, gr = d.grace_days || 3;
+          txt = "Signed " + at.toLocaleDateString([], { month: "short", day: "numeric" });
+          if (days <= iv) { col = "#2e7d4f"; word = "current"; }
+          else if (days <= iv + gr) { col = "#c9971c"; word = "due for renewal"; }
+          else { col = "#b23b2a"; word = "overdue"; txt = "Overdue · " + txt; }
+        }
+        document.getElementById("qcbT").textContent = txt;
+        a.querySelector("i").style.background = col;
+        a.setAttribute("aria-label", "The Q Collective canary is " + word + ". " + txt + ". Read the statement.");
+        a.title = "Canary " + word;
+      }).catch(function () { document.getElementById("qcbT").textContent = "See the canary"; });
+  }
+  if (document.body) add(); else document.addEventListener("DOMContentLoaded", add);
 })();
