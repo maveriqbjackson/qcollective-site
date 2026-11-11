@@ -145,8 +145,10 @@
 <p>Your own browser works out the color from the date of the last signing. We don't run that check on our servers, so there's no switch anyone could quietly turn off. If nobody signs, the page goes red on your phone, not ours.</p>
 
 <h2>Who signs it</h2>
-<p>A small group of people we trust, each with their own sign-in. Every signing is recorded by name and date, shown below, and logged in our public <a href="audit.html">audit log</a>. A signer can only renew the exact statement above. Nobody can change its wording from the signing page.</p>
+<p>A small group of people we trust, each with their own sign-in. Every signing is dated, shown below, and logged in our public <a href="audit.html">audit log</a>. A signer can only renew the exact statement above. Nobody can change its wording from the signing page.</p>
 <p>Every signer has one instruction: if any part of the statement might no longer be true, or if they've been told not to say so, <strong>don't sign</strong>. Let it lapse.</p>
+
+<p id="signers"><strong>Why some signings say &ldquo;A signer.&rdquo;</strong> Our founder, maveriQ B Jackson, signs under his own name. He puts his name and his credibility behind every word of this statement. Everyone else who signs shows as <strong>&ldquo;A signer.&rdquo;</strong> They&rsquo;re private people who volunteered to help keep this honest, and naming them would make them a target for pressure. Protecting them is part of what keeps the canary trustworthy.</p>
 
 <h2>Recent signings</h2>
 <table class="hist"><thead><tr><th>Date</th><th>Signed by</th></tr></thead><tbody id="hist"><tr><td colspan="2">Loading&hellip;</td></tr></tbody></table>
@@ -170,7 +172,7 @@ function qcFmt(d){return d.toLocaleDateString("en-US",{month:"long",day:"numeric
 function qcCard(d){
   var st=QC_CANARY_STATE(d), lab={alive:"Signed and current",due:"Due for renewal",dead:"Overdue. Read the silence.",none:"Not signed yet"}[st.state];
   var lines=String(d.statement||"").split("\n").filter(function(x){return x.trim();}).map(function(x){return "<p>"+qcEsc(x)+"</p>";}).join("");
-  var meta=st.last?'<div><span>Last signed</span><span>'+qcFmt(st.last)+' &middot; '+(st.days===0?"today":st.days+(st.days===1?" day":" days")+" ago")+'</span></div><div><span>Signed by</span><span>'+qcEsc(st.by)+'</span></div>':'';
+  var meta=st.last?'<div><span>Last signed</span><span>'+qcFmt(st.last)+' &middot; '+(st.days===0?"today":st.days+(st.days===1?" day":" days")+" ago")+'</span></div><div><span>Signed by</span><span>'+qcEsc(st.by)+(st.by==="A signer"?' <a href="#signers">(why?)</a>':'')+'</span></div>':'';
   meta+='<div><span>Renewal schedule</span><span>every '+(d.interval_days||7)+' days</span></div>';
   return '<div class="cstat '+st.state+'"><div class="bar"><span class="dot"></span>'+lab+'</div><div class="stmt">'+lines+'</div><div class="meta">'+meta+'</div></div>';
 }
