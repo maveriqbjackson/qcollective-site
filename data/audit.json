@@ -2500,6 +2500,16 @@
      }
     ]
    }
+  },
+  {
+   "run_type": "site_change",
+   "ts": "2026-11-12T23:20:23Z",
+   "note": "Welcome page for visitors outside the U.S. is live (welcome.html), with a human check on its question form; privacy page explains it."
+  },
+  {
+   "run_type": "site_change",
+   "ts": "2026-11-12T23:20:23Z",
+   "note": "Canary and audit pages now explain why other signers show as \"A signer\": only the founder's name is shown, to protect everyone else."
   }
  ]
 }

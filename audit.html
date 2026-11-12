@@ -194,7 +194,7 @@ function renderRun(r){
   var body='';
   if(r.run_type==='genesis'){ body='<p class="note">'+esc(r.note||'Audit log activated.')+'</p>'; }
   else if(r.run_type==='canary'){
-    body='<p class="note">'+esc(r.signed_by)+' renewed <a href="canary.html">the canary</a>: The Q Collective has received no secret order, gag order, subpoena or demand for our records.</p><div class="pills"><span class="pill unch">scores affected: no</span></div>'; }
+    body='<p class="note">'+esc(r.signed_by)+(r.signed_by==='A signer'?' (<a href="canary.html#signers">why not named?</a>)':'')+' renewed <a href="canary.html">the canary</a>: The Q Collective has received no secret order, gag order, subpoena or demand for our records.</p><div class="pills"><span class="pill unch">scores affected: no</span></div>'; }
   else if(r.run_type==='site_change'){ var sc=r.site_change||{};
     body='<p class="note">'+esc(r.note||'')+'</p>'+
       (sc.items||[]).map(function(it){return '<div class="sc-item"><p class="sc-page">'+esc(it.page)+'</p>'+
