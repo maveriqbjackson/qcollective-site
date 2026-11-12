@@ -538,8 +538,13 @@
   <ul>
     <li><b>Supabase</b> &mdash; stores accounts and saved lists.</li>
     <li><b>Resend</b> &mdash; delivers sign-in links and alerts.</li>
+<<<<<<< ours
     <li><b>Cloudflare</b> &mdash; analytics, the Ask Q assistant, and the &ldquo;are you a person?&rdquo; check on our sign-up and poll forms (Turnstile).</li>
     <li><b>Anthropic</b> &mdash; powers the Ask Q assistant; what you type there is sent to their API to generate a reply. <b>Don&rsquo;t put sensitive personal information into the assistant.</b> If a message to the assistant threatens someone, tries to get around its rules, or tries to get at our code, we keep a copy with the address it came from, to protect people and the site. Ordinary questions aren&rsquo;t kept. If a message threatens someone&rsquo;s safety, we may share it, with the address it came from, with law enforcement.</li>
+=======
+    <li><b>Cloudflare</b> &mdash; analytics, the Ask Q assistant, and the &ldquo;are you a person?&rdquo; check on our sign-up and poll forms (Turnstile). Visitors from outside the U.S. see a welcome page first: Cloudflare tells us only which country a visit comes from, and a cookie remembers for 30 days that you passed the check. Questions sent from that page go to our team by email.</li>
+    <li><b>Anthropic</b> &mdash; powers the Ask Q assistant; what you type there is sent to their API to generate a reply. <b>Don&rsquo;t put sensitive personal information into the assistant.</b> If a message to the assistant threatens someone, tries to get around its rules, or tries to get at our code, we keep a copy with the address it came from, to protect people and the site. Ordinary questions aren&rsquo;t kept.</li>
+>>>>>>> theirs
     <li><b>Stripe</b> &mdash; processes donations. <b>We never see or store your card number.</b></li>
     <li><b>GitHub Pages</b> &mdash; hosts the site.</li>
   </ul>
