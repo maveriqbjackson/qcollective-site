@@ -377,6 +377,20 @@
      "href": "election-2026.html"
     }
    ]
+  },
+  {
+   "id": "ms-senate-called-2026",
+   "date": "2026-11-11",
+   "precision": "day",
+   "kind": "watch",
+   "title": "Mississippi's U.S. Senate race is called",
+   "summary": "AP called Mississippi's U.S. Senate race for Scott Colom (D), and Cindy Hyde-Smith (R) conceded. Democrats now hold at least 55 Senate seats, with Alaska still counting. Mississippi certifies Dec. 3.",
+   "links": [
+    {
+     "label": "National map",
+     "href": "election-2026-map.html"
+    }
+   ]
   }
  ]
 }
