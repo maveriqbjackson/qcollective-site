@@ -2368,6 +2368,72 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 12, 2026 at 7:19 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "eabbcf1",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/eabbcf1",
+   "note": "We updated the Thursday morning election results: AP called Mississippi's U.S. Senate race for Scott Colom (D), the national House count moved, and the Alaska and Kansas leads grew. No Colorado race was called.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 national election map",
+      "url": "election-2026-map.html",
+      "what": "Mississippi U.S. Senate race called by AP for Scott Colom (D), a pickup from Republicans. Cindy Hyde-Smith (R) conceded.",
+      "before": "Scott Colom (D) leads Cindy Hyde-Smith (R) by about 2,500 votes",
+      "after": "Scott Colom (D) won, flipped from Republican"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "National U.S. Senate tally updated after the Mississippi call.",
+      "before": "54 D, 44 R",
+      "after": "55 D, 44 R"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "National U.S. House count updated after five more seats were called, all holds.",
+      "before": "254 D, 164 R, 17 still counting",
+      "after": "255 D, 167 R, 13 still counting"
+     },
+     {
+      "page": "2026 national election map",
+      "url": "election-2026-map.html",
+      "what": "Alaska Senate lead updated, still counting.",
+      "before": "Mary Peltola (D) leads Dan Sullivan (R) by 2,517 votes as of Nov. 9",
+      "after": "Mary Peltola (D) leads Dan Sullivan (R) by about 4,250 votes with about 84% counted, as of Nov. 11"
+     },
+     {
+      "page": "2026 national election map",
+      "url": "election-2026-map.html",
+      "what": "Alaska governor first-choice share updated, still counting.",
+      "before": "Jonathan Kreiss-Tomkins (D) leads Bernadette Wilson (R), 49.4% to 28.8%",
+      "after": "Jonathan Kreiss-Tomkins (D) leads Bernadette Wilson (R) with 49.6% of first choices to about 29%"
+     },
+     {
+      "page": "2026 national election map",
+      "url": "election-2026-map.html",
+      "what": "Kansas governor lead updated, still counting while the hand-count audit finishes.",
+      "before": "Cindy Holscher (D) leads Ty Masterson (R) by about 7,000 votes",
+      "after": "Cindy Holscher (D) leads Ty Masterson (R) by more than 7,500 votes"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Colorado's 4th Congressional District is still uncalled by AP. Added the Nov. 12 ballot cure deadline and the Nov. 13 end of counting."
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "Added an entry for the Mississippi U.S. Senate call."
+     }
+    ]
+   }
   }
  ]
 }
