@@ -31,6 +31,7 @@ Secrets: SUPABASE_URL, SUPABASE_SERVICE_KEY, RESEND_API_KEY
 """
 
 import datetime as dt
+import base64
 import html
 import json
 import os
@@ -52,6 +53,11 @@ SEND_FROM    = os.environ.get("SEND_FROM") or "The Q Collective <noreply@auth.th
 REPLY_TO     = os.environ.get("REPLY_TO") or "team@theqcollective.org"
 SITE         = (os.environ.get("SITE_URL") or "https://theqcollective.org").rstrip("/")
 STATE        = (os.environ.get("STATE") or "CO").strip()
+# Audio version of the recap (Cloudflare Workers AI voice). Off for subscribers until SUNDAY_AUDIO=1;
+# test runs always try it when the token is there, so Mav can hear it before it goes live.
+CF_AI_TOKEN  = os.environ.get("CF_AI_TOKEN") or ""
+CF_ACCOUNT   = os.environ.get("CF_ACCOUNT_ID") or ""
+SUNDAY_AUDIO = (os.environ.get("SUNDAY_AUDIO") or "").strip() in ("1", "true", "yes")
 
 # CAN-SPAM requires a real postal address in every recap.
 POSTAL = ["The Q Collective", "6212 E Pine Ln, Unit 2159", "Parker, CO 80138"]
@@ -536,11 +542,72 @@ def build_recap(now, prev, today):
 
 
 # --------------------------------------------------------------------------
+# audio version
+# --------------------------------------------------------------------------
+def audio_script(today, sections):
+    """What the voice reads: the same recap, minus links, in plain spoken sentences."""
+    out = [f"This is The Sunday Update from The Q Collective, for the week of {today.strftime('%B %-d')}."]
+    for h, lines in sections:
+        said = [ln for ln in lines if ln and not ln.startswith("http")]
+        if not said:
+            continue
+        out.append(h.strip().rstrip(":").capitalize() + ".")
+        for ln in said:
+            ln = ln.strip().lstrip("•-– ").strip()
+            out.append(ln if ln.endswith((".", "!", "?")) else ln + ".")
+    out.append("That's this week. The full update, with every link, is in your email and at the q collective dot org. "
+               "Thanks for being here. The record was always public. Now you can actually hear it.")
+    text = " ".join(out).replace("maveriQ", "Maverick").replace("Q Score", "Q score")
+    return text
+
+
+def make_audio(today, sections):
+    """Returns the public URL of this week's mp3, or None. Saves to audio/sunday/YYYY-MM-DD.mp3 (committed by the workflow)."""
+    if not (CF_AI_TOKEN and CF_ACCOUNT):
+        log("audio: no CF_AI_TOKEN / CF_ACCOUNT_ID; skipping the audio version.")
+        return None
+    text = audio_script(today, sections)
+    chunks, rest = [], text
+    while rest:
+        cut = len(rest) if len(rest) <= 1800 else max(rest.rfind(". ", 0, 1800) + 1, 900)
+        chunks.append(rest[:cut].strip()); rest = rest[cut:].strip()
+    audio = b""
+    for c in chunks:
+        r = urllib.request.Request(
+            f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT}/ai/run/@cf/deepgram/aura-1",
+            data=json.dumps({"text": c, "speaker": "asteria", "encoding": "mp3"}).encode(), method="POST",
+            headers={"Authorization": "Bearer " + CF_AI_TOKEN, "Content-Type": "application/json", "User-Agent": "QCollective-sunday/1.0"})
+        try:
+            with urllib.request.urlopen(r, timeout=90) as resp:
+                body, ct = resp.read(), resp.headers.get("content-type", "")
+        except Exception as e:
+            log(f"audio: Cloudflare said no ({e}); sending without audio.")
+            return None
+        if "json" in ct:
+            j = json.loads(body.decode() or "{}")
+            b64 = (j.get("result") or {}).get("audio") if isinstance(j.get("result"), dict) else j.get("result")
+            if not isinstance(b64, str):
+                log("audio: no audio came back; sending without audio.")
+                return None
+            body = base64.b64decode(b64)
+        audio += body
+    os.makedirs("audio/sunday", exist_ok=True)
+    name = f"audio/sunday/{today.isoformat()}.mp3"
+    with open(name, "wb") as f:
+        f.write(audio)
+    mins = max(1, round(len(text.split()) / 150))
+    log(f"audio: saved {name} ({len(audio)//1024} KB, about {mins} min)")
+    return f"{SITE}/{name}", mins
+
+
+# --------------------------------------------------------------------------
 # rendering
 # --------------------------------------------------------------------------
-def render_text(today, sections, token):
+def render_text(today, sections, token, audio=None):
     unsub = f"{SITE}/sunday.html?do=unsubscribe&token={token}"
     out = ["THE SUNDAY UPDATE", f"Week of {today.strftime('%B %-d, %Y')}", ""]
+    if audio:
+        out += [f"Listen instead (about {audio[1]} min): {audio[0]}", ""]
     for h, lines in sections:
         out += [h] + lines + [""]
     out += ["Thanks for being here. The record was always public. Now you can actually read it.", "",
@@ -550,7 +617,7 @@ def render_text(today, sections, token):
     return "\n".join(out)
 
 
-def render_html(today, sections, token):
+def render_html(today, sections, token, audio=None):
     unsub = f"{SITE}/sunday.html?do=unsubscribe&token={urllib.parse.quote(token)}"
     body = ""
     for h, lines in sections:
@@ -566,10 +633,11 @@ def render_html(today, sections, token):
             body += (f'<div style="font-family:Georgia,serif;font-size:15px;line-height:1.6;'
                      f'color:#2a3242;margin-top:4px;">{txt}</div>')
         body += "</td></tr>"
+    listen = (f'<tr><td style="padding:20px 30px 0;"><a href="{html.escape(audio[0])}" style="display:inline-block;background:#f2efe8;border:1px solid #e4e0d6;border-radius:999px;padding:9px 16px;font-family:Helvetica,Arial,sans-serif;font-size:13px;font-weight:bold;color:#122848;text-decoration:none;">&#9654;&nbsp; Listen instead &middot; about {audio[1]} min</a></td></tr>') if audio else ""
     return f"""<table width="100%" cellpadding="0" cellspacing="0" style="background:#f2efe8;padding:28px 0;"><tr><td align="center">
 <table width="560" cellpadding="0" cellspacing="0" style="max-width:560px;width:100%;background:#ffffff;border:1px solid #e4e0d6;border-radius:14px;overflow:hidden;">
 <tr><td style="background:#122848;padding:22px 30px;"><span style="font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#ffffff;">The Sunday Update</span><span style="float:right;font-family:Georgia,serif;font-size:26px;font-weight:bold;color:#B8962E;">Q</span><div style="font-family:Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:2px;color:#B8962E;text-transform:uppercase;margin-top:4px;">Week of {today.strftime('%B %-d, %Y')}</div></td></tr>
-{body}
+{listen}{body}
 <tr><td style="padding:26px 30px 24px;"><div style="font-family:Georgia,serif;font-size:15px;line-height:1.6;color:#2a3242;">Thanks for being here. The record was always public. Now you can actually read it.<br><br><b>The Q Collective Team</b><br><a href="mailto:{REPLY_TO}" style="color:#122848;">{REPLY_TO}</a><br>Founder direct: <a href="tel:{FOUNDER_TEL}" style="color:#122848;">{FOUNDER_PHONE}</a></div></td></tr>
 <tr><td style="border-top:1px solid #e4e0d6;padding:18px 30px;"><p style="font-family:Helvetica,Arial,sans-serif;font-size:11px;line-height:1.6;color:#9aa0ae;margin:0;">Nonpartisan. Citizen-powered. One standard for everyone.<br>{"<br>".join(POSTAL)}<br><br>You're getting this because you signed up for the Sunday Update at theqcollective.org.<br><a href="{unsub}" style="color:#9aa0ae;">Unsubscribe</a></p></td></tr>
 </table></td></tr></table>"""
@@ -743,10 +811,11 @@ def run_recap(test=False):
         subject = subject.replace(today.strftime('%B %-d'), sunday.strftime('%B %-d'), 1)
     shown = sunday
 
+    audio = make_audio(shown, sections) if (test or SUNDAY_AUDIO) else None
     if test:
         subject = "[TEST] " + subject
-        ok = send_email(TEST_TO, subject, render_html(shown, sections, "test-preview"),
-                        render_text(shown, sections, "test-preview"))
+        ok = send_email(TEST_TO, subject, render_html(shown, sections, "test-preview", audio),
+                        render_text(shown, sections, "test-preview", audio))
         log(f"test recap to {TEST_TO}: {'sent' if ok else 'FAILED'}")
         return ok
 
@@ -764,8 +833,8 @@ def run_recap(test=False):
         when = deliver_at.isoformat()
     sent = 0
     for s in subs:
-        if send_email(s["email"], subject, render_html(shown, sections, s["token"]),
-                      render_text(shown, sections, s["token"]), token=s["token"], scheduled_at=when):
+        if send_email(s["email"], subject, render_html(shown, sections, s["token"], audio),
+                      render_text(shown, sections, s["token"], audio), token=s["token"], scheduled_at=when):
             sent += 1
             time.sleep(0.6)
     timing = ("scheduled for " + deliver_at.strftime("%A %B %-d at %-I:%M %p %Z")) if when else "sent immediately"

@@ -2455,6 +2455,11 @@
      }
     ]
    }
+  },
+  {
+   "run_type": "site_change",
+   "ts": "2026-11-12T18:39:22Z",
+   "note": "Sunday Update: audio version added (a 'Listen instead' link and an mp3 read by a computer voice). Off for subscribers until approved; test runs only."
   }
  ]
 }
