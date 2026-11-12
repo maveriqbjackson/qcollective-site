@@ -2434,6 +2434,27 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 12, 2026 at 7:48 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "fcbed2c",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/fcbed2c",
+   "note": "Privacy policy: if a message to the Ask Q assistant threatens someone's safety, we may share it, with the address it came from, with law enforcement.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Privacy policy",
+      "url": "privacy.html",
+      "what": "Added one sentence to the Anthropic line under \"Who else touches it\".",
+      "before": "Said threatening messages are kept",
+      "after": "Also says they may be shared with law enforcement"
+     }
+    ]
+   }
   }
  ]
 }
