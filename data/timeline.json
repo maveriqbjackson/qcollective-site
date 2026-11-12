@@ -391,6 +391,20 @@
      "href": "election-2026-map.html"
     }
    ]
+  },
+  {
+   "id": "me-2-called-2026",
+   "date": "2026-11-12",
+   "precision": "day",
+   "kind": "watch",
+   "title": "Maine's 2nd District goes to Paul LePage",
+   "summary": "Maine's ranked-choice tally confirmed Paul LePage (R) over Matt Dunlap (D), 50.8% to 49.2%, in a seat Democrats held. It is the third U.S. House seat Republicans picked up this year. Vermont and Wyoming have also certified their results.",
+   "links": [
+    {
+     "label": "National map",
+     "href": "election-2026-map.html"
+    }
+   ]
   }
  ]
 }
