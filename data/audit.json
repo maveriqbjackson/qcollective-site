@@ -2460,6 +2460,46 @@
    "run_type": "site_change",
    "ts": "2026-11-12T18:39:22Z",
    "note": "Sunday Update: audio version added (a 'Listen instead' link and an mp3 read by a computer voice). Off for subscribers until approved; test runs only."
+  },
+  {
+   "ts": "November 12, 2026 at 11:45 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "e198fc6",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/e198fc6",
+   "note": "We updated the Thursday midday election results: Maine confirmed its 2nd District for Paul LePage (R) after its ranked-choice tally, a Republican pickup, and the national House count moved. No Colorado race was called.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 national election map",
+      "url": "election-2026-map.html",
+      "what": "Maine's 2nd District added as a seat that changed parties, after the state's ranked-choice tally confirmed Paul LePage (R) over Matt Dunlap (D), 50.8% to 49.2%.",
+      "before": "Not listed (still counting)",
+      "after": "District 2: Paul LePage (R), flipped to Republican"
+     },
+     {
+      "page": "2026 national election map",
+      "url": "election-2026-map.html",
+      "what": "Confirmed House flips updated in the House note and big-picture text.",
+      "before": "47 flips (45 to Democrats, 2 to Republicans)",
+      "after": "48 flips (45 to Democrats, 3 to Republicans)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "National U.S. House count updated after the Maine 2nd call.",
+      "before": "255 D, 167 R, 13 still counting",
+      "after": "255 D, 168 R, 12 still counting"
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "Added an entry for the Maine 2nd District result, noting that Vermont and Wyoming have certified."
+     }
+    ]
+   }
   }
  ]
 }
