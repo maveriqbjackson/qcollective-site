@@ -2510,6 +2510,46 @@
    "run_type": "site_change",
    "ts": "2026-11-12T23:20:23Z",
    "note": "Canary and audit pages now explain why other signers show as \"A signer\": only the founder's name is shown, to protect everyone else."
+  },
+  {
+   "ts": "November 12, 2026 at 5:47 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "ed5ef20",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/ed5ef20",
+   "note": "We updated the Thursday evening election results: AP called the Kansas governor's race for Cindy Holscher (D), and Alaska's Senate count moved. No Colorado race was called.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 national election map",
+      "url": "election-2026-map.html",
+      "what": "Kansas governor's race moved to won after AP called it for Cindy Holscher (D) on Nov. 12, a Democratic hold.",
+      "before": "Cindy Holscher (D) leads Ty Masterson (R) by more than 7,500 votes (still counting)",
+      "after": "Cindy Holscher (D), won; defeated Ty Masterson (R)"
+     },
+     {
+      "page": "2026 national election map",
+      "url": "election-2026-map.html",
+      "what": "Alaska Senate lead updated, and a state judge's Nov. 11 ruling on rejected-ballot records noted.",
+      "before": "Mary Peltola (D) leads Dan Sullivan (R) by about 4,250 votes with about 84% counted, as of Nov. 11",
+      "after": "Mary Peltola (D) leads Dan Sullivan (R) by about 3,975 votes with about 86% counted, as of Nov. 12"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Governors and Senate tally cards and the \"Now\" row updated for the Kansas call and the Alaska count.",
+      "before": "Alaska and Kansas are still counting.",
+      "after": "AP called Kansas for Cindy Holscher (D) on Nov. 12, a Democratic hold, though Ty Masterson (R) had not conceded. Alaska is still counting."
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "Added an entry for the Kansas governor's race call."
+     }
+    ]
+   }
   }
  ]
 }
