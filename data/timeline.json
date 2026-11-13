@@ -405,6 +405,20 @@
      "href": "election-2026-map.html"
     }
    ]
+  },
+  {
+   "id": "ks-gov-called-2026",
+   "date": "2026-11-12",
+   "precision": "day",
+   "kind": "watch",
+   "title": "Kansas governor's race goes to Cindy Holscher",
+   "summary": "AP called the Kansas governor's race for Cindy Holscher (D) over Ty Masterson (R), nine days after Election Day, with Holscher just over 7,000 votes ahead. Democrats keep the seat Gov. Laura Kelly leaves. Masterson had not conceded, and a recount must be requested by Nov. 17.",
+   "links": [
+    {
+     "label": "National map",
+     "href": "election-2026-map.html"
+    }
+   ]
   }
  ]
 }
