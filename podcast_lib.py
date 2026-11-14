@@ -4,7 +4,8 @@ Shared by the Sunday Update (weekly episodes) and podcast_bonus.py (bonus episod
 
   podcast/episodes.json   every published episode, newest first, plus the Apple / Spotify / YouTube links
   podcast/feed.xml        the podcast feed that Apple Podcasts, Spotify and YouTube read
-  podcast/intro.mp3       Mav's own opening, recorded once and played at the start of every episode
+  podcast/intro.mp3       Mav's own opening, recorded in Ash HQ and fetched fresh before every episode
+                          (aetherandash.digital/api/podcast/intro); silence at both ends is trimmed
   podcast/episodes/       the episode audio files
   podcast/drafts/         bonus episodes waiting for Mav's OK (never in the feed)
   notes/pbw-<id>.html     the auto blog: every published episode becomes a written Q Notes post
@@ -97,7 +98,9 @@ def stitch(body_path, out_path):
                 inputs += ["-f", "lavfi", "-t", "0.6", "-i", "anullsrc=r=44100:cl=mono"]
             else:
                 inputs += ["-i", p]
-            filt.append(f"[{n}:a]aresample=44100,aformat=sample_fmts=fltp:channel_layouts=mono[a{n}]")
+            trim = ("silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
+                    "silenceremove=start_periods=1:start_threshold=-45dB,areverse,") if p == INTRO else ""
+            filt.append(f"[{n}:a]{trim}aresample=44100,aformat=sample_fmts=fltp:channel_layouts=mono[a{n}]")
             n += 1
         # Join first, then level the whole episode once (leveling a silent gap on its own breaks the encoder).
         filt.append("".join(f"[a{i}]" for i in range(n)) + f"concat=n={n}:v=0:a=1,loudnorm=I=-16:TP=-1.5:LRA=11,aresample=44100[out]")

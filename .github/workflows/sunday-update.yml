@@ -62,6 +62,8 @@ jobs:
         if: steps.pick.outputs.mode == 'recap' || steps.pick.outputs.mode == 'test'
         run: command -v ffmpeg || (sudo apt-get update -q && sudo apt-get install -y -q ffmpeg)
 
+      - name: Get Mav's podcast intro from Ash HQ
+        run: curl -fsSL --max-time 30 https://aetherandash.digital/api/podcast/intro -o podcast/intro.mp3 || rm -f podcast/intro.mp3
       - name: Send
         env:
           MODE: ${{ steps.pick.outputs.mode }}
