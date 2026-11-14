@@ -130,14 +130,61 @@ def level(in_path, out_path):
         raise RuntimeError("ffmpeg: " + r.stderr[-400:])
 
 
+def _vtt_time(t):
+    t = max(0.0, float(t or 0)); h = int(t // 3600); m = int(t % 3600 // 60); s_ = t % 60
+    return f"{h:02d}:{m:02d}:{s_:06.3f}"
+
+
+def make_transcript(eid, audio_path, script=""):
+    """Captions for podcast apps. First choice: a timed transcript (WebVTT) heard from the actual recording
+    (Cloudflare Workers AI, Whisper). If that isn't available, a plain-text transcript from the saved script.
+    Returns (relative path, MIME type) or (None, None)."""
+    import base64
+    import urllib.request
+    os.makedirs(os.path.join(DIR, "transcripts"), exist_ok=True)
+    tok, acct = os.environ.get("CF_AI_TOKEN") or "", os.environ.get("CF_ACCOUNT_ID") or ""
+    if tok and acct:
+        try:
+            with tempfile.NamedTemporaryFile(suffix=".mp3", delete=False) as f:
+                small = f.name
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", audio_path, "-ac", "1", "-ar", "16000", "-b:a", "32k", small], check=True, timeout=600)
+            body = json.dumps({"audio": base64.b64encode(open(small, "rb").read()).decode()}).encode()
+            os.remove(small)
+            req = urllib.request.Request(f"https://api.cloudflare.com/client/v4/accounts/{acct}/ai/run/@cf/openai/whisper-large-v3-turbo", data=body, method="POST",
+                                         headers={"Authorization": "Bearer " + tok, "Content-Type": "application/json", "User-Agent": "QCollective-podcast/1.0"})
+            with urllib.request.urlopen(req, timeout=300) as r:
+                res = (json.loads(r.read()) or {}).get("result") or {}
+            vtt = res.get("vtt") or ""
+            if not vtt and res.get("segments"):
+                vtt = "WEBVTT\n\n" + "\n".join(f"{_vtt_time(x.get('start'))} --> {_vtt_time(x.get('end'))}\n{str(x.get('text') or '').strip()}\n" for x in res["segments"] if str(x.get("text") or "").strip())
+            if vtt.strip().startswith("WEBVTT"):
+                rel = os.path.join(DIR, "transcripts", f"{eid}.vtt")
+                open(rel, "w").write(vtt)
+                print(f"[transcript] {eid}: timed captions from the recording", flush=True)
+                return rel, "text/vtt"
+        except Exception as ex:
+            print(f"[transcript] {eid}: couldn't hear it ({ex}); using the script", flush=True)
+    clean = "\n".join(ln for ln in str(script or "").splitlines() if not ln.strip().startswith("[")).replace("(pause)", "").strip()
+    if len(clean) > 40:
+        rel = os.path.join(DIR, "transcripts", f"{eid}.txt")
+        open(rel, "w").write(clean + "\n")
+        return rel, "text/plain"
+    return None, None
+
+
 def add_episode(d, *, eid, kind, title, date, summary, audio_path, script=""):
     """Adds (or replaces) one episode. audio_path is relative to the repo root."""
     d["episodes"] = [e for e in d["episodes"] if e["id"] != eid]
+    tr, trt = (None, None)
+    try:
+        tr, trt = make_transcript(eid, audio_path, script)
+    except Exception as ex:
+        print(f"[transcript] skipped: {ex}", flush=True)
     d["episodes"].append({
         "id": eid, "type": kind, "title": title, "date": date, "summary": summary,
         "audio": audio_path, "bytes": os.path.getsize(audio_path), "seconds": seconds(audio_path),
         "published": dt.datetime.now(TZ).isoformat(timespec="seconds"),
-        "script": script,
+        "script": script, "transcript": tr, "transcript_type": trt,
     })
     return d
 
@@ -165,7 +212,7 @@ def build_feed(d):
       <enclosure url="{_x(SITE + '/' + e['audio'])}" length="{e['bytes']}" type="audio/mpeg"/>
       <itunes:duration>{dur // 60}:{dur % 60:02d}</itunes:duration>
       <itunes:episodeType>{'trailer' if e['type'] == 'trailer' else 'bonus' if e['type'] == 'bonus' else 'full'}</itunes:episodeType>{chr(10) + '      <itunes:image href="' + _x(SITE + '/podcast/cover-thursday.jpg') + '"/>' if e['type'] in ('thursday', 'trailer') else ''}
-      <itunes:explicit>false</itunes:explicit>
+      <itunes:explicit>false</itunes:explicit>{chr(10) + '      <podcast:transcript url="' + _x(SITE + '/' + e['transcript']) + '" type="' + _x(e.get('transcript_type') or 'text/plain') + '" language="en"' + (' rel="captions"' if e.get('transcript_type') == 'text/vtt' else '') + '/>' if e.get('transcript') else ''}
     </item>""")
     items.reverse()
     c1, c2 = SHOW["category"], SHOW["category2"]
@@ -173,7 +220,7 @@ def build_feed(d):
     cat2 = f'<itunes:category text="{_x(c2[0])}"><itunes:category text="{_x(c2[1])}"/></itunes:category>'
     now = format_datetime(dt.datetime.now(TZ))
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:podcast="https://podcastindex.org/namespace/1.0">
   <channel>
     <title>{_x(SHOW['title'])}</title>
     <link>{_x(SHOW['page'])}</link>
