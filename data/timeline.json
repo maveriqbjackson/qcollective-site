@@ -419,6 +419,20 @@
      "href": "election-2026-map.html"
     }
    ]
+  },
+  {
+   "id": "co-4-called-2026",
+   "date": "2026-11-13",
+   "precision": "day",
+   "kind": "watch",
+   "title": "Colorado's 4th District goes to Eileen Laubacher",
+   "summary": "AP called Colorado's 4th congressional district for Eileen Laubacher (D) over Rep. Lauren Boebert (R), 48.8% to 47.9%, a margin of about 3,500 votes. That is outside Colorado's automatic recount range, and Boebert said she called Laubacher to congratulate her. All 8 of Colorado's U.S. House seats are now called.",
+   "links": [
+    {
+     "label": "Colorado results",
+     "href": "election-2026.html"
+    }
+   ]
   }
  ]
 }
