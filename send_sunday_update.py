@@ -13,7 +13,7 @@ Modes (set by the workflow):
            to every active subscriber. Saves what it reported so next week
            can say what moved.
   test     Manual only. Builds this week's recap and sends it to TEST_TO
-           (team@theqcollective.org) and nobody else. Changes nothing.
+           (team@theqcollective.org and Mav's Proton) and nobody else. Changes nothing.
   samples  Manual only. Sends one copy of the welcome, confirmation and reminder
            emails to TEST_TO and nobody else. Changes nothing.
   remind   Manual only. Sends ONE "please confirm" email to people who signed
@@ -48,7 +48,8 @@ SERVICE_KEY  = os.environ.get("SUPABASE_SERVICE_KEY") or ""
 RESEND_KEY   = os.environ.get("RESEND_API_KEY") or ""
 MODE         = (os.environ.get("MODE") or "confirm").strip().lower()
 FORCE        = (os.environ.get("FORCE") or "").strip() in ("1", "true", "yes")
-TEST_TO      = os.environ.get("TEST_TO") or "team@theqcollective.org"
+# Test and "needs you" emails go to both team@ and Mav's own inbox, so a missing team@ email never blocks an approval.
+TEST_TO      = os.environ.get("TEST_TO") or "team@theqcollective.org,maveriqbjackson@proton.me"
 SEND_FROM    = os.environ.get("SEND_FROM") or "The Q Collective <noreply@auth.theqcollective.org>"
 REPLY_TO     = os.environ.get("REPLY_TO") or "team@theqcollective.org"
 SITE         = (os.environ.get("SITE_URL") or "https://theqcollective.org").rstrip("/")
@@ -175,7 +176,7 @@ def send_email(to, subject, html_body, text_body, token=None, scheduled_at=None)
     if token:
         unsub = f"{SITE}/sunday.html?do=unsubscribe&token={urllib.parse.quote(token)}"
         headers["List-Unsubscribe"] = f"<{unsub}>, <mailto:{REPLY_TO}?subject=unsubscribe>"
-    payload = {"from": SEND_FROM, "to": [to], "reply_to": REPLY_TO,
+    payload = {"from": SEND_FROM, "to": [a.strip() for a in str(to).split(",") if a.strip()], "reply_to": REPLY_TO,
                "subject": subject, "html": html_body, "text": text_body}
     if headers:
         payload["headers"] = headers

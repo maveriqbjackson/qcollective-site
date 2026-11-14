@@ -69,7 +69,7 @@ jobs:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           SUNDAY_AUDIO: ${{ vars.SUNDAY_AUDIO }}
           SITE_URL: "https://theqcollective.org"
-          TEST_TO: "team@theqcollective.org"
+          TEST_TO: "team@theqcollective.org,maveriqbjackson@proton.me"
         run: python send_sunday_update.py
 
       - name: Publish this week's audio
