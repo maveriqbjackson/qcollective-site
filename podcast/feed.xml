@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Power Back Weekly</title>
+    <link>https://theqcollective.org/podcast.html</link>
+    <atom:link href="https://theqcollective.org/podcast/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>en-us</language>
+    <copyright>© 2026 The Q Collective</copyright>
+    <description>The Colorado record, read out loud. Every Sunday, Power Back Weekly walks through what your lawmakers actually did that week: the votes, the bills that moved, and whose record changed, straight from the public record and in plain English. Bonus episodes drop when something big moves. From The Q Collective, a nonpartisan, citizen-powered accountability project. Each episode opens with founder maveriQ B Jackson in his own voice; the rest is read by an AI voice from our published data, and every fact links back to the record at theqcollective.org.</description>
+    <itunes:summary>The Colorado record, read out loud. Every Sunday, Power Back Weekly walks through what your lawmakers actually did that week: the votes, the bills that moved, and whose record changed, straight from the public record and in plain English. Bonus episodes drop when something big moves. From The Q Collective, a nonpartisan, citizen-powered accountability project. Each episode opens with founder maveriQ B Jackson in his own voice; the rest is read by an AI voice from our published data, and every fact links back to the record at theqcollective.org.</itunes:summary>
+    <itunes:author>The Q Collective</itunes:author>
+    <itunes:owner><itunes:name>The Q Collective</itunes:name><itunes:email>team@theqcollective.org</itunes:email></itunes:owner>
+    <itunes:image href="https://theqcollective.org/podcast/cover.jpg"/>
+    <image><url>https://theqcollective.org/podcast/cover.jpg</url><title>Power Back Weekly</title><link>https://theqcollective.org/podcast.html</link></image>
+    <itunes:category text="Government"/>
+    <itunes:category text="News"><itunes:category text="Politics"/></itunes:category>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <lastBuildDate>Fri, 13 Nov 2026 17:36:52 -0700</lastBuildDate>
+
+  </channel>
+</rss>
