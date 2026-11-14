@@ -2570,6 +2570,67 @@
    "run_type": "site_change",
    "ts": "2026-11-14T16:33:35Z",
    "note": "Power Back Weekly page: a 'What should we cover?' form for listener ideas (a bill to explain, an everyday issue, someone to interview), transcript links under each episode, and a fix for the cover looking stretched on phones."
+  },
+  {
+   "ts": "November 14, 2026 at 11:42 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "0b133ce",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/0b133ce",
+   "note": "We updated the Saturday morning election results: AP called Colorado's 4th congressional district for Eileen Laubacher (D), Alaska's counts moved, and Wyoming's certified House seat was added to the national map.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Colorado's 4th congressional district moved to won after AP called it for Eileen Laubacher (D) on Nov. 13, a pickup from Republicans, by 187,745 votes to 184,220, outside the automatic recount range.",
+      "before": "Eileen Laubacher (D) leads Lauren Boebert (R) by 3,352 votes, about 48.8% to 47.9% (Counting)",
+      "after": "Eileen Laubacher (D) over Lauren Boebert (R), 48.8% to 47.9%, flipped from Republican (Won)"
+     },
+     {
+      "page": "2026 national election map",
+      "url": "election-2026-map.html",
+      "what": "Colorado's 4th added to the House seats that changed parties, and Colorado's full delegation updated.",
+      "before": "District 4: Eileen Laubacher (D) leads Lauren Boebert (R) by 3,352 votes (Still counting)",
+      "after": "District 4: Eileen Laubacher (D), flipped from Republican"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "State House Districts 15, 21 and 22 leads updated to Friday evening's count; all three are still counting.",
+      "before": "Jeff Livingston (D) leads Pricella Tiegen (R), 48.8% to 47.6%; Michelle Tweed (D) leads Brenda Miller (R), 50.9% to 49.1%; Ken DeGraaf (R) leads Michael Pierson (D), 51.2% to 48.8%",
+      "after": "Jeff Livingston (D) leads Pricella Tiegen (R) by 550 votes, 48.9% to 47.5%; Michelle Tweed (D) leads Brenda Miller (R) by 536 votes, 51.1% to 48.9%; Ken DeGraaf (R) leads Michael Pierson (D) by 872 votes, 51.1% to 48.9%"
+     },
+     {
+      "page": "2026 national election map",
+      "url": "election-2026-map.html",
+      "what": "Alaska Senate and governor counts updated after the state's Nov. 13 count; both still uncalled.",
+      "before": "Mary Peltola (D) leads Dan Sullivan (R) by about 3,975 votes with about 86% counted, as of Nov. 12; Jonathan Kreiss-Tomkins (D) leads with 49.6% of first choices",
+      "after": "Mary Peltola (D) leads Dan Sullivan (R) by about 10,400 votes, 49.8% to 46.1%, with about 96% counted; Jonathan Kreiss-Tomkins (D) has 50.8% of first choices, not yet called"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "U.S. House tally card updated to AP's count, and the \"Now\" row rewritten for the 4th District call.",
+      "before": "255 D, 168 R, 12 still counting; 48 seats changed parties (45 to Democrats, 3 to Republicans)",
+      "after": "256 D, 169 R, 10 still counting; 49 seats changed parties (46 to Democrats, 3 to Republicans)"
+     },
+     {
+      "page": "2026 national election map",
+      "url": "election-2026-map.html",
+      "what": "Wyoming's one U.S. House seat added from its Nov. 10 certified results, and the House panel now shows certified seats for any state, not just Colorado.",
+      "before": "Full seat count: coming after Wyoming certifies its results.",
+      "after": "Wyoming's one seat, from certified results: At-large: Chuck Gray (R)"
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "Added an entry for the Colorado 4th District call."
+     }
+    ]
+   }
   }
  ]
 }
