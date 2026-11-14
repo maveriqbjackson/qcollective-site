@@ -67,7 +67,7 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           CF_AI_TOKEN: ${{ secrets.CF_AI_TOKEN }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-          SUNDAY_AUDIO: ${{ vars.SUNDAY_AUDIO }}
+          SUNDAY_AUDIO: "1"  # Mav approved the Sunday audio on Nov 13, 2026
           SITE_URL: "https://theqcollective.org"
           TEST_TO: "team@theqcollective.org,maveriqbjackson@proton.me"
         run: python send_sunday_update.py
