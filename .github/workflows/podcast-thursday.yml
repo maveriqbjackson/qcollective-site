@@ -1,16 +1,16 @@
 name: "Power Back Weekly: Thursday episode"
 
 # Mav's Thursday episode, in his own voice. Written and recorded in Ash HQ → The Q Collective → Podcast.
-# Every Thursday at 6 AM Mountain: if it's recorded (and not skipped), it goes into the podcast feed
-# and gets its Q Notes post. If not, nothing happens. Run by hand with a date to publish a late one.
+# Every hour it asks Ash HQ what's ready: a Thursday episode (on or after its Thursday, recorded, not skipped),
+# or a bonus episode / trailer (recorded and set to Ready). Each goes into the feed and gets its Q Notes post.
+# Apple Podcasts and Spotify read the feed, so they pick it up on their own. Run by hand with a date to force one.
 on:
   schedule:
-    - cron: "0 13 * * 4"   # Thursday 13:00 UTC = 6 AM Mountain (7 AM in summer)
-    - cron: "0 15 * * 4"   # a second try at 8 AM, in case it was recorded late
+    - cron: "7 * * * *"   # every hour: Thursday episodes on their Thursday (6 AM Mountain run first), bonus episodes and the trailer within the hour of being set to Ready
   workflow_dispatch:
     inputs:
       date:
-        description: "Thursday to publish (YYYY-MM-DD). Leave blank for today."
+        description: "Episode date to publish (YYYY-MM-DD). Leave blank to publish everything that is ready."
         required: false
 
 permissions:
@@ -44,7 +44,7 @@ jobs:
           git config user.email "q-score-bot@users.noreply.github.com"
           git add podcast notes notes.html
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Power Back Weekly: Thursday episode ($(date -u +%Y-%m-%d))"
+          git commit -m "Power Back Weekly: new episode ($(date -u +%Y-%m-%d))"
           git pull --rebase --autostash origin main
           git push
       - name: Email the team if something failed

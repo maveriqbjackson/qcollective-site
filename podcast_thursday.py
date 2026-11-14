@@ -1,6 +1,7 @@
 """Power Back Weekly, Thursday episodes: Mav in his own voice.
 
-Runs Thursday at 6 AM Mountain (GitHub Actions, "Power Back Weekly: Thursday episode").
+Runs every hour (GitHub Actions, "Power Back Weekly: Thursday episode"): Thursday episodes go out on their Thursday,
+and bonus episodes or the trailer go out within the hour once Mav records them and sets them to Ready.
 Mav writes and records each episode in Ash HQ → The Q Collective → Podcast. Ash HQ only hands the episode
 over once it's recorded, it's that Thursday (or later), and it isn't marked "skip". This script levels the
 audio, adds it to the podcast feed (Apple Podcasts, Spotify and YouTube pick it up within hours), writes its
@@ -35,22 +36,22 @@ def get(url):
         return e.code, b""
 
 
-def main():
-    date = (os.environ.get("EP_DATE") or "").strip() or dt.datetime.now(ZoneInfo("America/Denver")).date().isoformat()
-    eid = f"thu-{date}"
-    d = P.load()
-    if any(e["id"] == eid for e in d["episodes"]) and os.environ.get("FORCE") != "1":
-        log(f"{eid} is already published; nothing to do.")
-        return
+def publish_one(d, date, kind_hint=None):
+    """Publish one episode from Ash HQ if it's ready and not already in the feed. Returns True if it went out."""
     code, body = get(f"{HQ}/api/podcast/thursday?date={date}")
     if code != 200:
-        log(f"{date}: not ready in Ash HQ (not recorded, skipped, or no script). Nothing posted.")
-        return
+        log(f"{date}: not ready in Ash HQ (not recorded, not set to Ready, or skipped). Nothing posted.")
+        return False
     ep = json.loads(body)
+    kind = ep.get("kind") or kind_hint or "thursday"
+    eid = ep.get("id") or f"thu-{date}"
+    if any(e["id"] == eid for e in d["episodes"]) and os.environ.get("FORCE") != "1":
+        log(f"{eid} is already published; nothing to do.")
+        return False
     code, audio = get(f"{HQ}/api/podcast/thursday?date={date}&audio=1")
     if code != 200 or len(audio) < 20000:
         log(f"{date}: the recording couldn't be downloaded ({code}). Nothing posted.")
-        return
+        return False
     os.makedirs(os.path.join(P.DIR, "episodes"), exist_ok=True)
     out = os.path.join(P.DIR, "episodes", f"{eid}.mp3")
     with tempfile.NamedTemporaryFile(suffix=".audio", delete=False) as f:
@@ -58,7 +59,7 @@ def main():
         raw = f.name
     P.level(raw, out)
     os.remove(raw)
-    P.add_episode(d, eid=eid, kind="thursday", title=ep["title"], date=date, summary=ep.get("summary") or "", audio_path=out, script=ep.get("script") or "")
+    P.add_episode(d, eid=eid, kind=kind, title=ep["title"], date=date, summary=ep.get("summary") or "", audio_path=out, script=ep.get("script") or "")
     P.save(d)
     secs = P.seconds(out)
     log(f"published {eid}: {ep['title']} ({secs // 60}:{secs % 60:02d})")
@@ -74,6 +75,26 @@ def main():
             urllib.request.urlopen(req, timeout=30).read()
         except Exception as e:
             log(f"email didn't go out: {e}")
+    return True
+
+
+def main():
+    d = P.load()
+    date = (os.environ.get("EP_DATE") or "").strip()
+    if date:
+        publish_one(d, date)
+        return
+    # Hourly: everything Ash HQ says is ready (Thursday episodes, bonus episodes, the trailer), today or earlier.
+    code, body = get(f"{HQ}/api/podcast/thursday?pending=1")
+    if code != 200:
+        log(f"couldn't ask Ash HQ what's ready ({code}).")
+        return
+    pend = [e for e in json.loads(body).get("episodes", []) if not any(x["id"] == e["id"] for x in d["episodes"])]
+    if not pend:
+        log("nothing new to publish.")
+        return
+    for e in pend:
+        publish_one(d, e["date"], e.get("kind"))
 
 
 if __name__ == "__main__":
