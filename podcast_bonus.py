@@ -32,7 +32,9 @@ SOURCE = (os.environ.get("SOURCE") or "").strip()
 TITLE = (os.environ.get("TITLE") or "").strip()
 NOTE = (os.environ.get("NOTE") or "").strip()[:600]
 DRAFT = (os.environ.get("DRAFT") or "").strip()
-TEAM = "team@theqcollective.org"
+# Drafts go to team@ and Mav's own inbox; sent from the same verified address as the Sunday Update.
+TEAM = ["team@theqcollective.org", "maveriqbjackson@proton.me"]
+SEND_FROM = os.environ.get("SEND_FROM") or "The Q Collective <noreply@auth.theqcollective.org>"
 DRAFTS = os.path.join(podcast_lib.DIR, "drafts")
 EPDIR = os.path.join(podcast_lib.DIR, "episodes")
 
@@ -131,13 +133,13 @@ def email(subject, html_body):
         log("no RESEND_API_KEY; skipping the email.")
         return
     r = urllib.request.Request("https://api.resend.com/emails", method="POST",
-                               data=json.dumps({"from": "The Q Collective <team@theqcollective.org>", "to": [TEAM],
+                               data=json.dumps({"from": SEND_FROM, "to": TEAM, "reply_to": "team@theqcollective.org",
                                                 "subject": subject, "html": html_body}).encode(),
                                headers={"Authorization": "Bearer " + RESEND_KEY, "Content-Type": "application/json",
                                         "User-Agent": "QCollective-podcast/1.0"})
     try:
         urllib.request.urlopen(r, timeout=30).read()
-        log(f"emailed {TEAM}")
+        log(f"emailed {', '.join(TEAM)}")
     except Exception as e:
         log(f"email failed: {e}")
 
