@@ -114,6 +114,20 @@ def stitch(body_path, out_path):
     return have_intro
 
 
+def level(in_path, out_path):
+    """Mav's own recording (any format a phone or browser makes) -> a leveled podcast mp3, silence trimmed at both ends."""
+    if not shutil.which("ffmpeg"):
+        raise RuntimeError("ffmpeg is not installed")
+    trim = ("silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
+            "silenceremove=start_periods=1:start_threshold=-45dB,areverse,")
+    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", in_path, "-af",
+           trim + "aresample=44100,aformat=sample_fmts=fltp:channel_layouts=mono,loudnorm=I=-16:TP=-1.5:LRA=11,aresample=44100",
+           "-ac", "1", "-ar", "44100", "-b:a", "96k", out_path]
+    r = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
+    if r.returncode != 0:
+        raise RuntimeError("ffmpeg: " + r.stderr[-400:])
+
+
 def add_episode(d, *, eid, kind, title, date, summary, audio_path, script=""):
     """Adds (or replaces) one episode. audio_path is relative to the repo root."""
     d["episodes"] = [e for e in d["episodes"] if e["id"] != eid]
@@ -209,7 +223,7 @@ def _paras(script):
 def post_html(e):
     short, long = _when(e)
     url = f"{SITE}/{NOTES_DIR}/pbw-{e['id']}.html"
-    kind = {"weekly": "Weekly episode", "bonus": "Bonus episode", "trailer": "Trailer"}.get(e["type"], "Episode")
+    kind = {"weekly": "Sunday recap", "thursday": "Thursday with Mav", "bonus": "Bonus episode", "trailer": "Trailer"}.get(e["type"], "Episode")
     mins = max(1, round((e.get("seconds") or 60) / 60))
     return f"""<!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -260,7 +274,7 @@ def post_html(e):
 </div></header>
 <main><div class="in">
 <h2>Read the episode</h2>
-<p class="note">The full transcript. The opening is founder maveriQ B Jackson in his own voice; the rest is read by an AI voice from our published data. Every fact is on the public record at theqcollective.org.</p>
+<p class="note">{"The full script, read by founder maveriQ B Jackson in his own voice." if e["type"] == "thursday" else "The full transcript. The opening is founder maveriQ B Jackson in his own voice; the rest is read by an AI voice from our published data. Every fact is on the public record at theqcollective.org."}</p>
 {_paras(e.get('script')) or '<p>The transcript for this episode is on its way.</p>'}
 <p class="back"><a href="notes.html">&larr; All Q Notes</a> &middot; <a href="podcast.html">Power Back Weekly</a> &middot; <a href="hub.html">Look up your lawmakers</a></p>
 </div></main>

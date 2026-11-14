@@ -110,7 +110,7 @@
   var FEED='https://theqcollective.org/podcast/feed.xml';
   function mins(s){s=s||0;var m=Math.max(1,Math.round(s/60));return m+' min';}
   function day(d){try{return new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});}catch(e){return d;}}
-  var KIND={weekly:'Weekly',bonus:'Bonus',trailer:'Trailer'};
+  var KIND={weekly:'Sunday recap',thursday:'Thursday with Mav',bonus:'Bonus',trailer:'Trailer'};
   fetch('podcast/episodes.json',{cache:'no-cache'}).then(function(r){return r.json();}).then(function(d){
     var L=d.links||{}, subs=document.getElementById("follow"), any=false;
     [['apple','Apple Podcasts'],['spotify','Spotify'],['youtube','YouTube']].forEach(function(x){ if(L[x[0]]){ any=true; subs.insertAdjacentHTML('beforeend','<a class="sbtn" href="'+esc(L[x[0]])+'" target="_blank" rel="noopener">'+x[1]+'</a>'); } });
