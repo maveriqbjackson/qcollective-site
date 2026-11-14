@@ -43,6 +43,8 @@ import urllib.parse
 import urllib.request
 from zoneinfo import ZoneInfo
 
+import podcast_lib
+
 SUPABASE_URL = (os.environ.get("SUPABASE_URL") or "").rstrip("/")
 SERVICE_KEY  = os.environ.get("SUPABASE_SERVICE_KEY") or ""
 RESEND_KEY   = os.environ.get("RESEND_API_KEY") or ""
@@ -547,7 +549,12 @@ def build_recap(now, prev, today):
 # --------------------------------------------------------------------------
 def audio_script(today, sections):
     """What the voice reads: the same recap, minus links, in plain spoken sentences."""
-    out = [f"This is The Sunday Update from The Q Collective, for the week of {today.strftime('%B %-d')}."]
+    # Mav's own opening (podcast/intro.mp3) plays first and ends with "Here's what moved this week",
+    # so the voice picks up from there. Without it, the voice introduces the show itself.
+    if os.path.exists(podcast_lib.INTRO):
+        out = [f"For the week of {today.strftime('%B %-d')}."]
+    else:
+        out = [f"This is Power Back Weekly, the Sunday Update from The Q Collective, for the week of {today.strftime('%B %-d')}."]
     for h, lines in sections:
         said = [ln for ln in lines if ln and not ln.startswith("http")]
         if not said:
@@ -556,7 +563,8 @@ def audio_script(today, sections):
         for ln in said:
             ln = ln.strip().lstrip("•-– ").strip()
             out.append(ln if ln.endswith((".", "!", "?")) else ln + ".")
-    out.append("That's this week. The full update, with every link, is in your email and at the q collective dot org. "
+    out.append("That's Power Back Weekly for this week. Every vote and every link is at the q collective dot org, "
+               "and the show is free wherever you get your podcasts. "
                "Thanks for being here. The record was always public. Now you can actually hear it.")
     text = " ".join(out).replace("maveriQ", "Maverick").replace("Q Score", "Q score")
     return text
@@ -594,9 +602,13 @@ def make_audio(today, sections):
         audio += body
     os.makedirs("audio/sunday", exist_ok=True)
     name = f"audio/sunday/{today.isoformat()}.mp3"
-    with open(name, "wb") as f:
+    body = name + ".body.mp3"
+    with open(body, "wb") as f:
         f.write(audio)
-    mins = max(1, round(len(text.split()) / 150))
+    # Mav's opening first, then the voice, leveled to podcast loudness.
+    podcast_lib.stitch(body, name)
+    os.remove(body)
+    mins = max(1, round(podcast_lib.seconds(name) / 60))
     log(f"audio: saved {name} ({len(audio)//1024} KB, about {mins} min)")
     return f"{SITE}/{name}", mins
 
@@ -845,6 +857,21 @@ def run_recap(test=False):
         log("every send failed; state NOT saved so next run can retry.")
         return False
     save_state(now, today)
+    if audio and sent:
+        try:
+            pod = podcast_lib.load()
+            heads = [h.strip().rstrip(":").capitalize() for h, ln in sections if ln and h.strip() not in ("LOOK UP YOUR LAWMAKERS",)]
+            podcast_lib.add_episode(pod, eid=f"weekly-{shown.isoformat()}", kind="weekly",
+                title=f"Week of {shown.strftime('%B %-d, %Y')}" + (f": {subject.split('|', 1)[1].strip()}" if "|" in subject else ""),
+                date=shown.isoformat(),
+                summary=("This week on Power Back Weekly: " + "; ".join(heads[:5]).lower() + ". "
+                         "Every vote and link is at theqcollective.org."),
+                audio_path=f"audio/sunday/{shown.isoformat()}.mp3",
+                script=audio_script(shown, sections))
+            podcast_lib.save(pod)
+            log("podcast: this week's episode is in the Power Back Weekly feed.")
+        except Exception as e:
+            log(f"podcast: couldn't add this week's episode ({e}); the email still went out.")
     if read_note() and sent:
         clear_note()
     if not is_fresh(now):

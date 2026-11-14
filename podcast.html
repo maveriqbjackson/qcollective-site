@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Power Back Weekly: the podcast | The Q Collective</title>
+<meta name="description" content="Power Back Weekly: the Colorado record, read out loud. What your lawmakers did this week, from the public record, in plain English. Free every Sunday from The Q Collective.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Q Collective">
+<meta property="og:title" content="Power Back Weekly: the Colorado record, out loud">
+<meta property="og:description" content="What your lawmakers did this week, from the public record, in plain English. Free every Sunday.">
+<meta property="og:url" content="https://theqcollective.org/podcast.html">
+<meta property="og:image" content="https://theqcollective.org/og/podcast.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://theqcollective.org/og/podcast.png">
+<link rel="canonical" href="https://theqcollective.org/podcast.html">
+<link rel="alternate" type="application/rss+xml" title="Power Back Weekly" href="https://theqcollective.org/podcast/feed.xml">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="q-chrome.css">
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  :root{--navy:#1B3A6B;--navy-deep:#122848;--gold:#B8962E;--gold-light:#D4AF50;--gold-pale:#F5EDD4;--off-white:#F9F6F0;--text:#1a1a1a;--muted:#5a5a5a;--border:#E0D5BE}
+  body{margin:0;background:var(--off-white);font-family:'DM Sans',sans-serif;color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:var(--navy)}
+  /* site header (same as every other page) */
+  .top-stripe { height: 5px; background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%); }
+  .topbar { position: sticky; top: 0; z-index: 50; background: rgba(18,40,72,0.97); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(184,150,46,0.25); }
+  .topbar-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; gap: 16px; }
+  .brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; }
+  .brand-q { font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 26px; color: var(--gold-light); line-height: 1; }
+  .brand-name { font-size: 14px; font-weight: 600; color: #fff; }
+  @media(max-width:640px){.topbar-inner{padding:12px 18px}}
+  .pb-hero{background:var(--navy-deep);color:#fff;position:relative;overflow:hidden;padding:72px 24px 64px}
+  .pb-hero .wm{position:absolute;font-family:'Playfair Display',serif;font-weight:900;font-size:620px;line-height:1;color:rgba(255,255,255,.05);top:-140px;right:-60px;pointer-events:none}
+  .pb-in{max-width:1100px;margin:0 auto;position:relative}
+  .pb-grid{display:grid;grid-template-columns:320px 1fr;gap:48px;align-items:center}
+  .pb-cover{width:100%;aspect-ratio:1;border-radius:14px;box-shadow:0 24px 60px rgba(0,0,0,.45);display:block}
+  .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);margin-bottom:14px}
+  .pb-hero h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(40px,6vw,72px);line-height:1;margin:0 0 18px}
+  .pb-hero h1 span{color:var(--gold-light)}
+  .pb-sub{font-size:clamp(16px,2vw,19px);color:rgba(255,255,255,.78);max-width:600px;margin:0 0 26px}
+  .subs{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .sbtn{display:inline-flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:12px 18px;border-radius:6px;border:1px solid rgba(255,255,255,.3);color:#fff;background:transparent;cursor:pointer}
+  .sbtn:hover{border-color:var(--gold-light);color:var(--gold-light)}
+  .sbtn.gold{background:var(--gold);border-color:var(--gold);color:var(--navy-deep);font-weight:500}
+  .sbtn.gold:hover{background:var(--gold-light);color:var(--navy-deep)}
+  .soon{font-size:13.5px;color:rgba(255,255,255,.6);margin-top:12px}
+  main{max-width:1100px;margin:0 auto;padding:48px 24px 72px}
+  h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.4vw,36px);margin:0 0 6px;color:var(--navy-deep)}
+  .lede{color:var(--muted);margin:0 0 22px}
+  .ep{background:#fff;border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin-bottom:14px;scroll-margin-top:90px}
+  .ep.latest{border:2px solid var(--gold);box-shadow:0 10px 30px rgba(18,40,72,.08)}
+  .ep .meta{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
+  .ep h3{font-family:'Playfair Display',serif;font-size:22px;margin:6px 0 6px;color:var(--navy-deep);line-height:1.25}
+  .ep p{margin:0 0 12px;color:#333}
+  .ep audio{width:100%;margin-top:4px}
+  .ep details{margin-top:10px}.ep summary{cursor:pointer;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--navy)}
+  .ep .script{white-space:pre-wrap;font-size:15px;color:#333;margin-top:10px}
+  .empty{background:#fff;border:1px dashed var(--border);border-radius:12px;padding:30px 24px;text-align:center;color:var(--muted)}
+  .empty b{display:block;font-family:'Playfair Display',serif;font-size:22px;color:var(--navy-deep);margin-bottom:6px}
+  .how{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 0}
+  .how div{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px}
+  .how b{display:block;font-family:'Playfair Display',serif;font-size:19px;color:var(--navy-deep);margin-bottom:4px}
+  .how p{margin:0;color:#444;font-size:15px}
+  .sec{margin-top:56px}
+  .mail{background:var(--navy-deep);color:#fff;border-radius:14px;padding:30px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:56px}
+  .mail h3{font-family:'Playfair Display',serif;font-size:26px;margin:0 0 4px}.mail p{margin:0;color:rgba(255,255,255,.75)}
+  .copied{font-size:13px;color:var(--gold-light);margin-left:6px}
+  @media(max-width:820px){.pb-grid{grid-template-columns:1fr;gap:28px}.pb-cover{max-width:260px}.how{grid-template-columns:1fr}.pb-hero{padding:48px 18px}main{padding:36px 16px 56px}}
+</style>
+</head><body>
+<div id="q-chrome-top"></div>
+
+<section class="pb-hero"><div class="wm" aria-hidden="true">Q</div><div class="pb-in pb-grid">
+  <img class="pb-cover" src="podcast/cover-600.jpg" alt="Power Back Weekly cover: navy and gold, from The Q Collective" width="600" height="600">
+  <div>
+    <div class="eyebrow">The Q Collective · Podcast</div>
+    <h1>Power <span>Back</span> Weekly</h1>
+    <p class="pb-sub">The Colorado record, read out loud. Every Sunday: the bills that moved, the votes that counted, and whose Q Score changed and why. Straight from the public record, in plain English, in about ten minutes. Bonus episodes when something big moves.</p>
+    <div class="subs" id="follow">
+      <a class="sbtn gold" href="#episodes">&#9654; Listen now</a>
+    </div>
+    <p class="soon" id="soon">Coming to Apple Podcasts, Spotify and YouTube. Until then, listen right here or follow the feed in any podcast app.</p>
+  </div>
+</div></section>
+
+<main>
+  <section id="episodes">
+    <h2>Episodes</h2>
+    <p class="lede">Newest first. Every fact links back to the record on this site.</p>
+    <div id="list"><div class="empty"><b>The first episode is on its way.</b>Get the Sunday Update by email and you'll hear it first.</div></div>
+  </section>
+
+  <section class="sec">
+    <h2>How each episode is made</h2>
+    <p class="lede">We'd rather tell you than have you wonder.</p>
+    <div class="how">
+      <div><b>A real person opens it</b><p>Every episode starts with our founder, maveriQ B Jackson, in his own voice.</p></div>
+      <div><b>The record does the talking</b><p>The rest is read by an AI voice, word for word from our published data: Q Scores, bill histories and votes. No opinions on candidates or parties.</p></div>
+      <div><b>Nothing to track you</b><p>The show lives on our own site. No ads, no ad network, and we don't follow who listens.</p></div>
+    </div>
+  </section>
+
+  <div class="mail"><div><h3>Rather read it?</h3><p>The Sunday Update is the same week in your inbox, with every link. Free.</p></div><a class="sbtn gold" href="sunday.html">Get the Sunday Update</a></div>
+</main>
+
+<div id="q-chrome-footer"></div>
+<script>
+(function(){
+  var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+  var FEED='https://theqcollective.org/podcast/feed.xml';
+  function mins(s){s=s||0;var m=Math.max(1,Math.round(s/60));return m+' min';}
+  function day(d){try{return new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});}catch(e){return d;}}
+  var KIND={weekly:'Weekly',bonus:'Bonus',trailer:'Trailer'};
+  fetch('podcast/episodes.json',{cache:'no-cache'}).then(function(r){return r.json();}).then(function(d){
+    var L=d.links||{}, subs=document.getElementById("follow"), any=false;
+    [['apple','Apple Podcasts'],['spotify','Spotify'],['youtube','YouTube']].forEach(function(x){ if(L[x[0]]){ any=true; subs.insertAdjacentHTML('beforeend','<a class="sbtn" href="'+esc(L[x[0]])+'" target="_blank" rel="noopener">'+x[1]+'</a>'); } });
+    subs.insertAdjacentHTML('beforeend','<button class="sbtn" type="button" id="rss">Copy feed link</button>');
+    document.getElementById('rss').onclick=function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(FEED):Promise.reject()).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy feed link';},1800);},function(){prompt('Paste this into your podcast app:',FEED);});};
+    if(any) document.getElementById('soon').textContent='Free wherever you listen. No account needed.';
+    var eps=(d.episodes||[]); if(!eps.length) return;
+    document.getElementById('list').innerHTML=eps.map(function(e,i){
+      return '<article class="ep'+(i===0?' latest':'')+'" id="'+esc(e.id)+'"><div class="meta">'+(i===0?'Latest · ':'')+esc(KIND[e.type]||'Episode')+' · '+esc(day(e.date))+' · '+mins(e.seconds)+'</div>'+
+        '<h3>'+esc(e.title)+'</h3><p>'+esc(e.summary)+'</p><audio controls preload="none" src="'+esc(e.audio)+'"></audio>'+
+        (e.script?'<details><summary>Read along</summary><div class="script">'+esc(e.script)+'</div></details>':'')+'</article>';
+    }).join('');
+    if(location.hash){var t=document.getElementById(location.hash.slice(1)); if(t) t.scrollIntoView();}
+  }).catch(function(){});
+})();
+</script>
+<script src="q-config.js"></script><script src="q-chat.js"></script>
+<script src="site-chrome.js"></script>
+</body></html>
