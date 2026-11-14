@@ -2565,6 +2565,11 @@
    "run_type": "site_change",
    "ts": "2026-11-14T16:06:46Z",
    "note": "Power Back Weekly page: new-episode email sign-up, a request form to be a guest (verified officials can also request from their account), a host section, Sunday and Thursday episodes described, and new cover art (Thursday episodes show the founder's photo). The show is described as 'the record' rather than 'the Colorado record'."
+  },
+  {
+   "run_type": "site_change",
+   "ts": "2026-11-14T16:33:35Z",
+   "note": "Power Back Weekly page: a 'What should we cover?' form for listener ideas (a bill to explain, an everyday issue, someone to interview), transcript links under each episode, and a fix for the cover looking stretched on phones."
   }
  ]
 }
