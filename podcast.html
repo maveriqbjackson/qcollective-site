@@ -1,11 +1,11 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Power Back Weekly: the podcast | The Q Collective</title>
-<meta name="description" content="Power Back Weekly: the Colorado record, read out loud. What your lawmakers did this week, from the public record, in plain English. Free every Sunday from The Q Collective.">
+<meta name="description" content="Power Back Weekly: the record, read out loud. What your lawmakers did this week, from the public record, in plain English. Free every Sunday and Thursday from The Q Collective.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Q Collective">
-<meta property="og:title" content="Power Back Weekly: the Colorado record, out loud">
-<meta property="og:description" content="What your lawmakers did this week, from the public record, in plain English. Free every Sunday.">
+<meta property="og:title" content="Power Back Weekly: the record, out loud">
+<meta property="og:description" content="What your lawmakers did this week, from the public record, in plain English. Free every Sunday and Thursday.">
 <meta property="og:url" content="https://theqcollective.org/podcast.html">
 <meta property="og:image" content="https://theqcollective.org/og/podcast.png">
 <meta property="og:image:width" content="1200">
@@ -65,6 +65,16 @@
   .mail{background:var(--navy-deep);color:#fff;border-radius:14px;padding:30px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:56px}
   .mail h3{font-family:'Playfair Display',serif;font-size:26px;margin:0 0 4px}.mail p{margin:0;color:rgba(255,255,255,.75)}
   .copied{font-size:13px;color:var(--gold-light);margin-left:6px}
+  .host{display:grid;grid-template-columns:320px 1fr;gap:28px;align-items:center}.host img{width:100%;height:auto;border-radius:14px;display:block}.host h2{margin:2px 0 8px}.host p{margin:0;color:#333;line-height:1.6}
+  .gform{background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px;display:grid;gap:14px;margin-top:16px}
+  .gform label{display:grid;gap:6px;font-weight:600;color:var(--navy-deep);font-size:15px}.gform small{font-weight:400;color:#666}
+  .gform input,.gform select,.gform textarea{font:inherit;font-weight:400;padding:11px 12px;border:1px solid var(--border);border-radius:10px;background:#fff;color:#111;width:100%;box-sizing:border-box}
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .gmsg{margin:0;font-weight:600;color:var(--navy-deep)}
+  .alerts{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.alerts .gform{margin-top:0}
+  .gform label.chk{display:flex;gap:10px;align-items:flex-start;font-weight:400;color:#333}.gform label.chk input{width:20px;height:20px;flex:none;margin-top:2px}
+  .offbox{max-width:560px;margin:0 auto 30px;background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px;text-align:center}.gnote{margin:0;color:#555;font-size:14px}
+  @media(max-width:820px){.host,.alerts{grid-template-columns:1fr}.g2{grid-template-columns:1fr}.gform{padding:18px}}
   @media(max-width:820px){.pb-grid{grid-template-columns:1fr;gap:28px}.pb-cover{max-width:260px}.how{grid-template-columns:1fr}.pb-hero{padding:48px 18px}main{padding:36px 16px 56px}}
 </style>
 </head><body>
@@ -75,9 +85,11 @@
   <div>
     <div class="eyebrow">The Q Collective · Podcast</div>
     <h1>Power <span>Back</span> Weekly</h1>
-    <p class="pb-sub">The Colorado record, read out loud. Every Sunday: the bills that moved, the votes that counted, and whose Q Score changed and why. Straight from the public record, in plain English, in about ten minutes. Bonus episodes when something big moves.</p>
+    <p class="pb-sub">The record, read out loud. <b>Sundays:</b> the bills that moved, the votes that counted, and whose Q Score changed and why, straight from the public record in about ten minutes. <b>Thursdays:</b> our founder, in his own voice, on what it means and what you can do. Plus <b>Special Session</b> episodes when something big moves, and <b>On the Record</b> conversations with guests.</p>
     <div class="subs" id="follow">
       <a class="sbtn gold" href="#episodes">&#9654; Listen now</a>
+      <a class="sbtn" href="#alerts">Email me new episodes</a>
+      <a class="sbtn" href="#be-on-the-show">Be on the show</a>
     </div>
     <p class="soon" id="soon">Coming to Apple Podcasts, Spotify and YouTube. Until then, listen right here or follow the feed in any podcast app.</p>
   </div>
@@ -94,10 +106,45 @@
     <h2>How each episode is made</h2>
     <p class="lede">We'd rather tell you than have you wonder.</p>
     <div class="how">
-      <div><b>A real person opens it</b><p>Every episode starts with our founder, maveriQ B Jackson, in his own voice.</p></div>
-      <div><b>The record does the talking</b><p>The rest is read by an AI voice, word for word from our published data: Q Scores, bill histories and votes. No opinions on candidates or parties.</p></div>
+      <div><b>Sundays: the record does the talking</b><p>Our founder opens it; the rest is read by an AI voice, word for word from our published data: Q Scores, bill histories and votes. No opinions on candidates or parties.</p></div>
+      <div><b>Thursdays: a real person, all the way</b><p>maveriQ B Jackson, in his own voice, on what the week means. Never AI.</p></div>
       <div><b>Nothing to track you</b><p>The show lives on our own site. No ads, no ad network, and we don't follow who listens.</p></div>
     </div>
+  </section>
+
+  <section class="sec alerts" id="alerts">
+    <div><div class="eyebrow">Never miss one</div><h2>Get every new episode by email</h2>
+      <p class="lede">More than one a week: Sunday's record, Thursday with Mav, Special Session episodes when something big moves, and On the Record conversations with guests. One short email each time, with the link. Unsubscribe in one click.</p></div>
+    <form id="epForm" class="gform" novalidate>
+      <label>Your email<input name="email" type="email" required maxlength="254" autocomplete="email" placeholder="you@email.com"></label>
+      <label class="chk"><input type="checkbox" name="sunday" checked> Also send me the Sunday Update (the week's record, in writing)</label>
+      <input name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+      <button class="sbtn gold" type="submit">Email me new episodes</button>
+      <p class="gmsg" id="epMsg" role="status"></p>
+    </form>
+  </section>
+
+  <section class="sec host">
+    <img src="founder.jpg" alt="maveriQ B Jackson with his dog in the Colorado foothills" width="1200" height="800" loading="lazy">
+    <div><div class="eyebrow">Your host</div><h2>maveriQ B Jackson</h2>
+      <p>Founder of The Q Collective. Six years as a project coordinator on federal work for the Department of Justice, the IRS, the White House and the U.S. Senate, and a 2026 candidate for the Colorado House. Now he reads the record so you don't have to. <a href="founder.html">More about Mav &rarr;</a></p></div>
+  </section>
+
+  <section class="sec guest" id="be-on-the-show">
+    <h2>Be on the show</h2>
+    <p class="lede">Lawmakers, candidates, advocates, experts and everyday Coloradans: tell us what you'd like to say. Any party, any side. We look for balance, and we read every request.</p>
+    <form id="guestForm" class="gform" novalidate>
+      <div class="g2"><label>Your name<input name="name" required maxlength="120" autocomplete="name"></label><label>Email<input name="email" type="email" required maxlength="200" autocomplete="email"></label></div>
+      <div class="g2"><label>You are
+        <select name="role" required><option value="legislator">A Colorado legislator</option><option value="official">Another elected official</option><option value="candidate">A candidate</option><option value="advocate">With an advocacy group or nonprofit</option><option value="expert">An expert or researcher</option><option value="resident" selected>A Colorado resident</option><option value="other">Something else</option></select></label>
+        <label>District, office or organization <small>(optional)</small><input name="affiliation" maxlength="160"></label></div>
+      <label>What would you like to talk about?<input name="topic" required maxlength="300" placeholder="A bill, a vote, an issue in your community&hellip;"></label>
+      <label>Anything else we should know? <small>(optional)</small><textarea name="why" rows="4" maxlength="2000"></textarea></label>
+      <input name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+      <button class="sbtn gold" type="submit">Send my request</button>
+      <p class="gmsg" id="guestMsg" role="status"></p>
+      <p class="gnote">We reply to every request, usually within a week. Being a guest never changes anyone's Q Score: scores come from the public record only. Elected officials: <a href="account.html">verify your account</a> and your request shows up as verified.</p>
+    </form>
   </section>
 
   <div class="mail"><div><h3>Rather read it?</h3><p>The Sunday Update is the same week in your inbox, with every link. Free.</p></div><a class="sbtn gold" href="sunday.html">Get the Sunday Update</a></div>
@@ -110,7 +157,7 @@
   var FEED='https://theqcollective.org/podcast/feed.xml';
   function mins(s){s=s||0;var m=Math.max(1,Math.round(s/60));return m+' min';}
   function day(d){try{return new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});}catch(e){return d;}}
-  var KIND={weekly:'Sunday recap',thursday:'Thursday with Mav',bonus:'Bonus',trailer:'Trailer'};
+  var KIND={weekly:'Sunday recap',thursday:'Thursday with Mav',bonus:'Special Session',guest:'On the Record',trailer:'Trailer'};
   fetch('podcast/episodes.json',{cache:'no-cache'}).then(function(r){return r.json();}).then(function(d){
     var L=d.links||{}, subs=document.getElementById("follow"), any=false;
     [['apple','Apple Podcasts'],['spotify','Spotify'],['youtube','YouTube']].forEach(function(x){ if(L[x[0]]){ any=true; subs.insertAdjacentHTML('beforeend','<a class="sbtn" href="'+esc(L[x[0]])+'" target="_blank" rel="noopener">'+x[1]+'</a>'); } });
@@ -125,6 +172,51 @@
     }).join('');
     if(location.hash){var t=document.getElementById(location.hash.slice(1)); if(t) t.scrollIntoView();}
   }).catch(function(){});
+})();
+</script>
+<script src="q-auth.js"></script>
+<script>
+/* Email me new episodes (and optionally the Sunday Update). Same list rules as the Sunday Update. */
+(function(){
+  var f=document.getElementById('epForm'), m=document.getElementById('epMsg'); if(!f) return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); if(f.website.value) return;
+    var em=f.email.value.trim(); if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){m.textContent='Please enter a valid email.';return;}
+    m.textContent='Signing you up\u2026'; f.querySelector('button').disabled=true;
+    window.qcReady.then(function(qc){ if(!qc) throw 0; return qc.rpc('subscribe_episodes',{e:em,also_sunday:!!f.sunday.checked}); })
+      .then(function(r){ if(r&&r.error) throw r.error; var v=r&&r.data;
+        if(v==='invalid'){m.textContent='Please check your email address.';f.querySelector('button').disabled=false;return;}
+        m.textContent=v==='confirm'?'Almost there: check your inbox and tap the link to confirm.':'You\u2019re in. You\u2019ll get an email every time a new episode comes out.'; f.email.disabled=true; })
+      .catch(function(){ m.textContent='That didn\u2019t go through. Please try again.'; f.querySelector('button').disabled=false; });
+  });
+  // Turning episode emails off: nothing happens until a person presses the button (email scanners open links).
+  var q=new URLSearchParams(location.search);
+  if(q.get('do')==='episodes-off'&&q.get('token')){
+    var box=document.createElement('div'); box.className='offbox';
+    box.innerHTML='<h2 style="margin:0 0 8px">Stop new-episode emails?</h2><p>You\u2019ll stop getting an email each time Power Back Weekly has a new episode.</p><button class="sbtn gold" type="button">Yes, stop them</button><p class="gmsg"></p>';
+    document.querySelector('main').prepend(box);
+    box.querySelector('button').onclick=function(){ var b=this, msg=box.querySelector('.gmsg'); b.disabled=true;
+      window.qcReady.then(function(qc){ return qc.rpc('episodes_off',{t:q.get('token')}); }).then(function(r){ var v=r&&r.data;
+        msg.textContent=v==='ok'?'Done. No more new-episode emails. You can sign up again any time on this page.':'That link is no longer valid.'; })
+      .catch(function(){ msg.textContent='Something went wrong. Please try again.'; b.disabled=false; }); };
+    box.scrollIntoView();
+  }
+})();
+/* Be on the show: requests go straight to The Q Collective (nobody else can read them). */
+(function(){
+  var f=document.getElementById('guestForm'), m=document.getElementById('guestMsg'); if(!f) return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); if(f.website.value) return;
+    var v={name:f.name.value.trim(),email:f.email.value.trim(),role:f.role.value,affiliation:f.affiliation.value.trim()||null,topic:f.topic.value.trim(),why:f.why.value.trim()||null};
+    if(v.name.length<2){m.textContent='Please add your name.';return;}
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v.email)){m.textContent='Please check your email address.';return;}
+    if(v.topic.length<5){m.textContent='Tell us a little about what you want to talk about.';return;}
+    m.textContent='Sending\u2026'; f.querySelector('button').disabled=true;
+    window.qcReady.then(function(qc){ if(!qc) throw new Error('offline'); return qc.from('podcast_requests').insert(v); })
+      .then(function(r){ if(r&&r.error) throw r.error; f.reset(); m.textContent='Thank you. We got it, and we\u2019ll be in touch.'; })
+      .catch(function(){ m.textContent='That didn\u2019t go through. Please try again, or email team@theqcollective.org.'; })
+      .then(function(){ f.querySelector('button').disabled=false; });
+  });
 })();
 </script>
 <script src="q-config.js"></script><script src="q-chat.js"></script>

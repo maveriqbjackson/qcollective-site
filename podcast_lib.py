@@ -38,12 +38,14 @@ SHOW = {
     "language": "en-us",
     "category": ("Government", None),
     "category2": ("News", "Politics"),
-    "summary": ("The Colorado record, read out loud. Every Sunday, Power Back Weekly walks through what your "
+    "summary": ("The record, read out loud. Every Sunday, Power Back Weekly walks through what your "
                 "lawmakers actually did that week: the votes, the bills that moved, and whose record changed, "
-                "straight from the public record and in plain English. Bonus episodes drop when something big moves. "
+                "straight from the public record and in plain English. Every Thursday, founder maveriQ B Jackson, "
+                "in his own voice, on what it means and what you can do about it. Special Session episodes drop when "
+                "something big moves, and On the Record brings lawmakers and Coloradans on the show. "
                 "From The Q Collective, a nonpartisan, citizen-powered accountability project. "
-                "Each episode opens with founder maveriQ B Jackson in his own voice; the rest is read by an "
-                "AI voice from our published data, and every fact links back to the record at theqcollective.org."),
+                "Sunday episodes open with Mav and are read by an AI voice from our published data; "
+                "every fact links back to the record at theqcollective.org."),
     "page": f"{SITE}/podcast.html",
     "cover": f"{SITE}/podcast/cover.jpg",
 }
@@ -162,7 +164,7 @@ def build_feed(d):
       <pubDate>{format_datetime(when)}</pubDate>
       <enclosure url="{_x(SITE + '/' + e['audio'])}" length="{e['bytes']}" type="audio/mpeg"/>
       <itunes:duration>{dur // 60}:{dur % 60:02d}</itunes:duration>
-      <itunes:episodeType>{'trailer' if e['type'] == 'trailer' else 'bonus' if e['type'] == 'bonus' else 'full'}</itunes:episodeType>
+      <itunes:episodeType>{'trailer' if e['type'] == 'trailer' else 'bonus' if e['type'] == 'bonus' else 'full'}</itunes:episodeType>{chr(10) + '      <itunes:image href="' + _x(SITE + '/podcast/cover-thursday.jpg') + '"/>' if e['type'] in ('thursday', 'trailer') else ''}
       <itunes:explicit>false</itunes:explicit>
     </item>""")
     items.reverse()
@@ -223,7 +225,7 @@ def _paras(script):
 def post_html(e):
     short, long = _when(e)
     url = f"{SITE}/{NOTES_DIR}/pbw-{e['id']}.html"
-    kind = {"weekly": "Sunday recap", "thursday": "Thursday with Mav", "bonus": "Bonus episode", "trailer": "Trailer"}.get(e["type"], "Episode")
+    kind = {"weekly": "Sunday recap", "thursday": "Thursday with Mav", "bonus": "Special Session", "guest": "On the Record", "trailer": "Trailer"}.get(e["type"], "Episode")
     mins = max(1, round((e.get("seconds") or 60) / 60))
     return f"""<!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -316,3 +318,58 @@ def build_posts(d):
 if __name__ == "__main__":
     n = build_feed(load())
     print(f"feed rebuilt: {n} episodes")
+
+
+# --------------------------------------------------------------------------
+# New-episode emails. People who signed up on the podcast page ("email me every new episode")
+# get a short note each time one goes out. Needs SUPABASE_URL, SUPABASE_SERVICE_KEY, RESEND_API_KEY.
+# only_episode_only=True (Sunday episodes): skip people who already get the Sunday Update, which
+# has the same episode's Listen button in it.
+# --------------------------------------------------------------------------
+def email_new_episode(e, only_episode_only=False):
+    import urllib.parse
+    import urllib.request
+    url = (os.environ.get("SUPABASE_URL") or "").rstrip("/")
+    key = os.environ.get("SUPABASE_SERVICE_KEY") or ""
+    rk = os.environ.get("RESEND_API_KEY") or ""
+    if not (url and key and rk):
+        print("[episode-email] not set up (Supabase or Resend secret missing); skipped", flush=True)
+        return 0
+    q = "sunday_subscribers?confirmed=eq.true&unsubscribed=eq.false&episodes=eq.true&select=email,token"
+    if only_episode_only:
+        q += "&sunday=eq.false"
+    req = urllib.request.Request(url + "/rest/v1/" + q, headers={"apikey": key, "Authorization": "Bearer " + key, "User-Agent": "QCollective-podcast/1.0"})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            subs = json.loads(r.read())
+    except Exception as ex:
+        print(f"[episode-email] couldn't read the list: {ex}", flush=True)
+        return 0
+    if not subs:
+        return 0
+    kind = {"weekly": "Sunday recap", "thursday": "Thursday with Mav", "bonus": "Special Session", "guest": "On the Record", "trailer": "Trailer"}.get(e.get("type") or e.get("kind"), "New episode")
+    link = f"{SITE}/podcast.html#{e['id']}"
+    mins = max(1, round((e.get("seconds") or 0) / 60))
+    sender = os.environ.get("SEND_FROM") or "The Q Collective <noreply@auth.theqcollective.org>"
+    def one(s):
+        off = f"{SITE}/podcast.html?do=episodes-off&token={urllib.parse.quote(s['token'])}"
+        h = (f"<div style=\"background:#f4f1ea;padding:24px 12px;font-family:Georgia,serif\"><div style=\"max-width:560px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e6dfcf\">"
+             f"<div style=\"background:#0b1a31;padding:22px 26px;color:#fff\"><div style=\"font:600 12px/1 monospace;letter-spacing:.18em;color:#D4AF50\">POWER BACK WEEKLY &middot; {html.escape(kind.upper())}</div>"
+             f"<div style=\"font:700 26px/1.25 Georgia,serif;margin-top:10px\">{html.escape(e['title'])}</div></div>"
+             f"<div style=\"padding:22px 26px;color:#222;font-size:16px;line-height:1.6\"><p style=\"margin:0 0 16px\">{html.escape(e.get('summary') or '')}</p>"
+             f"<p style=\"margin:0 0 18px\"><a href=\"{link}\" style=\"display:inline-block;background:#D4AF50;color:#0b1a31;text-decoration:none;font:700 16px Arial,sans-serif;padding:12px 20px;border-radius:8px\">&#9654; Listen ({mins} min)</a></p>"
+             f"<p style=\"margin:0;font-size:13px;color:#777;font-family:Arial,sans-serif\">You asked for an email every time Power Back Weekly has a new episode. <a href=\"{off}\" style=\"color:#777\">Stop these emails</a>.</p></div></div></div>")
+        t = f"{kind}: {e['title']}\n\n{e.get('summary') or ''}\n\nListen ({mins} min): {link}\n\nStop these emails: {off}\n"
+        return {"from": sender, "to": [s["email"]], "reply_to": "team@theqcollective.org", "subject": f"New on Power Back Weekly: {e['title']}", "html": h, "text": t,
+                "headers": {"List-Unsubscribe": f"<{off}>", "List-Unsubscribe-Post": "List-Unsubscribe=One-Click"}}
+    sent = 0
+    for i in range(0, len(subs), 100):
+        batch = [one(s) for s in subs[i:i + 100]]
+        r = urllib.request.Request("https://api.resend.com/emails/batch", method="POST", data=json.dumps(batch).encode(),
+                                   headers={"Authorization": "Bearer " + rk, "Content-Type": "application/json", "User-Agent": "QCollective-podcast/1.0"})
+        try:
+            urllib.request.urlopen(r, timeout=60).read(); sent += len(batch)
+        except Exception as ex:
+            print(f"[episode-email] batch failed: {ex}", flush=True)
+    print(f"[episode-email] {sent} sent for {e['id']}", flush=True)
+    return sent

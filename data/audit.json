@@ -2560,6 +2560,11 @@
    "run_type": "site_change",
    "ts": "2026-11-14T01:21:12Z",
    "note": "The Sunday Update now includes a Listen instead audio version for subscribers, read by an AI voice from our published data."
+  },
+  {
+   "run_type": "site_change",
+   "ts": "2026-11-14T16:06:46Z",
+   "note": "Power Back Weekly page: new-episode email sign-up, a request form to be a guest (verified officials can also request from their account), a host section, Sunday and Thursday episodes described, and new cover art (Thursday episodes show the founder's photo). The show is described as 'the record' rather than 'the Colorado record'."
   }
  ]
 }

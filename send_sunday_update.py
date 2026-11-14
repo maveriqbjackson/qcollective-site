@@ -743,13 +743,22 @@ def send_confirmations():
     get a welcome. People the database is holding for confirmation get the
     confirmation email."""
     pending = sb("sunday_subscribers?confirm_sent=eq.false&unsubscribed=eq.false"
-                 "&select=id,email,token,confirmed") or []
+                 "&select=id,email,token,confirmed,sunday,episodes") or []
     if not isinstance(pending, list):
         log("couldn't read the subscriber list (is Supabase paused?)")
         return
     welcomed = confirms = 0
     for s in pending:
-        if s.get("confirmed"):
+        if s.get("confirmed") and s.get("sunday") is False:
+            # Signed up on the podcast page for new-episode emails only.
+            off = f"{SITE}/podcast.html?do=episodes-off&token={urllib.parse.quote(s['token'])}"
+            h = _shell(f"""<p>You're in. Every time Power Back Weekly has a new episode, we'll send you one short email with the link.</p>
+<p>Sundays: the week's record. Thursdays: our founder, in his own voice. Plus bonus episodes when something big moves.</p>
+<p><a href="{SITE}/podcast.html">Listen to the latest &rarr;</a></p>
+<p style="font-size:13px;color:#777">Changed your mind? <a href="{off}" style="color:#777">Stop these emails</a>.</p>""")
+            t = f"You're in. Every time Power Back Weekly has a new episode, we'll email you the link.\n\nListen: {SITE}/podcast.html\n\nStop these emails: {off}\n"
+            ok = send_email(s["email"], "You're on the list for Power Back Weekly", h, t)
+        elif s.get("confirmed"):
             h, t = welcome_email(s["token"])
             ok = send_email(s["email"], WELCOME_SUBJECT, h, t, token=s["token"])
         else:
@@ -832,7 +841,7 @@ def run_recap(test=False):
         log(f"test recap to {TEST_TO}: {'sent' if ok else 'FAILED'}")
         return ok
 
-    subs = sb("sunday_subscribers?confirmed=eq.true&unsubscribed=eq.false&select=email,token") or []
+    subs = sb("sunday_subscribers?confirmed=eq.true&unsubscribed=eq.false&sunday=eq.true&select=email,token") or []
     if not isinstance(subs, list):
         log("couldn't read the subscriber list; recap NOT sent, state NOT saved.")
         return False
@@ -870,6 +879,9 @@ def run_recap(test=False):
                 script=audio_script(shown, sections))
             podcast_lib.save(pod)
             log("podcast: this week's episode is in the Power Back Weekly feed.")
+            ep = next((x for x in pod["episodes"] if x["id"] == f"weekly-{shown.isoformat()}"), None)
+            if ep:
+                podcast_lib.email_new_episode(ep, only_episode_only=True)  # Sunday Update readers already have it
         except Exception as e:
             log(f"podcast: couldn't add this week's episode ({e}); the email still went out.")
     if read_note() and sent:

@@ -46,6 +46,8 @@ jobs:
         run: curl -fsSL --max-time 30 https://aetherandash.digital/api/podcast/intro -o podcast/intro.mp3 || rm -f podcast/intro.mp3
       - name: Run
         env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           MODE: ${{ inputs.mode }}
           SOURCE: ${{ inputs.source }}
           TITLE: ${{ inputs.title }}

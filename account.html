@@ -579,6 +579,15 @@
       <div class="acct-note">Responses are reviewed before publishing, and they <b>do not affect your Q Score</b> &mdash; scores are calculated from the public record only.</div>
     </div>
 
+    <div id="pbwCard" class="acct-card" style="display:none">
+      <h3>Be on Power Back Weekly</h3>
+      <p>Want to say it in your own voice? Ask to come on our podcast. Your request comes to us marked as a verified official. Being on the show never changes a Q Score. <a href="podcast.html">About the show &rarr;</a></p>
+      <input id="pbwTopic" class="acct-input" maxlength="300" placeholder="What would you like to talk about?">
+      <textarea id="pbwWhy" class="acct-ta" maxlength="2000" placeholder="Anything else we should know (optional)"></textarea>
+      <button id="pbwBtn" class="acct-btn">Request to be on the show</button>
+      <p id="pbwMsg" class="acct-msg"></p>
+    </div>
+
     <div id="subsCard" class="acct-card" style="display:none">
       <h3>Your submissions</h3>
       <div id="subsList"></div>
@@ -665,6 +674,7 @@ var tries=0;(function wait(){if(!window.qAuth)return;qAuth.user().then(function(
           if(PROF.official_status==='verified'){
             box.innerHTML='<div class="ok-box">\u2713 <b>Verified official.</b> You can respond to your record below.</div>';
             document.getElementById('respondCard').style.display='block';
+            document.getElementById('pbwCard').style.display='block';
             fetch('data/CO_bills.json').then(function(r){return r.json();}).then(function(d){
               var bl=(d&&(d.bills||d))||[]; var arr=Array.isArray(bl)?bl:Object.keys(bl).map(function(k){return bl[k];});
               document.getElementById('billList').innerHTML=arr.slice(0,400).map(function(x){return '<option value="'+esc(x.number||'')+'">'+esc(String(x.title||'').slice(0,60))+'</option>';}).join('');
@@ -694,6 +704,16 @@ var tries=0;(function wait(){if(!window.qAuth)return;qAuth.user().then(function(
     });
     document.getElementById('acctOutBtn').addEventListener('click',function(){qc.auth.signOut();});
 
+    document.getElementById('pbwBtn').addEventListener('click',function(){
+      var m=document.getElementById('pbwMsg'), topic=(document.getElementById('pbwTopic').value||'').trim(), why=(document.getElementById('pbwWhy').value||'').trim();
+      if(topic.length<5){m.textContent='Tell us a little about what you want to talk about.';return;}
+      if(!PROF||PROF.official_status!=='verified'){m.textContent='Your account is not verified yet.';return;}
+      var nm=(ME.user_metadata&&ME.user_metadata.claimed_person_name)||(ME.email||'').split('@')[0];
+      m.textContent='Sending\u2026';
+      qc.from('podcast_requests').insert({name:nm,email:ME.email,role:'legislator',affiliation:null,topic:topic,why:why||null,user_id:ME.id,person_id:String(PROF.claimed_person_id||''),verified:true})
+        .then(function(res){ if(res&&res.error){m.textContent='Error: '+res.error.message;return;} m.textContent='Sent. We\u2019ll be in touch to set a time.'; document.getElementById('pbwTopic').value=''; document.getElementById('pbwWhy').value=''; })
+        .catch(function(){m.textContent='Something went wrong. Please try again.';});
+    });
     document.getElementById('respBtn').addEventListener('click',function(){
       var m=document.getElementById('respMsg'); var kind=document.getElementById('respKind').value;
       var body=(document.getElementById('respBody').value||'').trim();

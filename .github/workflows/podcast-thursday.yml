@@ -36,6 +36,8 @@ jobs:
         env:
           EP_DATE: ${{ inputs.date }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           SITE_URL: "https://theqcollective.org"
         run: python podcast_thursday.py
       - name: Save it to the site

@@ -63,6 +63,7 @@ def publish_one(d, date, kind_hint=None):
     P.save(d)
     secs = P.seconds(out)
     log(f"published {eid}: {ep['title']} ({secs // 60}:{secs % 60:02d})")
+    P.email_new_episode({"id": eid, "type": kind, "title": ep["title"], "summary": ep.get("summary") or "", "seconds": secs})
     if RESEND_KEY:
         html = (f"<p><b>{ep['title']}</b> is live on Power Back Weekly ({secs // 60} min).</p>"
                 f"<p><a href='{P.SITE}/podcast.html#{eid}'>Podcast page</a> · <a href='{P.SITE}/notes/pbw-{eid}.html'>Q Notes post</a></p>"

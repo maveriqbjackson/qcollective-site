@@ -39,7 +39,7 @@ DRAFTS = os.path.join(podcast_lib.DIR, "drafts")
 EPDIR = os.path.join(podcast_lib.DIR, "episodes")
 
 TRAILER = (
-    "Power Back Weekly is the Colorado record, read out loud. "
+    "Power Back Weekly is the record, read out loud. "
     "Every Sunday we walk through what your lawmakers actually did that week: the bills that moved, the votes that counted, "
     "and whose Q Score went up or down, and why. No spin and no sides. Just the public record, in plain English, in about ten minutes. "
     "When something big moves in between, like a bill heading to the governor or a change in the law that touches your paycheck, "
@@ -198,6 +198,7 @@ def publish():
                             summary=meta["summary"], audio_path=final, script=meta.get("script", ""))
     podcast_lib.save(pod)
     log(f"published {meta['id']} to the feed")
+    podcast_lib.email_new_episode({"id": meta["id"], "type": meta["type"], "title": meta["title"], "summary": meta["summary"], "seconds": podcast_lib.seconds(final)})
     print(f"::notice title=Published::{meta['title']} is in the Power Back Weekly feed.", flush=True)
 
 

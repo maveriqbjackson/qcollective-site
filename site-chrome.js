@@ -75,7 +75,7 @@
       '@media(prefers-reduced-motion:reduce){.q-pod-track{animation:none;display:block;text-align:center;white-space:normal;padding:10px 14px}.q-pod-item:not(:first-child){display:none}.q-pod-dot{animation:none}}'+
       '@media(max-width:600px){.q-pod{font-size:11.5px;letter-spacing:1.2px}}';
     document.head.appendChild(css);
-    var one='<span class="q-pod-item"><span class="q-pod-dot" aria-hidden="true"></span><b>New podcast</b> Power Back Weekly &middot; the Colorado record, read out loud every Sunday &middot; <u>Listen now &rarr;</u></span>';
+    var one='<span class="q-pod-item"><span class="q-pod-dot" aria-hidden="true"></span><b>New podcast</b> Power Back Weekly &middot; the record, read out loud every Sunday and Thursday &middot; <u>Listen now &rarr;</u></span>';
     var a=document.createElement('a'); a.className='q-pod'; a.href='podcast.html';
     a.setAttribute('aria-label','New podcast: Power Back Weekly. Listen now.');
     a.innerHTML='<span class="q-pod-track">'+one+one+one+one+one+one+'</span>';
