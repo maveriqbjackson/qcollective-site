@@ -2550,6 +2550,16 @@
      }
     ]
    }
+  },
+  {
+   "run_type": "site_change",
+   "ts": "2026-11-14T01:21:12Z",
+   "note": "Power Back Weekly, our podcast, is live: a podcast page (podcast.html), a feed for podcast apps (podcast/feed.xml), a banner at the top of every page, and an automatic Q Notes post with the full transcript for every episode. Hosted on this site with no ads and no listener tracking."
+  },
+  {
+   "run_type": "site_change",
+   "ts": "2026-11-14T01:21:12Z",
+   "note": "The Sunday Update now includes a Listen instead audio version for subscribers, read by an AI voice from our published data."
   }
  ]
 }
