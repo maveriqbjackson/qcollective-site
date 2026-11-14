@@ -4,7 +4,7 @@ Runs every hour (GitHub Actions, "Power Back Weekly: Thursday episode"): Thursda
 and bonus episodes or the trailer go out within the hour once Mav records them and sets them to Ready.
 Mav writes and records each episode in Ash HQ → The Q Collective → Podcast. Ash HQ only hands the episode
 over once it's recorded, it's that Thursday (or later), and it isn't marked "skip". This script levels the
-audio, adds it to the podcast feed (Apple Podcasts, Spotify and YouTube pick it up within hours), writes its
+audio, adds it to the podcast feed (Apple Podcasts and Spotify pick it up within hours), writes its
 Q Notes post, and emails team@ and Mav that it's live. If it isn't ready, it does nothing.
 """
 import datetime as dt
@@ -67,7 +67,7 @@ def publish_one(d, date, kind_hint=None):
     if RESEND_KEY:
         html = (f"<p><b>{ep['title']}</b> is live on Power Back Weekly ({secs // 60} min).</p>"
                 f"<p><a href='{P.SITE}/podcast.html#{eid}'>Podcast page</a> · <a href='{P.SITE}/notes/pbw-{eid}.html'>Q Notes post</a></p>"
-                "<p>Apple Podcasts, Spotify and YouTube pick it up from the feed within a few hours.</p>")
+                "<p>Apple Podcasts and Spotify pick it up from the feed within a few hours.</p>")
         req = urllib.request.Request("https://api.resend.com/emails", method="POST",
                                      data=json.dumps({"from": SEND_FROM, "to": TO, "reply_to": "team@theqcollective.org",
                                                       "subject": f"Live: {ep['title']}", "html": html}).encode(),

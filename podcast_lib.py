@@ -2,8 +2,8 @@
 
 Shared by the Sunday Update (weekly episodes) and podcast_bonus.py (bonus episodes).
 
-  podcast/episodes.json   every published episode, newest first, plus the Apple / Spotify / YouTube links
-  podcast/feed.xml        the podcast feed that Apple Podcasts, Spotify and YouTube read
+  podcast/episodes.json   every published episode, newest first, plus the Apple / Spotify links
+  podcast/feed.xml        the podcast feed that Apple Podcasts and Spotify read
   podcast/intro.mp3       Mav's own opening, recorded in Ash HQ and fetched fresh before every episode
                           (aetherandash.digital/api/podcast/intro); silence at both ends is trimmed
   podcast/episodes/       the episode audio files
