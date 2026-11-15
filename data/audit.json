@@ -1,6 +1,6 @@
 {
  "engine": "v7.0",
- "updated": "November 8, 2026 at 3:24 PM MST",
+ "updated": "November 15, 2026 at 4:06 PM MST",
  "runs": [
   {
    "ts": "2026-07-11",
@@ -804,7 +804,7 @@
         "new": 89
        },
        {
-        "name": "Monica Márquez (Chief Justice)",
+        "name": "Monica M\u00e1rquez (Chief Justice)",
         "old": null,
         "new": 89
        },
@@ -2308,14 +2308,14 @@
      {
       "page": "Contact, Work With Us, Request Advocacy",
       "url": "contact.html",
-      "what": "The email the team receives is tagged [Reply · Q].",
+      "what": "The email the team receives is tagged [Reply \u00b7 Q].",
       "before": "Untagged subject",
       "after": "Tagged so it gets answered"
      },
      {
       "page": "Get Involved, Support a Bill, lawmaker and bill forms",
       "url": "get-involved.html",
-      "what": "The email the team receives is tagged [FYI · Q].",
+      "what": "The email the team receives is tagged [FYI \u00b7 Q].",
       "before": "Untagged subject",
       "after": "Tagged as a record"
      }
@@ -2636,6 +2636,37 @@
    "run_type": "site_change",
    "ts": "2026-11-14T20:18:38Z",
    "note": "Podcast page: 'Coming to Apple Podcasts and Spotify' (YouTube removed)."
+  },
+  {
+   "ts": "November 15, 2026 at 4:06 PM MST",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "1f301f4",
+   "run_id": "43772962569",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/43772962569",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
+   }
   }
  ]
 }
