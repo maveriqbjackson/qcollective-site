@@ -16,7 +16,20 @@
     <itunes:category text="News"><itunes:category text="Politics"/></itunes:category>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sun, 15 Nov 2026 07:21:09 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2026 16:08:52 -0700</lastBuildDate>
+    <item>
+      <title>Week of November 15, 2026</title>
+      <description>This week on Power Back Weekly: the headline; a law you may have missed; the scoreboard; the accountability champions; the session by the numbers. Every vote and link is at theqcollective.org.</description>
+      <itunes:summary>This week on Power Back Weekly: the headline; a law you may have missed; the scoreboard; the accountability champions; the session by the numbers. Every vote and link is at theqcollective.org.</itunes:summary>
+      <link>https://theqcollective.org/podcast.html#weekly-2026-11-15</link>
+      <guid isPermaLink="false">theqcollective-powerback-weekly-2026-11-15</guid>
+      <pubDate>Sun, 15 Nov 2026 16:08:52 -0700</pubDate>
+      <enclosure url="https://theqcollective.org/audio/sunday/2026-11-15.mp3" length="2083523" type="audio/mpeg"/>
+      <itunes:duration>2:54</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <podcast:transcript url="https://theqcollective.org/podcast/transcripts/weekly-2026-11-15.vtt" type="text/vtt" language="en" rel="captions"/>
+    </item>
     <item>
       <title>Welcome to Power Back Weekly</title>
       <description>A short introduction to Power Back Weekly from The Q Collective: what the show is, when new episodes come out, and why the public record belongs to you.</description>
