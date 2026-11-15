@@ -4,5 +4,20 @@
   "spotify": null,
   "youtube": null
  },
- "episodes": []
+ "episodes": [
+  {
+   "id": "trailer-2026-11-15",
+   "type": "trailer",
+   "title": "Welcome to Power Back Weekly",
+   "date": "2026-11-15",
+   "summary": "A short introduction to Power Back Weekly from The Q Collective: what the show is, when new episodes come out, and why the public record belongs to you.",
+   "audio": "podcast/episodes/trailer-2026-11-15.mp3",
+   "bytes": 762250,
+   "seconds": 63,
+   "published": "2026-11-15T07:21:09-07:00",
+   "script": "Every vote your lawmakers cast is public. Almost nobody reads it. This show does.\n\nI'm maveriQ B Jackson, founder of The Q Collective. This is Power Back Weekly. \n\nEvery Sunday: the week's record. What moved in the Colorado legislature, what changed, and whose Q Score went up or down. Every Thursday: me, in my own voice, telling you what it means and what you can do about it. And when a big bill moves, a bonus episode.\n\nWe're nonpartisan. We don't endorse candidates and we don't tell you how to vote. We read the record, score it the same way for everybody, and put it where you can see it.\n\nFollow Power Back Weekly wherever you're listening, so Sunday's episode shows up on its own. And go to theqcollective.org to look up your own lawmakers.\n\nThe record was always public. Now you can actually read it. Take the power back.",
+   "transcript": "podcast/transcripts/trailer-2026-11-15.vtt",
+   "transcript_type": "text/vtt"
+  }
+ ]
 }

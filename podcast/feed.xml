@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:podcast="https://podcastindex.org/namespace/1.0">
   <channel>
     <title>Power Back Weekly</title>
     <link>https://theqcollective.org/podcast.html</link>
     <atom:link href="https://theqcollective.org/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <language>en-us</language>
     <copyright>© 2026 The Q Collective</copyright>
-    <description>The Colorado record, read out loud. Every Sunday, Power Back Weekly walks through what your lawmakers actually did that week: the votes, the bills that moved, and whose record changed, straight from the public record and in plain English. Bonus episodes drop when something big moves. From The Q Collective, a nonpartisan, citizen-powered accountability project. Each episode opens with founder maveriQ B Jackson in his own voice; the rest is read by an AI voice from our published data, and every fact links back to the record at theqcollective.org.</description>
-    <itunes:summary>The Colorado record, read out loud. Every Sunday, Power Back Weekly walks through what your lawmakers actually did that week: the votes, the bills that moved, and whose record changed, straight from the public record and in plain English. Bonus episodes drop when something big moves. From The Q Collective, a nonpartisan, citizen-powered accountability project. Each episode opens with founder maveriQ B Jackson in his own voice; the rest is read by an AI voice from our published data, and every fact links back to the record at theqcollective.org.</itunes:summary>
+    <description>The record, read out loud. Every Sunday, Power Back Weekly walks through what your lawmakers actually did that week: the votes, the bills that moved, and whose record changed, straight from the public record and in plain English. Every Thursday, founder maveriQ B Jackson, in his own voice, on what it means and what you can do about it. Special Session episodes drop when something big moves, and On the Record brings lawmakers and Coloradans on the show. From The Q Collective, a nonpartisan, citizen-powered accountability project. Sunday episodes open with Mav and are read by an AI voice from our published data; every fact links back to the record at theqcollective.org.</description>
+    <itunes:summary>The record, read out loud. Every Sunday, Power Back Weekly walks through what your lawmakers actually did that week: the votes, the bills that moved, and whose record changed, straight from the public record and in plain English. Every Thursday, founder maveriQ B Jackson, in his own voice, on what it means and what you can do about it. Special Session episodes drop when something big moves, and On the Record brings lawmakers and Coloradans on the show. From The Q Collective, a nonpartisan, citizen-powered accountability project. Sunday episodes open with Mav and are read by an AI voice from our published data; every fact links back to the record at theqcollective.org.</itunes:summary>
     <itunes:author>The Q Collective</itunes:author>
     <itunes:owner><itunes:name>The Q Collective</itunes:name><itunes:email>team@theqcollective.org</itunes:email></itunes:owner>
     <itunes:image href="https://theqcollective.org/podcast/cover.jpg"/>
@@ -16,7 +16,20 @@
     <itunes:category text="News"><itunes:category text="Politics"/></itunes:category>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 13 Nov 2026 17:36:52 -0700</lastBuildDate>
-
+    <lastBuildDate>Sun, 15 Nov 2026 07:21:09 -0700</lastBuildDate>
+    <item>
+      <title>Welcome to Power Back Weekly</title>
+      <description>A short introduction to Power Back Weekly from The Q Collective: what the show is, when new episodes come out, and why the public record belongs to you.</description>
+      <itunes:summary>A short introduction to Power Back Weekly from The Q Collective: what the show is, when new episodes come out, and why the public record belongs to you.</itunes:summary>
+      <link>https://theqcollective.org/podcast.html#trailer-2026-11-15</link>
+      <guid isPermaLink="false">theqcollective-powerback-trailer-2026-11-15</guid>
+      <pubDate>Sun, 15 Nov 2026 07:21:09 -0700</pubDate>
+      <enclosure url="https://theqcollective.org/podcast/episodes/trailer-2026-11-15.mp3" length="762250" type="audio/mpeg"/>
+      <itunes:duration>1:03</itunes:duration>
+      <itunes:episodeType>trailer</itunes:episodeType>
+      <itunes:image href="https://theqcollective.org/podcast/cover-thursday.jpg"/>
+      <itunes:explicit>false</itunes:explicit>
+      <podcast:transcript url="https://theqcollective.org/podcast/transcripts/trailer-2026-11-15.vtt" type="text/vtt" language="en" rel="captions"/>
+    </item>
   </channel>
 </rss>
