@@ -40,6 +40,8 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           WHAT: "TEST ONLY, nothing is broken: the Q Score engine"
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          HQ_OUTBOX_KEY: ${{ secrets.HQ_OUTBOX_KEY }}  # logs each email into Ash HQ -> Outbox
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}  # signs the Outbox log if HQ_OUTBOX_KEY is not set
         run: python notify_failure.py
 
   # Tick "lawmaker_sample" when running by hand to see what lawmakers would receive.
@@ -55,6 +57,8 @@ jobs:
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           MODE: "sample"
+          HQ_OUTBOX_KEY: ${{ secrets.HQ_OUTBOX_KEY }}  # logs each email into Ash HQ -> Outbox
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}  # signs the Outbox log if HQ_OUTBOX_KEY is not set
         run: python send_official_alerts.py
 
   score:
@@ -83,6 +87,7 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           SITE_URL: "https://theqcollective.org"
           STATES: "CO"
+          HQ_OUTBOX_KEY: ${{ secrets.HQ_OUTBOX_KEY }}  # logs each email into Ash HQ -> Outbox
         run: python send_alerts.py
 
       # Lawmakers whose score moved 5+ points or crossed 80 get one email.
@@ -95,6 +100,8 @@ jobs:
           PREVIEW: "1"
           STATE: "CO"
           SITE_URL: "https://theqcollective.org"
+          HQ_OUTBOX_KEY: ${{ secrets.HQ_OUTBOX_KEY }}  # logs each email into Ash HQ -> Outbox
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}  # signs the Outbox log if HQ_OUTBOX_KEY is not set
         run: python send_official_alerts.py
 
       # Every lawmaker's share page and link-preview card, rebuilt from this week's scores
@@ -113,6 +120,8 @@ jobs:
           WHAT: "The Q Score engine"
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           SITE_URL: "https://theqcollective.org"
+          HQ_OUTBOX_KEY: ${{ secrets.HQ_OUTBOX_KEY }}  # logs each email into Ash HQ -> Outbox
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}  # signs the Outbox log if HQ_OUTBOX_KEY is not set
         run: python notify_failure.py
 
       # Runs even after a failure, so the site can show "we hit a mild glitch"

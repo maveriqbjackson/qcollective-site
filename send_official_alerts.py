@@ -45,6 +45,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from zoneinfo import ZoneInfo
+import hq_outbox
 
 RESEND_KEY = os.environ.get("RESEND_API_KEY") or ""
 PREVIEW    = (os.environ.get("PREVIEW") or "1").strip() not in ("0", "false", "no")
@@ -97,14 +98,23 @@ def send(to, subject, html_body, text_body):
         "https://api.resend.com/emails", method="POST", data=json.dumps(payload).encode(),
         headers={"Authorization": "Bearer " + RESEND_KEY, "Content-Type": "application/json",
                  "User-Agent": "TheQCollective/1.0 (+https://theqcollective.org)"})
+    via = "The Q Collective (GitHub: lawmaker alerts)"
     try:
         with urllib.request.urlopen(req, timeout=40) as r:
-            r.read()
+            raw = r.read()
+        try:
+            ref = json.loads(raw.decode() or "{}").get("id")
+        except Exception:
+            ref = None
+        hq_outbox.record(to, subject, html_body, SEND_FROM, ref=ref, via=via)
         return True
     except urllib.error.HTTPError as e:
+        why = e.read().decode("utf-8", "ignore")[:200]
+        hq_outbox.record(to, subject, html_body, SEND_FROM, ok=False, error=f"HTTP {e.code}: {why}", via=via)
         print("::warning title=Lawmaker email::HTTP %s sending '%s': %s"
-              % (e.code, subject, e.read().decode("utf-8", "ignore")[:200]), flush=True)
+              % (e.code, subject, why), flush=True)
     except Exception as e:
+        hq_outbox.record(to, subject, html_body, SEND_FROM, ok=False, error=str(e), via=via)
         print("::warning title=Lawmaker email::could not send '%s': %s" % (subject, e), flush=True)
     return False
 

@@ -44,6 +44,7 @@ import urllib.request
 from zoneinfo import ZoneInfo
 
 import podcast_lib
+import hq_outbox
 
 SUPABASE_URL = (os.environ.get("SUPABASE_URL") or "").rstrip("/")
 SERVICE_KEY  = os.environ.get("SUPABASE_SERVICE_KEY") or ""
@@ -190,6 +191,9 @@ def send_email(to, subject, html_body, text_body, token=None, scheduled_at=None)
                payload)
     global LAST_EMAIL_ID
     LAST_EMAIL_ID = res.get("id", "") if isinstance(res, dict) else ""
+    hq_outbox.record(payload["to"], subject + (f" (scheduled for {scheduled_at})" if scheduled_at else ""), html_body, SEND_FROM,
+                     ok=bool(res), error=None if res else "Resend refused it (see the run log)", ref=LAST_EMAIL_ID or None,
+                     via="The Q Collective (GitHub: Sunday update)")
     return bool(res)
 
 

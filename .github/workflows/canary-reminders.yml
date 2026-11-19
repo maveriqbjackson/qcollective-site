@@ -33,6 +33,7 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+          HQ_OUTBOX_KEY: ${{ secrets.HQ_OUTBOX_KEY }}  # logs each email into Ash HQ -> Outbox
         run: python canary_reminders.py
       - name: Email the team if something failed
         if: failure()
@@ -41,6 +42,8 @@ jobs:
           WHAT: "Canary reminders"
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           SITE_URL: "https://theqcollective.org"
+          HQ_OUTBOX_KEY: ${{ secrets.HQ_OUTBOX_KEY }}  # logs each email into Ash HQ -> Outbox
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}  # signs the Outbox log if HQ_OUTBOX_KEY is not set
         run: python notify_failure.py
       - name: Remember what was sent
         if: ${{ !inputs.dry_run }}

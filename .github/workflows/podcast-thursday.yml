@@ -43,6 +43,7 @@ jobs:
           CF_AI_TOKEN: ${{ secrets.CF_AI_TOKEN }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           SITE_URL: "https://theqcollective.org"
+          HQ_OUTBOX_KEY: ${{ secrets.HQ_OUTBOX_KEY }}  # logs each email into Ash HQ -> Outbox
         run: python podcast_thursday.py
       - name: Save it to the site
         run: |
@@ -60,4 +61,6 @@ jobs:
           WHAT: "Power Back Weekly Thursday episode"
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           SITE_URL: "https://theqcollective.org"
+          HQ_OUTBOX_KEY: ${{ secrets.HQ_OUTBOX_KEY }}  # logs each email into Ash HQ -> Outbox
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}  # signs the Outbox log if HQ_OUTBOX_KEY is not set
         run: python notify_failure.py

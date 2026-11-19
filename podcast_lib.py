@@ -22,6 +22,7 @@ import subprocess
 import tempfile
 from email.utils import format_datetime
 from zoneinfo import ZoneInfo
+import hq_outbox
 
 SITE = (os.environ.get("SITE_URL") or "https://theqcollective.org").rstrip("/")
 DIR = "podcast"
@@ -414,9 +415,14 @@ def email_new_episode(e, only_episode_only=False):
         batch = [one(s) for s in subs[i:i + 100]]
         r = urllib.request.Request("https://api.resend.com/emails/batch", method="POST", data=json.dumps(batch).encode(),
                                    headers={"Authorization": "Bearer " + rk, "Content-Type": "application/json", "User-Agent": "QCollective-podcast/1.0"})
+        via = "The Q Collective (GitHub: new-episode email)"
         try:
             urllib.request.urlopen(r, timeout=60).read(); sent += len(batch)
+            for m in batch:
+                hq_outbox.record(m["to"], m["subject"], m["html"], m["from"], via=via)
         except Exception as ex:
+            for m in batch:
+                hq_outbox.record(m["to"], m["subject"], m["html"], m["from"], ok=False, error=str(ex), via=via)
             print(f"[episode-email] batch failed: {ex}", flush=True)
     print(f"[episode-email] {sent} sent for {e['id']}", flush=True)
     return sent

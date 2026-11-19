@@ -24,6 +24,7 @@ import os
 import sys
 import urllib.error
 import urllib.request
+import hq_outbox
 
 RESEND_KEY = os.environ.get("RESEND_API_KEY") or ""
 ALERT_TO   = os.environ.get("ALERT_TO") or "team@theqcollective.org"
@@ -92,14 +93,19 @@ def main():
         headers={"Authorization": "Bearer " + RESEND_KEY, "Content-Type": "application/json",
                  # Resend's firewall rejects Python's default User-Agent.
                  "User-Agent": "TheQCollective/1.0 (+https://theqcollective.org)"})
+    subj, via = f"Needs you: {WHAT} failed", "The Q Collective (GitHub: failure alert)"
     try:
         with urllib.request.urlopen(req, timeout=40) as r:
             r.read()
+        hq_outbox.record(ALERT_TO, subj, html_body, SEND_FROM, via=via)
         print(f"[alert] failure email sent to {ALERT_TO}", flush=True)
     except urllib.error.HTTPError as e:
+        why = e.read().decode("utf-8", "ignore")[:200]
+        hq_outbox.record(ALERT_TO, subj, html_body, SEND_FROM, ok=False, error=f"HTTP {e.code}: {why}", via=via)
         print("::warning title=Failure alert::could not send the alert email: HTTP %s %s"
-              % (e.code, e.read().decode("utf-8", "ignore")[:200]), flush=True)
+              % (e.code, why), flush=True)
     except Exception as e:
+        hq_outbox.record(ALERT_TO, subj, html_body, SEND_FROM, ok=False, error=str(e), via=via)
         print("::warning title=Failure alert::could not send the alert email: %s" % e, flush=True)
     return 0
 
