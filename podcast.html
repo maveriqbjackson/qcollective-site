@@ -179,7 +179,7 @@
   var KIND={weekly:'Sunday recap',thursday:'Thursday with Mav',bonus:'Special Session',guest:'On the Record',trailer:'Trailer'};
   fetch('podcast/episodes.json',{cache:'no-cache'}).then(function(r){return r.json();}).then(function(d){
     var L=d.links||{}, subs=document.getElementById("follow"), any=false;
-    [['apple','Apple Podcasts'],['spotify','Spotify'],['youtube','YouTube']].forEach(function(x){ if(L[x[0]]){ any=true; subs.insertAdjacentHTML('beforeend','<a class="sbtn" href="'+esc(L[x[0]])+'" target="_blank" rel="noopener">'+x[1]+'</a>'); } });
+    [['apple','Apple Podcasts'],['spotify','Spotify'],['amazon','Amazon Music'],['youtube','YouTube']].forEach(function(x){ if(L[x[0]]){ any=true; subs.insertAdjacentHTML('beforeend','<a class="sbtn" href="'+esc(L[x[0]])+'" target="_blank" rel="noopener">'+x[1]+'</a>'); } });
     subs.insertAdjacentHTML('beforeend','<button class="sbtn" type="button" id="rss">Copy feed link</button>');
     document.getElementById('rss').onclick=function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(FEED):Promise.reject()).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy feed link';},1800);},function(){prompt('Paste this into your podcast app:',FEED);});};
     if(any) document.getElementById('soon').textContent='Free wherever you listen. No account needed.';

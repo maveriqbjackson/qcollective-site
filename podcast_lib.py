@@ -57,7 +57,7 @@ def load():
             d = json.load(f)
     except (FileNotFoundError, ValueError):
         d = {}
-    d.setdefault("links", {"apple": None, "spotify": None, "youtube": None})
+    d.setdefault("links", {"apple": None, "spotify": None, "amazon": None, "youtube": None})
     d.setdefault("episodes", [])
     return d
 

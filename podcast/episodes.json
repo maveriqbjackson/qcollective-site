@@ -1,7 +1,8 @@
 {
  "links": {
-  "apple": null,
-  "spotify": null,
+  "apple": "https://podcasts.apple.com/us/podcast/power-back-weekly/id6835118860",
+  "spotify": "https://open.spotify.com/show/7FLsmQEltaj655o5kPPcSA",
+  "amazon": "https://music.amazon.com/podcasts/cd333046-9603-4a12-9f49-e5a55a059fa0",
   "youtube": null
  },
  "episodes": [
