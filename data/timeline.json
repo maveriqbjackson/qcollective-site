@@ -433,6 +433,34 @@
      "href": "election-2026.html"
     }
    ]
+  },
+  {
+   "id": "ak-gov-called-2026",
+   "date": "2026-11-13",
+   "precision": "day",
+   "kind": "watch",
+   "title": "Alaska's governor's race goes to Jonathan Kreiss-Tomkins",
+   "summary": "AP called Alaska's governor's race for Jonathan Kreiss-Tomkins (D) after he topped 50% of first choices, so no ranked-choice tally was needed. It is a pickup from Republicans, the sixth governorship Democrats flipped this year.",
+   "links": [
+    {
+     "label": "National map",
+     "href": "election-2026-map.html"
+    }
+   ]
+  },
+  {
+   "id": "ak-senate-called-2026",
+   "date": "2026-11-17",
+   "precision": "day",
+   "kind": "watch",
+   "title": "Alaska's Senate race goes to Mary Peltola, the last Senate call",
+   "summary": "AP called Alaska's U.S. Senate race for Mary Peltola (D) over Sen. Dan Sullivan (R), with Peltola at 50.1% of first choices, so no ranked-choice tally was needed. Every Senate race is now called, and Democrats will hold 56 seats, counting the two independents who vote with them. Alaska certifies Nov. 25.",
+   "links": [
+    {
+     "label": "National map",
+     "href": "election-2026-map.html"
+    }
+   ]
   }
  ]
 }
