@@ -16,7 +16,21 @@
     <itunes:category text="News"><itunes:category text="Politics"/></itunes:category>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sun, 15 Nov 2026 16:08:52 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 07:09:29 -0700</lastBuildDate>
+    <item>
+      <title>Thursday with Mav: why I’m taking the power back</title>
+      <description>The first Thursday episode of Power Back Weekly. Mav on why The Q Collective exists, how the Q Score works, and what to watch before the Colorado legislature comes back on January 13.</description>
+      <itunes:summary>The first Thursday episode of Power Back Weekly. Mav on why The Q Collective exists, how the Q Score works, and what to watch before the Colorado legislature comes back on January 13.</itunes:summary>
+      <link>https://theqcollective.org/podcast.html#thu-2026-11-19</link>
+      <guid isPermaLink="false">theqcollective-powerback-thu-2026-11-19</guid>
+      <pubDate>Thu, 19 Nov 2026 07:09:29 -0700</pubDate>
+      <enclosure url="https://theqcollective.org/podcast/episodes/thu-2026-11-19.mp3" length="2779739" type="audio/mpeg"/>
+      <itunes:duration>3:52</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:image href="https://theqcollective.org/podcast/cover-thursday.jpg"/>
+      <itunes:explicit>false</itunes:explicit>
+      <podcast:transcript url="https://theqcollective.org/podcast/transcripts/thu-2026-11-19.vtt" type="text/vtt" language="en" rel="captions"/>
+    </item>
     <item>
       <title>Week of November 15, 2026</title>
       <description>This week on Power Back Weekly: the headline; a law you may have missed; the scoreboard; the accountability champions; the session by the numbers. Every vote and link is at theqcollective.org.</description>
