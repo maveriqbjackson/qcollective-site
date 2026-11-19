@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Request Advocacy — The Q Collective</title>
+<title>Request Advocacy | The Q Collective</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Q Collective">
-<meta property="og:title" content="Request Advocacy — The Q Collective">
+<meta property="og:title" content="Request Advocacy | The Q Collective">
 <meta property="og:description" content="Request advocacy support from The Q Collective for a Colorado issue or bill that matters to you.">
 <meta property="og:url" content="https://theqcollective.org/request-advocacy.html">
 <meta property="og:image" content="https://theqcollective.org/og/request-advocacy.png">
@@ -176,7 +176,7 @@
     .crow { grid-template-columns: 1fr; }
     .crow > div { border-bottom: 1px solid var(--border); }
     .crow .clabel { background: var(--navy-deep); color: var(--gold-light); }
-    .crow .c-fw::before { content: 'Fair Work Act — '; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
+    .crow .c-fw::before { content: 'Fair Work Act'; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
     .crow.chead { display: none; }
     .hero-wm, .hero-wm2, .mission-wm, .pillars-wm, .contact-wm { display: none; }
   }
@@ -531,7 +531,7 @@
 <div id="q-chrome-top"></div>
 
 <section class="pagehead"><p class="ph-eyebrow">We&rsquo;ll Carry Your Voice</p><h1>Ask Us to Contact Your Officials</h1>
-<p>Tell us who to reach and what matters to you, and we&rsquo;ll contact your representatives, senators, governor, or attorney general on your behalf &mdash; with your story behind it.</p></section>
+<p>Tell us who to reach and what matters to you, and we&rsquo;ll contact your representatives, senators, governor, or attorney general on your behalf, with your story behind it.</p></section>
 <div class="pagewrap narrow">
 <p class="section-label">Make a Request</p>
 <h2 class="section-title" style="margin-bottom:6px">Who should we reach, and why?</h2><div class="section-divider"></div>
@@ -563,7 +563,7 @@
 <label><input type="checkbox" name="officials" value="Other"> Someone else (tell us below)</label>
 </div>
 </div>
-<div class="field"><label>What would you like us to say?</label><textarea name="message" rows="5" required placeholder="The issue, the bill, or the outcome you want &mdash; in your own words."></textarea></div>
+<div class="field"><label>What would you like us to say?</label><textarea name="message" rows="5" required placeholder="The issue, the bill, or the outcome you want, in your own words."></textarea></div>
 <div class="field"><label class="consent"><input type="checkbox" required> I&rsquo;m asking The Q Collective to contact these officials on my behalf, and I understand the team may follow up with me about my request.</label></div>
 <button class="btn-gold" type="submit" style="border:none;cursor:pointer">Send My Request</button>
 <p class="formmsg" id="advmsg"></p>
@@ -571,7 +571,7 @@
 <p class="formnote">Your information is used only to act on your request and to follow up with you. We don&rsquo;t sell it or share it beyond reaching the officials you choose. Requests are reviewed by our team and handled as capacity allows.</p>
 </div>
 <script>
-function submitAdv(e){e.preventDefault();var f=document.getElementById('advform');var msg=document.getElementById('advmsg');var data=new FormData(f);msg.className='formmsg';msg.textContent='Sending…';fetch('https://api.web3forms.com/submit',{method:'POST',body:data}).then(function(r){return r.json();}).then(function(j){if(j.success){f.style.display='none';msg.className='formmsg ok';msg.textContent='Thank you — your request is in. We\'ll be in touch.';}else{msg.className='formmsg err';msg.textContent='Something went wrong. Please email team@theQcollective.org and we\'ll take it from there.';}}).catch(function(){msg.className='formmsg err';msg.textContent='Something went wrong. Please email team@theQcollective.org and we\'ll take it from there.';});return false;}
+function submitAdv(e){e.preventDefault();var f=document.getElementById('advform');var msg=document.getElementById('advmsg');var data=new FormData(f);msg.className='formmsg';msg.textContent='Sending…';fetch('https://api.web3forms.com/submit',{method:'POST',body:data}).then(function(r){return r.json();}).then(function(j){if(j.success){f.style.display='none';msg.className='formmsg ok';msg.textContent='Thank you! Your request is in. We\'ll be in touch.';}else{msg.className='formmsg err';msg.textContent='Something went wrong. Please email team@theQcollective.org and we\'ll take it from there.';}}).catch(function(){msg.className='formmsg err';msg.textContent='Something went wrong. Please email team@theQcollective.org and we\'ll take it from there.';});return false;}
 </script>
 
 <div id="q-chrome-footer"></div>
@@ -579,7 +579,7 @@ function submitAdv(e){e.preventDefault();var f=document.getElementById('advform'
 function goTo(e, url){ try{ if(window.top && window.top!==window.self){ window.top.location.href=url; } else { window.location.href=url; } if(e && e.preventDefault) e.preventDefault(); return false; }catch(err){ return true; } }
 </script>
  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6aff6948b0f84ed0b1530a42458bbb3b"}'></script><!-- End Cloudflare Web Analytics -->
-<script src="wip-notice.js?v=1" data-id="requestadv-progress" data-msg="Some office scorecards — executive, judicial, and federal — are still rolling out. Colorado's legislature is fully live." data-link="how-q-scores-work.html" data-linktext="How scoring works"></script>
+<script src="wip-notice.js?v=1" data-id="requestadv-progress" data-msg="Some office scorecards (executive, judicial, and federal) are still rolling out. Colorado's legislature is fully live." data-link="how-q-scores-work.html" data-linktext="How scoring works"></script>
 <script src="q-config.js"></script><script src="q-chat.js"></script>
 <script src="site-chrome.js"></script>
 </body></html>

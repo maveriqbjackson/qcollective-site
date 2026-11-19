@@ -1,11 +1,11 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Official Profile — The Q Collective</title>
+<title>Official Profile | The Q Collective</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Q Collective">
-<meta property="og:title" content="Official Profile — The Q Collective">
-<meta property="og:description" content="Q Scores and public records from The Q Collective — nonpartisan legislative accountability.">
+<meta property="og:title" content="Official Profile | The Q Collective">
+<meta property="og:description" content="Q Scores and public records from The Q Collective. Nonpartisan legislative accountability.">
 <meta property="og:url" content="https://theqcollective.org/state-profile.html">
 <meta property="og:image" content="https://theqcollective.org/og/state-profile.png">
 <meta property="og:image:width" content="1200">
@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://theqcollective.org/og/state-profile.png">
 <meta name="robots" content="index,follow">
-<meta name="description" content="Q Scores and public records from The Q Collective — nonpartisan legislative accountability.">
+<meta name="description" content="Q Scores and public records from The Q Collective. Nonpartisan legislative accountability.">
 <link rel="canonical" href="https://theqcollective.org/state-profile.html">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <style>
@@ -135,10 +135,10 @@
 <script>
 var EXEC_W=[["pillar_alignment","Pillar Alignment of Actions","40%","Do the office's orders, budgets, and signatures serve the seven pillars?"],
   ["citizen_impact","Citizen Impact","30%","Who is helped or harmed by what this office does?"],
-  ["implementation_delivery","Implementation & Delivery","20%","Does the office actually deliver — not just announce?"],
+  ["implementation_delivery","Implementation & Delivery","20%","Does the office actually deliver, not just announce?"],
   ["transparency","Transparency & Accountability","10%","Is the office open about what it does and why?"]];
 var JUD_W=[["integrity_impartiality","Integrity & Impartiality","30%","Does the justice judge fairly, without conflict or favor?"],
-  ["access_citizen_impact","Access & Citizen Impact","25%","Can real people use this court — timely rulings, plain language, fairness to the unrepresented?"],
+  ["access_citizen_impact","Access & Citizen Impact","25%","Can real people use this court? Timely rulings, plain language, fairness to the unrepresented?"],
   ["competence_consistency","Competence & Consistency","25%","Sound legal reasoning, applied evenly?"],
   ["transparency_accountability","Transparency & Accountability","20%","Open opinions, clear recusals, cooperation with review?"]];
 var PILLARS7=["Health","Income","Family","Housing","Food","Economic Opportunity","Protection from Disruption"];
@@ -150,7 +150,7 @@ function comps(c,defs){return defs.map(function(d){var v=(c&&c[d[0]]!=null)?c[d[
 function dirChip(dir){var d=(dir||'').toLowerCase();if(d==='advances')return '<span class="chip adv">advances</span>';if(d==='blocks')return '<span class="chip block">blocks</span>';if(d==='mixed')return '<span class="chip">mixed</span>';return '<span class="chip na">not scored</span>';}
 function pending(c){if(!c)return true;var t=0;for(var k in c)t+=(+c[k]||0);return t===0;}
 
-function setHead(eyebrow,name,sub){document.getElementById('eyebrow').textContent=eyebrow;document.getElementById('pname').textContent=name;document.getElementById('psub').innerHTML=sub;document.title=name+' \u2014 The Q Collective';}
+function setHead(eyebrow,name,sub){document.getElementById('eyebrow').textContent=eyebrow;document.getElementById('pname').textContent=name;document.getElementById('psub').innerHTML=sub;document.title=name+' | The Q Collective';}
 function miss(msg){document.getElementById('wrap').innerHTML='<div class="miss"><h2 class="section-title">'+esc(msg)+'</h2><p><a href="hub.html">&larr; Back to the Accountability Hub</a></p></div>';}
 
 function handoverNote(o){
@@ -165,7 +165,7 @@ function renderExec(o){
   var champ=scored&&o.score>=80;
   var scoreHTML = scored
     ? '<div class="scorebig"><span class="n">'+o.score+'</span><span class="tag">/ 100 &middot; Executive</span></div>'+(champ?'<span class="badge">&#9733; '+esc(o.label||'Delivers for the People')+'</span>':'')+meter(o.score,champ)
-    : '<div class="pending">'+(o.status==='new_in_office'?'New in office &mdash; not scored yet':o.status==='slot'?'Unscored &mdash; shown for completeness':'In development &mdash; awaiting review')+'</div>'+(o.note?'<p class="why" style="margin-top:10px">'+esc(o.note)+'</p>':'');
+    : '<div class="pending">'+(o.status==='new_in_office'?'New in office, not scored yet':o.status==='slot'?'Unscored, shown for completeness':'In development, awaiting review')+'</div>'+(o.note?'<p class="why" style="margin-top:10px">'+esc(o.note)+'</p>':'');
   var ev=(o.entries||[]).map(function(e){
     return '<div class="ev"><div class="t">'+esc(e.title)+'</div><div class="m">'+(e.pillar&&e.pillar!=='none'?'<span class="chip">'+esc(e.pillar)+'</span>':'')+dirChip(e.direction)+(e.date?'<span class="chip na">'+esc(e.date)+'</span>':'')+'</div>'+(e.note?'<div class="note">'+esc(e.note)+'</div>':'')+(e.source?'<div style="margin-top:5px"><a class="src" href="'+esc(e.source)+'" target="_blank" rel="noopener">View the source &rarr;</a></div>':'')+'</div>';
   }).join('') || '<p class="why empty">No actions logged yet.</p>';
@@ -177,7 +177,7 @@ function renderExec(o){
       (scored?'<div class="card"><p class="section-label">In plain language</p><h2 class="section-title">Why this score</h2><div class="divider"></div><p class="why'+(o.why?'':' empty')+'">'+(o.why?esc(o.why):'No plain-language summary has been added yet.')+'</p></div>':'')+
     '</div><div>'+
       '<div class="card"><p class="section-label">The receipts</p><h2 class="section-title">What we scored</h2><div class="divider"></div>'+ev+
-        '<p class="note" style="margin-top:12px;color:var(--text-muted)">Every action is scored against the executive rubric &mdash; not compared to a legislator\'s score.</p></div>'+
+        '<p class="note" style="margin-top:12px;color:var(--text-muted)">Every action is scored against the executive rubric, not compared to a legislator\'s score.</p></div>'+
     '</div></div>';
 }
 
@@ -192,11 +192,11 @@ function renderJud(j,court){
     ? '<div class="retbox"><div class="rl">Next retention election</div><div class="ry">'+esc(j.next_retention)+'</div><div class="rn">This is when Colorado voters decide whether to keep this justice on the bench.</div></div>'
     : '';
   var ojpe='<div class="card"><p class="section-label">The anchor</p><h2 class="section-title">Official evaluation</h2><div class="divider"></div>'+
-    '<div class="kv"><span class="k">State recommendation</span><span class="v">'+esc(j.ojpe_recommendation||'—')+'</span></div>'+
-    '<div class="kv"><span class="k">Evaluation year</span><span class="v">'+esc(j.evaluation_year||'—')+'</span></div>'+
-    '<div class="kv"><span class="k">Next retention</span><span class="v">'+esc(j.next_retention||'—')+'</span></div>'+
+    '<div class="kv"><span class="k">State recommendation</span><span class="v">'+esc(j.ojpe_recommendation||'–')+'</span></div>'+
+    '<div class="kv"><span class="k">Evaluation year</span><span class="v">'+esc(j.evaluation_year||'–')+'</span></div>'+
+    '<div class="kv"><span class="k">Next retention</span><span class="v">'+esc(j.next_retention||'–')+'</span></div>'+
     (j.source?'<p style="margin-top:12px"><a class="src" style="font-family:\'DM Mono\',monospace;font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);text-decoration:none" href="'+esc(j.source.split(' ')[0])+'" target="_blank" rel="noopener">Read the state\'s evaluation &rarr;</a></p>':'')+
-    '<p class="note" style="margin-top:10px;color:var(--text-muted)">This score measures how the justice does the job &mdash; integrity, access, competence, transparency &mdash; not the direction of their rulings. It is built on Colorado\'s own Office of Judicial Performance Evaluation data.</p></div>';
+    '<p class="note" style="margin-top:10px;color:var(--text-muted)">This score measures how the justice does the job (integrity, access, competence, transparency), not the direction of their rulings. It is built on Colorado\'s own Office of Judicial Performance Evaluation data.</p></div>';
   document.getElementById('wrap').innerHTML=
     '<div class="grid"><div>'+
       '<div class="card"><p class="section-label">Accountability</p><h2 class="section-title">Q Score</h2><div class="divider"></div>'+scoreHTML+

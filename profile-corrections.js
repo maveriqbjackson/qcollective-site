@@ -52,7 +52,7 @@
             '<div class="qcx-h"><span class="qcx-t">Corrections</span>' +
             '<span class="qcx-badge">' + mine.length + (mine.length === 1 ? " correction" : " corrections") + "</span></div>" +
             items +
-            '<div class="qcx-foot">We publish every correction we make. Corrections record what changed and when &mdash; they never disclose private information shared by an official. Every correction also appears in the <a href="audit.html">public audit log</a>.</div>' +
+            '<div class="qcx-foot">We publish every correction we make. Corrections record what changed and when; they never disclose private information shared by an official. Every correction also appears in the <a href="audit.html">public audit log</a>.</div>' +
           "</div>";
       }, 150);
     })

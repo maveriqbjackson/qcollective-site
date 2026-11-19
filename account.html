@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Your Account — The Q Collective</title>
+<title>Your Account | The Q Collective</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Q Collective">
-<meta property="og:title" content="Your Account — The Q Collective">
+<meta property="og:title" content="Your Account | The Q Collective">
 <meta property="og:description" content="Sign in to The Q Collective.">
 <meta property="og:url" content="https://theqcollective.org/account.html">
 <meta property="og:image" content="https://theqcollective.org/og/account.png">
@@ -175,7 +175,7 @@
     .crow { grid-template-columns: 1fr; }
     .crow > div { border-bottom: 1px solid var(--border); }
     .crow .clabel { background: var(--navy-deep); color: var(--gold-light); }
-    .crow .c-fw::before { content: 'Fair Work Act — '; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
+    .crow .c-fw::before { content: 'Fair Work Act'; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
     .crow.chead { display: none; }
     .hero-wm, .hero-wm2, .mission-wm, .pillars-wm, .contact-wm { display: none; }
   }
@@ -536,7 +536,7 @@
   <div id="acctOut">
     <div class="acct-card">
       <h3>Sign in or create your account</h3>
-      <p>First &mdash; who are you?</p>
+      <p>First, who are you?</p>
       <div class="role-pick">
         <button type="button" class="role-btn active" data-role="citizen">I&rsquo;m a citizen</button>
         <button type="button" class="role-btn" data-role="official">I&rsquo;m an elected official</button>
@@ -550,7 +550,7 @@
       <input id="acctEmail" type="email" placeholder="you@email.com" class="acct-input" autocomplete="email">
       <button id="acctBtn" class="acct-btn">Send my sign-in link</button>
       <p id="acctMsg" class="acct-msg"></p>
-      <div class="acct-note"><b>Officials:</b> pick your name above and sign in with your official <b>government email</b> (for Colorado legislators, that&rsquo;s your <b>@coleg.gov</b> address) &mdash; clicking the link proves it&rsquo;s really you. If you use a personal email, we&rsquo;ll confirm with your office before verifying you. We never let anyone post as an official without a fact-check.</div>
+      <div class="acct-note"><b>Officials:</b> pick your name above and sign in with your official <b>government email</b> (for Colorado legislators, that&rsquo;s your <b>@coleg.gov</b> address); clicking the link proves it&rsquo;s really you. If you use a personal email, we&rsquo;ll confirm with your office before verifying you. We never let anyone post as an official without a fact-check.</div>
     </div>
   </div>
 
@@ -576,7 +576,7 @@
       <p class="cc"><span id="ccNum">0</span>/1500</p>
       <button id="respBtn" class="acct-btn">Submit for review</button>
       <p id="respMsg" class="acct-msg"></p>
-      <div class="acct-note">Responses are reviewed before publishing, and they <b>do not affect your Q Score</b> &mdash; scores are calculated from the public record only.</div>
+      <div class="acct-note">Responses are reviewed before publishing, and they <b>do not affect your Q Score</b>; scores are calculated from the public record only.</div>
     </div>
 
     <div id="pbwCard" class="acct-card" style="display:none">
@@ -680,7 +680,7 @@ var tries=0;(function wait(){if(!window.qAuth)return;qAuth.user().then(function(
               document.getElementById('billList').innerHTML=arr.slice(0,400).map(function(x){return '<option value="'+esc(x.number||'')+'">'+esc(String(x.title||'').slice(0,60))+'</option>';}).join('');
             }).catch(function(){});
           } else {
-            box.innerHTML='<div class="pend">Your official account is <b>pending verification</b>. We\u2019ll confirm it\u2019s really you \u2014 through your official email or your office \u2014 before you can respond to your record.</div>';
+            box.innerHTML='<div class="pend">Your official account is <b>pending verification</b>. We\u2019ll confirm it\u2019s really you, through your official email or your office, before you can respond to your record.</div>';
           }
         } else { box.innerHTML=''; }
         loadSubs(qc);
@@ -699,7 +699,7 @@ var tries=0;(function wait(){if(!window.qAuth)return;qAuth.user().then(function(
       try{localStorage.setItem('qc_signup_intent',JSON.stringify({role:role,personId:chosenId,personName:chosenName}));}catch(e){}
       msg.textContent='Sending\u2026';
       qc.auth.signInWithOtp({email:email,options:{emailRedirectTo:location.origin+'/account.html',data:{account_type:role,claimed_person_id:chosenId,claimed_person_name:chosenName}}})
-        .then(function(res){msg.textContent=(res&&res.error)?('Error: '+res.error.message):'Check your email \u2014 we sent you a sign-in link.';})
+        .then(function(res){msg.textContent=(res&&res.error)?('Error: '+res.error.message):'Check your email. We sent you a sign-in link.';})
         .catch(function(){msg.textContent='Something went wrong. Please try again.';});
     });
     document.getElementById('acctOutBtn').addEventListener('click',function(){qc.auth.signOut();});
@@ -725,7 +725,7 @@ var tries=0;(function wait(){if(!window.qAuth)return;qAuth.user().then(function(
       qc.from('submissions').insert({user_id:ME.id,kind:'official_response',subject_person_id:String(PROF.claimed_person_id||''),subject_bill_number:(kind==='bill'?bill:null),body:body})
         .then(function(res){
           if(res&&res.error){m.textContent='Error: '+res.error.message;return;}
-          m.textContent='Submitted \u2014 we\u2019ll review it and publish it on your profile.';
+          m.textContent='Submitted. We\u2019ll review it and publish it on your profile.';
           document.getElementById('respBody').value=''; document.getElementById('ccNum').textContent='0';
           document.getElementById('respBill').value=''; loadSubs(qc);
         }).catch(function(){m.textContent='Something went wrong. Please try again.';});
@@ -742,7 +742,7 @@ function goTo(e, url){ try{ if(window.top && window.top!==window.self){ window.t
 (function(){var f=document.getElementById('qform'),m=document.getElementById('qmsg');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();m.textContent='Sending...';m.style.color='#8a8a8a';
 fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)}).then(function(r){return r.json();})
-.then(function(d){if(d.success){f.reset();m.textContent='Thank you \u2014 you\u2019re on the list.';m.style.color='#2e7d32';}
+.then(function(d){if(d.success){f.reset();m.textContent='Thank you! You\u2019re on the list.';m.style.color='#2e7d32';}
 else{m.textContent='Something went wrong. Please email team@theQcollective.org.';m.style.color='#c0392b';}})
 .catch(function(){m.textContent='Something went wrong. Please email team@theQcollective.org.';m.style.color='#c0392b';});});})();
 </script>

@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Q Console — Scoring Workbench</title>
+<title>Q Console | Scoring Workbench</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Q Collective">
-<meta property="og:title" content="Q Console — Scoring Workbench">
+<meta property="og:title" content="Q Console | Scoring Workbench">
 <meta property="og:description" content="Private. The Q Collective console.">
 <meta property="og:url" content="https://theqcollective.org/q-console.html">
 <meta property="og:image" content="https://theqcollective.org/og/q-console.png">
@@ -150,12 +150,12 @@
 
   <!-- DASHBOARD -->
   <section id="dash" class="view active">
-    <h2>Colorado — All Offices</h2>
+    <h2>Colorado: All Offices</h2>
     <div class="sub">Live preview · score.py writes the official numbers on the Sunday run</div>
     <div class="note">This tool <b>captures your scoring and previews it</b> using the same weights the engine uses. The engine (<code>score.py</code>) stays the one source of the official score, so your tool and your site can never disagree. Nothing here is public until you export the file and commit it.</div>
     <p class="sub" style="color:var(--navy)">Executive</p>
     <div class="grid" id="dashExec"></div>
-    <p class="sub" style="color:var(--navy);margin-top:24px">Judicial — Colorado Supreme Court</p>
+    <p class="sub" style="color:var(--navy);margin-top:24px">Judicial: Colorado Supreme Court</p>
     <div class="grid" id="dashJud"></div>
   </section>
 
@@ -169,7 +169,7 @@
 
   <!-- JUDICIAL -->
   <section id="jud" class="view">
-    <h2>Judicial — Colorado Supreme Court</h2>
+    <h2>Judicial: Colorado Supreme Court</h2>
     <div class="sub">Translate the OJPE evaluation into the four buckets</div>
     <div class="selrow" id="judSel"></div>
     <div id="judBody"></div>
@@ -223,10 +223,10 @@ let EXEC = {
     why:"",
     entries:[
       {date:"2024",type:"executive_order",title:"Apprenticeships and Work-Based Learning for the State Workforce",pillar:"Economic Opportunity",direction:"advances",component:"pillar_alignment",note:"Expands state apprenticeship & work-based learning pathways.",source:"https://governorsoffice.colorado.gov/governor/executive-orders",verified:false},
-      {date:"2024",type:"executive_order",title:"Office of Sustainability / electrification of state lawn & garden equipment",pillar:"none",direction:"n/a",component:"unscored",note:"Environmental/operations — no clean map to the seven pillars. Logged as NOT scored (honest example).",source:"https://governorsoffice.colorado.gov/governor/executive-orders",verified:false},
-      {date:"2024",type:"executive_order",title:"Disaster emergency declaration — extreme cold, National Guard deployment",pillar:"Protection from Disruption",direction:"advances",component:"pillar_alignment",note:"Emergency response protecting residents during a hazard event.",source:"https://governorsoffice.colorado.gov/governor/executive-orders",verified:false},
-      {date:"2025",type:"delivery",title:"SMART Act annual performance — [agency] vs. targets",pillar:"none",direction:"n/a",component:"implementation_delivery",note:"Delivery signal from Governor's Dashboard / SMART Act report.",source:"https://operations.colorado.gov/performance-management",verified:false},
-      {date:"2025",type:"budget",title:"Nov. 1 budget request vs. enacted Long Bill — [priority]",pillar:"none",direction:"n/a",component:"implementation_delivery",note:"Did a requested pillar priority survive into the enacted budget?",source:"https://www.colorado.gov/governor/office-state-planning-budgeting",verified:false}
+      {date:"2024",type:"executive_order",title:"Office of Sustainability / electrification of state lawn & garden equipment",pillar:"none",direction:"n/a",component:"unscored",note:"Environmental/operations: no clean map to the seven pillars. Logged as NOT scored (honest example).",source:"https://governorsoffice.colorado.gov/governor/executive-orders",verified:false},
+      {date:"2024",type:"executive_order",title:"Disaster emergency declaration: extreme cold, National Guard deployment",pillar:"Protection from Disruption",direction:"advances",component:"pillar_alignment",note:"Emergency response protecting residents during a hazard event.",source:"https://governorsoffice.colorado.gov/governor/executive-orders",verified:false},
+      {date:"2025",type:"delivery",title:"SMART Act annual performance: [agency] vs. targets",pillar:"none",direction:"n/a",component:"implementation_delivery",note:"Delivery signal from Governor's Dashboard / SMART Act report.",source:"https://operations.colorado.gov/performance-management",verified:false},
+      {date:"2025",type:"budget",title:"Nov. 1 budget request vs. enacted Long Bill: [priority]",pillar:"none",direction:"n/a",component:"implementation_delivery",note:"Did a requested pillar priority survive into the enacted budget?",source:"https://www.colorado.gov/governor/office-state-planning-budgeting",verified:false}
     ]},
   "Attorney General":  {holder:"Phil Weiser", status:"in_development", components:blank(EXEC_W), why:"", entries:[]},
   "Secretary of State":{holder:"Jena Griswold", status:"in_development", components:blank(EXEC_W), why:"", entries:[]},
@@ -235,7 +235,7 @@ let EXEC = {
 };
 let JUD = {"Colorado Supreme Court":[
   j("Maria Berkenkotter","2024","2034","Retained 2024 (66.8%). Appointed by Polis, 2021."),
-  j("Susan Blanco","2026","2028","Appointed by Polis, Feb 2026 — provisional term; first retention 2028."),
+  j("Susan Blanco","2026","2028","Appointed by Polis, Feb 2026; provisional term; first retention 2028."),
   j("Brian Boatright","2024","2034","Retained 2024 (62.8%). On the court since 2011."),
   j("Richard Gabriel","2018","2028","Retained 2018 (74.3%). On the court since 2015."),
   j("William W. Hood III","2016","2026","Retained 2016 (71.0%). UP FOR RETENTION Nov 2026.",true),
@@ -257,7 +257,7 @@ function meterHTML(score,dark){
   const champ=score>=STD;
   return `<div class="meter${dark?' d':''}"><div class="fill ${champ?'champ':''}" style="width:${Math.max(0,Math.min(100,score))}%"></div><div class="std"></div></div>
   <div class="stdlbl"><span>&#9650; Stability Standard (${STD})</span></div>
-  ${champ?`<span class="badge">${badgeFor(dark==='exec'||curExecKey?'exec':'jud',score)}</span>`:`<div class="below">${score} — ${STD-score} under the stability standard</div>`}`;
+  ${champ?`<span class="badge">${badgeFor(dark==='exec'||curExecKey?'exec':'jud',score)}</span>`:`<div class="below">${score} (${STD-score} under the stability standard)</div>`}`;
 }
 
 // ---------- DASHBOARD ----------
@@ -271,14 +271,14 @@ function renderDash(){
       ${champ?`<span class="badge">Delivers for the People</span>`:`<div class="below">below standard</div>`}</div>`;
     } else {
       he+=`<div class="dcard" onclick="show('exec');selectExec('${k}')"><div class="nm">${o.holder||k}</div><div class="of">${k} · Executive</div>
-      <div class="sc" style="color:#bbb">—</div><span class="pill ${o.status==='slot'?'slot':'dev'}">${o.status==='slot'?'unscored slot':'in development'}</span></div>`;
+      <div class="sc" style="color:#bbb">–</div><span class="pill ${o.status==='slot'?'slot':'dev'}">${o.status==='slot'?'unscored slot':'in development'}</span></div>`;
     }}
   document.getElementById('dashExec').innerHTML=he;
   let hj="";
   JUD["Colorado Supreme Court"].forEach((jx,i)=>{const s=total(jx.components,JUD_W);const scored=Object.values(jx.components).some(v=>+v>0);const champ=s>=STD;
     hj+=`<div class="dcard" onclick="show('jud');selectJud(${i})"><div class="nm">${jx.name}</div><div class="of">CO Supreme Court · Judicial ${jx.flag?'<span class="pill flag">retention 2026</span>':''}</div>
     ${scored?`<div class="sc">${s}<small> /100</small></div><div class="meter"><div class="fill ${champ?'champ':''}" style="width:${s}%"></div><div class="std"></div></div>${champ?`<span class="badge">Fair-Bench Distinction</span>`:`<div class="below">below standard</div>`}`
-    :`<div class="sc" style="color:#bbb">—</div><span class="pill dev">awaiting review</span><div class="below">eval ${jx.evaluation_year} · next ${jx.next_retention}</div>`}</div>`;});
+    :`<div class="sc" style="color:#bbb">–</div><span class="pill dev">awaiting review</span><div class="below">eval ${jx.evaluation_year} · next ${jx.next_retention}</div>`}</div>`;});
   document.getElementById('dashJud').innerHTML=hj;
 }
 
@@ -292,7 +292,7 @@ function renderExecBody(){
   const o=EXEC[curExecKey];
   if(o.status!=="scored"){
     document.getElementById('execBody').innerHTML=`<div class="card"><h3>${curExecKey} <span class="pill ${o.status==='slot'?'slot':'dev'}">${o.status==='slot'?'unscored slot':'in development'}</span></h3>
-    <p class="muted">${o.why||'Added in the same wave as the Governor. Enter the officeholder and log actions to activate scoring — role-tailored definitions of "pillar-aligned action" apply for this office.'}</p>
+    <p class="muted">${o.why||'Added in the same wave as the Governor. Enter the officeholder and log actions to activate scoring. Role-tailored definitions of "pillar-aligned action" apply for this office.'}</p>
     ${o.status!=='slot'?`<div class="field"><label>Officeholder</label><input type="text" value="${o.holder}" oninput="EXEC['${curExecKey}'].holder=this.value"></div>
     <button class="btn btn-out" onclick="EXEC['${curExecKey}'].status='scored';selectExec('${curExecKey}');renderDash()">Activate scoring for ${curExecKey}</button>`:''}</div>`;
     return;}
@@ -312,7 +312,7 @@ function renderExecBody(){
       <td style="width:4%"><button class="del" onclick="EXEC['${curExecKey}'].entries.splice(${i},1);renderExecBody()">&times;</button></td>
     </tr>`;});
   document.getElementById('execBody').innerHTML=`
-   <div class="card"><h3>${o.holder} — ${curExecKey}</h3>
+   <div class="card"><h3>${o.holder}, ${curExecKey}</h3>
      <div class="total" id="execTotal"></div>
      ${comps}
    </div>
@@ -322,7 +322,7 @@ function renderExecBody(){
      <div style="margin-top:12px"><button class="btn btn-out" onclick="addEntry()">+ Add action</button></div>
    </div>
    <div class="card"><h3>Narrative</h3>
-     <textarea placeholder="Why this score — the plain-language justification shown on the report card." oninput="EXEC['${curExecKey}'].why=this.value">${o.why}</textarea>
+     <textarea placeholder="Why this score: the plain-language justification shown on the report card." oninput="EXEC['${curExecKey}'].why=this.value">${o.why}</textarea>
    </div>`;
   renderExecTotal();
 }
@@ -356,11 +356,11 @@ function renderJudBody(){
        <div class="field" style="flex:1"><label>Most recent OJPE eval (year)</label><input type="text" value="${jx.evaluation_year}" oninput="JUD['Colorado Supreme Court'][${curJud}].evaluation_year=this.value"></div>
        <div class="field" style="flex:1"><label>Next retention</label><input type="text" value="${jx.next_retention}" oninput="JUD['Colorado Supreme Court'][${curJud}].next_retention=this.value"></div>
        <div class="field" style="flex:1.4"><label>OJPE recommendation</label><select onchange="JUD['Colorado Supreme Court'][${curJud}].ojpe_recommendation=this.value">
-         <option value="">—</option><option ${jx.ojpe_recommendation==='Meets Performance Standard'?'selected':''}>Meets Performance Standard</option><option ${jx.ojpe_recommendation==='Does Not Meet Performance Standard'?'selected':''}>Does Not Meet Performance Standard</option></select></div>
+         <option value="">–</option><option ${jx.ojpe_recommendation==='Meets Performance Standard'?'selected':''}>Meets Performance Standard</option><option ${jx.ojpe_recommendation==='Does Not Meet Performance Standard'?'selected':''}>Does Not Meet Performance Standard</option></select></div>
      </div>
      <div class="field"><label>OJPE evaluation</label><div class="src"><a href="${jx.source}" target="_blank">${jx.source}</a></div></div>
      <div class="field"><label>Opinions (competence &amp; consistency)</label><div class="src"><a href="${jx.opinions_source}" target="_blank">${jx.opinions_source}</a></div></div>
-     <label style="font-size:14px"><input type="checkbox" ${jx.verified?'checked':''} onchange="JUD['Colorado Supreme Court'][${curJud}].verified=this.checked"> Verified — I've read the OJPE eval and stand behind these numbers</label>
+     <label style="font-size:14px"><input type="checkbox" ${jx.verified?'checked':''} onchange="JUD['Colorado Supreme Court'][${curJud}].verified=this.checked"> Verified: I've read the OJPE eval and stand behind these numbers</label>
    </div>
    <div class="card"><h3>Narrative note</h3>
      <textarea oninput="JUD['Colorado Supreme Court'][${curJud}].narrative_note=this.value">${jx.narrative_note}</textarea></div>`;
@@ -396,7 +396,7 @@ function buildJud(){
   return {branch:"judicial",state:"CO",score_version:"7.0","Colorado Supreme Court":arr};
 }
 function openExport(kind){ioKind=kind;const data=kind==='exec'?buildExec():buildJud();
-  document.getElementById('modalTitle').textContent=(kind==='exec'?'executive.json':'judicial.json')+' — copy & commit';
+  document.getElementById('modalTitle').textContent=(kind==='exec'?'executive.json':'judicial.json')+': copy & commit';
   document.getElementById('modalTA').value=JSON.stringify(data,null,2);
   document.getElementById('modalBtns').innerHTML=`<button class="btn btn-gold" onclick="copyTA()">Copy to clipboard</button><button class="btn btn-out" onclick="downloadTA('${kind==='exec'?'executive.json':'judicial.json'}')">Download file</button>`;
   document.getElementById('modal').classList.add('open');}

@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Support the Work &mdash; The Q Collective</title>
+<title>Support the Work | The Q Collective</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Q Collective">
-<meta property="og:title" content="Support the Work — The Q Collective">
+<meta property="og:title" content="Support the Work | The Q Collective">
 <meta property="og:description" content="Support nonpartisan accountability in Colorado. Contribute to The Q Collective.">
 <meta property="og:url" content="https://theqcollective.org/donate.html">
 <meta property="og:image" content="https://theqcollective.org/og/donate.png">
@@ -175,7 +175,7 @@
     .crow { grid-template-columns: 1fr; }
     .crow > div { border-bottom: 1px solid var(--border); }
     .crow .clabel { background: var(--navy-deep); color: var(--gold-light); }
-    .crow .c-fw::before { content: 'Fair Work Act — '; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
+    .crow .c-fw::before { content: 'Fair Work Act'; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
     .crow.chead { display: none; }
     .hero-wm, .hero-wm2, .mission-wm, .pillars-wm, .contact-wm { display: none; }
   }
@@ -529,24 +529,24 @@
 </style>
 
 <section class="pagehead"><p class="ph-eyebrow">Citizen-Powered</p><h1>Support the work.</h1>
-<p>This work runs on people, not on interests. If you believe legislation should be written for citizens &mdash; and power held to one honest standard &mdash; you can help keep the lights on: the tools, the scoring, the bills.</p></section>
+<p>This work runs on people, not on interests. If you believe legislation should be written for citizens, and power held to one honest standard, you can help keep the lights on: the tools, the scoring, the bills.</p></section>
 
 <div class="donate-wrap">
   <div class="firewall"><div class="wm">Q</div><div class="firewall-in">
     <div class="eyeb">The Firewall</div>
     <h2>Money cannot buy a score here. We mean it.</h2>
     <ul>
-      <li><b>Individuals only.</b> We accept contributions from individual people &mdash; never from lobbyists, PACs, party committees, or any entity with legislation we are currently scoring.</li>
+      <li><b>Individuals only.</b> We accept contributions from individual people, never from lobbyists, PACs, party committees, or any entity with legislation we are currently scoring.</li>
       <li><b>You certify it.</b> When you give, you confirm you&rsquo;re an individual and not one of those prohibited sources.</li>
-      <li><b>Prohibited money is returned.</b> If we find a contribution came from a prohibited source, we refund it &mdash; every time.</li>
+      <li><b>Prohibited money is returned.</b> If we find a contribution came from a prohibited source, we refund it, every time.</li>
       <li><b>Nothing touches the scores.</b> Our rubric is public and our score log is tamper-evident, so a contribution couldn&rsquo;t move a score even if someone tried.</li>
-      <li><b>We show our work.</b> We publish how many contributions we&rsquo;ve refunded and the total returned &mdash; see below.</li>
+      <li><b>We show our work.</b> We publish how many contributions we&rsquo;ve refunded and the total returned. See below.</li>
     </ul>
   </div></div>
 
   <div class="give">
     <h3>Give as an individual</h3>
-    <p>Every dollar goes to the mission &mdash; the bills, the Q Scores, and keeping the platform running and free for everyone.</p>
+    <p>Every dollar goes to the mission: the bills, the Q Scores, and keeping the platform running and free for everyone.</p>
     <div class="attest"><b>By continuing, you certify:</b> &ldquo;I am an individual, and I am not a registered lobbyist, a PAC, a party committee, or an entity with legislation currently scored by The Q Collective.&rdquo; If that changes, or we find otherwise, your contribution will be refunded.</div>
     <div class="freq" id="freq">
       <button class="freq-btn active" data-f="once">Give once</button>
@@ -561,7 +561,7 @@
       <div><div class="num" id="tRefunds">0</div><div class="lbl">Contributions refunded</div></div>
       <div><div class="num" id="tReturned">$0</div><div class="lbl">Returned to sender</div></div>
     </div>
-    <p>These figures reflect contributions we identified as coming from prohibited sources and returned, per the firewall above. The detailed record lives in our payment system; we publish the totals here so the policy is verifiable &mdash; without publicly naming individual donors.</p>
+    <p>These figures reflect contributions we identified as coming from prohibited sources and returned, per the firewall above. The detailed record lives in our payment system; we publish the totals here so the policy is verifiable, without publicly naming individual donors.</p>
   </div>
 
   <p class="honest">The Q Collective is currently an LLC, so contributions are <b>not tax-deductible</b>. We&rsquo;re working toward nonprofit status; when that&rsquo;s in place, giving here becomes deductible and we&rsquo;ll say so clearly.<br>Published by The Q Collective / Doctrine Policy Group &middot; team@theQcollective.org</p>
@@ -598,7 +598,7 @@ function goTo(e, url){ try{ if(window.top && window.top!==window.self){ window.t
 (function(){var f=document.getElementById('qform'),m=document.getElementById('qmsg');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();m.textContent='Sending...';m.style.color='#8a8a8a';
 fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)}).then(function(r){return r.json();})
-.then(function(d){if(d.success){f.reset();m.textContent='Thank you \u2014 you\u2019re on the list.';m.style.color='#2e7d32';}
+.then(function(d){if(d.success){f.reset();m.textContent='Thank you! You\u2019re on the list.';m.style.color='#2e7d32';}
 else{m.textContent='Something went wrong. Please email team@theQcollective.org.';m.style.color='#c0392b';}})
 .catch(function(){m.textContent='Something went wrong. Please email team@theQcollective.org.';m.style.color='#c0392b';});});})();
 </script>

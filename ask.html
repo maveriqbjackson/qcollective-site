@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ask the Q Assistant — The Q Collective</title>
+<title>Ask the Q Assistant | The Q Collective</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Q Collective">
-<meta property="og:title" content="Ask the Q Assistant — The Q Collective">
+<meta property="og:title" content="Ask the Q Assistant | The Q Collective">
 <meta property="og:description" content="Ask The Q Collective a question about Colorado legislation, the Q Score, or our policy work.">
 <meta property="og:url" content="https://theqcollective.org/ask.html">
 <meta property="og:image" content="https://theqcollective.org/og/ask.png">
@@ -175,7 +175,7 @@
     .crow { grid-template-columns: 1fr; }
     .crow > div { border-bottom: 1px solid var(--border); }
     .crow .clabel { background: var(--navy-deep); color: var(--gold-light); }
-    .crow .c-fw::before { content: 'Fair Work Act — '; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
+    .crow .c-fw::before { content: 'Fair Work Act'; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
     .crow.chead { display: none; }
     .hero-wm, .hero-wm2, .mission-wm, .pillars-wm, .contact-wm { display: none; }
   }
@@ -553,7 +553,7 @@ var WORKER_URL = (window.Q_WORKER_URL||""); // e.g. "https://q-assistant.<your-s
 var log=document.getElementById('log'), box=document.getElementById('box'),
     send=document.getElementById('send'), chips=document.getElementById('chips');
 var history=[];
-var INTRO="Hi — I'm the Q Assistant. Ask me anything, or paste a link and I'll evaluate it against the seven pillars.<br><br><b>Quick links:</b> <a href='find-officials.html'>Find your reps</a> &middot; <a href='hub.html'>Q Scores</a> &middot; <a href='the-work.html'>The bills</a> &middot; <a href='support-a-bill.html'>Support a bill</a><br><br><b>Reach us:</b> <a href='contact.html'>Contact</a> or <a href='work-with-us.html'>Work with us</a>, or email team@theQcollective.org.";
+var INTRO="Hi! I'm the Q Assistant. Ask me anything, or paste a link and I'll evaluate it against the seven pillars.<br><br><b>Quick links:</b> <a href='find-officials.html'>Find your reps</a> &middot; <a href='hub.html'>Q Scores</a> &middot; <a href='the-work.html'>The bills</a> &middot; <a href='support-a-bill.html'>Support a bill</a><br><br><b>Reach us:</b> <a href='contact.html'>Contact</a> or <a href='work-with-us.html'>Work with us</a>, or email team@theQcollective.org.";
 
 function bubble(role,text){
   var d=document.createElement('div'); d.className='bub '+(role==='user'?'u':'a');
@@ -589,7 +589,7 @@ function ask(text){
   fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:history})})
    .then(function(r){return r.json();})
    .then(function(d){ t.remove();
-     var reply=(d && (d.reply||d.text)) || "Sorry — I couldn't get an answer just now.";
+     var reply=(d && (d.reply||d.text)) || "Sorry, I couldn't get an answer just now.";
      bubble('assistant',reply); history.push({role:'assistant',content:reply}); send.disabled=false;
    })
    .catch(function(){ t.remove(); bubble('assistant',"Something went wrong reaching the assistant. Please try again, or email team@theQcollective.org."); send.disabled=false; });

@@ -1,11 +1,11 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Official Profile — The Q Collective</title>
+<title>Official Profile | The Q Collective</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Q Collective">
-<meta property="og:title" content="Official Profile — The Q Collective">
-<meta property="og:description" content="Q Scores and public records from The Q Collective — nonpartisan legislative accountability.">
+<meta property="og:title" content="Official Profile | The Q Collective">
+<meta property="og:description" content="Q Scores and public records from The Q Collective. Nonpartisan legislative accountability.">
 <meta property="og:url" content="https://theqcollective.org/official.html">
 <meta property="og:image" content="https://theqcollective.org/og/official.png">
 <meta property="og:image:width" content="1200">
@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://theqcollective.org/og/official.png">
 <meta name="robots" content="index,follow">
-<meta name="description" content="Q Scores and public records from The Q Collective — nonpartisan legislative accountability.">
+<meta name="description" content="Q Scores and public records from The Q Collective. Nonpartisan legislative accountability.">
 <link rel="canonical" href="https://theqcollective.org/official.html">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 <style>
@@ -177,7 +177,7 @@
     .crow { grid-template-columns: 1fr; }
     .crow > div { border-bottom: 1px solid var(--border); }
     .crow .clabel { background: var(--navy-deep); color: var(--gold-light); }
-    .crow .c-fw::before { content: 'Fair Work Act — '; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
+    .crow .c-fw::before { content: 'Fair Work Act'; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
     .crow.chead { display: none; }
     .hero-wm, .hero-wm2, .mission-wm, .pillars-wm, .contact-wm { display: none; }
   }
@@ -560,7 +560,7 @@ var CITIZEN_ACCOUNT_URL='account.html';
 function officialBar(){
   return '<div class="q-official-bar">'+
     '<div class="q-official-copy"><span class="q-official-flag">Official Access</span>'+
-    'Are you this official, or a member of their staff? Verify your account to see the full breakdown and respond to this score &mdash; on the record, in your own words.'+
+    'Are you this official, or a member of their staff? Verify your account to see the full breakdown and respond to this score, on the record, in your own words.'+
     '</div>'+
     '<a class="q-official-btn" href="'+OFFICIAL_ACCESS_URL+'">Log in / Register as Official &rarr;</a>'+
   '</div>';
@@ -594,16 +594,16 @@ function wireCitizen(id){
   btn.addEventListener('click',function(){
     var list=readSaved(),i=list.indexOf(id);
     if(i===-1){list.push(id);}else{list.splice(i,1);}
-    if(!writeSaved(list)){ if(status) status.textContent='Couldn\'t save in this browser \u2014 private mode may be blocking storage.'; return; }
+    if(!writeSaved(list)){ if(status) status.textContent='Couldn\'t save in this browser. Private mode may be blocking storage.'; return; }
     paint();
   });
   paint();
 }
 
-function render(p,scores){var t=lastTerm(p);var office=t.type==='sen'?'U.S. Senator':'U.S. Representative';var name=p.name.official_full||(p.name.first+' '+p.name.last);document.getElementById('o-office').textContent=office;document.getElementById('o-name').textContent=name;document.title=name+' \u2014 The Q Collective';document.getElementById('o-sub').textContent=(t.party?t.party+' \u00b7 ':'')+(STATES[t.state]||t.state)+(t.type==='rep'&&t.district?' \u00b7 District '+t.district:'');
+function render(p,scores){var t=lastTerm(p);var office=t.type==='sen'?'U.S. Senator':'U.S. Representative';var name=p.name.official_full||(p.name.first+' '+p.name.last);document.getElementById('o-office').textContent=office;document.getElementById('o-name').textContent=name;document.title=name+' | The Q Collective';document.getElementById('o-sub').textContent=(t.party?t.party+' \u00b7 ':'')+(STATES[t.state]||t.state)+(t.type==='rep'&&t.district?' \u00b7 District '+t.district:'');
 var sc=scores[p.id.bioguide];var sb;
-if(sc){sb='<div class="factbox"><div class="score-big">'+sc.score+'</div><div class="score-label">'+(sc.label||'')+'</div><div style="margin-top:14px">'+'<div class="score-row"><span>Pillar Alignment</span><span class="v">'+(sc.pillar!=null?sc.pillar:'\u2014')+'</span></div>'+'<div class="score-row"><span>Attendance</span><span class="v">'+(sc.attendance!=null?sc.attendance:'\u2014')+'</span></div>'+'<div class="score-row"><span>Citizen Impact</span><span class="v">'+(sc.impact!=null?sc.impact:'\u2014')+'</span></div>'+'<div class="score-row"><span>Sponsorship</span><span class="v">'+(sc.sponsorship!=null?sc.sponsorship:'\u2014')+'</span></div></div>'+(sc.updated?'<div style="font-size:12px;color:#5a5a5a;margin-top:10px">Updated '+sc.updated+'</div>':'')+'</div>';}
-else{sb='<div class="factbox"><div class="score-label">Q Score</div><p style="margin:8px 0 0;font-size:15px">This official hasn&rsquo;t been scored yet. The Q Score &mdash; measuring how their record serves the seven pillars of life stability &mdash; launches with the Accountability Hub.</p></div>';}
+if(sc){sb='<div class="factbox"><div class="score-big">'+sc.score+'</div><div class="score-label">'+(sc.label||'')+'</div><div style="margin-top:14px">'+'<div class="score-row"><span>Pillar Alignment</span><span class="v">'+(sc.pillar!=null?sc.pillar:'\u2013')+'</span></div>'+'<div class="score-row"><span>Attendance</span><span class="v">'+(sc.attendance!=null?sc.attendance:'\u2013')+'</span></div>'+'<div class="score-row"><span>Citizen Impact</span><span class="v">'+(sc.impact!=null?sc.impact:'\u2013')+'</span></div>'+'<div class="score-row"><span>Sponsorship</span><span class="v">'+(sc.sponsorship!=null?sc.sponsorship:'\u2013')+'</span></div></div>'+(sc.updated?'<div style="font-size:12px;color:#5a5a5a;margin-top:10px">Updated '+sc.updated+'</div>':'')+'</div>';}
+else{sb='<div class="factbox"><div class="score-label">Q Score</div><p style="margin:8px 0 0;font-size:15px">This official hasn&rsquo;t been scored yet. The Q Score (measuring how their record serves the seven pillars of life stability) launches with the Accountability Hub.</p></div>';}
 var c='<div class="factbox"><div class="score-label">Contact</div><div style="font-size:15px;line-height:2;margin-top:6px">'+(t.phone?'\u260e '+t.phone+'<br>':'')+(t.url?'<a target="_blank" rel="noopener" href="'+t.url+'">Official website</a><br>':'')+(t.contact_form?'<a target="_blank" rel="noopener" href="'+t.contact_form+'">Contact form</a><br>':'')+(t.address?esc(t.address):'')+'</div></div>';
 var first=p.terms[0];var th=first?'<div class="factbox"><div class="score-label">Tenure</div><p style="margin:8px 0 0;font-size:15px">Serving since '+first.start.slice(0,4)+' \u00b7 '+p.terms.length+' term'+(p.terms.length>1?'s':'')+' on record.</p></div>':'';
 document.getElementById('o-body').innerHTML='<p class="section-label">Accountability</p>'+officialBar()+'<h2 class="section-title" style="margin:18px 0 6px">Q Score</h2><div class="section-divider"></div>'+sb+'<p style="margin:10px 0 0;font-size:13px"><a href="how-q-scores-work.html">How is this Q Score calculated? &rarr;</a></p>'+citizenBar()+c+th;

@@ -1,11 +1,11 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Bill — The Q Collective</title>
+<title>Bill | The Q Collective</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Q Collective">
-<meta property="og:title" content="Bill — The Q Collective">
-<meta property="og:description" content="Q Scores and public records from The Q Collective — nonpartisan legislative accountability.">
+<meta property="og:title" content="Bill | The Q Collective">
+<meta property="og:description" content="Q Scores and public records from The Q Collective. Nonpartisan legislative accountability.">
 <meta property="og:url" content="https://theqcollective.org/bill.html">
 <meta property="og:image" content="https://theqcollective.org/og/bill.png">
 <meta property="og:image:width" content="1200">
@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://theqcollective.org/og/bill.png">
 <meta name="robots" content="index,follow">
-<meta name="description" content="Q Scores and public records from The Q Collective — nonpartisan legislative accountability.">
+<meta name="description" content="Q Scores and public records from The Q Collective. Nonpartisan legislative accountability.">
 <link rel="canonical" href="https://theqcollective.org/bill.html">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 <style>
@@ -177,7 +177,7 @@
     .crow { grid-template-columns: 1fr; }
     .crow > div { border-bottom: 1px solid var(--border); }
     .crow .clabel { background: var(--navy-deep); color: var(--gold-light); }
-    .crow .c-fw::before { content: 'Fair Work Act — '; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
+    .crow .c-fw::before { content: 'Fair Work Act'; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
     .crow.chead { display: none; }
     .hero-wm, .hero-wm2, .mission-wm, .pillars-wm, .contact-wm { display: none; }
   }
@@ -561,20 +561,20 @@ function goTo(e, url){ try{ if(window.top && window.top!==window.self){ window.t
 <script>
 function qs(k){var m=new RegExp('[?&]'+k+'=([^&]*)').exec(location.search);return m?decodeURIComponent(m[1]):null;}
 function pf(p){p=(p||'').toUpperCase();return p==='D'?'Democrat':p==='R'?'Republican':p==='I'?'Independent':(p||'');}
-function submitQForm(e,f){e.preventDefault();var msg=f.querySelector('.qf-msg');msg.className='qf-msg';msg.textContent='Sending\u2026';fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)}).then(function(r){return r.json();}).then(function(j){if(j.success){var els=f.querySelectorAll('input,select,textarea,button');for(var i=0;i<els.length;i++)els[i].disabled=true;msg.className='qf-msg ok';msg.textContent=f.getAttribute('data-thanks')||'Thank you \u2014 your voice is in.';}else{msg.className='qf-msg err';msg.textContent='Something went wrong. Email team@theQcollective.org and we\u2019ll take it from there.';}}).catch(function(){msg.className='qf-msg err';msg.textContent='Something went wrong. Email team@theQcollective.org and we\u2019ll take it from there.';});return false;}
+function submitQForm(e,f){e.preventDefault();var msg=f.querySelector('.qf-msg');msg.className='qf-msg';msg.textContent='Sending\u2026';fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)}).then(function(r){return r.json();}).then(function(j){if(j.success){var els=f.querySelectorAll('input,select,textarea,button');for(var i=0;i<els.length;i++)els[i].disabled=true;msg.className='qf-msg ok';msg.textContent=f.getAttribute('data-thanks')||'Thank you! Your voice is in.';}else{msg.className='qf-msg err';msg.textContent='Something went wrong. Email team@theQcollective.org and we\u2019ll take it from there.';}}).catch(function(){msg.className='qf-msg err';msg.textContent='Something went wrong. Email team@theQcollective.org and we\u2019ll take it from there.';});return false;}
 
 function taTab(btn,sup){var w=btn.closest('.ta-card');var ts=w.querySelectorAll('.ta-tab');for(var i=0;i<ts.length;i++)ts[i].classList.remove('active');btn.classList.add('active');w.querySelector('#ta-support').style.display=sup?'block':'none';w.querySelector('#ta-oppose').style.display=sup?'none':'block';}
 function taCopyMsg(btn){var w=btn.closest('.ta-card');var el=w.querySelector('#ta-support');if(el.style.display==='none')el=w.querySelector('#ta-oppose');el.select();try{navigator.clipboard.writeText(el.value);}catch(e){try{document.execCommand('copy');}catch(e2){}}var o=btn.textContent;btn.textContent='Copied \u2713';setTimeout(function(){btn.textContent=o;},1600);}
 function taCopyLink(btn){try{navigator.clipboard.writeText(location.href);}catch(e){}var o=btn.textContent;btn.textContent='Link copied \u2713';setTimeout(function(){btn.textContent=o;},1600);}
 function taToggle(btn){var d=btn.nextElementSibling;d.classList.toggle('open');btn.textContent=d.classList.contains('open')?'\u2013 Hide the testimony guide':'+ How to testify on this bill';}
-function taFollow(e,f){e.preventDefault();var m=f.querySelector('.ta-fmsg');var em=(f.querySelector('input[type=email]').value||'').trim();var bn=f.getAttribute('data-bill');var st=(new URLSearchParams(location.search)).get('state')||'CO';if(!em){m.textContent='Please enter your email.';return false;}m.textContent='Saving\u2026';if(!window.qcReady){m.textContent='Alerts are unavailable right now.';return false;}window.qcReady.then(function(qc){if(!qc){m.textContent='Alerts are unavailable right now.';return;}qc.from('bill_followers').insert({email:em,bill_number:bn,state:st}).then(function(res){if(res&&res.error){if(String(res.error.code||'')==='23505'){m.textContent='You\u2019re already on the list for this bill.';}else{m.textContent='Sorry \u2014 that didn\u2019t save. Please try again.';}return;}f.reset();m.textContent='Almost there \u2014 check your email and click the confirmation link.';}).catch(function(){m.textContent='Sorry \u2014 that didn\u2019t save. Please try again.';});});return false;}
+function taFollow(e,f){e.preventDefault();var m=f.querySelector('.ta-fmsg');var em=(f.querySelector('input[type=email]').value||'').trim();var bn=f.getAttribute('data-bill');var st=(new URLSearchParams(location.search)).get('state')||'CO';if(!em){m.textContent='Please enter your email.';return false;}m.textContent='Saving\u2026';if(!window.qcReady){m.textContent='Alerts are unavailable right now.';return false;}window.qcReady.then(function(qc){if(!qc){m.textContent='Alerts are unavailable right now.';return;}qc.from('bill_followers').insert({email:em,bill_number:bn,state:st}).then(function(res){if(res&&res.error){if(String(res.error.code||'')==='23505'){m.textContent='You\u2019re already on the list for this bill.';}else{m.textContent='Sorry, that didn\u2019t save. Please try again.';}return;}f.reset();m.textContent='Almost there! Check your email and click the confirmation link.';}).catch(function(){m.textContent='Sorry, that didn\u2019t save. Please try again.';});});return false;}
 if(window.qSync)qSync.init(function(){});
 function _billSaved(n){try{var a=JSON.parse(localStorage.getItem('qc_mybills')||'[]');for(var i=0;i<a.length;i++){if(String(a[i].number)===String(n))return true;}return false;}catch(e){return false;}}
 function taStarBill(btn){var n=btn.getAttribute('data-number'),t=btn.getAttribute('data-title');var a;try{a=JSON.parse(localStorage.getItem('qc_mybills')||'[]');}catch(e){a=[];}var i=-1;for(var j=0;j<a.length;j++){if(String(a[j].number)===String(n)){i=j;break;}}if(i>-1){a.splice(i,1);if(window.qSync)qSync.delBill(n);btn.innerHTML='\u2606 Save to My Bills';}else{a.push({number:n,title:t});if(window.qSync)qSync.addBill(n);btn.innerHTML='\u2605 Saved to My Bills';}try{localStorage.setItem('qc_mybills',JSON.stringify(a));}catch(e){}}
 function takeAction(number,title){
   var k="da0f4760-ac24-433c-b27f-52058241488e";var ttl=title||number;
-  var sup="Dear Representative or Senator,\n\nI am a constituent writing to urge you to SUPPORT "+number+" \u2014 "+ttl+".\n\n[Add one sentence on why this matters to you.]\n\nPlease vote yes. Thank you for your service.\n\nSincerely,\n[Your name] \u00b7 [Your city or ZIP]";
-  var opp="Dear Representative or Senator,\n\nI am a constituent writing to urge you to OPPOSE "+number+" \u2014 "+ttl+".\n\n[Add one sentence on why this concerns you.]\n\nPlease vote no. Thank you for your service.\n\nSincerely,\n[Your name] \u00b7 [Your city or ZIP]";
+  var sup="Dear Representative or Senator,\n\nI am a constituent writing to urge you to SUPPORT "+number+": "+ttl+".\n\n[Add one sentence on why this matters to you.]\n\nPlease vote yes. Thank you for your service.\n\nSincerely,\n[Your name] \u00b7 [Your city or ZIP]";
+  var opp="Dear Representative or Senator,\n\nI am a constituent writing to urge you to OPPOSE "+number+": "+ttl+".\n\n[Add one sentence on why this concerns you.]\n\nPlease vote no. Thank you for your service.\n\nSincerely,\n[Your name] \u00b7 [Your city or ZIP]";
   var eSub=encodeURIComponent("Colorado bill: "+number);var eBody=encodeURIComponent("I am following "+number+" ("+ttl+") on The Q Collective: "+location.href);
   return '<p class="section-label" style="margin-top:44px">Take Action</p><h2 class="section-title" style="margin-bottom:6px">Make your voice count on '+esc(number)+'</h2><div class="section-divider"></div>'
   +'<div class="ta-card"><h3>Contact your representative</h3><p>Copy a message, add a line of your own, and send it to your legislator. <a href="find-officials.html">Find your representative \u2192</a></p>'
@@ -585,7 +585,7 @@ function takeAction(number,title){
   +'<button class="ta-btn ghost" onclick="taCopyLink(this)">Copy link</button>'
   +'<a class="ta-btn ghost" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(location.href)+'">LinkedIn</a>'
   +'<a class="ta-btn ghost" href="mailto:?subject='+eSub+'&body='+eBody+'">Email</a></div></div>'
-  +'<div class="ta-card"><h3>Testify on it</h3><p>You have the right to speak on any bill at the Colorado legislature \u2014 here is how.</p>'
+  +'<div class="ta-card"><h3>Testify on it</h3><p>You have the right to speak on any bill at the Colorado legislature. Here is how.</p>'
   +'<button class="ta-toggle" onclick="taToggle(this)">+ How to testify on this bill</button>'
   +'<div class="ta-details"><ol>'
   +'<li><b>Find the hearing.</b> Check this bill\u2019s status above for its committee, then find the hearing date on the <a href="https://leg.colorado.gov" target="_blank" rel="noopener">Colorado General Assembly site \u2197</a>.</li>'
@@ -593,14 +593,14 @@ function takeAction(number,title){
   +'<li><b>Keep it short.</b> You usually get about 3 minutes. Say who you are, whether you support or oppose '+esc(number)+', and one real reason why.</li>'
   +'<li><b>A simple structure:</b> \u201cMy name is ___, I live in ___. I am here to [support/oppose] '+esc(number)+'. This matters to me because ___. I urge a [yes/no] vote. Thank you.\u201d</li>'
   +'</ol></div></div>'
-  +'<div class="ta-card"><h3>Follow this bill</h3><p>Save it to your personal <b>My Bills</b> list \u2014 it shows where the bill is in the process and updates as it moves.</p>'
+  +'<div class="ta-card"><h3>Follow this bill</h3><p>Save it to your personal <b>My Bills</b> list; it shows where the bill is in the process and updates as it moves.</p>'
   +'<button class="ta-btn" data-number="'+esc(number)+'" data-title="'+esc(ttl)+'" onclick="taStarBill(this)">'+(_billSaved(number)?'\u2605 Saved to My Bills':'\u2606 Save to My Bills')+'</button>'
   +'<p style="margin:16px 0 8px;font-size:13px;color:var(--text-light)">Want an email when it changes? We\u2019ll notify you on a vote, a status change, or a hearing.</p>'+'<form data-bill="'+esc(number)+'" onsubmit="return taFollow(event,this)">'+'<div class="ta-follow"><input type="email" name="email" placeholder="you@email.com" required><button class="ta-btn" type="submit">Email me updates</button></div>'+'<p class="ta-fmsg" style="font-size:12px;color:var(--text-muted);margin:8px 0 0"></p>'+'<p style="font-size:11.5px;color:var(--text-muted);margin:8px 0 0">We\u2019ll send one confirmation email first. Unsubscribe any time. <a href="privacy.html">Privacy</a></p></form></div>';
 }
 
 function standForm(number){var k="da0f4760-ac24-433c-b27f-52058241488e";
-return '<p class="section-label" style="margin-top:44px">Be Heard</p><h2 class="section-title" style="margin-bottom:6px">Where do you stand on '+esc(number)+'?</h2><div class="section-divider"></div><p style="font-size:13.5px;color:var(--text-light);margin:0 0 6px">Tell us \u2014 we tally constituent positions to show legislators where their district stands.</p>'
-+'<div class="qform-wrap"><form class="qform" data-thanks="Recorded \u2014 thank you. Your position is now part of the case we carry." onsubmit="return submitQForm(event,this)"><input type="hidden" name="access_key" value="'+k+'"><input type="hidden" name="subject" value="[FYI · Q] Where do you stand \u2014 '+esc(number)+'"><input type="hidden" name="bill" value="'+esc(number)+'">'
+return '<p class="section-label" style="margin-top:44px">Be Heard</p><h2 class="section-title" style="margin-bottom:6px">Where do you stand on '+esc(number)+'?</h2><div class="section-divider"></div><p style="font-size:13.5px;color:var(--text-light);margin:0 0 6px">Tell us. We tally constituent positions to show legislators where their district stands.</p>'
++'<div class="qform-wrap"><form class="qform" data-thanks="Recorded. Thank you. Your position is now part of the case we carry." onsubmit="return submitQForm(event,this)"><input type="hidden" name="access_key" value="'+k+'"><input type="hidden" name="subject" value="[FYI · Q] Where do you stand: '+esc(number)+'"><input type="hidden" name="bill" value="'+esc(number)+'">'
 +'<label>Your position</label><div class="qf-radios"><label><input type="radio" name="position" value="Support" required> Support</label><label><input type="radio" name="position" value="Oppose"> Oppose</label><label><input type="radio" name="position" value="Watching"> Watching</label></div>'
 +'<div class="qf-row"><div><label>ZIP (optional)</label><input type="text" name="zip"></div><div><label>Email (optional)</label><input type="email" name="email"></div></div>'
 +'<label>Anything to add? (optional)</label><textarea name="comment" placeholder="Optional"></textarea>'
@@ -616,8 +616,8 @@ nameEl.textContent=number;
 fetch('data/'+state+'_bills.json?v='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(d){
   if(!d||!d.bills){nameEl.textContent='Not published yet';body.innerHTML='<p>Bill detail for this state isn\u2019t published yet. <a href="hub.html">Back to the Hub</a>.</p>';return;}
   var b=d.bills[number];
-  if(!b){nameEl.textContent=number+' \u2014 not found';body.innerHTML='<p>We couldn\u2019t find that bill. <a href="hub.html">Back to the Hub</a>.</p>';return;}
-  document.title=number+' \u2014 '+(b.title||'Bill')+' \u2014 The Q Collective';
+  if(!b){nameEl.textContent=number+': not found';body.innerHTML='<p>We couldn\u2019t find that bill. <a href="hub.html">Back to the Hub</a>.</p>';return;}
+  document.title=number+': '+(b.title||'Bill')+' | The Q Collective';
   nameEl.textContent=number; subEl.innerHTML=esc(b.title||'');
   var html='<div class="bill-status '+statusClass(b.status)+'">'+esc(b.status||'Status unknown')+(b.status_date?' <span class="bs-date">as of '+esc(b.status_date)+'</span>':'')+'</div>';
   if(b.description) html+='<p class="bill-desc">'+esc(b.description)+'</p>';

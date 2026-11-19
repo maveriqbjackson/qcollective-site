@@ -53,12 +53,12 @@
         '<h3>See your legislature in ways you never could before.</h3></div>' +
       '<div id="qa-body">' +
         '<ul id="qa-list">' +
-          '<li><span>&rarr;</span><div><b>New Hub views.</b> Read a plain-language briefing of the whole legislature, or explore it visually &mdash; the same scores, your way.</div></li>' +
+          '<li><span>&rarr;</span><div><b>New Hub views.</b> Read a plain-language briefing of the whole legislature, or explore it visually: the same scores, your way.</div></li>' +
           '<li><span>&rarr;</span><div><b>Follow any bill</b> and get an email the moment it moves.</div></li>' +
           '<li><span>&rarr;</span><div><b>Save your representatives</b> for quick check-ins on where they stand.</div></li>' +
           '<li><span>&rarr;</span><div><b>Coming soon:</b> see who works with whom, and find your rep on a Colorado map.</div></li>' +
         '</ul>' +
-        '<div id="qa-sub"><p><b>Get the Sunday Update.</b> The Q Score refreshes every Sunday &mdash; we\'ll send the recap to your inbox every Sunday evening.</p>' +
+        '<div id="qa-sub"><p><b>Get the Sunday Update.</b> The Q Score refreshes every Sunday. We\'ll send the recap to your inbox every Sunday evening.</p>' +
           '<div id="qa-form"><input id="qa-email" type="email" placeholder="you@email.com" autocomplete="email"><button id="qa-go">Sign me up</button></div>' +
           '<div id="qa-msg" aria-live="polite"></div>' +
           '<button id="qa-later">Maybe later</button>' +

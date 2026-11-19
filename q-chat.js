@@ -48,7 +48,7 @@
   var s = document.createElement("style"); s.textContent = CSS; document.head.appendChild(s);
 
   var Q = "Q Assistant";
-  var INTRO = "Hi \u2014 I'm the Q Assistant. Ask me anything, or paste a link and I'll weigh it against the seven pillars.<br><br><b>Quick links:</b> <a href='find-officials.html'>Find your reps</a> &middot; <a href='hub.html'>Q Scores</a> &middot; <a href='the-work.html'>The bills</a> &middot; <a href='support-a-bill.html'>Support a bill</a><br><br><b>Reach us:</b> <a href=\'contact.html\'>Contact</a> or <a href=\'work-with-us.html\'>Work with us</a>, or email team@theQcollective.org.<br><br><b>New here?</b> Tell me who you are below and I&rsquo;ll tailor this.";
+  var INTRO = "Hi! I'm the Q Assistant. Ask me anything, or paste a link and I'll weigh it against the seven pillars.<br><br><b>Quick links:</b> <a href='find-officials.html'>Find your reps</a> &middot; <a href='hub.html'>Q Scores</a> &middot; <a href='the-work.html'>The bills</a> &middot; <a href='support-a-bill.html'>Support a bill</a><br><br><b>Reach us:</b> <a href=\'contact.html\'>Contact</a> or <a href=\'work-with-us.html\'>Work with us</a>, or email team@theQcollective.org.<br><br><b>New here?</b> Tell me who you are below and I&rsquo;ll tailor this.";
 
   var wrap = document.createElement("div");
   wrap.innerHTML =
@@ -95,7 +95,7 @@
   function hideTip(){tip.classList.remove("show");clearTimeout(tipTimer);}
 
   var awaitOfficial=false, rosterCache=null;
-  function startOfficialLookup(){bubHTML('Sure \u2014 type your name as it appears on the ballot (for example, <b>Jane Smith</b>) and I\u2019ll pull up your Q Score and profile.');awaitOfficial=true;box.focus();}
+  function startOfficialLookup(){bubHTML('Sure. Type your name as it appears on the ballot (for example, <b>Jane Smith</b>) and I\u2019ll pull up your Q Score and profile.');awaitOfficial=true;box.focus();}
   function lookupOfficial(name){var t=typing();function done(list){t.remove();matchOfficial(name,list);}
     if(rosterCache){done(rosterCache);return;}
     fetch('data/CO.json').then(function(r){return r.json();}).then(function(d){rosterCache=(d&&d.legislators)||[];done(rosterCache);}).catch(function(){t.remove();bub('assistant','I couldn\u2019t load the roster just now. You can find your profile via the Accountability Hub (hub.html) or Find Your Officials (find-officials.html).');});}
@@ -103,10 +103,10 @@
     for(var i=0;i<list.length;i++){var n=(list[i].name||'').toLowerCase();if(n===q){hit=list[i];break;}
       var pa=n.split(' '),pb=q.split(' ');if(n.indexOf(q)>=0||q.indexOf(n)>=0||pa[pa.length-1]===pb[pb.length-1])hits.push(list[i]);}
     if(!hit&&hits.length===1)hit=hits[0];
-    if(hit){var url='legislator.html?state=CO&id='+encodeURIComponent(hit.id);var lab=hit.label?(' \u2014 '+esc(hit.label)):'';
-      bubHTML('Here you are, <b>'+esc(hit.name)+'</b> ('+esc(hit.role||'')+', District '+esc(String(hit.district||''))+'):<br><br>'+(hit.score==null?'You don’t have a Q Score yet. It starts once you’ve cast 5 recorded votes this session':'Your Q Score is <b>'+esc(String(hit.score))+'</b>')+''+lab+'.<br><br>See your full profile \u2014 every factor and the data behind it: <a href="'+url+'">Your profile &amp; record</a>. If anything needs context, you can submit an official response via <a href="contact.html">Contact</a>.');}
+    if(hit){var url='legislator.html?state=CO&id='+encodeURIComponent(hit.id);var lab=hit.label?(' ('+esc(hit.label)+')'):'';
+      bubHTML('Here you are, <b>'+esc(hit.name)+'</b> ('+esc(hit.role||'')+', District '+esc(String(hit.district||''))+'):<br><br>'+(hit.score==null?'You don’t have a Q Score yet. It starts once you’ve cast 5 recorded votes this session':'Your Q Score is <b>'+esc(String(hit.score))+'</b>')+''+lab+'.<br><br>See your full profile, every factor and the data behind it: <a href="'+url+'">Your profile &amp; record</a>. If anything needs context, you can submit an official response via <a href="contact.html">Contact</a>.');}
     else if(hits.length>1){var links=hits.slice(0,6).map(function(h){return '<a href="legislator.html?state=CO&id='+encodeURIComponent(h.id)+'">'+esc(h.name)+'</a>';}).join(' &middot; ');
-      bubHTML('I found a few possible matches \u2014 which one is you? '+links);}
+      bubHTML('I found a few possible matches. Which one is you? '+links);}
     else{bubHTML('I couldn\u2019t find that exact name in the Colorado roster. Double-check the spelling, or browse everyone at <a href="find-officials.html">Find Your Officials</a> or the <a href="hub.html">Accountability Hub</a>.');}}
   function ask(text){
     if(!text.trim())return;
@@ -115,12 +115,12 @@
     box.value="";box.style.height="auto";send.disabled=true;
     var url=window.Q_WORKER_URL||"";
     if(!url){var t=typing();setTimeout(function(){t.remove();
-      bub("assistant","The assistant is coming online soon \u2014 the live chat isn't connected on this page yet. In the meantime, everything I'd draw from is public on the site: try The Work, or the bill itself.");
+      bub("assistant","The assistant is coming online soon. The live chat isn't connected on this page yet. In the meantime, everything I'd draw from is public on the site: try The Work, or the bill itself.");
       send.disabled=false;},450);return;}
     var t=typing();
     fetch(url,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:history})})
       .then(function(r){return r.json();})
-      .then(function(d){t.remove();var reply=(d&&d.reply)||"Sorry \u2014 I couldn't answer that just now.";
+      .then(function(d){t.remove();var reply=(d&&d.reply)||"Sorry, I couldn't answer that just now.";
         bub("assistant",reply);history.push({role:"assistant",content:reply});send.disabled=false;})
       .catch(function(){t.remove();bub("assistant","Something went wrong reaching me. Please try again, or email team@theQcollective.org.");send.disabled=false;});
   }

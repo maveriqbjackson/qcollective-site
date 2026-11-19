@@ -3,7 +3,7 @@
 <title>The Sunday Update | The Q Collective</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Q Collective">
-<meta property="og:title" content="The Sunday Update — The Q Collective">
+<meta property="og:title" content="The Sunday Update | The Q Collective">
 <meta property="og:description" content="Free every Sunday evening: what moved in the Colorado legislature, whose record changed, and the dates that matter. From The Q Collective.">
 <meta property="og:url" content="https://theqcollective.org/sunday.html">
 <meta property="og:image" content="https://theqcollective.org/og/sunday.png">
@@ -175,7 +175,7 @@
     .crow { grid-template-columns: 1fr; }
     .crow > div { border-bottom: 1px solid var(--border); }
     .crow .clabel { background: var(--navy-deep); color: var(--gold-light); }
-    .crow .c-fw::before { content: 'Fair Work Act — '; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
+    .crow .c-fw::before { content: 'Fair Work Act'; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
     .crow.chead { display: none; }
     .hero-wm, .hero-wm2, .mission-wm, .pillars-wm, .contact-wm { display: none; }
   }
@@ -575,7 +575,7 @@ function goTo(e, url){ try{ if(window.top && window.top!==window.self){ window.t
 (function(){var f=document.getElementById('qform'),m=document.getElementById('qmsg');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();m.textContent='Sending...';m.style.color='#8a8a8a';
 fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)}).then(function(r){return r.json();})
-.then(function(d){if(d.success){f.reset();m.textContent='Thank you \u2014 you\u2019re on the list.';m.style.color='#2e7d32';}
+.then(function(d){if(d.success){f.reset();m.textContent='Thank you! You\u2019re on the list.';m.style.color='#2e7d32';}
 else{m.textContent='Something went wrong. Please email team@theQcollective.org.';m.style.color='#c0392b';}})
 .catch(function(){m.textContent='Something went wrong. Please email team@theQcollective.org.';m.style.color='#c0392b';});});})();
 </script>

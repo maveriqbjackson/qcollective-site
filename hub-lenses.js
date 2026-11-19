@@ -12,7 +12,7 @@
   function num(v) { return typeof v === "number" ? v : (v == null ? null : (isNaN(+v) ? null : +v)); }
   function last(s) { return String(s || "").split(" ").slice(-1)[0]; }
   function pcolor(p) { return p === "D" ? "#2E5BE6" : p === "R" ? "#BF0A30" : "#3FA45C"; }
-  function plabel(p) { return p === "D" ? "Democrat" : p === "R" ? "Republican" : p === "I" ? "Independent" : p === "U" ? "Unaffiliated" : p ? "Third party" : "\u2014"; }
+  function plabel(p) { return p === "D" ? "Democrat" : p === "R" ? "Republican" : p === "I" ? "Independent" : p === "U" ? "Unaffiliated" : p ? "Third party" : "\u2013"; }
 
   var current = "list", webPin = null;
 
@@ -151,10 +151,10 @@
     la.innerHTML =
       '<div class="qw-stage"><div class="qw-head"><span class="t">' + esc((window.CUR && window.CUR.state_name) || "Colorado") + ' General Assembly &middot; co-authorship</span><span class="r">tap or hover to pin &middot; pinch or scroll to zoom</span></div><div class="qw-searchbar"><input class="qw-search" id="qwSearch" list="qwNames" placeholder="Find your legislator…" autocomplete="off"><datalist id="qwNames"></datalist></div>' +
       '<div class="qw-canvas"><div id="qwWeb"></div><div class="qw-zoom" id="qwZoom"><button data-z="in" title="zoom in">+</button><button data-z="out" title="zoom out">&minus;</button><button data-z="reset" title="reset">&#8635;</button></div></div></div>' +
-      '<div class="qw-panel"><div class="qw-empty" id="qwEmpty">Hover a lawmaker to preview &mdash; click to pin their details here.</div>' +
+      '<div class="qw-panel"><div class="qw-empty" id="qwEmpty">Hover a lawmaker to preview; click to pin their details here.</div>' +
       '<div class="qw-body" id="qwBody"><div class="qw-l"><div class="qw-tag" id="qwTag"></div><div class="qw-name" id="qwName"></div><div class="qw-meta" id="qwMeta"></div><div class="qw-score"><span class="v" id="qwScore"></span><span class="lab" id="qwLab"></span></div><div class="qw-comp" id="qwComp"></div><div class="qw-acts"><button class="qw-act star" id="qwStar">&#9734; Save</button><button class="qw-act gold" id="qwProf">Open full profile &rarr;</button></div></div>' +
       '<div class="qw-r"><h4 id="qwCoHead">Works most with</h4><div id="qwCo"></div></div></div></div>' +
-      '<div class="qw-note"><b>Why it\u2019s laid out this way:</b> no one is placed by party. Position is set entirely by who they co-author bills with &mdash; write together, pull together. The clusters form on their own, so a dot among the other color genuinely works across the aisle.</div>' +
+      '<div class="qw-note"><b>Why it\u2019s laid out this way:</b> no one is placed by party. Position is set entirely by who they co-author bills with. Write together, pull together. The clusters form on their own, so a dot among the other color genuinely works across the aisle.</div>' +
       '<div class="qw-key"><h5>How to read it</h5><div class="qw-kg" id="qwKey"></div></div>';
 
     var NET = buildNetwork();
@@ -216,8 +216,8 @@
       byId("qwName").textContent = n.n;
       byId("qwMeta").textContent = plabel(n.p) + " \u00b7 " + (n.c === "H" ? "House" : "Senate") + (n.d ? " \u00b7 District " + n.d : "") + " \u00b7 led " + n.b + " bills \u00b7 " + n.k + " co-authors";
       byId("qwScore").textContent = n.s; var lab = byId("qwLab"); lab.textContent = n.lab || "Scored"; lab.className = "lab" + (n.s >= 80 ? " champ" : "");
-      byId("qwComp").innerHTML = [["Pillar", n.pi], ["Attend", n.at], ["Impact", n.im], ["Spons", n.sp]].map(function (c) { var v = c[1] == null ? 0 : c[1]; return '<div class="row"><span class="k">' + c[0] + '</span><span class="bar"><span style="width:' + v + '%"></span></span><span class="n">' + (c[1] == null ? "\u2014" : c[1]) + "</span></div>"; }).join("");
-      byId("qwCoHead").textContent = "Works most with \u2014 " + last(n.n);
+      byId("qwComp").innerHTML = [["Pillar", n.pi], ["Attend", n.at], ["Impact", n.im], ["Spons", n.sp]].map(function (c) { var v = c[1] == null ? 0 : c[1]; return '<div class="row"><span class="k">' + c[0] + '</span><span class="bar"><span style="width:' + v + '%"></span></span><span class="n">' + (c[1] == null ? "\u2013" : c[1]) + "</span></div>"; }).join("");
+      byId("qwCoHead").textContent = "Works most with " + last(n.n);
       byId("qwCo").innerHTML = (n.top || []).map(function (t) { return '<div class="qw-co" data-id="' + t[1] + '"><span class="co-n">' + esc(t[0]) + '</span><span class="co-w">' + t[2] + " bills</span></div>"; }).join("");
       byId("qwCo").querySelectorAll(".qw-co").forEach(function (el) { el.addEventListener("click", function () { pin(el.dataset.id); }); });
       var starBtn = byId("qwStar"); function paint() { var on = isStarred(id); starBtn.classList.toggle("on", on); starBtn.innerHTML = on ? "&#9733; Saved" : "&#9734; Save"; } paint();

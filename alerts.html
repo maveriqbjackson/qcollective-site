@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Bill Alerts — The Q Collective</title>
+<title>Bill Alerts | The Q Collective</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Q Collective">
-<meta property="og:title" content="Bill Alerts — The Q Collective">
+<meta property="og:title" content="Bill Alerts | The Q Collective">
 <meta property="og:description" content="Follow any Colorado bill and get an email the moment it moves. Bill alerts from The Q Collective.">
 <meta property="og:url" content="https://theqcollective.org/alerts.html">
 <meta property="og:image" content="https://theqcollective.org/og/alerts.png">
@@ -175,7 +175,7 @@
     .crow { grid-template-columns: 1fr; }
     .crow > div { border-bottom: 1px solid var(--border); }
     .crow .clabel { background: var(--navy-deep); color: var(--gold-light); }
-    .crow .c-fw::before { content: 'Fair Work Act — '; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
+    .crow .c-fw::before { content: 'Fair Work Act'; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
     .crow.chead { display: none; }
     .hero-wm, .hero-wm2, .mission-wm, .pillars-wm, .contact-wm { display: none; }
   }
@@ -518,7 +518,7 @@
       if(res&&res.error){say('Something went wrong','Please try the link again, or write to us at team&#64;theQcollective.org.',true);return;}
       if(v==='notfound'){say('Link not recognized','That link has already been used or is no longer valid.',true);return;}
       if(doWhat==='unsubscribe'){say('You\u2019re unsubscribed','You will not receive further alerts for that bill. You can follow it again any time from the bill\u2019s page.',true);}
-      else {say('You\u2019re confirmed \u2713','We\u2019ll email you when this bill moves \u2014 a vote, a status change, a hearing. Every alert has a one-click unsubscribe.',true);}
+      else {say('You\u2019re confirmed \u2713','We\u2019ll email you when this bill moves: a vote, a status change, a hearing. Every alert has a one-click unsubscribe.',true);}
     }).catch(function(){say('Something went wrong','Please try the link again, or write to us at team&#64;theQcollective.org.',true);});
   });
 })();
@@ -532,7 +532,7 @@ function goTo(e, url){ try{ if(window.top && window.top!==window.self){ window.t
 (function(){var f=document.getElementById('qform'),m=document.getElementById('qmsg');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();m.textContent='Sending...';m.style.color='#8a8a8a';
 fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)}).then(function(r){return r.json();})
-.then(function(d){if(d.success){f.reset();m.textContent='Thank you \u2014 you\u2019re on the list.';m.style.color='#2e7d32';}
+.then(function(d){if(d.success){f.reset();m.textContent='Thank you! You\u2019re on the list.';m.style.color='#2e7d32';}
 else{m.textContent='Something went wrong. Please email team@theQcollective.org.';m.style.color='#c0392b';}})
 .catch(function(){m.textContent='Something went wrong. Please email team@theQcollective.org.';m.style.color='#c0392b';});});})();
 </script>

@@ -1,11 +1,11 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Legislator Profile — The Q Collective</title>
+<title>Legislator Profile | The Q Collective</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Q Collective">
-<meta property="og:title" content="Legislator Profile — The Q Collective">
-<meta property="og:description" content="Q Scores and public records from The Q Collective — nonpartisan legislative accountability.">
+<meta property="og:title" content="Legislator Profile | The Q Collective">
+<meta property="og:description" content="Q Scores and public records from The Q Collective. Nonpartisan legislative accountability.">
 <meta property="og:url" content="https://theqcollective.org/national-profile.html">
 <meta property="og:image" content="https://theqcollective.org/og/national-profile.png">
 <meta property="og:image:width" content="1200">
@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://theqcollective.org/og/national-profile.png">
 <meta name="robots" content="index,follow">
-<meta name="description" content="Q Scores and public records from The Q Collective — nonpartisan legislative accountability.">
+<meta name="description" content="Q Scores and public records from The Q Collective. Nonpartisan legislative accountability.">
 <link rel="canonical" href="https://theqcollective.org/national-profile.html">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 <style>
@@ -177,7 +177,7 @@
     .crow { grid-template-columns: 1fr; }
     .crow > div { border-bottom: 1px solid var(--border); }
     .crow .clabel { background: var(--navy-deep); color: var(--gold-light); }
-    .crow .c-fw::before { content: 'Fair Work Act — '; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
+    .crow .c-fw::before { content: 'Fair Work Act'; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
     .crow.chead { display: none; }
     .hero-wm, .hero-wm2, .mission-wm, .pillars-wm, .contact-wm { display: none; }
   }
@@ -559,12 +559,12 @@ var av=p.photo?'<img src="'+p.photo+'" alt="" style="width:84px;height:84px;bord
 var rub=jud?[['Ruling Alignment','50%'],['Citizen Impact','25%'],['Consistency & Principle','15%'],['Institutional Integrity','10%']]:[['Pillar Alignment of Actions','40%'],['Citizen Impact','30%'],['Implementation & Delivery','20%'],['Transparency & Accountability','10%']];
 var rows=rub.map(function(r){return '<div class="score-row"><span>'+r[0]+'</span><span class="v">'+r[1]+'</span></div>';}).join('');
 var score=(p.score===null||p.score===undefined||p.score==='')?'<div class="score-big" style="font-size:25px;color:var(--gold)">Launching soon</div><div class="score-label">Q Score</div>':'<div class="score-big">'+p.score+'</div><div class="score-label">Q Score</div>';
-var measure=jud?'We measure this seat by its rulings &mdash; how the Justice&rsquo;s opinions and votes affect the seven pillars of life stability, whether they protect the stability of everyday people, and whether they are applied consistently and with institutional integrity. Read from published opinions, never from party.':'We measure this office by what it actually does &mdash; the bills it signs or vetoes, the executive orders it issues, the budgets it proposes, and the people it appoints &mdash; scored on whether those actions advance the seven pillars of life stability, deliver real results, and are carried out in the open.';
-body.innerHTML='<div style="display:flex;align-items:center;gap:18px;margin-bottom:28px">'+av+'<p style="font-size:15px;color:var(--text-light);margin:0;max-width:430px;line-height:1.7">Held to the same transparent standard as every official we score &mdash; from your statehouse to the highest court in the land.</p></div><div class="factbox">'+score+'<p style="margin:16px 0 6px;font-size:13px;color:var(--text-light)">Will be scored on the '+(p.rubric||'')+' rubric:</p>'+rows+'<p style="margin:14px 0 0;font-size:13px"><a href="how-q-scores-work.html">See the full methodology &rarr;</a></p></div><p class="section-label" style="margin-top:44px">What We Measure</p><h2 class="section-title" style="margin-bottom:6px">How this office earns its score</h2><div class="section-divider"></div><p style="font-size:16px;color:var(--text-light);line-height:1.85;max-width:680px">'+measure+'</p>';
+var measure=jud?'We measure this seat by its rulings: how the Justice&rsquo;s opinions and votes affect the seven pillars of life stability, whether they protect the stability of everyday people, and whether they are applied consistently and with institutional integrity. Read from published opinions, never from party.':'We measure this office by what it actually does: the bills it signs or vetoes, the executive orders it issues, the budgets it proposes, and the people it appoints, scored on whether those actions advance the seven pillars of life stability, deliver real results, and are carried out in the open.';
+body.innerHTML='<div style="display:flex;align-items:center;gap:18px;margin-bottom:28px">'+av+'<p style="font-size:15px;color:var(--text-light);margin:0;max-width:430px;line-height:1.7">Held to the same transparent standard as every official we score, from your statehouse to the highest court in the land.</p></div><div class="factbox">'+score+'<p style="margin:16px 0 6px;font-size:13px;color:var(--text-light)">Will be scored on the '+(p.rubric||'')+' rubric:</p>'+rows+'<p style="margin:14px 0 0;font-size:13px"><a href="how-q-scores-work.html">See the full methodology &rarr;</a></p></div><p class="section-label" style="margin-top:44px">What We Measure</p><h2 class="section-title" style="margin-bottom:6px">How this office earns its score</h2><div class="section-divider"></div><p style="font-size:16px;color:var(--text-light);line-height:1.85;max-width:680px">'+measure+'</p>';
 }).catch(function(){fail('Could not load');});})();
 </script>
  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6aff6948b0f84ed0b1530a42458bbb3b"}'></script><!-- End Cloudflare Web Analytics -->
-<script src="wip-notice.js?v=1" data-id="national-progress" data-msg="Federal Q Scores — President, Vice President, and the U.S. Supreme Court — are launching soon. Colorado is live first." data-link="how-q-scores-work.html" data-linktext="How scoring works"></script>
+<script src="wip-notice.js?v=1" data-id="national-progress" data-msg="Federal Q Scores (President, Vice President, and the U.S. Supreme Court) are launching soon. Colorado is live first." data-link="how-q-scores-work.html" data-linktext="How scoring works"></script>
 <script src="q-config.js"></script><script src="q-chat.js"></script>
 <script src="site-chrome.js"></script>
 </body></html>

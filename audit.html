@@ -1,11 +1,11 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Audit Log — The Q Collective</title>
+<title>Audit Log | The Q Collective</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Q Collective">
-<meta property="og:title" content="Audit Log — The Q Collective">
-<meta property="og:description" content="Q Scores and public records from The Q Collective — nonpartisan legislative accountability.">
+<meta property="og:title" content="Audit Log | The Q Collective">
+<meta property="og:description" content="Q Scores and public records from The Q Collective. Nonpartisan legislative accountability.">
 <meta property="og:url" content="https://theqcollective.org/audit.html">
 <meta property="og:image" content="https://theqcollective.org/og/audit.png">
 <meta property="og:image:width" content="1200">
@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://theqcollective.org/og/audit.png">
 <meta name="robots" content="index,follow">
-<meta name="description" content="Q Scores and public records from The Q Collective — nonpartisan legislative accountability.">
+<meta name="description" content="Q Scores and public records from The Q Collective. Nonpartisan legislative accountability.">
 <link rel="canonical" href="https://theqcollective.org/audit.html">
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="q-chrome.css">
@@ -223,7 +223,7 @@ function renderRun(r){
           '<span class="pill '+(ls==='updated'?'upd':'unch')+'">LegiScan: '+esc(ls||'n/a')+'</span>'+
           (s.counts?'<span class="pill">'+s.counts.legislators+' legislators</span><span class="pill">'+s.counts.champions+' champions</span><span class="pill">'+s.counts.executive_scored+' exec &middot; '+s.counts.judicial_scored+' judicial</span>':'')+
         '</div>'+
-        (any? renderChanges(c) : '<p class="nochange">No scores changed &mdash; the system ran and confirmed everything is stable.</p>')+
+        (any? renderChanges(c) : '<p class="nochange">No scores changed. The system ran and confirmed everything is stable.</p>')+
       '</div>';
     });
   }
@@ -259,7 +259,7 @@ function renderStatus(health,idx,ds,latestCounts,engine){
   var updated = (idx && idx.updated) || (health && health.last_run);
   var d = updated? parseUpdated(updated): null;
   var days = d? daysSince(d): null;
-  var dateStr = updated? String(updated).replace(/\s+at\s+.*$/,'') : '\u2014';
+  var dateStr = updated? String(updated).replace(/\s+at\s+.*$/,'') : '\u2013';
   var state = hasErr? 'err' : (days!=null && days>9? 'stale':'ok');
   box.className='sysstat '+state;
   if(state==='err'){
@@ -270,7 +270,7 @@ function renderStatus(health,idx,ds,latestCounts,engine){
   } else if(state==='stale'){
     lbl.textContent='Refresh overdue';
     head.textContent='A weekly refresh looks overdue';
-    sub.textContent='Scores last updated '+dateStr+' ('+days+' days ago). The engine runs every Sunday \u2014 a scheduled run may have been missed. Check the Actions link below.';
+    sub.textContent='Scores last updated '+dateStr+' ('+days+' days ago). The engine runs every Sunday. A scheduled run may have been missed. Check the Actions link below.';
   } else {
     lbl.textContent='Operational';
     head.textContent='All systems operational';

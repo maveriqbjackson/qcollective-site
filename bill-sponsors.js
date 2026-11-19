@@ -50,7 +50,7 @@
 
     var scored = prim.filter(function (r) { return typeof r.s === "number"; });
     var D = prim.filter(function (r) { return r.p === "D"; }).length, R = prim.filter(function (r) { return r.p === "R"; }).length, Ot = prim.length - D - R;
-    var avg = scored.length ? Math.round(scored.reduce(function (a, b) { return a + b.s; }, 0) / scored.length) : "\u2014";
+    var avg = scored.length ? Math.round(scored.reduce(function (a, b) { return a + b.s; }, 0) / scored.length) : "\u2013";
     var champs = prim.filter(function (r) { return r.champ; }).length;
     var cosp = Math.max(0, sp.length - prim.length);
     var bip = [D, R, Ot].filter(function (x) { return x > 0; }).length > 1;
@@ -76,7 +76,7 @@
         prim.forEach(function (r) { var out = r.y < cy; svg += '<text x="' + r.x.toFixed(1) + '" y="' + (r.y + (out ? -14 : 20)).toFixed(1) + '" text-anchor="middle" font-family="DM Mono,monospace" font-size="9.5" fill="#fff">' + esc(last(r.n)) + "</text>"; });
         svg += "</svg>";
         var maxPairs = n * (n - 1) / 2, dens = edges.length / maxPairs;
-        var msg = dens >= 0.7 ? "These sponsors <b>regularly work together</b> &mdash; a real coalition, not names assembled for one vote." : dens >= 0.3 ? "A <b>partial coalition</b> &mdash; several of these sponsors co-author often; others signed on for this bill." : "Mostly an <b>assembled coalition</b> &mdash; these sponsors don&rsquo;t usually co-author, so this bill brought them together.";
+        var msg = dens >= 0.7 ? "These sponsors <b>regularly work together</b>: a real coalition, not names assembled for one vote." : dens >= 0.3 ? "A <b>partial coalition</b>: several of these sponsors co-author often; others signed on for this bill." : "Mostly an <b>assembled coalition</b>: these sponsors don&rsquo;t usually co-author, so this bill brought them together.";
         net = '<div class="qcb-net">' + svg + "</div>";
         note = '<div class="qcb-netnote"><b>How the sponsors connect.</b> ' + msg + " Gold lines cross the aisle.</div>";
       }

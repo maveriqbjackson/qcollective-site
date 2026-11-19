@@ -68,10 +68,10 @@
       nodes.forEach(function (n) { var ch = n.s >= 80; svg += '<circle class="qc-node" data-id="' + esc(n.id) + '" cx="' + n.x.toFixed(1) + '" cy="' + n.y.toFixed(1) + '" r="' + rr(n).toFixed(1) + '" fill="' + pcolor(n.p) + '" stroke="' + (n.id === me ? "#fff" : ch ? "#D4AF50" : "rgba(255,255,255,.35)") + '" stroke-width="' + (n.id === me ? 3 : ch ? 2.4 : 1) + '"/>'; });
       nodes.forEach(function (n) { svg += '<text class="qc-node-lab" data-id="' + esc(n.id) + '" x="' + n.x.toFixed(1) + '" y="' + (n.y - rr(n) - 4).toFixed(1) + '" text-anchor="middle" font-family="DM Mono,monospace" font-size="' + (n.id === me ? 11 : 9.5) + '" fill="#fff"' + (n.id === me ? ' font-weight="700"' : "") + ">" + esc(last(n.n)) + "</text>"; });
       svg += "</svg>";
-      var colist = tops.map(function (t) { return '<div class="qc-co" data-id="' + esc(t.id) + '"><span class="qc-dot" style="background:' + pcolor(t.p) + '"></span><span class="qc-cn">' + esc(t.n) + '</span><span class="qc-meta"><b>' + t.w + "</b> bills \u00b7 Q " + (t.s == null ? "\u2014" : t.s) + "</span></div>"; }).join("");
-      var xa = xparty.length ? "Reaches across the aisle most with <b>" + esc(xparty[0].n) + " (" + xparty[0].p + ")</b> \u2014 " + xparty[0].w + " bills together." : "Works mostly within their own party this session.";
+      var colist = tops.map(function (t) { return '<div class="qc-co" data-id="' + esc(t.id) + '"><span class="qc-dot" style="background:' + pcolor(t.p) + '"></span><span class="qc-cn">' + esc(t.n) + '</span><span class="qc-meta"><b>' + t.w + "</b> bills \u00b7 Q " + (t.s == null ? "\u2013" : t.s) + "</span></div>"; }).join("");
+      var xa = xparty.length ? "Reaches across the aisle most with <b>" + esc(xparty[0].n) + " (" + xparty[0].p + ")</b>: " + xparty[0].w + " bills together." : "Works mostly within their own party this session.";
       host.innerHTML = head +
-        '<p class="qc-sub">Drawn from who they co-author bills with \u2014 the same public data behind the Hub\u2019s web. Tap any name to open their profile.</p>' +
+        '<p class="qc-sub">Drawn from who they co-author bills with, the same public data behind the Hub\u2019s web. Tap any name to open their profile.</p>' +
         '<div class="qc-grid"><div class="qc-web">' + svg + '</div><div class="qc-side"><div class="qc-xa">' + xa + '</div><h4 class="qc-h">Closest collaborators (' + primc[me] + ' bills led \u00b7 ' + Object.keys(pt).length + ' co-authors)</h4>' + colist + "</div></div>";
       host.querySelectorAll(".qc-co,.qc-node,.qc-node-lab").forEach(function (el) { el.addEventListener("click", function () { go(el.dataset.id); }); });
     }

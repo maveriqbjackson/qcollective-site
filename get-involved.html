@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Get Involved — The Q Collective</title>
+<title>Get Involved | The Q Collective</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Q Collective">
-<meta property="og:title" content="Get Involved — The Q Collective">
+<meta property="og:title" content="Get Involved | The Q Collective">
 <meta property="og:description" content="Get involved with The Q Collective. Follow bills, hold your legislators accountable, and help build a more transparent Colorado.">
 <meta property="og:url" content="https://theqcollective.org/get-involved.html">
 <meta property="og:image" content="https://theqcollective.org/og/get-involved.png">
@@ -175,7 +175,7 @@
     .crow { grid-template-columns: 1fr; }
     .crow > div { border-bottom: 1px solid var(--border); }
     .crow .clabel { background: var(--navy-deep); color: var(--gold-light); }
-    .crow .c-fw::before { content: 'Fair Work Act — '; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
+    .crow .c-fw::before { content: 'Fair Work Act'; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px; }
     .crow.chead { display: none; }
     .hero-wm, .hero-wm2, .mission-wm, .pillars-wm, .contact-wm { display: none; }
   }
@@ -503,18 +503,18 @@
 <div class="section-divider"></div>
 <p class="section-lead" style="max-width:760px">In Colorado, any resident can register as a volunteer lobbyist and speak directly to the legislature on the bills they care about. It&rsquo;s free, quick, and one of the most direct ways to be heard.</p>
 <div class="steps">
-<div class="step"><div class="snum">1</div><h4>Register</h4><p>Sign up as a volunteer lobbyist through the Colorado Senate &mdash; it takes just a few minutes.</p></div>
+<div class="step"><div class="snum">1</div><h4>Register</h4><p>Sign up as a volunteer lobbyist through the Colorado Senate. It takes just a few minutes.</p></div>
 <div class="step"><div class="snum">2</div><h4>Name your group</h4><p>When asked which organization you represent, list it exactly as <strong>The Q Collective / Doctrine Policy Group</strong>.</p></div>
-<div class="step"><div class="snum">3</div><h4>Speak up</h4><p>Weigh in on the bills that matter to you. New to it? Tell us &mdash; we&rsquo;ll help you find your footing.</p></div>
+<div class="step"><div class="snum">3</div><h4>Speak up</h4><p>Weigh in on the bills that matter to you. New to it? Tell us and we&rsquo;ll help you find your footing.</p></div>
 </div>
 <p style="margin-top:26px"><a class="btn-gold" href="https://content.leg.colorado.gov/agencies/senate/volunteer-lobbyist" target="_blank" rel="noopener">Register with the Colorado Senate &rarr;</a></p>
 
 <p class="section-label" style="margin-top:46px">More Ways In</p>
 <h2 class="section-title" style="margin-bottom:6px">Make your voice count.</h2><div class="section-divider"></div>
 <div class="tracks">
-<div class="track"><h3>Find Your Officials</h3><p>See exactly who represents you &mdash; from your U.S. Senators to your Governor and Attorney General.</p><a class="card-link" href="find-officials.html">Look them up &rarr;</a></div>
+<div class="track"><h3>Find Your Officials</h3><p>See exactly who represents you, from your U.S. Senators to your Governor and Attorney General.</p><a class="card-link" href="find-officials.html">Look them up &rarr;</a></div>
 <div class="track"><h3>Contact Your Reps</h3><p>Tell your representatives how you feel about the issues that matter most. We&rsquo;ll help you reach them.</p><a class="card-link" href="find-officials.html">Find your reps &rarr;</a></div>
-<div class="track"><h3>Ask Us Anything</h3><p>Questions about a bill or an issue? Want advice on getting involved? Reach out &mdash; we&rsquo;re here for it.</p><a class="card-link" href="work-with-us.html">Get in touch &rarr;</a></div>
+<div class="track"><h3>Ask Us Anything</h3><p>Questions about a bill or an issue? Want advice on getting involved? Reach out. We&rsquo;re here for it.</p><a class="card-link" href="work-with-us.html">Get in touch &rarr;</a></div>
 <div class="track"><h3>Support a Bill</h3><p>Add your name behind the legislation you believe in, so lawmakers see real support.</p><a class="card-link" href="support-a-bill.html">Add your support &rarr;</a></div>
 </div>
 <div style="height:1px;background:var(--border);margin:48px 0"></div>
@@ -522,7 +522,7 @@
 <p class="section-label">Stay in the Loop</p>
 <h2 class="section-title" style="margin-bottom:6px">Tell us you&rsquo;re in.</h2>
 <div class="section-divider"></div>
-<p class="section-lead" style="max-width:640px">Updates on the bills, the Accountability Hub, and ways to help. No spam &mdash; just the work.</p>
+<p class="section-lead" style="max-width:640px">Updates on the bills, the Accountability Hub, and ways to help. No spam, just the work.</p>
 <form class="form" id="qform">
 <input type="hidden" name="access_key" value="da0f4760-ac24-433c-b27f-52058241488e">
 <input type="hidden" name="subject" value="[FYI · Q] Get Involved sign-up">
@@ -544,7 +544,7 @@ function goTo(e, url){ try{ if(window.top && window.top!==window.self){ window.t
 (function(){var f=document.getElementById('qform'),m=document.getElementById('qmsg');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();m.textContent='Sending...';m.style.color='#8a8a8a';
 fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)}).then(function(r){return r.json();})
-.then(function(d){if(d.success){f.reset();m.textContent='Thank you \u2014 you\u2019re on the list.';m.style.color='#2e7d32';}
+.then(function(d){if(d.success){f.reset();m.textContent='Thank you! You\u2019re on the list.';m.style.color='#2e7d32';}
 else{m.textContent='Something went wrong. Please email team@theQcollective.org.';m.style.color='#c0392b';}})
 .catch(function(){m.textContent='Something went wrong. Please email team@theQcollective.org.';m.style.color='#c0392b';});});})();
 </script>
