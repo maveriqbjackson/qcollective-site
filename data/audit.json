@@ -2667,6 +2667,63 @@
      "summary": "legislator scores unchanged."
     }
    }
+  },
+  {
+   "ts": "November 19, 2026 at 7:21 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "07c19b0",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/07c19b0",
+   "note": "Catch-up election update after missed runs: AP called Alaska's Senate and governor's races, North Carolina's 3rd flipped, and the House count moved to 257 to 171 with 7 uncalled; three Colorado state House races are still waiting on a call.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "National election map",
+      "url": "election-2026-map.html",
+      "what": "Alaska U.S. Senate race called by AP for Mary Peltola (D) on Nov. 17, a pickup.",
+      "before": "Mary Peltola (D) leads Dan Sullivan (R) by about 10,400 votes, 49.8% to 46.1%, with about 96% counted after the Nov. 13 count. Ranked-choice tally Nov. 18 if no one tops 50% (Counting)",
+      "after": "Mary Peltola (D), flipped to Democrat. Defeated Dan Sullivan (R), 144,302 votes to 131,844; Peltola topped 50%, so no ranked-choice tally was needed (Won)"
+     },
+     {
+      "page": "National election map",
+      "url": "election-2026-map.html",
+      "what": "Alaska governor's race called by AP for Jonathan Kreiss-Tomkins (D) on Nov. 13, a pickup.",
+      "before": "Jonathan Kreiss-Tomkins (D) leads Bernadette Wilson (R), with 50.8% of first choices to about 29% after the Nov. 13 count, just over the 50% needed to win outright. Not yet called; last ballots counted Nov. 18 (Counting)",
+      "after": "Jonathan Kreiss-Tomkins (D), flipped to Democrat. Defeated Bernadette Wilson (R) and Dave Bronson (R), who accepted the result (Won)"
+     },
+     {
+      "page": "National election map",
+      "url": "election-2026-map.html",
+      "what": "Added North Carolina's 3rd District to the House seats that changed parties, called by AP on Nov. 17.",
+      "before": "Not listed (uncalled)",
+      "after": "District 3: Raymond Smith (D), flipped to Democrat"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "National tally cards updated.",
+      "before": "U.S. House 256 D, 169 R, 10 still counting; U.S. Senate 55 D, 44 R; Governors 5 flipped",
+      "after": "U.S. House 257 D, 171 R, 7 still counting; U.S. Senate 56 D, 44 R; Governors 6 flipped"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Updated the 'Now' row and the 'as of' line. State House Districts 15, 21 and 22 stay as counting: the leaders are unchanged, but we have not seen AP call them."
+     },
+     {
+      "page": "National election map",
+      "url": "election-2026-map.html",
+      "what": "Updated the big-picture paragraphs, House note (50 flips, 7 uncalled), certifications (Wyoming, South Dakota, South Carolina) and sources."
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "Added entries for the Alaska governor's call (Nov. 13) and the Alaska Senate call (Nov. 17)."
+     }
+    ]
+   }
   }
  ]
 }
