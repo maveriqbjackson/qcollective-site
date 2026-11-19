@@ -6,6 +6,8 @@ name: "Power Back Weekly: Thursday episode"
 # Apple Podcasts and Spotify read the feed, so they pick it up on their own. Run by hand with a date to force one.
 on:
   schedule:
+    - cron: "3,23,43 13 * * 4"   # Thursdays 6:03, 6:23, 6:43 AM Mountain (winter): GitHub sometimes skips the hourly run, so Thursday gets extra tries
+    - cron: "3,23,43 12 * * 4"   # same, for summer time (6 AM MDT = 12:00 UTC); before 6 AM Ash HQ simply says "not yet"
     - cron: "7 * * * *"   # every hour: Thursday episodes on their Thursday (6 AM Mountain run first), bonus episodes and the trailer within the hour of being set to Ready
   workflow_dispatch:
     inputs:
