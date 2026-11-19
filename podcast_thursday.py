@@ -16,6 +16,7 @@ import urllib.request
 from zoneinfo import ZoneInfo
 
 import podcast_lib as P
+import hq_outbox
 
 HQ = (os.environ.get("HQ_ORIGIN") or "https://aetherandash.digital").rstrip("/")
 RESEND_KEY = os.environ.get("RESEND_API_KEY") or ""
@@ -74,7 +75,9 @@ def publish_one(d, date, kind_hint=None):
                                      headers={"Authorization": "Bearer " + RESEND_KEY, "Content-Type": "application/json", "User-Agent": "QCollective-podcast/1.0"})
         try:
             urllib.request.urlopen(req, timeout=30).read()
+            hq_outbox.record(TO, f"Live: {ep['title']}", html, SEND_FROM, via="The Q Collective (GitHub: podcast)")
         except Exception as e:
+            hq_outbox.record(TO, f"Live: {ep['title']}", html, SEND_FROM, ok=False, error=str(e), via="The Q Collective (GitHub: podcast)")
             log(f"email didn't go out: {e}")
     return True
 

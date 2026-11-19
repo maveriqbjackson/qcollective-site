@@ -22,6 +22,7 @@ import tempfile
 import urllib.request
 
 import podcast_lib
+import hq_outbox
 
 SITE = podcast_lib.SITE
 CF_AI_TOKEN = os.environ.get("CF_AI_TOKEN") or ""
@@ -139,8 +140,10 @@ def email(subject, html_body):
                                         "User-Agent": "QCollective-podcast/1.0"})
     try:
         urllib.request.urlopen(r, timeout=30).read()
+        hq_outbox.record(TEAM, subject, html_body, SEND_FROM, via="The Q Collective (GitHub: podcast bonus)")
         log(f"emailed {', '.join(TEAM)}")
     except Exception as e:
+        hq_outbox.record(TEAM, subject, html_body, SEND_FROM, ok=False, error=str(e), via="The Q Collective (GitHub: podcast bonus)")
         log(f"email failed: {e}")
 
 

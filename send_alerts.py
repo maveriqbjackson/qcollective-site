@@ -25,6 +25,7 @@ Optional env:
 """
 
 import json, os, sys, time, urllib.request, urllib.error, urllib.parse
+import hq_outbox
 
 SUPABASE_URL = (os.environ.get("SUPABASE_URL") or "").rstrip("/")
 SERVICE_KEY  = os.environ.get("SUPABASE_SERVICE_KEY") or ""
@@ -81,6 +82,8 @@ def send_email(to, subject, html):
         {"Authorization": "Bearer " + RESEND_KEY, "Content-Type": "application/json"},
         {"from": ALERT_FROM, "to": [to], "subject": subject, "html": html},
     )
+    hq_outbox.record(to, subject, html, ALERT_FROM, ok=bool(res), error=None if res else "Resend refused it (see the run log)",
+                     ref=res.get("id") if isinstance(res, dict) else None, via="The Q Collective (GitHub: score alerts)")
     return bool(res)
 
 
