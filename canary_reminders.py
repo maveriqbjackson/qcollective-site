@@ -77,7 +77,7 @@ def q_canary():
     return {
         "key": "q", "name": "Q Collective canary",
         "page": "https://theqcollective.org/canary.html",
-        "sign": "https://theqcollective.org/canary-sign.html",
+        "sign": "https://aetherandash.digital/hq/#canary",
         "signed_at": s and s["signed_at"], "signed_by": s and s["signed_by"],
         "iv": d.get("interval_days") or 7, "gr": d.get("grace_days") or 3,
     }, [p["email"].lower() for p in people or []]
@@ -141,7 +141,6 @@ def render(c, canaries, notes):
 <p style="margin:0 0 14px;font:600 21px/1.35 Georgia,serif;color:#122848">{e(first)}</p>
 <p style="margin:0 0 20px;font-size:16px;line-height:1.6">Read the statement. If every word is still true today, sign it. It takes about a minute.</p>
 <a href="{c['sign']}" style="display:inline-block;background:#122848;color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:13px 22px;border-radius:8px">Check and sign</a>
-{('<p style="margin:12px 0 0;font-size:14.5px;color:#5a5a5a">Or sign in Ash HQ on your phone: <a href="https://aetherandash.digital/hq/#canary" style="color:#122848;font-weight:600">open the canary in Ash HQ</a>.</p>') if c['key'] == 'q' else ''}
 <p style="margin:22px 0 0;padding:12px 14px;background:#fdf3d4;border-radius:8px;font-size:14.5px;line-height:1.55"><b>Not sure every line is still true? Don't sign.</b> Call Mav first. If you've been told not to talk about something, don't sign and don't explain. Just let it lapse.</p>
 <table style="width:100%;border-collapse:collapse;margin:22px 0 4px;font-size:14.5px">{rows}</table>
 {('<p style="margin:18px 0 8px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#B8962E">Lately on the site</p>' + news) if news else ''}
@@ -149,7 +148,7 @@ def render(c, canaries, notes):
 <div style="padding:16px 24px 22px;font-size:12.5px;color:#777;line-height:1.5">You're getting this because you're a canary signer. Reply to this email with any question.<br>The Q Collective &middot; 6212 E Pine Ln, Unit 2159, Parker, CO 80138</div>
 </div></div>"""
     text = (f"Canary check\n\n{first}\n\nRead the statement. If every word is still true today, sign it:\n{c['sign']}\n"
-            + ("Or sign in Ash HQ on your phone: https://aetherandash.digital/hq/#canary\n" if c["key"] == "q" else "") + "\n"
+            + "\n"
             "Not sure every line is still true? Don't sign. Call Mav first. If you've been told not to talk about something, don't sign and don't explain. Just let it lapse.\n\n"
             + "\n".join(f"{x['name']}: {LABEL[x['stage']]}" for x in canaries) + "\n\nThe Q Collective\n")
     return html_out, text
