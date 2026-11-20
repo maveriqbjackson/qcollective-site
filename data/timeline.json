@@ -461,6 +461,20 @@
      "href": "election-2026-map.html"
     }
    ]
+  },
+  {
+   "id": "ak-house-called-2026",
+   "date": "2026-11-18",
+   "precision": "day",
+   "kind": "watch",
+   "title": "Alaska's U.S. House seat stays with Nick Begich",
+   "summary": "AP called Alaska's at-large U.S. House seat for Rep. Nick Begich (R) after the state's ranked-choice tally, 51.4% to 48.6% over independent Bill Hill, who conceded. It is a Republican hold. That leaves 6 House races uncalled nationally, two of them headed to Louisiana runoffs on Dec. 12.",
+   "links": [
+    {
+     "label": "National map",
+     "href": "election-2026-map.html"
+    }
+   ]
   }
  ]
 }
