@@ -55,6 +55,18 @@
   .ep audio{width:100%;margin-top:4px}
   .ep details{margin-top:10px}.ep summary{cursor:pointer;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--navy)}
   .ep .script{white-space:pre-wrap;font-size:15px;color:#333;margin-top:10px}
+  .ep .top{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+  .badge{display:inline-block;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;padding:4px 8px;border-radius:4px;background:var(--navy-deep);color:#fff;font-variant-numeric:tabular-nums}
+  .badge.bonus{background:var(--gold);color:var(--navy-deep)}
+  .badge.trailer{background:var(--gold-pale);color:var(--navy-deep)}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}
+  .chip{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;line-height:1;padding:7px 11px;border-radius:999px;border:1px solid var(--border);background:var(--off-white);color:var(--navy);cursor:pointer;text-decoration:none}
+  .chip:hover{border-color:var(--gold)}
+  .filters{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 0 6px;margin:0 0 16px}
+  .filters::-webkit-scrollbar{display:none}
+  .filters .chip{flex:none;font-size:14px;padding:9px 15px;background:#fff}
+  .filters .chip[aria-pressed="true"]{background:var(--navy-deep);border-color:var(--navy-deep);color:#fff}
+  .ep[hidden]{display:none}
   .empty{background:#fff;border:1px dashed var(--border);border-radius:12px;padding:30px 24px;text-align:center;color:var(--muted)}
   .empty b{display:block;font-family:'Playfair Display',serif;font-size:22px;color:var(--navy-deep);margin-bottom:6px}
   .how{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 0}
@@ -102,6 +114,7 @@
   <section id="episodes">
     <h2>Episodes</h2>
     <p class="lede">Newest first. Every fact links back to the record on this site.</p>
+    <div class="filters" id="filters" role="group" aria-label="Filter episodes by topic" hidden></div>
     <div id="list"><div class="empty"><b>The first episode is on its way.</b>Get the Sunday Update by email and you'll hear it first.</div></div>
   </section>
 
@@ -184,11 +197,45 @@
     document.getElementById('rss').onclick=function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(FEED):Promise.reject()).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy feed link';},1800);},function(){prompt('Paste this into your podcast app:',FEED);});};
     if(any) document.getElementById('soon').textContent='Free wherever you listen. No account needed.';
     var eps=(d.episodes||[]); if(!eps.length) return;
+    /* S1 · E2 for numbered episodes; Bonus or Trailer for the rest (a numbered bonus shows both) */
+    function badge(e){
+      var b='';
+      if(e.type==='bonus') b+='<span class="badge bonus">Bonus</span>';
+      if(e.type==='trailer') b+='<span class="badge trailer">Trailer</span>';
+      if(e.episode) b+='<span class="badge">S'+esc(e.season||1)+' · E'+esc(e.episode)+'</span>';
+      return b;
+    }
+    /* topic chips: every tag used, most used first */
+    var count={}, names={};
+    eps.forEach(function(e){(e.tags||[]).forEach(function(t){var k=String(t).toLowerCase();count[k]=(count[k]||0)+1;names[k]=names[k]||t;});});
+    var tags=Object.keys(count).sort(function(a,b){return count[b]-count[a]||a.localeCompare(b);});
     document.getElementById('list').innerHTML=eps.map(function(e,i){
-      return '<article class="ep'+(i===0?' latest':'')+'" id="'+esc(e.id)+'"><div class="meta">'+(i===0?'Latest · ':'')+esc(KIND[e.type]||'Episode')+' · '+esc(day(e.date))+' · '+mins(e.seconds)+'</div>'+
+      var tg=(e.tags||[]);
+      return '<article class="ep'+(i===0?' latest':'')+'" id="'+esc(e.id)+'" data-tags="'+esc(tg.map(function(t){return String(t).toLowerCase();}).join('|'))+'"><div class="top">'+badge(e)+'<div class="meta">'+(i===0?'Latest · ':'')+esc(KIND[e.type]||'Episode')+' · '+esc(day(e.date))+' · '+mins(e.seconds)+'</div></div>'+
         '<h3>'+esc(e.title)+'</h3><p>'+esc(e.summary)+'</p><audio controls preload="none" src="'+esc(e.audio)+'"></audio>'+
-        (e.script?'<details><summary>Read along</summary><div class="script">'+esc(e.script)+'</div></details>':'')+(e.transcript?'<p class="tr"><a href="'+esc(e.transcript)+'" target="_blank" rel="noopener">'+(e.transcript_type==='text/vtt'?'Captions (timed transcript)':'Transcript')+'</a></p>':'')+'</article>';
-    }).join('');
+        (e.script?'<details><summary>Read along</summary><div class="script">'+esc(e.script)+'</div></details>':'')+(e.transcript?'<p class="tr"><a href="'+esc(e.transcript)+'" target="_blank" rel="noopener">'+(e.transcript_type==='text/vtt'?'Captions (timed transcript)':'Transcript')+'</a></p>':'')+
+        (tg.length?'<div class="tags">'+tg.map(function(t){return '<a class="chip" href="podcast.html?tag='+encodeURIComponent(t)+'#episodes" data-tag="'+esc(String(t).toLowerCase())+'">'+esc(t)+'</a>';}).join('')+'</div>':'')+'</article>';
+    }).join('')+'<div class="empty" id="noTag" hidden><b>Nothing under that topic yet.</b><a href="podcast.html#episodes" data-tag="">See every episode</a></div>';
+    var F=document.getElementById('filters');
+    if(tags.length){
+      F.innerHTML='<button type="button" class="chip" data-tag="" aria-pressed="true">All</button>'+tags.map(function(k){return '<button type="button" class="chip" data-tag="'+esc(k)+'" aria-pressed="false">'+esc(names[k])+'</button>';}).join('');
+      F.hidden=false;
+    }
+    /* filter the list right here; the address keeps ?tag= so a topic can be shared */
+    function show(k,push){
+      k=String(k||'').toLowerCase(); if(k&&!count[k]) k='';
+      var any=false;
+      document.querySelectorAll('#list .ep').forEach(function(a){var ok=!k||('|'+a.getAttribute('data-tags')+'|').indexOf('|'+k+'|')>-1;a.hidden=!ok;if(ok)any=true;});
+      document.getElementById('noTag').hidden=any;
+      F.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed',String(c.getAttribute('data-tag')===k));});
+      if(push){var u=new URL(location.href);if(k)u.searchParams.set('tag',names[k]);else u.searchParams.delete('tag');u.hash='episodes';history.pushState(null,'',u);}
+    }
+    document.getElementById('episodes').addEventListener('click',function(ev){
+      var c=ev.target.closest('[data-tag]'); if(!c||ev.metaKey||ev.ctrlKey) return; ev.preventDefault();
+      show(c.getAttribute('data-tag'),true); if(c.tagName==='A') F.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+    window.addEventListener('popstate',function(){show(new URLSearchParams(location.search).get('tag'),false);});
+    var want=new URLSearchParams(location.search).get('tag'); if(want){ show(want,false); var on=F.querySelector('[aria-pressed="true"]'); if(on&&on.getAttribute('data-tag')) F.scrollLeft=on.offsetLeft-F.offsetLeft-16; }
     if(location.hash){var t=document.getElementById(location.hash.slice(1)); if(t) t.scrollIntoView();}
   }).catch(function(){});
 })();

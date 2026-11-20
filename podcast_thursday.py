@@ -60,7 +60,8 @@ def publish_one(d, date, kind_hint=None):
         raw = f.name
     P.level(raw, out)
     os.remove(raw)
-    P.add_episode(d, eid=eid, kind=kind, title=ep["title"], date=date, summary=ep.get("summary") or "", audio_path=out, script=ep.get("script") or "")
+    P.add_episode(d, eid=eid, kind=kind, title=ep["title"], date=date, summary=ep.get("summary") or "", audio_path=out, script=ep.get("script") or "",
+                  tags=ep.get("tags") or [], season=ep.get("season"))
     P.save(d)
     secs = P.seconds(out)
     log(f"published {eid}: {ep['title']} ({secs // 60}:{secs % 60:02d})")

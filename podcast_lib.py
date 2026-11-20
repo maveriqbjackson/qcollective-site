@@ -63,8 +63,49 @@ def load():
     return d
 
 
+# ---------- seasons, episode numbers and topic tags ----------
+# Full episodes (Sunday recap, Thursday with Mav, On the Record) are numbered 1, 2, 3... within their season, in date
+# order. Trailers and Special Sessions stay unnumbered unless someone sets "episode" by hand. A number is stored in
+# episodes.json the first time it's given and never changes after that, even if an older episode turns up later.
+FULL = ("weekly", "thursday", "guest")
+AUTO_TAGS = {"weekly": ["Sunday recap"], "thursday": ["Thursday with Mav"]}
+
+
+def clean_tags(tags):
+    out, seen = [], set()
+    for t in (tags or []):
+        t = " ".join(str(t or "").split())[:40]
+        if t and t.lower() not in seen:
+            seen.add(t.lower()); out.append(t)
+    return out[:12]
+
+
+def number_all(d):
+    """Fills in season (default 1), tags (the kind's own tag first) and the episode number for any episode missing them."""
+    eps = d["episodes"]
+    for e in eps:
+        try:
+            e["season"] = max(1, int(e.get("season") or 1))
+        except (TypeError, ValueError):
+            e["season"] = 1
+        if "tags" not in e or not isinstance(e.get("tags"), list):
+            e["tags"] = clean_tags(AUTO_TAGS.get(e.get("type"), []))
+        if "episode" not in e:
+            e["episode"] = None
+    top = {}
+    for e in eps:
+        if e.get("episode") and e.get("type") in FULL:
+            top[e["season"]] = max(top.get(e["season"], 0), int(e["episode"]))
+    for e in sorted(eps, key=lambda e: (e["date"], e.get("published", ""))):
+        if e.get("type") in FULL and not e.get("episode"):
+            top[e["season"]] = top.get(e["season"], 0) + 1
+            e["episode"] = top[e["season"]]
+    return d
+
+
 def save(d):
     os.makedirs(DIR, exist_ok=True)
+    number_all(d)
     d["episodes"].sort(key=lambda e: (e["date"], e.get("published", "")), reverse=True)
     with open(EPISODES, "w") as f:
         json.dump(d, f, indent=1, ensure_ascii=False)
@@ -173,8 +214,11 @@ def make_transcript(eid, audio_path, script=""):
     return None, None
 
 
-def add_episode(d, *, eid, kind, title, date, summary, audio_path, script=""):
-    """Adds (or replaces) one episode. audio_path is relative to the repo root."""
+def add_episode(d, *, eid, kind, title, date, summary, audio_path, script="", tags=None, season=None, episode=None):
+    """Adds (or replaces) one episode. audio_path is relative to the repo root.
+    tags: topic tags (Sunday and Thursday episodes always get their own tag first). season defaults to 1.
+    episode: leave it out and save() numbers it (full episodes only); replacing an episode keeps its number."""
+    old = next((e for e in d["episodes"] if e["id"] == eid), None)
     d["episodes"] = [e for e in d["episodes"] if e["id"] != eid]
     tr, trt = (None, None)
     try:
@@ -186,8 +230,20 @@ def add_episode(d, *, eid, kind, title, date, summary, audio_path, script=""):
         "audio": audio_path, "bytes": os.path.getsize(audio_path), "seconds": seconds(audio_path),
         "published": dt.datetime.now(TZ).isoformat(timespec="seconds"),
         "script": script, "transcript": tr, "transcript_type": trt,
+        # no season given: keep the old one, or carry on in the latest season used (so the Sunday recap follows a new season)
+        "season": _int(season) or (old or {}).get("season") or max([_int(e.get("season")) or 1 for e in d["episodes"]] or [1]),
+        "episode": _int(episode) or (old or {}).get("episode"),
+        "tags": clean_tags(AUTO_TAGS.get(kind, []) + list(tags or [])),
     })
     return d
+
+
+def _int(v):
+    try:
+        v = int(v)
+        return v if v > 0 else None
+    except (TypeError, ValueError):
+        return None
 
 
 def _x(s):
@@ -212,7 +268,8 @@ def build_feed(d):
       <pubDate>{format_datetime(when)}</pubDate>
       <enclosure url="{_x(SITE + '/' + e['audio'])}" length="{e['bytes']}" type="audio/mpeg"/>
       <itunes:duration>{dur // 60}:{dur % 60:02d}</itunes:duration>
-      <itunes:episodeType>{'trailer' if e['type'] == 'trailer' else 'bonus' if e['type'] == 'bonus' else 'full'}</itunes:episodeType>{chr(10) + '      <itunes:image href="' + _x(SITE + '/podcast/cover-thursday.jpg') + '"/>' if e['type'] in ('thursday', 'trailer') else ''}
+      <itunes:episodeType>{'trailer' if e['type'] == 'trailer' else 'bonus' if e['type'] == 'bonus' else 'full'}</itunes:episodeType>
+      <itunes:season>{int(e.get('season') or 1)}</itunes:season>{(chr(10) + '      <itunes:episode>' + str(int(e['episode'])) + '</itunes:episode>') if e.get('episode') else ''}{''.join(chr(10) + '      <category>' + _x(t) + '</category>' for t in (e.get('tags') or []))}{chr(10) + '      <itunes:image href="' + _x(SITE + '/podcast/cover-thursday.jpg') + '"/>' if e['type'] in ('thursday', 'trailer') else ''}
       <itunes:explicit>false</itunes:explicit>{chr(10) + '      <podcast:transcript url="' + _x(SITE + '/' + e['transcript']) + '" type="' + _x(e.get('transcript_type') or 'text/plain') + '" language="en"' + (' rel="captions"' if e.get('transcript_type') == 'text/vtt' else '') + '/>' if e.get('transcript') else ''}
     </item>""")
     items.reverse()
@@ -357,7 +414,8 @@ def build_posts(d):
         idx = idx.replace('<ul class="ng">', '<ul class="ng">\n' + block, 1)
     if 'data-t="pod"' not in idx.split('<ul class="ng">')[0]:
         idx = idx.replace('<button type="button" class="nf-chip" data-t="bills"', CHIP + '<button type="button" class="nf-chip" data-t="bills"', 1)
-    idx = idx.replace("data-t must be one of: bills, q, ai, ahead, about", "data-t must be one of: bills, q, ai, ahead, about (pod is written automatically)")
+    if "(pod is written automatically)" not in idx:  # once only (it used to add the note again on every save)
+        idx = idx.replace("data-t must be one of: bills, q, ai, ahead, about", "data-t must be one of: bills, q, ai, ahead, about (pod is written automatically)")
     with open(NOTES_INDEX, "w") as f:
         f.write(idx)
     return len(eps)

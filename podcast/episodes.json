@@ -18,7 +18,12 @@
    "published": "2026-11-19T07:09:29-07:00",
    "script": "Here's something most people never hear. Every vote your state lawmaker casts is already public. Every single one. The problem was never that the record was hidden. The problem is that nobody was reading it out loud. So that's what we're going to do.\n\nThis is Power Back Weekly. I'm maveriQ B Jackson, founder of The Q Collective. Sundays, you get the record: what moved, what changed, whose score went up or down. Thursdays, you get me. In my own voice, no script reader, telling you what it means and what you can do about it. \nThis is the first Thursday episode. So let me tell you why this exists.\n\nI spent six years inside the federal government as a project coordinator. The Department of Justice. The IRS. The White House. The U.S. Senate. And here's what I learned: the people who know how the system works have a huge advantage over the people the system is supposed to serve. Not because they're smarter. Because they're paying attention, every day, and most of us can't.\nThis year I ran for the Colorado House, in House District 23. I didn't win. And I'll be honest with you: what I took from it wasn't disappointment. It was clarity. You don't need a seat to hold power accountable. You need the record, and you need people who are willing to look at it.\nSo The Q Collective became exactly that. A nonpartisan, citizen-powered group that reads the record for you, scores it the same way for everybody, and puts it where you can see it.\n\nLet's talk about the Q Score, because you're going to hear about it a lot.\nEvery Colorado lawmaker gets one number, from zero to one hundred. It's built the same way for every single one of them, no matter their party, no matter their district. It comes from what they actually did on the public record. Not what they said on a mailer.\nAnd we don't guess. A new lawmaker needs at least five recorded votes before they get a score at all. Every time a score changes, it's logged in a public audit log on our site, so you can check our work. If we ever get something wrong, we fix it, and we show you that we fixed it.\nWe don't endorse candidates. We don't tell you how to vote. We don't take sides. We pick balance. If a bill only wins by making someone else lose, it isn't ready.\n\nThe Colorado legislature comes back on January 13. Between now and then, here's what's happening.\nWe've written two bills of our own. CESA, the Colorado Everyday Stability Act, is built around seven pillars that make everyday life more stable for working families. And FWMRA, which says nobody gets fired for no reason, with costs employers can actually predict. Both are ready for sponsors, and both are explained in plain English on our site.\nEvery Sunday this podcast walks through the week's record. Every Thursday I'll tell you what I think matters, what's coming, and how you can be part of it. And when a big bill moves, you'll get a bonus episode.\n\nHere's what I need from you this week. Go to theqcollective.org. Look up your own lawmakers. Read their record. Then tell one person what you found. That's it. That's how this starts. \nThe record was always public. Now you can actually read it.\nThis is Power Back Weekly. I'm Mav. Take the power back.",
    "transcript": "podcast/transcripts/thu-2026-11-19.vtt",
-   "transcript_type": "text/vtt"
+   "transcript_type": "text/vtt",
+   "season": 1,
+   "tags": [
+    "Thursday with Mav"
+   ],
+   "episode": 2
   },
   {
    "id": "weekly-2026-11-15",
@@ -32,7 +37,12 @@
    "published": "2026-11-15T16:08:52-07:00",
    "script": "For the week of November 15. The headline. Our engine checked all 100 members of the Colorado General Assembly and found no changes this week. That's expected. The legislature is out of session, so the record holds steady until the next session opens in January. Scores last updated November 15, 2026. A law you may have missed. HB1063: Treating People with Behavioral Health Disorder. Concerning publishing an easily accessible list of secure transportation providers on certain departments' websites. Prime sponsors: Mary Bradfield, Gretchen Rydin, Judith Amabile, Jamie Jackson. Final action: June 2, 2026. The scoreboard. Statewide average: 63.2 out of 100. By chamber:. Senate (35 members): 66.3. House (65 members): 61.5. By party:. Democrats (66 members): 69.2. Republicans (34 members): 51.6. A note on the party gap: Democrats hold the majority in both chambers, and majority members sponsor and pass more bills. That lifts the sponsorship and impact parts of the score. The rubric is the same for all 100 members. It measures results on the seven pillars that keep a life stable, not party labels. The accountability champions. 7 legislators at 80 or higher:. 1. Rep. Andrew Boesenecker, HD 53: 87. 2. Sen. Dylan Roberts, SD 8: 82. 3. Rep. Elizabeth Velasco, HD 57: 81. 4. Rep. Lindsay Gilchrist, HD 8: 81. 5. Rep. Rebekah Stewart, HD 30: 80. 6. Rep. Jenny Willford, HD 34: 80. 7. Sen. Tony Exum, SD 11: 80. Closest to the line: Rep. Katie Stewart, HD 59, at 79. The session by the numbers. 714 bills tracked:. 501 became law (70%). 149 failed. 12 vetoed. 52 died when the session ended. Dates to know. Wednesday, January 13: The 2027 legislative session opens. Look up your lawmakers. Look up your own House and Senate members: what they scored, what lifted them, and what held them back. That's Power Back Weekly for this week. Every vote and every link is at the q collective dot org, and the show is free wherever you get your podcasts. Thanks for being here. The record was always public. Now you can actually hear it.",
    "transcript": "podcast/transcripts/weekly-2026-11-15.vtt",
-   "transcript_type": "text/vtt"
+   "transcript_type": "text/vtt",
+   "season": 1,
+   "tags": [
+    "Sunday recap"
+   ],
+   "episode": 1
   },
   {
    "id": "trailer-2026-11-15",
@@ -46,7 +56,10 @@
    "published": "2026-11-15T07:21:09-07:00",
    "script": "Every vote your lawmakers cast is public. Almost nobody reads it. This show does.\n\nI'm maveriQ B Jackson, founder of The Q Collective. This is Power Back Weekly. \n\nEvery Sunday: the week's record. What moved in the Colorado legislature, what changed, and whose Q Score went up or down. Every Thursday: me, in my own voice, telling you what it means and what you can do about it. And when a big bill moves, a bonus episode.\n\nWe're nonpartisan. We don't endorse candidates and we don't tell you how to vote. We read the record, score it the same way for everybody, and put it where you can see it.\n\nFollow Power Back Weekly wherever you're listening, so Sunday's episode shows up on its own. And go to theqcollective.org to look up your own lawmakers.\n\nThe record was always public. Now you can actually read it. Take the power back.",
    "transcript": "podcast/transcripts/trailer-2026-11-15.vtt",
-   "transcript_type": "text/vtt"
+   "transcript_type": "text/vtt",
+   "season": 1,
+   "tags": [],
+   "episode": null
   }
  ]
 }

@@ -22,6 +22,9 @@ on:
       draft:
         description: "For publish: the draft id from the email (like bonus-2026-11-20-hb1001-...)"
         required: false
+      tags:
+        description: "Optional topics for a draft, separated by commas (like Housing, HB26-1001)"
+        required: false
 
 permissions:
   contents: write
@@ -53,6 +56,7 @@ jobs:
           TITLE: ${{ inputs.title }}
           NOTE: ${{ inputs.note }}
           DRAFT: ${{ inputs.draft }}
+          TAGS: ${{ inputs.tags }}
           CF_AI_TOKEN: ${{ secrets.CF_AI_TOKEN }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}

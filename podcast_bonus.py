@@ -170,7 +170,8 @@ def draft(trailer=False):
     meta = {"id": eid, "type": "trailer" if trailer else "bonus", "title": TITLE or label, "date": today.isoformat(),
             "summary": (("The trailer. " if trailer else "Bonus episode: ") + (TITLE or label) +
                         ". From the public record, with every detail at " + link),
-            "script": script, "source": link}
+            "script": script, "source": link,
+            "tags": [t.strip() for t in (os.environ.get("TAGS") or "").split(",") if t.strip()][:12]}
     json.dump(meta, open(os.path.join(DRAFTS, eid + ".json"), "w"), indent=1, ensure_ascii=False)
     mins = max(1, round(podcast_lib.seconds(mp3) / 60))
     log(f"draft saved: {mp3} (about {mins} min)")
@@ -198,7 +199,8 @@ def publish():
     os.remove(meta_p)
     pod = podcast_lib.load()
     podcast_lib.add_episode(pod, eid=meta["id"], kind=meta["type"], title=meta["title"], date=meta["date"],
-                            summary=meta["summary"], audio_path=final, script=meta.get("script", ""))
+                            summary=meta["summary"], audio_path=final, script=meta.get("script", ""),
+                            tags=meta.get("tags") or [], season=meta.get("season"))
     podcast_lib.save(pod)
     log(f"published {meta['id']} to the feed")
     podcast_lib.email_new_episode({"id": meta["id"], "type": meta["type"], "title": meta["title"], "summary": meta["summary"], "seconds": podcast_lib.seconds(final)})

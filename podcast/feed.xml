@@ -16,7 +16,7 @@
     <itunes:category text="News"><itunes:category text="Politics"/></itunes:category>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Thu, 19 Nov 2026 07:09:29 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 09:46:06 -0700</lastBuildDate>
     <item>
       <title>Thursday with Mav: why I’m taking the power back</title>
       <description>The first Thursday episode of Power Back Weekly. Mav on why The Q Collective exists, how the Q Score works, and what to watch before the Colorado legislature comes back on January 13.</description>
@@ -27,6 +27,9 @@
       <enclosure url="https://theqcollective.org/podcast/episodes/thu-2026-11-19.mp3" length="2779739" type="audio/mpeg"/>
       <itunes:duration>3:52</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>2</itunes:episode>
+      <category>Thursday with Mav</category>
       <itunes:image href="https://theqcollective.org/podcast/cover-thursday.jpg"/>
       <itunes:explicit>false</itunes:explicit>
       <podcast:transcript url="https://theqcollective.org/podcast/transcripts/thu-2026-11-19.vtt" type="text/vtt" language="en" rel="captions"/>
@@ -41,6 +44,9 @@
       <enclosure url="https://theqcollective.org/audio/sunday/2026-11-15.mp3" length="2083523" type="audio/mpeg"/>
       <itunes:duration>2:54</itunes:duration>
       <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>1</itunes:episode>
+      <category>Sunday recap</category>
       <itunes:explicit>false</itunes:explicit>
       <podcast:transcript url="https://theqcollective.org/podcast/transcripts/weekly-2026-11-15.vtt" type="text/vtt" language="en" rel="captions"/>
     </item>
@@ -54,6 +60,7 @@
       <enclosure url="https://theqcollective.org/podcast/episodes/trailer-2026-11-15.mp3" length="762250" type="audio/mpeg"/>
       <itunes:duration>1:03</itunes:duration>
       <itunes:episodeType>trailer</itunes:episodeType>
+      <itunes:season>1</itunes:season>
       <itunes:image href="https://theqcollective.org/podcast/cover-thursday.jpg"/>
       <itunes:explicit>false</itunes:explicit>
       <podcast:transcript url="https://theqcollective.org/podcast/transcripts/trailer-2026-11-15.vtt" type="text/vtt" language="en" rel="captions"/>
