@@ -2724,6 +2724,49 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 20, 2026 at 11:58 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "92af83a",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/92af83a",
+   "note": "AP called Alaska's U.S. House seat for Nick Begich (R), a Republican hold, so the House count moved to 257 to 172 with 6 uncalled; the three Colorado state House races still have no AP call.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "National election map",
+      "url": "election-2026-map.html",
+      "what": "Alaska's at-large U.S. House seat called by AP for Rep. Nick Begich (R) on Nov. 18 after the ranked-choice tally, a Republican hold.",
+      "before": "North Carolina's 10th and Alaska's seat, where Republican incumbents lead (uncalled)",
+      "after": "Alaska's seat (Nick Begich, R), called Nov. 18, 51.4% to 48.6% over independent Bill Hill, who conceded (Republican hold)"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "National tally card updated.",
+      "before": "U.S. House 257 D, 171 R, 7 still counting",
+      "after": "U.S. House 257 D, 172 R, 6 still counting"
+     },
+     {
+      "page": "National election map",
+      "url": "election-2026-map.html",
+      "what": "Updated the big-picture paragraphs, House note (6 uncalled), North Carolina and Minnesota recount dates, Tennessee's 4th, the Justice Department's Nov. 19 move to drop its Alaska Senate lawsuit, and sources."
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Updated the 'Now' row, the Senate tally card and the 'as of' line. State House Districts 15, 21 and 22 stay as counting: as of Nov. 20 we have not seen AP call them."
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "Added an entry for the Alaska House call (Nov. 18)."
+     }
+    ]
+   }
   }
  ]
 }
