@@ -69,7 +69,7 @@ def publish_one(d, date, kind_hint=None):
     if RESEND_KEY:
         html = (f"<p><b>{ep['title']}</b> is live on Power Back Weekly ({secs // 60} min).</p>"
                 f"<p><a href='{P.SITE}/podcast.html#{eid}'>Podcast page</a> · <a href='{P.SITE}/notes/pbw-{eid}.html'>Q Notes post</a></p>"
-                "<p>Apple Podcasts and Spotify pick it up from the feed within a few hours.</p>")
+                "<p>Apple Podcasts and Amazon Music pick it up from the feed within a few hours.</p>")
         req = urllib.request.Request("https://api.resend.com/emails", method="POST",
                                      data=json.dumps({"from": SEND_FROM, "to": TO, "reply_to": "team@theqcollective.org",
                                                       "subject": f"Live: {ep['title']}", "html": html}).encode(),
