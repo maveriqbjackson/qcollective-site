@@ -2946,6 +2946,32 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 21, 2026 at 8:50 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "f11d2f5",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/f11d2f5",
+   "note": "Colorado adopted its AI decision and chatbot rules on Nov. 19. Our plain-English page now shows how each of our October 2 asks came out, and the timeline has the adoption.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Colorado's new AI law, in plain English",
+      "url": "colorado-ai-law.html",
+      "what": "Updated for the rules adopted Nov. 19 (4 CCR 904-6): how the three fights came out, a scorecard of what we asked for and what we got, a short note on the chatbot rules, and 'What you can do now' in place of the comment steps, since the comment period closed in October.",
+      "before": "Deadline: Monday, October 26. Written comments on the rules close at 11:59 p.m. Mountain.",
+      "after": "Update: the rules were adopted November 19. ... Next, the Attorney General issues a formal opinion on the rules. Then they're filed with the Secretary of State, and they become final 20 days after they're published."
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html#admt-rules-adopted",
+      "what": "Added an entry for the adoption of the rules (Nov. 19) and how our asks did."
+     }
+    ]
+   }
   }
  ]
 }
