@@ -2767,6 +2767,42 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 20, 2026 at 6:10 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "7f79aa1",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/7f79aa1",
+   "note": "Minnesota certified its results, and its 1st congressional district, where Jake Johnson (D) leads by 324 votes, goes to a recount Rep. Brad Finstad (R) requested; the three Colorado state House races still have no AP call.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "National election map",
+      "url": "election-2026-map.html",
+      "what": "Minnesota certified its results on Nov. 19, including the 1st district, where Jake Johnson (D) leads Rep. Brad Finstad (R) by 324 votes; Finstad requested a publicly funded recount (hand count Nov. 30, certification Dec. 8). The race stays uncalled because AP has not called it.",
+      "before": "Monday is also the deadline to request a recount in Minnesota's 1st, where Rep. Brad Finstad (R) has said he will seek one.",
+      "after": "In Minnesota's 1st, the State Canvassing Board certified Jake Johnson (D) as the winner over Rep. Brad Finstad (R) by 324 votes on Thursday, Nov. 19, about 0.1% of votes cast. Finstad requested a recount that afternoon. ... AP has not called the race, so we still show it as counting."
+     },
+     {
+      "page": "National election map",
+      "url": "election-2026-map.html",
+      "what": "Added Minnesota to the list of certified states and updated sources."
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Updated the 'Now' row (Minnesota certified, MN-1 recount), the 'as of' line and sources. State House Districts 15, 21 and 22 stay as counting: as of the evening of Nov. 20 we have not seen AP call them."
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "Added an entry for Minnesota's certification and the 1st district recount (Nov. 19)."
+     }
+    ]
+   }
   }
  ]
 }
