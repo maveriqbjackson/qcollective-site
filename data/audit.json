@@ -2998,6 +2998,54 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 21, 2026 at 9:05 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "ba3073b",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/ba3073b",
+   "note": "Correction: Colorado's 2027 legislative session opens Monday, January 11, not January 13. Lawmakers moved the date because a new governor takes office. We fixed it everywhere it appeared and added public corrections to the two episodes that said January 13.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "What's next: our plan for 2027",
+      "url": "whats-next-2027.html",
+      "what": "Session start date corrected.",
+      "before": "January 13, 2027",
+      "after": "January 11, 2027"
+     },
+     {
+      "page": "2026 Colorado election results",
+      "url": "election-2026.html",
+      "what": "Dates to know: the legislature returns Jan. 11.",
+      "before": "Jan. 13",
+      "after": "Jan. 11"
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "The 2027 session entry moved to January 11."
+     },
+     {
+      "page": "Power Back Weekly, Nov. 19 (Thursday with Mav)",
+      "url": "notes/pbw-thu-2026-11-19.html",
+      "what": "Summary corrected to January 11, with a correction note. The transcript stays as spoken."
+     },
+     {
+      "page": "Power Back Weekly, Nov. 15",
+      "url": "notes/pbw-weekly-2026-11-15.html",
+      "what": "Correction note added. The transcript stays as spoken."
+     },
+     {
+      "page": "Sunday Update emails",
+      "url": "sunday.html",
+      "what": "Upcoming emails list the session opening as January 11."
+     }
+    ]
+   }
   }
  ]
 }
