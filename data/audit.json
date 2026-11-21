@@ -1,6 +1,6 @@
 {
  "engine": "v7.0",
- "updated": "November 15, 2026 at 4:06 PM MST",
+ "updated": "November 21, 2026 at 6:50 AM MST",
  "runs": [
   {
    "ts": "2026-07-11",
@@ -804,7 +804,7 @@
         "new": 89
        },
        {
-        "name": "Monica M\u00e1rquez (Chief Justice)",
+        "name": "Monica Márquez (Chief Justice)",
         "old": null,
         "new": 89
        },
@@ -2308,14 +2308,14 @@
      {
       "page": "Contact, Work With Us, Request Advocacy",
       "url": "contact.html",
-      "what": "The email the team receives is tagged [Reply \u00b7 Q].",
+      "what": "The email the team receives is tagged [Reply · Q].",
       "before": "Untagged subject",
       "after": "Tagged so it gets answered"
      },
      {
       "page": "Get Involved, Support a Bill, lawmaker and bill forms",
       "url": "get-involved.html",
-      "what": "The email the team receives is tagged [FYI \u00b7 Q].",
+      "what": "The email the team receives is tagged [FYI · Q].",
       "before": "Untagged subject",
       "after": "Tagged as a record"
      }
@@ -2669,6 +2669,25 @@
    }
   },
   {
+   "ts": "November 19, 2026 at 7:10 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "519f7fa",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/519f7fa",
+   "note": "The Thursday podcast job now gets extra tries between 6 and 7 AM, so a skipped scheduled run can't delay the episode.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Power Back Weekly (publishing job)",
+      "url": "podcast.html",
+      "what": "Added extra Thursday morning tries to the job that publishes the Thursday episode. Nothing on the page changed."
+     }
+    ]
+   }
+  },
+  {
    "ts": "November 19, 2026 at 7:21 AM MST",
    "run_type": "site_change",
    "engine_version": "v7.0",
@@ -2726,6 +2745,111 @@
    }
   },
   {
+   "ts": "November 19, 2026 at 2:42 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "89028ab",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/89028ab",
+   "note": "Signing the canary moved into Ash HQ, with extra checks before a signature counts; our sign page now points there, and every email we send is now logged in our internal outbox.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Sign the canary (signers only)",
+      "url": "canary-sign.html",
+      "what": "The page no longer signs on the spot. It explains that signing now happens in Ash HQ (a news link from today, a short statement, a code or Face ID, a PIN and a 10-minute hold) and links there.",
+      "before": "One-tap signing on this page.",
+      "after": "Signing the canary moved to Ash HQ."
+     },
+     {
+      "page": "Canary reminder emails",
+      "url": "canary.html",
+      "what": "Reminder emails now link to signing in Ash HQ and name which canary they are about. The public canary page itself did not change."
+     },
+     {
+      "page": "Podcast page",
+      "url": "podcast.html",
+      "what": "Added Apple Podcasts, Spotify and Amazon Music buttons."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 19, 2026 at 3:04 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "c54c55b",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/c54c55b",
+   "note": "House style cleanup across the site: em dashes in visible text were rewritten by hand, the Spanish page's accented letters were fixed, and a few small fixes. No scores, rules or meanings changed.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Pages across the site",
+      "url": "index.html",
+      "what": "Rewrote about 448 em dashes in visible text and page titles (now 'Page | The Q Collective') on 39 pages and the site menu and footer. Punctuation only on the Constitution."
+     },
+     {
+      "page": "Español",
+      "url": "espanol.html",
+      "what": "Fixed 29 accented letters that were showing as codes instead of letters."
+     },
+     {
+      "page": "Old audit page copy",
+      "url": "data/audit.html",
+      "what": "An old copy of this audit page now forwards to the real one."
+     },
+     {
+      "page": "Site map",
+      "url": "sitemap.xml",
+      "what": "Added the public canary page."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 20, 2026 at 9:51 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "f84f1b3",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/f84f1b3",
+   "note": "Power Back Weekly now shows seasons, episode numbers and topic tags, and bonus episodes are easier to add.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Podcast page",
+      "url": "podcast.html",
+      "what": "Episodes show badges like 'S1 · E2', 'Bonus' or 'Trailer', topic tags, and topic filters. The Nov 15 Sunday recap is Episode 1 and the Nov 19 Thursday episode is Episode 2. Episode links did not change."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 20, 2026 at 11:14 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "22b20e0",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/22b20e0",
+   "note": "Took the Spotify button off the podcast page for now while Spotify finishes loading the show.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Podcast page",
+      "url": "podcast.html",
+      "what": "Removed the Spotify button. Apple Podcasts and Amazon Music stay.",
+      "before": "Apple Podcasts · Spotify · Amazon Music",
+      "after": "Apple Podcasts · Amazon Music"
+     }
+    ]
+   }
+  },
+  {
    "ts": "November 20, 2026 at 11:58 AM MST",
    "run_type": "site_change",
    "engine_version": "v7.0",
@@ -2764,6 +2888,25 @@
       "page": "Timeline",
       "url": "timeline.html",
       "what": "Added an entry for the Alaska House call (Nov. 18)."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 20, 2026 at 5:49 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "9cb00b0",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/9cb00b0",
+   "note": "Added a link to the maveriQ app, where listeners can follow Power Back Weekly and get an alert when a new episode is out.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Podcast page",
+      "url": "podcast.html",
+      "what": "Added a 'Get the maveriQ app' button next to Apple Podcasts and Amazon Music."
      }
     ]
    }
