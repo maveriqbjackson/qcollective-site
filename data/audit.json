@@ -2972,6 +2972,32 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 21, 2026 at 8:55 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "2e7a39a",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/2e7a39a",
+   "note": "Reworded the scorecard on the AI law page and timeline: Adopted, Partly, Close and Mostly not adopted.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Colorado's new AI law, in plain English",
+      "url": "colorado-ai-law.html#scorecard",
+      "what": "Scorecard labels changed from won and lost to Adopted and Mostly not adopted.",
+      "before": "Won / Mostly lost",
+      "after": "Adopted / Mostly not adopted"
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html#admt-rules-adopted",
+      "what": "Same wording change in the Nov. 19 entry."
+     }
+    ]
+   }
   }
  ]
 }
