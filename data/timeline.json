@@ -489,6 +489,36 @@
      "href": "election-2026-map.html"
     }
    ]
+  },
+  {
+   "id": "admt-rules-adopted",
+   "date": "2026-11-19",
+   "precision": "day",
+   "kind": "watch",
+   "featured": true,
+   "title": "Colorado adopted its AI decision rules. Here's how our asks did.",
+   "summary": "The Colorado Department of Law adopted the final rules for the AI decision law and the chatbot law (4 CCR 904-6). Most of what we asked for on October 2 made it in. The biggest one didn't: the rules define a trivial factor as one that is \"not a substantial factor,\" the reading we argued against.",
+   "points": [
+    "Won: companies have to name each actual source of your data, within 15 days of your asking.",
+    "Won: no grace period, and federal credit notices only count if they carry everything Colorado requires.",
+    "Partly: human review keeps real authority and no AI help, but the rule that the reviewer can't be the decision-maker's subordinate was cut.",
+    "Mostly lost: a presumption that a score influenced the decision is in, but \"trivial\" now means \"not a substantial factor.\""
+   ],
+   "why": "Next the Attorney General issues a formal opinion, the rules are filed with the Secretary of State, and they become final 20 days after publication. The law takes effect January 1, 2027.",
+   "links": [
+    {
+     "label": "What we asked for, and what we got",
+     "href": "colorado-ai-law.html#scorecard"
+    },
+    {
+     "label": "Our October 2 comment (PDF)",
+     "href": "admt-comment-2026-10-02.pdf"
+    },
+    {
+     "label": "The rulemaking at coag.gov/ai",
+     "href": "https://coag.gov/ai/"
+    }
+   ]
   }
  ]
 }

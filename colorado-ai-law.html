@@ -101,14 +101,17 @@
     .post p, .post li { font-size: 17px; } .lede { font-size: 20px !important; }
     .box, .deadline { padding: 20px 18px; } .note-card { padding: 20px; }
   }
+  .tag { display:inline-block; font-size:12px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; padding:3px 9px; border-radius:999px; vertical-align:middle; margin-left:6px; }
+  .tag.won { background:#e3f1e6; color:#1f5a33; } .tag.part { background:#f9eeda; color:#7a5310; } .tag.lost { background:#fbebeb; color:#8f2a2a; }
+  .score { list-style:none; padding:0; margin:12px 0; } .score li { padding:8px 0; border-top:1px solid rgba(0,0,0,.08); } .score .tag { margin:0 8px 0 0; min-width:92px; text-align:center; }
 </style>
 </head>
 <body>
 <div id="q-chrome-top"></div>
 <header class="fhead"><div class="fhead-wm">Q</div><div class="fhead-inner">
-<p class="kicker"><a href="notes.html">Notes</a> &middot; October 22, 2026 &middot; About a 6 minute read</p>
+<p class="kicker"><a href="notes.html">Notes</a> &middot; Updated November 21, 2026 &middot; About a 7 minute read</p>
 <h1>Colorado's new AI law, in plain English</h1>
-<p class="sub">You now have a right to know when a computer helped turn you down. The rules being written this month decide whether that right actually works.</p>
+<p class="sub">You now have a right to know when a computer helped turn you down. On November 19 the Attorney General adopted the rules that decide how that right works. Here is what we asked for, and what we got.</p>
 </div></header>
 
 <main class="wrap"><article class="post">
@@ -118,61 +121,67 @@
 <p>Colorado decided that shouldn't happen anymore. This spring the legislature passed two laws about artificial intelligence, and the governor signed both on <strong>May 14, 2026</strong>. They take effect on <strong>January 1, 2027</strong>.</p>
 
 <div class="deadline">
-<div class="when">Deadline: Monday, October 26</div>
-<p>Written comments on the rules close at <strong>11:59 p.m. Mountain</strong>. The public hearing is the same day at <strong>10:00 a.m.</strong> at the Colorado Department of Law in Denver, with a Zoom option.</p>
-<a class="btn" href="https://coag.gov/ai/automated-decision-making-technology-act-and-chatbot-safety-act-form/" target="_blank" rel="noopener">Leave a comment at coag.gov/ai &#8599;</a>
-<a class="btn ghost" href="#weigh-in">How to do it in 10 minutes</a>
+<div class="when">Update: the rules were adopted November 19</div>
+<p>The Colorado Department of Law adopted the final rules, 4 CCR 904-6, on <strong>Thursday, November 19, 2026</strong>. The comment period is closed. Next, the Attorney General issues a formal opinion on the rules. Then they're filed with the Secretary of State, and they become final <strong>20 days after they're published</strong>.</p>
+<a class="btn" href="#scorecard">What we asked for, and what we got</a>
+<a class="btn ghost" href="https://coag.gov/ai/" target="_blank" rel="noopener">The rulemaking at coag.gov/ai &#8599;</a>
 </div>
 
 <h2>The two laws</h2>
 <p><strong>The Automated Decision-Making Technology Act (SB 26-189)</strong> covers what lawyers call consequential decisions: housing, jobs, credit, health care, education. When an automated system plays a real part in a decision that goes against you, you are owed a notice. That notice has to say an automated system was used, give the main reasons, tell you what data it relied on, explain how to correct that data, and tell you how to get a human to review it.</p>
-<p><strong>The Conversational Artificial Intelligence Services Act (HB 26-1263)</strong> covers the chatbots people talk to. Its rules are being written in the same process. Our comment focused on the first law, because that is where a person's housing, paycheck or care is on the line.</p>
+<p><strong>The Conversational Artificial Intelligence Services Act (HB 26-1263)</strong> covers the chatbots people talk to. Its rules were adopted in the same set. Among other things, a chatbot talking with a minor has to keep a notice on the screen the whole time saying it is AI and not a person, and companies have to report each year on how their chatbots handle signs of suicidal thinking or self-harm. Our comment focused on the first law, because that is where a person's housing, paycheck or care is on the line.</p>
 <p>The Attorney General enforces both. There is no private right to sue under the decision law, which means the rules the Attorney General writes, and the records they require companies to keep, are most of what stands behind your rights.</p>
 
-<h2>The three fights over the rules</h2>
-<p>The law sets the outline. The Attorney General's office is now filling in the details, in a rule set called 4 CCR 904-6. Most of the comments on file come from the companies that will have to follow it. Here is what they are pushing on.</p>
+<h2>How the three fights came out</h2>
+<p>The law sets the outline. The Attorney General's office filled in the details in a rule set called 4 CCR 904-6. Most of the comments on file came from the companies that have to follow it. Here is where the final rules landed.</p>
 
-<h3>1. When does the law even apply?</h3>
-<p>The law kicks in when an automated system "materially influences" a decision. The draft offers two ways to read that. The first counts any real influence that isn't trivial. The second only counts it when the AI outweighed everything else. Under the second reading, the landlord in our example points to a gap in your rental history, says that mattered more, and you get no notice at all. Same software. Same denial. No rights.</p>
+<h3>1. When does the law even apply? <span class="tag lost">Mostly lost</span></h3>
+<p>The law kicks in when an automated system "materially influences" a decision, meaning it was more than a trivial factor. The final rules do something good first: if a score, rank or recommendation about you was looked at during the decision, it is <strong>presumed</strong> to have influenced it, and the company has to prove otherwise.</p>
+<p>But the rules then define a trivial factor as one that is "not a substantial factor," and say it can count as trivial "if other relevant factors independent of the ADMT output played a significantly larger role." That is the second reading, the one we asked them not to adopt. Go back to the apartment. The landlord points to a gap in your rental history, says it weighed more than the score, and has a way to argue you are owed nothing.</p>
 
-<h3>2. Do they have to name who supplied the data?</h3>
-<p>The draft says a company must name each actual source of the data used against you: the specific data broker, court, database or employer. Some commenters want to replace names with categories like "a consumer reporting agency" or "public records." You can't send a correction request to a category. Federal regulators found that <strong>1 in 5</strong> people had an error on at least one credit report, and <strong>4 out of 5</strong> who disputed an error got their report changed. People win when they know who to write to.</p>
+<h3>2. Do they have to name who supplied the data? <span class="tag won">Won</span></h3>
+<p>Yes. When you ask what data was used against you, the company has <strong>15 days</strong> to answer, and it has to name each source: the specific data broker, court, database, school or employer. It can't hide behind "a consumer reporting agency." It is presumed to know any source it got data from directly or through a vendor. If a data broker got your record from somewhere else, the company has to name both when it knows them. You can write to a name. You can't write to a category.</p>
 
-<h3>3. Is the human review real?</h3>
-<p>The draft says the person reviewing your case can't be a subordinate of whoever made the original call, can't be punished for overruling it, and can't hand the review back to another AI. Some commenters want all three removed. A review by someone who reports to the original decision-maker isn't really a second look.</p>
+<h3>3. Is the human review real? <span class="tag part">Partly</span></h3>
+<p>The reviewer has to have real power to change the decision, can't be steered by upper management, and has to be protected from retaliation. Automated tools that use machine learning or large language models can't help with the review. Plain rule-following tools, and tools that only summarize, organize or translate, still can. Those parts held.</p>
+<p>What didn't hold: the rule that the reviewer can't be a subordinate of whoever made the original call is gone. And the final rules say a review that never reverses anything does not, on its own, prove the review wasn't real.</p>
 
-<p>There is also a timing fight. Some companies want a grace period that would push real protection past January 1, 2027, and some want older federal credit notices to count as good enough. The legislature already set the start date.</p>
+<h3>The timing fight <span class="tag won">Won</span></h3>
+<p>There's no grace period in the final rules. And an old federal credit notice only counts if it also carries everything Colorado's law requires, sent within <strong>30 days</strong> of the decision. Notices have to go out through every channel the company normally uses to reach you, not just one.</p>
 
-<div class="box">
-<h3>What we asked for</h3>
-<p>On October 2, The Q Collective filed a 9-page comment asking the Attorney General to keep the first reading of "materially influence," require named data sources, keep human review independent and fully human, keep two-way notice delivery and a 10-business-day answer time, and hold the January 1 start date. We have no client and no money in the outcome.</p>
-<p><a href="admt-comment-2026-10-02.pdf" target="_blank" rel="noopener">Read our full comment (PDF)</a> &middot; <a href="timeline.html#admt-comment">See it on our timeline</a></p>
+<div class="box" id="scorecard">
+<h3>What we asked for, and what we got</h3>
+<p>On October 2, The Q Collective filed a 9-page comment for the people on the other end of these decisions. We have no client and no money in the outcome.</p>
+<ul class="score">
+<li><span class="tag won">Won</span> Companies have to name each actual source of your data.</li>
+<li><span class="tag won">Won</span> No grace period, and federal notices only count if they carry everything Colorado requires.</li>
+<li><span class="tag won">Won</span> Notices go out through every channel the company normally uses with you.</li>
+<li><span class="tag part">Partly</span> Human review: real authority and no AI help held, but the "not the boss's subordinate" rule was cut.</li>
+<li><span class="tag part">Close</span> Answer time: we asked for 10 business days, and the rule is 15 days.</li>
+<li><span class="tag lost">Mostly lost</span> When the law applies: a presumption we wanted is in, but "trivial" now means "not a substantial factor," the reading we argued against.</li>
+</ul>
+<p><a href="admt-comment-2026-10-02.pdf" target="_blank" rel="noopener">Read our full comment (PDF)</a> &middot; <a href="timeline.html#admt-rules-adopted">See it on our timeline</a></p>
 </div>
 
-<h2 id="weigh-in">How to weigh in, in about 10 minutes</h2>
+<h2>What you can do now</h2>
 <ol>
-<li><strong>Open the comment form</strong> at <a href="https://coag.gov/ai/automated-decision-making-technology-act-and-chatbot-safety-act-form/" target="_blank" rel="noopener">coag.gov/ai</a>. It asks for your name, email, phone, what kind of commenter you are, and any organization you're with. "Individual" or "Colorado resident" is fine.</li>
-<li><strong>Pick the topic.</strong> Choose the Automated Decision-Making Technology Act.</li>
-<li><strong>Write three to five sentences.</strong> Who you are, why it matters to you, and which rule you want kept. A real story beats a long argument every time. You can type it into a document and upload it, since the form takes file uploads.</li>
-<li><strong>Know that it's public.</strong> The Attorney General posts comments online, so leave out anything you wouldn't want read aloud.</li>
-<li><strong>Submit by 11:59 p.m. Mountain on Monday, October 26.</strong></li>
+<li><strong>Know the signs.</strong> If you're turned down for housing, a job, credit, care or school, and a score, ranking or screening tool was part of it, you're owed a written notice within 30 days once the law is in force.</li>
+<li><strong>Ask what was used.</strong> The notice has to tell you how to ask for the details, including the name of the tool and every source of your data. They have 15 days to answer.</li>
+<li><strong>Fix what's wrong.</strong> Once you know who supplied a bad record, you can ask them to correct it and ask the company to look at your case again with the right information.</li>
+<li><strong>Ask for a human.</strong> You can ask for a real person to review the decision, one with the power to change it.</li>
+<li><strong>Keep everything.</strong> Save every denial letter and email. If something feels wrong, <a href="contact.html">tell us</a>. Real stories are how rules get fixed.</li>
 </ol>
-<p>Here's a starting point. Change it into your own words:</p>
-<div class="sample" id="sample">I live in Colorado, and I want the protections in SB 26-189 to work for the people they were written for. Please keep the first reading of "materially influence," so the law applies whenever an automated system played a real part in a decision. Please keep the requirement that companies name the actual source of the data they used, so people can get errors fixed. And please keep human review independent and fully human. Thank you for your work on these rules.</div>
-<button type="button" class="copybtn" onclick="var t=document.getElementById('sample').innerText;try{navigator.clipboard.writeText(t).then(function(){event.target.textContent='Copied';});}catch(e){}">Copy this text</button>
-
-<h3>Want to be there in person?</h3>
-<p>The hearing starts at <strong>10:00 a.m. Monday, October 26</strong>, at the Colorado Department of Law, Ralph L. Carr Judicial Building, 1300 Broadway, Denver. You can also join by Zoom. The registration link is posted with the hearing notice. If you can't find it, call the Attorney General's office at <a href="tel:+17205086000">(720) 508-6000</a> and ask for the ADMT rulemaking hearing.</p>
 
 <h2>What happens next</h2>
-<p>After October 26 the Attorney General's office writes the final rules. On January 1, 2027, the law takes effect, and the first notices should start reaching people who get turned down. We'll keep track of all of it on our <a href="timeline.html">timeline</a> and in the Sunday Update.</p>
+<p>The Attorney General issues a formal opinion on the rules. Then they're filed with the Secretary of State and become final 20 days after they're published. On January 1, 2027, the law takes effect, and the first notices should start reaching people who get turned down.</p>
+<p>The "substantial factor" definition is now in the rules. Changing it would take the legislature, or a later rulemaking. We'll keep track of all of it on our <a href="timeline.html">timeline</a> and in the Sunday Update.</p>
 
 <div class="sign">
 <div class="mark">mav QBJ</div>
 <div class="who">maveriQ B Jackson, Founder, The Q Collective / Doctrine Policy Group</div>
 </div>
 
-<p class="src">Sources: SB 26-189 and HB 26-1263; Colorado Department of Law, proposed rules 4 CCR 904-6 (August 11, 2026) and <a href="https://coag.gov/ai/automated-decision-making-technology-act-and-chatbot-safety-act-form/" target="_blank" rel="noopener">comment page</a>; Federal Trade Commission, Report to Congress under Section 319 of FACTA (credit report accuracy). Our comment cites each in full. Spot an error? <a href="contact.html">Tell us</a> and we'll correct it in public.</p>
+<p class="src">Sources: SB 26-189 and HB 26-1263; Colorado Department of Law, adopted rules 4 CCR 904-6 (November 19, 2026; Rules 2.2, 6.2, 7.2, 7.4, 7.6, 7.7, 8.7, 11 and 12), proposed rules (August 11, 2026) and <a href="https://coag.gov/ai/automated-decision-making-technology-act-and-chatbot-safety-act-form/" target="_blank" rel="noopener">comment page</a>; Federal Trade Commission, Report to Congress under Section 319 of FACTA (credit report accuracy). Our comment cites each in full. Spot an error? <a href="contact.html">Tell us</a> and we'll correct it in public.</p>
 
 </article></main>
 
