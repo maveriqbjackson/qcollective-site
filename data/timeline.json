@@ -475,6 +475,20 @@
      "href": "election-2026-map.html"
     }
    ]
+  },
+  {
+   "id": "mn-certify-cd1-recount-2026",
+   "date": "2026-11-19",
+   "precision": "day",
+   "kind": "watch",
+   "title": "Minnesota certifies; its 1st district goes to a recount",
+   "summary": "Minnesota's State Canvassing Board certified the state's results, with Jake Johnson (D) ahead of Rep. Brad Finstad (R) by 324 votes in the 1st congressional district. Finstad requested a publicly funded recount, a hand count starting Nov. 30, with the board set to certify it Dec. 8. AP has not called the race.",
+   "links": [
+    {
+     "label": "National map",
+     "href": "election-2026-map.html"
+    }
+   ]
   }
  ]
 }
