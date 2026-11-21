@@ -15,7 +15,7 @@
     { "date": "2026-10-02", "label": "We filed our comment" },
     { "date": "2026-10-26", "label": "Public hearing and comment deadline" },
     { "date": "2026-11-19", "label": "Rules adopted" },
-    { "date": "2027-01-01", "label": "The law takes effect" },
+    { "date": "2027-01-01", "label": "The law's main duties start (the rules' own final date isn't set yet)" },
     { "date": "2027-05-15", "label": "Rules the legislature's reviewers object to can expire" }
    ],
    "next_check": "2026-12-15",
