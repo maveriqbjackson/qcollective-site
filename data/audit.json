@@ -3046,6 +3046,45 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 21, 2026 at 9:10 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "8564605",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/8564605",
+   "note": "New page, Our work: every bill and rule we've worked on, with where it stands, the next date that matters and what we did. Time-sensitive pages now carry a check-by date that we review on schedule.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Our work",
+      "url": "work.html",
+      "what": "New page: every bill and rule we've worked on (the AI rules, CESA, FWMRA, US-RAPA, the Western States Coalition and the American Covenant), with status, the next date, what we did and links."
+     },
+     {
+      "page": "The Work",
+      "url": "the-work.html",
+      "what": "Added a link to Our work under the page heading."
+     },
+     {
+      "page": "Site menu",
+      "url": "index.html",
+      "what": "Added 'Our work: every bill and rule' under The record."
+     },
+     {
+      "page": "Colorado's new AI law, in plain English",
+      "url": "colorado-ai-law.html",
+      "what": "Clarified that the rules' final date isn't set yet (20 days after publication, which follows the Attorney General's opinion), and that January 1, 2027 is when the law's main duties start."
+     },
+     {
+      "page": "Site map",
+      "url": "sitemap.xml",
+      "what": "Added Our work."
+     }
+    ]
+   }
   }
  ]
 }
