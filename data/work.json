@@ -1,0 +1,120 @@
+{
+ "_how_to_edit": "Every bill, rule and filing we've worked on, newest activity first. To add one, copy a block, paste it into the list and change the words. status is one of: open (comments or votes open now), drafting, ready (written, needs a sponsor), moving (in the legislature or a rulemaking), adopted, law, closed. Every date in dates is checked daily by Ash HQ: next_check is the day we promise to look at this entry again, and Mav gets an alert if that day passes without an update.",
+ "updated": "2026-11-21",
+ "items": [
+  {
+   "id": "colorado-ai-rules",
+   "title": "Colorado's AI decision and chatbot rules",
+   "kind": "Rulemaking",
+   "level": "State",
+   "status": "adopted",
+   "status_label": "Adopted, not yet final",
+   "summary": "The rules that decide how Colorado's new right works: when a computer helped turn you down for housing, a job, credit, care or school, you're owed a notice, the names of the data sources, and a real human review.",
+   "our_role": "We filed a 9-page comment on October 2. Most of our asks were adopted on November 19. The biggest one wasn't: the definition of a trivial factor. Next we're asking the legislature's rule reviewers to look at it, and working on a fix for 2027.",
+   "dates": [
+    { "date": "2026-10-02", "label": "We filed our comment" },
+    { "date": "2026-10-26", "label": "Public hearing and comment deadline" },
+    { "date": "2026-11-19", "label": "Rules adopted" },
+    { "date": "2027-01-01", "label": "The law takes effect" },
+    { "date": "2027-05-15", "label": "Rules the legislature's reviewers object to can expire" }
+   ],
+   "next_check": "2026-12-15",
+   "page": "colorado-ai-law.html",
+   "links": [
+    { "label": "What we asked for, and what we got", "href": "colorado-ai-law.html#scorecard" },
+    { "label": "Our comment (PDF)", "href": "admt-comment-2026-10-02.pdf" },
+    { "label": "The rulemaking at coag.gov/ai", "href": "https://coag.gov/ai/" }
+   ]
+  },
+  {
+   "id": "cesa",
+   "title": "Colorado Everyday Stability Act (CESA)",
+   "kind": "Our bill",
+   "level": "State",
+   "status": "ready",
+   "status_label": "Written, looking for a sponsor",
+   "summary": "The seven pillars of life stability for every Coloradan: health, income, family, housing, food, opportunity, and protection from disruption, funded mainly through TABOR-compliant enterprise fees, with no income tax increase.",
+   "our_role": "We wrote it. It's complete and ready for a lawmaker to carry it.",
+   "dates": [
+    { "date": "2026-12-01", "label": "Lawmakers' deadline to request most 2027 bills" },
+    { "date": "2027-01-11", "label": "The 2027 session opens" },
+    { "date": "2027-01-15", "label": "Last day for any bill drafting request" }
+   ],
+   "next_check": "2026-12-01",
+   "page": "cesa-explained.html",
+   "links": [
+    { "label": "CESA in plain English", "href": "cesa-explained.html" },
+    { "label": "Read the bill (PDF)", "href": "cesa.pdf" },
+    { "label": "Which taxes would you vote for?", "href": "cesa-taxes.html" }
+   ]
+  },
+  {
+   "id": "fwmra",
+   "title": "Fair Work and Mutual Responsibility Act (FWMRA)",
+   "kind": "Our bill",
+   "level": "State",
+   "status": "ready",
+   "status_label": "Written, looking for a sponsor",
+   "summary": "A just-cause employment bill and companion to CESA: honest grounds and fair process for workers, capped and predictable costs for employers. One fair standard for every employer.",
+   "our_role": "We wrote it. Version 6.2 is complete and ready for a lawmaker to carry it.",
+   "dates": [
+    { "date": "2026-12-01", "label": "Lawmakers' deadline to request most 2027 bills" },
+    { "date": "2027-01-11", "label": "The 2027 session opens" }
+   ],
+   "next_check": "2026-12-01",
+   "page": "fwmra-explained.html",
+   "links": [
+    { "label": "FWMRA in plain English", "href": "fwmra-explained.html" },
+    { "label": "Read the bill (PDF)", "href": "fwmra-v6.pdf" }
+   ]
+  },
+  {
+   "id": "us-rapa",
+   "title": "United States Rapid Action and Preparedness Act (US-RAPA)",
+   "kind": "Our framework",
+   "level": "Federal",
+   "status": "drafting",
+   "status_label": "Working draft",
+   "summary": "A democracy-protection framework focused on citizen empowerment, election security, and putting real power back in people's hands at the national level.",
+   "our_role": "We're writing it, and looking for a federal champion.",
+   "dates": [],
+   "next_check": "2027-03-01",
+   "page": "the-long-game.html",
+   "links": [
+    { "label": "US-RAPA and the long game", "href": "the-long-game.html" },
+    { "label": "Read the draft (PDF)", "href": "us-rapa.pdf" }
+   ]
+  },
+  {
+   "id": "western-states",
+   "title": "Western States Coalition (GOARN)",
+   "kind": "Our framework",
+   "level": "Regional",
+   "status": "drafting",
+   "status_label": "Framework written",
+   "summary": "A western interstate compact for cooperation and shared resilience among states. Coordination, not secession.",
+   "our_role": "We wrote the framework.",
+   "dates": [],
+   "next_check": "2027-03-01",
+   "page": "the-long-game.html",
+   "links": [ { "label": "Read the framework (PDF)", "href": "western-states.pdf" } ]
+  },
+  {
+   "id": "american-covenant",
+   "title": "The American Covenant and Bridge Protocol",
+   "kind": "Our framework",
+   "level": "National",
+   "status": "drafting",
+   "status_label": "Framework written",
+   "summary": "The long game: a constitutional framework for a nation of 335 million, activated through a phased, decade-long Bridge Protocol.",
+   "our_role": "We wrote the framework.",
+   "dates": [],
+   "next_check": "2027-03-01",
+   "page": "constitution.html",
+   "links": [
+    { "label": "Our Constitution", "href": "constitution.html" },
+    { "label": "Read the framework (PDF)", "href": "american-covenant.pdf" }
+   ]
+  }
+ ]
+}
