@@ -75,7 +75,7 @@ FOUNDER_TEL = "+13033859063"
 DATES = [
     ("2026-10-12", "Colorado mail ballots start going out"),
     ("2026-11-03", "Election Day in Colorado"),
-    ("2027-01-13", "The 2027 legislative session opens"),
+    ("2027-01-11", "The 2027 legislative session opens"),
 ]
 
 # ---------------------------------------------------------------------------
@@ -109,7 +109,7 @@ CIVIC_TIPS = [
      "Every Q Score shows what lifted it and what held it back. Same rubric, same weights, for all 100 lawmakers.",
      "how-q-scores-work.html"),
     ("Read a bill number like a pro",
-     "HB means it started in the House, SB in the Senate. The 2027 session opens January 13 and runs up to "
+     "HB means it started in the House, SB in the Senate. The 2027 session opens January 11 and runs up to "
      "120 days, so watch for new numbers starting then.", "hub.html"),
 ]
 
