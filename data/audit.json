@@ -1,6 +1,6 @@
 {
  "engine": "v7.0",
- "updated": "November 21, 2026 at 6:50 AM MST",
+ "updated": "November 22, 2026 at 4:46 PM MST",
  "runs": [
   {
    "ts": "2026-07-11",
@@ -804,7 +804,7 @@
         "new": 89
        },
        {
-        "name": "Monica Márquez (Chief Justice)",
+        "name": "Monica M\u00e1rquez (Chief Justice)",
         "old": null,
         "new": 89
        },
@@ -2308,14 +2308,14 @@
      {
       "page": "Contact, Work With Us, Request Advocacy",
       "url": "contact.html",
-      "what": "The email the team receives is tagged [Reply · Q].",
+      "what": "The email the team receives is tagged [Reply \u00b7 Q].",
       "before": "Untagged subject",
       "after": "Tagged so it gets answered"
      },
      {
       "page": "Get Involved, Support a Bill, lawmaker and bill forms",
       "url": "get-involved.html",
-      "what": "The email the team receives is tagged [FYI · Q].",
+      "what": "The email the team receives is tagged [FYI \u00b7 Q].",
       "before": "Untagged subject",
       "after": "Tagged as a record"
      }
@@ -2792,7 +2792,7 @@
       "what": "Rewrote about 448 em dashes in visible text and page titles (now 'Page | The Q Collective') on 39 pages and the site menu and footer. Punctuation only on the Constitution."
      },
      {
-      "page": "Español",
+      "page": "Espa\u00f1ol",
       "url": "espanol.html",
       "what": "Fixed 29 accented letters that were showing as codes instead of letters."
      },
@@ -2823,7 +2823,7 @@
      {
       "page": "Podcast page",
       "url": "podcast.html",
-      "what": "Episodes show badges like 'S1 · E2', 'Bonus' or 'Trailer', topic tags, and topic filters. The Nov 15 Sunday recap is Episode 1 and the Nov 19 Thursday episode is Episode 2. Episode links did not change."
+      "what": "Episodes show badges like 'S1 \u00b7 E2', 'Bonus' or 'Trailer', topic tags, and topic filters. The Nov 15 Sunday recap is Episode 1 and the Nov 19 Thursday episode is Episode 2. Episode links did not change."
      }
     ]
    }
@@ -2843,8 +2843,8 @@
       "page": "Podcast page",
       "url": "podcast.html",
       "what": "Removed the Spotify button. Apple Podcasts and Amazon Music stay.",
-      "before": "Apple Podcasts · Spotify · Amazon Music",
-      "after": "Apple Podcasts · Amazon Music"
+      "before": "Apple Podcasts \u00b7 Spotify \u00b7 Amazon Music",
+      "after": "Apple Podcasts \u00b7 Amazon Music"
      }
     ]
    }
@@ -3122,8 +3122,8 @@
       "page": "Colorado election results",
       "url": "election-2026.html",
       "what": "Updated the national U.S. House tally card, the 'Now' row of What we're watching (national calls and Georgia's certification), the as-of line and sources. Colorado state House Districts 15, 21 and 22 still have no AP call and stay as counting.",
-      "before": "257 D · 172 R. Called as of Thursday, Nov. 19, with 6 still counting",
-      "after": "258 D · 173 R. Called as of Sunday, Nov. 22, with 4 still counting"
+      "before": "257 D \u00b7 172 R. Called as of Thursday, Nov. 19, with 6 still counting",
+      "after": "258 D \u00b7 173 R. Called as of Sunday, Nov. 22, with 4 still counting"
      },
      {
       "page": "Timeline",
@@ -3131,6 +3131,37 @@
       "what": "Added: North Carolina's 5th goes to Chuck Hubbard after a recount (Nov. 22)."
      }
     ]
+   }
+  },
+  {
+   "ts": "November 22, 2026 at 4:46 PM MST",
+   "run_type": "scheduled",
+   "engine_version": "v7.0",
+   "git_sha": "bcd72d7",
+   "run_id": "45084986280",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/actions/runs/45084986280",
+   "states": {
+    "CO": {
+     "legiscan": {
+      "status": "unchanged",
+      "dataset_hash": "624c60ad0a8adfd03250961b83a0042d",
+      "dataset_date": "2026-08-09"
+     },
+     "counts": {
+      "legislators": 100,
+      "champions": 7,
+      "executive_scored": 1,
+      "judicial_scored": 6
+     },
+     "changes": {
+      "legislators": [],
+      "executive": [],
+      "judicial": [],
+      "added": [],
+      "removed": []
+     },
+     "summary": "legislator scores unchanged."
+    }
    }
   }
  ]
