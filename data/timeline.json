@@ -519,6 +519,20 @@
      "href": "https://coag.gov/ai/"
     }
    ]
+  },
+  {
+   "id": "nc5-called-hubbard-2026",
+   "date": "2026-11-22",
+   "precision": "day",
+   "kind": "watch",
+   "title": "North Carolina's 5th goes to Chuck Hubbard after a recount",
+   "summary": "AP called North Carolina's 5th congressional district for Chuck Hubbard (D) over Rep. Virginia Foxx (R) after a machine recount changed one vote, leaving Hubbard about 330 votes ahead. Foxx conceded. It is a Democratic pickup. Two days earlier, Ashley Bell (D) conceded the 10th district to Rep. Pat Harrigan (R). That leaves 4 House races uncalled nationally.",
+   "links": [
+    {
+     "label": "National map",
+     "href": "election-2026-map.html"
+    }
+   ]
   }
  ]
 }
