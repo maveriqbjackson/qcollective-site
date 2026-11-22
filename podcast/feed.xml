@@ -16,11 +16,27 @@
     <itunes:category text="News"><itunes:category text="Politics"/></itunes:category>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Fri, 20 Nov 2026 09:46:06 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2026 16:47:10 -0700</lastBuildDate>
+    <item>
+      <title>Week of November 22, 2026</title>
+      <description>This week on Power Back Weekly: the headline; your move this week; the scoreboard; the accountability champions; the session by the numbers. Every vote and link is at theqcollective.org.</description>
+      <itunes:summary>This week on Power Back Weekly: the headline; your move this week; the scoreboard; the accountability champions; the session by the numbers. Every vote and link is at theqcollective.org.</itunes:summary>
+      <link>https://theqcollective.org/podcast.html#weekly-2026-11-22</link>
+      <guid isPermaLink="false">theqcollective-powerback-weekly-2026-11-22</guid>
+      <pubDate>Sun, 22 Nov 2026 16:47:10 -0700</pubDate>
+      <enclosure url="https://theqcollective.org/audio/sunday/2026-11-22.mp3" length="1924281" type="audio/mpeg"/>
+      <itunes:duration>2:40</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>3</itunes:episode>
+      <category>Sunday recap</category>
+      <itunes:explicit>false</itunes:explicit>
+      <podcast:transcript url="https://theqcollective.org/podcast/transcripts/weekly-2026-11-22.vtt" type="text/vtt" language="en" rel="captions"/>
+    </item>
     <item>
       <title>Thursday with Mav: why I’m taking the power back</title>
-      <description>The first Thursday episode of Power Back Weekly. Mav on why The Q Collective exists, how the Q Score works, and what to watch before the Colorado legislature comes back on January 13.</description>
-      <itunes:summary>The first Thursday episode of Power Back Weekly. Mav on why The Q Collective exists, how the Q Score works, and what to watch before the Colorado legislature comes back on January 13.</itunes:summary>
+      <description>The first Thursday episode of Power Back Weekly. Mav on why The Q Collective exists, how the Q Score works, and what to watch before the Colorado legislature comes back on January 11. Correction: the 2027 session opens Monday, January 11, not January 13 as said in this episode. Lawmakers moved the date because a new governor takes office.</description>
+      <itunes:summary>The first Thursday episode of Power Back Weekly. Mav on why The Q Collective exists, how the Q Score works, and what to watch before the Colorado legislature comes back on January 11. Correction: the 2027 session opens Monday, January 11, not January 13 as said in this episode. Lawmakers moved the date because a new governor takes office.</itunes:summary>
       <link>https://theqcollective.org/podcast.html#thu-2026-11-19</link>
       <guid isPermaLink="false">theqcollective-powerback-thu-2026-11-19</guid>
       <pubDate>Thu, 19 Nov 2026 07:09:29 -0700</pubDate>
