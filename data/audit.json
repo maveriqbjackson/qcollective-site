@@ -3085,6 +3085,53 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 22, 2026 at 11:53 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "ca8f4f5",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/ca8f4f5",
+   "note": "Election update: AP called North Carolina's 5th for Chuck Hubbard (D) after a recount, North Carolina's 10th was settled for Pat Harrigan (R) when Ashley Bell conceded, the House count moved to 258 to 173 with 4 uncalled, and Georgia certified; three Colorado state House races are still waiting on a call.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "National election map",
+      "url": "election-2026-map.html",
+      "what": "Added North Carolina's 5th District to the House flips: AP called it for Chuck Hubbard (D) over Rep. Virginia Foxx (R) on Nov. 22, after a recount; Foxx conceded.",
+      "before": "Still uncalled: Minnesota's 1st, North Carolina's 5th and Tennessee's 4th, where Democrats lead Republican incumbents by about 270 to 330 votes",
+      "after": "North Carolina: District 5 to D (Chuck Hubbard). AP called it Nov. 22 after a recount that changed one vote. Rep. Virginia Foxx (R) conceded."
+     },
+     {
+      "page": "National election map",
+      "url": "election-2026-map.html",
+      "what": "North Carolina's 10th settled for Rep. Pat Harrigan (R), a hold, after Ashley Bell (D) conceded on Nov. 20.",
+      "before": "North Carolina's 10th, where Rep. Pat Harrigan (R) leads by about 2,500 votes",
+      "after": "In North Carolina's 10th, Ashley Bell (D) conceded to Rep. Pat Harrigan (R) on Friday, Nov. 20, after the recount; Harrigan won by about 2,500 votes, a Republican hold."
+     },
+     {
+      "page": "National election map",
+      "url": "election-2026-map.html",
+      "what": "Updated the House count, the flip count (51: 48 to Democrats, 3 to Republicans), the House note, Georgia's certification (Nov. 20), the as-of date and sources.",
+      "before": "As of Thursday, Nov. 19, 257 seats were called for Democrats, 172 for Republicans and 6 were still counting",
+      "after": "As of Sunday, Nov. 22, Democrats had won 258 seats, Republicans 173, and 4 were still uncalled"
+     },
+     {
+      "page": "Colorado election results",
+      "url": "election-2026.html",
+      "what": "Updated the national U.S. House tally card, the 'Now' row of What we're watching (national calls and Georgia's certification), the as-of line and sources. Colorado state House Districts 15, 21 and 22 still have no AP call and stay as counting.",
+      "before": "257 D · 172 R. Called as of Thursday, Nov. 19, with 6 still counting",
+      "after": "258 D · 173 R. Called as of Sunday, Nov. 22, with 4 still counting"
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "Added: North Carolina's 5th goes to Chuck Hubbard after a recount (Nov. 22)."
+     }
+    ]
+   }
   }
  ]
 }
