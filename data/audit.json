@@ -1,6 +1,6 @@
 {
  "engine": "v7.0",
- "updated": "November 22, 2026 at 4:46 PM MST",
+ "updated": "November 26, 2026 at 7:14 AM MST",
  "runs": [
   {
    "ts": "2026-07-11",
@@ -3162,6 +3162,53 @@
      },
      "summary": "legislator scores unchanged."
     }
+   }
+  },
+  {
+   "ts": "November 26, 2026 at 7:14 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "173ddf3",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/173ddf3",
+   "note": "Election update: AP called Tennessee's 4th for Victoria Broderick (D), a pickup, moving the House count to 259 to 173 with 3 uncalled; Alaska and North Carolina certified; El Paso County posted final official results, but three Colorado state House races stay as counting until we confirm the final totals.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "National election map",
+      "url": "election-2026-map.html",
+      "what": "Added Tennessee's 4th District to the House flips: AP called it for Victoria Broderick (D) over Rep. Scott DesJarlais (R) on Nov. 24, with Broderick about 360 votes ahead; DesJarlais conceded Nov. 16.",
+      "before": "In Tennessee's 4th, Rep. Scott DesJarlais (R) has conceded to Victoria Broderick (D), but as of Nov. 22 AP had not called the race.",
+      "after": "Tennessee: District 4 to D (Victoria Broderick). AP called it Nov. 24, with Broderick about 360 votes ahead. Rep. Scott DesJarlais (R) conceded Nov. 16."
+     },
+     {
+      "page": "National election map",
+      "url": "election-2026-map.html",
+      "what": "Updated the House count, the flip count (52: 49 to Democrats, 3 to Republicans), the House note, the as-of date and sources.",
+      "before": "As of Sunday, Nov. 22, Democrats had won 258 seats, Republicans 173, and 4 were still uncalled",
+      "after": "As of Tuesday, Nov. 24, Democrats had won 259 seats, Republicans 173, and 3 were still uncalled"
+     },
+     {
+      "page": "National election map",
+      "url": "election-2026-map.html",
+      "what": "Alaska certified its results on Nov. 23: added the certified Senate count (Peltola 144,583 to Sullivan 132,022) and Alaska's one House seat (Nick Begich, R) from certified results. Noted North Carolina's certification on Nov. 24.",
+      "before": "Alaska's elections director said the state plans to certify the results, including the Senate race, on Nov. 25.",
+      "after": "Alaska certified its results, including the Senate race, on Monday, Nov. 23: Peltola 144,583 votes (50.1%) to 132,022 for Sullivan."
+     },
+     {
+      "page": "Colorado election results",
+      "url": "election-2026.html",
+      "what": "Updated the national U.S. House tally card, the 'Now' row of What we're watching (El Paso County's final official results on Nov. 24, the Nov. 25 recount request deadline passing with none reported, national calls and certifications), the as-of line and sources. State House Districts 15, 21 and 22 stay as counting until we confirm the final totals or AP calls them.",
+      "before": "258 D \u00b7 173 R. Called as of Sunday, Nov. 22, with 4 still counting",
+      "after": "259 D \u00b7 173 R. Called as of Tuesday, Nov. 24, with 3 still uncalled"
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "Added: Tennessee's 4th goes to Victoria Broderick (Nov. 24)."
+     }
+    ]
    }
   }
  ]
