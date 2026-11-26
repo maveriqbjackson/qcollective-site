@@ -3210,6 +3210,35 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 26, 2026 at 9:00 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "a2e495f",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/a2e495f",
+   "note": "New note: our public scorecard on Colorado's AI rules, and the one-sentence fix we're asking lawmakers to make.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Our scorecard on Colorado's AI rules",
+      "url": "ai-rules-scorecard.html",
+      "what": "New note: what we asked for in our October 2 comments, what made it into the final rules, what didn't, and the one-sentence fix."
+     },
+     {
+      "page": "Notes",
+      "url": "notes.html",
+      "what": "Added the new note at the top of the list."
+     },
+     {
+      "page": "Site map",
+      "url": "sitemap.xml",
+      "what": "Added the new note."
+     }
+    ]
+   }
   }
  ]
 }
