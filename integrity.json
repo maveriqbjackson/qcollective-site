@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-26 20:32 UTC",
- "commit": "f8944ae",
+ "generated": "2026-11-26 20:33 UTC",
+ "commit": "52948ce",
  "note": "SHA-256 of every public file, rebuilt on every commit.",
  "files": {
   "/404.html": {
@@ -128,8 +128,8 @@
    "bytes": 22830
   },
   "/data/audit.json": {
-   "sha256": "88fd0c6673ee1b22b0d6e8f00c2365f0b0afb7ac30cc8c1a5c497d1628fd4c9f",
-   "bytes": 115412
+   "sha256": "2d195b39badad1be88e2385446993a17c19a929af5f8d050c35577b936a30350",
+   "bytes": 116165
   },
   "/data/canary_reminder_state.json": {
    "sha256": "6ab2352c4f1c9f4aed1935d798905ca81ff76def8bfa4604d528933566894930",
