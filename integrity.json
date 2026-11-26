@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-26 20:33 UTC",
- "commit": "52948ce",
+ "generated": "2026-11-26 20:45 UTC",
+ "commit": "16bdd31",
  "note": "SHA-256 of every public file, rebuilt on every commit.",
  "files": {
   "/404.html": {
@@ -12,8 +12,8 @@
    "bytes": 35693
   },
   "/account.html": {
-   "sha256": "d3ed07b5128bd85fc8ac9e876d138b41c85ff80532d99d6c98f40a2f0c036c1c",
-   "bytes": 50835
+   "sha256": "99c1745d326ff794e7e5618c552af74b70095451b7a6955d940b575a3163675f",
+   "bytes": 50286
   },
   "/admt-comment-2026-10-02.pdf": {
    "sha256": "1273a1e1b4c5b6c67eec915346c956e707732aca5c12baafa9d1c6198f8e5824",
@@ -59,13 +59,9 @@
    "sha256": "280c2bc9e8ccdde905b60d9a63dc768bccf9e6cc982b672aefd84fcdda91cda3",
    "bytes": 56742
   },
-  "/canary-sign.html": {
-   "sha256": "a52cebecbad5e3b2220a8c822549c7d784f659aca658dd0a8ec5d652e2e38e94",
-   "bytes": 3356
-  },
   "/canary.html": {
-   "sha256": "7b19c91c11d1ce4734f6d2c15c0e37880711dd4bc556daf53f0a52e4e9938e12",
-   "bytes": 17110
+   "sha256": "2f49e58887a3cada2f199fe69d8f75cc66023b7e71d7aa3fe2a539a2ac83aefa",
+   "bytes": 17078
   },
   "/cesa-explained.html": {
    "sha256": "028359889cab4e356eb14a7521e8aa4e61223d9d01fd73fadf74b570c8e96453",
@@ -235,10 +231,6 @@
    "sha256": "e3ccc83de51123277e20ccae93ae5ed0edcbcec996f52f2c7b3ca29960fe9e34",
    "bytes": 41895
   },
-  "/hq.html": {
-   "sha256": "1f688059a6e0c2ee97f134b63342a40e7d537c950a37f5b1d56de21d6117bfd4",
-   "bytes": 751
-  },
   "/hub-lenses.js": {
    "sha256": "a6321193707786559d17a8499fde22292756dff467fab11a7404538fb54a64ce",
    "bytes": 33564
@@ -315,10 +307,6 @@
    "sha256": "6c7ec60c6f1ccfdac8c13ffc88dd2de21f66cc363ff67929858ce6e8bb671c5b",
    "bytes": 3622
   },
-  "/q-admin-gate.js": {
-   "sha256": "3a2f7af35103131ecd7760443d40b7d8aca9fca2969ac5b8d90a11e59beaa15a",
-   "bytes": 5777
-  },
   "/q-announce.js": {
    "sha256": "98ed6e93e4366e102cfda6a70809a3ae3d9d25121490194ef25275bb8b43f537",
    "bytes": 7474
@@ -342,10 +330,6 @@
   "/q-config.js": {
    "sha256": "d0288e8644e0b011c111faaa29f9e674d309dc799482379d5692b54b2b004042",
    "bytes": 935
-  },
-  "/q-console.html": {
-   "sha256": "92bd1320dd484700c1e210bdea897c737498bbc20b1d9338504f57b374a44bdc",
-   "bytes": 36036
   },
   "/q-handover.js": {
    "sha256": "e1578379981b0b278efbd12d443692e3eaaccd2ef00bdc765e9bb6fe61da5209",
