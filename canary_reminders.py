@@ -92,7 +92,7 @@ def sovran_canary():
     return {
         "key": "sovran", "name": "SOVRAN canary",
         "page": "https://mysovran.online/canary.html",
-        "sign": "https://mysovran.online/sign.html",
+        "sign": "https://aetherandash.digital/hq/#canary",
         "signed_at": d.get("signed_at"), "signed_by": d.get("signed_by"),
         "iv": d.get("interval_days") or 14, "gr": d.get("grace_days") or 7,
     }
