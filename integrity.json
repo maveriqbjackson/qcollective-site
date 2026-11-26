@@ -1,0 +1,455 @@
+{
+ "generated": "2026-11-26 20:32 UTC",
+ "commit": "f8944ae",
+ "note": "SHA-256 of every public file, rebuilt on every commit.",
+ "files": {
+  "/404.html": {
+   "sha256": "e00686fceeb46c1fd5ce79f2df693db316c62c54e794dc692cd42f873308aeaf",
+   "bytes": 7604
+  },
+  "/about.html": {
+   "sha256": "367d80c0e06f83e38fcdbdac14d2608774849395ad3d2dfdcfc1f25af389e03d",
+   "bytes": 35693
+  },
+  "/account.html": {
+   "sha256": "d3ed07b5128bd85fc8ac9e876d138b41c85ff80532d99d6c98f40a2f0c036c1c",
+   "bytes": 50835
+  },
+  "/admt-comment-2026-10-02.pdf": {
+   "sha256": "1273a1e1b4c5b6c67eec915346c956e707732aca5c12baafa9d1c6198f8e5824",
+   "bytes": 113880
+  },
+  "/ai-rules-scorecard.html": {
+   "sha256": "dec609bbb90dc4ad62f5e6d6c4f8f25c65da809c9341fa0a4e4c0af6679c0566",
+   "bytes": 14739
+  },
+  "/alerts.html": {
+   "sha256": "236f49749274290b5264c2e03844b9d5b35f7d63c25e7d5158747b7771c95b38",
+   "bytes": 35334
+  },
+  "/american-covenant.pdf": {
+   "sha256": "3ff95b5bd78d2849a4ae578b112c3329393af3c91bb4039e20358e094b7c23a4",
+   "bytes": 310812
+  },
+  "/anatomy.html": {
+   "sha256": "c8d378d66542a3eb0346245e7817c5416df7b703f35bebd0ecbcdec2f724694f",
+   "bytes": 67195
+  },
+  "/ask.html": {
+   "sha256": "8fa6fe77e3f962db90e6153c0fd366a9fcd7cc547c5e8343118103666ebe772c",
+   "bytes": 40776
+  },
+  "/audit.html": {
+   "sha256": "1ed25e1708e831a15219d4f26c48fa63284d3b62eae5ba4542da10c2a766b978",
+   "bytes": 26240
+  },
+  "/ballot.html": {
+   "sha256": "d3e5634ba70e37d45d6d3e4f91d5c9d6d6f0d305e5ca3505cb4e6bb8535ed477",
+   "bytes": 14250
+  },
+  "/beyond-colorado.html": {
+   "sha256": "bf8a10dab726a05ba8b9ea9f43734c62be4572805dfcfba0188cfe8f1578b440",
+   "bytes": 13308
+  },
+  "/bill-sponsors.js": {
+   "sha256": "37c8b3b483ba93dd09eef90872328c67e718bf39f83ce87fe3496a91096087d5",
+   "bytes": 9481
+  },
+  "/bill.html": {
+   "sha256": "280c2bc9e8ccdde905b60d9a63dc768bccf9e6cc982b672aefd84fcdda91cda3",
+   "bytes": 56742
+  },
+  "/canary-sign.html": {
+   "sha256": "a52cebecbad5e3b2220a8c822549c7d784f659aca658dd0a8ec5d652e2e38e94",
+   "bytes": 3356
+  },
+  "/canary.html": {
+   "sha256": "7b19c91c11d1ce4734f6d2c15c0e37880711dd4bc556daf53f0a52e4e9938e12",
+   "bytes": 17110
+  },
+  "/cesa-explained.html": {
+   "sha256": "028359889cab4e356eb14a7521e8aa4e61223d9d01fd73fadf74b570c8e96453",
+   "bytes": 16686
+  },
+  "/cesa-taxes.html": {
+   "sha256": "15b75ddf5abd754573ba92fc501fcede28ee39b9bb5d0a14907a42fd6e6a233e",
+   "bytes": 10395
+  },
+  "/cesa-v16.2.pdf": {
+   "sha256": "63c2d9d3487408646a92eab21356b343236d0f1c524f3e41e1bf2f437822ac67",
+   "bytes": 7662823
+  },
+  "/cesa.pdf": {
+   "sha256": "48f95cf776904ed82426272d67be14fb3012f49e8a0f3c033f85d61b1b879f2c",
+   "bytes": 7759542
+  },
+  "/citizen-champion-card.pdf": {
+   "sha256": "61b855bca25ab3eb7f5e3de3696bdbf78ae3a9cb5078b8825e88b2af267c4a3c",
+   "bytes": 14018
+  },
+  "/citizen-champion.html": {
+   "sha256": "8900b352fbd72aad7196889877c2982703758501157e8e3733e22fdf896b5123",
+   "bytes": 6548
+  },
+  "/colorado-ai-law.html": {
+   "sha256": "8dfd3cdc0d0e22dfbefe0a97bc0de48f00b5220db424b1126b6c26220ce7a9e8",
+   "bytes": 20190
+  },
+  "/constitution.html": {
+   "sha256": "f066a193f5b1231358fdeb68f4f9b45956d8b93caf5c8cc9ad6cbc7fb9099587",
+   "bytes": 47988
+  },
+  "/contact.html": {
+   "sha256": "c28056603d67ba38d30391f748794744516cbe0e4866c3ef8d0c15bb9cebc63e",
+   "bytes": 35216
+  },
+  "/data/CO.json": {
+   "sha256": "8d098dbe482e97b8baf0d16348518a1d70ef444c7016d1e95c83e8d0858dcaaa",
+   "bytes": 1343196
+  },
+  "/data/CO_bills.json": {
+   "sha256": "26d09699c13f469998b3a13e07f381ac56e959ee241099e54a2f5a5e68ba043d",
+   "bytes": 5039967
+  },
+  "/data/CO_contacts.json": {
+   "sha256": "babfe4d8b2f2687cb2a4adba35b43ef5fef685a3eabd2e1333f111081edc856f",
+   "bytes": 20064
+  },
+  "/data/CO_snapshots.json": {
+   "sha256": "13764a2435dbb28a9ce0e1b3a1aef7c19263f10f4e0d7974c1f580b274672322",
+   "bytes": 4900
+  },
+  "/data/alert_state.json": {
+   "sha256": "651cda11b863a8c320f41e67603aa602036f65401eb1da2fdc0f8026c24d4741",
+   "bytes": 19028
+  },
+  "/data/audit.html": {
+   "sha256": "e6eda4731a16175e2d12913d33c1bad514bd6fa351bcdaba37fad85fb7e233c1",
+   "bytes": 22830
+  },
+  "/data/audit.json": {
+   "sha256": "88fd0c6673ee1b22b0d6e8f00c2365f0b0afb7ac30cc8c1a5c497d1628fd4c9f",
+   "bytes": 115412
+  },
+  "/data/canary_reminder_state.json": {
+   "sha256": "6ab2352c4f1c9f4aed1935d798905ca81ff76def8bfa4604d528933566894930",
+   "bytes": 146
+  },
+  "/data/corrections.json": {
+   "sha256": "49c985a9c291aebe64465529391109f661981d898988e54fc22ccd9fa402d435",
+   "bytes": 674
+  },
+  "/data/dataset_state.json": {
+   "sha256": "b07f662dfde47ea136865cb7ec6694d5505c075d27426506d33e6493c01a94b1",
+   "bytes": 167
+  },
+  "/data/executive.json": {
+   "sha256": "c8510e66d50598e878c7e2f68ed16e30cdd97c127b074cd6f1b0b77e41e0a6d2",
+   "bytes": 4990
+  },
+  "/data/health.json": {
+   "sha256": "68459b3ced536a2ce9f3bcff3d0fb814d17102317e9a7e4d9df5d33dc63da800",
+   "bytes": 187
+  },
+  "/data/index.json": {
+   "sha256": "a58c481f1cdeb0ebfbca035b32c0e896951b1c156c15658b110b0f8fcc16027c",
+   "bytes": 131
+  },
+  "/data/judicial.json": {
+   "sha256": "2e433f0d0001f652b1dcf980b1236b3d4358ea2288803d09dc8384db0064706f",
+   "bytes": 6363
+  },
+  "/data/official_alert_state.json": {
+   "sha256": "4190093097f649105dad46e4abd9737a9b22bc16f096f8078ed3530ef8903a49",
+   "bytes": 11057
+  },
+  "/data/official_optouts.json": {
+   "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+   "bytes": 3
+  },
+  "/data/past_officials.json": {
+   "sha256": "8a2f91715d751a8435c7cae200fd00227c293b7f9c19b3aed706663e9b68d339",
+   "bytes": 176
+  },
+  "/data/sunday_note.txt": {
+   "sha256": "ae513290210895f2cbd30969fb99d3c74a75ab9235f5baaf7f18955827bb160f",
+   "bytes": 266
+  },
+  "/data/sunday_state.json": {
+   "sha256": "050789beb4ffa1dd1dfc5ee6b5459c64ddb3ee33db3809c189e9eebb7c058c70",
+   "bytes": 21300
+  },
+  "/data/timeline.json": {
+   "sha256": "993617f68a431c4e01cbee57e57ea20cecbc3f74934d62d05ed6121b62050e84",
+   "bytes": 22254
+  },
+  "/data/transition_2027.json": {
+   "sha256": "edda0d42d9486d5311a41b3ee987dd48d2e9c2dd44b11e9482bfd9d67e43ca9d",
+   "bytes": 4810
+  },
+  "/data/work.json": {
+   "sha256": "053eb0677b4b690e739e26a17e93b946921e3ce006de52198bd1390a2a0388f6",
+   "bytes": 5841
+  },
+  "/donate.html": {
+   "sha256": "f2bf0946910efb792648b3030aa43c9c0ff007988c65987309b3b667a4e5790b",
+   "bytes": 40636
+  },
+  "/election-2026-map.html": {
+   "sha256": "a249c351107173d23418964ad96505e2b4f09b210f8cbd8688571a0fae2ae8e8",
+   "bytes": 171899
+  },
+  "/election-2026.html": {
+   "sha256": "fd92ac51c12df3b50fd98609c65909e61ced570bd87e407b8198e27fba76e2a0",
+   "bytes": 60304
+  },
+  "/espanol.html": {
+   "sha256": "e90471344e60b17f1b52ab402d1e071f68f920f37473e69d419697838a34b247",
+   "bytes": 37144
+  },
+  "/favicon.svg": {
+   "sha256": "31c49f612cf739f0caec7f7a1cb959c48ff2c6186ff4d0007c54f8deaf707de0",
+   "bytes": 272
+  },
+  "/find-officials.html": {
+   "sha256": "27c214418e6cedf5de5e782c1e8a998aa9a03ee61d5cba5d31826f7fa15d1904",
+   "bytes": 48969
+  },
+  "/founder.html": {
+   "sha256": "5ef0045d129e0f9dbdd1de1905c72a93acc5bd7451f812bf9bd3b55ab19d714d",
+   "bytes": 15941
+  },
+  "/fwmra-explained.html": {
+   "sha256": "35d2e35ba368165a0ca5cdc3f5ebe7b4f1a4eed84e735f5c525a212d768cbe46",
+   "bytes": 13829
+  },
+  "/fwmra-v6.pdf": {
+   "sha256": "be7e9f8e6d0f128414f2efd064e4a2f6eaedfc34b053cd5d8e9f9a0e503d884b",
+   "bytes": 93826
+  },
+  "/get-involved.html": {
+   "sha256": "bb8c87972ad10f434da8e0dea0c8067b4341f224aa75cf1661bba18fd737c380",
+   "bytes": 36747
+  },
+  "/how-q-scores-work.html": {
+   "sha256": "e3ccc83de51123277e20ccae93ae5ed0edcbcec996f52f2c7b3ca29960fe9e34",
+   "bytes": 41895
+  },
+  "/hq.html": {
+   "sha256": "1f688059a6e0c2ee97f134b63342a40e7d537c950a37f5b1d56de21d6117bfd4",
+   "bytes": 751
+  },
+  "/hub-lenses.js": {
+   "sha256": "a6321193707786559d17a8499fde22292756dff467fab11a7404538fb54a64ce",
+   "bytes": 33564
+  },
+  "/hub.html": {
+   "sha256": "d0c77a17253ed2695797ffa717feb2edff56f7944965a44a1fb372801e097881",
+   "bytes": 77097
+  },
+  "/index.html": {
+   "sha256": "0637e492a5e22a82512ba9c27c4bed12aced4ca48edd5ed656961b52726c81c5",
+   "bytes": 52377
+  },
+  "/legislator.html": {
+   "sha256": "b420a75f46a2caa13228a66f84dc50f9a4cbec42ade1533d7dad667d048e3c41",
+   "bytes": 72832
+  },
+  "/national-profile.html": {
+   "sha256": "e645d066fc39742bf540d90249bf7e3131fb6db2871ca13258768a2381cd6842",
+   "bytes": 39371
+  },
+  "/national.json": {
+   "sha256": "e660bc34ba52559593d8fd2d618323ea2ccc4a324512945cd64adc0500b98e33",
+   "bytes": 2321
+  },
+  "/notes.html": {
+   "sha256": "8c0c5e34f803481b0a44badfe29aa076a542852995b7b0c172b994bfb9d6dfd4",
+   "bytes": 18406
+  },
+  "/notes/pbw-thu-2026-11-19.html": {
+   "sha256": "b27a6c489c7fdb0b874a7adc638f01ae69c406ddc0ad1b99566507630a5c9895",
+   "bytes": 8657
+  },
+  "/notes/pbw-trailer-2026-11-15.html": {
+   "sha256": "ae34e891cbec2b78f6183b70e4fc7616b31d94c962a258f19d93ef090da483ca",
+   "bytes": 5674
+  },
+  "/notes/pbw-weekly-2026-11-15.html": {
+   "sha256": "c4139b9ad79488ad039393c5d6a2aa7481b8bb06d6531780568fd176f4513e2f",
+   "bytes": 6929
+  },
+  "/notes/pbw-weekly-2026-11-22.html": {
+   "sha256": "0b9808353a236d15866bc8fac5e8f72df1dcddd562fc60d8c549dc601be63b46",
+   "bytes": 6798
+  },
+  "/official.html": {
+   "sha256": "cf3164f2b26b1204c337fa10f00921819a686378ad4a165b76130bb6b579f1d3",
+   "bytes": 43992
+  },
+  "/past-officials.html": {
+   "sha256": "2c73fc79b6530447363de09aba03930f58c95ab2504a12bf95e19c338cf945bc",
+   "bytes": 15344
+  },
+  "/podcast.html": {
+   "sha256": "f88b5f3fbb55a2d637d2f288a66790fe0fd83377915273e3eedc375ddf1e9802",
+   "bytes": 27790
+  },
+  "/podcast/episodes.json": {
+   "sha256": "f3507d4fba483628d175b9474370aca2beacaec9a63d00327d688a27b0cd8920",
+   "bytes": 10970
+  },
+  "/podcast/feed.xml": {
+   "sha256": "6b0df113bc92c29c67d972f1c66b14513f4c44a34960d863df76eb8fd64b9802",
+   "bytes": 8124
+  },
+  "/privacy.html": {
+   "sha256": "f2b4f6f4de1923aac92ddbcca2cadbcf7f107f96fe124cc4c834fd964652d0be",
+   "bytes": 39433
+  },
+  "/profile-coauthor.js": {
+   "sha256": "a2dc6ece565bc532c41af2103901f60dba67345d3c047bd7ef1ea0622ca7e249",
+   "bytes": 8385
+  },
+  "/profile-corrections.js": {
+   "sha256": "6c7ec60c6f1ccfdac8c13ffc88dd2de21f66cc363ff67929858ce6e8bb671c5b",
+   "bytes": 3622
+  },
+  "/q-admin-gate.js": {
+   "sha256": "3a2f7af35103131ecd7760443d40b7d8aca9fca2969ac5b8d90a11e59beaa15a",
+   "bytes": 5777
+  },
+  "/q-announce.js": {
+   "sha256": "98ed6e93e4366e102cfda6a70809a3ae3d9d25121490194ef25275bb8b43f537",
+   "bytes": 7474
+  },
+  "/q-auth.js": {
+   "sha256": "4bad5adc3117632ab416d46e67c9da65a0bfea5e58fc9af3464daea0a371f1e4",
+   "bytes": 6115
+  },
+  "/q-chat.js": {
+   "sha256": "a12cb4498c2baae68a5e2fb4b5f616fad9849b03b44dc69438c43461cba8c5c9",
+   "bytes": 17993
+  },
+  "/q-chrome.css": {
+   "sha256": "005712a354a5c4330dbefe566028de58868410c285a98bc9167b1f12bb822c31",
+   "bytes": 8884
+  },
+  "/q-collective-constitution.pdf": {
+   "sha256": "c2fc87aff63f4f7cf1dc8ae8a21f590aadcd3e5ce02070d6dea88c35e8991d49",
+   "bytes": 51267
+  },
+  "/q-config.js": {
+   "sha256": "d0288e8644e0b011c111faaa29f9e674d309dc799482379d5692b54b2b004042",
+   "bytes": 935
+  },
+  "/q-console.html": {
+   "sha256": "92bd1320dd484700c1e210bdea897c737498bbc20b1d9338504f57b374a44bdc",
+   "bytes": 36036
+  },
+  "/q-handover.js": {
+   "sha256": "e1578379981b0b278efbd12d443692e3eaaccd2ef00bdc765e9bb6fe61da5209",
+   "bytes": 3010
+  },
+  "/q-humanize.css": {
+   "sha256": "b9b2d93e4ec320b20495ad5041b8822313149956a1183adc2ad1dd56ef74941c",
+   "bytes": 9507
+  },
+  "/q-score-explained.html": {
+   "sha256": "cacda2772ba1f9766d92f3b170e7005617d7a7ce91382012d521560460a15828",
+   "bytes": 16844
+  },
+  "/q-status.js": {
+   "sha256": "f9edc61f076746811e5b67653ffe2e5b590614ad52f1682b750a668dcd777d02",
+   "bytes": 5444
+  },
+  "/q-sunday-band.js": {
+   "sha256": "69262ebb0181c109c8ef8ca1771b59a37d6cd16f7af0ffa9686b89990a4b8b24",
+   "bytes": 4733
+  },
+  "/q-sunday.js": {
+   "sha256": "a9297589dfe702bdc79d7ed77e1fade59f99643ed650b8aeb399115be6cc3551",
+   "bytes": 11267
+  },
+  "/q-tax-poll.js": {
+   "sha256": "91e366be127df2be69da8aec7d38bc61bb4f0417824eddcb3f3067618073e4d9",
+   "bytes": 11668
+  },
+  "/q-timeline.js": {
+   "sha256": "102ab5ee8ca6b8abebb4d4e93fe2c1423d085ade0d8784de984244b14f3fd847",
+   "bytes": 13780
+  },
+  "/request-advocacy.html": {
+   "sha256": "cf00cff22f5833e2e0cf78ef0da004a5021defd21979ad82e62d21f0886e5530",
+   "bytes": 41067
+  },
+  "/response-policy.html": {
+   "sha256": "5cb19822679844c0681b4148eb33533c406c5f161fb646bf999bc5e80749c31c",
+   "bytes": 37837
+  },
+  "/site-chrome.js": {
+   "sha256": "03c8637dc80be37d39cb791c72e39c065ebdc47df13411e9fbf2c9c38e66e642",
+   "bytes": 27110
+  },
+  "/sitemap.xml": {
+   "sha256": "24e57c3063760b30740ed41d7a88d78f4cc494ff40ec7c84ea5fadfe2baa2ce1",
+   "bytes": 4778
+  },
+  "/state-profile.html": {
+   "sha256": "6f750009deeff5666ff126d872a6cfdc6851292be8e0c39b13475275aee6be46",
+   "bytes": 20521
+  },
+  "/sunday.html": {
+   "sha256": "f3926f6c57a01a279fe12219f0f14024894cd5b043d5403cffaac4bd5e66c9c5",
+   "bytes": 38837
+  },
+  "/support-a-bill.html": {
+   "sha256": "0aedce9f186b0873625a42d4bba9c944c1dd71a3216908d94aa7e637b596366e",
+   "bytes": 37788
+  },
+  "/the-long-game.html": {
+   "sha256": "10a940e8b548300936666cea3ad3466fefffc613b696ca89c117640facd9b9cb",
+   "bytes": 15065
+  },
+  "/the-work.html": {
+   "sha256": "ed429656000bd28c364ae6b4571040f5f4e361f9425789f1b9af4b26fa873510",
+   "bytes": 37402
+  },
+  "/timeline.html": {
+   "sha256": "f392310f8469add7efb25bb85f16e805b3a515cbceeb3623024079916ff3d0b1",
+   "bytes": 7139
+  },
+  "/us-rapa.pdf": {
+   "sha256": "40725c96e5fc4342276fbfa13707f7421281dbf5b04f9d2321eca6db0663636f",
+   "bytes": 332730
+  },
+  "/welcome.html": {
+   "sha256": "eff3d4ee0b423a1850083025b9cb8f9d610e8b3b4a54edc4d0eaf37b39e61284",
+   "bytes": 16446
+  },
+  "/western-states.pdf": {
+   "sha256": "6e8960a1916fadea35fc4f974f0740b926e883aac5c477fb82dc8a0a94f4ae32",
+   "bytes": 243018
+  },
+  "/whats-next-2027.html": {
+   "sha256": "43457bc859dbafb9ad28a16e39f3a3ad7cdb6f3071c55fac712b3dbff86ef986",
+   "bytes": 13105
+  },
+  "/who-we-are.html": {
+   "sha256": "b72d855bd8d3b54f987315184d4cfdcaa0aa027b652acd7f324f667a14ff93bc",
+   "bytes": 13630
+  },
+  "/wip-notice.js": {
+   "sha256": "30d97f15b5be718c7c52ef942a3ea5621e867ca44d3973866805a3821367a4e8",
+   "bytes": 5056
+  },
+  "/work-with-us.html": {
+   "sha256": "8ee2ec38471a601fe382161aa7c0317890539a096235b52e5a5474fcbbb865ca",
+   "bytes": 37909
+  },
+  "/work.html": {
+   "sha256": "6c960afc87842c6fa24335c8d22063372edbe2fa3446a38c3d7328fd4e4ebbc1",
+   "bytes": 16174
+  }
+ }
+}

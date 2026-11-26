@@ -1,0 +1,31 @@
+name: Integrity list
+# Rebuilds integrity.json (every public file and its SHA-256) on every push, so Ash HQ can check what's deployed against the code.
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['integrity.json']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: integrity-list
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Rebuild the list
+        run: python .github/integrity.py integrity.json html,js,css,json,svg,xml,webmanifest,txt,pdf 'docs,scripts,audio,p' 
+      - name: Save it
+        run: |
+          git config user.name "integrity-bot"
+          git config user.email "integrity-bot@users.noreply.github.com"
+          git add integrity.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Integrity list: refreshed for $(git rev-parse --short HEAD~0)"
+          for i in 1 2 3; do git pull --rebase -q && git push && exit 0; sleep 5; done
+          exit 1
