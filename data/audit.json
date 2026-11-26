@@ -3307,6 +3307,35 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 26, 2026 at 2:00 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "aa83fc0",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/aa83fc0",
+   "note": "Our private admin pages moved off this site and into our own admin system. Nothing public changed, and no score or data moved.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Old admin pages",
+      "url": "hq.html",
+      "what": "Removed hq.html (it only forwarded to our new admin), q-console.html and q-admin-gate.js (the scoring workbench now lives in our admin), and canary-sign.html (signers now renew the canary from our admin)."
+     },
+     {
+      "page": "The canary",
+      "url": "canary.html",
+      "what": "The last line now says signers renew it from our private admin, instead of linking to the old signing page."
+     },
+     {
+      "page": "Account",
+      "url": "account.html",
+      "what": "Removed a sign-in step that only sent admins back to the old pages."
+     }
+    ]
+   }
   }
  ]
 }
