@@ -3288,6 +3288,25 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 26, 2026 at 1:45 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "2b9e615",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/2b9e615",
+   "note": "New: an integrity list. Every public file on this site now has a published SHA-256 fingerprint, rebuilt on every change, and we check the live site against it around the clock. If a file on the site ever differs from the code we committed, we'll know.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Integrity list",
+      "url": "integrity.json",
+      "what": "New file: every public page, script and document with its SHA-256 fingerprint."
+     }
+    ]
+   }
   }
  ]
 }
