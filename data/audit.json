@@ -3239,6 +3239,55 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 26, 2026 at 9:30 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "58adcfb",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/58adcfb",
+   "note": "Correction to our name on public documents. The Q Collective is not registered as an LLC, so \"LLC\" should never have been on these. We fixed every public PDF that said it, and we're logging it here so the change is out in the open. No score moved and no policy wording changed.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Comment on the AI rules, October 2, 2026 (PDF)",
+      "url": "admt-comment-2026-10-02.pdf",
+      "what": "Our public copy now names us \"The Q Collective\" instead of \"The Q Collective LLC\", and gives our location as Colorado instead of a city. The copy filed with the Attorney General on October 2 is unchanged and remains the official filing. No argument, fact or recommendation changed."
+     },
+     {
+      "page": "The American Covenant (PDF)",
+      "url": "american-covenant.pdf",
+      "what": "\"The Q Collective LLC\" changed to \"The Q Collective\", and the city dropped from the address line. Nothing else changed."
+     },
+     {
+      "page": "CESA (PDF, both copies)",
+      "url": "cesa.pdf",
+      "what": "\"The Q Collective LLC\" changed to \"The Q Collective\" in the publisher line, the sign-off and the change log. The bill text did not change. Also cesa-v16.2.pdf."
+     },
+     {
+      "page": "FWMRA (PDF)",
+      "url": "fwmra-v6.pdf",
+      "what": "\"The Q Collective LLC\" changed to \"The Q Collective\". The bill text did not change."
+     },
+     {
+      "page": "US-RAPA (PDF)",
+      "url": "us-rapa.pdf",
+      "what": "\"The Q Collective LLC\" changed to \"The Q Collective\". The bill text did not change."
+     },
+     {
+      "page": "The Western States Coalition (PDF)",
+      "url": "western-states.pdf",
+      "what": "\"The Q Collective LLC\" changed to \"The Q Collective\", and the city dropped from the address line. Nothing else changed."
+     },
+     {
+      "page": "Charter & Operating Constitution (PDF)",
+      "url": "q-collective-constitution.pdf",
+      "what": "\"The Q Collective LLC\" changed to \"The Q Collective\", including the line about how we operate today. No rule, right or duty changed."
+     }
+    ]
+   }
   }
  ]
 }
