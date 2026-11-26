@@ -3341,27 +3341,17 @@
    "ts": "November 26, 2026 at 2:20 PM MST",
    "run_type": "site_change",
    "engine_version": "v7.0",
-   "git_sha": "",
+   "git_sha": "ee49fbc",
    "run_id": "",
-   "run_url": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/ee49fbc",
    "note": "Canary reminders now link to the one place our signers sign both canaries (ours and SOVRAN's). The signing ceremony, the PIN and the public canary page are unchanged.",
    "site_change": {
     "scores_affected": false,
     "items": [
      {
-      "page": "Old admin pages",
-      "url": "hq.html",
-      "what": "Removed hq.html (it only forwarded to our new admin), q-console.html and q-admin-gate.js (the scoring workbench now lives in our admin), and canary-sign.html (signers now renew the canary from our admin)."
-     },
-     {
-      "page": "The canary",
+      "page": "Canary reminders",
       "url": "canary.html",
-      "what": "The last line now says signers renew it from our private admin, instead of linking to the old signing page."
-     },
-     {
-      "page": "Account",
-      "url": "account.html",
-      "what": "Removed a sign-in step that only sent admins back to the old pages."
+      "what": "The reminder emails our signers get now link to the one private page where they sign both canaries. Nothing on the public canary page changed."
      }
     ]
    }
