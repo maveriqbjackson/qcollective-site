@@ -547,6 +547,20 @@
      "href": "election-2026-map.html"
     }
    ]
+  },
+  {
+   "id": "certifications-nov24-2026",
+   "date": "2026-11-24",
+   "precision": "day",
+   "kind": "watch",
+   "title": "More states certify their results",
+   "summary": "Idaho, New Mexico and North Carolina certified their 2026 results on Nov. 24, after Michigan on Nov. 23 and North Dakota on Nov. 18. Iowa's board of canvassers had also certified by Nov. 25. New Mexico reported no race close enough for an automatic recount. Colorado certifies Nov. 30, and Minnesota's 1st district recount starts the same day.",
+   "links": [
+    {
+     "label": "National map",
+     "href": "election-2026-map.html"
+    }
+   ]
   }
  ]
 }
