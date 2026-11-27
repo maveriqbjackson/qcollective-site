@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-26 21:05 UTC",
- "commit": "ee49fbc",
+ "generated": "2026-11-27 18:46 UTC",
+ "commit": "6407c62",
  "note": "SHA-256 of every public file, rebuilt on every commit.",
  "files": {
   "/404.html": {
@@ -124,8 +124,8 @@
    "bytes": 22830
   },
   "/data/audit.json": {
-   "sha256": "68b631199e486220c3fdce44810e019171b35f9e77a38de75a24bfec39cf90dd",
-   "bytes": 117992
+   "sha256": "10d4faca2638ea941cfb220f09deee8022edb182769518f82abedbeea15d3bcf",
+   "bytes": 119454
   },
   "/data/canary_reminder_state.json": {
    "sha256": "6ab2352c4f1c9f4aed1935d798905ca81ff76def8bfa4604d528933566894930",
@@ -176,8 +176,8 @@
    "bytes": 21300
   },
   "/data/timeline.json": {
-   "sha256": "993617f68a431c4e01cbee57e57ea20cecbc3f74934d62d05ed6121b62050e84",
-   "bytes": 22254
+   "sha256": "07e6a45f1481dcd731dcd691226852ff7d7a49f445f567f3a40fb23bce1dbbc8",
+   "bytes": 22878
   },
   "/data/transition_2027.json": {
    "sha256": "edda0d42d9486d5311a41b3ee987dd48d2e9c2dd44b11e9482bfd9d67e43ca9d",
@@ -192,12 +192,12 @@
    "bytes": 40636
   },
   "/election-2026-map.html": {
-   "sha256": "a249c351107173d23418964ad96505e2b4f09b210f8cbd8688571a0fae2ae8e8",
-   "bytes": 171899
+   "sha256": "a0187cbbedac15c2bca1b152e6bc811d7df190a357f3476f03d305f4b89f063d",
+   "bytes": 173067
   },
   "/election-2026.html": {
-   "sha256": "fd92ac51c12df3b50fd98609c65909e61ced570bd87e407b8198e27fba76e2a0",
-   "bytes": 60304
+   "sha256": "0e32b1163bd3c0b9024fec994e97de43f84be20dcc88a7f4aa52400b64753e04",
+   "bytes": 60302
   },
   "/espanol.html": {
    "sha256": "e90471344e60b17f1b52ab402d1e071f68f920f37473e69d419697838a34b247",
