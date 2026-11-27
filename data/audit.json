@@ -1,6 +1,6 @@
 {
  "engine": "v7.0",
- "updated": "November 26, 2026 at 7:14 AM MST",
+ "updated": "November 27, 2026 at 11:58 AM MST",
  "runs": [
   {
    "ts": "2026-07-11",
@@ -3352,6 +3352,37 @@
       "page": "Canary reminders",
       "url": "canary.html",
       "what": "The reminder emails our signers get now link to the one private page where they sign both canaries. Nothing on the public canary page changed."
+     }
+    ]
+   }
+  },
+  {
+   "ts": "November 27, 2026 at 11:58 AM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "7ebccf3",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/7ebccf3",
+   "note": "Election results update: five more states (North Dakota, Michigan, Idaho, New Mexico and Iowa) added to the list of states that have certified; no race calls changed.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "National election map",
+      "url": "election-2026-map.html",
+      "what": "Added North Dakota, Michigan, Idaho, New Mexico and Iowa to the states that have certified, with sources, and moved the as-of date to Nov. 27.",
+      "before": "South Dakota, South Carolina, Minnesota (Nov. 19), Georgia (Nov. 20) and North Carolina (Nov. 24) have also certified",
+      "after": "South Dakota, South Carolina, North Dakota (Nov. 18), Minnesota (Nov. 19), Georgia (Nov. 20), Michigan (Nov. 23), Idaho, New Mexico and North Carolina (all Nov. 24) and Iowa (reported Nov. 25) have also certified"
+     },
+     {
+      "page": "Colorado election results",
+      "url": "election-2026.html",
+      "what": "Moved the as-of lines to Nov. 27. Colorado House Districts 15, 21 and 22 are still shown as counting."
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "Added an entry for the Nov. 24 certifications."
      }
     ]
    }
