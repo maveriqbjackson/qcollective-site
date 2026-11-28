@@ -1,6 +1,6 @@
 {
  "note": "Who is leaving office after the 2026 election, and when the handover happens. Built from called races only. Races still being counted are listed under 'pending' and are not marked as leaving until they are called.",
- "updated": "2026-11-09",
+ "updated": "2026-11-27",
  "dates": {
   "legislature_last_day": "2027-01-12",
   "legislature_sworn_in": "2027-01-11",
@@ -14,7 +14,7 @@
   {"id": "26054", "name": "Sean Camacho", "chamber": "State House", "district": "6", "successor": "Iris Halpern"},
   {"id": "20024", "name": "Emily Sirota", "chamber": "State House", "district": "9", "successor": "Monica VanBuskirk", "next": "Elected to State Senate District 32"},
   {"id": "20025", "name": "Julie McCluskie", "chamber": "State House", "district": "13", "successor": "Consuelo Redhorse"},
-  {"id": "23996", "name": "Scott Bottoms", "chamber": "State House", "district": "15", "successor": "Still being counted"},
+  {"id": "23996", "name": "Scott Bottoms", "chamber": "State House", "district": "15", "successor": "Jeff Livingston"},
   {"id": "26061", "name": "Rebecca Keltie", "chamber": "State House", "district": "16", "successor": "Stephanie Vigil"},
   {"id": "22233", "name": "Dan Woog", "chamber": "State House", "district": "19", "successor": "Jillaire McMillan"},
   {"id": "22222", "name": "Mary Bradfield", "chamber": "State House", "district": "21", "successor": "Still being counted"},
