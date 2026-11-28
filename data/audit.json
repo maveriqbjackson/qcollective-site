@@ -3386,6 +3386,49 @@
      }
     ]
    }
+  },
+  {
+   "ts": "November 27, 2026 at 5:48 PM MST",
+   "run_type": "site_change",
+   "engine_version": "v7.0",
+   "git_sha": "d7ef2f4",
+   "run_id": "",
+   "run_url": "https://github.com/maveriqbjackson/qcollective-site/commit/d7ef2f4",
+   "note": "Election results update: Colorado certified its 2026 results on Nov. 27, so House District 15 is now marked won for Jeff Livingston (D); Districts 21 and 22 stay counting.",
+   "site_change": {
+    "scores_affected": false,
+    "items": [
+     {
+      "page": "Colorado election results",
+      "url": "election-2026.html",
+      "what": "Marked State House District 15 won for Jeff Livingston (D), a pickup, from the certified results, and moved the State House tally to 48 D and 15 R with 2 still counting.",
+      "before": "Jeff Livingston (D) leads Pricella Tiegen (R) by 550 votes, 48.9% to 47.5% (Counting)",
+      "after": "Jeff Livingston (D), 48.9%, flipped from Republican, over Pricella Tiegen (R), 47.5% (Won)"
+     },
+     {
+      "page": "Colorado election results",
+      "url": "election-2026.html",
+      "what": "Rewrote the \"Now\" row and the watching table for Colorado's Nov. 27 certification, with no legislative recounts; Districts 21 and 22 are still shown as counting. Fixed the Senate card's Alaska line to say Alaska certified Nov. 23.",
+      "before": "Nov. 30: Colorado certifies statewide and congressional results. Any race within half a percent goes to an automatic recount, finished by Dec. 4.",
+      "after": "Nov. 27: Colorado certified statewide and congressional results, ahead of the Nov. 30 deadline. No race we track was within half a percent, so no automatic recount was needed."
+     },
+     {
+      "page": "National election map",
+      "url": "election-2026-map.html",
+      "what": "Added Colorado (Nov. 27) to the states that have certified, with the Secretary of State as the source."
+     },
+     {
+      "page": "Timeline",
+      "url": "timeline.html",
+      "what": "Moved the Colorado certification entry to Nov. 27 and described the result."
+     },
+     {
+      "page": "Past Officials",
+      "url": "past-officials.html",
+      "what": "Filled in Jeff Livingston as Scott Bottoms's successor in House District 15."
+     }
+    ]
+   }
   }
  ]
 }
